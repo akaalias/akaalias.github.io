@@ -20,15 +20,13 @@ My name is Alexis, I'm a product manager and software developer.
 
 To give you a sense, I recently shipped [Unblah](https://unblah.me), [Ballet](https://akaalias.github.io/algorand-ballet/) and [Quickdown](https://getquickdown.com/).
 
-I've also published a lot of my writing and code here:
+I also publish [essays and notes](https://publish.obsidian.md/alexisrondeau), [open-source code](https://github.com/akaalias) and [short videos](https://www.youtube.com/c/AlexisRondeau/videos).
 
-- [My Digital Garden](https://publish.obsidian.md/alexisrondeau)
-- [My Code on Github](https://github.com/akaalias)
-- [My Videos on Youtube](https://www.youtube.com/c/AlexisRondeau/videos)
+Enough about me. I would love to learn more about YOU! 
 
-I would love to learn more about YOU! 
+Let's talk!
 
-All you need to do is [book a free office-hours call](https://calendly.com/alexis-rondeau/lets-talk).
+Simply [book a free office-hours call](https://calendly.com/alexis-rondeau/lets-talk).
 
 Looking forward to meeting you, 
 
