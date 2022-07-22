@@ -1,9 +1,3 @@
----
-
-title: "Alexis Rondeau"
-
----
-
 ![Alexis Rondeau](alexis-portrait.jpg | width=300)
 
 Friday, July 22nd 2022, 11:48am
