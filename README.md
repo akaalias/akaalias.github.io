@@ -4,7 +4,6 @@ title: "Alexis Rondeau"
 
 ---
 
-
 ![Alexis Rondeau](alexis-portrait.jpg | width=300)
 
 Friday, July 22nd 2022, 11:48am
@@ -19,7 +18,9 @@ It is great to meet you. I'm thrilled you're here.
 
 My name is Alexis, I'm a product manager and software developer. 
 
-To give you a sense of who I am and what I do, here are some starting points:
+To give you a sense, I recently shipped [Unblah](https://unblah.me), [Ballet](https://akaalias.github.io/algorand-ballet/) and [Quickdown](https://getquickdown.com/).
+
+I've also published a lot of my writing and code here:
 
 - [My Digital Garden](https://publish.obsidian.md/alexisrondeau)
 - [My Code on Github](https://github.com/akaalias)
