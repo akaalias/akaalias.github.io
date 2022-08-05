@@ -1,0 +1,38 @@
+<section class="about">
+  {% if include.divider == true %}
+    <div class="wrap"><hr/></div>
+    {% endif %}
+  <div class="wrap grid">
+
+    <div class="about__image">
+      <img src="{{ '/images/alexis-portrait.jpg' | relative_url }}" alt="">
+
+      {% include component-socials.html %}
+    </div>
+
+    <div class="about__content">
+      <h2 class="title">Hey, I’m Alexis.</h2>
+      <p class="subtitle subtitle--light">
+        I help companies craft profitable products using in-depth customer research, lean product management and agile software development and 18 years of experience under my belt.
+
+      </p>
+      <p class="subtitle subtitle--light">
+        For my own entertainment, I also publish <a href='https://publish.obsidian.md/alexisrondeau'>essays and notes</a>, <a href='https://github.com/akaalias'>open-source code</a>, <a href='https://www.youtube.com/c/AlexisRondeau/videos'>short videos</a>.
+      </p>
+
+      <p class="subtitle subtitle--light">
+        I also regularly release non-commercial projects such as <a href='https://unblah.me/'>Unblah</a>, <a href='https://akaalias.github.io/algorand-ballet/'>Ballet</a> and <a href='https://getquickdown.com/'>Quickdown</a>.
+    </p>
+
+      <p class="subtitle subtitle--light">I’d love to learn about your company and see how I can help, feel free to book a quick call!</p>
+
+      <!--
+      <p>My skills include in-depth customer research, interactive design, aesthetic art direction, prototyping, mobile design,
+        branding, front-end development and team leadership. I’m interested in clean aesthetics, minimalism, unusual
+        typography, photography and simplistic UX solutions.</p>
+        -->
+
+      <a href="https://calendly.com/alexis-rondeau/lets-talk" class="cta button--fill contact-trigger js-contact">Get in Touch</a>
+    </div>
+  </div>
+</section>

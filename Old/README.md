@@ -1,4 +1,4 @@
-![Alexis Rondeau](alexis-portrait.jpg)
+![Alexis Rondeau](../images/alexis-portrait.jpg)
 
 Friday, July 22nd 2022, 11:48am
 
