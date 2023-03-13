@@ -1,30 +1,11 @@
 ---
 layout: default
-overtitle:
-headline: Wow, <br>it's really you!
-title: What an honor to have you here today.
-featured_image: /images/social.jpg
 ---
 
 <div class="page-home">
 	{% if site.data.settings.hero_settings.background_image %}
 	<img src="{{ site.data.settings.hero_settings.background_image | relative_url }}" class="hero__background" draggable="false">
 	{% endif %}
-
-	<section class="hero">
-		<div class="wrap grid">
-			<div class="title">
-				<p class="subtitle">{{ page.overtitle }}</p>
-				<h1>{{ page.headline }}</h1>
-				<br>
-				<h2>{{ page.title }}</h2>
-			</div>
-
-			<p class="intro subtitle--light">
-				{{ page.description }}
-			</p>
-		</div>
-	</section>
 
 	<!--
 	<section class="listing">
