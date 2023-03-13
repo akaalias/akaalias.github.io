@@ -211,3 +211,22 @@ textarea {
 	display: flex;
 	justify-content: flex-end;
 }
+
+.highlight-blue {
+	padding-left: 10px;
+	padding-right: 10px;
+	color: white;
+	background-color: blue;
+}
+
+.highlight-yellow {
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: yellow;
+}
+
+.highlight-red {
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: lightcoral;
+}
