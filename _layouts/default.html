@@ -20,21 +20,20 @@
 
 	<!-- Page Info -->
 	<link rel="shortcut icon" href="{{ site.data.settings.basic_settings.favicon_image | relative_url }}">
-	<title>{% if page.url == "/" %}{{ site.data.settings.basic_settings.site_title }} –
-		{{ page.title }}{% else %}{{ page.title }} – {{ site.data.settings.basic_settings.site_title }}{% endif %}</title>
-	<meta name="description" content="{{ page.description | strip_html | xml_escape }}">
+	<title>Alexis Rondeau</title>
+	<meta name="description" content="Hi there, I’m Alexis. I'm a Full-Stack Software Developer with a Customer-First Mindset.">
 
 	<!-- Twitter Card -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title"
-		content="{% if page.url == "/" %}{{ site.data.settings.basic_settings.site_title }} – {{ page.title }}{% else %}{{ page.title }} – {{ site.data.settings.basic_settings.site_title }}{% endif %}">
-	<meta name="twitter:description" content="{{ page.description | strip_html | xml_escape }}">
+		content="Alexis Rondeau">
+	<meta name="twitter:description" content="Hi there, I’m Alexis. I'm a Full-Stack Software Developer with a Customer-First Mindset.">
 	<meta name="twitter:image:src" content="{{ page.featured_image | absolute_url }}">
 
 	<!-- Facebook OpenGraph -->
 	<meta property="og:title"
-		content="{% if page.url == "/" %}{{ site.data.settings.basic_settings.site_title }} – {{ page.title }}{% else %}{{ page.title }} – {{ site.data.settings.basic_settings.site_title }}{% endif %}" />
-	<meta property="og:description" content="{{ page.description | strip_html | xml_escape }}" />
+		content="Alexis Rondeau" />
+	<meta property="og:description" content="Hi there, I’m Alexis. I'm a Full-Stack Software Developer with a Customer-First Mindset." />
 	<meta property="og:image" content="{{ page.featured_image | absolute_url }}" />
 
 	{% if site.data.settings.font_settings.font_embed %}
