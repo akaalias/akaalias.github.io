@@ -1,6 +1,6 @@
 ---
 title: Unblah
-subtitle: For Unblah, the ultimate meeting buddy app designed for those who talk too much, or too little, when they get nervous in meetings.
+subtitle: Unblah, the friendly meeting buddy app designed for those who talk too much, or too little, when they get nervous in meetings.
 date: 2023-01-01 00:00:00
 description: With Unblah, you'll be able to keep track of how long you've been speaking, catch yourself before you talk too much or too little, and develop a better sense of timing.
 featured_image: unblah-landingpage.png
@@ -9,6 +9,9 @@ accent_color: '#4C60E6'
 gallery_images:
   - unblah-landingpage.png
   - unblah-app.png
+  - unblah-faq.png
+  - unblah-hn.png
+  - unblah-hn2.png
 
 ---
 

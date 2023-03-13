@@ -1,6 +1,6 @@
 ---
 title: Pudding Research
-subtitle: For Financial Forensic Analysis – Pudding Research, the ultimate tool for exploring and analyzing Ethereum ERC-20 ecosystems. Connect the dots, follow the money, and uncover the hidden stories that lie within.
+subtitle: For Financial Forensic Analysis – Pudding Research, the essential tool for exploring and analyzing Ethereum ERC-20 ecosystems. Connect the dots, follow the money, and uncover the hidden stories that lie within.
 date: 2023-01-01 00:00:00
 description: With Pudding Research, you'll have access to ecosystem analysis for over 40 Ethereum tokens, providing insight into the health and potential fraud within each ecosystem. Built using Typescript, Pudding Research is a powerful tool for anyone looking to unlock the power of OSINT analysis in their Ethereum ventures.
 featured_image: pudding-demo.png

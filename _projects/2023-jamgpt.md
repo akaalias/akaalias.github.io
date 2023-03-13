@@ -1,6 +1,6 @@
 ---
 title: JamGPT
-subtitle: For Mac Power Users – Introducing JamGPT, the ultimate tool for unlocking the power of natural language processing in your everyday life. With JamGPT, you can access the latest OpenAI ChatGPT API with the speed, ease, and convenience of macOS, right at your fingertips.
+subtitle: For Mac Power Users – JamGPT, the ultimate tool for unlocking the power of natural language processing in your everyday life. With JamGPT, you can access the latest OpenAI ChatGPT API with the speed, ease, and convenience of macOS, right at your fingertips.
 date: 2023-01-01 00:00:00
 description: JamGPT gives you immediate access to ChatGPT with the speed and ease of macOS. Make ChatGPT come to you, whereever you are, right now with a simple, easy and global keyboard shortcut.
 featured_image: jamgpt-demo-light.png

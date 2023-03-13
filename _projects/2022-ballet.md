@@ -1,6 +1,6 @@
 ---
 title: Algorand Ballet
-subtitle: For Financial Forensic Analysis – Algorand Ballet, the ultimate tool for conducting OSINT background checks on wallets and assets on the Algorand Blockchain. 
+subtitle: For Financial Forensic Analysis – Algorand Ballet, the simple tool for conducting OSINT background checks on wallets and assets on the Algorand Blockchain. 
 date: 2023-01-01 00:00:00
 description: With Algorand Ballet, you can make your best-informed decisions before interacting with untrusted wallets, ensuring your safety and the safety of the ecosystem.
 featured_image: ballet-demo.png
