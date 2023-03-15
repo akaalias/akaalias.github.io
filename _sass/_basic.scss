@@ -219,14 +219,22 @@ textarea {
 	background-color: blue;
 }
 
+.title {
+	font-size: 48px !important;
+	font-weight: lighter !important;
+}
+
 .highlight-yellow {
 	padding-left: 10px;
 	padding-right: 10px;
-	background-color: yellow;
+	background-color: rgba(255, 255, 0, 0.35);
+	border-bottom: 3px solid rgba(255, 165, 0, 0.56);
 }
 
 .highlight-lightyellow {
 	background-color: rgba(255, 255, 0, 0.33);
+	border-bottom: 1px solid rgba(255, 165, 0, 0.47);
+
 }
 .highlight-red {
 	padding-left: 10px;
