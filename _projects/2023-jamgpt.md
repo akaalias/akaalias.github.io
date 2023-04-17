@@ -16,30 +16,19 @@ gallery_images:
 
 ## Benefits
 
-- Improve your writing skills with powerful AI-powered writing tools
-- Save time and hassle with efficient user experience
-- Streamline your writing workflow with global keyboard shortcut
-- Unlock the power of natural language processing with ease
-- Flexible subscription options to cater to your unique needs
+Improve your writing skills and become more efficient with powerful AI-powered writing tools. Streamline your writing workflow with a simple and efficient user experience. Easily switch between apps and continue writing with global keyboard shortcuts. Unlock the power of natural language processing with JamGPT's easy-to-use features. Choose from flexible subscription options to fit your unique needs.
+
+## “Batteries-Included” Trial Version:
+
+JamGPT offers a fully featured trial version to allow you to experience the full capabilities of the tool before purchasing.
 
 ## Features
 
-- Easy access through a simple, global keyboard shortcut
-- Built with 100% Swift for streamlined performance
-- Built-in fallback mechanism for uninterrupted access to ChatGPT API
-- Multiple refactorings for reduced complexity
-- Automated build, test, and release management
-- Delightful user experience fine-tuned through feedback
-- Graceful API error handling to prevent data loss
-- "Batteries-Included" Trial version
+JamGPT is designed for an efficient and easy user experience with a simple global keyboard shortcut for easy access. Built with 100% Swift, it provides streamlined performance and utilizes a built-in fallback mechanism for uninterrupted access to ChatGPT API. Multiple refactorings have been implemented to reduce complexity and make JamGPT more user-friendly. Automated build, test, and release management allows for hassle-free use. JamGPT also prioritizes error handling to prevent data loss.
 
 ## Why Choose JamGPT?
 
-- Easy to use and access the latest natural language processing capabilities
-- Efficient and streamlined experience for busy professionals
-- Automated build, test, and release management for hassle-free experience
-- Combined with the latest ChatGPT API, JamGPT unlocks the power of natural language processing
-- Backed by real feedback and fine-tuned for a delightful user experience
+JamGPT is the perfect tool for busy professionals looking to improve their writing skills and streamline their writing workflow. Its automated build, test, and release management ensures a hassle-free experience, and its fine-tuned user experience makes writing easy and efficient. Combined with the latest ChatGPT API, JamGPT unlocks the power of natural language processing. With real feedback considered in its design and development, JamGPT is the perfect tool for anyone looking to take their writing skills to the next level.
 
 ## Technologies Used
 
