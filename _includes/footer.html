@@ -1,5 +1,7 @@
 <footer class="footer">
+
 	<div class="wrap grid">
+
 		{% if site.data.settings.footer_settings.logo_image %}
 		<a href="{{ site.baseurl }}/" class="footer__logo">
 			<img src="{{ site.data.settings.footer_settings.logo_image | relative_url }}" class="footer__logo__img">
@@ -10,9 +12,16 @@
 		{% endif %}
 
 		<div class="footer__copyright">
+
 			{% if site.data.settings.footer_settings.tagline %}
+
 			<p>{{ site.data.settings.footer_settings.tagline }}</p>
 			{% endif %}
+
+			<p>
+				<a href="https://calendly.com/alexis-rondeau/lets-talk" class="header__cta button--fill">Let's talk! – Choose a time on my calendar here</a>
+
+			</p>
 			<span class="footnote">© {{ 'now' | date: "%Y" }} {{ site.data.settings.basic_settings.site_title }}</span>
 		</div>
 
