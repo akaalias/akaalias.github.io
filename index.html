@@ -1,70 +1,88 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alexis Rondeau</title>
+<meta name="description" content="Oh, hi there! Alexis here — small, sharp tools, the odd research deep-dive, and a digital garden of notes.">
+<link rel="stylesheet" href="tufte.css">
+<style>
+/* page-specific: a plain link list, rules not boxes (keeps tufte.css untouched) */
+.links{list-style:none;margin:6px 0 0;padding:0;}
+.links li{padding:14px 0 13px;border-top:1px solid var(--rule);}
+.links a{font-size:21px;text-decoration:none;border-bottom:1px solid transparent;}
+.links a:hover{border-bottom-color:var(--accent);}
+.links .d{display:block;color:var(--muted);font-size:16px;line-height:1.45;margin-top:3px;}
+.links .src{color:var(--faint);font-style:italic;}
+.bio{font-size:17px;line-height:1.5;color:var(--muted);margin:16px 0 0;}
+</style>
+</head>
+<body>
 
-<div class="page-home">
-	{% if site.data.settings.hero_settings.background_image %}
-	<img src="{{ site.data.settings.hero_settings.background_image | relative_url }}" class="hero__background" draggable="false">
-	{% endif %}
+<header class="hero">
+  <div class="eyebrow">Alexis Rondeau</div>
+  <h1>Oh, hi there!</h1>
+  <p class="lede">Alexis here. I make small, sharp tools, write up the occasional research deep-dive, and keep a digital garden of notes. A few of them are below.</p>
+  <p class="bio">Principal Software Engineer at FELS Family Office GmbH · based between Berlin, New York &amp; Marseille.</p>
+  <div class="nav">
+    <a href="https://github.com/akaalias">GitHub</a>
+    <a href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a>
+  </div>
+</header>
 
-	{% include section__about.html %}
+<div class="wrap">
 
-	<section class="listing">
-		<div class="wrap">
-			<h2 class="title">
-				My recent projects:
-			</h2>
+<section id="featured">
+  <h2>Featured</h2>
+  <ul class="links">
+    <li>
+      <a href="https://alexisrondeau.me/tada/research/FMDiscovery/dashboard/report.html">The wall that wasn't coverage</a>
+      <span class="d">A research report: can a ~3B on-device model match a frontier cloud model on one narrow task? 71 experiments, run with Claude Code, and the honest verdict.</span>
+    </li>
+  </ul>
+</section>
 
-			<br>
-			<hr>
-			<br>
-			{% for project in site.projects reversed %}
+<section id="garden">
+  <h2>Digital garden</h2>
+  <ul class="links">
+    <li>
+      <a href="https://publish.obsidian.md/alexisrondeau/">alexisrondeau on Obsidian Publish</a>
+      <span class="d">A public thinking space — interconnected notes for ideas, work, and the things worth remembering.</span>
+    </li>
+  </ul>
+</section>
 
-			{% if project.accent_color %}{% capture accent_color %}{{ project.accent_color }}{% endcapture %}{% endif %}
+<section id="projects">
+  <h2>Personal projects</h2>
+  <ul class="links">
+    <li>
+      <a href="https://unblah.me/">Unblah</a>
+      <span class="d">A macOS app that tracks your talk-time in meetings, so you can speak up — or zip it.</span>
+    </li>
+    <li>
+      <a href="https://alexisrondeau.me/jamgpt-homepage/">JamGPT</a>
+      <span class="d">A keyboard shortcut to summon ChatGPT instantly, from anywhere on your Mac.</span>
+    </li>
+    <li>
+      <a href="https://alexisrondeau.me/getstreamline/">Streamline</a>
+      <span class="d">A distraction-free, stream-of-consciousness writer that feeds straight into Obsidian.</span>
+    </li>
+    <li>
+      <a href="https://alexisrondeau.me/pudding-app/">Pudding</a>
+      <span class="d">A macOS app that records every keystroke to prove your writing was made by a human, not AI.</span>
+    </li>
+    <li>
+      <a href="https://github.com/akaalias/algorand-ballet">Algorand Ballet</a>
+      <span class="d">An interactive tool for visualizing wallet activity and transaction networks on the Algorand blockchain.</span>
+    </li>
+    <li>
+      <a href="https://alexisrondeau.me/pudding/">Pudding, live</a>
+      <span class="d">The Pudding editor running right in your browser. <span class="src">Try it.</span></span>
+    </li>
+  </ul>
+</section>
 
-			<article class="project__preview">
-				<h3 class="project__title"><a href="{{ project.url | relative_url }}" style="--accent: {{ accent_color }}">{{ project.title }}</a></h3>
-				<div class="project__content grid" style="border-color: {{ accent_color }}">
-					<p class="project__subtitle subtitle--light">{{ project.subtitle }}</p>
-					<p class="project__description --small">
-						{{ project.description }}
-						<a href="{{ project.url | relative_url }}" class="project__link button--text --right"
-						   style="color: {{ accent_color }}; --color-var: {{ accent_color }}">View Case Study</a>
-					</p>
-				</div>
-				<div class="project__images owl-carousel" style="--accent: {{ accent_color }}">
-					{% for image in project.gallery_images %}
-					<a href="{{ project.url | relative_url }}">
-
-						<div class="project__image__wrapper" style="background-image: url('/images/projects/{{ image }}')">
-						</div>
-					</a>
-
-					{% endfor %}
-				</div>
-
-			</article>
-
-			{% endfor %}
-		</div>
-	</section>
-
-	<!--
-	<section class="recent-posts">
-		<div class="wrap grid">
-			<header class="recent-posts__header">
-				<h4>Recent blog posts</h4>
-				<a href="{{ '/blog' | relative_url }}" class="action button--text--accent --right">All Posts</a>
-			</header>
-
-			<div class="recent-posts__list grid">
-				{% for post in site.posts limit: 3 %}
-				{% include component__post-preview.html %}
-				{% endfor %}
-			</div>
-
-			<a href="{{ '/blog' | relative_url }}" class="action-bottom button--text--accent --right">All Posts</a>
-		</div>
-	</section>
-	-->
 </div>
+
+</body>
+</html>
