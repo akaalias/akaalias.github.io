@@ -13,6 +13,8 @@
 .links a{font-size:21px;text-decoration:none;border-bottom:1px solid transparent;}
 .links a:hover{border-bottom-color:var(--accent);}
 .links .d{display:block;color:var(--muted);font-size:16px;line-height:1.45;margin-top:3px;}
+.links .d a{font-size:inherit;color:inherit;border-bottom:1px solid var(--rule);}
+.links .d a:hover{border-bottom-color:var(--accent);}
 .links .src{color:var(--faint);font-style:italic;}
 /* curated sub-list of notes nested under a garden item */
 .notes{list-style:none;margin:12px 0 2px;padding:0;}
@@ -42,8 +44,12 @@
   <h2>Featured</h2>
   <ul class="links">
     <li>
-      <a href="https://alexisrondeau.me/tada/research/FMDiscovery/dashboard/report.html">The wall that wasn't coverage</a>
-      <span class="d">A research report: can a ~3B on-device model match a frontier cloud model on one narrow task? 71 experiments, run with Claude Code, and the honest verdict.</span>
+      <a href="https://alexisrondeau.me/llm-heuristic-scientists-workshop/index.html">"We don't write the rules. We just discover them. (With AI.)" — discovering scheduling heuristics with an LLM autoresearch loop</a>
+      <span class="d">A job-shop scheduling problem dressed up as a lunch rush: one grill, one shared range, plates running late, and sequencing as the only lever. Instead of hand-writing the rule, an agent proposes candidates, runs them across simulated services, and keeps what beats the standing champion — trained on six scenarios, held out against three more to check it found a principle, not a memory. Based on <a href="https://www.linkedin.com/in/nima-h-siboni-078380197">Nima H. Siboni</a>'s <a href="https://luma.com/7zfk3orp?tk=9rPLPi">"The Heuristic Scientist: Open-Ended Algorithm Discovery with LLMs"</a> workshop.</span>
+    </li>
+    <li>
+      <a href="https://alexisrondeau.me/tada/research/FMDiscovery/dashboard/report.html">"Which city in Paris are you staying in?" - A post-training study on small-model specialization with an autoresearch loop</a>
+      <span class="d">Across 77 experiments — every lever from prompting and retrieval to fine-tuning and 2025's rubric-grounded RL — an on-device 3B model landed within about one rubric point of a frontier cloud model on every quality dimension: close, but consistently a notch below. None of the post-training playbook closed the last notch, and the controlled tests show why — the gap is a broad capability limit, not a single missing skill.</span>
     </li>
   </ul>
 </section>
