@@ -12,6 +12,9 @@
 .links li{padding:14px 0 13px;border-top:1px solid var(--rule);}
 .links a{font-size:21px;text-decoration:none;border-bottom:1px solid transparent;}
 .links a:hover{border-bottom-color:var(--accent);}
+.links .tag{display:block;color:var(--accent);font-size:15px;font-style:italic;margin-top:2px;}
+.links .stat{display:inline-block;color:var(--faint);font-size:13px;letter-spacing:.03em;margin-top:5px;font-variant-numeric:tabular-nums;}
+.links .stat b{color:var(--muted);font-weight:600;}
 .links .d{display:block;color:var(--muted);font-size:16px;line-height:1.45;margin-top:3px;}
 .links .d a{font-size:inherit;color:inherit;border-bottom:1px solid var(--rule);}
 .links .d a:hover{border-bottom-color:var(--accent);}
@@ -22,7 +25,20 @@
 .notes a{font-size:17px;text-decoration:none;border-bottom:1px solid transparent;}
 .notes a:hover{border-bottom-color:var(--accent);}
 .links .label{display:block;color:var(--faint);font-size:14px;text-transform:uppercase;letter-spacing:.04em;margin:14px 0 2px;}
+/* obsidian plugins as a 3-up grid of tiles (last cell left empty) */
+.plugin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px;}
+.plugin-grid li{border:1px solid var(--rule);border-radius:8px;padding:16px 16px 18px;display:flex;flex-direction:column;}
+.plugin-grid a{font-size:18px;}
+.plugin-grid .tag{font-size:13.5px;margin-top:3px;}
+.plugin-grid .d{font-size:14px;line-height:1.4;}
+.plugin-grid .stat{margin-top:auto;padding-top:12px;}
+@media(max-width:720px){.plugin-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.plugin-grid{grid-template-columns:1fr;}}
 .bio{font-size:17px;line-height:1.5;color:var(--muted);margin:16px 0 0;}
+.section-intro{font-size:16px;line-height:1.5;color:var(--muted);margin:4px 0 0;}
+.section-intro b{color:var(--accent);font-weight:600;}
+.section-intro a{color:inherit;border-bottom:1px solid var(--rule);}
+.section-intro a:hover{border-bottom-color:var(--accent);}
 </style>
 </head>
 <body>
@@ -59,27 +75,70 @@
   <ul class="links">
     <li>
       <a href="https://unblah.me/">Unblah</a>
-      <span class="d">A macOS app that tracks your talk-time in meetings, so you can speak up — or zip it.</span>
-    </li>
-    <li>
-      <a href="https://alexisrondeau.me/jamgpt-homepage/">JamGPT</a>
-      <span class="d">A keyboard shortcut to summon ChatGPT instantly, from anywhere on your Mac.</span>
+      <span class="tag">Know when to speak up — and when to zip it.</span>
+      <span class="d">Ever leave a meeting wondering if you talked too much — or never got a word in? Unblah quietly shows your talk-time as it happens, so you can catch yourself in the moment and hit the balance you're aiming for. Works across Zoom, Teams, WebEx and calls, and never records or shares a thing.</span>
     </li>
     <li>
       <a href="https://alexisrondeau.me/getstreamline/">Streamline</a>
-      <span class="d">A distraction-free, stream-of-consciousness writer that feeds straight into Obsidian.</span>
+      <span class="tag">Brain-dump first. Organize later.</span>
+      <span class="d">A calm, blank space to get your thoughts out before the day's noise sets in — no menus, no formatting, no friction. As you write, it surfaces your existing notes so a morning brain-dump connects straight into the system you already keep. Everything stays on your machine, with no account and nothing tracked.</span>
     </li>
     <li>
-      <a href="https://alexisrondeau.me/pudding-app/">Pudding</a>
-      <span class="d">A macOS app that records every keystroke to prove your writing was made by a human, not AI.</span>
+      <a href="https://alexisrondeau.me/jamgpt-homepage/">JamGPT</a>
+      <span class="tag">ChatGPT, one keystroke away.</span>
+      <span class="d">Get to ChatGPT the instant you need it — one keystroke from whatever app you're in, with no tab-hunting or logging back in. Keep your go-to prompts a click away for the things you do over and over, like translating or tightening up a sentence. Free to use, and ready the moment you download it.</span>
+    </li>
+    <li>
+      <a href="https://apps.apple.com/de/app/pudding-homework-helper/id6755304979">Pudding</a>
+      <span class="tag">Proof you actually wrote it.</span>
+      <span class="d">In a world that assumes everything's written by AI, Pudding lets you prove the words are yours. It captures your writing as it actually happened — every edit, pause and rewrite — so you can replay the whole process and hand anyone undeniable proof of your work. Peace of mind for students, writers and freelancers who get asked, "did you really write this?"</span>
     </li>
     <li>
       <a href="https://github.com/akaalias/algorand-ballet">Algorand Ballet</a>
-      <span class="d">An interactive tool for visualizing wallet activity and transaction networks on the Algorand blockchain.</span>
+      <span class="tag">Watch the money move on-chain.</span>
+      <span class="d">An open-source OSINT tool for the Algorand blockchain. See who a wallet really deals with: drop in any account and watch its activity unfold as a map you can explore — follow the connections, spot the patterns, and dig into any account, asset or app with a click. A simple way to do your own homework before you trust, invest, or just satisfy your curiosity.</span>
     </li>
     <li>
-      <a href="https://alexisrondeau.me/pudding/">Pudding, live</a>
-      <span class="d">The Pudding editor running right in your browser. <span class="src">Try it.</span></span>
+      <a href="https://alexisrondeau.me/pudding/">Pudding Research</a>
+      <span class="tag">Connect the dots, follow the money, find the story.</span>
+      <span class="d">An open-source OSINT tool for Ethereum token ecosystems. Pick any token and instantly see where the money flows — who's moving it, to whom, and how much. The biggest players and tightest relationships rise to the top, so you can filter out the noise, zero in on what matters, and pull a real story out of the chain. Export what you find to share it. <span class="src">Try it.</span></span>
+    </li>
+  </ul>
+</section>
+
+<section id="obsidian-plugins">
+  <h2>Obsidian plugins</h2>
+  <p class="section-intro">Small tools for the <a href="https://obsidian.md">Obsidian</a> note-taker — <b>484,055 downloads</b> and counting.</p>
+  <ul class="links plugin-grid">
+    <li>
+      <a href="https://github.com/akaalias/obsidian-extract-pdf-highlights">Extract PDF Highlights</a>
+      <span class="tag">Turn your PDF highlights into notes.</span>
+      <span class="d">Stop re-typing the passages you highlighted while reading. Open a marked-up PDF in Obsidian, click once, and every highlight, underline and note lands in a tidy page-ordered note you can actually search, link and build on. Hours of manual copying gone — your reading turns straight into usable notes.</span>
+      <span class="stat"><b>319,102</b> downloads</span>
+    </li>
+    <li>
+      <a href="https://github.com/akaalias/obsidian-extract-pdf">Extract PDF</a>
+      <span class="tag">PDF in, Markdown out.</span>
+      <span class="d">Free the text trapped inside a PDF. One click turns a document into clean, editable notes — headings, paragraphs and lists intact — so you can quote it, rework it, and weave it into your own writing instead of squinting at a locked-up file.</span>
+      <span class="stat"><b>77,003</b> downloads</span>
+    </li>
+    <li>
+      <a href="https://github.com/akaalias/obsidian-journey-plugin">Journey</a>
+      <span class="tag">Find the story hiding in your notes.</span>
+      <span class="d">You've collected hundreds of notes — but where's the story in them? Journey traces a path between any two ideas in your vault and hands you a ready-made outline, surfacing connections you'd forgotten you made. A blank-page cure that turns your scattered thinking into the first draft of something worth publishing.</span>
+      <span class="stat"><b>62,142</b> downloads</span>
+    </li>
+    <li>
+      <a href="https://github.com/akaalias/obsidian-footnotes">Footnotes</a>
+      <span class="tag">Footnotes without the bookkeeping.</span>
+      <span class="d">Add a footnote without breaking your train of thought. One hotkey drops a numbered marker and its note at the bottom of the page, and the same key jumps you between the two — no counting, no scrolling, no losing your place. Footnote-heavy writing finally feels effortless.</span>
+      <span class="stat"><b>25,808</b> downloads</span>
+    </li>
+    <li>
+      <a href="https://github.com/akaalias/plotto-for-obsidian">Plotto</a>
+      <span class="tag">A 1928 plot-generator, rewired for your graph.</span>
+      <span class="d">Stuck on a story? Plotto puts a century-old plotting system at your fingertips — thousands of conflicts, twists and character setups you can browse, link and remix until a plot clicks. Hit "random" when you want a jolt of inspiration, or follow the threads when you know what you're chasing. A creative sounding board for whenever the page is blank.</span>
+      <span class="stat"><b>17</b> stars on GitHub</span>
     </li>
   </ul>
 </section>
@@ -118,6 +177,16 @@
 </section>
 
 </div>
+
+<script>
+/* open every off-site link in a new tab */
+document.querySelectorAll('a[href]').forEach(function(a){
+  if(a.hostname && a.hostname !== location.hostname){
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+  }
+});
+</script>
 
 </body>
 </html>
