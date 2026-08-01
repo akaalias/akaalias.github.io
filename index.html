@@ -12,6 +12,7 @@
 .links li{padding:14px 0 13px;border-top:1px solid var(--rule);}
 .links a{font-size:21px;text-decoration:none;border-bottom:1px solid transparent;}
 .links a:hover{border-bottom-color:var(--accent);}
+.links a b{font-weight:600;}
 .links .tag{display:block;color:var(--accent);font-size:15px;font-style:italic;margin-top:2px;}
 .links .stat{display:inline-block;color:var(--faint);font-size:13px;letter-spacing:.03em;margin-top:5px;font-variant-numeric:tabular-nums;}
 .links .stat b{color:var(--muted);font-weight:600;}
@@ -63,19 +64,19 @@
   <p class="section-intro">Experiments in letting machines do the discovering — evolutionary search and LLM autoresearch loops that propose, test, and keep what survives.</p>
   <ul class="links">
     <li>
-      <a target="_blank" rel="noopener" href="https://alexisrondeau.me/low-light-geolocalization-autoresearch/index.html">"Not all who wander are lost": Can a UAV learn a city by heart — no GPS, no map on board, just a $4 flight computer?</a>
+      <a target="_blank" rel="noopener" href="https://alexisrondeau.me/low-light-geolocalization-autoresearch/index.html"><b>"Not all who wander are lost"</b>: Can a UAV learn a city by heart — no GPS, no map on board, just a $4 flight computer?</a>
       <span class="d">Yes! We found a special-purpose neural memory architecture that 'remembers' an exact geo-location, given an in-flight daytime picture of Berlin. The typical miss is 27 m — no GPS, no internet, no map on board, just a 3.1 MB file of weights. It works on 96.5% of camera frames, and it took 81 experiments and $364 to find.</span>
     </li>
     <li>
-      <a target="_blank" rel="noopener" href="https://alexisrondeau.me/airloom/">"The snuggle is real": Evolving quadcopter frame geometry for Wh/km, with Claude as an occasional co-designer</a>
+      <a target="_blank" rel="noopener" href="https://alexisrondeau.me/airloom/"><b>"The snuggle is real"</b>: Evolving quadcopter frame geometry for Wh/km, with Claude as an occasional co-designer</a>
       <span class="d">I let a genetic algorithm loose on the geometry of a 7-inch quadcopter frame — the real, open-source Source One V6 plate drawings, morphed by fourteen genes and flown through six simulated weather scenarios, with Claude sitting in every few generations to propose designs from the run's own telemetry. The bottom line: we evolved the champion to fly 16% more efficiently (Wh/km) across six weather scenarios.</span>
     </li>
     <li>
-      <a target="_blank" rel="noopener" href="https://alexisrondeau.me/llm-heuristic-scientists-workshop/approach.html">"We don't write the rules. We just discover them. With AI.": How an autonomous agent searches for the groundrule, and what makes the loop different</a>
+      <a target="_blank" rel="noopener" href="https://alexisrondeau.me/llm-heuristic-scientists-workshop/approach.html"><b>"We don't write the rules. We just discover them. With AI."</b>: How an autonomous agent searches for the groundrule, and what makes the loop different</a>
       <span class="d">A job-shop scheduling problem dressed up as a lunch rush: one grill, one shared range, and sequencing as my only lever. Rather than hand-write the rule, I let an agent propose candidates, run them across simulated services, and keep whatever beat the champion — trained on six scenarios, then held out against three more to check it found a principle, not a memory. Built on <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/nima-h-siboni-078380197">Nima H. Siboni</a>'s <a target="_blank" rel="noopener" href="https://luma.com/7zfk3orp?tk=9rPLPi">"The Heuristic Scientist: Open-Ended Algorithm Discovery with LLMs"</a> workshop.</span>
     </li>
     <li>
-      <a target="_blank" rel="noopener" href="https://alexisrondeau.me/tada/research/FMDiscovery/dashboard/report.html">"Which city in Paris are you staying in?": Can an LLM autoresearch loop teach a phone-sized small language model (SLM) to ask frontier-quality questions? Can it? Does it? Let's find out!</a>
+      <a target="_blank" rel="noopener" href="https://alexisrondeau.me/tada/research/FMDiscovery/dashboard/report.html"><b>"Which city in Paris are you staying in?"</b>: Can an LLM autoresearch loop teach a phone-sized small language model (SLM) to ask frontier-quality questions? Can it? Does it? Let's find out!</a>
       <span class="d">We discovered a technique that enables Apple's native 2025 3B Foundation Model to come within about one rubric point of a frontier cloud model (Claude Sonnet 4.6) on every quality dimension. It took us 96 experiments to test every lever we could find — prompting, retrieval, decoding, pipeline, fine-tuning, preference-learning, reinforcement-learning, adversarial-distillation, and more.</span>
     </li>
   </ul>
