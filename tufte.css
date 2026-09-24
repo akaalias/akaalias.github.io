@@ -43,9 +43,10 @@ header.hero{max-width:780px;margin:0 auto;padding:64px 28px 8px;}
          letter-spacing:.01em;margin-bottom:14px;}
 h1{font-weight:400;font-size:42px;line-height:1.12;letter-spacing:-.01em;margin:0 0 14px;}
 .lede{font-size:22px;line-height:1.5;color:#33312b;margin:0;font-style:italic;}
-.nav{margin-top:26px;font-size:15px;color:var(--muted);}
-.nav a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;}
-.nav a:not(:last-child)::after{content:" · ";color:var(--faint);border:0;}
+.nav{margin-top:26px;font-size:15px;color:var(--muted);display:flex;gap:1.1em;}
+.nav a{position:relative;line-height:1.2;color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;}
+/* separator dot lives in the gap, out of the link's flow, so the hover rule spans only the text */
+.nav a:not(:last-child)::after{content:"\00b7";position:absolute;left:100%;width:1.1em;text-align:center;color:var(--faint);pointer-events:none;}
 .nav a:hover{border-bottom-color:var(--accent);}
 
 section{margin-top:60px;}
