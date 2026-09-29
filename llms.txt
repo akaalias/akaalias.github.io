@@ -6,13 +6,28 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 
 ## Feed
 
-- [Feed](https://alexisrondeau.me/feed/): 646 posts, newest first, 25 per page
+- [Feed](https://alexisrondeau.me/feed/): 661 posts, newest first, 25 per page
 - [Archive](https://alexisrondeau.me/feed/archive/): the same posts by month
 - [Atom feed](https://alexisrondeau.me/feed/feed.xml): the latest 50 posts
 - [Data](https://alexisrondeau.me/feed/items.json): every item as JSON (source, id, date, text, media, links, permalink)
 
 ## Notes
 
+- [How To Get To Newark From Manhattan and How To NOT Fly To Berlin](https://alexisrondeau.me/notes/how-to-get-to-newark-from-manhattan-and-how-to-not-fly-to-berlin/): Alright! The first day of my stay in Berlin for the summer is in full effect. I just got back from meeting Chris at the…
+- [Welcome Back](https://alexisrondeau.me/notes/welcome-back/): Prelude: My friend Mike decided to get frozen in time in 2005 and stayed frozen until 2014. His unfreezing has successf…
+- [Sunday Review](https://alexisrondeau.me/notes/sunday-review/): Today I'm writing to you from my loft apartment in Bushwick, Brooklyn. I am sitting in the living room with my cup of g…
+- [Why I Love Mondays](https://alexisrondeau.me/notes/why-i-love-mondays/): It’s Monday, 7:30am. Rain flows down my face. I race my bike to University. 6 students already wait outside the door wh…
+- [Sell Me.](https://alexisrondeau.me/notes/sell-me/): It blows my mind.
+- [The Morning After](https://alexisrondeau.me/notes/the-morning-after/): ![](Attachments/photo-1-300x225.jpg)
+- [My Goals For May 2014 (Berlin Edition)](https://alexisrondeau.me/notes/my-goals-for-may-2014-berlin-edition/): Hi there!
+- [Busy Wednesday](https://alexisrondeau.me/notes/busy-wednesday/): And we’re back just after lunch with another episode of Alexis writing 750 words daily! Lily and I just had veggie chil…
+- [Loving CompStak](https://alexisrondeau.me/notes/loving-compstak/): Okay, here we go again with writing in the middle of the afternoon although I really didn’t want to do it this time. Ac…
+- [How To Shoot Video At Home](https://alexisrondeau.me/notes/how-to-shoot-video-at-home/): Introduction
+- [Wings of Desire](https://alexisrondeau.me/notes/wings-of-desire/): I was 20 years old, the year was 1999 and I had just moved to New York City.
+- [Gablonzer Strasse 23](https://alexisrondeau.me/notes/gablonzer-strasse-23/): I remember the dollops of smoking tobacco placed on the stumps of the trees that until this morning had surrounded the…
+- [How I Manage My Time With TimeStacks](https://alexisrondeau.me/notes/how-i-manage-my-time-with-timestacks/): Check out TimeStacks at http://timestacks.co/!
+- [New York Winter Morning](https://alexisrondeau.me/notes/new-york-winter-morning/): She woke up that morning with a slight buzz from a long weekend and with a smile on her face. He was right there, next…
+- [How To Fall In Love With Yourself](https://alexisrondeau.me/notes/how-to-fall-in-love-with-yourself/): Tuesday, 9:10 a.m. December 17, 2013 New York City
 - [2 Years At General Assembly](https://alexisrondeau.me/notes/2-years-at-general-assembly/): Last Friday was the bitter-sweet going-away parting party for the co-working community at General Assembly in New York.…
 - [3 Things That Have Improved My Life (and Can Do the Same For You)](https://alexisrondeau.me/notes/3-things-that-have-improved-my-life-and-can-do-the-same-for-you/): Alexis Rondeau 95 Spring Street, New York Monday, 8:37 a.m.
 - [How To Breathe Long and Deep](https://alexisrondeau.me/notes/how-to-breathe-long-and-deep/): It’s simple.
@@ -61,4 +76,6 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 - [October 2022](https://alexisrondeau.me/feed/archive/2022/10/): 1 posts
 - [July 2022](https://alexisrondeau.me/feed/archive/2022/07/): 3 posts
 - [April 2022](https://alexisrondeau.me/feed/archive/2022/04/): 2 posts
-- [March 2014](https://alexisrondeau.me/feed/archive/2014/03/): 3 posts
+- [May 2014](https://alexisrondeau.me/feed/archive/2014/05/): 7 posts
+- [April 2014](https://alexisrondeau.me/feed/archive/2014/04/): 2 posts
+- [March 2014](https://alexisrondeau.me/feed/archive/2014/03/): 9 posts
