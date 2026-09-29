@@ -50,9 +50,10 @@ h2.note-title a:hover{border-bottom-color:var(--accent);}
 .more a:hover{border-bottom-color:var(--accent);}
 .tags{margin-top:12px;font-size:13px;} .tags a{margin-right:10px;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule);}
 .tags a:hover{color:var(--accent);border-bottom-color:var(--accent);}
-aside.months-nav ul.tags-nav{display:flex;flex-wrap:wrap;gap:2px 12px;margin:0 0 18px;}
+aside.months-nav .group + .group{margin-top:32px;}
+aside.months-nav ul.tags-nav{display:flex;flex-wrap:wrap;gap:2px 12px;}
 aside.months-nav ul.tags-nav li{white-space:nowrap;}
-@media(min-width:1180px){ aside.months-nav ul.tags-nav{display:block;} aside.months-nav h3 + h3{margin-top:4px;} }
+@media(min-width:1180px){ aside.months-nav ul.tags-nav{display:block;} }
 .text a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--rule);}
 .text a:hover{border-bottom-color:var(--accent);}
 a.mention{font:500 0.8em/1 var(--mono);background:rgba(0,0,0,.06);padding:2px 4px;border-radius:3px;
