@@ -6,7 +6,7 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 
 ## Feed
 
-- [Feed](https://alexisrondeau.me/feed/): 679 posts, newest first, 25 per page
+- [Feed](https://alexisrondeau.me/feed/): 682 posts, newest first, 25 per page
 - [Archive](https://alexisrondeau.me/feed/archive/): the same posts by month
 - [Atom feed](https://alexisrondeau.me/feed/feed.xml): the latest 50 posts
 - [Data](https://alexisrondeau.me/feed/items.json): every item as JSON (source, id, date, text, media, links, permalink)
@@ -24,6 +24,9 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 - [Notes on Clojure Development](https://alexisrondeau.me/notes/notes-on-clojure-development/): Clojure Koans
 - [Whales, Dolphins, Sharks and Sardines](https://alexisrondeau.me/notes/whales-dolphins-sharks-and-sardines/): Getting rich quick people on Algorand are super annoying
 - [Super-Heroes, Super-Villains and an Ancient Code in Obsidian](https://alexisrondeau.me/notes/super-heroes-super-villains-and-an-ancient-code-in-obsidian/): Hello and welcome!
+- [Ballet App](https://alexisrondeau.me/notes/ballet-app/): Make your best-informed decision before interacting on the Algorand Blockchain. Use qualitative analysis to get a sense…
+- [Design Gradient by Certainty Principle](https://alexisrondeau.me/notes/design-gradient-by-certainty-principle/): Von Tobi (Wie hieß das nochmal genau?)
+- [JamGPT Story – Making release notes more delightful with “The Learning Curve”, a fictional TV show about Pogo the AI](https://alexisrondeau.me/notes/jamgpt-story-making-release-notes-more-delightful-with-the-learning-curve-a-fict/): Write a synopsis as if this was an episode of a beloved and wholesome family tv show called “The Learning Curve”. The s…
 - [⭐️ How To Double My Rate Of Failure](https://alexisrondeau.me/notes/how-to-double-my-rate-of-failure/): My "One Kicks"
 - [⭐️ Pageturner Hack for Kindle – Experiment (W21 Mini-Project)](https://alexisrondeau.me/notes/pageturner-hack-for-kindle-experiment-w21-mini-project/): TLDR; After getting frustrated, angry even, with how awkward and unreliable the "touch-screen-to-flipt-to-next-page" on…
 - [⭐️ My Light-Therapy Lamp Solution with Kindle](https://alexisrondeau.me/notes/my-light-therapy-lamp-solution-with-kindle/): A follow up on ⭐️ Happier Through Bright Light (Experiment)
@@ -69,7 +72,7 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 - [July 2025](https://alexisrondeau.me/feed/archive/2025/07/): 23 posts
 - [June 2025](https://alexisrondeau.me/feed/archive/2025/06/): 3 posts
 - [May 2025](https://alexisrondeau.me/feed/archive/2025/05/): 18 posts
-- [April 2025](https://alexisrondeau.me/feed/archive/2025/04/): 34 posts
+- [April 2025](https://alexisrondeau.me/feed/archive/2025/04/): 37 posts
 - [March 2025](https://alexisrondeau.me/feed/archive/2025/03/): 22 posts
 - [February 2025](https://alexisrondeau.me/feed/archive/2025/02/): 11 posts
 - [December 2024](https://alexisrondeau.me/feed/archive/2024/12/): 3 posts
