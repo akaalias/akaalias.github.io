@@ -25,6 +25,14 @@
 .links .d{display:block;color:var(--muted);font-size:16px;line-height:1.45;margin-top:3px;}
 .links .m{display:block;color:var(--faint);font-size:13px;margin-top:6px;font-style:italic;}
 .links .m a{font-size:inherit;color:var(--faint);border-bottom:1px solid var(--rule);}
+/* the Home note rendered as the hero: its h1 is the page title, first paragraph the lede */
+.home h1{font-weight:400;font-size:42px;line-height:1.12;letter-spacing:-.01em;margin:0 0 14px;}
+.home h2{font-weight:400;font-size:24px;margin:24px 0 6px;}
+.home > p:first-of-type{font-size:22px;line-height:1.5;color:#33312b;font-style:italic;margin:0 0 12px;}
+.home p{font-size:17px;line-height:1.5;color:var(--muted);margin:0 0 12px;}
+.home a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--rule);}
+.home img{max-width:100%;height:auto;display:block;margin:12px 0;}
+#featured h2{margin:0 0 6px;}
 /* pinned group: one label, an accent rule down the side, hairlines between, then a normal gap */
 .pin-label{font:600 11px/1.4 var(--serif);font-feature-settings:"smcp" 1;text-transform:uppercase;
            letter-spacing:.08em;color:var(--accent);margin:6px 0 4px;}
@@ -38,11 +46,16 @@
 <body>
 <header class="hero">
 <div class="eyebrow">Alexis Rondeau</div>
-<h1>Featured dispatches</h1>
+<div class="home">
+<h1>Oh, hi there!</h1>
+<p>Alexis here — welcome, and thank you for stopping by! Below you’ll find some stuff I’m really proud of and want to share with you. Have a look around, see what tickles your fancy and follow it. Would love to hear what you think. Let me know!</p>
+<p>Principal Product Engineer at FELS Family Office GmbH · experimenter at heart · second-order cybernetic stewart · based between Berlin, New York &amp; Marseille.</p>
+</div>
 <div class="nav"><a href="/">Home</a><a href="/feed/">Newsfeed</a><a href="/feed/archive/">Archive</a><a href="https://x.com/SpringStreetNYC">Twitter</a><a href="https://github.com/akaalias">GitHub</a><a href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a></div>
 </header>
 <div class="wrap">
 <section id="featured">
+<h2>Featured dispatches</h2>
 <div class="pin-label">Pinned</div>
 <ul class="links pinned">
 <li>
@@ -359,7 +372,11 @@
 <li><a href="/feed/archive/2014/03/">March</a> <span class="n">9</span></li>
 </ul>
 </aside>
-<footer>Everything, in order: <a href="/feed/">the newsfeed</a>.</footer>
+<footer class="site">
+<p>© 2014–2026 Alexis Rondeau. All rights reserved.</p>
+<p>This is my personal site. Everything here — dispatches, notes, opinions — is my own and does not represent any employer, client or organisation I'm affiliated with.</p>
+<p><a href="/">Home</a> · <a href="/feed/">Newsfeed</a> · <a href="/feed/archive/">Archive</a> · <a href="/feed/feed.xml">Atom</a> · <a href="https://x.com/SpringStreetNYC">Twitter</a> · <a href="https://github.com/akaalias">GitHub</a> · <a href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a> · Published with <a href="https://github.com/akaalias/dispatches">Dispatches</a>.</p>
+</footer>
 </div>
 <script>
 /* open every off-site link in a new tab */
