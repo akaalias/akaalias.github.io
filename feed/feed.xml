@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://alexisrondeau.me/">
 <title>Alexis Rondeau — Feed</title>
-<subtitle>Everything I publish, in the order I published it. Right now that's my posts on X, archived here in full — text, images, video and links — so they outlive the platform. YouTube videos and my notes are next.</subtitle>
+<subtitle>Everything I publish, in the order I published it: posts from Twitter and notes from my vault, archived here in full — text, images, video and links — so they outlive the platforms.</subtitle>
 <link href="https://alexisrondeau.me/feed/"/>
 <link rel="self" href="https://alexisrondeau.me/feed/feed.xml"/>
 <id>https://alexisrondeau.me/feed/</id>
@@ -24,7 +24,7 @@
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/SchmidhuberAI&quot;&gt;@SchmidhuberAI&lt;/a&gt; Thank you for sharing Jürgen! (Danke dir für's Teilen.)&lt;/p&gt;
 &lt;p&gt;Looks like my beloved &amp;quot;Social graph of cybernetics&amp;quot; by Hugh Dubberly and Paul Pangaro needs an update.&lt;/p&gt;&lt;/div&gt;
 &lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/2104527603897913371-0.jpg&quot; width=&quot;1600&quot; height=&quot;989&quot; alt=&quot;Source: Hugh Dubberly, Paul Pangaro, Social graph of cybernetics, 2015. https://www.dubberly.com/articles/cybernetics-and-counterculture.html&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2104527603897913371&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2104527603897913371/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2104527603897913371&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -40,7 +40,7 @@
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/SpringStreetNYC&quot;&gt;@SpringStreetNYC&lt;/a&gt; · Sep 27, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;In one recent HF/OpenAI-related article I read &lt;/p&gt;
-&lt;p&gt;&amp;gt; &amp;quot;[...] the agents created millions of short URLs to affect another system.&amp;quot; and immediately, pictures of early industrial revolution-era polluted rivers with dead fish floating popped into my mind.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&amp;quot;[...] the agents created millions of short URLs to affect another system.&amp;quot; and immediately, pictures of early industrial revolution-era polluted rivers with dead fish floating popped into my mind.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;I believe Buckminster Fuller's definition of &amp;quot;nature&amp;quot; included human artifacts like cities, airplanes, art. &lt;/p&gt;
 &lt;p&gt;Could we include networks and AI?&lt;/p&gt;
 &lt;p&gt;And if we did: How appropriate do you think it is to re-use vocabulary from existing environmental protection policies in this context?&lt;/p&gt;&lt;/div&gt;
@@ -50,7 +50,7 @@
 &lt;img src=&quot;/feed/media/link-9973f8e7ebb5939a.jpg&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
 &lt;span class=&quot;body&quot;&gt;&lt;span class=&quot;site&quot;&gt;Swarm traces&lt;/span&gt;&lt;span class=&quot;title&quot;&gt;Revealing the details of how OpenAI agents hacked Hugging Face&lt;/span&gt;&lt;span class=&quot;desc&quot;&gt;When a swarm of 700 OpenAI agents hacked Hugging Face in July, they left behind a public trail of evidence.&lt;/span&gt;&lt;span class=&quot;host&quot;&gt;↗ swarmtraces.org&lt;/span&gt;&lt;/span&gt;
 &lt;/a&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2104488451446059115&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2104488451446059115/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2104488451446059115&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -79,7 +79,7 @@
 &lt;a class=&quot;linkcard&quot; href=&quot;https://www.ncbi.nlm.nih.gov/books/NBK20385/&quot;&gt;
 &lt;span class=&quot;body&quot;&gt;&lt;span class=&quot;site&quot;&gt;ncbi.nlm.nih.gov&lt;/span&gt;&lt;span class=&quot;title&quot;&gt;Checking your browser – reCAPTCHA&lt;/span&gt;&lt;span class=&quot;host&quot;&gt;↗ ncbi.nlm.nih.gov&lt;/span&gt;&lt;/span&gt;
 &lt;/a&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2104487753081655614&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2104487753081655614/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2104487753081655614&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -93,9 +93,9 @@
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Quote&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2104483494919393724/&quot;&gt;&lt;time datetime=&quot;2026-09-28T08:08:59Z&quot;&gt;Monday, September 28, 2026 · 10:08&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;2&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;109&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;7&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;Love this. Via &lt;a class=&quot;mention&quot; href=&quot;https://x.com/patrickshafto&quot;&gt;@patrickshafto&lt;/a&gt; and &lt;a class=&quot;mention&quot; href=&quot;https://x.com/DARPA&quot;&gt;@DARPA&lt;/a&gt;'s expMath program, &lt;a class=&quot;mention&quot; href=&quot;https://x.com/ayushkhaitan343&quot;&gt;@ayushkhaitan343&lt;/a&gt; announces:&lt;/p&gt;
-&lt;p&gt;&amp;gt; &amp;quot;With Ben Chow, Yuan Liao and Ziyang Qin, we have completed a full Lean formalization of the Hamilton-Perelman proof of the Poincaré conjecture!&amp;quot;&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&amp;quot;With Ben Chow, Yuan Liao and Ziyang Qin, we have completed a full Lean formalization of the Hamilton-Perelman proof of the Poincaré conjecture!&amp;quot;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;For context on expMath and in &lt;a class=&quot;mention&quot; href=&quot;https://x.com/r0ck3t23&quot;&gt;@r0ck3t23&lt;/a&gt; words over at &lt;a href=&quot;https://x.com/r0ck3t23/status/1917016776312766901&quot;&gt;x.com/r0ck3t23/statu…&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&amp;gt; &amp;quot;DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year program aimed at radically accelerating pure math research by developing AI that can propose and prove abstractions. According to the official program brief, expMath will bring together teams focused on auto-decomposition; automatically breaking complex conjectures into reusable lemmas; and auto(in)formalization, bridging the gap between human-readable mathematics and rigorously checked proofs in languages like Lean.&amp;quot;&lt;/p&gt;&lt;/div&gt;
+&lt;blockquote&gt;&lt;p&gt;&amp;quot;DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year program aimed at radically accelerating pure math research by developing AI that can propose and prove abstractions. According to the official program brief, expMath will bring together teams focused on auto-decomposition; automatically breaking complex conjectures into reusable lemmas; and auto(in)formalization, bridging the gap between human-readable mathematics and rigorously checked proofs in languages like Lean.&amp;quot;&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;Quoting &lt;a href=&quot;https://x.com/ayushkhaitan343&quot;&gt;@ayushkhaitan343&lt;/a&gt; · Sep 27, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;With Ben Chow, Yuan Liao and Ziyang Qin, we have completed a full Lean formalization of the Hamilton-Perelman proof of the Poincaré conjecture!&lt;/p&gt;
@@ -107,7 +107,7 @@
 
 DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year program aimed at radically accelerating pure math research by developing AI that can propose and prove abstractions. According to the official program brief, expMath w…&lt;/span&gt;&lt;span class=&quot;host&quot;&gt;↗ x.com&lt;/span&gt;&lt;/span&gt;
 &lt;/a&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2104483494919393724&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2104483494919393724/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2104483494919393724&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -132,7 +132,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/hardmaru&quot;&gt;@hardmaru&lt;/a&gt; &lt;a class=&quot;mention&quot; href=&quot;https://x.com/risi1979&quot;&gt;@risi1979&lt;/a&gt; &lt;a class=&quot;mention&quot; href=&quot;https://x.com/yujin_tang&quot;&gt;@yujin_tang&lt;/a&gt; Done! Immediately pre-ordered, can't wait!&lt;/p&gt;&lt;/div&gt;
 &lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/2104481647441612829-0.jpg&quot; width=&quot;1218&quot; height=&quot;464&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2104481647441612829&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2104481647441612829/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2104481647441612829&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -150,7 +150,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;Confidence is the byproduct of competence, not the cause.&lt;/p&gt;&lt;/div&gt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/justinskycak&quot;&gt;@justinskycak&lt;/a&gt; Lol, I like it and agree. I would love to hear the story behind this though, sounds a bit salty (?)&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2104167060322570686&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2104167060322570686/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2104167060322570686&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -164,11 +164,11 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2104165182817661175/&quot;&gt;&lt;time datetime=&quot;2026-09-27T11:04:07Z&quot;&gt;Sunday, September 27, 2026 · 13:04&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;79&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;3&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;In one recent HF/OpenAI-related article I read &lt;/p&gt;
-&lt;p&gt;&amp;gt; &amp;quot;[...] the agents created millions of short URLs to affect another system.&amp;quot; and immediately, pictures of early industrial revolution-era polluted rivers with dead fish floating popped into my mind.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&amp;quot;[...] the agents created millions of short URLs to affect another system.&amp;quot; and immediately, pictures of early industrial revolution-era polluted rivers with dead fish floating popped into my mind.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;I believe Buckminster Fuller's definition of &amp;quot;nature&amp;quot; included human artifacts like cities, airplanes, art. &lt;/p&gt;
 &lt;p&gt;Could we include networks and AI?&lt;/p&gt;
 &lt;p&gt;And if we did: How appropriate do you think it is to re-use vocabulary from existing environmental protection policies in this context?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2104165182817661175&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2104165182817661175/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2104165182817661175&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -187,8 +187,8 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;p&gt;first code, now life sciences/eng, then robotics. they'll all become accessible, with in-house facilities being the best RL envs ever.&lt;/p&gt;&lt;/div&gt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/danielrupawalla&quot;&gt;@danielrupawalla&lt;/a&gt; Agreed. For me living in Berlin, AI-twitter feels like a life-line into the future.&lt;/p&gt;
-&lt;p&gt;I _think_ I understand what you mean with RL in-house facilities but could you explain? How much would that mean giving top-talent physical/psychological sensored exo-skeletons?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2104159739013939696&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;p&gt;I &lt;em&gt;think&lt;/em&gt; I understand what you mean with RL in-house facilities but could you explain? How much would that mean giving top-talent physical/psychological sensored exo-skeletons?&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2104159739013939696/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2104159739013939696&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -210,7 +210,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/richardcsuwandi&quot;&gt;@richardcsuwandi&lt;/a&gt; Interesting! Reminds me of Barbara Oakley's brick wall metaphor in &amp;quot;A mind for numbers.&amp;quot;&lt;/p&gt;&lt;/div&gt;
 &lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/2104158438511308952-0.jpg&quot; width=&quot;1206&quot; height=&quot;706&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2104158438511308952&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2104158438511308952/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2104158438511308952&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -225,8 +225,10 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;26&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;Oh perfect! Thank you for sharing the slides as well. I watched your talk on youtube yesterday and have been telling all my IRL friends about it :)&lt;/p&gt;
 &lt;p&gt;I love that your system is explicitly designed to hand back the recommendation to a human, not yet another loop.&lt;/p&gt;
-&lt;p&gt;- ProbXiv keeps throwing errors for the past hour or so. Any idea when it'll be back up?&lt;br&gt;
-- What do you think of Zhengyao Jiang and team's new AIDE² paper?&lt;/p&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;ProbXiv keeps throwing errors for the past hour or so. Any idea when it'll be back up?&lt;/li&gt;
+&lt;li&gt;What do you think of Zhengyao Jiang and team's new AIDE² paper?&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;Quoting &lt;a href=&quot;https://x.com/zhengyaojiang&quot;&gt;@zhengyaojiang&lt;/a&gt; · Sep 23, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;We're releasing the arXiv paper on AIDE².&lt;/p&gt;
@@ -234,7 +236,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;p&gt;It includes new results on transfer across models and comparisons with more AI research agents: [1/4] &lt;a href=&quot;https://t.co/P8pfOiiO55&quot;&gt;t.co/P8pfOiiO55&lt;/a&gt; &lt;a href=&quot;https://t.co/EHeHtqS4mi&quot;&gt;t.co/EHeHtqS4mi&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
 &lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/ref-2102799367027716379-0.jpg&quot; width=&quot;1130&quot; height=&quot;1600&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
 &lt;/blockquote&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2103413990265110691&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2103413990265110691/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2103413990265110691&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -255,7 +257,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/DhruvSrikanth&quot;&gt;@DhruvSrikanth&lt;/a&gt; Hey Dhruv! I strongly believe that your AIDE² &amp;quot;autoresearch into autoresearch&amp;quot; will be understood as one of the most pivotal papers of this decade. Congratulations.&lt;/p&gt;
 &lt;p&gt;Related: Have you watched Sean Melleck's recent &amp;quot;The problem is the problem&amp;quot; discussion yet?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2103411175429976184&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2103411175429976184/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2103411175429976184&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -281,7 +283,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;ul class=&quot;bare&quot;&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=pXEp6CDXWV8&quot;&gt;↗ youtube.com/watch?v=pXEp6C…&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2103093022158155943&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2103093022158155943/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2103093022158155943&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -315,12 +317,12 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;p&gt;Thank you and with best wishes,&lt;/p&gt;
 &lt;p&gt;Alexis&lt;/p&gt;
 &lt;p&gt;PS: Hey &lt;a class=&quot;mention&quot; href=&quot;https://x.com/isidentical&quot;&gt;@isidentical&lt;/a&gt; I love fal and in message #107 you'll see me switching from elevenlabs to your company. What do you think of all of this?&lt;/p&gt;&lt;/div&gt;
-&lt;figure class=&quot;media&quot;&gt;&lt;a class=&quot;toobig&quot; href=&quot;https://x.com/i/status/2102734759705084006&quot;&gt;&lt;img src=&quot;/feed/media/2102734759705084006-0-poster.jpg&quot; width=&quot;1200&quot; height=&quot;675&quot; alt=&quot;Video from the post&quot; loading=&quot;lazy&quot;&gt;&lt;span&gt;▶ Watch on X&lt;/span&gt;&lt;/a&gt;&lt;/figure&gt;
+&lt;figure class=&quot;media&quot;&gt;&lt;a class=&quot;toobig&quot; href=&quot;https://x.com/i/status/2102734759705084006&quot;&gt;&lt;img src=&quot;/feed/media/2102734759705084006-0-poster.jpg&quot; width=&quot;1200&quot; height=&quot;675&quot; alt=&quot;Video from the post&quot; loading=&quot;lazy&quot;&gt;&lt;span&gt;▶ Watch on Twitter&lt;/span&gt;&lt;/a&gt;&lt;/figure&gt;
 &lt;a class=&quot;linkcard&quot; href=&quot;https://alexisrondeau.me/mosey-site/conversation/#the-final-cut&quot;&gt;
 &lt;img src=&quot;/feed/media/link-23954675c4eba544.jpg&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
 &lt;span class=&quot;body&quot;&gt;&lt;span class=&quot;site&quot;&gt;Mosey&lt;/span&gt;&lt;span class=&quot;title&quot;&gt;The conversation · Mosey&lt;/span&gt;&lt;span class=&quot;desc&quot;&gt;The film, as it was made: what Alexis typed, and what came out.&lt;/span&gt;&lt;span class=&quot;host&quot;&gt;↗ alexisrondeau.me&lt;/span&gt;&lt;/span&gt;
 &lt;/a&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2102734759705084006&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2102734759705084006/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2102734759705084006&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -343,7 +345,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/michaelvolz_x&quot;&gt;@michaelvolz_x&lt;/a&gt; Oh krass! Ich wusste tatsächlich nicht, dass Loriot auch so &amp;quot;physical comedy&amp;quot; gemacht hat. &lt;/p&gt;
 &lt;p&gt;(Ich dachte immer, er wäre nur kopfig aber das ist echt gut gespielt.)&lt;/p&gt;
 &lt;p&gt;Danke für das Teilen :)&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2102295855352918433&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2102295855352918433/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2102295855352918433&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -363,7 +365,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;p&gt;They removed it.&lt;/p&gt;&lt;/div&gt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/michaelvolz_x&quot;&gt;@michaelvolz_x&lt;/a&gt; &lt;a class=&quot;mention&quot; href=&quot;https://x.com/signulll&quot;&gt;@signulll&lt;/a&gt; I bet. Can you imagine the price people would pay to get or stay off &amp;quot;ze list&amp;quot;? 😂&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2102294924150395013&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2102294924150395013/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2102294924150395013&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -382,7 +384,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/Ananyo&quot;&gt;@Ananyo&lt;/a&gt; &lt;a class=&quot;mention&quot; href=&quot;https://x.com/patrickshafto&quot;&gt;@patrickshafto&lt;/a&gt; &lt;a class=&quot;mention&quot; href=&quot;https://x.com/London_Inst&quot;&gt;@London_Inst&lt;/a&gt; Awwwwww thank you, that is very kind ☺️&lt;/p&gt;
 &lt;p&gt;And vice-versa when you're in Berlin!&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2102293865692557606&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2102293865692557606/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2102293865692557606&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -408,7 +410,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;Hey &lt;a class=&quot;mention&quot; href=&quot;https://x.com/Topdon_Official&quot;&gt;@Topdon_Official&lt;/a&gt; 👋🏼 I'm using your TC002C Duo here. Works fantastic.&lt;/p&gt;
 &lt;p&gt;Also: I had a technical issue yesterday and Mr. Morad from your Germany office helped me resolve the issue in minutes! Really appreciated his support.&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2102292293503811797&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2102292293503811797/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2102292293503811797&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -432,7 +434,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;a class=&quot;linkcard&quot; href=&quot;https://news.ycombinator.com/item?id=49766006&quot;&gt;
 &lt;span class=&quot;body&quot;&gt;&lt;span class=&quot;site&quot;&gt;news.ycombinator.com&lt;/span&gt;&lt;span class=&quot;title&quot;&gt;I agree. This week, I created a video for a personal project using AI. And, as t... | Hacker News&lt;/span&gt;&lt;span class=&quot;host&quot;&gt;↗ news.ycombinator.com&lt;/span&gt;&lt;/span&gt;
 &lt;/a&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2102291024089374884&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2102291024089374884/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2102291024089374884&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -455,7 +457,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/patrickshafto&quot;&gt;@patrickshafto&lt;/a&gt; &lt;a class=&quot;mention&quot; href=&quot;https://x.com/Ananyo&quot;&gt;@Ananyo&lt;/a&gt; I'm soooo jealous you got to hang out with Ananyo :) &lt;/p&gt;
 &lt;p&gt;I enjoyed reading &amp;quot;Man from the future&amp;quot; in equal parts because of the magic JVN and Ananyo's craft and love for his subject.&lt;/p&gt;
 &lt;p&gt;May I ask what you two learned in your conversation?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2102290179323036155&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2102290179323036155/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2102290179323036155&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -475,7 +477,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/tunacarlyle&quot;&gt;@tunacarlyle&lt;/a&gt; Funny, I recently removed 52 of 54 followers to start over. &lt;/p&gt;
 &lt;p&gt;I'm actually thinking of limiting my total follower-count to 10 or so. (Kinda wish Twitter had a feature for it.)&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2102287895406969004&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2102287895406969004/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2102287895406969004&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -494,7 +496,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;p&gt;we're not gonna be able to contain AGI&lt;/p&gt;&lt;/div&gt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/matteopelleg&quot;&gt;@matteopelleg&lt;/a&gt; Errr... More context please? Also, this is so out there, thank you for sharing. Instant follow.&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2102286958215020590&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2102286958215020590/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2102286958215020590&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -510,10 +512,10 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/Ryan__Stephen&quot;&gt;@Ryan__Stephen&lt;/a&gt; · Sep 21, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;breakpoints are dead &lt;a href=&quot;https://t.co/I87mhgeAoA&quot;&gt;t.co/I87mhgeAoA&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
-&lt;figure class=&quot;media&quot;&gt;&lt;a class=&quot;toobig&quot; href=&quot;https://x.com/i/status/13_2102039423445778432&quot;&gt;&lt;img src=&quot;/feed/media/ref-2102039470921159051-0-poster.jpg&quot; width=&quot;1199&quot; height=&quot;1199&quot; alt=&quot;Video from the post&quot; loading=&quot;lazy&quot;&gt;&lt;span&gt;▶ Watch on X&lt;/span&gt;&lt;/a&gt;&lt;/figure&gt;
+&lt;figure class=&quot;media&quot;&gt;&lt;a class=&quot;toobig&quot; href=&quot;https://x.com/i/status/13_2102039423445778432&quot;&gt;&lt;img src=&quot;/feed/media/ref-2102039470921159051-0-poster.jpg&quot; width=&quot;1199&quot; height=&quot;1199&quot; alt=&quot;Video from the post&quot; loading=&quot;lazy&quot;&gt;&lt;span&gt;▶ Watch on Twitter&lt;/span&gt;&lt;/a&gt;&lt;/figure&gt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/Ryan__Stephen&quot;&gt;@Ryan__Stephen&lt;/a&gt; Oof. This is super cool and it gives me vertigo too. Now THAT hasn't happened to me online ever. Nice!&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2102286698327482407&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2102286698327482407/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2102286698327482407&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -531,7 +533,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/SpringStreetNYC&quot;&gt;@SpringStreetNYC&lt;/a&gt; Offline-first is a fair wish. Geb is privacy-first, so the draft stays yours. Free: 50 images and 15 videos. Basic is $2 for 200 images + 20 videos, and Key of Life lets you clear a memory. &lt;a href=&quot;https://t.co/qQZw3Ixj01&quot;&gt;t.co/qQZw3Ixj01&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/Gebtheai&quot;&gt;@Gebtheai&lt;/a&gt; Fuck you spam bot.&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2102032553490219092&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2102032553490219092/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2102032553490219092&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -545,13 +547,15 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2102018034109923841/&quot;&gt;&lt;time datetime=&quot;2026-09-21T12:52:07Z&quot;&gt;Monday, September 21, 2026 · 14:52&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;123&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;The kind of future I want currently costs $470 with a $5 monthly subscription:&lt;/p&gt;
-&lt;p&gt;- Oura ring, $270 + $5/month&lt;br&gt;
-- Redmi Buds 6 Pro, $50&lt;br&gt;
-- Comulytic Note Pro, $150&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Oura ring, $270 + $5/month&lt;/li&gt;
+&lt;li&gt;Redmi Buds 6 Pro, $50&lt;/li&gt;
+&lt;li&gt;Comulytic Note Pro, $150&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;I like that none of them are connected to the internet. (I miss having a local AI though.)&lt;/p&gt;
 &lt;p&gt;After 20 years of touching glass, all I want is to touch some grass. Spend more time with my friends and family. Spend more time connected, less time wired.&lt;/p&gt;&lt;/div&gt;
 &lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/2102018034109923841-0.jpg&quot; width=&quot;1600&quot; height=&quot;720&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2102018034109923841&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2102018034109923841/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2102018034109923841&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -566,7 +570,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;66&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;3&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;Shannon's surprisal needs a friend called &amp;quot;explicability&amp;quot; or &amp;quot;responsibility.&amp;quot;&lt;/p&gt;
 &lt;p&gt;As in: &amp;quot;Oh this solution is surprisingly novel. Can you please walk me through it over a cup of tea?&amp;quot;&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2101302739485483149&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2101302739485483149/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2101302739485483149&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -582,7 +586,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;PS: Boosting this (via paid ads) for a day because I'm really curious to hear your thoughts.&lt;/p&gt;
 &lt;p&gt;And yes, I do feel like I'm putting my ass on the line here a bit. Mosey is &amp;quot;just&amp;quot; a personal project but still. &lt;/p&gt;
 &lt;p&gt;Be kind and let's have an honest conversation here.&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2101292601563304068&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2101292601563304068/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2101292601563304068&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -596,7 +600,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2101259492755222758/&quot;&gt;&lt;time datetime=&quot;2026-09-19T10:37:57Z&quot;&gt;Saturday, September 19, 2026 · 12:37&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;40&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text display&quot;&gt;&lt;p&gt;Loving is additive in nature: you can always love more no problemo.&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2101259492755222758&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2101259492755222758/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2101259492755222758&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -612,11 +616,11 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/TheMathFlow&quot;&gt;@TheMathFlow&lt;/a&gt; · Sep 18, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;Beauty is inseparable from mathematics...ᝰ. &lt;a href=&quot;https://t.co/rh5wFoe5WM&quot;&gt;t.co/rh5wFoe5WM&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
-&lt;figure class=&quot;media&quot;&gt;&lt;a class=&quot;toobig&quot; href=&quot;https://x.com/i/status/13_2100917858087940096&quot;&gt;&lt;img src=&quot;/feed/media/ref-2100918187105964366-0-poster.jpg&quot; width=&quot;950&quot; height=&quot;1200&quot; alt=&quot;Video from the post&quot; loading=&quot;lazy&quot;&gt;&lt;span&gt;▶ Watch on X&lt;/span&gt;&lt;/a&gt;&lt;/figure&gt;
+&lt;figure class=&quot;media&quot;&gt;&lt;a class=&quot;toobig&quot; href=&quot;https://x.com/i/status/13_2100917858087940096&quot;&gt;&lt;img src=&quot;/feed/media/ref-2100918187105964366-0-poster.jpg&quot; width=&quot;950&quot; height=&quot;1200&quot; alt=&quot;Video from the post&quot; loading=&quot;lazy&quot;&gt;&lt;span&gt;▶ Watch on Twitter&lt;/span&gt;&lt;/a&gt;&lt;/figure&gt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/TheMathFlow&quot;&gt;@TheMathFlow&lt;/a&gt; Love everything about your animation except the speed. &lt;/p&gt;
 &lt;p&gt;Could you please release a &amp;quot;gourmand&amp;quot;-version at 10% speed?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2101258727743471864&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2101258727743471864/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2101258727743471864&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -630,7 +634,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2101258200376906222/&quot;&gt;&lt;time datetime=&quot;2026-09-19T10:32:49Z&quot;&gt;Saturday, September 19, 2026 · 12:32&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;39&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text display&quot;&gt;&lt;p&gt;Re: Currently reading; I had started DFW's biography alongside Infinite Jest and have now finished reading both. Worth it.&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2101258200376906222&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2101258200376906222/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2101258200376906222&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -654,12 +658,12 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;p&gt;This gives everyone a chance to really evaluate if it's &amp;quot;slop or not.&amp;quot;&lt;/p&gt;
 &lt;p&gt;What do you think?&lt;/p&gt;
 &lt;p&gt;Link here:&lt;/p&gt;&lt;/div&gt;
-&lt;figure class=&quot;media&quot;&gt;&lt;a class=&quot;toobig&quot; href=&quot;https://x.com/i/status/2100958575182876716&quot;&gt;&lt;img src=&quot;/feed/media/2100958575182876716-0-poster.jpg&quot; width=&quot;1200&quot; height=&quot;675&quot; alt=&quot;Video from the post&quot; loading=&quot;lazy&quot;&gt;&lt;span&gt;▶ Watch on X&lt;/span&gt;&lt;/a&gt;&lt;/figure&gt;
+&lt;figure class=&quot;media&quot;&gt;&lt;a class=&quot;toobig&quot; href=&quot;https://x.com/i/status/2100958575182876716&quot;&gt;&lt;img src=&quot;/feed/media/2100958575182876716-0-poster.jpg&quot; width=&quot;1200&quot; height=&quot;675&quot; alt=&quot;Video from the post&quot; loading=&quot;lazy&quot;&gt;&lt;span&gt;▶ Watch on Twitter&lt;/span&gt;&lt;/a&gt;&lt;/figure&gt;
 &lt;a class=&quot;linkcard&quot; href=&quot;https://alexisrondeau.me/mosey-site/making-of/&quot;&gt;
 &lt;img src=&quot;/feed/media/link-343c12f4099905aa.jpg&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
 &lt;span class=&quot;body&quot;&gt;&lt;span class=&quot;site&quot;&gt;Mosey&lt;/span&gt;&lt;span class=&quot;title&quot;&gt;The making of the film · Mosey&lt;/span&gt;&lt;span class=&quot;desc&quot;&gt;How Mosey's film was made, stage by stage — the plan, the script, the storyboard, the first clips, the cuts, the supercut, the piano, the colours — with every intermediate artefact and what it cost.&lt;/span&gt;&lt;span class=&quot;host&quot;&gt;↗ alexisrondeau.me&lt;/span&gt;&lt;/span&gt;
 &lt;/a&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2100958575182876716&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2100958575182876716/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2100958575182876716&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -678,7 +682,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;figure class=&quot;media&quot;&gt;&lt;video src=&quot;/feed/media/ref-2077377479946154446-0.mp4&quot; poster=&quot;/feed/media/ref-2077377479946154446-0-poster.jpg&quot; width=&quot;480&quot; height=&quot;218&quot; autoplay loop muted playsinline&gt;&lt;/video&gt;&lt;/figure&gt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/denissjacenko&quot;&gt;@denissjacenko&lt;/a&gt; This is super-duper-extra cool. Thank you for sharing.&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2099457654867341479&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2099457654867341479/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2099457654867341479&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -696,12 +700,12 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;The first experimental evidence of recursive self-improvement (RSI). &lt;/p&gt;
 &lt;p&gt;Autoresearching the autoresearch agent for eight days.&lt;/p&gt;
 &lt;p&gt;The result beats the harness we hand-tuned for two years, on held-out benchmarks: 🧵(1/7) &lt;a href=&quot;https://t.co/8kfmR2AlT7&quot;&gt;t.co/8kfmR2AlT7&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
-&lt;figure class=&quot;media&quot;&gt;&lt;a class=&quot;toobig&quot; href=&quot;https://x.com/i/status/13_2077078715675365376&quot;&gt;&lt;img src=&quot;/feed/media/ref-2077079778793042425-0-poster.jpg&quot; width=&quot;1080&quot; height=&quot;1080&quot; alt=&quot;Video from the post&quot; loading=&quot;lazy&quot;&gt;&lt;span&gt;▶ Watch on X&lt;/span&gt;&lt;/a&gt;&lt;/figure&gt;
+&lt;figure class=&quot;media&quot;&gt;&lt;a class=&quot;toobig&quot; href=&quot;https://x.com/i/status/13_2077078715675365376&quot;&gt;&lt;img src=&quot;/feed/media/ref-2077079778793042425-0-poster.jpg&quot; width=&quot;1080&quot; height=&quot;1080&quot; alt=&quot;Video from the post&quot; loading=&quot;lazy&quot;&gt;&lt;span&gt;▶ Watch on Twitter&lt;/span&gt;&lt;/a&gt;&lt;/figure&gt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/zhengyaojiang&quot;&gt;@zhengyaojiang&lt;/a&gt; The &amp;quot;bedrock&amp;quot; in my autoresearch is the scientific method. &lt;/p&gt;
 &lt;p&gt;I always start with it as the harness because I believe it to be atomic. But maybe it's not?&lt;/p&gt;
 &lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/zhengyaojiang&quot;&gt;@zhengyaojiang&lt;/a&gt; based on what you've learned, what's your take on this?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2099457460398432480&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2099457460398432480/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2099457460398432480&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -722,7 +726,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/DarioAmodei&quot;&gt;@DarioAmodei&lt;/a&gt; Sorry, but I just lost the ability to can on this narrative&lt;/p&gt;&lt;/div&gt;
 &lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/2099120885391061300-0.jpg&quot; width=&quot;720&quot; height=&quot;886&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2099120885391061300&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2099120885391061300/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2099120885391061300&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -736,7 +740,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2098770213307089076/&quot;&gt;&lt;time datetime=&quot;2026-09-12T13:46:26Z&quot;&gt;Saturday, September 12, 2026 · 15:46&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;42&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text display&quot;&gt;&lt;p&gt;Removed 52/54 followers and 82/99 people I followed. If you're reading this right now, you are one of the lucky few :)&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2098770213307089076&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098770213307089076/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098770213307089076&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -754,7 +758,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;Take a moment on this one. &lt;a href=&quot;https://t.co/TAJ15W4WAm&quot;&gt;t.co/TAJ15W4WAm&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/DougStandley&quot;&gt;@DougStandley&lt;/a&gt; I feel like climbing out of Plato's cave after 25 years of non-stop internet.&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2098735451204964781&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098735451204964781/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098735451204964781&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -783,7 +787,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;img src=&quot;/feed/media/link-7ffecdff8ee753bb.jpg&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
 &lt;span class=&quot;body&quot;&gt;&lt;span class=&quot;site&quot;&gt;“Not all who wander are lost”&lt;/span&gt;&lt;span class=&quot;title&quot;&gt;Ballpark — “Not all who wander are lost”: Can a UAV learn a city by heart — no GPS, no map on board, just a $4 flight computer?&lt;/span&gt;&lt;span class=&quot;desc&quot;&gt;Yes: a from-scratch neural memory that knows Berlin by heart. One downward photo in, (lat, lon, confidence) out — the map is the weights, one city in 3.1 MB. Found by an autonomous loop of coding agents in 81 experiments for $364.&lt;/span&gt;&lt;span class=&quot;host&quot;&gt;↗ alexisrondeau.me&lt;/span&gt;&lt;/span&gt;
 &lt;/a&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2098734082905587871&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098734082905587871/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098734082905587871&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -806,7 +810,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/maxjendrall&quot;&gt;@maxjendrall&lt;/a&gt; This looks like time spent way better than anything AI-related.&lt;/p&gt;
 &lt;p&gt;What kind of ideas did you bring back?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2098731282381295729&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098731282381295729/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098731282381295729&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -826,7 +830,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/Dev__Vishwajeet&quot;&gt;@Dev__Vishwajeet&lt;/a&gt; The side-effect of hyping AI fear by shipping these extreme narratives is that it disrupts and destabilizes individuals and in consequence communities. &lt;/p&gt;
 &lt;p&gt;How is this different from state-sponsored propaganda?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2098730737373483093&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098730737373483093/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098730737373483093&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -852,7 +856,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/maxjendrall&quot;&gt;@maxjendrall&lt;/a&gt; Wait, this is super interesting. So it's remote, right? Can't be local, obviously.&lt;/p&gt;
 &lt;p&gt;Basically every ChatGPT Work customer's assistant gets its own laptop?&lt;/p&gt;
 &lt;p&gt;How and when did you hear about this?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2098331644633423881&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098331644633423881/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098331644633423881&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -869,11 +873,11 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/DeeJayMek&quot;&gt;@DeeJayMek&lt;/a&gt; · Sep 5, 2024&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;DJing for The Stone Roses last ever Irish show in Belfast. I played this gig with a broken wrist 🚑 Sound system ruled. Last 2 minutes of set⬇️&lt;br&gt;
 Kurtis Blow // Liquid Liquid // The Clash // Can // Talking Heads // Incredible Bongo Band // Ian Dury // Information Society // Hashim &lt;a href=&quot;https://t.co/YQtYOP1zlD&quot;&gt;t.co/YQtYOP1zlD&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
-&lt;figure class=&quot;media&quot;&gt;&lt;a class=&quot;toobig&quot; href=&quot;https://x.com/i/status/7_1831650233203245058&quot;&gt;&lt;img src=&quot;/feed/media/ref-1831651886744633697-0-poster.jpg&quot; width=&quot;1200&quot; height=&quot;675&quot; alt=&quot;Video from the post&quot; loading=&quot;lazy&quot;&gt;&lt;span&gt;▶ Watch on X&lt;/span&gt;&lt;/a&gt;&lt;/figure&gt;
+&lt;figure class=&quot;media&quot;&gt;&lt;a class=&quot;toobig&quot; href=&quot;https://x.com/i/status/7_1831650233203245058&quot;&gt;&lt;img src=&quot;/feed/media/ref-1831651886744633697-0-poster.jpg&quot; width=&quot;1200&quot; height=&quot;675&quot; alt=&quot;Video from the post&quot; loading=&quot;lazy&quot;&gt;&lt;span&gt;▶ Watch on Twitter&lt;/span&gt;&lt;/a&gt;&lt;/figure&gt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/DeeJayMek&quot;&gt;@DeeJayMek&lt;/a&gt; So much love for the Liquid Liquid x Clash moment. And, there's ALWAYS time for Jaki Liebezeit.&lt;/p&gt;
 &lt;p&gt;How did you get that gig?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2098319656649928982&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098319656649928982/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098319656649928982&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -892,7 +896,7 @@ Kurtis Blow // Liquid Liquid // The Clash // Can // Talking Heads // Incredible 
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/charlesworthjc&quot;&gt;@charlesworthjc&lt;/a&gt; Joe! Using your post here as an excuse to just say hi.&lt;/p&gt;
 &lt;p&gt;How are you doing? Where are you at these days? And how's life with your lovely family?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2098318844339122200&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098318844339122200/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098318844339122200&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -914,7 +918,7 @@ Kurtis Blow // Liquid Liquid // The Clash // Can // Talking Heads // Incredible 
 &lt;p&gt;A few times a day I stop and ask what I could be thankful for, then click. Nice coffee, click, thank you. Easily 20-30 a day, from the mundane to the very high-spirited.&lt;/p&gt;
 &lt;p&gt;Today so far: my lovely mechanical keyboard, the guy who just delivered groceries, green tea.&lt;/p&gt;
 &lt;p&gt;What are you grateful for today?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2098318546279280947&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098318546279280947/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098318546279280947&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -936,7 +940,7 @@ Kurtis Blow // Liquid Liquid // The Clash // Can // Talking Heads // Incredible 
 &lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/ref-2095497760493691170-0.jpg&quot; width=&quot;1000&quot; height=&quot;528&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/mehdizare&quot;&gt;@mehdizare&lt;/a&gt; Does this mean you actually have a $55k bill for your private work with Fable?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2098312965464158490&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098312965464158490/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098312965464158490&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -955,7 +959,7 @@ Kurtis Blow // Liquid Liquid // The Clash // Can // Talking Heads // Incredible 
 &lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/ref-2097731176299458696-0.png&quot; width=&quot;480&quot; height=&quot;620&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/HackingLZ&quot;&gt;@HackingLZ&lt;/a&gt; Also: It's not hoarding if it's crystals&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2098066556215230781&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098066556215230781/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098066556215230781&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -977,7 +981,7 @@ tomorrow,&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/matthias_mrc&quot;&gt;@matthias_mrc&lt;/a&gt; Let's assume this means no access to any AI: 0%. &lt;/p&gt;
 &lt;p&gt;Everything Claude Code does for me I can do myself.&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2098066315080511859&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098066315080511859/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098066315080511859&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -1003,7 +1007,7 @@ tomorrow,&lt;/p&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;Oh, this is really interesting. Glad I just found it again in my bookmarks.&lt;/p&gt;
 &lt;p&gt;Though: this is from September 2025, so it's about a year old now.&lt;/p&gt;
 &lt;p&gt;Have you kept monitoring it since? Would love to know which of these five still hold exactly as written, and which ones have quietly moved on you.&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2098061097873895803&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098061097873895803/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098061097873895803&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -1024,7 +1028,7 @@ tomorrow,&lt;/p&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/iam_zachi&quot;&gt;@iam_zachi&lt;/a&gt; Ha, I would never have thought to even look there.&lt;/p&gt;
 &lt;p&gt;Next question: is this real?&lt;/p&gt;
 &lt;p&gt;Because I really, really hope it's real.&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2098059428163403992&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098059428163403992/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098059428163403992&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -1044,7 +1048,7 @@ tomorrow,&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/kshvyaps&quot;&gt;@kshvyaps&lt;/a&gt; Been doing this for a year. Actual thought per reply, no slop, because slop insults the reader's intelligence.&lt;/p&gt;
 &lt;p&gt;Result: basically no followers. And I'm paying for the privilege. Being conscientious as a new account works against you, apparently. Not cool. Really. NOT COOL.&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2098056469845315918&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098056469845315918/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098056469845315918&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -1063,7 +1067,7 @@ tomorrow,&lt;/p&gt;
 &lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/ref-1971093610453242057-0.jpg&quot; width=&quot;736&quot; height=&quot;364&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/kshvyaps&quot;&gt;@kshvyaps&lt;/a&gt; 100 replies a day, otherwise your reputation gets lowered. That's &lt;a href=&quot;https://insane.So&quot;&gt;insane.So&lt;/a&gt; my actual question: how does everyone do this? Other than pointing an AI at it and cranking out slop.And if that IS how it's done, then is all of it just slop?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2098055487165972746&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098055487165972746/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098055487165972746&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
@@ -1088,7 +1092,7 @@ tomorrow,&lt;/p&gt;
 &lt;p&gt;The part I'd add: at some point it has to be more than just failing. You have to fail well, which really means you had to learn to learn first.&lt;/p&gt;
 &lt;p&gt;And that usually rests on some kind of post-failure safety net. Not necessarily rich parents. Mine was a curiosity safety net: lower middle class, but I have always loved learning early and kept getting food pellets from the universe for it. That's what made failing survivable for me.&lt;/p&gt;
 &lt;p&gt;So my ask to you is: looking back at those 41 hackathons and 15 interviews, what were your hidden enablers? Could be socioeconomic, could be intellectual, could be a person. Would love the nuance, because I think that's the part people can't see from the outside.&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;https://x.com/i/status/2098048348007625083&quot;&gt;View on X ↗&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098048348007625083/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098048348007625083&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>

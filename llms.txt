@@ -1,15 +1,21 @@
 # Alexis Rondeau
 
-> Everything I publish, in the order I published it. Right now that's my posts on X, archived here in full — text, images, video and links — so they outlive the platform. YouTube videos and my notes are next.
+> Everything I publish, in the order I published it: posts from Twitter and notes from my vault, archived here in full — text, images, video and links — so they outlive the platforms.
 
-Canonical home: https://alexisrondeau.me/ · X: https://x.com/SpringStreetNYC
+Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreetNYC
 
 ## Feed
 
-- [Feed](https://alexisrondeau.me/feed/): 643 posts, newest first, 25 per page
+- [Feed](https://alexisrondeau.me/feed/): 646 posts, newest first, 25 per page
 - [Archive](https://alexisrondeau.me/feed/archive/): the same posts by month
 - [Atom feed](https://alexisrondeau.me/feed/feed.xml): the latest 50 posts
-- [Data](https://alexisrondeau.me/feed/tweets.json): every post as JSON (id, date, text, media, links, permalink)
+- [Data](https://alexisrondeau.me/feed/items.json): every item as JSON (source, id, date, text, media, links, permalink)
+
+## Notes
+
+- [2 Years At General Assembly](https://alexisrondeau.me/notes/2-years-at-general-assembly/): Last Friday was the bitter-sweet going-away parting party for the co-working community at General Assembly in New York.…
+- [3 Things That Have Improved My Life (and Can Do the Same For You)](https://alexisrondeau.me/notes/3-things-that-have-improved-my-life-and-can-do-the-same-for-you/): Alexis Rondeau 95 Spring Street, New York Monday, 8:37 a.m.
+- [How To Breathe Long and Deep](https://alexisrondeau.me/notes/how-to-breathe-long-and-deep/): It’s simple.
 
 ## Months
 
@@ -55,3 +61,4 @@ Canonical home: https://alexisrondeau.me/ · X: https://x.com/SpringStreetNYC
 - [October 2022](https://alexisrondeau.me/feed/archive/2022/10/): 1 posts
 - [July 2022](https://alexisrondeau.me/feed/archive/2022/07/): 3 posts
 - [April 2022](https://alexisrondeau.me/feed/archive/2022/04/): 2 posts
+- [March 2014](https://alexisrondeau.me/feed/archive/2014/03/): 3 posts

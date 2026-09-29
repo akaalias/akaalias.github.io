@@ -26,7 +26,7 @@
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1><a href="/feed/">Feed</a></h1>
 <p class="sub">Post · Wednesday, November 12, 2025 · 11:14</p>
-<div class="nav"><a href="/">Home</a><a href="/feed/">Feed</a><a href="/feed/archive/">Archive</a><a href="https://x.com/SpringStreetNYC">@SpringStreetNYC on X</a></div>
+<div class="nav"><a href="/">Home</a><a href="/feed/">Feed</a><a href="/feed/archive/">Archive</a><a href="https://x.com/SpringStreetNYC">@SpringStreetNYC on Twitter</a></div>
 </header>
 <div class="wrap">
 <section class="feed single">
@@ -34,31 +34,35 @@
 <div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/1988551025565855824/"><time datetime="2025-11-12T10:14:44Z">Wednesday, November 12, 2025 · 11:14</time></a></div>
 <div class="stats"><span><b>2</b> likes</span> · <span><b>86</b> views</span></div>
 <div class="text"><p>Hey all! I wanted to share a kind of new development process I’ve been using lately — I call it &quot;Moonwalk.&quot;</p>
-<p>Basically it's: <br>
-- Check out a spike branch (`git checkout -b reconciliation/spike/mt940`)<br>
-- Vibe code fast (and with vim and vigour!) until it feels just right<br>
-- Generate a spec based on the final version<br>
-- Switch back to main (`git checkout main`)<br>
-- Check out only the spec (`git checkout reconciliation/spike/mt940 -- /job-stories`) &lt;- This is the moonwalk!<br>
-- Let the &quot;professional&quot; agents and sub-agents write production-grade code based on the spec</p>
+<p>Basically it's: </p>
+<ul>
+<li>Check out a spike branch (<code>git checkout -b reconciliation/spike/mt940</code>)</li>
+<li>Vibe code fast (and with vim and vigour!) until it feels just right</li>
+<li>Generate a spec based on the final version</li>
+<li>Switch back to main (<code>git checkout main</code>)</li>
+<li>Check out only the spec (<code>git checkout reconciliation/spike/mt940 -- /job-stories</code>) &lt;- This is the moonwalk!</li>
+<li>Let the &quot;professional&quot; agents and sub-agents write production-grade code based on the spec</li>
+</ul>
 <p>It's so effective because I can leverage Claude Code for both: Quickly build a working vibe-heavy prototype spec AND write production-grade code with agentic/sub-agentic quality. </p>
 <p>For the vibe code part, the standard Claude Code top-level agent is more than sufficient. It's great, no need for time-costly delegation to sub-agents here.</p>
 <p>For the production-grade part, since we're an XP shop with a pretty solid TDD process, sub agents make total sense. We turned our existing process and skills into a bunch of sub-agents that work smoothly together:</p>
-<p>We've got...<br>
-- green-minimal-implementer(.)md<br>
-- code-quality-reviewer(.)md<br>
-- code-refactorer(.)md<br>
-- db-migration-specialist(.)md<br>
-- dependency-manager(.)md<br>
-- frontend-design-specialist(.)md<br>
-- locale-translation-specialist(.)md<br>
-- red-test-writer(.)md</p>
+<p>We've got...</p>
+<ul>
+<li>green-minimal-implementer(.)md</li>
+<li>code-quality-reviewer(.)md</li>
+<li>code-refactorer(.)md</li>
+<li>db-migration-specialist(.)md</li>
+<li>dependency-manager(.)md</li>
+<li>frontend-design-specialist(.)md</li>
+<li>locale-translation-specialist(.)md</li>
+<li>red-test-writer(.)md</li>
+</ul>
 <p>So, yeah, that's what I wanted to share with you. Try it out and let me know how I can help :) </p>
 <p>Cheers!</p>
 <p>PS: For better or worse, this post is 100% written by hand<br>
 PPS: My friend Alex Fedorov reminded me that this is pretty close to the spike/exploration workflow we used to do at Pivotal Labs. I think he's right. </p>
 <p>cc'ing <a class="mention" href="https://x.com/claudeai">@claudeai</a> and <a class="mention" href="https://x.com/Lovable">@Lovable</a> because I feel like it's a nice connection between the two of you &lt;3</p></div>
-<div class="src"><a href="https://x.com/i/status/1988551025565855824">View on X ↗</a></div>
+<div class="src"><a href="/feed/t/1988551025565855824/">Permalink</a> · <a href="https://x.com/i/status/1988551025565855824">View on Twitter ↗</a></div>
 </article>
 </section>
 <nav class="pager"><a href="/feed/">‹ Back to the feed</a><a href="/feed/archive/2025/11/">November 2025 ›</a></nav>
