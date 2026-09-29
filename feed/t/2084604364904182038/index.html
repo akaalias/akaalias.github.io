@@ -13,8 +13,15 @@
 <meta property="og:url" content="https://alexisrondeau.me/feed/t/2084604364904182038/">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@SpringStreetNYC">
+<link rel="alternate" type="application/atom+xml" title="Alexis Rondeau — Feed" href="https://alexisrondeau.me/feed/feed.xml">
 <link rel="stylesheet" href="/tufte.css">
 <link rel="stylesheet" href="/feed/feed.css">
+<meta property="og:image" content="https://alexisrondeau.me/feed/media/2084604364904182038-0.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://alexisrondeau.me/feed/media/2084604364904182038-0.jpg">
+<meta property="article:published_time" content="2026-08-04T11:36:25Z">
+<meta property="article:author" content="Alexis Rondeau">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SocialMediaPosting","articleBody":"YO! I just completed my fourth @karpathy  autoresearch-inspired project called \"Beeline\". It's sort of a prototype for \"GPS without GPS\" for UAVs.\n\nClaude and I iterated through 81 ideas and found a small neural thingy that can be trained to recall 96% of locations, given satellite images to train on and then a camera frame to remember latitude and longitude for. \n\nBasically: \n1. Train: Here are all tiles and their latitude/longitude, remember them\n2. Infer: Here's a live frame from my camera. Where am I?\n\nClaude for experiment design and implementation, me for research cybernetics.\n\nMy favorite part is that the resulting artifact (the .onnx model that represents the memory of spot and lat/lon) is intentionally custom-built for the defined geo-fence and thus the research harness had to embrace overfitting for this one specific case as a feature, not a bug.\n\nThe biggest suprise was that in order to break-through the 75-long experiment plateau, I had to fix the harness, not the loop.\n\nAnd of course, this is a personal research project, so a bunch of limits apply. Such as training only happened on day-time pictures and the training set is bound to a geo-fence and more. \n\nBut hey! It's invented and built completely from scratch, so no dependencies on domain-libraries which means it's all GPL-licensed, too!\n\nIf you're interested, check it out here! :D \nhttps://t.co/ueRCKgqT9S\n\nLet me know if you dig it, too!\n\nYAY!","author":{"@type":"Person","name":"Alexis Rondeau","sameAs":["https://x.com/SpringStreetNYC"],"url":"https://alexisrondeau.me/"},"datePublished":"2026-08-04T11:36:25Z","headline":"YO! I just completed my fourth @karpathy autoresearch-inspired project called \"Beeline\". It's sort of a prototype for \"GPS without GPS\" for UAVs. Cla…","image":["https://alexisrondeau.me/feed/media/2084604364904182038-0.jpg","https://alexisrondeau.me/feed/media/2084604364904182038-1.jpg","https://alexisrondeau.me/feed/media/2084604364904182038-2.jpg","https://alexisrondeau.me/feed/media/2084604364904182038-3.jpg"],"mainEntityOfPage":"https://alexisrondeau.me/feed/t/2084604364904182038/","sameAs":"https://x.com/i/status/2084604364904182038","url":"https://alexisrondeau.me/feed/t/2084604364904182038/"}</script>
 
 </head>
 <body>
@@ -22,7 +29,7 @@
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1><a href="/feed/">Feed</a></h1>
 <p class="sub">Post · Tuesday, August 4, 2026 · 13:36</p>
-<div class="nav"><a href="/">Home</a><a href="/feed/">Feed</a><a href="https://x.com/SpringStreetNYC">@SpringStreetNYC on X</a></div>
+<div class="nav"><a href="/">Home</a><a href="/feed/">Feed</a><a href="/feed/archive/">Archive</a><a href="https://x.com/SpringStreetNYC">@SpringStreetNYC on X</a></div>
 </header>
 <div class="wrap">
 <section class="feed single">
@@ -46,10 +53,14 @@
 <figure class="media"><img src="/feed/media/2084604364904182038-1.jpg" width="1600" height="981" alt="Image from the post" loading="lazy"></figure>
 <figure class="media"><img src="/feed/media/2084604364904182038-2.jpg" width="1600" height="897" alt="Image from the post" loading="lazy"></figure>
 <figure class="media"><img src="/feed/media/2084604364904182038-3.jpg" width="1600" height="815" alt="Image from the post" loading="lazy"></figure>
+<a class="linkcard" href="https://alexisrondeau.me/low-light-geolocalization-autoresearch/index.html">
+<img src="/feed/media/link-7ffecdff8ee753bb.jpg" alt="" loading="lazy">
+<span class="body"><span class="site">“Not all who wander are lost”</span><span class="title">Ballpark — “Not all who wander are lost”: Can a UAV learn a city by heart — no GPS, no map on board, just a $4 flight computer?</span><span class="desc">Yes: a from-scratch neural memory that knows Berlin by heart. One downward photo in, (lat, lon, confidence) out — the map is the weights, one city in 3.1 MB. Found by an autonomous loop of coding agents in 81 experiments for $364.</span><span class="host">↗ alexisrondeau.me</span></span>
+</a>
 <div class="src"><a href="https://x.com/i/status/2084604364904182038">View on X ↗</a></div>
 </article>
 </section>
-<nav class="pager"><a href="/feed/">‹ Back to the feed</a><span></span></nav>
+<nav class="pager"><a href="/feed/">‹ Back to the feed</a><a href="/feed/archive/2026/08/">August 2026 ›</a></nav>
 </div>
 
 </body>

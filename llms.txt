@@ -1,0 +1,57 @@
+# Alexis Rondeau
+
+> Everything I publish, in the order I published it. Right now that's my posts on X, archived here in full — text, images, video and links — so they outlive the platform. YouTube videos and my notes are next.
+
+Canonical home: https://alexisrondeau.me/ · X: https://x.com/SpringStreetNYC
+
+## Feed
+
+- [Feed](https://alexisrondeau.me/feed/): 643 posts, newest first, 25 per page
+- [Archive](https://alexisrondeau.me/feed/archive/): the same posts by month
+- [Atom feed](https://alexisrondeau.me/feed/feed.xml): the latest 50 posts
+- [Data](https://alexisrondeau.me/feed/tweets.json): every post as JSON (id, date, text, media, links, permalink)
+
+## Months
+
+- [September 2026](https://alexisrondeau.me/feed/archive/2026/09/): 77 posts
+- [August 2026](https://alexisrondeau.me/feed/archive/2026/08/): 37 posts
+- [July 2026](https://alexisrondeau.me/feed/archive/2026/07/): 17 posts
+- [June 2026](https://alexisrondeau.me/feed/archive/2026/06/): 29 posts
+- [May 2026](https://alexisrondeau.me/feed/archive/2026/05/): 10 posts
+- [April 2026](https://alexisrondeau.me/feed/archive/2026/04/): 30 posts
+- [March 2026](https://alexisrondeau.me/feed/archive/2026/03/): 34 posts
+- [February 2026](https://alexisrondeau.me/feed/archive/2026/02/): 57 posts
+- [January 2026](https://alexisrondeau.me/feed/archive/2026/01/): 15 posts
+- [December 2025](https://alexisrondeau.me/feed/archive/2025/12/): 28 posts
+- [November 2025](https://alexisrondeau.me/feed/archive/2025/11/): 124 posts
+- [October 2025](https://alexisrondeau.me/feed/archive/2025/10/): 7 posts
+- [September 2025](https://alexisrondeau.me/feed/archive/2025/09/): 5 posts
+- [August 2025](https://alexisrondeau.me/feed/archive/2025/08/): 7 posts
+- [July 2025](https://alexisrondeau.me/feed/archive/2025/07/): 23 posts
+- [June 2025](https://alexisrondeau.me/feed/archive/2025/06/): 3 posts
+- [May 2025](https://alexisrondeau.me/feed/archive/2025/05/): 18 posts
+- [April 2025](https://alexisrondeau.me/feed/archive/2025/04/): 20 posts
+- [March 2025](https://alexisrondeau.me/feed/archive/2025/03/): 22 posts
+- [February 2025](https://alexisrondeau.me/feed/archive/2025/02/): 11 posts
+- [December 2024](https://alexisrondeau.me/feed/archive/2024/12/): 3 posts
+- [November 2024](https://alexisrondeau.me/feed/archive/2024/11/): 16 posts
+- [October 2024](https://alexisrondeau.me/feed/archive/2024/10/): 12 posts
+- [September 2024](https://alexisrondeau.me/feed/archive/2024/09/): 1 posts
+- [August 2024](https://alexisrondeau.me/feed/archive/2024/08/): 1 posts
+- [July 2024](https://alexisrondeau.me/feed/archive/2024/07/): 3 posts
+- [June 2024](https://alexisrondeau.me/feed/archive/2024/06/): 1 posts
+- [May 2024](https://alexisrondeau.me/feed/archive/2024/05/): 3 posts
+- [April 2024](https://alexisrondeau.me/feed/archive/2024/04/): 1 posts
+- [January 2024](https://alexisrondeau.me/feed/archive/2024/01/): 1 posts
+- [November 2023](https://alexisrondeau.me/feed/archive/2023/11/): 2 posts
+- [October 2023](https://alexisrondeau.me/feed/archive/2023/10/): 1 posts
+- [September 2023](https://alexisrondeau.me/feed/archive/2023/09/): 1 posts
+- [August 2023](https://alexisrondeau.me/feed/archive/2023/08/): 3 posts
+- [July 2023](https://alexisrondeau.me/feed/archive/2023/07/): 1 posts
+- [June 2023](https://alexisrondeau.me/feed/archive/2023/06/): 2 posts
+- [May 2023](https://alexisrondeau.me/feed/archive/2023/05/): 7 posts
+- [April 2023](https://alexisrondeau.me/feed/archive/2023/04/): 3 posts
+- [March 2023](https://alexisrondeau.me/feed/archive/2023/03/): 1 posts
+- [October 2022](https://alexisrondeau.me/feed/archive/2022/10/): 1 posts
+- [July 2022](https://alexisrondeau.me/feed/archive/2022/07/): 3 posts
+- [April 2022](https://alexisrondeau.me/feed/archive/2022/04/): 2 posts

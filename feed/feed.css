@@ -32,8 +32,9 @@ a.mention:hover{background:rgba(0,0,0,.1);}
 .item .ctx + .text{margin-top:0;}
 .text + .ctx{margin:16px 0 0;}
 figure.media{margin:16px 0 0;}
-figure.media img,figure.media video{display:block;width:100%;height:auto;max-height:80vh;object-fit:contain;
-                                    background:transparent;border:1px solid var(--rule-soft);}
+/* never crop: natural aspect, shrink to fit, tall ones capped and centred */
+figure.media img,figure.media video{display:block;width:auto;max-width:100%;height:auto;max-height:80vh;
+                                    margin:0 auto;background:transparent;border:1px solid var(--rule-soft);}
 .ctx figure.media{margin-top:10px;}
 .ctx figure.media img,.ctx figure.media video{max-height:320px;}
 a.toobig{position:relative;display:block;text-decoration:none;}
@@ -64,4 +65,33 @@ ul.bare a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--
 .pager a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;}
 .pager a:hover{border-bottom-color:var(--accent);}
 footer a{color:var(--muted);}
+.archive{margin-top:36px;}
+.archive .year{border-top:1px solid var(--rule);padding:20px 0 12px;}
+.archive .year:first-child{border-top:1.5px solid var(--ink);}
+.archive h2{font-size:26px;margin:0 0 10px;}
+.archive .n{color:var(--faint);font-style:italic;font-size:15px;font-weight:400;margin-left:.4em;}
+.archive ul.months{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px 18px;}
+.archive ul.months li{margin:0;font-size:18px;}
+.archive ul.months a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;}
+.archive ul.months a:hover{border-bottom-color:var(--accent);}
+.pager a.n{color:var(--muted);font-style:italic;font-size:15px;}
+/* month list: left gutter beside the column on wide screens, after the posts otherwise */
+.wrap{position:relative;}
+aside.months-nav{margin-top:40px;padding-top:16px;border-top:1px solid var(--rule);font-size:15px;line-height:1.45;}
+aside.months-nav h3{font:600 12px/1.4 var(--serif);font-feature-settings:"smcp" 1;text-transform:uppercase;
+                    letter-spacing:.07em;color:var(--muted);margin:0 0 10px;}
+aside.months-nav h3 a{color:inherit;text-decoration:none;}
+aside.months-nav .y{font-style:italic;color:var(--faint);margin:10px 0 2px;}
+aside.months-nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:2px 14px;}
+aside.months-nav li{margin:0;white-space:nowrap;}
+aside.months-nav a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;}
+aside.months-nav a:hover{border-bottom-color:var(--accent);}
+aside.months-nav .n{color:var(--faint);font-size:13px;}
+aside.months-nav li.here a{color:var(--ink);border-bottom-color:var(--ink);}
+@media(min-width:1180px){
+  aside.months-nav{position:absolute;left:-200px;top:0;width:170px;margin-top:36px;padding-top:0;border-top:0;}
+  aside.months-nav ul{display:block;}
+  aside.months-nav li{display:flex;justify-content:space-between;gap:8px;}
+}
+@media(max-width:600px){.archive ul.months{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:600px){.text{font-size:18px;} .text.display{font-size:21px;} .meta{flex-direction:column;gap:4px;} .meta a{text-align:left;}}

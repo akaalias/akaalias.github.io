@@ -13,6 +13,7 @@
 <meta property="og:url" content="https://alexisrondeau.me/feed/page/12/">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@SpringStreetNYC">
+<link rel="alternate" type="application/atom+xml" title="Alexis Rondeau — Feed" href="https://alexisrondeau.me/feed/feed.xml">
 <link rel="stylesheet" href="/tufte.css">
 <link rel="stylesheet" href="/feed/feed.css">
 <link rel="prev" href="https://alexisrondeau.me/feed/page/11/">
@@ -24,11 +25,46 @@
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1>Feed</h1>
 <p class="lede">Everything I publish, in the order I published it. Right now that's my posts on X, archived here in full — text, images, video and links — so they outlive the platform. YouTube videos and my notes are next.</p>
-<p class="sub">642 posts since April 2022 · page 12 of 26</p>
-<div class="nav"><a href="/">Home</a><a href="/feed/">Feed</a><a href="https://x.com/SpringStreetNYC">@SpringStreetNYC on X</a></div>
+<p class="sub">643 posts since April 2022 · page 12 of 26</p>
+<div class="nav"><a href="/">Home</a><a href="/feed/">Feed</a><a href="/feed/archive/">Archive</a><a href="https://x.com/SpringStreetNYC">@SpringStreetNYC on X</a></div>
 </header>
 <div class="wrap">
 <section class="feed">
+<article class="item kind-reply" id="t2023469577158438951">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2023469577158438951/"><time datetime="2026-02-16T18:48:36Z">Monday, February 16, 2026 · 19:48</time></a></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/RealistSec">@RealistSec</a> · Feb 16, 2026</cite>
+<div class="ctx-text"><p>And there lies the trap! 😂<br>
+It's because there isn't any proper auto-compacting for sessions. </p>
+<p>Thus, if you create a tool in a session it is logged both to your<br>
+ ~/.openclaw/agents/main/sessions/sessions.json</p>
+<p>AND will be linked as context via your current session's ~/.openclaw/agents/main/sessions/[UUID].jsonl <br>
+file - both of which are sent as context to the LLM inference API as context of the current chat/request. </p>
+<p>So a simple, 'Hey' can actually contain the full build of your tool, and modifications of it, edits, uses, chats and versions and revisions of it, logged uses of it, + the session file + 'Hey' <br>
+ = shedload of tokens!</p>
+<p>Workarounds for building tools and in general: <br>
+1) Always use a subagent - just ask it to:<br>
+&quot;use another agent to [do X,] and when done add it to 'memory' &quot; <br>
+and it will be in a session file outside the main one, <br>
+1b) (make sure you have the memories skill enabled!)</p>
+<p>2) When working on it for a while, and when done - before finishing the session use: <br>
+/compact slash command <br>
+to keep the tokens controlled, so even if it is referenced in the future it has been pruned. </p>
+<p>3) When finished, run /new to clear the session/tokens and start out with just the base context/memories/last pruned session as context. </p>
+<p>After a while though even memories etc can build up, that's when using lots of individual agents comes into it, the main agent becomes the orchestrator and only sends the relevant request and relevant context needed for it per task to the sub-agent.</p></div>
+<figure class="media"><img src="/feed/media/ref-2023465403054166073-0.png" width="389" height="345" alt="Image from the post" loading="lazy"></figure>
+</blockquote>
+<div class="text"><p>Duuuude! Wow. Thank you so much for helping me understand this. That makes sense.</p>
+<p>In Claude Code, for the exact same reason, we spent a bunch of time last year at work getting sub-agents to work reliably.</p>
+<p>There it works well, I hadn't considered this is an option (or necessity) here. </p>
+<p>Gonna read up on <a href="https://docs.openclaw.ai/tools/subagents">docs.openclaw.ai/tools/subagents</a> and report back </p>
+<p>Again, thank you for taking the time to write this up.</p></div>
+<a class="linkcard" href="https://docs.openclaw.ai/tools/subagents">
+<img src="/feed/media/link-0e16f8d71c9d530a.png" alt="" loading="lazy">
+<span class="body"><span class="site">OpenClaw</span><span class="title">Sub-agents · OpenClaw</span><span class="desc">Index of the OpenClaw sub-agent documentation, one page per reader job</span><span class="host">↗ docs.openclaw.ai</span></span>
+</a>
+<div class="src"><a href="https://x.com/i/status/2023469577158438951">View on X ↗</a></div>
+</article>
 <article class="item kind-reply" id="t2023458968379519160">
 <div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2023458968379519160/"><time datetime="2026-02-16T18:06:26Z">Monday, February 16, 2026 · 19:06</time></a></div>
 <blockquote class="ctx">
@@ -247,6 +283,9 @@ I did _not_ expect this to work so well — even in this first-draft, primordial
 [^2]:</p></div>
 <figure class="media"><img src="/feed/media/2016465719836205463-0.jpg" width="1216" height="1500" alt="Image from the post" loading="lazy"></figure>
 <figure class="media"><img src="/feed/media/2016465719836205463-1.jpg" width="1558" height="1600" alt="Image from the post" loading="lazy"></figure>
+<a class="linkcard" href="https://www.amazon.com/Deep-Learning-Math-Workbook-mathematical/dp/1806674777/">
+<span class="body"><span class="site">amazon.com</span><span class="title">Amazon.com: Deep Learning Math Workbook: 300 puzzles to build your mathematical foundation for deep learning: 9781806674770: Tom Yeh: Books</span><span class="desc">Amazon.com: Deep Learning Math Workbook: 300 puzzles to build your mathematical foundation for deep learning: 9781806674770: Tom Yeh: Books</span><span class="host">↗ amazon.com</span></span>
+</a>
 <ul class="bare">
 <li><a href="https://academy.byhand.ai/">↗ academy.byhand.ai</a></li>
 </ul>
@@ -318,32 +357,68 @@ PPS: I'm not affiliated, just excited about the products</p></div>
 </a>
 <div class="src"><a href="https://x.com/i/status/2016454813953806714">View on X ↗</a></div>
 </article>
-<article class="item kind-reply" id="t2016448935057850768">
-<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2016448935057850768/"><time datetime="2026-01-28T09:51:04Z">Wednesday, January 28, 2026 · 10:51</time></a></div>
-<blockquote class="ctx">
-<cite>In reply to <a href="https://x.com/SpringStreetNYC">@SpringStreetNYC</a> · Jan 28, 2026</cite>
-<div class="ctx-text"><p>I walked in on a whim and walked out surprised how well done this café/space felt.</p>
-<p>Team: Friendly and relaxed<br>
-Prices: Totally okay<br>
-Americano: Solid<br>
-Ambient soundtrack: Lovely<br>
-Metal chairs: comfortable<br>
-Light/sculptural installation: Intricate<br>
-Temperature: Cozy<br>
-Library: Rick Rubin</p>
-<p>I'll be back!</p>
-<p><a href="https://t.co/qUDKLvK2D0">t.co/qUDKLvK2D0</a></p></div>
-<figure class="media"><img src="/feed/media/ref-2016448360874471429-0.jpg" width="900" height="1600" alt="Image from the post" loading="lazy"></figure>
-</blockquote>
-<div class="text"><p>PS: Ingwer Café at Bürknerstraße 12, 12047 Berlin. <a href="http://Ingwer.co">Ingwer.co</a><br>
-PPS: I have no affiliation or getting kick-backs</p></div>
-<a class="linkcard" href="http://Ingwer.co">
-<span class="body"><span class="site">Ingwer.co</span><span class="title">ingwer</span><span class="host">↗ Ingwer.co</span></span>
-</a>
-<div class="src"><a href="https://x.com/i/status/2016448935057850768">View on X ↗</a></div>
-</article>
 </section>
 <nav class="pager"><a href="/feed/page/11/">‹ Newer</a><span class="n">Page 12 of 26</span><a href="/feed/page/13/">Older ›</a></nav>
+<aside class="months-nav">
+<h3><a href="/feed/archive/">Archive</a></h3>
+<div class="y">2026</div>
+<ul>
+<li><a href="/feed/archive/2026/09/">September</a> <span class="n">77</span></li>
+<li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
+<li><a href="/feed/archive/2026/07/">July</a> <span class="n">17</span></li>
+<li><a href="/feed/archive/2026/06/">June</a> <span class="n">29</span></li>
+<li><a href="/feed/archive/2026/05/">May</a> <span class="n">10</span></li>
+<li><a href="/feed/archive/2026/04/">April</a> <span class="n">30</span></li>
+<li><a href="/feed/archive/2026/03/">March</a> <span class="n">34</span></li>
+<li><a href="/feed/archive/2026/02/">February</a> <span class="n">57</span></li>
+<li><a href="/feed/archive/2026/01/">January</a> <span class="n">15</span></li>
+</ul>
+<div class="y">2025</div>
+<ul>
+<li><a href="/feed/archive/2025/12/">December</a> <span class="n">28</span></li>
+<li><a href="/feed/archive/2025/11/">November</a> <span class="n">124</span></li>
+<li><a href="/feed/archive/2025/10/">October</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2025/09/">September</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2025/08/">August</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2025/07/">July</a> <span class="n">23</span></li>
+<li><a href="/feed/archive/2025/06/">June</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2025/05/">May</a> <span class="n">18</span></li>
+<li><a href="/feed/archive/2025/04/">April</a> <span class="n">20</span></li>
+<li><a href="/feed/archive/2025/03/">March</a> <span class="n">22</span></li>
+<li><a href="/feed/archive/2025/02/">February</a> <span class="n">11</span></li>
+</ul>
+<div class="y">2024</div>
+<ul>
+<li><a href="/feed/archive/2024/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/11/">November</a> <span class="n">16</span></li>
+<li><a href="/feed/archive/2024/10/">October</a> <span class="n">12</span></li>
+<li><a href="/feed/archive/2024/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/05/">May</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/04/">April</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2023</div>
+<ul>
+<li><a href="/feed/archive/2023/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/10/">October</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/08/">August</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2023/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/06/">June</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/05/">May</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2023/04/">April</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2023/03/">March</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2022</div>
+<ul>
+<li><a href="/feed/archive/2022/10/">October</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2022/04/">April</a> <span class="n">2</span></li>
+</ul>
+</aside>
 <footer>Archived from <a href="https://x.com/SpringStreetNYC">@SpringStreetNYC</a> with <a href="https://github.com/akaalias/dispatches">Dispatches</a>.</footer>
 </div>
 

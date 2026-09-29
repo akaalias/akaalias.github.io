@@ -13,8 +13,12 @@
 <meta property="og:url" content="https://alexisrondeau.me/feed/t/1988551025565855824/">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@SpringStreetNYC">
+<link rel="alternate" type="application/atom+xml" title="Alexis Rondeau — Feed" href="https://alexisrondeau.me/feed/feed.xml">
 <link rel="stylesheet" href="/tufte.css">
 <link rel="stylesheet" href="/feed/feed.css">
+<meta property="article:published_time" content="2025-11-12T10:14:44Z">
+<meta property="article:author" content="Alexis Rondeau">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SocialMediaPosting","articleBody":"Hey all! I wanted to share a kind of new development process I’ve been using lately — I call it \"Moonwalk.\"\n\nBasically it's: \n- Check out a spike branch (`git checkout -b reconciliation/spike/mt940`)\n- Vibe code fast (and with vim and vigour!) until it feels just right\n- Generate a spec based on the final version\n- Switch back to main (`git checkout main`)\n- Check out only the spec (`git checkout reconciliation/spike/mt940 -- /job-stories`) <- This is the moonwalk!\n- Let the \"professional\" agents and sub-agents write production-grade code based on the spec\n\nIt's so effective because I can leverage Claude Code for both: Quickly build a working vibe-heavy prototype spec AND write production-grade code with agentic/sub-agentic quality. \n\nFor the vibe code part, the standard Claude Code top-level agent is more than sufficient. It's great, no need for time-costly delegation to sub-agents here.\n\nFor the production-grade part, since we're an XP shop with a pretty solid TDD process, sub agents make total sense. We turned our existing process and skills into a bunch of sub-agents that work smoothly together:\n\nWe've got...\n- green-minimal-implementer(.)md\n- code-quality-reviewer(.)md\n- code-refactorer(.)md\n- db-migration-specialist(.)md\n- dependency-manager(.)md\n- frontend-design-specialist(.)md\n- locale-translation-specialist(.)md\n- red-test-writer(.)md\n\nSo, yeah, that's what I wanted to share with you. Try it out and let me know how I can help :) \n\nCheers!\n\nPS: For better or worse, this post is 100% written by hand\nPPS: My friend Alex Fedorov reminded me that this is pretty close to the spike/exploration workflow we used to do at Pivotal Labs. I think he's right. \n\ncc'ing @claudeai and @Lovable because I feel like it's a nice connection between the two of you <3","author":{"@type":"Person","name":"Alexis Rondeau","sameAs":["https://x.com/SpringStreetNYC"],"url":"https://alexisrondeau.me/"},"datePublished":"2025-11-12T10:14:44Z","headline":"Hey all! I wanted to share a kind of new development process I’ve been using lately — I call it \"Moonwalk.\" Basically it's: - Check out a spike branc…","mainEntityOfPage":"https://alexisrondeau.me/feed/t/1988551025565855824/","sameAs":"https://x.com/i/status/1988551025565855824","url":"https://alexisrondeau.me/feed/t/1988551025565855824/"}</script>
 
 </head>
 <body>
@@ -22,7 +26,7 @@
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1><a href="/feed/">Feed</a></h1>
 <p class="sub">Post · Wednesday, November 12, 2025 · 11:14</p>
-<div class="nav"><a href="/">Home</a><a href="/feed/">Feed</a><a href="https://x.com/SpringStreetNYC">@SpringStreetNYC on X</a></div>
+<div class="nav"><a href="/">Home</a><a href="/feed/">Feed</a><a href="/feed/archive/">Archive</a><a href="https://x.com/SpringStreetNYC">@SpringStreetNYC on X</a></div>
 </header>
 <div class="wrap">
 <section class="feed single">
@@ -56,7 +60,7 @@ PPS: My friend Alex Fedorov reminded me that this is pretty close to the spike/e
 <div class="src"><a href="https://x.com/i/status/1988551025565855824">View on X ↗</a></div>
 </article>
 </section>
-<nav class="pager"><a href="/feed/">‹ Back to the feed</a><span></span></nav>
+<nav class="pager"><a href="/feed/">‹ Back to the feed</a><a href="/feed/archive/2025/11/">November 2025 ›</a></nav>
 </div>
 
 </body>
