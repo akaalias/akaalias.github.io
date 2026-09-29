@@ -6,13 +6,20 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 
 ## Feed
 
-- [Feed](https://alexisrondeau.me/feed/): 761 posts, newest first, 25 per page
+- [Feed](https://alexisrondeau.me/feed/): 768 posts, newest first, 25 per page
 - [Archive](https://alexisrondeau.me/feed/archive/): the same posts by month
 - [Atom feed](https://alexisrondeau.me/feed/feed.xml): the latest 50 posts
 - [Data](https://alexisrondeau.me/feed/items.json): every item as JSON (source, id, date, text, media, links, permalink)
 
 ## Notes
 
+- [18.05.2020](https://alexisrondeau.me/notes/18-05-2020/): Montag, 18.5.2020 – Irgendwie fühle ich mich seit Freitag komisch. Also auch schon davor, aber heute bin ich erst um 10…
+- [27.04.2020](https://alexisrondeau.me/notes/27-04-2020/): So. Today was a good day so far. I finally broke my own record of working 4h straight (with pauses every 30 minutes) on…
+- [Case Study: How To \"Reality Check\" Your Startup Persona in 1 Day Without Hours of Interviewing](https://alexisrondeau.me/notes/case-study-how-to-reality-check-your-startup-persona-in-1-day-without-hours-of-i/): Here's a little case study I've put together based on a project I recently worked on. It shows you the process on how y…
+- [Self-Care Challenge Day 36/100 Retrospective](https://alexisrondeau.me/notes/self-care-challenge-day-36-100-retrospective/): https://www.youtube.com/watch?v=pV6CKVP8BqI
+- [Self-Care Challenge Day 18/100 – Retrospective](https://alexisrondeau.me/notes/self-care-challenge-day-18-100-retrospective/): https://www.youtube.com/watch?v=6ulAg4Y7JxE
+- [PLEASE. DON'T. KEEL. OVER.](https://alexisrondeau.me/notes/please-don-t-keel-over/): https://www.youtube.com/watch?v=mL14RECwt2M
+- [Whiteboard Mastery – Handwriting Cheat Sheet Training Video](https://alexisrondeau.me/notes/whiteboard-mastery-handwriting-cheat-sheet-training-video/): https://www.youtube.com/watch?v=SRgaEao1UGE
 - [Whiteboard Mastery – Handwriting Workshop Learnings](https://alexisrondeau.me/notes/whiteboard-mastery-handwriting-workshop-learnings/): https://www.youtube.com/watch?v=vZ56szjGqbQ
 - [Whiteboard Mastery – Handwriting, Persuasion and the Path Of Least Resistance](https://alexisrondeau.me/notes/whiteboard-mastery-handwriting-persuasion-and-the-path-of-least-resistance/): https://www.youtube.com/watch?v=MBeNY8NRrMQ
 - [The World's Best Meditation Pillow!](https://alexisrondeau.me/notes/the-world-s-best-meditation-pillow/): https://www.youtube.com/watch?v=kYHQfe9I7DQ
@@ -176,7 +183,11 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 - [October 2022](https://alexisrondeau.me/feed/archive/2022/10/): 1 posts
 - [July 2022](https://alexisrondeau.me/feed/archive/2022/07/): 3 posts
 - [April 2022](https://alexisrondeau.me/feed/archive/2022/04/): 2 posts
-- [August 2019](https://alexisrondeau.me/feed/archive/2019/08/): 4 posts
+- [May 2020](https://alexisrondeau.me/feed/archive/2020/05/): 1 posts
+- [April 2020](https://alexisrondeau.me/feed/archive/2020/04/): 1 posts
+- [March 2020](https://alexisrondeau.me/feed/archive/2020/03/): 1 posts
+- [September 2019](https://alexisrondeau.me/feed/archive/2019/09/): 1 posts
+- [August 2019](https://alexisrondeau.me/feed/archive/2019/08/): 7 posts
 - [March 2019](https://alexisrondeau.me/feed/archive/2019/03/): 1 posts
 - [January 2019](https://alexisrondeau.me/feed/archive/2019/01/): 3 posts
 - [December 2018](https://alexisrondeau.me/feed/archive/2018/12/): 7 posts
