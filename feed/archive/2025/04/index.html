@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>April 2025 — Alexis Rondeau</title>
-<meta name="description" content="Alexis Rondeau's posts from April 2025: 55 posts.">
+<meta name="description" content="Alexis Rondeau's posts from April 2025: 34 posts.">
 <link rel="canonical" href="https://alexisrondeau.me/feed/archive/2025/04/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Alexis Rondeau">
 <meta property="og:title" content="April 2025 — Alexis Rondeau">
-<meta property="og:description" content="Alexis Rondeau's posts from April 2025: 55 posts.">
+<meta property="og:description" content="Alexis Rondeau's posts from April 2025: 34 posts.">
 <meta property="og:url" content="https://alexisrondeau.me/feed/archive/2025/04/">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@SpringStreetNYC">
@@ -24,7 +24,7 @@
 <header class="hero">
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1><a href="/feed/archive/">Archive</a></h1>
-<p class="sub">April 2025 · 55 posts</p>
+<p class="sub">April 2025 · 34 posts</p>
 <div class="nav"><a href="/">Home</a><a href="/feed/">Feed</a><a href="/feed/archive/">Archive</a><a href="https://x.com/SpringStreetNYC">@SpringStreetNYC on Twitter</a></div>
 </header>
 <div class="wrap">
@@ -283,23 +283,367 @@ thank you.</p></div>
 <div class="text display"><p>Struggling with a strong urge to unfollow you if you're using &quot;locked in&quot;, &quot;cooked&quot;, &quot;it's so over&quot; etc. unironically-ironically.</p></div>
 <div class="src"><a href="/feed/t/1907082305438450090/">Permalink</a> · <a href="https://x.com/i/status/1907082305438450090">View on Twitter ↗</a></div>
 </article>
-<article class="item kind-note" id="n-notes-on-whole-earth-catalog">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/notes-on-whole-earth-catalog/"><time datetime="2025-04-01T14:37:53Z">Tuesday, April 1, 2025 · 16:37</time></a></div>
-<h2 class="note-title"><a href="/notes/notes-on-whole-earth-catalog/">Notes on &quot;Whole Earth Catalog&quot;</a></h2>
-<div class="text note-body">
-<h2>My Notes</h2>
+<article class="item kind-note" id="n-notes-on-clojure-development">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/notes-on-clojure-development/"><time datetime="2025-04-01T14:37:53Z">Tuesday, April 1, 2025 · 16:37</time></a></div>
+<h2 class="note-title"><a href="/notes/notes-on-clojure-development/">Notes on Clojure Development</a></h2>
+<div class="text note-body clamped">
 <ul>
-<li><a class="wikilink" href="/notes/whole-earth-39thirty-cap-s21-mini-project/">⭐️ Whole Earth 39Thirty Cap (S21 Mini-Project)</a></li>
-<li><span class="wikilink unresolved">My Original 1969 Whole Earth Catalogue</span></li>
-<li><span class="wikilink unresolved">Notes on &quot;What the Dormouse Said&quot;</span></li>
+<li>Clojure Koans</li>
+<li><p>https://www.maria.cloud/</p>
+<ul>
+<li>https://www.maria.cloud/intro</li>
 </ul>
-<h2>Sources</h2>
+</li>
+</ul>
+<h2>Installing Emacs on macOS</h2>
+<pre><code>- https://github.com/railwaycat/homebrew-emacsmacport
+</code></pre>
+<pre><code class="language-bash">$ sudo rm /usr/bin/emacs
+$ sudo rm -rf /usr/share/emacs
+$ brew tap railwaycat/emacsmacport
+$ brew install emacs-mac
+</code></pre>
+<h2>Bootstrapping with Emacs and Lein</h2>
+<h3>Cider</h3>
 <ul>
-<li><span class="wikilink unresolved">The Whole Earth Catalog, Where Counterculture Met Cyberculture - JSTOR Daily</span></li>
-<li><span class="wikilink unresolved">What the Dormouse Said</span></li>
+<li>https://github.com/clojure-emacs/cider</li>
+<li>Needs MELPA-Stable – Install like this:</li>
+</ul>
+<pre><code class="language-lisp">(require 'package)
+(add-to-list 'package-archives '(&quot;melpa-stable&quot; . &quot;https://stable.melpa.org/packages/&quot;) t)
+(package-initialize)
+</code></pre>
+<ul>
+<li>Docs: https://docs.cider.mx/cider/basics/up_and_running.html</li>
+</ul>
+<h3>Leiningen</h3>
+<ul>
+<li><code>brew install leiningen</code></li>
+</ul>
+<h3>Extra packages</h3>
+<ul>
+<li>https://docs.cider.mx/cider/additional_packages.html#paredit</li>
+</ul>
+<pre><code class="language-lisp">(add-hook 'clojure-mode-hook #'paredit-mode)
+(add-hook 'clojure-mode-hook #'rainbow-delimiters-mode)
+
+(add-hook 'cider-repl-mode-hook #'paredit-mode)
+(add-hook 'cider-repl-mode-hook #'rainbow-delimiters-mode)
+</code></pre>
+<h3>Issues</h3>
+<ul>
+<li>Start with <code>lein new test-project</code></li>
+<li>Open project.clj in Emacs</li>
+<li><code>M-x cider-jack-in</code> → “The lein executable isn’t on your ‘exec-path’”</li>
+<li>Solution: Customize Group <code>cider</code> https://stackoverflow.com/a/64281978</li>
+<li><span class="wikilink unresolved">Clojure Setup for TDD</span></li>
 </ul>
 </div>
-<div class="src"><a href="/notes/notes-on-whole-earth-catalog/">Permalink</a></div>
+<div class="more"><a href="/notes/notes-on-clojure-development/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/notes-on-clojure-development/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-whales-dolphins-sharks-and-sardines">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/whales-dolphins-sharks-and-sardines/"><time datetime="2025-04-01T14:37:53Z">Tuesday, April 1, 2025 · 16:37</time></a></div>
+<h2 class="note-title"><a href="/notes/whales-dolphins-sharks-and-sardines/">Whales, Dolphins, Sharks and Sardines</a></h2>
+<div class="text note-body clamped">
+<h2>Early idea</h2>
+<ul>
+<li><p>Getting rich quick people on Algorand are super annoying</p>
+<ul>
+<li>“HODL”, Rocket emojis, “This is the way” and other WSB bullshit</li>
+<li>Super uncreative</li>
+<li>They just want to become rich by not doing anything – how boring</li>
+<li>Regarding Governance, they’re the ones who fret about Whales taking too much control</li>
+<li>They fear loss of control without taking active steps</li>
+</ul>
+</li>
+<li>Those that got life-changing rich with Bitcoin were those that really got into it when NO ONE (including myself) believed in it</li>
+</ul>
+<p>Here’s how I think this will work for the common investor:</p>
+<p>If your personal financial freedom is the goal and you believe that ALGO is the best way to get there BUT governance and all those holders of millions of tokens give you a feeling of loss of control THEN FOCUS on what you CAN CONTROL. You want riches and wealth? Well, CREATE WEALTH[^1]. You can CREATE WEALTH with Algorand. Your votes will probably matter very little but you can see and use Algorand for what it really is: A resource – In fact, one of the most powerful resources ever given to mankind: A deep space and, more importantly, a deep time platform that gives you to <span class="wikilink unresolved">Access to infinity</span>.</p>
+<p>By buying Algorand tokens today at $0.1 - $2.0 you basically bought extremely cheap compute/storage TIME as if you were “investing”/pre-buying months and years of capacity/potential on Heroku back in 2009.</p>
+<p>So, what should you do?</p>
+<ol>
+<li>Hold your bag (Defintely, just like you would hold shares over time - But, as you’re becoming aware now, <strong>as a small fry sardine swimming with the current</strong>, this probably won’t result in millions of life-changing fiat)</li>
+<li>Vote on issues (Definitely, just like you would by sitting on the board of a company - But, as you’re becoming aware now, <strong>as a small fry sardine  swimming with the current</strong>, this probably won’t result in millions of life-changing fiat)</li>
+<li>Learn to USE Algos (This is the foundation to turn from being a small fry sardine swimming with the current to <strong>a fast-swimming, autonomous and creative dolphin</strong>)</li>
+<li>Learn <span class="wikilink unresolved">Creating cool shit with Algorand</span></li>
+</ol>
+<p><img src="/notes/media/IMG20211025140127.jpg" alt="IMG20211025140127.jpg" loading="lazy"></p>
+<h2>Concrete formulation</h2>
+<p><img src="/notes/media/IMG20211025140159.jpg" alt="IMG20211025140159.jpg" loading="lazy"></p>
+<p><img src="/notes/media/IMG20211025140203.jpg" alt="IMG20211025140203.jpg" loading="lazy"></p>
+<p><img src="/notes/media/IMG20211025140207.jpg" alt="IMG20211025140207.jpg" loading="lazy"></p>
+<p><img src="/notes/media/IMG20211025140214.jpg" alt="IMG20211025140214.jpg" loading="lazy"></p>
+<p><img src="/notes/media/IMG20211025140221.jpg" alt="IMG20211025140221.jpg" loading="lazy">
+<img src="/notes/media/IMG20211025135840.jpg" alt="IMG20211025135840.jpg" loading="lazy"></p>
+<p>[^1]: <span class="wikilink unresolved">How to Make Wealth</span></p>
+</div>
+<div class="more"><a href="/notes/whales-dolphins-sharks-and-sardines/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/whales-dolphins-sharks-and-sardines/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-super-heroes-super-villains-and-an-ancient-code-in-obsidian">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/super-heroes-super-villains-and-an-ancient-code-in-obsidian/"><time datetime="2025-04-01T14:37:53Z">Tuesday, April 1, 2025 · 16:37</time></a></div>
+<h2 class="note-title"><a href="/notes/super-heroes-super-villains-and-an-ancient-code-in-obsidian/">Super-Heroes, Super-Villains and an Ancient Code in Obsidian</a></h2>
+<div class="text note-body clamped">
+<h2>Watch the video on Youtube! 👉🏻 https://youtu.be/SNNODf6NkJk 👈🏻</h2>
+<p>![Super-Heroes, Super-Villains.png](/notes/media/Super-Heroes, Super-Villains.png)</p>
+<h2>Script Start</h2>
+<p>Hello and welcome!</p>
+<h2>Who</h2>
+<p>My name is Alexis
+I’m an Obsidian enthusiast<br>
+I’m the creator of the journey and highlights plugin for Obsidian</p>
+<h2>What</h2>
+<p>Today I want to share something big with you.</p>
+<p>I want to show you an ancient code in Obsidian that I’ve discovered.</p>
+<p>And I discovered it with the help of a super-hero and an super-villain</p>
+<h2>Why</h2>
+<ul>
+<li>This will help you create your best work.</li>
+<li>This will help you write your best books, come up with your best ideas and create your best products.</li>
+</ul>
+<h2>How</h2>
+<p>Before we dive in, a heads-up:</p>
+<ol>
+<li>This is not for the faint of heart</li>
+<li>This won’t be easy</li>
+<li>In fact it will be very hard (at least for me)</li>
+<li>I’ll share some very personal things</li>
+<li>Because of that, this video is going to be raw and unpolished</li>
+<li>This will be a longer story with HIGHS and LOWS</li>
+</ol>
+<p>Let’s begin…</p>
+<p>…</p>
+<p>It’s been a cold and dark winter</p>
+<p>and I’ve struggled.</p>
+<ul>
+<li>I’ve struggled in my relationship</li>
+<li>We Had a big fight</li>
+<li>Considering separating</li>
+<li>I’ve been staying at a friend’s place</li>
+<li>I haven’t eaten much</li>
+<li>Haven’t slept much</li>
+<li>I’ve also struggled at work for a long time</li>
+<li>Work always has been difficult for me</li>
+<li>Work and money has always felt super existential</li>
+<li>Lately I’ve been feeling very anxious</li>
+<li>And I so often feel like I’m “wrong”</li>
+<li>I often feel I’m out of place</li>
+<li>I don’t know how to manage work-stress</li>
+</ul>
+<p><img src="/notes/media/impostor.png" alt="impostor.png" loading="lazy"></p>
+<h2>Super-Heroes and Super-Villains</h2>
+<p>With all of that…</p>
+<p>As I’m staying at my friends place…</p>
+<p>I watched an episode of WandaVision</p>
+<p>And while it’s on my screen</p>
+<p>I drifted in and out I wondered…</p>
+<ol>
+<li>If i were a super-hero, what would that be?</li>
+<li>What would be my super power?</li>
+<li>What would be my hero name?</li>
+</ol>
+<h3>ENTHUSIASMO</h3>
+<p>If I were a super-hero…</p>
+<p>His super-power would be <strong>ENTHUSIASM</strong></p>
+<ul>
+<li>He would use his power to get himself and others super enthusiastic about anything</li>
+<li>He’s the one that explores and creates</li>
+<li>He’s the one that gets you going</li>
+<li>For example these videos here</li>
+<li>The Obsidian Plugins</li>
+<li>Obsidian itself</li>
+<li>I’ve got hundreds of things that I’m so genuinely excited about</li>
+<li>He’s in it to make the world a better place</li>
+</ul>
+<p>The name of this super-hero is <strong>ENTHUSIASMO</strong></p>
+<h3>Dissociation Boy</h3>
+<p>And then I thought… Wait.</p>
+<ul>
+<li>If i were a super-villain who would I be?</li>
+<li>What would be my super-power?</li>
+<li>What would be my name?</li>
+</ul>
+<p>If I were a super-villain…</p>
+<p>His super-power would be <strong>DISSOCIATION</strong></p>
+<ul>
+<li>He’s the one that destroys by disconnecting</li>
+<li>He’s the one that creates chaos and disarray from disappearing</li>
+<li>He checks out during a conversations</li>
+<li>He aborts relationships when he’s in pain</li>
+<li>He abandon projects when he’s in pain</li>
+<li>He struggles with narcolepsy his whole life</li>
+<li>He’s dangerous because he is out for blood</li>
+</ul>
+<p>The name of this super-hero is <strong>DISSOCIATION BOY</strong></p>
+<p>Then I started to realize…</p>
+<p>They’re constantly fighting over who is in charge.</p>
+<p>Every day.</p>
+<pre><code>[SHADOW PLAY]
+
+Attack Enthusiasmo Energy -&gt; Dissociation Boy Disappears
+
+</code></pre>
+<p>The eternal struggle between creation and destruction.</p>
+<p>Super-heroes…</p>
+<p>Super-villains…</p>
+<h2>Battlefield Middle Earth</h2>
+<p>Then I remembered reading Lord of the Rings as a teenager</p>
+<p>The struggle of Man, Hobbits, Elves against Super-Villain Sauron</p>
+<p>And then I remembered something specific about the Lord of the Rings book.</p>
+<p>The Map Of Middle Earth</p>
+<p>This map always shipped as part of the books.</p>
+<p><img src="/notes/media/middle-earth.jpg" alt="middle-earth.jpeg" loading="lazy"></p>
+<p>I think this is totally genius to include</p>
+<p>[Show “There and Back” by Bilbo Baggins]</p>
+<p>And now I want you to focus on something:</p>
+<p>There are two REALMS</p>
+<p>[Realm of Hobbits, Man and Elves]</p>
+<p>[Realm of Sauron]</p>
+<p>Super-Heroes and Super-Villains need a battlefield, they need a place to fight.</p>
+<h2>Obsidian</h2>
+<p>And then I was like</p>
+<p>“Hold on…”</p>
+<p>“I’ve seen something very similar recently…”</p>
+<p><img src="/notes/media/middle-earth.jpg" alt="middle-earth.jpeg" loading="lazy"></p>
+<p>I’ve been creating a map of my own world</p>
+<p>I’ve been charting it, exploring it, growing it, mapping…</p>
+<p>MY GRAPH VIEW</p>
+<p>[SHOW GRAPH VIEW]</p>
+<h3>The REALM of ENTHUSIASMO</h3>
+<p>And then I opened my graph view and discovered…</p>
+<p>The REALM of ENTHUSIASMO</p>
+<ul>
+<li>awesome topics</li>
+<li>lots of attachments</li>
+<li>good vibes</li>
+<li>light structure</li>
+<li>feelings</li>
+<li>natural order</li>
+</ul>
+<p>An effortless place</p>
+<p><strong>Example notes</strong></p>
+<ul>
+<li><span class="wikilink unresolved">⭐️ Intermittent Dopamine Fasting</span></li>
+<li><a class="wikilink" href="/notes/your-amazing-youness/">⭐️ Your amazing YOUness</a></li>
+<li><span class="wikilink unresolved">⭐️ Mr Bubbles in Bushwick (Video)</span></li>
+</ul>
+<h3>The REALM of Dissociation Boy</h3>
+<p>And I discovered…</p>
+<p>The REALM of Dissociation Boy</p>
+<ul>
+<li>chaos</li>
+<li>pain</li>
+<li>a lot of thinky notes</li>
+<li>brainy notes</li>
+<li>lots of tags</li>
+<li>many difficult topics</li>
+</ul>
+<p>A place FULL of effort</p>
+<p><strong>Example notes</strong></p>
+<ul>
+<li><span class="wikilink unresolved">Adult ADHD</span></li>
+<li><span class="wikilink unresolved">The ONE Thing</span></li>
+<li><span class="wikilink unresolved">Negative Self-Worth</span></li>
+</ul>
+<h2>The Best Stories Need Both Realms</h2>
+<p>And then I realized…</p>
+<p>Obsidian helps me create the map for my super-hero and super-villain to fight.</p>
+<p>Obsidian is the arena.</p>
+<p>The best stories you will tell, the best books you write will</p>
+<ul>
+<li>always be a journey between both worlds.</li>
+<li>always have a hero and a villain in them - even for Non-Fiction.</li>
+</ul>
+<p>Your best stories will be a dance, a journey between those two places</p>
+<p>They’ll be the result of your own fight between good and evil</p>
+<h2>The Secret Code Hidden in Obsidian</h2>
+<p>So the secret code is that your vault are not just be your second brain</p>
+<ul>
+<li>It is are also a map to your heart</li>
+<li>It is the arena of your super hero and evil villain.</li>
+</ul>
+<h2>And That’s Why This is HARD as FUCK</h2>
+<p>Then I realized…</p>
+<p>That’s why this whole writing thing is hard.</p>
+<p>And that is why notes books and articles aren’t just writing themselves automatically.</p>
+<p>That’s why we’ll spend more time fiddling with our fucking themes, installing and configuring Plugins, tweaking our Zettelkasten templates etc.</p>
+<p>Because when you open Obsidian what you’re really doing is…</p>
+<p>YOU STEP INTO THE ARENA</p>
+<p>YOU STEP INTO THE TWO REALMS</p>
+<ul>
+<li>When you write a good note you’re fighting</li>
+<li>When you create a link you’re expanding the map of your adventure</li>
+<li>When you publish something you’re reliving the difficult journey</li>
+</ul>
+<p>This stuff is REALLY hard!</p>
+<p>Ray Bradbury said it best:</p>
+<blockquote>
+<p>“Every morning I jump out of bed and step on a landmine. The landmine is me. After the explosion, I spent the rest of the day putting the pieces together.” - Ray Bradbury</p>
+</blockquote>
+<p>This stuff is hard!</p>
+<p>And NO ONE wants to say this out loud because “hard” doesn’t sell software licenses or subscriptions or “Masterclass” courses.</p>
+<ul>
+<li>It’s hard to embrace both, the good and evil.</li>
+<li>It’s hard to embrace this mess. Your mess.</li>
+<li>It takes time and it’s hard but It’s so worth it.</li>
+</ul>
+<p>In fact of you’re NOT struggling, then probably your shit is weak and boring anyways.</p>
+<p>That means you haven’t done the work. You haven’t created the arena.</p>
+<h2>You Are Not Alone</h2>
+<p>I want you to know that you are not alone.</p>
+<p>You’re not alone mapping your REALMS
+You’re not alone going on adventures of your super-hero against your super-villain</p>
+<p>We’re in this together.</p>
+<p>If you’ve been on the sidelines.</p>
+<p>I want step into the arena.</p>
+<p>And we’ll fight the good fight, together, side by side.</p>
+<p>.<br>
+.<br>
+.</p>
+<h2>My Question For You</h2>
+<p>Oof…</p>
+<p>Let’s take a breather here.</p>
+<p>So, my question to you is…</p>
+<ul>
+<li>If you were a super hero (which you are), what’s would be your super power and name?</li>
+<li>If you were an evil villain (which you are), what’s would be your super power and name?</li>
+</ul>
+<p>Tip: Use Obsidian and your graph view to discover their REALMS</p>
+<h2>Take Action: Join the Tribe</h2>
+<p>Write a comment on the Obsidian Forum</p>
+<p>I’ve posted the link below</p>
+<p>I want you to introduce</p>
+<ul>
+<li>Yourself</li>
+<li><p>Your super-hero</p>
+<ul>
+<li>What’s their super-power?</li>
+<li>What’s their story?</li>
+<li>What’s their name?</li>
+</ul>
+</li>
+<li><p>Your super-villain</p>
+<ul>
+<li>What’s their super-power?</li>
+<li>What’s their story?</li>
+<li>What’s their name?</li>
+</ul>
+</li>
+<li><p>The world they live in</p>
+<ul>
+<li>What are the different REALMS?</li>
+</ul>
+</li>
+</ul>
+<p>I can’t wait to hear from you!</p>
+<p>Looking forward to reading</p>
+<p>Thank you for watching</p>
+<p>PS: This video is the result of using the journey plugin</p>
+</div>
+<div class="more"><a href="/notes/super-heroes-super-villains-and-an-ancient-code-in-obsidian/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/super-heroes-super-villains-and-an-ancient-code-in-obsidian/">Permalink</a></div>
 </article>
 <article class="item kind-note" id="n-how-to-double-my-rate-of-failure">
 <div class="meta"><span class="kind">Note</span><a class="when" href="/notes/how-to-double-my-rate-of-failure/"><time datetime="2025-04-01T14:37:53Z">Tuesday, April 1, 2025 · 16:37</time></a></div>
@@ -328,520 +672,6 @@ thank you.</p></div>
 </div>
 <div class="more"><a href="/notes/how-to-double-my-rate-of-failure/">Continue reading ›</a></div>
 <div class="src"><a href="/notes/how-to-double-my-rate-of-failure/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-code-related">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/code-related/"><time datetime="2025-04-01T14:37:53Z">Tuesday, April 1, 2025 · 16:37</time></a></div>
-<h2 class="note-title"><a href="/notes/code-related/">Code-Related</a></h2>
-<div class="text note-body clamped">
-<ul>
-<li><a class="wikilink" href="/notes/calculating-nonces-that-result-in-zero-padded-sha256-hashes/">⭐️ Calculating Nonces That Result In Zero Padded Sha256 Hashes</a></li>
-<li><a class="wikilink" href="/notes/how-to-add-a-maybe-operator-to-your-programming-language/">Clojure Adding Maybe And Sometimes Control Structures Is Easy And Fun</a></li>
-<li><a class="wikilink" href="/notes/how-to-translate-a-programming-language/">Clojure German Language Pack For A Programming Language Or Why Does Everything Have To Be In English</a></li>
-<li><a class="wikilink" href="/notes/how-i-ve-rebuilt-the-giraffe-app-with-tdd-and-speed-in-mind/">How Ive Rebuilt The Giraffe App With Tdd And Speed In Mind</a></li>
-<li><a class="wikilink" href="/notes/the-little-schemer-in-clojure-chapter-1-recap/">The Little Schemer In Clojure Chapter 1 Recap</a></li>
-<li><a class="wikilink" href="/notes/the-little-schemer-in-clojure-chapter-2-recap/">The Little Schemer In Clojure Chapter 2 Recap</a></li>
-<li><a class="wikilink" href="/notes/the-little-schemer-in-clojure-chapter-3-recap/">The Little Schemer In Clojure Chapter 3 Recap</a></li>
-<li><a class="wikilink" href="/notes/the-little-schemer-in-clojure-chapter-4-recap/">The Little Schemer In Clojure Chapter 4 Recap</a></li>
-<li><a class="wikilink" href="/notes/the-little-schemer-in-clojure-recap-chapter-5/">The Little Schemer In Clojur Chapter 5 Recap</a></li>
-<li><a class="wikilink" href="/notes/the-little-schemer-in-clojure-recap-chapter-6/">The Little Schemer In Clojure Chapter 6 Recap</a></li>
-</ul>
-</div>
-<div class="more"><a href="/notes/code-related/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/code-related/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-notes-on-ballpoint-pens">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/notes-on-ballpoint-pens/"><time datetime="2025-04-01T14:37:53Z">Tuesday, April 1, 2025 · 16:37</time></a></div>
-<h2 class="note-title"><a href="/notes/notes-on-ballpoint-pens/">Notes on ballpoint pens</a></h2>
-<div class="text note-body">
-<ul>
-<li>Heavily related to <a class="wikilink" href="/notes/micro-note-taking-set-s21-mini-project/">⭐️ &quot;Micro-Note-Taking Set&quot; (S21 Mini-Project)</a></li>
-</ul>
-<h2>Birdie</h2>
-<ul>
-<li><a class="wikilink" href="/notes/micro-note-taking-set-s21-mini-project/"> Full Experiment Break-down for Birdie</a></li>
-</ul>
-<p><img src="/notes/media/IMG20211025140024.jpg" alt="IMG20211025140024.jpg" loading="lazy"></p>
-</div>
-<div class="src"><a href="/notes/notes-on-ballpoint-pens/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-my-recipe-for-giant-bubble-making">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/my-recipe-for-giant-bubble-making/"><time datetime="2025-04-01T14:37:14Z">Tuesday, April 1, 2025 · 16:37</time></a></div>
-<h2 class="note-title"><a href="/notes/my-recipe-for-giant-bubble-making/">My Recipe for Giant Bubble-Making</a></h2>
-<div class="text note-body">
-<ul>
-<li><a class="wikilink" href="/notes/how-to-make-big-ass-bubbles/">⭐️ How to Make Big-Ass Bubbles</a></li>
-</ul>
-</div>
-<div class="src"><a href="/notes/my-recipe-for-giant-bubble-making/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-deepdive-a-better-qualitative-analysis-tool-s21-mini-project">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/deepdive-a-better-qualitative-analysis-tool-s21-mini-project/"><time datetime="2025-04-01T14:37:14Z">Tuesday, April 1, 2025 · 16:37</time></a></div>
-<h2 class="note-title"><a href="/notes/deepdive-a-better-qualitative-analysis-tool-s21-mini-project/">⭐️ DeepDive – A better qualitative analysis tool (S21 Mini-Project)</a></h2>
-<div class="text note-body clamped">
-<p>![Screenshot 2021-04-22 at 17.57.50.png](/notes/media/Screenshot 2021-04-22 at 17.57.50.png)</p>
-<h2>Start with WHO?[^1]</h2>
-<p>I, Alexis, want a better coding tool for my qualitative analysis.
-…I also want to learn Swift.</p>
-<p>Question: WHO?
-Answer: Me, Alexis Rondeau.
-Question: Who are you?
-Answer: I’m many things, but in this context, I’m a qualitative researcher.</p>
-<ul>
-<li><p>As a…</p>
-<ul>
-<li>Qualitative researcher in the health-industry</li>
-</ul>
-</li>
-<li><p>I want to…</p>
-<ul>
-<li><p>Code transcripts</p>
-<ul>
-<li>easier</li>
-<li>faster</li>
-</ul>
-</li>
-<li><p>and Compare interviewee segments</p>
-<ul>
-<li>clearer</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>So that…</p>
-<ul>
-<li><p>I can deliver</p>
-<ul>
-<li>shared themes</li>
-<li>differences between segments</li>
-<li>hot quotes</li>
-<li>engaging narrative</li>
-<li>clearer findings</li>
-<li>deeper insights</li>
-<li>more engaging narratives</li>
-<li>and faster reports</li>
-<li>best-informed recommendations</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Because…</p>
-<ul>
-<li><p>my clients want to</p>
-<ul>
-<li>make better</li>
-<li>more informed</li>
-<li>decisions</li>
-<li>look good in front of their stakeholders</li>
-<li>impress their teams</li>
-<li>impress their boss</li>
-<li>prove their value</li>
-<li>secure their employment</li>
-<li>make money</li>
-<li>pay for expenses</li>
-<li>save money</li>
-<li>invest money</li>
-<li>to keep their family healthy and happy</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3>Key Benefits</h3>
-<p>Unit/Metrics:</p>
-<ul>
-<li>“Time to Code”</li>
-<li>“Time to Surprise”</li>
-<li>“Time to Insight”</li>
-</ul>
-<h3>MVP:  “An Insights Development Environment (IDE), for you, forever.”</h3>
-<ul>
-<li>Based on <span class="wikilink unresolved">Obsidian Landing Page</span></li>
-<li><p>“An Insights Development Environment (IDE)”</p>
-<ul>
-<li>Moderating interviews is such a good time to really meet someone on eye-level</li>
-<li>We love connecting with people</li>
-<li>Qualitative analysis is where the magic happens</li>
-<li>Where you discover and develop insights from your interviews</li>
-<li>Once the interviews are over and the transcripts have arrived, you hit a brick-wall.</li>
-<li>It’s hard though without good tools</li>
-<li>Your IDE should help you spend more quality time with your transcripts</li>
-<li>In DeepDive, reading, coding, segmenting and analysing your interview transcripts is frictionless.</li>
-<li>Take a first pass of coding with alias-coding,</li>
-<li>review and dive deeper,</li>
-<li>highlight quotes with a single keyboard stroke,</li>
-<li>develop your coding book,</li>
-<li>pepper in your  segments and</li>
-<li>marvel at what patterns emerge</li>
-</ul>
-</li>
-<li><p>“For you”</p>
-<ul>
-<li>Coding interview transcripts is incredibly personal.</li>
-<li>You want to connect with your interview partners after you’ve spoken with them</li>
-<li>You want to also move fast and get into flow quickly</li>
-<li>You also want to keep your transcripts secure</li>
-<li>And you want to deliver your report ahead of time for fine-tuning with your team</li>
-<li><p>DeepDive is…</p>
-<ul>
-<li><p>Native Mac application</p>
-<ul>
-<li>it’s much faster than any web-based application</li>
-<li>It hooks into your computer directly</li>
-</ul>
-</li>
-<li><p>It’s built to be 100% Customizable</p>
-<ul>
-<li>26 Hotkeys that you can assign to your codes for speed-of-thought coding</li>
-<li>5 coding color schemes to make it easy to parse at a glance</li>
-<li>Limitless coding books per project so you can fine-tune your insights</li>
-<li>Limitless segmenting of your interviews so you can slice and dice during analysis</li>
-<li>Built-in “Auto-Coding” that automatically tags</li>
-<li>AI-Coding – Your DeepDive has a local AI engine built-in that learns as you code your transcripts and over time matures to the point of assisting you</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>“Forever”</p>
-<ul>
-<li>“In our age when cloud services can shut down, get bought, or change privacy policy any day, the last thing you want is proprietary formats and data lock-in.”</li>
-<li>With DeepDive, your data is stored locally and will not ever be held hostage by a cloud-provider</li>
-<li>Export your coded transcripts anytime to fully portable Excel or CSV</li>
-<li>CSV export also gives you the unparalleled interoperability to use any kind of sync, encryption, or data processing that works with plain text files.</li>
-</ul>
-</li>
-<li>Create transcripts</li>
-<li>Create codings</li>
-<li><p>Tag fragments</p>
-<ul>
-<li>By mouse</li>
-<li>By keyboard</li>
-</ul>
-</li>
-<li>See fragment stats by code</li>
-<li><p>Auto-code</p>
-<ul>
-<li>Add aliases to codes</li>
-<li>Remove auto-codes</li>
-</ul>
-</li>
-<li>Segment transcript</li>
-<li>Show strong sentiment hints</li>
-</ul>
-<h4>Like Delve Tool but better because…</h4>
-<ul>
-<li>No shortcuts</li>
-<li>No keyboard navigation</li>
-<li>Webbased</li>
-<li>No merging of fragments</li>
-<li>No auto-coding</li>
-</ul>
-<h4>Spreadsheet</h4>
-<ul>
-<li>Navigation</li>
-<li>Fonts</li>
-</ul>
-<h2>What?</h2>
-<p>Like <span class="wikilink unresolved">DelveTool</span> but…</p>
-<ul>
-<li>Local</li>
-<li>Secure</li>
-<li>Hotkey-first</li>
-</ul>
-<h2>How</h2>
-<ul>
-<li>A blazing fast, hotkey-first, secure MacOS App</li>
-<li><span class="wikilink unresolved">SwiftUI Learning resources</span></li>
-<li><span class="wikilink unresolved">Custom CoreData Integration Spike</span></li>
-<li><span class="wikilink unresolved">Design Resources</span></li>
-</ul>
-<h3>Something like this…</h3>
-<h4>iA Writer as Gold Standard</h4>
-<p>![Screenshot 2021-04-01 at 11.38.50.png](/notes/media/Screenshot 2021-04-01 at 11.38.50.png)
-![Screenshot 2021-04-09 at 12.13.42.png](/notes/media/Screenshot 2021-04-09 at 12.13.42.png)</p>
-<h4>Development of the App</h4>
-<h5>Three Panes!</h5>
-<p>![Screenshot 2021-04-04 at 16.06.10.png](/notes/media/Screenshot 2021-04-04 at 16.06.10.png)</p>
-<h5>Live Coding!</h5>
-<p>![Screenshot 2021-04-04 at 16.45.55 1.png](/notes/media/Screenshot 2021-04-04 at 16.45.55 1.png)</p>
-<h5>Hotkeys!</h5>
-<p>![Screenshot 2021-04-07 at 12.15.37.png](/notes/media/Screenshot 2021-04-07 at 12.15.37.png)</p>
-<h5>Homepage!</h5>
-<p>![Screenshot 2021-04-07 at 12.14.42.png](/notes/media/Screenshot 2021-04-07 at 12.14.42.png)</p>
-<h5>Frames!</h5>
-<p>![Screenshot 2021-04-07 at 15.21.55.png](/notes/media/Screenshot 2021-04-07 at 15.21.55.png)</p>
-<h5>With Sidebar!</h5>
-<p>![Screenshot 2021-04-07 at 16.03.25.png](/notes/media/Screenshot 2021-04-07 at 16.03.25.png)</p>
-<h5>With Translucency!</h5>
-<p>![Screenshot 2021-04-07 at 16.18.48.png](/notes/media/Screenshot 2021-04-07 at 16.18.48.png)</p>
-<h5>With Codings!</h5>
-<p>![Screenshot 2021-04-08 at 12.45.33.png](/notes/media/Screenshot 2021-04-08 at 12.45.33.png)
-![Screenshot 2021-04-08 at 12.45.51.png](/notes/media/Screenshot 2021-04-08 at 12.45.51.png)
-![Screenshot 2021-04-08 at 12.45.22 1.png](/notes/media/Screenshot 2021-04-08 at 12.45.22 1.png)
-![Screenshot 2021-04-08 at 14.21.03.png](/notes/media/Screenshot 2021-04-08 at 14.21.03.png)</p>
-<h5>With Coding Stats!</h5>
-<p>![Screenshot 2021-04-08 at 17.55.54.png](/notes/media/Screenshot 2021-04-08 at 17.55.54.png)
-![Screenshot 2021-04-09 at 10.52.26.png](/notes/media/Screenshot 2021-04-09 at 10.52.26.png)</p>
-<h5>With Awesome Form!</h5>
-<p>![Screenshot 2021-04-10 at 15.08.41.png](/notes/media/Screenshot 2021-04-10 at 15.08.41.png)</p>
-<h5>With Autocoding!</h5>
-<p><img src="/notes/media/autocode.gif" alt="autocode.gif" loading="lazy"></p>
-<h5>Naming Ideas!</h5>
-<p><img src="/notes/media/Ideas.png" alt="Ideas.png" loading="lazy">
-<img src="/notes/media/Deepdive.png" alt="Deepdive.png" loading="lazy">
-<img src="/notes/media/Deepdive-1.png" alt="Deepdive-1.png" loading="lazy">
-![Serif, Sans, Quattro.png](/notes/media/Serif, Sans, Quattro.png)
-![Serif, Sans, Quattro – Review.png](/notes/media/Serif, Sans, Quattro – Review.png)
-<img src="/notes/media/DeepDive.new.png" alt="DeepDive.new.png" loading="lazy">
-<img src="/notes/media/Single.png" alt="Single.png" loading="lazy"></p>
-<h5>Alias and Manual Tagging!</h5>
-<p>![Screenshot 2021-04-14 at 18.48.10.png](/notes/media/Screenshot 2021-04-14 at 18.48.10.png)
-![Screenshot 2021-04-15 at 09.42.27.png](/notes/media/Screenshot 2021-04-15 at 09.42.27.png)</p>
-<h5>New Sidebar Items!</h5>
-<p>![Screenshot 2021-04-16 at 16.04.48.png](/notes/media/Screenshot 2021-04-16 at 16.04.48.png)
-![Screenshot 2021-04-16 at 16.08.11.png](/notes/media/Screenshot 2021-04-16 at 16.08.11.png)</p>
-<h5>Spend more quality time with your transcripts</h5>
-<p>![Screenshot 2021-04-16 at 16.08.56.png](/notes/media/Screenshot 2021-04-16 at 16.08.56.png)</p>
-<h5>Taggings Highlighted!</h5>
-<p>![Screenshot 2021-04-17 at 15.29.33.png](/notes/media/Screenshot 2021-04-17 at 15.29.33.png)</p>
-<h5>Better Selection Highlighting!</h5>
-<p>![Screenshot 2021-04-17 at 15.34.25.png](/notes/media/Screenshot 2021-04-17 at 15.34.25.png)</p>
-<h5>…maybe with blurring?</h5>
-<p>![Screenshot 2021-04-17 at 15.38.43.png](/notes/media/Screenshot 2021-04-17 at 15.38.43.png)</p>
-<h5>With Fragment Classification Training!</h5>
-<p>![Screenshot 2021-04-19 at 21.05.59.png](/notes/media/Screenshot 2021-04-19 at 21.05.59.png)</p>
-<h5>With Prompted Tagging and Highlighting</h5>
-<p>![Screenshot 2021-04-21 at 20.56.03.png](/notes/media/Screenshot 2021-04-21 at 20.56.03.png)
-![Screenshot 2021-04-22 at 11.32.33.png](/notes/media/Screenshot 2021-04-22 at 11.32.33.png)</p>
-<h5>With Multi-Highlighting!</h5>
-<p>![Screenshot 2021-04-22 at 17.57.50.png](/notes/media/Screenshot 2021-04-22 at 17.57.50.png)
-![Screenshot 2021-04-23 at 12.58.01.png](/notes/media/Screenshot 2021-04-23 at 12.58.01.png)</p>
-<h5>With removing all Alias Codings!</h5>
-<p><img src="/notes/media/remove-aliascodes.gif" alt="remove-aliascodes.gif" loading="lazy"></p>
-<h5>With Segments!</h5>
-<p>![Screenshot 2021-04-23 at 10.56.27.png](/notes/media/Screenshot 2021-04-23 at 10.56.27.png)</p>
-<h2>Backlog</h2>
-<ul>
-<li>![Screenshot 2021-04-09 at 11.46.31.png](/notes/media/Screenshot 2021-04-09 at 11.46.31.png)</li>
-</ul>
-<h2>Notes</h2>
-<ul>
-<li>![Screenshot 2021-04-08 at 16.04.27.png](/notes/media/Screenshot 2021-04-08 at 16.04.27.png)</li>
-<li>![Screenshot 2021-04-08 at 16.04.36.png](/notes/media/Screenshot 2021-04-08 at 16.04.36.png)</li>
-</ul>
-<h2>People</h2>
-<ul>
-<li><span class="wikilink unresolved">DeepDive – Internal Demo</span></li>
-</ul>
-<h2>Related</h2>
-<ul>
-<li>https://github.com/EngaugeAI/engauge</li>
-<li>https://matomo.org/</li>
-<li>https://perfect.org/</li>
-</ul>
-<h2>User Journey</h2>
-<pre><code class="language-mermaid">journey
-	section Discover a missing answer
-		Create a learning plan: 5: Alexis, Courtney, Client
-	section Run interviews
-		Create a interview guide: 3: Alexis, Courtney
-		Source and schedule participants: 3: Alexis, Courtney
-		Moderate interviews: 9: Alexis
-	section Analyse interviews
-		Read transcripts: 4: Alexis
-		Code transcripts: 2: Alexis
-		Re-code transcripts: 3: Alexis
-	section Create report
-		Create slide deck: 3: Alexis, Courtney
-	section Deliver report
-		Present slide deck: 5: Alexis, Courtney, Client
-	section Make decision
-		Present slide deck: 5: Alexis, Courtney, Client
-
-</code></pre>
-<p>[^1]: <span class="wikilink unresolved">Start with WHO not How</span></p>
-</div>
-<div class="more"><a href="/notes/deepdive-a-better-qualitative-analysis-tool-s21-mini-project/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/deepdive-a-better-qualitative-analysis-tool-s21-mini-project/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-jamgpt-beta-version-launch">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/jamgpt-beta-version-launch/"><time datetime="2025-04-01T14:37:14Z">Tuesday, April 1, 2025 · 16:37</time></a></div>
-<h2 class="note-title"><a href="/notes/jamgpt-beta-version-launch/">⭐️ JamGPT Beta Version Launch</a></h2>
-<div class="text note-body clamped">
-<h2>Done</h2>
-<ul>
-<li><span class="wikilink unresolved">🤙🏻 Pogo Brainstorm Branding and Standing</span></li>
-<li><span class="wikilink unresolved">✨ Pogo Event Tracking</span></li>
-</ul>
-<h2>Tracking</h2>
-<ul>
-<li><img src="https://img.shields.io/github/downloads/akaalias/getpogo/v1.3.9/total?style=for-the-badge" alt="v1.3.9" loading="lazy"></li>
-<li><img src="https://img.shields.io/github/downloads/akaalias/getpogo/v1.3.8/total?style=for-the-badge" alt="v1.3.8" loading="lazy"></li>
-<li><img src="https://img.shields.io/github/downloads/akaalias/getpogo/v1.3.7/total?style=for-the-badge" alt="v1.3.7" loading="lazy"></li>
-<li><img src="https://img.shields.io/github/downloads/akaalias/getpogo/v1.3.6/total?style=for-the-badge" alt="v1.3.6" loading="lazy"></li>
-<li><img src="https://img.shields.io/github/downloads/akaalias/getpogo/v1.3.5/total?style=for-the-badge" alt="v1.3.5" loading="lazy"></li>
-<li><span class="wikilink unresolved">📌 Pogo – Pin prompt window on top - 1.3.8</span></li>
-</ul>
-<h2>New challenges</h2>
-<ul>
-<li><span class="wikilink unresolved">Pogo Alpha Release Launch</span></li>
-<li>DONE – Add <span class="wikilink unresolved">Pogo – 🟢🟡🔴 Failsafe API Status Monitor</span></li>
-<li>Fix limit requests based on Token-Count</li>
-<li><p>Fix limits of conversational memory</p>
-<ul>
-<li><span class="wikilink unresolved">🧠 Pogo – Create summaries for memory and export</span></li>
-<li><p>Create <span class="wikilink unresolved">ChatGPT API System Prompts</span></p>
-<ul>
-<li><span class="wikilink unresolved">🕵🏻‍♀️ Pogo System Prompts – “@translator”</span></li>
-</ul>
-</li>
-<li><span class="wikilink unresolved">Investigating ChatGPT’s Conversations API</span></li>
-<li><span class="wikilink unresolved">✨ POST backend-api-conversation</span></li>
-</ul>
-</li>
-</ul>
-<h2>Improvements</h2>
-<ul>
-<li>DONE – Periodically check for version updates</li>
-<li>Scroll down as plotting happens</li>
-<li><span class="wikilink unresolved">✨ Pogo Select Full Response Text – Improvement</span></li>
-</ul>
-<h2>New ideas</h2>
-<ul>
-<li><a class="wikilink" href="/notes/pogo-automatically-inject-user-selected-text-new-feature/">🆒 Pogo Automatically Inject User-Selected Text – New Feature</a></li>
-<li>Using <span class="wikilink unresolved">JamGPT Story – Making release notes more delightful with “The Learning Curve”, a fictional TV show about Pogo the AI</span> for release “Episodes”</li>
-</ul>
-<h3>Feedback from YC/OpenAI:</h3>
-<blockquote>
-<p>2/ &amp; 3/ <mark>we don’t have any plans for an affiliate program</mark> or <mark>a Pro API key</mark> at this time (the API is very much in alpha)</p>
-</blockquote>
-<h2>Quantum Leaps</h2>
-<h3>Use Conversations</h3>
-<p>Because: <span class="wikilink unresolved">Co-editing created the best papers and most impressed students</span></p>
-<ul>
-<li>Option 1: Using a <span class="wikilink unresolved">ChatDIY API</span> version</li>
-<li>Option 2: Using <span class="wikilink unresolved">ChatGPT API</span></li>
-</ul>
-<h3>Use System Prompts</h3>
-<ul>
-<li><span class="wikilink unresolved">ChatGPT API System Prompts</span></li>
-</ul>
-<ol start="4">
-<li><p>Shortcodes / Auto-expands</p>
-<ol>
-<li><code>#list</code> → Adds “Make this a list”</li>
-<li><code>#md</code> → Adds “Create headings”</li>
-<li><code>#nex</code> → Adds “No explanations”</li>
-</ol>
-</li>
-</ol>
-<h4>Check-In Call mit Tobi</h4>
-<ul>
-<li><p>Email an das YC Team</p>
-<ul>
-<li>Können wir die ChatGPT Pro API Keys nutzen?</li>
-<li>Referral Program?</li>
-</ul>
-</li>
-<li><p>DONE Improve: “Chat”-UX</p>
-<ul>
-<li>Letzte Antwort nicht bei Prompt-Empty löschen</li>
-</ul>
-</li>
-<li><p>HELP THEM AVOID RUNNING INTO AN ERROR</p>
-<ul>
-<li><p>FIRST TIME / On startup</p>
-<ul>
-<li>Don’t even allow letting them enter</li>
-</ul>
-</li>
-<li><p>Later</p>
-<ul>
-<li>Error messages</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Business</p>
-<ul>
-<li>Login mit meiner OpenAI ID / API Key (Paid/Pro)</li>
-<li><p>Pay for extra features</p>
-<ul>
-<li>Snippets etc.</li>
-</ul>
-</li>
-<li>Mobile app upsell</li>
-</ul>
-</li>
-<li><span class="wikilink unresolved">Learnings on AI</span></li>
-</ul>
-<h2>Prior Feature-Ideas and Improvements</h2>
-<h3>Workflow Improvements</h3>
-<ul>
-<li>DONE – ⭐️ Make prompt editor behave more like a text editor (Fix newlines)</li>
-<li>Internal: Get notified on feedback → Google Sheet → Via SMS?</li>
-<li>Stream result</li>
-<li>Have ‘canned’ responses locally when API is overloaded</li>
-</ul>
-<h3>Delight Improvements</h3>
-<ul>
-<li>Confetti as a thank you for feedback</li>
-<li>Bounce window on success</li>
-<li>Theming for colors and font-sizes</li>
-<li><p>Integrate easy-to-use design system</p>
-<ul>
-<li>Colors</li>
-<li>Fonts</li>
-<li>Sizes</li>
-</ul>
-</li>
-</ul>
-<h3>Error Handling</h3>
-<ul>
-<li>Shake window on error responses</li>
-<li>Make errors suck less with randomized fun animation</li>
-<li>Notify me when ready</li>
-<li>Refactor code</li>
-<li>See when I’m in search mode</li>
-<li>Change loading animation</li>
-<li>Revise Error styling</li>
-</ul>
-<h3>Sales Opportunities</h3>
-<ul>
-<li>Expand on <span class="wikilink unresolved">Promptcraft for Images</span> → Sell a course</li>
-<li>Expand on <span class="wikilink unresolved">Touch Typing</span> → Sell a course</li>
-<li>Integrate <span class="wikilink unresolved">Validation for &quot;OpenAI Partner Referral Program&quot;</span></li>
-</ul>
-<h4>More transparency</h4>
-<ul>
-<li><p>Expand on privacy policy</p>
-<ul>
-<li><p>We don’t track you, but you shouldn’t trust us by just tell you. Here’s how you can investigate yourself</p>
-<ul>
-<li><a href="https://www.wireshark.org/">Wireshark</a></li>
-<li><span class="wikilink unresolved">Terminal – Networking Monitoring Tools macOS</span></li>
-<li><a href="https://support.apple.com/en-hk/guide/activity-monitor/actmntr1001/mac#:~:text=In%20the%20Activity%20Monitor%20app%20on%20your%20Mac%2C%20in%20the,processes%20running%20on%20your%20Mac.">View information about Mac processes in Activity Monitor</a></li>
-<li><a href="https://support.apple.com/en-hk/guide/activity-monitor/actmntr1006/mac">View network activity in Activity Monitor on Mac</a></li>
-<li><a href="https://www.howtogeek.com/687741/how-to-monitor-network-usage-on-your-macs-dock/">How to Monitor Network Usage on Your Mac’s Dock</a></li>
-<li><a href="https://www.macintoshhowto.com/internet/monitor-internet-usage-of-individual-applications-in-osx.html">Monitor internet usage of individual applications in OSX</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2>Bugs</h2>
-<ul>
-<li>…</li>
-</ul>
-<h2>Related</h2>
-<ul>
-<li><span class="wikilink unresolved">Shake and bounce window on macOS</span></li>
-</ul>
-<p>[^1]: ![Screenshot 2023-02-21 at 11.14.52.png](Screenshot 2023-02-21 at 11.14.52.png)</p>
-</div>
-<div class="more"><a href="/notes/jamgpt-beta-version-launch/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/jamgpt-beta-version-launch/">Permalink</a></div>
 </article>
 <article class="item kind-note" id="n-pageturner-hack-for-kindle-experiment-w21-mini-project">
 <div class="meta"><span class="kind">Note</span><a class="when" href="/notes/pageturner-hack-for-kindle-experiment-w21-mini-project/"><time datetime="2025-04-01T14:36:56Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
@@ -1077,43 +907,6 @@ Answer: I’m many things, but in this context, I’m a qualitative researcher.<
 <div class="more"><a href="/notes/pageturner-hack-for-kindle-experiment-w21-mini-project/">Continue reading ›</a></div>
 <div class="src"><a href="/notes/pageturner-hack-for-kindle-experiment-w21-mini-project/">Permalink</a></div>
 </article>
-<article class="item kind-note" id="n-my-physical-notebooks-photos">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/my-physical-notebooks-photos/"><time datetime="2025-04-01T14:36:56Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
-<h2 class="note-title"><a href="/notes/my-physical-notebooks-photos/">⭐️ My Physical Notebooks (Photos)</a></h2>
-<div class="text note-body clamped">
-<h2>Notebooks</h2>
-<ul>
-<li><span class="wikilink unresolved">Red Notebook 2020-2021 (Photos)</span></li>
-</ul>
-<h2>Notepads</h2>
-<ul>
-<li><span class="wikilink unresolved">Micro-Notebook S21 – Mallorca (Photos)</span></li>
-<li><span class="wikilink unresolved">Micro-Notebook S21 – Berlin 1 (Photos)</span></li>
-<li><span class="wikilink unresolved">Micro-Notebook S21 – Berlin 2 (Photos)</span></li>
-<li><span class="wikilink unresolved">Micro-Notebook S21 – Berlin 3 (Photos)</span></li>
-<li><span class="wikilink unresolved">Micro-Notebook S21 – Berlin 4 (Photos)</span></li>
-<li><span class="wikilink unresolved">Micro-Notebook S21 – Berlin 5 (Photos)</span></li>
-<li><span class="wikilink unresolved">Micro-Notebook S21 – Berlin 6 (Photos)</span></li>
-<li><span class="wikilink unresolved">Micro-Notebook S21 – Berlin 7 (Photos)</span></li>
-<li><span class="wikilink unresolved">Micro-Notebook F21 – Berlin 8 (Photos)</span></li>
-<li><span class="wikilink unresolved">Micro-Notebook F21 – Berlin 9 (Photos)</span></li>
-<li><span class="wikilink unresolved">Micro-Notebook F21 – Berlin 10 (Photos)</span></li>
-<li>TBD: <span class="wikilink unresolved">Micro-Notebook W21 – Berlin 11 (Photos)</span></li>
-<li>TBD: <span class="wikilink unresolved">Micro-Notebook W21 – Berlin 12 (Photos)</span></li>
-<li>TBD: <span class="wikilink unresolved">Black Notebook Portugal</span></li>
-</ul>
-<h2>Sticky-Notes</h2>
-<ul>
-<li><span class="wikilink unresolved">Frühstücksgespräch mit F.K. (Photos)</span></li>
-</ul>
-<h2>Related</h2>
-<ul>
-<li><a class="wikilink" href="/notes/micro-note-taking-set-s21-mini-project/">⭐️ &quot;Micro-Note-Taking Set&quot; (S21 Mini-Project)</a></li>
-</ul>
-</div>
-<div class="more"><a href="/notes/my-physical-notebooks-photos/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/my-physical-notebooks-photos/">Permalink</a></div>
-</article>
 <article class="item kind-note" id="n-my-light-therapy-lamp-solution-with-kindle">
 <div class="meta"><span class="kind">Note</span><a class="when" href="/notes/my-light-therapy-lamp-solution-with-kindle/"><time datetime="2025-04-01T14:36:56Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
 <h2 class="note-title"><a href="/notes/my-light-therapy-lamp-solution-with-kindle/">⭐️ My Light-Therapy Lamp Solution with Kindle</a></h2>
@@ -1253,26 +1046,12 @@ Answer: I’m many things, but in this context, I’m a qualitative researcher.<
 <h2>Prior Research and Experiments</h2>
 <ul>
 <li><a class="wikilink" href="/notes/happier-through-bright-light-my-winter-s-a-d-well-being-research-1-year-of-light/">⭐️ Happier Through Bright Light (Experiment)</a></li>
-<li><a class="wikilink" href="/notes/humancharger-unboxing-first-impressions-and-use/">Humancharger Unboxing First Impressions And Use</a></li>
+<li><span class="wikilink unresolved">Humancharger Unboxing First Impressions And Use</span></li>
 <li><span class="wikilink unresolved">My HumanCharger Experiment Week 1</span></li>
 </ul>
 </div>
 <div class="more"><a href="/notes/my-light-therapy-lamp-solution-with-kindle/">Continue reading ›</a></div>
 <div class="src"><a href="/notes/my-light-therapy-lamp-solution-with-kindle/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-things-i-should-share-more-often">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/things-i-should-share-more-often/"><time datetime="2025-04-01T14:36:56Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
-<h2 class="note-title"><a href="/notes/things-i-should-share-more-often/">Things I should share more often</a></h2>
-<div class="text note-body">
-<ul>
-<li><a class="wikilink" href="/notes/how-to-make-big-ass-bubbles/">⭐️ How to Make Big-Ass Bubbles</a></li>
-<li><span class="wikilink unresolved">Whiteboard Hacking</span></li>
-<li><a class="wikilink" href="/notes/quickdown/">QuickDown</a></li>
-<li><span class="wikilink unresolved">Pudding</span></li>
-<li><span class="wikilink unresolved">Ballet</span></li>
-</ul>
-</div>
-<div class="src"><a href="/notes/things-i-should-share-more-often/">Permalink</a></div>
 </article>
 <article class="item kind-note" id="n-kinesiotape-for-psychological-well-being-experiment-s21-mini-project">
 <div class="meta"><span class="kind">Note</span><a class="when" href="/notes/kinesiotape-for-psychological-well-being-experiment-s21-mini-project/"><time datetime="2025-04-01T14:36:56Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
@@ -1369,30 +1148,11 @@ Answer: I’m many things, but in this context, I’m a qualitative researcher.<
 <ul>
 <li><a class="wikilink" href="/notes/reframing-off-the-shelf-objects-s21-mini-project/">⭐️ Reframing Off-the-Shelf Objects (S21 Mini-Project)</a></li>
 <li><a class="wikilink" href="/notes/micro-note-taking-set-s21-mini-project/">⭐️ &quot;Micro-Note-Taking Set&quot; (S21 Mini-Project)</a></li>
-<li><a class="wikilink" href="/notes/how-to-discover-what-you-really-need-the-most-with-the-needs-card-deck/">Needs Card Deck</a></li>
+<li><span class="wikilink unresolved">Needs Card Deck</span></li>
 </ul>
 </div>
 <div class="more"><a href="/notes/hello-my-name-is-buttons-s21-mini-project/">Continue reading ›</a></div>
 <div class="src"><a href="/notes/hello-my-name-is-buttons-s21-mini-project/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-notes-of-note">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/notes-of-note/"><time datetime="2025-04-01T14:36:55Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
-<h2 class="note-title"><a href="/notes/notes-of-note/">Notes Of Note</a></h2>
-<div class="text note-body">
-<ul>
-<li><a class="wikilink" href="/notes/your-amazing-youness/">⭐️ Your amazing YOUness</a></li>
-<li><a class="wikilink" href="/notes/my-mothers-death-in-2018/">⭐️ My mothers death in 2018</a></li>
-<li><a class="wikilink" href="/notes/i-am-mr-bubbles/">⭐️ Mr Bubbles in Bushwick (Video)</a></li>
-<li><a class="wikilink" href="/notes/how-to-make-better-and-faster-investment-decisions-with-lean-experiments/">⭐️ How To Make Better Business Decisions</a></li>
-<li><a class="wikilink" href="/notes/how-to-make-big-ass-bubbles/">⭐️ How to Make Big-Ass Bubbles</a></li>
-<li><span class="wikilink unresolved">⭐️ Intermittent Dopamine Fasting</span></li>
-<li><span class="wikilink unresolved">⭐️ 21-Day Obsidian Publish Challenge</span></li>
-<li><span class="wikilink unresolved">Notes on Running a Remote Design Sprint</span></li>
-<li><span class="wikilink unresolved">Self-Worth and the Road to Fulfilment</span></li>
-<li><span class="wikilink unresolved">My Art, Artworks and Exhibitons</span></li>
-</ul>
-</div>
-<div class="src"><a href="/notes/notes-of-note/">Permalink</a></div>
 </article>
 <article class="item kind-note" id="n-my-mothers-death-in-2018">
 <div class="meta"><span class="kind">Note</span><a class="when" href="/notes/my-mothers-death-in-2018/"><time datetime="2025-04-01T14:36:55Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
@@ -1413,104 +1173,6 @@ Answer: I’m many things, but in this context, I’m a qualitative researcher.<
 </div>
 <div class="more"><a href="/notes/my-mothers-death-in-2018/">Continue reading ›</a></div>
 <div class="src"><a href="/notes/my-mothers-death-in-2018/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-the-other-social-lubricant-making-giant-bubbles">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/the-other-social-lubricant-making-giant-bubbles/"><time datetime="2025-04-01T14:36:55Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
-<h2 class="note-title"><a href="/notes/the-other-social-lubricant-making-giant-bubbles/">The Other Social Lubricant – Making Giant Bubbles</a></h2>
-<div class="text note-body">
-<iframe src="https://player.vimeo.com/video/183123867" width="640" height="360" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-
-<ul>
-<li><a class="wikilink" href="/notes/how-to-make-big-ass-bubbles/">⭐️ How to Make Big-Ass Bubbles</a></li>
-</ul>
-</div>
-<div class="src"><a href="/notes/the-other-social-lubricant-making-giant-bubbles/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-how-to-double-my-rate-of-failure-idea">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/how-to-double-my-rate-of-failure-idea/"><time datetime="2025-04-01T14:36:55Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
-<h2 class="note-title"><a href="/notes/how-to-double-my-rate-of-failure-idea/">⭐️ How To Double My Rate Of Failure (Idea)</a></h2>
-<div class="text note-body clamped">
-<p>While it’s been great to have a single venture as my focus, I’m starting to feel too slow about it. Focus is good, but it needs to be balanced with the ability to find something worth 100% of focus. Here I think I’ve had opportunity costs by focusing on one thing too early. </p>
-<p>I saw this recently on Instagram and it reminded me of how I had approached my ventures last year. Especially the “double your rate of failure” bit stuck with me. With one venture, I have a rate of 1. I could, and have in the past, parallelized 2 and 3 ventures. </p>
-<p>After all… I learned last year, after publishing 10 books, that – if I do everything else right – <strong>only</strong> 1 out of 10 will actually work and be profitable.</p>
-<p><img src="Attachments/91b1c57c12cf70a401930dffe192b34a.png" alt="" loading="lazy"></p>
-<p>So, here’s a break-down of what I’m thinking:</p>
-<p>Starting with the smallest unit, the experiment with its three steps, then sequencing that in one venture, then parallelizing multiple (non-cross-pollinating) ventures to double and triple my rate of failure.<img src="Attachments/f5478fc233a98359d380ef61e64e24ab.jpeg" alt="" loading="lazy"></p>
-<p>However, this is pretty much an idea where everything always takes the same amount of time. In reality it looks more like this:</p>
-<p><img src="Attachments/94879ff3f63640a12304cbc3678d65e8.jpeg" alt="" loading="lazy"></p>
-<p>So, I do have my experiment board that allowed me to keep track of my experiments before. And I’m not crazy about the Evernote style so far… Should I just re-use my tracking system? Why did I stop using it?</p>
-<p>See <span class="wikilink unresolved">✨ How To Make Better and Faster Investment-Decisions With Lean Experiments</span> for details -&gt;</p>
-<p><img src="/notes/media/Screen-Shot-2017-10-01-at-11.06.56-AM.png" alt="Screen-Shot-2017-10-01-at-11.06.56-AM.png" loading="lazy"></p>
-<p>Many questions today. But I’ll find the answer!</p>
-<h2>Related</h2>
-<ul>
-<li><span class="wikilink unresolved">The 10X Rule (Book)</span></li>
-</ul>
-</div>
-<div class="more"><a href="/notes/how-to-double-my-rate-of-failure-idea/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/how-to-double-my-rate-of-failure-idea/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-how-to-x">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/how-to-x/"><time datetime="2025-04-01T14:36:55Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
-<h2 class="note-title"><a href="/notes/how-to-x/">How To X</a></h2>
-<div class="text note-body">
-<ul>
-<li><a class="wikilink" href="/notes/how-to-make-better-and-faster-investment-decisions-with-lean-experiments/">⭐️ How To Make Better and Faster Investment-Decisions With Lean Experiments</a></li>
-<li><a class="wikilink" href="/notes/how-to-make-big-ass-bubbles/">⭐️ How to Make Big-Ass Bubbles</a></li>
-<li><a class="wikilink" href="/notes/how-to-double-my-rate-of-failure/">⭐️ How To Double My Rate Of Failure</a></li>
-<li><span class="wikilink unresolved">How I Read More Faster And Better</span></li>
-<li><a class="wikilink" href="/notes/how-to-breathe-long-and-deep/">How To Breathe Long And Deep</a></li>
-<li><a class="wikilink" href="/notes/how-to-fall-in-love-with-yourself/">How To Fall In Love With Yourself</a></li>
-<li><a class="wikilink" href="/notes/here-s-one-way-to-instantly-relax-and-kick-start-your-subconscious-problem-solvi/">Heres How To Relax And Kick Start Your Subconscious Problem Solving Mechanism</a></li>
-<li><a class="wikilink" href="/notes/how-i-have-grown-my-morning-routine/">How I Have Grown My Morning Routine</a></li>
-<li><a class="wikilink" href="/notes/how-i-manage-my-time-with-timestacks/">How I Manage My Time With Timestacks</a></li>
-<li><a class="wikilink" href="/notes/how-to-get-to-newark-from-manhattan-and-how-to-not-fly-to-berlin/">How To Get To Newark And How Not Fly To Berlin</a></li>
-<li><a class="wikilink" href="/notes/how-to-learn-to-code-test-drive-all-the-things/">How To Learn To Code Test Drive All The Things</a></li>
-</ul>
-</div>
-<div class="src"><a href="/notes/how-to-x/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-my-vision-of-work">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/my-vision-of-work/"><time datetime="2025-04-01T14:36:55Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
-<h2 class="note-title"><a href="/notes/my-vision-of-work/">My Vision of Work</a></h2>
-<div class="text note-body">
-<h2>What I want</h2>
-<ul>
-<li><a class="wikilink" href="/notes/how-to-make-better-and-faster-investment-decisions-with-lean-experiments/">⭐️ How To Make Better and Faster Investment-Decisions With Lean Experiments</a></li>
-</ul>
-<h2>What I don’t want</h2>
-<ul>
-<li><span class="wikilink unresolved">My Rules of Engagement</span></li>
-</ul>
-</div>
-<div class="src"><a href="/notes/my-vision-of-work/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-my-biggest-misses">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/my-biggest-misses/"><time datetime="2025-04-01T14:36:55Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
-<h2 class="note-title"><a href="/notes/my-biggest-misses/">My “Biggest Misses”</a></h2>
-<div class="text note-body">
-<p>For every <span class="wikilink unresolved">“Greatest Hit”</span>, I had to <a class="wikilink" href="/notes/how-to-make-better-and-faster-investment-decisions-with-lean-experiments/">fail on average about ten times</a>.</p>
-<p>In most cases, “missing” means that I didn’t make, what was the right call in hindsight, sooner.</p>
-<p>Without further ado, here are slices of my personal humble pie. A selection of my “Biggest Misses” and their biggest lessons:</p>
-<p><strong>DreamersWin GmbH (2001)</strong></p>
-<blockquote>
-<p>Next time: If it sounds too good to be true, it probably is. Run!</p>
-</blockquote>
-<p><strong>TigTags and PercentMobile Inc. (2009)</strong></p>
-<blockquote>
-<p>Remember: No matter how well it’s built: If they’re not buying, your offer stinks.</p>
-</blockquote>
-<p><strong>Venture Metrix Inc. (2014)</strong></p>
-<blockquote>
-<p>Make sure that you don’t scale it before you’ve nailed it.</p>
-</blockquote>
-<p><strong>Product-First Marketing (2018)</strong></p>
-<blockquote>
-<p><em>Once more:</em> No matter how well it’s built: If they’re not buying, your offer stinks.</p>
-</blockquote>
-<p>There are also <span class="wikilink unresolved">My “Best Shots”</span> (in case you’re curious.)</p>
-</div>
-<div class="src"><a href="/notes/my-biggest-misses/">Permalink</a></div>
 </article>
 <article class="item kind-note" id="n-how-to-make-better-and-faster-investment-decisions-with-lean-experiments">
 <div class="meta"><span class="kind">Note</span><a class="when" href="/notes/how-to-make-better-and-faster-investment-decisions-with-lean-experiments/"><time datetime="2025-04-01T14:36:55Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
@@ -1545,7 +1207,7 @@ Answer: I’m many things, but in this context, I’m a qualitative researcher.<
 </li>
 </ul>
 <h3>I added software once I maxed out on paper</h3>
-<p>Note that I built the tracking software only once I had run out of space on my physical <span class="wikilink unresolved">custom-made</span> <a class="wikilink" href="/notes/lean-experiment-board/">Lean Experiment Board</a>
+<p>Note that I built the tracking software only once I had run out of space on my physical <span class="wikilink unresolved">custom-made</span> <span class="wikilink unresolved">Lean Experiment Board</span>
 <img src="/notes/media/KDP-Publishing-Experiment-Board.jpg" alt="KDP-Publishing-Experiment-Board.jpg" loading="lazy"></p>
 <h2>Types Of Experiments:</h2>
 <p><img src="/notes/media/Screen-Shot-2017-10-01-at-10.58.31-AM.png" alt="Screen-Shot-2017-10-01-at-10.58.31-AM.png" loading="lazy">
@@ -1577,7 +1239,7 @@ I templated the main three experiment types that I usually run:</p>
 <p>Thanks for reading!</p>
 <p><img src="Attachments/Screen-Shot-2017-10-01-at-11.38.38-AM-300x130.png" alt="" loading="lazy"></p>
 <ul>
-<li><a class="wikilink" href="/notes/lean-experiment-board/">Lean Experiment Board</a></li>
+<li><span class="wikilink unresolved">Lean Experiment Board</span></li>
 <li><span class="wikilink unresolved">Lean Experiment Board 2.0.pdf</span></li>
 </ul>
 </div>
@@ -1639,61 +1301,6 @@ Logo color: Petrol-green</p>
 </div>
 <div class="more"><a href="/notes/whole-earth-39thirty-cap-s21-mini-project/">Continue reading ›</a></div>
 <div class="src"><a href="/notes/whole-earth-39thirty-cap-s21-mini-project/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-pogo-automatically-inject-user-selected-text-new-feature">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/pogo-automatically-inject-user-selected-text-new-feature/"><time datetime="2025-04-01T14:36:55Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
-<h2 class="note-title"><a href="/notes/pogo-automatically-inject-user-selected-text-new-feature/">🆒 Pogo Automatically Inject User-Selected Text – New Feature</a></h2>
-<div class="text note-body">
-<ul>
-<li><a class="wikilink" href="/notes/jamgpt-beta-version-launch/">⭐️ JamGPT Beta Version Launch</a></li>
-<li>Gestern mit Tobi besprochen</li>
-<li><p>Bei Raycast gesehen als neues “Workflow” Feature:</p>
-<ul>
-<li><p>Man hat in einer Applikation gerade Text selektiert</p>
-<ul>
-<li><em>Some text that I’m working on and I need this part here translated: <mark>“Hello World”</mark></em></li>
-</ul>
-</li>
-<li>Man öffnet Pogo und sieht gleich die Option, das zu benutzen OHNE manuellem COPY/PASTING</li>
-</ul>
-</li>
-</ul>
-<h2>Demo</h2>
-<p>![Screenshot 2023-02-28 at 20.32.28.png](Screenshot 2023-02-28 at 20.32.28.png)</p>
-<h2>Strategien</h2>
-<ul>
-<li><span class="wikilink unresolved">Pogo - Clipboard Directive – New Feature</span></li>
-<li><span class="wikilink unresolved">Calling AppleScript from Swift</span></li>
-<li><span class="wikilink unresolved">Getting Text Selection with Accessibility on macOS – Breaks Sandbox</span></li>
-</ul>
-</div>
-<div class="src"><a href="/notes/pogo-automatically-inject-user-selected-text-new-feature/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-deepdive">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/deepdive/"><time datetime="2025-04-01T14:36:55Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
-<h2 class="note-title"><a href="/notes/deepdive/">⭐️ DeepDive</a></h2>
-<div class="text note-body">
-<p><img src="/notes/media/deepdive-overview.png" alt="deepdive-overview.png" loading="lazy"></p>
-<p><span class="wikilink unresolved">Development of the DeepDive</span></p>
-<h2>Related</h2>
-<ul>
-<li><span class="wikilink unresolved">DeepDive User Journey</span>
-<span class="wikilink unresolved">What is DeepDive</span></li>
-</ul>
-</div>
-<div class="src"><a href="/notes/deepdive/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-luminette-laptop-bar">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/luminette-laptop-bar/"><time datetime="2025-04-01T14:36:54Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
-<h2 class="note-title"><a href="/notes/luminette-laptop-bar/">Luminette Laptop Bar</a></h2>
-<div class="text note-body">
-<p>From: <a class="wikilink" href="/notes/happier-through-bright-light-my-winter-s-a-d-well-being-research-1-year-of-light/">⭐️ Happier Through Bright Light (Experiment)</a></p>
-<p><img src="/notes/media/18381aa965a174dfdfebc65100ee92ea.jpg" alt="Attachments/18381aa965a174dfdfebc65100ee92ea.jpg" loading="lazy"></p>
-<p><img src="/notes/media/f65214e2e77cee7604f13b5c03bba16d.jpg" alt="Attachments/f65214e2e77cee7604f13b5c03bba16d.jpg" loading="lazy">
-<img src="/notes/media/2f1ff1d5156092ce5d786bf24a7d7806.jpg" alt="Attachments/2f1ff1d5156092ce5d786bf24a7d7806.jpg" loading="lazy"></p>
-<p><img src="/notes/media/a7badfed8f714ea10712e0868958b473.jpg" alt="Attachments/a7badfed8f714ea10712e0868958b473.jpg" loading="lazy"></p>
-</div>
-<div class="src"><a href="/notes/luminette-laptop-bar/">Permalink</a></div>
 </article>
 <article class="item kind-note" id="n-micro-note-taking-set-s21-mini-project">
 <div class="meta"><span class="kind">Note</span><a class="when" href="/notes/micro-note-taking-set-s21-mini-project/"><time datetime="2025-04-01T14:36:54Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
@@ -2020,265 +1627,6 @@ To build on what’s there already and make it better.</p>
 <div class="more"><a href="/notes/reframing-off-the-shelf-objects-s21-mini-project/">Continue reading ›</a></div>
 <div class="src"><a href="/notes/reframing-off-the-shelf-objects-s21-mini-project/">Permalink</a></div>
 </article>
-<article class="item kind-note" id="n-pogo-name-the-baby">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/pogo-name-the-baby/"><time datetime="2025-04-01T14:36:29Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
-<h2 class="note-title"><a href="/notes/pogo-name-the-baby/">🐣 Pogo – Name the baby</a></h2>
-<div class="text note-body clamped">
-<ul>
-<li><a class="wikilink" href="/notes/jamgpt-beta-version-launch/">⭐️ JamGPT Beta Version Launch</a></li>
-<li><a href="https://www.notion.so/Name-the-baby-fc90fa979d5645a3b215561d5ba79844">“🐣 Name the baby” Notion Page</a></li>
-</ul>
-<h2>🎉 JamGPT</h2>
-<ul>
-<li><p>JamGPT.app</p>
-<ul>
-<li>Jam Session</li>
-</ul>
-</li>
-</ul>
-<h2>Brainstorming</h2>
-<ul>
-<li><p>…GPT → (Wenn OpenAI damit okay ist.)</p>
-<ul>
-<li>Calm</li>
-<li>Run</li>
-<li>Feather</li>
-</ul>
-</li>
-<li>GPT…</li>
-</ul>
-<p><img src="rungpt.png" alt="rungpt.png" loading="lazy"></p>
-<h2>Feedback F.K.</h2>
-<ul>
-<li><p>“…GPT”</p>
-<ul>
-<li>EasyGPT</li>
-<li>SmoothGPT</li>
-<li>QuickGPT</li>
-</ul>
-</li>
-</ul>
-<h3>Contain G, P, T</h3>
-<ul>
-<li>Parget</li>
-<li>Graphite</li>
-<li>Optogram</li>
-<li>Postgrad</li>
-<li>Protagonist</li>
-</ul>
-<h4>Related</h4>
-<ul>
-<li>Grant</li>
-<li>Gatsby Porter</li>
-</ul>
-<h2>Namen Brainstorming</h2>
-<ul>
-<li><p>Lumyn</p>
-<ul>
-<li>LUMYN– Gefällt mir sehr gut, weil es um Licht geht (”Lumen, Lux, Luxus…”). Licht im Sinne von “Sichtbarkeit”, “Discovery”. Die Richtung mmN. passt gut, da bei AI ist alles etwas DIFFUSER und UNTERSCHWELLIGER. Es glüht und schimmert und glitzert eher. Wie z.b. 🐛💡<a href="https://as1.ftcdn.net/v2/jpg/05/28/75/96/1000_F_528759662_xuWCSnUJTRrkj5PakfEBHRRkQnhRO0k4.jpg">Glühwürmchen</a> oder 🌌<a href="https://www.timeforkids.com/wp-content/uploads/2017/08/170428013333_hero1.jpg?w=1024">diese Algen, die nachts leuchten</a> oder 🪼 <a href="https://d2cbg94ubxgsnp.cloudfront.net/Pictures/2000x1125/3/5/9/506359_gettyimages557613659_353985.jpg">diese Leucht-Quallen</a> (”Bio-Luminescence”) Weil die Antworten eben nicht so scharf umrissene Antworten gibt. Für klare Antworten passt natürlich “🔦 Spotlight” und “☀ Raycast” 😂</li>
-</ul>
-</li>
-</ul>
-<h3>Direction-Finding</h3>
-<ul>
-<li>Sparkle</li>
-<li>Ease</li>
-<li>Mate</li>
-<li>Flow</li>
-<li>Magic</li>
-<li>Swift</li>
-<li>Pulse</li>
-<li>Gleam</li>
-<li>Spark</li>
-<li>Smooth</li>
-<li>Glide</li>
-<li>Pace</li>
-<li>Verve</li>
-<li>Pace</li>
-<li>Flash</li>
-<li>Twist</li>
-<li>Surge</li>
-<li>Beam</li>
-<li>Pep</li>
-<li>Sprint</li>
-<li>Kin</li>
-<li>Bolt</li>
-<li>Zest</li>
-</ul>
-<h2>Attitude, Branding and Standing</h2>
-<ul>
-<li>Fuck Clippy and Sidney and even Pogo</li>
-<li><p>Let’s make it PERSONAL because it’s coming from US</p>
-<ul>
-<li><p>Alexis</p>
-<ul>
-<li>Observe</li>
-</ul>
-</li>
-<li><p>Tobi</p>
-<ul>
-<li>RUN, PERFORM, EXECUTE</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3>Inspos</h3>
-<ul>
-<li><p>Buttercup 🌼</p>
-<ul>
-<li>Easy to say and remember</li>
-<li>Der Song ist schön</li>
-<li>Organic, süß, klein</li>
-</ul>
-</li>
-<li><p>Shuck 🦪</p>
-<ul>
-<li>→ Oyster, it takes a few tries to open it, pearl</li>
-<li>Verb, not noun</li>
-<li>Oyster / Oysterbar</li>
-<li>Shucker</li>
-</ul>
-</li>
-<li><p>Butter 🧈</p>
-<ul>
-<li>Buttery</li>
-<li>Butterbar</li>
-<li>Smooth, Easy</li>
-</ul>
-</li>
-<li>Punk 🌋</li>
-<li><p>FUCK 💥</p>
-<ul>
-<li>Inspired by <span class="wikilink unresolved">Pistol (TV Series)</span> – Einfach mal was neues und rebellisches</li>
-<li>Denn ansonsten tun alle so, als ob alles gut ist</li>
-<li><p>PUNK</p>
-<ul>
-<li><span class="wikilink unresolved">Suicide (Band)</span></li>
-<li><span class="wikilink unresolved">New York Dolls (Band)</span></li>
-<li><span class="wikilink unresolved">Dead Kennedys (Band)</span></li>
-<li><span class="wikilink unresolved">Blood, Sugar, Sex, Magick – Red Hot Chili Peppers</span></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2>Resources</h2>
-<ul>
-<li><span class="wikilink unresolved">Smoothie Pogo Midjourney Inspos</span></li>
-</ul>
-<h2>Appendix</h2>
-<h2>Idea “Smoothie”</h2>
-<blockquote>
-<p>Brainstorm 5 playful, whimsical single-word names for an app that’s currently called “Smoothie”. Do not include “Smoothie” in the suggestion.</p>
-</blockquote>
-<ol>
-<li>Purée</li>
-<li>Frappe</li>
-<li>Refresher</li>
-<li>Shaker</li>
-<li><mark>Slurpee</mark></li>
-</ol>
-<blockquote>
-<p>Brainstorm 5 playful, whimsical single-word names for an app that’s currently called “Smoothie”. Do not include “Smoothie” in the suggestion. <strong>Riff on “Slurpee”  if you’d like!</strong></p>
-</blockquote>
-<ol>
-<li>Slushy</li>
-<li>Swiggy</li>
-<li>Slushie</li>
-<li><mark>Jiggy</mark></li>
-<li>Fruity</li>
-</ol>
-<h2>Idea “Pogo”</h2>
-<p>Brainstorm 5 playful, whimsical single-word names for an app that’s currently called “Pogo”. <strong>Do not include “Pogo” in the suggestion .</strong></p>
-<ol>
-<li><mark>Frolic</mark></li>
-<li><mark>Bop</mark></li>
-<li>Boing</li>
-<li><mark>Jiggy</mark></li>
-<li>Zingy</li>
-</ol>
-<h2>Fictional Riffs</h2>
-<blockquote>
-<p>Brainstorm 10 playful, whimsical, fictional single-word names for an app that’s currently called “Smoothie”. Do not include “Smoothie” in the suggestion. <strong>Riff on “Slurpee”, “Pogo”, “Jiggy”, “Smoothie”</strong></p>
-</blockquote>
-<ol>
-<li>Slushie</li>
-<li>Jiggle</li>
-<li>Slippy</li>
-<li>Fruity</li>
-<li>Poppy</li>
-<li>Swirly</li>
-<li>Mixer</li>
-<li>Floopy</li>
-<li>Slushy</li>
-<li>Shaker</li>
-</ol>
-<p>Brainstorm 10 playful, fictional single-word names for an app that’s currently called “Smoothie”. Do not include “Smoothie” in the suggestion. Riff on “Slurpee”, “Pogo”, “Jiggy”, “Smoothie”, “Floopy”. <strong>Do not include real words or names.</strong></p>
-<ol>
-<li>Slurpoo</li>
-<li>Poggy</li>
-<li>Jiglee</li>
-<li><mark>Flurple</mark></li>
-<li>Slurfie</li>
-<li>Poglo</li>
-<li>Jiggo</li>
-<li><mark>Floople</mark></li>
-<li>Slurple</li>
-<li>Poglee</li>
-</ol>
-<p>Brainstorm 10 playful, fictional single-word names for an app that’s currently called “Smoothie”. Do not include “Smoothie” in the suggestion. <strong>Riff on “Pogo”,  “Smoothie”, “Floopy”. Do not include real words or names</strong>.</p>
-<ol>
-<li>Pogoee</li>
-<li><mark>Floople</mark></li>
-<li>Swooshie</li>
-<li>Ploopy</li>
-<li>Sproogle</li>
-<li>Splooshy</li>
-<li>Sloopy</li>
-<li>Goople</li>
-<li><mark>Boopie</mark></li>
-<li>Flooshy</li>
-</ol>
-<p>3# Brainstorm a list of 5 fictional, made-up, cute, single-word names for a small companion. Riff off of “Flopsy”, “Pogo”, “Floppy”, “Bitzi” (Formatted as a markdown document)</p>
-<ul>
-<li>Flick</li>
-<li>Noodle</li>
-<li>Poppy</li>
-<li>Smushy</li>
-<li>Tubby</li>
-</ul>
-<p>I agree it seems weird if it’s the first contact.</p>
-<p>To me it makes a bit of sense because I had built a GPT3-based chat two weeks ago, based on their completion documentation^1</p>
-<p>The “format” for this prompt already has everything System prompt, user and assistant.</p>
-<pre><code>The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.
-
-Human: Hello, who are you?
-AI: I am an AI created by OpenAI. How can I help you today?
-Human: Please translate &quot;Hello&quot; to German
-AI: 
-</code></pre>
-<p>To retain context, I kept the system prompt on top and added the prior prompt/completions to the history stack in-between.</p>
-<p>End-user-experience-wise, this worked really, really well. Practically as good as the ChatGPT UI.</p>
-<p>As a developer though, it was not fun for obvious string-fiddling-splicing-and-dicing reasons. But again, this worked well and I would have kept it as-is for as long as possible.</p>
-<p>So it wasn’t a giant leap when I saw the official format.</p>
-<pre><code>&lt;|im_start|&gt;system
-You are ChatGPT, a large language model trained by OpenAI. Answer as concisely as possible.
-Knowledge cutoff: 2021-09-01
-Current date: 2023-03-01&lt;|im_end|&gt;
-&lt;|im_start|&gt;user
-Hello, who are you?&lt;|im_end|&gt;
-&lt;|im_start|&gt;assistant
-I am an AI created by OpenAI. How can I help you today?&lt;|im_end|&gt;
-&lt;|im_start|&gt;user
-Please translate &quot;Hello&quot; to German&lt;|im_end|&gt;
-</code></pre>
-<p>I’ve used that, too, and handling of prior conversations became a bit more manageable.</p>
-<p>^1: https://platform.openai.com/docs/guides/completion/conversation</p>
-</div>
-<div class="more"><a href="/notes/pogo-name-the-baby/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/pogo-name-the-baby/">Permalink</a></div>
-</article>
 <article class="item kind-note" id="n-your-amazing-youness">
 <div class="meta"><span class="kind">Note</span><a class="when" href="/notes/your-amazing-youness/"><time datetime="2025-04-01T14:36:29Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
 <h2 class="note-title"><a href="/notes/your-amazing-youness/">⭐️ Your amazing YOUness</a></h2>
@@ -2286,7 +1634,7 @@ Please translate &quot;Hello&quot; to German&lt;|im_end|&gt;
 <p>Your YOUness is what makes you a one-in-a-billion event in all of time and space.</p>
 <p>Ever.</p>
 <p>Your YOUness is endlessly valuable to the world because you exist only once.</p>
-<p>It’s all <span class="wikilink unresolved"> the books you’ve read</span>, <span class="wikilink unresolved"> people you’ve met</span>, <span class="wikilink unresolved"> places you have visited</span>, <span class="wikilink unresolved"> places you’ve lived in</span>, <span class="wikilink unresolved"> songs you heard</span>, <span class="wikilink unresolved"> tools you’ve used</span>, <span class="wikilink unresolved"> events that you took part in</span>, <a class="wikilink" href="/notes/my-mothers-death-in-2018/"> the pain you’ve suffered</a>, <a class="wikilink" href="/notes/my-most-interesting-things-at-the-moment/"> the joys you have discovered</a>.</p>
+<p>It’s all <span class="wikilink unresolved"> the books you’ve read</span>, <span class="wikilink unresolved"> people you’ve met</span>, <span class="wikilink unresolved"> places you have visited</span>, <span class="wikilink unresolved"> places you’ve lived in</span>, <span class="wikilink unresolved"> songs you heard</span>, <span class="wikilink unresolved"> tools you’ve used</span>, <span class="wikilink unresolved"> events that you took part in</span>, <a class="wikilink" href="/notes/my-mothers-death-in-2018/"> the pain you’ve suffered</a>, <span class="wikilink unresolved"> the joys you have discovered</span>.</p>
 <p>All of that has made you who you are and <span class="wikilink unresolved"> what you care about</span>.</p>
 <p>It has shaped how you look at the world, what you deeply value, what surprising connections you make, what incredible ideas you’ll have.</p>
 <p>Your YOUness is is your unique point of view into the world.</p>
@@ -2303,347 +1651,18 @@ Please translate &quot;Hello&quot; to German&lt;|im_end|&gt;
 <div class="more"><a href="/notes/your-amazing-youness/">Continue reading ›</a></div>
 <div class="src"><a href="/notes/your-amazing-youness/">Permalink</a></div>
 </article>
-<article class="item kind-note" id="n-selected-blog-posts">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/selected-blog-posts/"><time datetime="2025-04-01T14:36:29Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
-<h2 class="note-title"><a href="/notes/selected-blog-posts/">Selected Blog Posts</a></h2>
-<div class="text note-body clamped">
-<ul>
-<li><a class="wikilink" href="/notes/happier-through-bright-light-my-winter-s-a-d-well-being-research-1-year-of-light/">⭐️ Happier Through Bright Light (Experiment)</a></li>
-<li><a class="wikilink" href="/notes/microgreen-growth-experiment-natural-sunlight-vs-indoor-led-light/">⭐️ Microgreen Growth – Natural Sunlight Vs Indoor Led Light (Experiment)</a></li>
-<li><span class="wikilink unresolved">AND Person</span></li>
-<li><a class="wikilink" href="/notes/gablonzer-strasse-23/">Gablonzer Strasse 23</a></li>
-<li><span class="wikilink unresolved">How to focus on what you want (Exercise)</span></li>
-<li><span class="wikilink unresolved">Give Them What They Want. Then, Give Them What They Need</span></li>
-<li><a class="wikilink" href="/notes/80-20-rule-insight-market-and-customer-research-vs-everything-else/">80-20 Rule Insight Market And Customer Research Vs Everything Else</a></li>
-<li><a class="wikilink" href="/notes/case-study-how-to-reality-check-your-startup-persona-in-1-day-without-hours-of-i/">Case Study How To Reality Check Your Startup Persona In 1 Day Without Hours Of Interviewing</a></li>
-<li><span class="wikilink unresolved">Survivor guilt</span></li>
-<li><span class="wikilink unresolved">Why ONCE is better than NEVER</span></li>
-<li><span class="wikilink unresolved">How to sit less and move more</span></li>
-<li><span class="wikilink unresolved">Unstoppable freight train of FUCK-YEAHness</span></li>
-<li><a class="wikilink" href="/notes/confidence-is-everything-paul-graham-s-startup-curve-and-the-dunning-kruger-effe/">Confidence Is Everything Paul Grahams Startup Curve And The Dunning Kruger Effect</a></li>
-<li><span class="wikilink unresolved">The Castle of Adventure by Enid Blyton</span></li>
-<li><a class="wikilink" href="/notes/giant-bubbles-in-bushwick/">Giant Bubbles In Bushwick</a></li>
-<li><a class="wikilink" href="/notes/do-the-right-things-right/">Doing The Right Things Right</a></li>
-<li><a class="wikilink" href="/notes/how-to-get-better-at-what-you-do-every-day-with-retrospectives/">Fun Retrospective Formats</a></li>
-<li><a class="wikilink" href="/notes/growing-delicious-mung-bean-microgreens-adventures-in-indoor-farming/">Adventures in Indoor Farming – Growing Mung Bean Microgreens</a></li>
-<li><a class="wikilink" href="/notes/new-retrospective-format-highlights-blessings-and-successes-2/">New Retrospective Formats</a></li>
-<li><a class="wikilink" href="/notes/humancharger-unboxing-first-impressions-and-use/">Humancharger Unboxing First Impressions And Use</a></li>
-<li><a class="wikilink" href="/notes/sell-me/">Sell Me</a></li>
-</ul>
-</div>
-<div class="more"><a href="/notes/selected-blog-posts/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/selected-blog-posts/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-how-to-make-giant-bubbles-workshop">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/how-to-make-giant-bubbles-workshop/"><time datetime="2025-04-01T14:36:29Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
-<h2 class="note-title"><a href="/notes/how-to-make-giant-bubbles-workshop/">How to make giant bubbles - Workshop</a></h2>
-<div class="text note-body">
-<ul>
-<li><a class="wikilink" href="/notes/how-to-make-big-ass-bubbles/">⭐️ How to Make Big-Ass Bubbles</a></li>
-</ul>
-</div>
-<div class="src"><a href="/notes/how-to-make-giant-bubbles-workshop/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-my-most-interesting-things-at-the-moment">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/my-most-interesting-things-at-the-moment/"><time datetime="2025-04-01T14:36:29Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
-<h2 class="note-title"><a href="/notes/my-most-interesting-things-at-the-moment/">My Most Interesting Things At the Moment</a></h2>
-<div class="text note-body clamped">
-<h2>Notes of note</h2>
-<ol>
-<li><a class="wikilink" href="/notes/your-amazing-youness/">⭐️ Your amazing YOUness</a></li>
-<li><span class="wikilink unresolved">⭐️ Intermittent Dopamine Fasting</span></li>
-<li><span class="wikilink unresolved">Why ONCE is better than NEVER</span></li>
-<li><span class="wikilink unresolved">⭐️ 21-Day Obsidian Publish Challenge</span></li>
-<li><span class="wikilink unresolved">How to sit less and move more</span></li>
-<li><span class="wikilink unresolved">Unstoppable freight train of FUCK-YEAHness</span></li>
-<li><span class="wikilink unresolved">Notes on Running a Remote Design Sprint</span></li>
-<li><span class="wikilink unresolved">How to focus on what you want (Exercise)</span></li>
-<li><a class="wikilink" href="/notes/my-mothers-death-in-2018/">⭐️ My mothers death in 2018</a></li>
-<li><span class="wikilink unresolved">The Castle of Adventure by Enid Blyton</span></li>
-<li><span class="wikilink unresolved">Survivor guilt</span></li>
-<li><span class="wikilink unresolved">Free Bouncing</span></li>
-</ol>
-<h2>Interesting relationships</h2>
-<ol>
-<li><span class="wikilink unresolved">The relationship between sitting less and dopamine fasting</span></li>
-<li><span class="wikilink unresolved">The relationship between the USA and making giant bubbles</span></li>
-<li><span class="wikilink unresolved">The relationship between working with a standing desk and working with Miro</span></li>
-</ol>
-<h2>Important lists</h2>
-<ol>
-<li><span class="wikilink unresolved">My Most Important Life-Events</span></li>
-<li><span class="wikilink unresolved">The Most Important People in My Life</span></li>
-<li><span class="wikilink unresolved">The Most Important Books in My Life</span></li>
-<li><span class="wikilink unresolved">The Most Important Tools I Own</span></li>
-<li><span class="wikilink unresolved">My most loved songs, albums and artists</span></li>
-<li><span class="wikilink unresolved">Countries I have lived in</span></li>
-<li><span class="wikilink unresolved">Places I have visited</span></li>
-<li><span class="wikilink unresolved">Things I am really good at</span></li>
-<li><span class="wikilink unresolved">The Things That Suck Most in My Life</span></li>
-<li><a class="wikilink" href="/notes/my-most-interesting-things-at-the-moment/">My Most Interesting Things At the Moment</a></li>
-</ol>
-<h2>Other exciting things</h2>
-<ol>
-<li><span class="wikilink unresolved">Getting a standing desk</span></li>
-<li><span class="wikilink unresolved">Using Miro for work</span></li>
-<li><span class="wikilink unresolved">The Wire, TV Show</span></li>
-<li><span class="wikilink unresolved">Getting a 24-inch monitor</span></li>
-<li><span class="wikilink unresolved">Feeling less life-or-death about work</span></li>
-<li><span class="wikilink unresolved">Finally regularly sharing with Obsidian Publish</span></li>
-<li><span class="wikilink unresolved">Starting a new job soon</span></li>
-<li><span class="wikilink unresolved">Seeing results after years of introspection and therapy</span></li>
-<li><span class="wikilink unresolved">The available training at the new job</span></li>
-<li><span class="wikilink unresolved">Customer interviews via Zoom</span></li>
-<li><span class="wikilink unresolved">Rowing at the gym</span></li>
-<li><span class="wikilink unresolved">Regular Yoga at home</span></li>
-<li><span class="wikilink unresolved">Learning to say no</span></li>
-<li><span class="wikilink unresolved">My WASD Cherry-MX Clear Mechanical Keyboard</span></li>
-<li><span class="wikilink unresolved">Settling into the new apartment</span></li>
-<li><span class="wikilink unresolved">That &quot;Handpicked by Post Malone&quot; playlist on Amazon</span></li>
-<li><span class="wikilink unresolved">Cooking with more vegetables for the first time</span></li>
-<li><span class="wikilink unresolved">Things I want to buy</span></li>
-<li><span class="wikilink unresolved">User Story Creation</span></li>
-</ol>
-<h2>Related to Digital Gardening</h2>
-<ul>
-<li><span class="wikilink unresolved">How To Use Obsidian To Write a Book</span></li>
-<li><span class="wikilink unresolved">Read to Feed</span></li>
-<li><span class="wikilink unresolved">Collect, Connect, Create Process</span></li>
-<li><span class="wikilink unresolved">Zettelkasten Method</span></li>
-<li><span class="wikilink unresolved">Digital Garden 🌱🌳🍇</span></li>
-<li><span class="wikilink unresolved">A Long-Term Ecosystem For Ideas</span></li>
-</ul>
-<h2>Related to ADHD</h2>
-<ul>
-<li><span class="wikilink unresolved">ADHD and Glasses Example</span></li>
-<li><span class="wikilink unresolved">With untreated ADHD I was the overweight sports-fans of Deep Work</span></li>
-<li><span class="wikilink unresolved">The ADHD Iceberg</span></li>
-<li><span class="wikilink unresolved">ADHD-Related Narcolepsy</span></li>
-</ul>
-<h2>Related to Whiteboards</h2>
-<ul>
-<li><p><span class="wikilink unresolved">Whiteboard Hacking Manual</span></p>
-<ul>
-<li><span class="wikilink unresolved">Whiteboard-Hacking-Manual.pdf</span></li>
-<li><span class="wikilink unresolved">Whiteboard-Hacking-Manual-Worksheet.pdf</span></li>
-<li><span class="wikilink unresolved">Whiteboard-Hacking-Script-Cheat-Sheet.pdf</span></li>
-</ul>
-</li>
-<li><p><span class="wikilink unresolved">Whiteboard Leadership</span></p>
-<ul>
-<li><span class="wikilink unresolved">Whiteboard-Leadership-Secrets-Book.pdf</span></li>
-<li><span class="wikilink unresolved">Whiteboard-Leadership-Secrets-Templates.pdf</span></li>
-</ul>
-</li>
-</ul>
-<h2>Market-Research</h2>
-<ul>
-<li><span class="wikilink unresolved">Reality-Check-Method.pdf</span></li>
-</ul>
-</div>
-<div class="more"><a href="/notes/my-most-interesting-things-at-the-moment/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/my-most-interesting-things-at-the-moment/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-lean-experiment-board">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/lean-experiment-board/"><time datetime="2025-04-01T14:36:29Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
-<h2 class="note-title"><a href="/notes/lean-experiment-board/">Lean Experiment Board</a></h2>
-<div class="text note-body clamped">
-<ul>
-<li><a class="wikilink" href="/notes/how-to-make-better-and-faster-investment-decisions-with-lean-experiments/">⭐️ How To Make Better Business Decisions</a></li>
-</ul>
-<p><img src="/notes/media/lean-experiments-board.png" alt="lean-experiments-board.png" loading="lazy"></p>
-<h2>Inspiration</h2>
-<ul>
-<li><span class="wikilink unresolved">My &quot;One Kicks&quot;</span></li>
-<li><span class="wikilink unresolved">Lean Startup Machine Experiment Board</span></li>
-<li><span class="wikilink unresolved">Experiment Board 2.0</span></li>
-<li><span class="wikilink unresolved">ExperimentBoard_2.0.pdf</span></li>
-</ul>
-<h2>Ideas</h2>
-<ul>
-<li><p>Break out experiments into timed phases</p>
-<ul>
-<li>Build (Ask, design, ship)</li>
-<li>Measure (Run, Finish)</li>
-<li>Learn (Capture)</li>
-<li>Decide</li>
-</ul>
-</li>
-<li><p>Auto-Tracking von Dauer</p>
-<ul>
-<li>Per Experiment-Phase</li>
-<li>Per Zeit zwischen Experimenten
-<span class="wikilink unresolved">Lean Experiment Board Durations.excalidraw</span></li>
-</ul>
-</li>
-<li><p>Venture Runway Tracking</p>
-<ul>
-<li><p>People</p>
-<ul>
-<li>Daily cost</li>
-</ul>
-</li>
-<li><p>Budget</p>
-<ul>
-<li>Time</li>
-<li>Cash</li>
-</ul>
-</li>
-<li><p>Omni-Display Runway</p>
-<ul>
-<li>Cash Spent</li>
-<li>Time Spent</li>
-<li>Cash Received</li>
-<li>Emails Received</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>“You’re a Venture Capitalist”</p>
-<ul>
-<li>Your capital is time and focus</li>
-<li>Focus on “Time To NO” → <span class="wikilink unresolved">Time-to-NO</span></li>
-</ul>
-</li>
-</ul>
-<h2>Resources</h2>
-<ul>
-<li>https://github.com/akaalias/experiments</li>
-<li><span class="wikilink unresolved">Lean Experiment Board with Airtable</span></li>
-</ul>
-</div>
-<div class="more"><a href="/notes/lean-experiment-board/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/lean-experiment-board/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-meine-grossten-starken-my-strongest-talents">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/meine-grossten-starken-my-strongest-talents/"><time datetime="2025-04-01T14:36:29Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
-<h2 class="note-title"><a href="/notes/meine-grossten-starken-my-strongest-talents/">⭐️ Meine größten Stärken – My Strongest Talents</a></h2>
-<div class="text note-body clamped">
-<ol>
-<li>Restorative: People exceptionally talented in the Restorative theme are adept at dealing with problems. They are good at figuring out what is wrong and resolving it.</li>
-<li>Ideation: People exceptionally talented in the Ideation theme are fascinated by ideas. They are able to find connections between seemingly disparate phenomena.</li>
-<li>Relator: People exceptionally talented in the Relator theme enjoy close relationships with others. They find deep satisfaction in working hard with friends to achieve a goal.</li>
-<li>Input: People exceptionally talented in the Input theme have a need to collect and archive. They may accumulate information, ideas, artifacts or even relationships.</li>
-<li>Empathy: People exceptionally talented in the Empathy theme can sense other people’s feelings by imagining themselves in others’ lives or situations.</li>
-<li><span class="wikilink unresolved">⭐️ Restorative – Executing</span></li>
-<li><span class="wikilink unresolved">⭐️ Ideation – Strategic Thinking</span></li>
-<li><span class="wikilink unresolved">⭐️ Relator – Relationship Building</span></li>
-<li><span class="wikilink unresolved">⭐️ Input – Strategic Thinking</span></li>
-<li><span class="wikilink unresolved">⭐️ Empathy – Relationship Building</span></li>
-<li>Adaptability – Relationship Building</li>
-<li>Positivity – Relationship Building</li>
-<li>Strategic – Strategic Thinking</li>
-<li>Learner – Strategic Thinking</li>
-<li>Includer – Relationship Building</li>
-</ol>
-<h2>My Strengths Mantras</h2>
-<p><span class="wikilink unresolved">⭐️ Restorative – Executing</span></p>
-<p><span class="wikilink unresolved">⭐️ Ideation – Strategic Thinking</span></p>
-<p><span class="wikilink unresolved">⭐️ Relator – Relationship Building</span></p>
-<p><span class="wikilink unresolved">⭐️ Input – Strategic Thinking</span></p>
-<p><span class="wikilink unresolved">⭐️ Empathy – Relationship Building</span></p>
-<h2>I Lead With Relationship Building Themes</h2>
-<p>Those who lead through Relationship Building are the essential glue that holds a team together.</p>
-<p>Without these strengths on a team, in many cases, the group is simply a composite of individuals.</p>
-<p>In contrast, leaders with exceptional Relationship Building strength have the unique ability to create groups and organizations that are much greater than the sum of their parts.</p>
-<h2>THE POWER OF MY TALENTS</h2>
-<p>My unique talents for Restorative, Ideation, Relator, Input and Empathy are the most powerful starting point for living my strongest life possible.</p>
-<h3>DEVELOPING MY FIVE STRENGTHS TO MAXIMIZE MY POTENTIAL</h3>
-<p>My greatest chance to succeed — at work or anywhere else — lies in strengthening what I naturally do best and doing more of it.</p>
-<h4>ACTIONS</h4>
-<ol>
-<li>Read and reflect on your results to understand what you naturally do best.</li>
-<li><p>Learn how to apply your strongest talents every day.</p>
-<ol>
-<li>Apply <span class="wikilink unresolved">RESTORATIVE ACTIONS</span></li>
-<li>Apply <span class="wikilink unresolved">IDEATION ACTIONS</span></li>
-<li>Apply <span class="wikilink unresolved">RELATOR ACTIONS</span></li>
-<li>Apply <span class="wikilink unresolved">INPUT ACTIONS</span></li>
-<li>Apply <span class="wikilink unresolved">EMPATHY ACTIONS</span></li>
-</ol>
-</li>
-<li>Share your results with others to create stronger relationships and improve teamwork.</li>
-</ol>
-<h2>Strength Reports</h2>
-<p><a class="embed" href="/notes/media/Certificate-of-Talent-Strengthsfinder.pdf">📎 Certificate-of-Talent-Strengthsfinder.pdf</a>
-<a class="embed" href="/notes/media/StrengthsFinder-Report-all-34-501-0-82419219-2023030903501247000000-CqRw7L.pdf">📎 StrengthsFinder-Report-all-34-501-0-82419219-2023030903501247000000-CqRw7L.pdf</a></p>
-<p><a class="embed" href="/notes/media/Strengthsfinder-insight-guide-501-0-82419219-20230309035751943000000-K1GJtr.pdf">📎 Strengthsfinder-insight-guide-501-0-82419219-20230309035751943000000-K1GJtr.pdf</a></p>
-<p><img src="/notes/media/my-strengths-my-gallup-Portal-Component-2023-03-09-10_47_06.png" alt="my-strengths-my-gallup-Portal-Component-2023-03-09-10_47_06.png" loading="lazy"></p>
-<h2>Related</h2>
-<ul>
-<li><span class="wikilink unresolved">Observations on Strengthsfinder Results</span></li>
-<li><span class="wikilink unresolved">Notes on &quot;StrengthsFinder 2.0&quot;</span></li>
-<li><span class="wikilink unresolved">StrengthsFinder 2.0</span></li>
-</ul>
-</div>
-<div class="more"><a href="/notes/meine-grossten-starken-my-strongest-talents/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/meine-grossten-starken-my-strongest-talents/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-quickdown">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/quickdown/"><time datetime="2025-04-01T14:36:29Z">Tuesday, April 1, 2025 · 16:36</time></a></div>
-<h2 class="note-title"><a href="/notes/quickdown/">⭐️ QuickDown</a></h2>
-<div class="text note-body clamped">
-<h2>Demo</h2>
-<p><img src="/notes/media/QuickDown%20Demo.gif" alt="QuickDown Demo.gif" loading="lazy"></p>
-<h2>Who</h2>
-<ul>
-<li>For myself:</li>
-<li>As an avid Obsidian user who…</li>
-<li>Often doesn’t have Obsidian running because I prefer to have only the app I’m working in running at a time</li>
-<li>Loves taking many small markdown notes for my vault</li>
-<li>Uses MacOS</li>
-</ul>
-<h2>What</h2>
-<ul>
-<li>A minimal markdown note-taking menu bar app for MacOS</li>
-<li>Quickly and  lets me <strong>seamlessly open, write and save markdown notes into my Obsidian vault</strong></li>
-<li>Designed to be completely <strong>keyboard-first</strong></li>
-</ul>
-<h2>Why</h2>
-<ul>
-<li>I want to <strong>quickly save small notes <em>into</em> my Obsidian vault <em>without</em> having Obsidian running or having to open it</strong></li>
-<li>As <strong>a keyboard-first person</strong>, I want to <strong>capture an idea while 100% staying on my keyboard</strong></li>
-<li><strong>None of the existing menu-bar apps provide the minimal configuration</strong> I am looking for: Focus on keyboard-first and simple, no-frills markdown support</li>
-</ul>
-<h2>How</h2>
-<ul>
-<li>Keyboard-first note-taking</li>
-<li>Seamless writing with <strong>a single global hotkey</strong> that opens and focuses the note-field (Command-Option-N)</li>
-<li>Direct saving to Obsidian vault with standard hotkey (Command-S)</li>
-</ul>
-<h2>Repository</h2>
-<ul>
-<li>https://github.com/akaalias/quickdown (Private – Let me know if you want it on the App Store!)</li>
-</ul>
-<h2>Settings</h2>
-<ul>
-<li>Gear-button bottom-right to access
-![Screenshot 2021-12-08 at 16.37.00.png](/notes/media/Screenshot 2021-12-08 at 16.37.00.png)</li>
-<li>Modal overlay with basic hotkeys
-![Screenshot 2021-12-08 at 16.36.20.png](/notes/media/Screenshot 2021-12-08 at 16.36.20.png)</li>
-</ul>
-<h2>Progress</h2>
-<ul>
-<li><span class="wikilink unresolved">QuickDown Menu Bar App – 8.12.2021</span></li>
-<li><span class="wikilink unresolved">QuickDown Menu Bar App – 7.12.2021</span></li>
-<li><span class="wikilink unresolved">Older QuickDown Menu Bar App Notes</span></li>
-</ul>
-</div>
-<div class="more"><a href="/notes/quickdown/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/quickdown/">Permalink</a></div>
-</article>
 </section>
 <nav class="pager"><a href="/feed/archive/2025/05/">‹ May 2025</a><a class="n" href="/feed/archive/">All months</a><a href="/feed/archive/2025/03/">March 2025 ›</a></nav>
 <aside class="months-nav">
 <h3><a href="/feed/archive/">Archive</a></h3>
 <div class="y">2026</div>
 <ul>
-<li><a href="/feed/archive/2026/09/">September</a> <span class="n">77</span></li>
+<li><a href="/feed/archive/2026/09/">September</a> <span class="n">80</span></li>
 <li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
-<li><a href="/feed/archive/2026/07/">July</a> <span class="n">17</span></li>
-<li><a href="/feed/archive/2026/06/">June</a> <span class="n">29</span></li>
+<li><a href="/feed/archive/2026/07/">July</a> <span class="n">19</span></li>
+<li><a href="/feed/archive/2026/06/">June</a> <span class="n">30</span></li>
 <li><a href="/feed/archive/2026/05/">May</a> <span class="n">10</span></li>
-<li><a href="/feed/archive/2026/04/">April</a> <span class="n">30</span></li>
+<li><a href="/feed/archive/2026/04/">April</a> <span class="n">31</span></li>
 <li><a href="/feed/archive/2026/03/">March</a> <span class="n">34</span></li>
 <li><a href="/feed/archive/2026/02/">February</a> <span class="n">57</span></li>
 <li><a href="/feed/archive/2026/01/">January</a> <span class="n">15</span></li>
@@ -2651,14 +1670,14 @@ Please translate &quot;Hello&quot; to German&lt;|im_end|&gt;
 <div class="y">2025</div>
 <ul>
 <li><a href="/feed/archive/2025/12/">December</a> <span class="n">28</span></li>
-<li><a href="/feed/archive/2025/11/">November</a> <span class="n">124</span></li>
+<li><a href="/feed/archive/2025/11/">November</a> <span class="n">125</span></li>
 <li><a href="/feed/archive/2025/10/">October</a> <span class="n">7</span></li>
 <li><a href="/feed/archive/2025/09/">September</a> <span class="n">5</span></li>
 <li><a href="/feed/archive/2025/08/">August</a> <span class="n">7</span></li>
 <li><a href="/feed/archive/2025/07/">July</a> <span class="n">23</span></li>
 <li><a href="/feed/archive/2025/06/">June</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2025/05/">May</a> <span class="n">18</span></li>
-<li class="here"><a href="/feed/archive/2025/04/">April</a> <span class="n">55</span></li>
+<li class="here"><a href="/feed/archive/2025/04/">April</a> <span class="n">34</span></li>
 <li><a href="/feed/archive/2025/03/">March</a> <span class="n">22</span></li>
 <li><a href="/feed/archive/2025/02/">February</a> <span class="n">11</span></li>
 </ul>
@@ -2685,70 +1704,34 @@ Please translate &quot;Hello&quot; to German&lt;|im_end|&gt;
 <li><a href="/feed/archive/2023/06/">June</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2023/05/">May</a> <span class="n">7</span></li>
 <li><a href="/feed/archive/2023/04/">April</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2023/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/03/">March</a> <span class="n">2</span></li>
 </ul>
 <div class="y">2022</div>
 <ul>
-<li><a href="/feed/archive/2022/10/">October</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2022/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2022/10/">October</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/07/">July</a> <span class="n">4</span></li>
 <li><a href="/feed/archive/2022/04/">April</a> <span class="n">2</span></li>
+</ul>
+<div class="y">2021</div>
+<ul>
+<li><a href="/feed/archive/2021/11/">November</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/02/">February</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2020</div>
 <ul>
-<li><a href="/feed/archive/2020/08/">August</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2020/07/">July</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2020/06/">June</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2020/05/">May</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2020/04/">April</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2020/03/">March</a> <span class="n">1</span></li>
-</ul>
-<div class="y">2019</div>
-<ul>
-<li><a href="/feed/archive/2019/09/">September</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2019/08/">August</a> <span class="n">7</span></li>
-<li><a href="/feed/archive/2019/03/">March</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2019/01/">January</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2020/12/">December</a> <span class="n">2</span></li>
 </ul>
 <div class="y">2018</div>
 <ul>
-<li><a href="/feed/archive/2018/12/">December</a> <span class="n">7</span></li>
-<li><a href="/feed/archive/2018/11/">November</a> <span class="n">15</span></li>
-<li><a href="/feed/archive/2018/10/">October</a> <span class="n">5</span></li>
-<li><a href="/feed/archive/2018/09/">September</a> <span class="n">14</span></li>
-<li><a href="/feed/archive/2018/08/">August</a> <span class="n">2</span></li>
-</ul>
-<div class="y">2017</div>
-<ul>
-<li><a href="/feed/archive/2017/12/">December</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2017/11/">November</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2017/06/">June</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2017/05/">May</a> <span class="n">7</span></li>
-<li><a href="/feed/archive/2017/04/">April</a> <span class="n">5</span></li>
-<li><a href="/feed/archive/2017/01/">January</a> <span class="n">2</span></li>
-</ul>
-<div class="y">2016</div>
-<ul>
-<li><a href="/feed/archive/2016/09/">September</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2016/01/">January</a> <span class="n">1</span></li>
-</ul>
-<div class="y">2015</div>
-<ul>
-<li><a href="/feed/archive/2015/06/">June</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2015/05/">May</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2015/01/">January</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2018/10/">October</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2018/09/">September</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2014</div>
 <ul>
-<li><a href="/feed/archive/2014/12/">December</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2014/11/">November</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2014/10/">October</a> <span class="n">5</span></li>
-<li><a href="/feed/archive/2014/09/">September</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2014/08/">August</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2014/07/">July</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2014/06/">June</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2014/05/">May</a> <span class="n">12</span></li>
-<li><a href="/feed/archive/2014/04/">April</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2014/03/">March</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2014/03/">March</a> <span class="n">2</span></li>
 </ul>
 </aside>
 </div>

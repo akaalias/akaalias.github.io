@@ -6,199 +6,70 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 
 ## Feed
 
-- [Feed](https://alexisrondeau.me/feed/): 808 posts, newest first, 25 per page
+- [Feed](https://alexisrondeau.me/feed/): 679 posts, newest first, 25 per page
 - [Archive](https://alexisrondeau.me/feed/archive/): the same posts by month
 - [Atom feed](https://alexisrondeau.me/feed/feed.xml): the latest 50 posts
 - [Data](https://alexisrondeau.me/feed/items.json): every item as JSON (source, id, date, text, media, links, permalink)
 
 ## Notes
 
-- [Notes on "Whole Earth Catalog"](https://alexisrondeau.me/notes/notes-on-whole-earth-catalog/): ⭐️ Whole Earth 39Thirty Cap (S21 Mini-Project)
+- [Freakonomics Experiments](https://alexisrondeau.me/notes/freakonomics-experiments/): As senior engineering consultant, I designed and shipped the infrastructure for a truly randomized, multi-month, large-…
+- [OneMonth Inc.](https://alexisrondeau.me/notes/onemonth-inc/): My technical co-founder run: I designed and wrote a best-selling "programming for non-programmers" video course that go…
+- [Pivotal Labs, New York City](https://alexisrondeau.me/notes/pivotal-labs-new-york-city/): Working as senior technology consultant, I coached client teams to ship better products faster through lean experiments…
+- ["Not all who wander are lost": Can a UAV learn a city by heart — no GPS, no map on board, just a $4 flight computer?](https://alexisrondeau.me/notes/not-all-who-wander-are-lost-can-a-uav-learn-a-city-by-heart-no-gps-no-map-on-boa/): Yes! We found a special-purpose neural memory architecture that 'remembers' an exact geo-location, given an in-flight d…
+- ["The snuggle is real": Evolving quadcopter frame geometry for Wh/km, with Claude as an occasional co-designer](https://alexisrondeau.me/notes/the-snuggle-is-real-evolving-quadcopter-frame-geometry-for-wh-km-with-claude-as/): I let a genetic algorithm loose on the geometry of a 7-inch quadcopter frame — the real, open-source Source One V6 plat…
+- ["We don't write the rules. We just discover them. With AI.": How an autonomous agent searches for the groundrule, and what makes the loop different](https://alexisrondeau.me/notes/we-don-t-write-the-rules-we-just-discover-them-with-ai-how-an-autonomous-agent-s/): A job-shop scheduling problem dressed up as a lunch rush: one grill, one shared range, and sequencing as my only lever.…
+- ["Which city in Paris are you staying in?": Can an LLM autoresearch loop teach a phone-sized small language model (SLM) to ask frontier-quality questions? Can it? Does it? Let's find out!](https://alexisrondeau.me/notes/which-city-in-paris-are-you-staying-in-can-an-llm-autoresearch-loop-teach-a-phon/): We discovered a technique that enables Apple's native 2025 3B Foundation Model to come within about one rubric point of…
+- [Pudding](https://alexisrondeau.me/notes/pudding/): In a world that assumes everything's written by AI, I made Pudding to let you prove the words are yours. It captures yo…
+- [Notes on Clojure Development](https://alexisrondeau.me/notes/notes-on-clojure-development/): Clojure Koans
+- [Whales, Dolphins, Sharks and Sardines](https://alexisrondeau.me/notes/whales-dolphins-sharks-and-sardines/): Getting rich quick people on Algorand are super annoying
+- [Super-Heroes, Super-Villains and an Ancient Code in Obsidian](https://alexisrondeau.me/notes/super-heroes-super-villains-and-an-ancient-code-in-obsidian/): Hello and welcome!
 - [⭐️ How To Double My Rate Of Failure](https://alexisrondeau.me/notes/how-to-double-my-rate-of-failure/): My "One Kicks"
-- [Code-Related](https://alexisrondeau.me/notes/code-related/): ⭐️ Calculating Nonces That Result In Zero Padded Sha256 Hashes
-- [Notes on ballpoint pens](https://alexisrondeau.me/notes/notes-on-ballpoint-pens/): Heavily related to ⭐️ "Micro-Note-Taking Set" (S21 Mini-Project)
-- [My Recipe for Giant Bubble-Making](https://alexisrondeau.me/notes/my-recipe-for-giant-bubble-making/): ⭐️ How to Make Big-Ass Bubbles
-- [⭐️ DeepDive – A better qualitative analysis tool (S21 Mini-Project)](https://alexisrondeau.me/notes/deepdive-a-better-qualitative-analysis-tool-s21-mini-project/): I, Alexis, want a better coding tool for my qualitative analysis.
-- [⭐️ JamGPT Beta Version Launch](https://alexisrondeau.me/notes/jamgpt-beta-version-launch/): 🤙🏻 Pogo Brainstorm Branding and Standing
 - [⭐️ Pageturner Hack for Kindle – Experiment (W21 Mini-Project)](https://alexisrondeau.me/notes/pageturner-hack-for-kindle-experiment-w21-mini-project/): TLDR; After getting frustrated, angry even, with how awkward and unreliable the "touch-screen-to-flipt-to-next-page" on…
-- [⭐️ My Physical Notebooks (Photos)](https://alexisrondeau.me/notes/my-physical-notebooks-photos/): Red Notebook 2020-2021 (Photos)
 - [⭐️ My Light-Therapy Lamp Solution with Kindle](https://alexisrondeau.me/notes/my-light-therapy-lamp-solution-with-kindle/): A follow up on ⭐️ Happier Through Bright Light (Experiment)
-- [Things I should share more often](https://alexisrondeau.me/notes/things-i-should-share-more-often/): ⭐️ How to Make Big-Ass Bubbles
 - [⭐️ Kinesiotape for Psychological Well-Being – Experiment (S21 Mini-Project)](https://alexisrondeau.me/notes/kinesiotape-for-psychological-well-being-experiment-s21-mini-project/): Taping – as prescribed by my orthopedic doctor – works very well, much better than I had expected
 - [⭐️ "Hello my name is" Buttons (S21 Mini-Project)](https://alexisrondeau.me/notes/hello-my-name-is-buttons-s21-mini-project/): Basically, have a reusable version of the classic "Hello, my name is" sticker as a button with my name on it and wear i…
-- [Notes Of Note](https://alexisrondeau.me/notes/notes-of-note/): ⭐️ Your amazing YOUness
 - [⭐️ My mothers death in 2018](https://alexisrondeau.me/notes/my-mothers-death-in-2018/): My motherJoyce Rondeau, Mother died after a long and courageous battle with cancer.
-- [The Other Social Lubricant – Making Giant Bubbles](https://alexisrondeau.me/notes/the-other-social-lubricant-making-giant-bubbles/): ⭐️ How to Make Big-Ass Bubbles
-- [⭐️ How To Double My Rate Of Failure (Idea)](https://alexisrondeau.me/notes/how-to-double-my-rate-of-failure-idea/): While it’s been great to have a single venture as my focus, I’m starting to feel too slow about it. Focus is good, but…
-- [How To X](https://alexisrondeau.me/notes/how-to-x/): ⭐️ How To Make Better and Faster Investment-Decisions With Lean Experiments
-- [My Vision of Work](https://alexisrondeau.me/notes/my-vision-of-work/): ⭐️ How To Make Better and Faster Investment-Decisions With Lean Experiments
-- [My “Biggest Misses”](https://alexisrondeau.me/notes/my-biggest-misses/): For every “Greatest Hit”My “Greatest Hits”, I had to fail on average about ten times⭐️ How To Make Better and Faster Inv…
 - [⭐️ How To Make Better and Faster Investment-Decisions With Lean Experiments](https://alexisrondeau.me/notes/how-to-make-better-and-faster-investment-decisions-with-lean-experiments/): As many of you know by now, I strongly believe in the effectiveness of using the scientific method to validate business…
 - [⭐️ Whole Earth 39Thirty Cap (S21 Mini-Project)](https://alexisrondeau.me/notes/whole-earth-39thirty-cap-s21-mini-project/): Currently WIP, ETA 1st week of August
-- [🆒 Pogo Automatically Inject User-Selected Text – New Feature](https://alexisrondeau.me/notes/pogo-automatically-inject-user-selected-text-new-feature/): ⭐️ JamGPT Beta Version Launch
-- [⭐️ DeepDive](https://alexisrondeau.me/notes/deepdive/): Development of the DeepDive
-- [Luminette Laptop Bar](https://alexisrondeau.me/notes/luminette-laptop-bar/): From: ⭐️ Happier Through Bright Light (Experiment)
 - [⭐️ "Micro-Note-Taking Set" (S21 Mini-Project)](https://alexisrondeau.me/notes/micro-note-taking-set-s21-mini-project/): While on vacation at my Dad's, I bought a tiny note-pad and pen and started carrying it around with me everywhere. I us…
 - [⭐️ Reframing Off-the-Shelf Objects (S21 Mini-Project)](https://alexisrondeau.me/notes/reframing-off-the-shelf-objects-s21-mini-project/): To build on what's there already and make it better.
-- [🐣 Pogo – Name the baby](https://alexisrondeau.me/notes/pogo-name-the-baby/): ⭐️ JamGPT Beta Version Launch
 - [⭐️ Your amazing YOUness](https://alexisrondeau.me/notes/your-amazing-youness/): Your YOUness is what makes you a one-in-a-billion event in all of time and space.
-- [Selected Blog Posts](https://alexisrondeau.me/notes/selected-blog-posts/): ⭐️ Happier Through Bright Light (Experiment)
-- [How to make giant bubbles - Workshop](https://alexisrondeau.me/notes/how-to-make-giant-bubbles-workshop/): ⭐️ How to Make Big-Ass Bubbles
-- [My Most Interesting Things At the Moment](https://alexisrondeau.me/notes/my-most-interesting-things-at-the-moment/): ⭐️ Your amazing YOUness
-- [Lean Experiment Board](https://alexisrondeau.me/notes/lean-experiment-board/): ⭐️ How To Make Better Business Decisions⭐️ How To Make Better and Faster Investment-Decisions With Lean Experiments
-- [⭐️ Meine größten Stärken – My Strongest Talents](https://alexisrondeau.me/notes/meine-grossten-starken-my-strongest-talents/): Restorative: People exceptionally talented in the Restorative theme are adept at dealing with problems. They are good a…
-- [⭐️ QuickDown](https://alexisrondeau.me/notes/quickdown/): For myself:
-- [100 Interview Challenge 16.6.2020](https://alexisrondeau.me/notes/100-interview-challenge-16-6-2020/): I’m not 100% sure how I will take my dream about doing this and make it happen. Today I feel very tired and less motiva…
-- [03.07.2020](https://alexisrondeau.me/notes/03-07-2020/): Did a Retrospective 3.7.2020
-- [24.06.2020](https://alexisrondeau.me/notes/24-06-2020/): Woke up tired, got out of bed at 9. Feeling like shit. Feeling exhausted and incredibly sad. Sat on the couch yesterday…
-- [Post-Shadow Journal 09.06.2020](https://alexisrondeau.me/notes/post-shadow-journal-09-06-2020/): Uff, ja, also heute ging’s nochmal richtig um’s Eingemachte. Und ich bin froh, dass ich gerade die Zeit und den Kopf da…
-- [05.06.2020](https://alexisrondeau.me/notes/05-06-2020/): Noch ein weiterer Eintrag für heute...
-- [18.05.2020](https://alexisrondeau.me/notes/18-05-2020/): Montag, 18.5.2020 – Irgendwie fühle ich mich seit Freitag komisch. Also auch schon davor, aber heute bin ich erst um 10…
-- [27.04.2020](https://alexisrondeau.me/notes/27-04-2020/): So. Today was a good day so far. I finally broke my own record of working 4h straight (with pauses every 30 minutes) on…
-- [Case Study: How To "Reality Check" Your Startup Persona in 1 Day Without Hours of Interviewing](https://alexisrondeau.me/notes/case-study-how-to-reality-check-your-startup-persona-in-1-day-without-hours-of-i/): Here's a little case study I've put together based on a project I recently worked on. It shows you the process on how y…
-- [Self-Care Challenge Day 36/100 Retrospective](https://alexisrondeau.me/notes/self-care-challenge-day-36-100-retrospective/): https://www.youtube.com/watch?v=pV6CKVP8BqI
-- [Self-Care Challenge Day 18/100 – Retrospective](https://alexisrondeau.me/notes/self-care-challenge-day-18-100-retrospective/): https://www.youtube.com/watch?v=6ulAg4Y7JxE
-- [PLEASE. DON'T. KEEL. OVER.](https://alexisrondeau.me/notes/please-don-t-keel-over/): https://www.youtube.com/watch?v=mL14RECwt2M
-- [Whiteboard Mastery – Handwriting Cheat Sheet Training Video](https://alexisrondeau.me/notes/whiteboard-mastery-handwriting-cheat-sheet-training-video/): https://www.youtube.com/watch?v=SRgaEao1UGE
-- [Whiteboard Mastery – Handwriting Workshop Learnings](https://alexisrondeau.me/notes/whiteboard-mastery-handwriting-workshop-learnings/): https://www.youtube.com/watch?v=vZ56szjGqbQ
-- [Whiteboard Mastery – Handwriting, Persuasion and the Path Of Least Resistance](https://alexisrondeau.me/notes/whiteboard-mastery-handwriting-persuasion-and-the-path-of-least-resistance/): https://www.youtube.com/watch?v=MBeNY8NRrMQ
-- [The World's Best Meditation Pillow!](https://alexisrondeau.me/notes/the-world-s-best-meditation-pillow/): https://www.youtube.com/watch?v=kYHQfe9I7DQ
-- [My 100 Day Self-Care Challenge – Week 1 Review (Restorative Yoga)](https://alexisrondeau.me/notes/my-100-day-self-care-challenge-week-1-review-restorative-yoga/): https://www.youtube.com/watch?v=UI7iW42XkVk
-- [This is INSANE: In just 4 days, our campaign generated 1.283 qualified leads for just 200€. That's a 0,16€  cost per lead.](https://alexisrondeau.me/notes/this-is-insane-in-just-4-days-our-campaign-generated-1-283-qualified-leads-for-j/): ![](https://i2.wp.com/freeisaverb.com/wp-content/uploads/2019/03/ScreenShot2019-03-25at102251AM.png?fit=640%2C254)
-- [First Principles: The Most Powerful Way To Think](https://alexisrondeau.me/notes/first-principles-the-most-powerful-way-to-think/): Beautifully written and animated, I truly enjoyed watching this short video on what First Principles are and why they'r…
-- [New Retrospective Format: "Highlights, Blessings and Successes"](https://alexisrondeau.me/notes/new-retrospective-format-highlights-blessings-and-successes/): I’ve created an empowering and fun new Retrospective format for myself. I’ve enjoyed it tremendously.
-- [New Retrospective Format: "Highlights, Blessings and Successes"](https://alexisrondeau.me/notes/new-retrospective-format-highlights-blessings-and-successes-2/): I’ve created an empowering and fun new Retrospective format for myself. I’ve enjoyed it tremendously.
-- [“...I would recommend this workshop to any entrepreneur who wants to start with a new idea.”](https://alexisrondeau.me/notes/i-would-recommend-this-workshop-to-any-entrepreneur-who-wants-to-start-with-a-ne/): https://www.youtube.com/watch?v=l5oA\XhlnP8
-- [“[Going to the workshop was so useful for our strategy. I realized I couldn’t have done anything better…”](https://alexisrondeau.me/notes/going-to-the-workshop-was-so-useful-for-our-strategy-i-realized-i-couldn-t-have/): https://www.youtube.com/watch?v=o1iPnSqQEvA
-- [“…Es war ein riesen Mehrwert. Ich würde es immer wieder machen und liebend gerne einmal im Monat…”](https://alexisrondeau.me/notes/es-war-ein-riesen-mehrwert-ich-wurde-es-immer-wieder-machen-und-liebend-gerne-ei/): https://www.youtube.com/watch?v=tOLWz7y1yoc
-- [“I realized… Oh my god!  We’re building for the wrong user...”](https://alexisrondeau.me/notes/i-realized-oh-my-god-we-re-building-for-the-wrong-user/): https://www.youtube.com/watch?v=UDOIzpuNmM4
-- [Market Persona "Reality-Check": Sonos-Fans in the US](https://alexisrondeau.me/notes/market-persona-reality-check-sonos-fans-in-the-us/): ![](Attachments/SONOS-US-PERSONA-REALITY-CHECK.003-1024x768.jpeg)
-- [Confidence Is Everything: Paul Graham's Startup Curve and the Dunning-Kruger Effect](https://alexisrondeau.me/notes/confidence-is-everything-paul-graham-s-startup-curve-and-the-dunning-kruger-effe/): Yesterday, I was reading in Grant Cardone’s book “Sell Or Be Sold” and got stuck on the idea that “To the degree that y…
-- [Experiment: I'm Shutting Down Internet Access at Home. Again.](https://alexisrondeau.me/notes/experiment-i-m-shutting-down-internet-access-at-home-again/): 3 months ago I canceled my internet service at home for two reasons:
-- [Write Thursday, 29.11.2018](https://alexisrondeau.me/notes/write-thursday-29-11-2018/): A few random thoughts jumbled up and put together.
-- [[Announcing The Ambitious Corporate Intrapreneur’s 1-Week Product Development Training Workshop](https://alexisrondeau.me/notes/announcing-the-ambitious-corporate-intrapreneur-s-1-week-product-development-tra/): If you're an ambitious corporate intrapreneur, I can help you.
-- [[Update My Lessons Learned and Market Research Case Study](https://alexisrondeau.me/notes/update-my-lessons-learned-and-market-research-case-study/): I've updated and revised my case study and lessons learned presentation. You can check it out below and download the fu…
-- [80/20 Rule Insight: Market and Customer Research vs. Everything Else](https://alexisrondeau.me/notes/80-20-rule-insight-market-and-customer-research-vs-everything-else/): I thought about this last night and came to the following realization:
-- [This Week's Challenge: “Only positive thoughts and actions for 24h“](https://alexisrondeau.me/notes/this-week-s-challenge-only-positive-thoughts-and-actions-for-24h/): In Grant Cardone’s book “Sell Or Be Sold”, he challenges the reader to start a timer and aim to only think and act posi…
-- [Community Trend Watch: Shortlist Berlin December 2018](https://alexisrondeau.me/notes/community-trend-watch-shortlist-berlin-december-2018/): For Market Researchers: Social Trends is a free tool that lets you stay ahead of the curve by giving you the fastest gr…
-- [Change The World By Making Your Bed](https://alexisrondeau.me/notes/change-the-world-by-making-your-bed/): This video about why you should start the day by making your bed has kept me motivated over the last few weeks.
-- [HumanCharger Unboxing: First Impressions and Use](https://alexisrondeau.me/notes/humancharger-unboxing-first-impressions-and-use/): My HumanCharger device is finally here, after a long, long, long, long wait.
-- [Why I’m a Slow Learner But Fast Performer](https://alexisrondeau.me/notes/why-i-m-a-slow-learner-but-fast-performer/): Over the last year I went on a deep-dive to learn a new skill: How to market and, by extension, how to sell products th…
-- [Check In: How I Make Consistent Progress Across My Major Life Goals With Giraffe](https://alexisrondeau.me/notes/check-in-how-i-make-consistent-progress-across-my-major-life-goals-with-giraffe/): I wanted to give an update on my usage of Giraffe.app – My personal Goal-Setting, Plan-Making and Task-Executing workfl…
-- [Community Trend Watch: "Starfish Mission" in San Francisco](https://alexisrondeau.me/notes/community-trend-watch-starfish-mission-in-san-francisco/): As you may or may not know, I built a Meetup Monitoring Tool last year that allows market enthusiasts like myself to:
-- [How To Discover What You Really Need the Most With the "Needs Card Deck"](https://alexisrondeau.me/notes/how-to-discover-what-you-really-need-the-most-with-the-needs-card-deck/): I totally forgot to mention this, but I made a card deck last year that has helped me explore and discover needs as par…
-- [Wednesday – 14.11.2018](https://alexisrondeau.me/notes/wednesday-14-11-2018/): Wednesday afternoon, at home, not crazy about being here but I think I’m dragging out the cold I got over a week ago, s…
-- [Do I have to decide between "anything goes" and a "specific topic" for my blog?](https://alexisrondeau.me/notes/do-i-have-to-decide-between-anything-goes-and-a-specific-topic-for-my-blog/): So, I’ve been pretty good at publishing at least one post each week for the past two months. I’m proud of having publis…
-- [How I’ve Rebuilt the Giraffe App with TDD and Speed In Mind](https://alexisrondeau.me/notes/how-i-ve-rebuilt-the-giraffe-app-with-tdd-and-speed-in-mind/): Background: As you may have seen, I built myself a goal-setting, planning and execution app that helps me to consistent…
+- [JamGPT](https://alexisrondeau.me/notes/jamgpt/): JamGPT gets you to ChatGPT the instant you need it — one keystroke from whatever app you're in, with no tab-hunting or…
+- [Streamline](https://alexisrondeau.me/notes/streamline/): I wanted a calm, blank space to get my thoughts out before the day's noise set in — no menus, no formatting, no frictio…
+- [Pudding Research](https://alexisrondeau.me/notes/pudding-research/): Another open-source OSINT tool I made, this one for Ethereum token ecosystems. Pick any token and instantly see where t…
+- [Unblah](https://alexisrondeau.me/notes/unblah/): Ever leave a meeting wondering if you talked too much — or never got a word in? I built Unblah to quietly show your tal…
+- [Algorand Ballet](https://alexisrondeau.me/notes/algorand-ballet/): My open-source OSINT tool for the Algorand blockchain. See who a wallet really deals with: drop in any account and watc…
+- [Footnotes](https://alexisrondeau.me/notes/footnotes/): I wanted to add a footnote without breaking my train of thought. One hotkey drops a numbered marker and its note at the…
+- [Journey](https://alexisrondeau.me/notes/journey/): You've collected hundreds of notes — but where's the story in them? I built Journey to trace a path between any two ide…
+- [Extract PDF Highlights](https://alexisrondeau.me/notes/extract-pdf-highlights/): I was tired of re-typing the passages I'd highlighted while reading. Now you open a marked-up PDF in Obsidian, click on…
+- [Extract PDF](https://alexisrondeau.me/notes/extract-pdf/): This one frees the text trapped inside a PDF. One click turns a document into clean, editable notes — headings, paragra…
 - [Happier Through Bright Light! My Winter S.A.D Well-Being Research – 1 Year of Light Therapy Prototypes](https://alexisrondeau.me/notes/happier-through-bright-light-my-winter-s-a-d-well-being-research-1-year-of-light/): Hey there, Alexis here!
-- [Risky Blind Spots – Getting Facebook Ads Delivered](https://alexisrondeau.me/notes/risky-blind-spots-getting-facebook-ads-delivered/): The Sales-Funnel Has Already Started
-- [A Sneak Peek – "66 Proven Meeting Productivity Strategies"](https://alexisrondeau.me/notes/a-sneak-peek-66-proven-meeting-productivity-strategies/): Ever been to one of those soul-crushing meetings?
-- [A Few More Books I Recommend](https://alexisrondeau.me/notes/a-few-more-books-i-recommend/): I’m not exactly sure why, but I read a lot of books this week.
-- [Back to Factory](https://alexisrondeau.me/notes/back-to-factory/): Today is my first day back at Factory Görlitzer Park, after I had "hidden out" at the local library close to my home fo…
-- [How I Have Grown My Morning Routine](https://alexisrondeau.me/notes/how-i-have-grown-my-morning-routine/): I’m starting to appreciate how much grounding a solid morning routine can give me. It’s been a labor of love for the pa…
-- [First, Give Them What They Want. Then, Give Them What They Need](https://alexisrondeau.me/notes/first-give-them-what-they-want-then-give-them-what-they-need/): Ouch.
-- [Giraffe App: Sorting Highest-Priority Tasks By Granularity](https://alexisrondeau.me/notes/giraffe-app-sorting-highest-priority-tasks-by-granularity/): ![](Attachments/6a73da2615bca156378ce238d3f20361.png)
-- [Using Color To Signal Task Complexity and the Need to Break It Down Further](https://alexisrondeau.me/notes/using-color-to-signal-task-complexity-and-the-need-to-break-it-down-further/): This didn’t fit anywhere else but I think it may be interesting to others watching how my app’s UI is evolving.
-- ["Outliers" by Malcom Gladwell](https://alexisrondeau.me/notes/outliers-by-malcom-gladwell/): Earlier this week I read Gladwell's "David & Goliath" which I enjoyed tremendously. So, I wondered:
-- [Understanding GaryVee and Julius Dein's Audience](https://alexisrondeau.me/notes/understanding-garyvee-and-julius-dein-s-audience/): The audience that GaryVee and Julius Dein share on Facebook and Instagram is... a mass-audience of 15M-20M active users…
-- [Experiment: Field-testing My "Dream/Plan/Execute" Application for Ease-of-Use and Productivity](https://alexisrondeau.me/notes/experiment-field-testing-my-dream-plan-execute-application-for-ease-of-use-and-p/): Theory: If I use my Dream/Plan/Execute MVP, THEN I’ll get more done than using Trello
-- [Book Recommendation: "From Russia With Love" by Ian Fleming](https://alexisrondeau.me/notes/book-recommendation-from-russia-with-love-by-ian-fleming/): HOLY SHIT. Oof.
-- [Productivity Experiment: My Dream/Plan/Execute Model in One App](https://alexisrondeau.me/notes/productivity-experiment-my-dream-plan-execute-model-in-one-app/): I’m a huge procrastinator. Unless I set myself a goal, make a plan and have a clear, small next step, I’ll just waste m…
-- [Currently Re-Reading: Malcom Gladwell's "David & Goliath"](https://alexisrondeau.me/notes/currently-re-reading-malcom-gladwell-s-david-goliath/): It’s funny how, sometimes you can simply ‘ask’ your subconscious to pick the right book for you by just ‘mindlessly’ br…
-- [A Moveable Feast](https://alexisrondeau.me/notes/a-moveable-feast/): As part of my ongoing challenge to read every day, I recently re-discovered Hemingway’s “A Moveable Feast.”
-- [How To Discover Trending High-Growth Communities – Meetup Trends Tracking](https://alexisrondeau.me/notes/how-to-discover-trending-high-growth-communities-meetup-trends-tracking/): To better understand and discover exciting new trends, I built this site about 9 months ago. I’ve been collecting the m…
 - [Microgreen Growth Experiment: Natural Sunlight vs. Indoor LED Light](https://alexisrondeau.me/notes/microgreen-growth-experiment-natural-sunlight-vs-indoor-led-light/): This was an experiment I ran over the summer.
-- [Ask Yourself: What is the most useful, loving and empowering belief I need right now?](https://alexisrondeau.me/notes/ask-yourself-what-is-the-most-useful-loving-and-empowering-belief-i-need-right-n/): I wanted to share this note I made with you because it has helped me take those ‘down’-moments, usually in-between task…
-- [Things We Also Like:  "Whole Foods" vs. "Trader Joes" in the US](https://alexisrondeau.me/notes/things-we-also-like-whole-foods-vs-trader-joes-in-the-us/): I'm a big fan of Trader Joes. My friend Chris loves Whole Foods.
-- [Mars and Venus Markets – US Male and Female Interest Comparison](https://alexisrondeau.me/notes/mars-and-venus-markets-us-male-and-female-interest-comparison/): So, since I built this market research tool earlier today, I felt like playing around with it.
-- [Growing Delicious Mung Bean Microgreens – Adventures In Indoor Farming](https://alexisrondeau.me/notes/growing-delicious-mung-bean-microgreens-adventures-in-indoor-farming/): In my last post I showed you how Ikea's hydroponics system works. I'm a great fan and it has allowed me to add cut-fres…
-- [Growing Yummy, Hyper-Local Herbs – Adventures In Hydroponics](https://alexisrondeau.me/notes/growing-yummy-hyper-local-herbs-adventures-in-hydroponics/): It's been a month since I started my own little herb garden at home using Ikea's Vaxer system.
-- [Tracking Meetup Growth Rates in Berlin](https://alexisrondeau.me/notes/tracking-meetup-growth-rates-in-berlin/): I've meant to build this for months but never got around to it until this weekend.
-- [How To Get Better At What You Do Every Day With Retrospectives](https://alexisrondeau.me/notes/how-to-get-better-at-what-you-do-every-day-with-retrospectives/): I mentioned the Retrospectives I have been doing for the past years.
-- [Calculating Nonces That Result In Zero-Padded SHA256 Hashes](https://alexisrondeau.me/notes/calculating-nonces-that-result-in-zero-padded-sha256-hashes/): ![Build Status](https://travis-ci.org/akaalias/blockchain-toy)
-- [The Little Schemer in Clojure – Recap Chapter 6](https://alexisrondeau.me/notes/the-little-schemer-in-clojure-recap-chapter-6/): Shadows
-- [My Journey Into Deep Work – Retrospective Week 16](https://alexisrondeau.me/notes/my-journey-into-deep-work-retrospective-week-16/): I managed to work deeply for 9.5 hours. I also traveled over the weekend, so my week was a bit shot.
-- [My Journey Into Deep Work – Retrospective Week 17](https://alexisrondeau.me/notes/my-journey-into-deep-work-retrospective-week-17/): I spent this week in Mallorca with my parents. Stil I got to take time to sit down and get 13 (!) hours of deep work do…
-- [Set Your Priorities Straight In 2 Minutes Without Thinking Hard](https://alexisrondeau.me/notes/set-your-priorities-straight-in-2-minutes-without-thinking-hard/): "I have so much to do but I'm not sure which of the things I should do first."
-- [Thinking and Sleeping Better With Clojure](https://alexisrondeau.me/notes/thinking-and-sleeping-better-with-clojure/): To prioritize a list of todo-items, as in my Prioritization-app I recently launched, I needed to get a list of the uniq…
-- [The Little Schemer in Clojure – Recap Chapter 5](https://alexisrondeau.me/notes/the-little-schemer-in-clojure-recap-chapter-5/): Oh My Gawd, It's Full Of Stars
-- [The Little Schemer in Clojure – Chapter 4 Recap](https://alexisrondeau.me/notes/the-little-schemer-in-clojure-chapter-4-recap/): Number Games
-- [The Little Schemer in Clojure – Chapter 3 Recap](https://alexisrondeau.me/notes/the-little-schemer-in-clojure-chapter-3-recap/): Cons the magnificent
-- [The Little Schemer in Clojure – Chapter 2 Recap](https://alexisrondeau.me/notes/the-little-schemer-in-clojure-chapter-2-recap/): Yesterday I made it through Chapter 2 and as before I've enjoyed it. I have come to copy the question/answer style from…
-- [The Little Schemer in Clojure – Chapter 1 Recap](https://alexisrondeau.me/notes/the-little-schemer-in-clojure-chapter-1-recap/): This is a series of small blog posts about following along the book 'The Little Schemer' using Clojure.
-- [My Journey Into Deep Work – Retrospective Week 13](https://alexisrondeau.me/notes/my-journey-into-deep-work-retrospective-week-13/): Come and learn what I've learned! I haven't posted my retrospectives in a while. Last week was the first week that I ha…
-- [Week 5 – Logbook: My Journey Into Deep Work](https://alexisrondeau.me/notes/week-5-logbook-my-journey-into-deep-work/): Strategizing is easy. Executing is really hard. In his book "Deep Work", Cal Newport recommends to make use of the 4 Di…
-- [My Journey Into Deep Work](https://alexisrondeau.me/notes/my-journey-into-deep-work/): Three weeks ago, my colleague Oleksii Fedorov mentioned that "adults are able to deeply work for about 4 hours per day."
-- [I Am Mr. Bubbles!](https://alexisrondeau.me/notes/i-am-mr-bubbles/): I finally can share this with you. Here is what I've been up to when I came back from work while still in New York.
-- [The Weekend](https://alexisrondeau.me/notes/the-weekend/): The weekend was a good one.
-- [4 New Things I Have Noticed About Berlin](https://alexisrondeau.me/notes/4-new-things-i-have-noticed-about-berlin/): I would like to share a summary of my first impressions of Berlin with you. I have had a great first week. I worked. I…
-- [Should. Would. Could. DID.](https://alexisrondeau.me/notes/should-would-could-did/): ![](Attachments/shouldwouldcould1.jpg)
-- [How To Learn To Code: Test-Drive All The Things!](https://alexisrondeau.me/notes/how-to-learn-to-code-test-drive-all-the-things/): ![](Attachments/ScreenShot2015-05-25at13933PM-1024x646.png)
-- [Add Hilarious Gifs to Your Emails With One Click](https://alexisrondeau.me/notes/add-hilarious-gifs-to-your-emails-with-one-click/): ![](Attachments/best.gif)
-- [Use the Force, Luke! 3 Effective Breathing Techniques For Decision-Makers](https://alexisrondeau.me/notes/use-the-force-luke-3-effective-breathing-techniques-for-decision-makers/): Volume 1 of A Short Course for the Use of Your Nervous System According to the Instructions of the Manufacturers
-- [Do the Right Things Right](https://alexisrondeau.me/notes/do-the-right-things-right/): The odds are 3 to 1 against you, so how will you make sure you win?
-- [How To Translate a Programming Language](https://alexisrondeau.me/notes/how-to-translate-a-programming-language/)
-- [How To Add a "Maybe" Operator To Your Programming Language](https://alexisrondeau.me/notes/how-to-add-a-maybe-operator-to-your-programming-language/): In just 4 lines - https://gist.github.com/akaalias/51721a8d6d75ef42586b.js
-- [[Listen Journey Into Paradise: The Larry Levan Story](https://alexisrondeau.me/notes/listen-journey-into-paradise-the-larry-levan-story/)
-- [How to do "One Minute Breath" – A farewell present for Jacob](https://alexisrondeau.me/notes/how-to-do-one-minute-breath-a-farewell-present-for-jacob/)
-- [Psycho-Cybernetics – About Purpose Tremor](https://alexisrondeau.me/notes/psycho-cybernetics-about-purpose-tremor/): https://soundcloud.com/akaalias/about-purpose-tremor
-- [Oblique Meta Strategies: What Would Brian Eno Do?](https://alexisrondeau.me/notes/oblique-meta-strategies-what-would-brian-eno-do/): Just of those Great Questions that led me to making big bubbles as ⭐️ Mr Bubbles in Bushwick (Video).
-- [Huddle Metrics](https://alexisrondeau.me/notes/huddle-metrics/): Dear Friends,
-- [Eric Schmidt: How Google Works](https://alexisrondeau.me/notes/eric-schmidt-how-google-works/): How Google Works from Eric Schmidt
-- [Focus.](https://alexisrondeau.me/notes/focus/): Green tea is really, really good for you.
-- [A Pivotal Moment](https://alexisrondeau.me/notes/a-pivotal-moment/): Dear Friend,
-- [Underscore.js](https://alexisrondeau.me/notes/underscore-js/): I usually despise JavaScript (and yes, I'm aware of it's Scheme/Self influences) but this is nice: Underscore.js.
-- [It’s Complex But You Don’t Have To Make It Complicated](https://alexisrondeau.me/notes/it-s-complex-but-you-don-t-have-to-make-it-complicated/): It’s been a very stressful 4 weeks.
-- [Giant Bubbles In Bushwick!](https://alexisrondeau.me/notes/giant-bubbles-in-bushwick/): www.youtube.com/embed/9op8mXvJRrQ
 - [How To Make Big Ass Bubbles](https://alexisrondeau.me/notes/how-to-make-big-ass-bubbles/): I've compiled the following giant bubble solution recipe and instructions after months of trial-and-error, testing doze…
-- [5 Cool New Things I Learned This Week](https://alexisrondeau.me/notes/5-cool-new-things-i-learned-this-week/): Saturday July 12, 2014 2:26pm 95 Spring Street 2nd Floor New York City
-- [Here's One Way To Instantly Relax And Kick-Start Your Subconscious Problem-Solving Mechanism](https://alexisrondeau.me/notes/here-s-one-way-to-instantly-relax-and-kick-start-your-subconscious-problem-solvi/): Tuesday July 1, 4:33pm, New York City
-- [My No.1Inspiration To Learn More Every Day](https://alexisrondeau.me/notes/my-no-1inspiration-to-learn-more-every-day/): If you’re not willing to learn, no one can help you. If you’re determined to learn, no one can stop you.
-- [10 New Things I Learned Today](https://alexisrondeau.me/notes/10-new-things-i-learned-today/): Inspiration by Brian Eno (Dunhill Interview, 2013)
-- [POIs – Persons Of Inspiration & Working Remote](https://alexisrondeau.me/notes/pois-persons-of-inspiration-working-remote/): Wednesday May 28, 3:09pm Kreuzberg, Berlin
-- [2 Thoughts](https://alexisrondeau.me/notes/2-thoughts/): Thought #1: “When do people buy things? When other people SELL things.”
-- [[Recap Berlin 2 Weeks In](https://alexisrondeau.me/notes/recap-berlin-2-weeks-in/): Ready, set, go! It’s been quiet a busy week and I’m ready, happy to just chill today. It’s Saturday, the summer is warm…
-- [It Usually Starts Around 1am Or Later...](https://alexisrondeau.me/notes/it-usually-starts-around-1am-or-later/): Sunday May 11, 7:58pm Freiligrath Strasse 10 Kreuzberg, Berlin Germany
-- [Berlin Is Really, Really Nice Right Now](https://alexisrondeau.me/notes/berlin-is-really-really-nice-right-now/): 9:45am, May 10, 2014 Lilienthaler Strasse 10 Berlin, Germany
-- [How To Get To Newark From Manhattan and How To NOT Fly To Berlin](https://alexisrondeau.me/notes/how-to-get-to-newark-from-manhattan-and-how-to-not-fly-to-berlin/): Alright! The first day of my stay in Berlin for the summer is in full effect. I just got back from meeting Chris at the…
-- [Welcome Back](https://alexisrondeau.me/notes/welcome-back/): Prelude: My friend Mike decided to get frozen in time in 2005 and stayed frozen until 2014. His unfreezing has successf…
-- [Sunday Review](https://alexisrondeau.me/notes/sunday-review/): Today I'm writing to you from my loft apartment in Bushwick, Brooklyn. I am sitting in the living room with my cup of g…
-- [Why I Love Mondays](https://alexisrondeau.me/notes/why-i-love-mondays/): It’s Monday, 7:30am. Rain flows down my face. I race my bike to University. 6 students already wait outside the door wh…
-- [Sell Me.](https://alexisrondeau.me/notes/sell-me/): It blows my mind.
-- [The Morning After](https://alexisrondeau.me/notes/the-morning-after/): ![](Attachments/photo-1-300x225.jpg)
-- [My Goals For May 2014 (Berlin Edition)](https://alexisrondeau.me/notes/my-goals-for-may-2014-berlin-edition/): Hi there!
-- [Busy Wednesday](https://alexisrondeau.me/notes/busy-wednesday/): And we’re back just after lunch with another episode of Alexis writing 750 words daily! Lily and I just had veggie chil…
-- [Loving CompStak](https://alexisrondeau.me/notes/loving-compstak/): Okay, here we go again with writing in the middle of the afternoon although I really didn’t want to do it this time. Ac…
-- [How To Shoot Video At Home](https://alexisrondeau.me/notes/how-to-shoot-video-at-home/): Introduction
 - [Wings of Desire](https://alexisrondeau.me/notes/wings-of-desire/): I was 20 years old, the year was 1999 and I had just moved to New York City.
 - [Gablonzer Strasse 23](https://alexisrondeau.me/notes/gablonzer-strasse-23/): I remember the dollops of smoking tobacco placed on the stumps of the trees that until this morning had surrounded the…
-- [How I Manage My Time With TimeStacks](https://alexisrondeau.me/notes/how-i-manage-my-time-with-timestacks/): Check out TimeStacks at http://timestacks.co/!
-- [New York Winter Morning](https://alexisrondeau.me/notes/new-york-winter-morning/): She woke up that morning with a slight buzz from a long weekend and with a smile on her face. He was right there, next…
-- [How To Fall In Love With Yourself](https://alexisrondeau.me/notes/how-to-fall-in-love-with-yourself/): Tuesday, 9:10 a.m. December 17, 2013 New York City
-- [2 Years At General Assembly](https://alexisrondeau.me/notes/2-years-at-general-assembly/): Last Friday was the bitter-sweet going-away parting party for the co-working community at General Assembly in New York.…
-- [3 Things That Have Improved My Life (and Can Do the Same For You)](https://alexisrondeau.me/notes/3-things-that-have-improved-my-life-and-can-do-the-same-for-you/): Alexis Rondeau 95 Spring Street, New York Monday, 8:37 a.m.
-- [How To Breathe Long and Deep](https://alexisrondeau.me/notes/how-to-breathe-long-and-deep/): It’s simple.
 
 ## Months
 
-- [September 2026](https://alexisrondeau.me/feed/archive/2026/09/): 77 posts
+- [September 2026](https://alexisrondeau.me/feed/archive/2026/09/): 80 posts
 - [August 2026](https://alexisrondeau.me/feed/archive/2026/08/): 37 posts
-- [July 2026](https://alexisrondeau.me/feed/archive/2026/07/): 17 posts
-- [June 2026](https://alexisrondeau.me/feed/archive/2026/06/): 29 posts
+- [July 2026](https://alexisrondeau.me/feed/archive/2026/07/): 19 posts
+- [June 2026](https://alexisrondeau.me/feed/archive/2026/06/): 30 posts
 - [May 2026](https://alexisrondeau.me/feed/archive/2026/05/): 10 posts
-- [April 2026](https://alexisrondeau.me/feed/archive/2026/04/): 30 posts
+- [April 2026](https://alexisrondeau.me/feed/archive/2026/04/): 31 posts
 - [March 2026](https://alexisrondeau.me/feed/archive/2026/03/): 34 posts
 - [February 2026](https://alexisrondeau.me/feed/archive/2026/02/): 57 posts
 - [January 2026](https://alexisrondeau.me/feed/archive/2026/01/): 15 posts
 - [December 2025](https://alexisrondeau.me/feed/archive/2025/12/): 28 posts
-- [November 2025](https://alexisrondeau.me/feed/archive/2025/11/): 124 posts
+- [November 2025](https://alexisrondeau.me/feed/archive/2025/11/): 125 posts
 - [October 2025](https://alexisrondeau.me/feed/archive/2025/10/): 7 posts
 - [September 2025](https://alexisrondeau.me/feed/archive/2025/09/): 5 posts
 - [August 2025](https://alexisrondeau.me/feed/archive/2025/08/): 7 posts
 - [July 2025](https://alexisrondeau.me/feed/archive/2025/07/): 23 posts
 - [June 2025](https://alexisrondeau.me/feed/archive/2025/06/): 3 posts
 - [May 2025](https://alexisrondeau.me/feed/archive/2025/05/): 18 posts
-- [April 2025](https://alexisrondeau.me/feed/archive/2025/04/): 55 posts
+- [April 2025](https://alexisrondeau.me/feed/archive/2025/04/): 34 posts
 - [March 2025](https://alexisrondeau.me/feed/archive/2025/03/): 22 posts
 - [February 2025](https://alexisrondeau.me/feed/archive/2025/02/): 11 posts
 - [December 2024](https://alexisrondeau.me/feed/archive/2024/12/): 3 posts
@@ -219,43 +90,16 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 - [June 2023](https://alexisrondeau.me/feed/archive/2023/06/): 2 posts
 - [May 2023](https://alexisrondeau.me/feed/archive/2023/05/): 7 posts
 - [April 2023](https://alexisrondeau.me/feed/archive/2023/04/): 3 posts
-- [March 2023](https://alexisrondeau.me/feed/archive/2023/03/): 1 posts
-- [October 2022](https://alexisrondeau.me/feed/archive/2022/10/): 1 posts
-- [July 2022](https://alexisrondeau.me/feed/archive/2022/07/): 3 posts
+- [March 2023](https://alexisrondeau.me/feed/archive/2023/03/): 2 posts
+- [October 2022](https://alexisrondeau.me/feed/archive/2022/10/): 2 posts
+- [September 2022](https://alexisrondeau.me/feed/archive/2022/09/): 1 posts
+- [July 2022](https://alexisrondeau.me/feed/archive/2022/07/): 4 posts
 - [April 2022](https://alexisrondeau.me/feed/archive/2022/04/): 2 posts
-- [August 2020](https://alexisrondeau.me/feed/archive/2020/08/): 1 posts
-- [July 2020](https://alexisrondeau.me/feed/archive/2020/07/): 1 posts
-- [June 2020](https://alexisrondeau.me/feed/archive/2020/06/): 3 posts
-- [May 2020](https://alexisrondeau.me/feed/archive/2020/05/): 1 posts
-- [April 2020](https://alexisrondeau.me/feed/archive/2020/04/): 1 posts
-- [March 2020](https://alexisrondeau.me/feed/archive/2020/03/): 1 posts
-- [September 2019](https://alexisrondeau.me/feed/archive/2019/09/): 1 posts
-- [August 2019](https://alexisrondeau.me/feed/archive/2019/08/): 7 posts
-- [March 2019](https://alexisrondeau.me/feed/archive/2019/03/): 1 posts
-- [January 2019](https://alexisrondeau.me/feed/archive/2019/01/): 3 posts
-- [December 2018](https://alexisrondeau.me/feed/archive/2018/12/): 7 posts
-- [November 2018](https://alexisrondeau.me/feed/archive/2018/11/): 15 posts
-- [October 2018](https://alexisrondeau.me/feed/archive/2018/10/): 5 posts
-- [September 2018](https://alexisrondeau.me/feed/archive/2018/09/): 14 posts
-- [August 2018](https://alexisrondeau.me/feed/archive/2018/08/): 2 posts
-- [December 2017](https://alexisrondeau.me/feed/archive/2017/12/): 1 posts
-- [November 2017](https://alexisrondeau.me/feed/archive/2017/11/): 2 posts
-- [June 2017](https://alexisrondeau.me/feed/archive/2017/06/): 1 posts
-- [May 2017](https://alexisrondeau.me/feed/archive/2017/05/): 7 posts
-- [April 2017](https://alexisrondeau.me/feed/archive/2017/04/): 5 posts
-- [January 2017](https://alexisrondeau.me/feed/archive/2017/01/): 2 posts
-- [September 2016](https://alexisrondeau.me/feed/archive/2016/09/): 2 posts
-- [January 2016](https://alexisrondeau.me/feed/archive/2016/01/): 1 posts
-- [June 2015](https://alexisrondeau.me/feed/archive/2015/06/): 1 posts
-- [May 2015](https://alexisrondeau.me/feed/archive/2015/05/): 2 posts
-- [January 2015](https://alexisrondeau.me/feed/archive/2015/01/): 1 posts
-- [December 2014](https://alexisrondeau.me/feed/archive/2014/12/): 3 posts
-- [November 2014](https://alexisrondeau.me/feed/archive/2014/11/): 3 posts
-- [October 2014](https://alexisrondeau.me/feed/archive/2014/10/): 5 posts
-- [September 2014](https://alexisrondeau.me/feed/archive/2014/09/): 3 posts
+- [November 2021](https://alexisrondeau.me/feed/archive/2021/11/): 1 posts
+- [February 2021](https://alexisrondeau.me/feed/archive/2021/02/): 1 posts
+- [January 2021](https://alexisrondeau.me/feed/archive/2021/01/): 1 posts
+- [December 2020](https://alexisrondeau.me/feed/archive/2020/12/): 2 posts
+- [October 2018](https://alexisrondeau.me/feed/archive/2018/10/): 1 posts
+- [September 2018](https://alexisrondeau.me/feed/archive/2018/09/): 1 posts
 - [August 2014](https://alexisrondeau.me/feed/archive/2014/08/): 1 posts
-- [July 2014](https://alexisrondeau.me/feed/archive/2014/07/): 3 posts
-- [June 2014](https://alexisrondeau.me/feed/archive/2014/06/): 1 posts
-- [May 2014](https://alexisrondeau.me/feed/archive/2014/05/): 12 posts
-- [April 2014](https://alexisrondeau.me/feed/archive/2014/04/): 2 posts
-- [March 2014](https://alexisrondeau.me/feed/archive/2014/03/): 9 posts
+- [March 2014](https://alexisrondeau.me/feed/archive/2014/03/): 2 posts
