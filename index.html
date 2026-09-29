@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Alexis Rondeau</title>
-<meta name="description" content="Everything I publish, in the order I published it: posts from Twitter and notes from my vault, archived here in full — text, images, video and links — so they outlive the platforms.">
+<meta name="description" content="Everything I publish, in the order I published it: dispatches from Twitter and notes from my vault, archived here in full — text, images, video and links — so they outlive the platforms.">
 <link rel="canonical" href="https://alexisrondeau.me/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Alexis Rondeau">
 <meta property="og:title" content="Alexis Rondeau">
-<meta property="og:description" content="Everything I publish, in the order I published it: posts from Twitter and notes from my vault, archived here in full — text, images, video and links — so they outlive the platforms.">
+<meta property="og:description" content="Everything I publish, in the order I published it: dispatches from Twitter and notes from my vault, archived here in full — text, images, video and links — so they outlive the platforms.">
 <meta property="og:url" content="https://alexisrondeau.me/">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@SpringStreetNYC">
-<link rel="alternate" type="application/atom+xml" title="Alexis Rondeau — Feed" href="https://alexisrondeau.me/feed/feed.xml">
+<link rel="alternate" type="application/atom+xml" title="Alexis Rondeau — Newsfeed" href="https://alexisrondeau.me/feed/feed.xml">
 <link rel="stylesheet" href="/tufte.css">
 <link rel="stylesheet" href="/feed/feed.css">
 <style>.links{list-style:none;margin:6px 0 0;padding:0;}
@@ -25,48 +25,48 @@
 .links .d{display:block;color:var(--muted);font-size:16px;line-height:1.45;margin-top:3px;}
 .links .m{display:block;color:var(--faint);font-size:13px;margin-top:6px;font-style:italic;}
 .links .m a{font-size:inherit;color:var(--faint);border-bottom:1px solid var(--rule);}
-/* pinned: set off with the accent rule, slightly raised */
-.links li.pinned{border-top:0;border-left:2px solid var(--accent);padding-left:18px;margin:6px 0 10px;
-                 background:linear-gradient(90deg,rgba(140,47,31,.045),rgba(140,47,31,0) 70%);}
-.links li.pinned + li{border-top:1.5px solid var(--ink);}
-.links li.pinned + li.pinned{border-top:0;}
-.links .pin{display:block;font:600 11px/1.4 var(--serif);font-feature-settings:"smcp" 1;text-transform:uppercase;
-            letter-spacing:.08em;color:var(--accent);margin-bottom:2px;}</style>
+/* pinned group: one label, an accent rule down the side, hairlines between, then a normal gap */
+.pin-label{font:600 11px/1.4 var(--serif);font-feature-settings:"smcp" 1;text-transform:uppercase;
+           letter-spacing:.08em;color:var(--accent);margin:6px 0 4px;}
+.links.pinned{border-left:2px solid var(--accent);padding-left:18px;margin:0 0 36px;
+              background:linear-gradient(90deg,rgba(140,47,31,.04),rgba(140,47,31,0) 70%);}
+.links.pinned li{border-top:1px solid var(--rule);}
+.links.pinned li:first-child{border-top:0;padding-top:8px;}
+.links.pinned + .links li:first-child{border-top:1px solid var(--rule);}</style>
 
 </head>
 <body>
 <header class="hero">
 <div class="eyebrow">Alexis Rondeau</div>
 <h1>Featured dispatches</h1>
-<div class="nav"><a href="/feed/">Feed</a><a href="/feed/archive/">Archive</a><a href="https://x.com/SpringStreetNYC">Twitter</a><a href="https://github.com/akaalias">GitHub</a><a href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a></div>
+<div class="nav"><a href="/">Home</a><a href="/feed/">Newsfeed</a><a href="/feed/archive/">Archive</a><a href="https://x.com/SpringStreetNYC">Twitter</a><a href="https://github.com/akaalias">GitHub</a><a href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a></div>
 </header>
 <div class="wrap">
 <section id="featured">
-<ul class="links">
-<li class="pinned">
-<span class="pin">Pinned</span>
+<div class="pin-label">Pinned</div>
+<ul class="links pinned">
+<li>
 <a href="https://alexisrondeau.me/ballpark/">&quot;Not all who wander are lost&quot;: Can a UAV learn a city by heart — no GPS, no map on board, just a $4 flight computer?</a>
 <span class="d">Yes! We found a special-purpose neural memory architecture that 'remembers' an exact geo-location, given an in-flight daytime picture of Berlin. The typical miss is 27 m — no GPS, no internet, no map…</span>
 <span class="m">Note · Discovery Loops · Jul 21, 2026 · <a href="/notes/not-all-who-wander-are-lost-can-a-uav-learn-a-city-by-heart-no-gps-no-map-on-boa/">on this site</a></span>
 </li>
-<li class="pinned">
-<span class="pin">Pinned</span>
+<li>
 <a href="https://alexisrondeau.me/airloom/">&quot;The snuggle is real&quot;: Evolving quadcopter frame geometry for Wh/km, with Claude as an occasional co-designer</a>
 <span class="d">I let a genetic algorithm loose on the geometry of a 7-inch quadcopter frame — the real, open-source Source One V6 plate drawings, morphed by fourteen genes and flown through six simulated weather sc…</span>
 <span class="m">Note · Discovery Loops · Jul 13, 2026 · <a href="/notes/the-snuggle-is-real-evolving-quadcopter-frame-geometry-for-wh-km-with-claude-as/">on this site</a></span>
 </li>
-<li class="pinned">
-<span class="pin">Pinned</span>
+<li>
 <a href="https://alexisrondeau.me/llm-heuristic-scientists-workshop/approach.html">&quot;We don't write the rules. We just discover them. With AI.&quot;: How an autonomous agent searches for the groundrule, and what makes the loop different</a>
 <span class="d">A job-shop scheduling problem dressed up as a lunch rush: one grill, one shared range, and sequencing as my only lever. Rather than hand-write the rule, I let an agent propose candidates, run them ac…</span>
 <span class="m">Note · Discovery Loops · Jun 5, 2026 · <a href="/notes/we-don-t-write-the-rules-we-just-discover-them-with-ai-how-an-autonomous-agent-s/">on this site</a></span>
 </li>
-<li class="pinned">
-<span class="pin">Pinned</span>
+<li>
 <a href="https://alexisrondeau.me/tada/research/FMDiscovery/dashboard/report.html">&quot;Which city in Paris are you staying in?&quot;: Can an LLM autoresearch loop teach a phone-sized small language model (SLM) to ask frontier-quality questions? Can it? Does it? Let's find out!</a>
 <span class="d">We discovered a technique that enables Apple's native 2025 3B Foundation Model to come within about one rubric point of a frontier cloud model (Claude Sonnet 4.6) on every quality dimension. It took …</span>
 <span class="m">Note · Discovery Loops · Apr 30, 2026 · <a href="/notes/which-city-in-paris-are-you-staying-in-can-an-llm-autoresearch-loop-teach-a-phon/">on this site</a></span>
 </li>
+</ul>
+<ul class="links">
 <li>
 <a href="https://freakonomics.com">Freakonomics Experiments</a>
 <span class="tag">Let a coin decide — then measure what happens.</span>
@@ -359,7 +359,7 @@
 <li><a href="/feed/archive/2014/03/">March</a> <span class="n">9</span></li>
 </ul>
 </aside>
-<footer>Everything, in order: <a href="/feed/">the feed</a>.</footer>
+<footer>Everything, in order: <a href="/feed/">the newsfeed</a>.</footer>
 </div>
 <script>
 /* open every off-site link in a new tab */
