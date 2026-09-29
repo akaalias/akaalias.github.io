@@ -2,9 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://alexisrondeau.me/</loc></url>
 <url><loc>https://alexisrondeau.me/feed/</loc><lastmod>2026-09-28</lastmod></url>
-<url><loc>https://alexisrondeau.me/feed/page/2/</loc><lastmod>2026-09-21</lastmod></url>
+<url><loc>https://alexisrondeau.me/feed/page/2/</loc><lastmod>2026-09-19</lastmod></url>
 <url><loc>https://alexisrondeau.me/feed/page/3/</loc><lastmod>2026-09-10</lastmod></url>
-<url><loc>https://alexisrondeau.me/feed/page/4/</loc><lastmod>2026-09-09</lastmod></url>
+<url><loc>https://alexisrondeau.me/feed/page/4/</loc><lastmod>2026-09-05</lastmod></url>
 <url><loc>https://alexisrondeau.me/feed/page/5/</loc><lastmod>2026-08-22</lastmod></url>
 <url><loc>https://alexisrondeau.me/feed/page/6/</loc><lastmod>2026-07-16</lastmod></url>
 <url><loc>https://alexisrondeau.me/feed/page/7/</loc><lastmod>2026-06-08</lastmod></url>
@@ -35,9 +35,6 @@
 <url><loc>https://alexisrondeau.me/feed/page/32/</loc><lastmod>2017-04-27</lastmod></url>
 <url><loc>https://alexisrondeau.me/feed/page/33/</loc><lastmod>2014-09-22</lastmod></url>
 <url><loc>https://alexisrondeau.me/feed/page/34/</loc><lastmod>2014-03-09</lastmod></url>
-<url><loc>https://alexisrondeau.me/notes/freakonomics-experiments/</loc><lastmod>2026-09-28</lastmod></url>
-<url><loc>https://alexisrondeau.me/notes/onemonth-inc/</loc><lastmod>2026-09-28</lastmod></url>
-<url><loc>https://alexisrondeau.me/notes/pivotal-labs-new-york-city/</loc><lastmod>2026-09-28</lastmod></url>
 <url><loc>https://alexisrondeau.me/feed/t/2104527603897913371/</loc><lastmod>2026-09-28</lastmod></url>
 <url><loc>https://alexisrondeau.me/feed/t/2104488451446059115/</loc><lastmod>2026-09-28</lastmod></url>
 <url><loc>https://alexisrondeau.me/feed/t/2104487753081655614/</loc><lastmod>2026-09-28</lastmod></url>
@@ -157,6 +154,9 @@
 <url><loc>https://alexisrondeau.me/feed/t/2082760515093172497/</loc><lastmod>2026-07-30</lastmod></url>
 <url><loc>https://alexisrondeau.me/feed/t/2082755482083639514/</loc><lastmod>2026-07-30</lastmod></url>
 <url><loc>https://alexisrondeau.me/feed/t/2082752063746785419/</loc><lastmod>2026-07-30</lastmod></url>
+<url><loc>https://alexisrondeau.me/notes/freakonomics-experiments/</loc><lastmod>2026-07-28</lastmod></url>
+<url><loc>https://alexisrondeau.me/notes/onemonth-inc/</loc><lastmod>2026-07-28</lastmod></url>
+<url><loc>https://alexisrondeau.me/notes/pivotal-labs-new-york-city/</loc><lastmod>2026-07-28</lastmod></url>
 <url><loc>https://alexisrondeau.me/feed/t/2079583150817091585/</loc><lastmod>2026-07-21</lastmod></url>
 <url><loc>https://alexisrondeau.me/notes/not-all-who-wander-are-lost-can-a-uav-learn-a-city-by-heart-no-gps-no-map-on-boa/</loc><lastmod>2026-07-20</lastmod></url>
 <url><loc>https://alexisrondeau.me/feed/t/2078084709628703209/</loc><lastmod>2026-07-17</lastmod></url>

@@ -28,40 +28,40 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 - [Design Gradient by Certainty Principle](https://alexisrondeau.me/notes/design-gradient-by-certainty-principle/): Von Tobi (Wie hieß das nochmal genau?)
 - [JamGPT Story – Making release notes more delightful with “The Learning Curve”, a fictional TV show about Pogo the AI](https://alexisrondeau.me/notes/jamgpt-story-making-release-notes-more-delightful-with-the-learning-curve-a-fict/): Write a synopsis as if this was an episode of a beloved and wholesome family tv show called “The Learning Curve”. The s…
 - [Notes on "Whole Earth Catalog"](https://alexisrondeau.me/notes/notes-on-whole-earth-catalog/): ⭐️ Whole Earth 39Thirty Cap (S21 Mini-Project)
-- [⭐️ How To Double My Rate Of Failure](https://alexisrondeau.me/notes/how-to-double-my-rate-of-failure/): My "One Kicks"
+- [How To Double My Rate Of Failure](https://alexisrondeau.me/notes/how-to-double-my-rate-of-failure/): My "One Kicks"
 - [Code-Related](https://alexisrondeau.me/notes/code-related/): ⭐️ Calculating Nonces That Result In Zero Padded Sha256 Hashes
 - [Notes on ballpoint pens](https://alexisrondeau.me/notes/notes-on-ballpoint-pens/): Heavily related to ⭐️ "Micro-Note-Taking Set" (S21 Mini-Project)
 - [My Recipe for Giant Bubble-Making](https://alexisrondeau.me/notes/my-recipe-for-giant-bubble-making/): ⭐️ How to Make Big-Ass Bubbles
-- [⭐️ DeepDive – A better qualitative analysis tool (S21 Mini-Project)](https://alexisrondeau.me/notes/deepdive-a-better-qualitative-analysis-tool-s21-mini-project/): I, Alexis, want a better coding tool for my qualitative analysis.
-- [⭐️ JamGPT Beta Version Launch](https://alexisrondeau.me/notes/jamgpt-beta-version-launch/): 🤙🏻 Pogo Brainstorm Branding and Standing
-- [⭐️ Pageturner Hack for Kindle – Experiment (W21 Mini-Project)](https://alexisrondeau.me/notes/pageturner-hack-for-kindle-experiment-w21-mini-project/): TLDR; After getting frustrated, angry even, with how awkward and unreliable the "touch-screen-to-flipt-to-next-page" on…
-- [⭐️ My Physical Notebooks (Photos)](https://alexisrondeau.me/notes/my-physical-notebooks-photos/): Red Notebook 2020-2021 (Photos)
-- [⭐️ My Light-Therapy Lamp Solution with Kindle](https://alexisrondeau.me/notes/my-light-therapy-lamp-solution-with-kindle/): A follow up on ⭐️ Happier Through Bright Light (Experiment)
+- [DeepDive – A better qualitative analysis tool (S21 Mini-Project)](https://alexisrondeau.me/notes/deepdive-a-better-qualitative-analysis-tool-s21-mini-project/): I, Alexis, want a better coding tool for my qualitative analysis.
+- [JamGPT Beta Version Launch](https://alexisrondeau.me/notes/jamgpt-beta-version-launch/): 🤙🏻 Pogo Brainstorm Branding and Standing
+- [Pageturner Hack for Kindle – Experiment (W21 Mini-Project)](https://alexisrondeau.me/notes/pageturner-hack-for-kindle-experiment-w21-mini-project/): TLDR; After getting frustrated, angry even, with how awkward and unreliable the "touch-screen-to-flipt-to-next-page" on…
+- [My Physical Notebooks (Photos)](https://alexisrondeau.me/notes/my-physical-notebooks-photos/): Red Notebook 2020-2021 (Photos)
+- [My Light-Therapy Lamp Solution with Kindle](https://alexisrondeau.me/notes/my-light-therapy-lamp-solution-with-kindle/): A follow up on ⭐️ Happier Through Bright Light (Experiment)
 - [Things I should share more often](https://alexisrondeau.me/notes/things-i-should-share-more-often/): ⭐️ How to Make Big-Ass Bubbles
-- [⭐️ Kinesiotape for Psychological Well-Being – Experiment (S21 Mini-Project)](https://alexisrondeau.me/notes/kinesiotape-for-psychological-well-being-experiment-s21-mini-project/): Taping – as prescribed by my orthopedic doctor – works very well, much better than I had expected
-- [⭐️ "Hello my name is" Buttons (S21 Mini-Project)](https://alexisrondeau.me/notes/hello-my-name-is-buttons-s21-mini-project/): Basically, have a reusable version of the classic "Hello, my name is" sticker as a button with my name on it and wear i…
+- [Kinesiotape for Psychological Well-Being – Experiment (S21 Mini-Project)](https://alexisrondeau.me/notes/kinesiotape-for-psychological-well-being-experiment-s21-mini-project/): Taping – as prescribed by my orthopedic doctor – works very well, much better than I had expected
+- ["Hello my name is" Buttons (S21 Mini-Project)](https://alexisrondeau.me/notes/hello-my-name-is-buttons-s21-mini-project/): Basically, have a reusable version of the classic "Hello, my name is" sticker as a button with my name on it and wear i…
 - [Notes Of Note](https://alexisrondeau.me/notes/notes-of-note/): ⭐️ Your amazing YOUness
-- [⭐️ My mothers death in 2018](https://alexisrondeau.me/notes/my-mothers-death-in-2018/): My motherJoyce Rondeau, Mother died after a long and courageous battle with cancer.
+- [My mothers death in 2018](https://alexisrondeau.me/notes/my-mothers-death-in-2018/): My motherJoyce Rondeau, Mother died after a long and courageous battle with cancer.
 - [The Other Social Lubricant – Making Giant Bubbles](https://alexisrondeau.me/notes/the-other-social-lubricant-making-giant-bubbles/): ⭐️ How to Make Big-Ass Bubbles
-- [⭐️ How To Double My Rate Of Failure (Idea)](https://alexisrondeau.me/notes/how-to-double-my-rate-of-failure-idea/): While it’s been great to have a single venture as my focus, I’m starting to feel too slow about it. Focus is good, but…
+- [How To Double My Rate Of Failure (Idea)](https://alexisrondeau.me/notes/how-to-double-my-rate-of-failure-idea/): While it’s been great to have a single venture as my focus, I’m starting to feel too slow about it. Focus is good, but…
 - [How To X](https://alexisrondeau.me/notes/how-to-x/): ⭐️ How To Make Better and Faster Investment-Decisions With Lean Experiments
 - [My Vision of Work](https://alexisrondeau.me/notes/my-vision-of-work/): ⭐️ How To Make Better and Faster Investment-Decisions With Lean Experiments
 - [My “Biggest Misses”](https://alexisrondeau.me/notes/my-biggest-misses/): For every “Greatest Hit”My “Greatest Hits”, I had to fail on average about ten times⭐️ How To Make Better and Faster Inv…
-- [⭐️ How To Make Better and Faster Investment-Decisions With Lean Experiments](https://alexisrondeau.me/notes/how-to-make-better-and-faster-investment-decisions-with-lean-experiments/): As many of you know by now, I strongly believe in the effectiveness of using the scientific method to validate business…
-- [⭐️ Whole Earth 39Thirty Cap (S21 Mini-Project)](https://alexisrondeau.me/notes/whole-earth-39thirty-cap-s21-mini-project/): Currently WIP, ETA 1st week of August
-- [🆒 Pogo Automatically Inject User-Selected Text – New Feature](https://alexisrondeau.me/notes/pogo-automatically-inject-user-selected-text-new-feature/): ⭐️ JamGPT Beta Version Launch
-- [⭐️ DeepDive](https://alexisrondeau.me/notes/deepdive/): Development of the DeepDive
+- [How To Make Better and Faster Investment-Decisions With Lean Experiments](https://alexisrondeau.me/notes/how-to-make-better-and-faster-investment-decisions-with-lean-experiments/): As many of you know by now, I strongly believe in the effectiveness of using the scientific method to validate business…
+- [Whole Earth 39Thirty Cap (S21 Mini-Project)](https://alexisrondeau.me/notes/whole-earth-39thirty-cap-s21-mini-project/): Currently WIP, ETA 1st week of August
+- [Pogo Automatically Inject User-Selected Text – New Feature](https://alexisrondeau.me/notes/pogo-automatically-inject-user-selected-text-new-feature/): ⭐️ JamGPT Beta Version Launch
+- [DeepDive](https://alexisrondeau.me/notes/deepdive/): Development of the DeepDive
 - [Luminette Laptop Bar](https://alexisrondeau.me/notes/luminette-laptop-bar/): From: ⭐️ Happier Through Bright Light (Experiment)
-- [⭐️ "Micro-Note-Taking Set" (S21 Mini-Project)](https://alexisrondeau.me/notes/micro-note-taking-set-s21-mini-project/): While on vacation at my Dad's, I bought a tiny note-pad and pen and started carrying it around with me everywhere. I us…
-- [⭐️ Reframing Off-the-Shelf Objects (S21 Mini-Project)](https://alexisrondeau.me/notes/reframing-off-the-shelf-objects-s21-mini-project/): To build on what's there already and make it better.
-- [🐣 Pogo – Name the baby](https://alexisrondeau.me/notes/pogo-name-the-baby/): ⭐️ JamGPT Beta Version Launch
-- [⭐️ Your amazing YOUness](https://alexisrondeau.me/notes/your-amazing-youness/): Your YOUness is what makes you a one-in-a-billion event in all of time and space.
+- ["Micro-Note-Taking Set" (S21 Mini-Project)](https://alexisrondeau.me/notes/micro-note-taking-set-s21-mini-project/): While on vacation at my Dad's, I bought a tiny note-pad and pen and started carrying it around with me everywhere. I us…
+- [Reframing Off-the-Shelf Objects (S21 Mini-Project)](https://alexisrondeau.me/notes/reframing-off-the-shelf-objects-s21-mini-project/): To build on what's there already and make it better.
+- [Pogo – Name the baby](https://alexisrondeau.me/notes/pogo-name-the-baby/): ⭐️ JamGPT Beta Version Launch
+- [Your amazing YOUness](https://alexisrondeau.me/notes/your-amazing-youness/): Your YOUness is what makes you a one-in-a-billion event in all of time and space.
 - [Selected Blog Posts](https://alexisrondeau.me/notes/selected-blog-posts/): ⭐️ Happier Through Bright Light (Experiment)
 - [How to make giant bubbles - Workshop](https://alexisrondeau.me/notes/how-to-make-giant-bubbles-workshop/): ⭐️ How to Make Big-Ass Bubbles
 - [My Most Interesting Things At the Moment](https://alexisrondeau.me/notes/my-most-interesting-things-at-the-moment/): ⭐️ Your amazing YOUness
 - [Lean Experiment Board](https://alexisrondeau.me/notes/lean-experiment-board/): ⭐️ How To Make Better Business Decisions⭐️ How To Make Better and Faster Investment-Decisions With Lean Experiments
-- [⭐️ Meine größten Stärken – My Strongest Talents](https://alexisrondeau.me/notes/meine-grossten-starken-my-strongest-talents/): Restorative: People exceptionally talented in the Restorative theme are adept at dealing with problems. They are good a…
-- [⭐️ QuickDown](https://alexisrondeau.me/notes/quickdown/): For myself:
+- [Meine größten Stärken – My Strongest Talents](https://alexisrondeau.me/notes/meine-grossten-starken-my-strongest-talents/): Restorative: People exceptionally talented in the Restorative theme are adept at dealing with problems. They are good a…
+- [QuickDown](https://alexisrondeau.me/notes/quickdown/): For myself:
 - [JamGPT](https://alexisrondeau.me/notes/jamgpt/): JamGPT gets you to ChatGPT the instant you need it — one keystroke from whatever app you're in, with no tab-hunting or…
 - [Streamline](https://alexisrondeau.me/notes/streamline/): I wanted a calm, blank space to get my thoughts out before the day's noise set in — no menus, no formatting, no frictio…
 - [Pudding Research](https://alexisrondeau.me/notes/pudding-research/): Another open-source OSINT tool I made, this one for Ethereum token ecosystems. Pick any token and instantly see where t…
@@ -204,9 +204,9 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 
 ## Months
 
-- [September 2026](https://alexisrondeau.me/feed/archive/2026/09/): 80 dispatches
+- [September 2026](https://alexisrondeau.me/feed/archive/2026/09/): 77 dispatches
 - [August 2026](https://alexisrondeau.me/feed/archive/2026/08/): 37 dispatches
-- [July 2026](https://alexisrondeau.me/feed/archive/2026/07/): 19 dispatches
+- [July 2026](https://alexisrondeau.me/feed/archive/2026/07/): 22 dispatches
 - [June 2026](https://alexisrondeau.me/feed/archive/2026/06/): 30 dispatches
 - [May 2026](https://alexisrondeau.me/feed/archive/2026/05/): 10 dispatches
 - [April 2026](https://alexisrondeau.me/feed/archive/2026/04/): 31 dispatches

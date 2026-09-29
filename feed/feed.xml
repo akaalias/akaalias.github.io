@@ -5,62 +5,8 @@
 <link href="https://alexisrondeau.me/feed/"/>
 <link rel="self" href="https://alexisrondeau.me/feed/feed.xml"/>
 <id>https://alexisrondeau.me/feed/</id>
-<updated>2026-09-28T22:00:00Z</updated>
+<updated>2026-09-28T11:04:15Z</updated>
 <author><name>Alexis Rondeau</name><uri>https://alexisrondeau.me/</uri></author>
-<entry>
-<title>Freakonomics Experiments</title>
-<link href="https://alexisrondeau.me/notes/freakonomics-experiments/"/>
-<id>https://alexisrondeau.me/notes/freakonomics-experiments/</id>
-<published>2026-09-28T22:00:00Z</published>
-<updated>2026-09-28T22:00:00Z</updated>
-<content type="html">&lt;article class=&quot;item kind-note&quot; id=&quot;n-freakonomics-experiments&quot;&gt;
-&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Note&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/notes/freakonomics-experiments/&quot;&gt;&lt;time datetime=&quot;2026-09-28T22:00:00Z&quot;&gt;Tuesday, September 29, 2026 · 00:00&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;h2 class=&quot;note-title&quot;&gt;&lt;a href=&quot;/notes/freakonomics-experiments/&quot;&gt;Freakonomics Experiments&lt;/a&gt;&lt;/h2&gt;
-&lt;div class=&quot;text note-body&quot;&gt;
-&lt;p&gt;As senior engineering consultant, I designed and shipped the infrastructure for a truly randomized, multi-month, large-scale field experiment for Prof. Steve Levitt of Freakonomics — the engine behind his 2020 “Heads or Tails” study on how a coin toss shapes big life decisions and happiness.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://freakonomics.com&quot;&gt;Open →&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;tags&quot;&gt;&lt;span&gt;#dispatches&lt;/span&gt; &lt;span&gt;#greatest&lt;/span&gt; &lt;span&gt;#hits&lt;/span&gt; &lt;span&gt;#needs&lt;/span&gt; &lt;span&gt;#date&lt;/span&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/notes/freakonomics-experiments/&quot;&gt;Permalink&lt;/a&gt;&lt;/div&gt;
-&lt;/article&gt;
-</content>
-</entry>
-<entry>
-<title>OneMonth Inc.</title>
-<link href="https://alexisrondeau.me/notes/onemonth-inc/"/>
-<id>https://alexisrondeau.me/notes/onemonth-inc/</id>
-<published>2026-09-28T22:00:00Z</published>
-<updated>2026-09-28T22:00:00Z</updated>
-<content type="html">&lt;article class=&quot;item kind-note&quot; id=&quot;n-onemonth-inc&quot;&gt;
-&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Note&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/notes/onemonth-inc/&quot;&gt;&lt;time datetime=&quot;2026-09-28T22:00:00Z&quot;&gt;Tuesday, September 29, 2026 · 00:00&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;h2 class=&quot;note-title&quot;&gt;&lt;a href=&quot;/notes/onemonth-inc/&quot;&gt;OneMonth Inc.&lt;/a&gt;&lt;/h2&gt;
-&lt;div class=&quot;text note-body&quot;&gt;
-&lt;p&gt;My technical co-founder run: I designed and wrote a best-selling “programming for non-programmers” video course that got complete beginners shipping real code in a month — earning us a spot at Y Combinator and profitability since 2016.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://onemonth.com&quot;&gt;Open →&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;tags&quot;&gt;&lt;span&gt;#dispatches&lt;/span&gt; &lt;span&gt;#greatest&lt;/span&gt; &lt;span&gt;#hits&lt;/span&gt; &lt;span&gt;#needs&lt;/span&gt; &lt;span&gt;#date&lt;/span&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/notes/onemonth-inc/&quot;&gt;Permalink&lt;/a&gt;&lt;/div&gt;
-&lt;/article&gt;
-</content>
-</entry>
-<entry>
-<title>Pivotal Labs, New York City</title>
-<link href="https://alexisrondeau.me/notes/pivotal-labs-new-york-city/"/>
-<id>https://alexisrondeau.me/notes/pivotal-labs-new-york-city/</id>
-<published>2026-09-28T22:00:00Z</published>
-<updated>2026-09-28T22:00:00Z</updated>
-<content type="html">&lt;article class=&quot;item kind-note&quot; id=&quot;n-pivotal-labs-new-york-city&quot;&gt;
-&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Note&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/notes/pivotal-labs-new-york-city/&quot;&gt;&lt;time datetime=&quot;2026-09-28T22:00:00Z&quot;&gt;Tuesday, September 29, 2026 · 00:00&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;h2 class=&quot;note-title&quot;&gt;&lt;a href=&quot;/notes/pivotal-labs-new-york-city/&quot;&gt;Pivotal Labs, New York City&lt;/a&gt;&lt;/h2&gt;
-&lt;div class=&quot;text note-body&quot;&gt;
-&lt;p&gt;Working as senior technology consultant, I coached client teams to ship better products faster through lean experiments, pair-programming and test-driven development. One team used live data from 250,000 trucks to preempt supply-chain failures — averting losses in the millions.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://tanzu.vmware.com/labs&quot;&gt;Open →&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;tags&quot;&gt;&lt;span&gt;#dispatches&lt;/span&gt; &lt;span&gt;#greatest&lt;/span&gt; &lt;span&gt;#hits&lt;/span&gt; &lt;span&gt;#needs&lt;/span&gt; &lt;span&gt;#date&lt;/span&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/notes/pivotal-labs-new-york-city/&quot;&gt;Permalink&lt;/a&gt;&lt;/div&gt;
-&lt;/article&gt;
-</content>
-</entry>
 <entry>
 <title>@SchmidhuberAI Thank you for sharing Jürgen! (Danke dir für's Teilen.) Looks like my belo…</title>
 <link href="https://alexisrondeau.me/feed/t/2104527603897913371/"/>
@@ -1081,6 +1027,70 @@ tomorrow,&lt;/p&gt;
 &lt;p&gt;Next question: is this real?&lt;/p&gt;
 &lt;p&gt;Because I really, really hope it's real.&lt;/p&gt;&lt;/div&gt;
 &lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098059428163403992/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098059428163403992&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
+&lt;/article&gt;
+</content>
+</entry>
+<entry>
+<title>@kshvyaps Been doing this for a year. Actual thought per reply, no slop, because slop ins…</title>
+<link href="https://alexisrondeau.me/feed/t/2098056469845315918/"/>
+<id>https://alexisrondeau.me/feed/t/2098056469845315918/</id>
+<published>2026-09-10T14:30:17Z</published>
+<updated>2026-09-10T14:30:17Z</updated>
+<content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2098056469845315918&quot;&gt;
+&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2098056469845315918/&quot;&gt;&lt;time datetime=&quot;2026-09-10T14:30:17Z&quot;&gt;Thursday, September 10, 2026 · 16:30&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;11&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;blockquote class=&quot;ctx&quot;&gt;
+&lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/kshvyaps&quot;&gt;@kshvyaps&lt;/a&gt; · Sep 25, 2025&lt;/cite&gt;
+&lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;time to be the best reply guy ever &lt;a href=&quot;https://t.co/j7BcgjnDSN&quot;&gt;t.co/j7BcgjnDSN&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/ref-1971093610453242057-0.jpg&quot; width=&quot;736&quot; height=&quot;364&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/kshvyaps&quot;&gt;@kshvyaps&lt;/a&gt; Been doing this for a year. Actual thought per reply, no slop, because slop insults the reader's intelligence.&lt;/p&gt;
+&lt;p&gt;Result: basically no followers. And I'm paying for the privilege. Being conscientious as a new account works against you, apparently. Not cool. Really. NOT COOL.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098056469845315918/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098056469845315918&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
+&lt;/article&gt;
+</content>
+</entry>
+<entry>
+<title>@kshvyaps 100 replies a day, otherwise your reputation gets lowered. That's https://t.co/…</title>
+<link href="https://alexisrondeau.me/feed/t/2098055487165972746/"/>
+<id>https://alexisrondeau.me/feed/t/2098055487165972746/</id>
+<published>2026-09-10T14:26:22Z</published>
+<updated>2026-09-10T14:26:22Z</updated>
+<content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2098055487165972746&quot;&gt;
+&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2098055487165972746/&quot;&gt;&lt;time datetime=&quot;2026-09-10T14:26:22Z&quot;&gt;Thursday, September 10, 2026 · 16:26&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;7&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;blockquote class=&quot;ctx&quot;&gt;
+&lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/kshvyaps&quot;&gt;@kshvyaps&lt;/a&gt; · Sep 25, 2025&lt;/cite&gt;
+&lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;time to be the best reply guy ever &lt;a href=&quot;https://t.co/j7BcgjnDSN&quot;&gt;t.co/j7BcgjnDSN&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/ref-1971093610453242057-0.jpg&quot; width=&quot;736&quot; height=&quot;364&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/kshvyaps&quot;&gt;@kshvyaps&lt;/a&gt; 100 replies a day, otherwise your reputation gets lowered. That's &lt;a href=&quot;https://insane.So&quot;&gt;insane.So&lt;/a&gt; my actual question: how does everyone do this? Other than pointing an AI at it and cranking out slop.And if that IS how it's done, then is all of it just slop?&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098055487165972746/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098055487165972746&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
+&lt;/article&gt;
+</content>
+</entry>
+<entry>
+<title>Love the specificity of the list. And yes, I learn more from losses than wins too. I've e…</title>
+<link href="https://alexisrondeau.me/feed/t/2098048348007625083/"/>
+<id>https://alexisrondeau.me/feed/t/2098048348007625083/</id>
+<published>2026-09-10T13:58:00Z</published>
+<updated>2026-09-10T13:58:00Z</updated>
+<content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2098048348007625083&quot;&gt;
+&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2098048348007625083/&quot;&gt;&lt;time datetime=&quot;2026-09-10T13:58:00Z&quot;&gt;Thursday, September 10, 2026 · 15:58&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;22&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;blockquote class=&quot;ctx&quot;&gt;
+&lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/original_ngv&quot;&gt;@original_ngv&lt;/a&gt; · Sep 9, 2026&lt;/cite&gt;
+&lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;Please fail more in life. In college I lost 41 hackathons, failed 15 interviews and my startup was an epic flop. &lt;/p&gt;
+&lt;p&gt;During that time I pitched to VPs at Rakuten, scientists from NTRO, engineers from Microsoft and Google and even the government.&lt;/p&gt;
+&lt;p&gt;And today I work out of New York City with one of the finest CEOs in the world on AI projects that are changing people's lives every day.&lt;/p&gt;
+&lt;p&gt;I learnt more from my losses than my wins. My failures have given me more than my wins ever have. &lt;/p&gt;
+&lt;p&gt;So please everyone I beg of you. Fail more often. The view at the top comes from falling a lot of times and getting back up.&lt;/p&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;text&quot;&gt;&lt;p&gt;Love the specificity of the list. And yes, I learn more from losses than wins too. I've even proactively set myself up to fail just to learn faster.&lt;/p&gt;
+&lt;p&gt;The part I'd add: at some point it has to be more than just failing. You have to fail well, which really means you had to learn to learn first.&lt;/p&gt;
+&lt;p&gt;And that usually rests on some kind of post-failure safety net. Not necessarily rich parents. Mine was a curiosity safety net: lower middle class, but I have always loved learning early and kept getting food pellets from the universe for it. That's what made failing survivable for me.&lt;/p&gt;
+&lt;p&gt;So my ask to you is: looking back at those 41 hackathons and 15 interviews, what were your hidden enablers? Could be socioeconomic, could be intellectual, could be a person. Would love the nuance, because I think that's the part people can't see from the outside.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098048348007625083/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098048348007625083&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
