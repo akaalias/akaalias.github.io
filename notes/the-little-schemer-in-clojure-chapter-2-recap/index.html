@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Little Schemer in Clojure – Chapter 2 Recap — Alexis Rondeau</title>
+<meta name="description" content="Yesterday I made it through Chapter 2 and as before I've enjoyed it. I have come to copy the question/answer style from the book into the tests:">
+<link rel="canonical" href="https://alexisrondeau.me/notes/the-little-schemer-in-clojure-chapter-2-recap/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alexis Rondeau">
+<meta property="og:title" content="The Little Schemer in Clojure – Chapter 2 Recap — Alexis Rondeau">
+<meta property="og:description" content="Yesterday I made it through Chapter 2 and as before I've enjoyed it. I have come to copy the question/answer style from the book into the tests:">
+<meta property="og:url" content="https://alexisrondeau.me/notes/the-little-schemer-in-clojure-chapter-2-recap/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@SpringStreetNYC">
+<link rel="alternate" type="application/atom+xml" title="Alexis Rondeau — Feed" href="https://alexisrondeau.me/feed/feed.xml">
+<link rel="stylesheet" href="/tufte.css">
+<link rel="stylesheet" href="/feed/feed.css">
+<meta property="article:published_time" content="2017-04-27T22:00:00Z">
+<meta property="article:author" content="Alexis Rondeau">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alexis Rondeau","sameAs":["https://x.com/SpringStreetNYC"],"url":"https://alexisrondeau.me/"},"dateModified":"2025-04-01T14:36:55Z","datePublished":"2017-04-27T22:00:00Z","description":"Yesterday I made it through Chapter 2 and as before I've enjoyed it. I have come to copy the question/answer style from the book into the tests:","headline":"The Little Schemer in Clojure – Chapter 2 Recap","mainEntityOfPage":"https://alexisrondeau.me/notes/the-little-schemer-in-clojure-chapter-2-recap/","url":"https://alexisrondeau.me/notes/the-little-schemer-in-clojure-chapter-2-recap/"}</script>
+
+</head>
+<body>
+<header class="hero">
+<div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
+<h1><a href="/feed/">Feed</a></h1>
+<p class="sub">Note · Friday, April 28, 2017 · 00:00</p>
+<div class="nav"><a href="/">Home</a><a href="/feed/">Feed</a><a href="/feed/archive/">Archive</a><a href="https://x.com/SpringStreetNYC">@SpringStreetNYC on Twitter</a></div>
+</header>
+<div class="wrap">
+<section class="feed single">
+<article class="item kind-note" id="n-the-little-schemer-in-clojure-chapter-2-recap">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/the-little-schemer-in-clojure-chapter-2-recap/"><time datetime="2017-04-27T22:00:00Z">Friday, April 28, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/the-little-schemer-in-clojure-chapter-2-recap/">The Little Schemer in Clojure – Chapter 2 Recap</a></h2>
+<div class="text note-body">
+<p>Yesterday I made it through Chapter 2 and as before I’ve enjoyed it. I have come to copy the question/answer style from the book into the tests:</p>
+<p>First I write the application of the function under test, then the expectation such as:</p>
+<pre><code class="language-clojure">(is (= (lat? '(Jack Sprat could eat no chicken fat)) true))
+</code></pre>
+<p>I understand that calling functions recursively, as done in the book, isn’t idiomatic in Clojure.</p>
+<pre><code class="language-clojure">(def lat? 
+    (fn [l]
+      (cond (null? l) true
+            (atom? (car l)) (lat? (cdr l))
+            :else false)))
+</code></pre>
+<p>There’s <code>recur</code> for that. For now, I like to continue with calling functions regardless. The data-size is small and, since I have tests in place, once I’m through with the book, I can imagine a refactor using <code>recur</code>.</p>
+<p>On the same note, I recognize that Clojure has great helper functions such as <code>every?</code> that I could leverage directly. For example, the above mentioned function <code>lat?</code> could become a one-liner such as by asking “is every expression in the list not a list itself”.</p>
+<pre><code class="language-clojure">(def lat? 
+  (fn [l] 
+    (every? #(not (list? %))) l)))
+</code></pre>
+<p>This is much cleaner (and every? Itself is a recursive function) but in the spirit of the book, I’m going to stick with the functions as they are discussed. Again, my test-suite will allow for refactoring as needed later.</p>
+<p>Lastly, I am getting into the habit of tiny, regular commits. I now make a commit when I have fully tested a function just before moving on to the next one. I can see even smaller commits on every red-to-green test cycle.</p>
+<p>If you are interested, the full listing for Chapter 2 is as follows:</p>
+<pre><code class="language-clojure">(ns the-little-clojurian.chapter2
+  (:require [clojure.test :refer :all]
+            [the-little-clojurian.chapter1 :refer :all]))
+
+(with-test 
+  (def lat? 
+    (fn [l]
+      (cond (null? l) true
+            (atom? (car l)) (lat? (cdr l))
+            :else false)))
+  (testing &quot;returns true&quot;
+    (is (= (lat? '(Jack Sprat could eat no chicken fat)) true))
+    (is (= (lat? '()) true))
+    (is (= (lat? '(bacon and eggs)) true)))
+  (testing &quot;returns false&quot;
+    (is (= (lat? '((Jack) Sprat could eat no chicken fat)) false))
+    (is (= (lat? '(Jack (Sprat could) eat no chicken fat)) false))
+    (is (= (lat? '(bacon (and eggs))) false))))
+
+(deftest boolean-operators
+  (is (= (or (null? '())
+             (atom? '(d e f g)))
+         true))
+  (is (= (or (null? '(a b c))
+             (null? '()))
+         true))
+  (is (= (or (null? '(a b c))
+             (null? '(atom)))
+         false)))
+
+(with-test 
+  (def member? 
+    (fn [a lat]
+      (cond (null? lat) false
+            :else (or (eq? (car lat) a) 
+                      (member? a (cdr lat))))))
+  (testing &quot;evaluates to true&quot;
+    (is (= (member? 'meat '(meat)) true))
+    (is (= (member? 'tea '(coffee tea and milk))))
+    (is (= (member? 'meat '(mashed potatoes and meat gravy)) true)))
+  (testing &quot;evaluates to false&quot;
+    (is (= (member? 'meat '()) false))
+    (is (= (member? 'liver '(bagels and lox)) false))
+    (is (= (member? 'poached '(fried eggs and scrambled eggs))))))
+</code></pre>
+</div>
+<div class="src"><a href="/notes/the-little-schemer-in-clojure-chapter-2-recap/">Permalink</a></div>
+</article>
+</section>
+<nav class="pager"><a href="/feed/">‹ Back to the feed</a><a href="/feed/archive/2017/04/">April 2017 ›</a></nav>
+</div>
+
+</body>
+</html>

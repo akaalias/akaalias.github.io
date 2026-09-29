@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Little Schemer in Clojure – Chapter 4 Recap — Alexis Rondeau</title>
+<meta name="description" content="Number Games">
+<link rel="canonical" href="https://alexisrondeau.me/notes/the-little-schemer-in-clojure-chapter-4-recap/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alexis Rondeau">
+<meta property="og:title" content="The Little Schemer in Clojure – Chapter 4 Recap — Alexis Rondeau">
+<meta property="og:description" content="Number Games">
+<meta property="og:url" content="https://alexisrondeau.me/notes/the-little-schemer-in-clojure-chapter-4-recap/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@SpringStreetNYC">
+<link rel="alternate" type="application/atom+xml" title="Alexis Rondeau — Feed" href="https://alexisrondeau.me/feed/feed.xml">
+<link rel="stylesheet" href="/tufte.css">
+<link rel="stylesheet" href="/feed/feed.css">
+<meta property="article:published_time" content="2017-04-27T22:00:00Z">
+<meta property="article:author" content="Alexis Rondeau">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alexis Rondeau","sameAs":["https://x.com/SpringStreetNYC"],"url":"https://alexisrondeau.me/"},"dateModified":"2025-04-01T14:36:29Z","datePublished":"2017-04-27T22:00:00Z","description":"Number Games","headline":"The Little Schemer in Clojure – Chapter 4 Recap","mainEntityOfPage":"https://alexisrondeau.me/notes/the-little-schemer-in-clojure-chapter-4-recap/","url":"https://alexisrondeau.me/notes/the-little-schemer-in-clojure-chapter-4-recap/"}</script>
+
+</head>
+<body>
+<header class="hero">
+<div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
+<h1><a href="/feed/">Feed</a></h1>
+<p class="sub">Note · Friday, April 28, 2017 · 00:00</p>
+<div class="nav"><a href="/">Home</a><a href="/feed/">Feed</a><a href="/feed/archive/">Archive</a><a href="https://x.com/SpringStreetNYC">@SpringStreetNYC on Twitter</a></div>
+</header>
+<div class="wrap">
+<section class="feed single">
+<article class="item kind-note" id="n-the-little-schemer-in-clojure-chapter-4-recap">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/the-little-schemer-in-clojure-chapter-4-recap/"><time datetime="2017-04-27T22:00:00Z">Friday, April 28, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/the-little-schemer-in-clojure-chapter-4-recap/">The Little Schemer in Clojure – Chapter 4 Recap</a></h2>
+<div class="text note-body">
+<p><strong>Number Games</strong></p>
+<p>I’ve enjoyed working through chapter 4. It’s simpler and more dense at the same time since it’s all about numbers. Over the course of this chapter I (re)implemented several arithmetic basic functions such as <code>add1</code>, <code>sub1</code> – Those were rather helper functions – and moved on to implementing <code>pluss</code> and <code>minuss</code>, <code>multiply</code> and <code>divide</code> (I added the extra “s” to pluss and minuss to avoid redefining built-in functions).</p>
+<p>The cool thing about this chapter is that I was able to implement these functions only in terms of very simple operations (add1, sub1) and recursion.</p>
+<p>For example, <code>pluss</code> works as follows:</p>
+<p>Given <code>n</code> and <code>m</code>, I want to evaluate their sum. For that to happen, I need to ask two questions:</p>
+<ul>
+<li>Is <code>m</code> equal to 0? If so, return <code>n</code>. This would make an addition such as 1 + 0 work straight away.</li>
+<li>Else, <code>add1</code> to the natural recursion of <code>pluss</code> with <code>n</code> and <code>(sub1 m)</code>. This counts <code>m</code> down with each recursion until it reaches 0.</li>
+</ul>
+<p>If we were to add 1 and 3, the result of 4 would be calculated as:</p>
+<pre><code class="language-clojure">(pluss 1 3)
+1 + (pluss 1 2)
+1 + 1 + (pluss 1 1)
+1 + 1 + 1 (pluss 1 0)
+1 + 1 + 1 + 1
+</code></pre>
+<p>Pretty cool.</p>
+<pre><code class="language-clojure">(with-test
+  (def pluss
+    (fn [n m]
+      (cond (zero? m) n
+            :else (add1 (pluss n (sub1 m))))))
+
+  (is (= (pluss 0 0) 0))
+  (is (= (pluss 1 0) 1))
+  (is (= (pluss 0 1) 1))
+  (is (= (pluss 1 1) 2))
+  (is (= (pluss 1 2) 3))
+  (is (= (pluss 46 12) 58)))
+</code></pre>
+<p>For every function I write, I also make sure I start with the smallest possible test-case and then only add the code necessary to fix that test. I quiet enjoy it because it gives me confidence that, once I refactor, the functions still work.</p>
+<p>For example, take <code>occur</code> which takes an atom <code>a</code> and a list <code>lat</code> as its arguments and returns the count of <code>a</code> in <code>lat</code>.</p>
+<p>To build the simple algorithm, I start out writing the bare minimum setup for the first, smallest test:</p>
+<pre><code class="language-clojure">(with-test
+  (def occur
+    (fn [a lat]))
+
+  (is (= (occur 'a '()) 0)))
+</code></pre>
+<p>Running the test will fail since the function currently, and intentionally, only returns <code>nil</code> and not 0 when given <code>'a</code> and <code>'()</code> as its inputs.</p>
+<p>I can fix this situation by writing the smallest possible solution which is to return 0, hardcoded:</p>
+<pre><code class="language-clojure">(with-test
+  (def occur
+    (fn [a lat] 0))
+
+  (is (= (occur 'a '()) 0)))
+</code></pre>
+<p>Our first test will now pass. We could, if we wanted to, make a commit at this point. On to the next.</p>
+<pre><code class="language-clojure">(with-test
+  (def occur
+    (fn [a lat] 0))
+
+  (is (= (occur 'a '()) 0))
+  (is (= (occur 'a '(a)) 1)))
+</code></pre>
+<p>Running the tests will now fail for scenario 2 when we expect to receive 1 as the value and not 0. The smallest fix to solve for this is to introduce a conditional.</p>
+<pre><code class="language-clojure">(with-test
+  (def occur
+    (fn [a lat]
+      (cond (null? lat) 0
+            :else 1)))
+
+  (is (= (occur 'a '()) 0))
+  (is (= (occur 'a '(a)) 1)))
+</code></pre>
+<p>Great! All tests are passing now. Now, on to the next, simplest test-case where <code>(occur 'a '(b))</code> should evaluate to 0.</p>
+<pre><code class="language-clojure">(with-test
+  (def occur
+    (fn [a lat]
+      (cond (null? lat) 0
+            :else 1)))
+
+  (is (= (occur 'a '()) 0))
+  (is (= (occur 'a '(a)) 1))
+  (is (= (occur 'a '(b)) 0)))
+</code></pre>
+<p>The third test fails naturally. To fix it, I now have to introduce a new condition to check if <code>(car lat)</code> is equal to <code>a</code>:</p>
+<pre><code class="language-clojure">(with-test
+  (def occur
+    (fn [a lat]
+      (cond (null? lat) 0
+            (equan? (car lat) a) 1
+            :else 0)))
+
+  (is (= (occur 'a '()) 0))
+  (is (= (occur 'a '(a)) 1))
+  (is (= (occur 'a '(b)) 0)))
+</code></pre>
+<p>Now, let’s test for multiple occurrences of <code>a</code> in <code>lat</code>: <code>(is (= (occur 'a '(a a)) 2))</code></p>
+<pre><code class="language-clojure">(with-test
+  (def occur
+    (fn [a lat]
+      (cond (null? lat) 0
+            (equan? (car lat) a) 1
+            :else 0)))
+
+  (is (= (occur 'a '()) 0))
+  (is (= (occur 'a '(a)) 1))
+  (is (= (occur 'a '(b)) 0))
+  (is (= (occur 'a '(a a)) 2)))
+</code></pre>
+<p>The test will fail when run. Now we have to fix it by introducing adding 1 to the natural recursion of the function as follows: <code>(add1 (occur a (cdr lat)))</code></p>
+<pre><code class="language-clojure">(with-test
+  (def occur
+    (fn [a lat]
+      (cond (null? lat) 0
+            (equan? (car lat) a) (add1 (occur a (cdr lat)))
+            :else 0)))
+
+  (is (= (occur 'a '()) 0))
+  (is (= (occur 'a '(a)) 1))
+  (is (= (occur 'a '(b)) 0))
+  (is (= (occur 'a '(a a)) 2)))
+</code></pre>
+<p>Splendid, all tests are passing.</p>
+<p>Now, I want to make sure that we get the right result, when the list is mixed, such as <code>(is (= (occur 'a '(a b c a)) 2))</code></p>
+<pre><code class="language-clojure">(with-test
+  (def occur
+    (fn [a lat]
+      (cond (null? lat) 0
+            (equan? (car lat) a) (add1 (occur a (cdr lat)))
+            :else 0)))
+
+  (is (= (occur 'a '()) 0))
+  (is (= (occur 'a '(a)) 1))
+  (is (= (occur 'a '(b)) 0))
+  (is (= (occur 'a '(a a)) 2))
+  (is (= (occur 'a '(a b c a)) 2)))
+</code></pre>
+<p>Adding the test makes it fail of course, since we’re not accounting for this scenario. It’s a simple fix, we need to allow our <code>:else</code> branch to continue searching for <code>a</code>s with <code>(occur a (cdr lat))</code>. The final solution to <code>occur</code> is</p>
+<pre><code class="language-clojure">(with-test
+  (def occur
+    (fn [a lat]
+      (cond (null? lat) 0
+            (equan? (car lat) a) (add1 (occur a (cdr lat)))
+            :else (occur a (cdr lat)))))
+
+  (is (= (occur 'a '()) 0))
+  (is (= (occur 'a '(a)) 1))
+  (is (= (occur 'a '(b)) 0))
+  (is (= (occur 'a '(a a)) 2))
+  (is (= (occur 'a '(a b c a)) 2)))
+</code></pre>
+<p>I think this is pretty cool. We’ve got a first set of reasonable inputs and outputs covered. This would be a great time to run the full test-suite with <code>lein test</code>, and if everything passes, make a commit and push to master. For this I usually make myself a tiny script named <code>ship.sh</code> that runs the test-suite one final time and does the git push for me:</p>
+<p>ship.sh</p>
+<pre><code class="language-bash">#!/bin/bash
+
+lein test &amp;&amp; git push origin master
+</code></pre>
+<p>Nothing fancy, but it keeps me from habitually doing a <code>git push origin master</code> without running all tests beforehand.</p>
+<p>Anyways, I enjoyed showing you how I build my functions with TDD and baby-steps to arrive at a good place to commit and push. The full listing of my (un-refactored) chapter 4 is as follows:</p>
+<pre><code class="language-clojure">(ns the-little-clojurian.chapter4
+  (:require [clojure.test :refer :all]
+            [the-little-clojurian.chapter1 :refer :all]
+            [the-little-clojurian.chapter2 :refer :all]
+            [the-little-clojurian.chapter3 :refer :all]))
+
+(with-test 
+  (def add1 
+    (fn [x] (+ x 1)))
+
+  (is (= (add1 0) 1))
+  (is (= (add1 67) 68))
+  (is (= (add1 68) 69)))
+
+(with-test
+  (def sub1
+    (fn [x] (- x 1)))
+
+  (is (= (sub1 0) -1))
+  (is (= (sub1 1) 0))
+  (is (= (sub1 2) 1))
+  (is (= (sub1 3) 2)))
+
+(with-test
+  (def pluss
+    (fn [n m]
+      (cond (zero? m) n
+            :else (add1 (pluss n (sub1 m))))))
+
+  (is (= (pluss 0 0) 0))
+  (is (= (pluss 1 0) 1))
+  (is (= (pluss 0 1) 1))
+  (is (= (pluss 1 1) 2))
+  (is (= (pluss 1 2) 3))
+  (is (= (pluss 46 12) 58)))
+
+(with-test
+  (def minuss 
+    (fn [n m]
+      (cond 
+       (zero? m) n
+       :else (sub1 (minuss n (sub1 m))))))
+
+  (is (= (minuss 0 0) 0))
+  (is (= (minuss 1 1) 0))
+  (is (= (minuss 2 1) 1))
+  (is (= (minuss 3 2) 1))
+  (is (= (minuss 100 1) 99)))
+
+(with-test
+  (def tup?
+    (fn [l] 
+      (cond (null? l) true
+            (not (number? (car l))) false
+            :else (tup? (cdr l)))))
+
+  (is (= (tup? '()) true))
+  (is (= (tup? '(a)) false))
+  (is (= (tup? '(1)) true))
+  (is (= (tup? '(1 a)) false))
+  (is (= (tup? '(1 2)) true))
+  (is (= (tup? '(2 11 3 79 47 6))))
+  (is (= (tup? '(8 55 5 555))))
+  (is (= (tup? '(1 2 8 apple 4 3)) false))
+  (is (= (tup? '(3 (7 4) 13 9)) false)))
+
+(with-test
+  (def addtup 
+    (fn [tup] 
+      (cond (null? tup) 0
+            :else (pluss (car tup) (addtup (cdr tup))))))
+
+  (is (= (addtup '()) 0))
+  (is (= (addtup '(1)) 1))
+  (is (= (addtup '(1 2)) 3))
+  (is (= (addtup '(1 2 3)) 6))
+  (is (= (addtup '(3 5 2 8)) 18))
+  (is (= (addtup '(15 6 7 12 3)) 43)))
+
+(with-test
+  (def multiply 
+    (fn [n m]
+      (cond (zero? m) 0
+            :else (pluss n (multiply n (sub1 m))))))
+
+  (is (= (multiply 0 0) 0))
+  (is (= (multiply 1 1) 1))
+  (is (= (multiply 1 0) 0))
+  (is (= (multiply 5 3) 15))
+  (is (= (multiply 13 4) 52)))
+
+(with-test
+  (def tup+ 
+    (fn [tup1 tup2]
+      (cond (null? tup1) tup2
+            (null? tup2) tup1
+            :else (cons (pluss (car tup1) (car tup2)) 
+                        (tup+ 
+                         (cdr tup1) (cdr tup2))))))
+
+  (is (= (tup+ '() '()) '()))
+  (is (= (tup+ '(1) '(1)) '(2)))
+  (is (= (tup+ '(2 3) '(4 6)) '(6 9)))
+  (is (= (tup+ '(3 6 9 11 4) '(8 5 2 0 7)) '(11 11 11 11 11)))
+  (is (= (tup+ '(3 7) '(4 6 8 1)) '(7 13 8 1))))
+
+(with-test
+  (def greater-than
+    (fn [n m] false
+      (cond (zero? n) false
+            (zero? m) true
+            :else (greater-than (sub1 n) (sub1 m)))))
+
+  (is (= (greater-than 0 0) false))
+  (is (= (greater-than 1 0) true))
+  (is (= (greater-than 12 133) false))
+  (is (= (greater-than 120 11) true))
+  (is (= (greater-than 4 6) false)))
+
+(with-test
+  (def smaller-than
+    (fn [n m] 
+      (cond (zero? m) false
+            (zero? n) true
+            :else (smaller-than (sub1 n) (sub1 m)))))
+
+  (is (= (smaller-than 0 0) false))
+  (is (= (smaller-than 0 1) true))
+  (is (= (smaller-than 4 6))))
+
+(with-test
+  (def equal 
+    (fn [n m] 
+      (cond (smaller-than n m) false
+            (greater-than n m) false
+            :else true)))
+
+  (is (= (equal 0 0) true))
+  (is (= (equal 0 1) false))
+  (is (= (equal 1 1) true))
+  (is (= (equal 44 44) true)))
+
+(with-test
+  (def expt 
+    (fn [n m]
+      (cond (zero? m) 1
+            :else (multiply n (expt n (sub1 m))))))
+
+  (is (= (expt 1 1) 1))
+  (is (= (expt 2 2) 4))
+  (is (= (expt 2 3) 8))
+  (is (= (expt 5 3) 125)))
+
+(with-test
+  (def divide
+    (fn [n m]
+      (cond (zero? m) (throw (IllegalArgumentException.))
+            (smaller-than n m) 0
+            :else (add1 (divide (minuss n m) m)))))
+  (is (= (divide 0 1) 0))
+  (is (thrown? IllegalArgumentException (divide 1 0)))
+  (is (= (divide 15 4) 3))
+  (is (= (divide 15 3) 5))
+  (is (= (divide 100 10) 10)))
+
+(with-test
+  (def length 
+    (fn [lat] 
+      (cond (null? lat) 0
+            :else (add1 (length (cdr lat))))))
+
+  (is (= (length '()) 0))
+  (is (= (length '(hotdogs)) 1))
+  (is (= (length '(hotdogs with mustard sauerkraut and pickles)) 6))
+  (is (= (length '(ham and cheese on rye)) 5)))
+
+(with-test 
+  (def pick 
+    (fn [n lat] 
+      (cond (zero? n) nil
+            (one? n) (car lat)
+            :else (pick (sub1 n) (cdr lat)))))
+
+  (is (= (pick 0 '(apple)) nil))
+  (is (= (pick 1 '()) nil))
+  (is (= (pick 1 '(apple)) 'apple))
+  (is (= (pick 2 '(apple bananas)) 'bananas))
+  (is (= (pick 4 '(apple)) nil)))
+
+(with-test
+  (def rempick 
+    (fn [n lat]
+      (cond (zero? n) nil
+            (one? n) (cdr lat)
+            :else (cons (car lat) 
+                        (rempick (sub1 n) 
+                                 (cdr lat))))))
+
+  (is (= (rempick 0 '()) nil))
+  (is (= (rempick 1 '(apple)) '()))
+  (is (= (rempick 2 '(apple bananas gin)) '(apple gin))))
+
+
+(with-test 
+  (def no-nums 
+    (fn [lat]
+      (cond (null? lat) '()
+            (number? (car lat)) (no-nums (cdr lat))
+            :else (cons (car lat) 
+                        (no-nums 
+                         (cdr lat))))))
+
+  (is (= (no-nums '()) '()))
+  (is (= (no-nums '(1)) '()))
+  (is (= (no-nums '(apple)) '(apple)))
+  (is (= (no-nums '(5 pears 6 prunes 9 dates)) '(pears prunes dates))))
+
+(with-test
+  (def all-nums
+    (fn [lat]
+      (cond (null? lat) '()
+            (number? (car lat)) (cons (car lat)
+                                      (all-nums (cdr lat)))
+            :else (all-nums (cdr lat)))))
+
+  (is (= (all-nums '()) '()))
+  (is (= (all-nums '(1)) '(1)))
+  (is (= (all-nums '(apple)) '()))
+  (is (= (all-nums '(1 apple 2 pears 3 bananas)) '(1 2 3))))
+
+(with-test
+  (def equan?
+    (fn [a1 a2]
+      (cond (and (number? a1) (number? a2)) (equal a1 a2)
+            (or (number? a1) (number? a2)) false
+            :else (eq? a1 a2))))
+
+  (is (= (equan? 0 0) true))
+  (is (= (equan? 0 1) false))
+  (is (= (equan? 0 'a) false))
+  (is (= (equan? 'a 'a) true))
+  (is (= (equan? 'a 'b) false)))
+
+(with-test
+  (def occur
+    (fn [a lat] 
+      (cond (null? lat) 0
+            (equan? (car lat) a) (add1 (occur a (cdr lat)))
+            :else (occur a (cdr lat)))))
+
+  (is (= (occur 'a '()) 0))
+  (is (= (occur 'a '(a)) 1))
+  (is (= (occur 'a '(b)) 0))
+  (is (= (occur 'a '(a a)) 2))
+  (is (= (occur 'a '(a b c a)) 2))
+  (is (= (occur 'a '(b c d e)) 0)))
+
+(with-test
+  (def one?
+    (fn [x] (equal x 1)))
+
+  (is (= (one? 0) false))
+  (is (= (one? 1) true))
+  (is (= (one? 2) false)))
+</code></pre>
+</div>
+<div class="src"><a href="/notes/the-little-schemer-in-clojure-chapter-4-recap/">Permalink</a></div>
+</article>
+</section>
+<nav class="pager"><a href="/feed/">‹ Back to the feed</a><a href="/feed/archive/2017/04/">April 2017 ›</a></nav>
+</div>
+
+</body>
+</html>

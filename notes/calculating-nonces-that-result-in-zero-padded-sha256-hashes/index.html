@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculating Nonces That Result In Zero-Padded SHA256 Hashes — Alexis Rondeau</title>
+<meta name="description" content="![Build Status](https://travis-ci.org/akaalias/blockchain-toy)">
+<link rel="canonical" href="https://alexisrondeau.me/notes/calculating-nonces-that-result-in-zero-padded-sha256-hashes/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alexis Rondeau">
+<meta property="og:title" content="Calculating Nonces That Result In Zero-Padded SHA256 Hashes — Alexis Rondeau">
+<meta property="og:description" content="![Build Status](https://travis-ci.org/akaalias/blockchain-toy)">
+<meta property="og:url" content="https://alexisrondeau.me/notes/calculating-nonces-that-result-in-zero-padded-sha256-hashes/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@SpringStreetNYC">
+<link rel="alternate" type="application/atom+xml" title="Alexis Rondeau — Feed" href="https://alexisrondeau.me/feed/feed.xml">
+<link rel="stylesheet" href="/tufte.css">
+<link rel="stylesheet" href="/feed/feed.css">
+<meta property="article:published_time" content="2017-05-22T22:00:00Z">
+<meta property="article:author" content="Alexis Rondeau">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alexis Rondeau","sameAs":["https://x.com/SpringStreetNYC"],"url":"https://alexisrondeau.me/"},"dateModified":"2025-04-01T14:36:29Z","datePublished":"2017-05-22T22:00:00Z","description":"![Build Status](https://travis-ci.org/akaalias/blockchain-toy)","headline":"Calculating Nonces That Result In Zero-Padded SHA256 Hashes","mainEntityOfPage":"https://alexisrondeau.me/notes/calculating-nonces-that-result-in-zero-padded-sha256-hashes/","url":"https://alexisrondeau.me/notes/calculating-nonces-that-result-in-zero-padded-sha256-hashes/"}</script>
+
+</head>
+<body>
+<header class="hero">
+<div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
+<h1><a href="/feed/">Feed</a></h1>
+<p class="sub">Note · Tuesday, May 23, 2017 · 00:00</p>
+<div class="nav"><a href="/">Home</a><a href="/feed/">Feed</a><a href="/feed/archive/">Archive</a><a href="https://x.com/SpringStreetNYC">@SpringStreetNYC on Twitter</a></div>
+</header>
+<div class="wrap">
+<section class="feed single">
+<article class="item kind-note" id="n-calculating-nonces-that-result-in-zero-padded-sha256-hashes">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/calculating-nonces-that-result-in-zero-padded-sha256-hashes/"><time datetime="2017-05-22T22:00:00Z">Tuesday, May 23, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/calculating-nonces-that-result-in-zero-padded-sha256-hashes/">Calculating Nonces That Result In Zero-Padded SHA256 Hashes</a></h2>
+<div class="text note-body">
+<p><a href="https://travis-ci.org/akaalias/blockchain-toy"><img src="https://travis-ci.org/akaalias/blockchain-toy.svg?branch=master" alt="Build Status" loading="lazy"></a></p>
+<p><a href="https://github.com/akaalias/blockchain-toy">Full Github Repo here</a></p>
+<p>Yesterday I watched <a href="https://github.com/anders94/blockchain-demo">Anders Brownworth’s awesome Blockchain demo</a> and got inspired to follow along in Clojure.</p>
+<p>I <em>had</em> to play around with implementing a toy (read: unoptimized!) algorithm to “mine” for nonces that, when added to the hashing input, produces n zeros at the beginning of the hash:</p>
+<p>I came up with <code>make-nonce-for-zeros-finder</code>, a function which takes the numbers of zeros you want to have at the beginning and a maximum search-depth and returns a function that will calculate the right nonce for your inputs.</p>
+<p>What I personally enjoyed about this little exercise was to express an iterative process in a simple recursive function. And to make a function-maker once I wanted to play around with different types of hashes/nonces I wanted to find.</p>
+<pre><code class="language-clojure">(with-test
+  (defn make-nonce-for-zeros-finder [z-count]
+    (fn
+      ([num data]
+       ((make-nonce-for-zeros-finder z-count) num data 0))
+      ([num data nonce]
+       (cond (= (generate-zeros-string z-count) (subs (generate-hash num data nonce) 0 z-count)) nonce
+             :else (recur num data (inc nonce))))))
+
+  (is (= ((make-nonce-for-zeros-finder 1) nil nil) 39))
+  (is (= ((make-nonce-for-zeros-finder 1) 1 nil) 25))
+  (is (= ((make-nonce-for-zeros-finder 1) 1 1) 11))
+  (is (= ((make-nonce-for-zeros-finder 1) &quot;foo&quot; &quot;bar&quot; 0) 20))
+  (is (= ((make-nonce-for-zeros-finder 2) nil nil) 286))
+  (is (= ((make-nonce-for-zeros-finder 4) nil nil) 88484))
+  (is (= ((make-nonce-for-zeros-finder 4) 1 1) 64840))
+  (is (= ((make-nonce-for-zeros-finder 4) &quot;foo&quot; &quot;bar&quot;) 42515)))
+</code></pre>
+<p>With it, I can quickly create finders for different lengths of zero paddings:</p>
+<pre><code class="language-clojure">(def find-nonce-for-one-zero-padded-hash
+  (make-nonce-for-zeros-finder 1))
+
+(def find-nonce-for-two-zeros-padded-hash
+  (make-nonce-for-zeros-finder 2))
+
+(def find-nonce-for-three-zeros-padded-hash
+  (make-nonce-for-zeros-finder 3))
+
+(def find-nonce-for-four-zeros-padded-hash
+  (make-nonce-for-zeros-finder 4))
+
+(def find-nonce-for-five-zeros-padded-hash
+  (make-nonce-for-zeros-finder 5))
+
+(def find-nonce-for-six-zeros-padded-hash
+  (make-nonce-for-zeros-finder 6))
+
+;; and so on...
+
+</code></pre>
+<p>With these guys set up, we can now calculate the nonce for hashes with 1, 2, 3, 4 and 5 zeros padded. Let’s see how that looks:</p>
+<pre><code class="language-clojure">(find-nonce-for-one-zero-padded-hash &quot;foo&quot; &quot;bar&quot;)
+;; =&gt; 20
+;; takes less than a millisecond
+
+;; we can verify that the hash has one zero at the beginning:
+(generate-hash &quot;foo&quot; &quot;bar&quot; 20)
+;; =&gt; &quot;0fdc57809f5917eba08907d2805e43ce83f4c933a090b4a2b2549923a35e43d7&quot;
+
+(find-nonce-for-two-zeros-padded-hash &quot;foo&quot; &quot;bar&quot;)
+;; =&gt; 102
+;; takes less than a millisecond
+
+;; we can verify that the hash has two zeros at the beginning:
+(generate-hash &quot;foo&quot; &quot;bar&quot; 102)
+;; =&gt; &quot;006668bba91b7e2d5b5357b56600784edb77a72ecf86dc09d515853a841485f6&quot;
+
+(find-nonce-for-three-zeros-padded-hash &quot;foo&quot; &quot;bar&quot;)
+;; =&gt; 4663
+;; takes less than a millisecond
+
+;; we can verify that the hash has three zeros at the beginning:
+(generate-hash &quot;foo&quot; &quot;bar&quot; 4663)
+;; =&gt; &quot;0005d9cd6c13fe6bf56e169fd2a7008003fc3a4c6539f8a1cf7d82975d00210e&quot;
+
+</code></pre>
+<p>And that’s really all there is to it. Once you cross 6 padded zeros, you’ll notice an increase in time it takes to compute.</p>
+<h2>How to test</h2>
+<p>I’ve been a huge fan of the <code>with-test</code> macro. Because of that, you’ll find all test-coverage in core.clj instead of a separate “_test.clj” file.</p>
+<p>To run all tests, use <code>lein test</code></p>
+<h2>Related</h2>
+<ul>
+<li><a class="wikilink" href="/notes/thinking-and-sleeping-better-with-clojure/">Thinking And Sleeping Better With Clojure</a></li>
+</ul>
+</div>
+<div class="src"><a href="/notes/calculating-nonces-that-result-in-zero-padded-sha256-hashes/">Permalink</a></div>
+</article>
+</section>
+<nav class="pager"><a href="/feed/">‹ Back to the feed</a><a href="/feed/archive/2017/05/">May 2017 ›</a></nav>
+</div>
+
+</body>
+</html>
