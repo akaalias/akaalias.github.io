@@ -40,7 +40,10 @@
               background:linear-gradient(90deg,rgba(140,47,31,.04),rgba(140,47,31,0) 70%);}
 .links.pinned li{border-top:1px solid var(--rule);}
 .links.pinned li:first-child{border-top:0;padding-top:8px;}
-.links.pinned + .links li:first-child{border-top:1px solid var(--rule);}</style>
+.links.pinned + .links li:first-child{border-top:1px solid var(--rule);}
+/* a pinned row's social card: full width, natural aspect (1200×630 cards), hairline frame */
+.links.pinned a.card{display:block;border:0;margin:2px 0 12px;}
+.links.pinned a.card img{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:2px;}</style>
 
 </head>
 <body>
@@ -59,11 +62,13 @@
 <div class="pin-label">Pinned</div>
 <ul class="links pinned">
 <li>
+<a class="card" href="https://alexisrondeau.me/ballpark/"><img src="https://alexisrondeau.me/ballpark/assets/social/card.jpg" alt="" loading="lazy"></a>
 <a href="https://alexisrondeau.me/ballpark/">&quot;Not all who wander are lost&quot;: Can a UAV learn a city by heart — no GPS, no map on board, just a $4 flight computer?</a>
 <span class="d">Yes! We found a special-purpose neural memory architecture that 'remembers' an exact geo-location, given an in-flight daytime picture of Berlin. The typical miss is 27 m — no GPS, no internet, no map…</span>
 <span class="m">Note · Discovery Loops · Jul 21, 2026 · <a href="/notes/not-all-who-wander-are-lost-can-a-uav-learn-a-city-by-heart-no-gps-no-map-on-boa/">on this site</a></span>
 </li>
 <li>
+<a class="card" href="https://alexisrondeau.me/airloom/"><img src="https://alexisrondeau.me/airloom/share.png" alt="" loading="lazy"></a>
 <a href="https://alexisrondeau.me/airloom/">&quot;The snuggle is real&quot;: Evolving quadcopter frame geometry for Wh/km, with Claude as an occasional co-designer</a>
 <span class="d">I let a genetic algorithm loose on the geometry of a 7-inch quadcopter frame — the real, open-source Source One V6 plate drawings, morphed by fourteen genes and flown through six simulated weather sc…</span>
 <span class="m">Note · Discovery Loops · Jul 13, 2026 · <a href="/notes/the-snuggle-is-real-evolving-quadcopter-frame-geometry-for-wh-km-with-claude-as/">on this site</a></span>
@@ -74,6 +79,7 @@
 <span class="m">Note · Discovery Loops · Jun 5, 2026 · <a href="/notes/we-don-t-write-the-rules-we-just-discover-them-with-ai-how-an-autonomous-agent-s/">on this site</a></span>
 </li>
 <li>
+<a class="card" href="https://alexisrondeau.me/tada/research/FMDiscovery/dashboard/report.html"><img src="https://alexisrondeau.me/tada/research/FMDiscovery/dashboard/og-image.png" alt="" loading="lazy"></a>
 <a href="https://alexisrondeau.me/tada/research/FMDiscovery/dashboard/report.html">&quot;Which city in Paris are you staying in?&quot;: Can an LLM autoresearch loop teach a phone-sized small language model (SLM) to ask frontier-quality questions? Can it? Does it? Let's find out!</a>
 <span class="d">We discovered a technique that enables Apple's native 2025 3B Foundation Model to come within about one rubric point of a frontier cloud model (Claude Sonnet 4.6) on every quality dimension. It took …</span>
 <span class="m">Note · Discovery Loops · Apr 30, 2026 · <a href="/notes/which-city-in-paris-are-you-staying-in-can-an-llm-autoresearch-loop-teach-a-phon/">on this site</a></span>
