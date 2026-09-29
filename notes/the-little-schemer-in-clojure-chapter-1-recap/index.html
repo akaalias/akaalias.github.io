@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Little Schemer in Clojure – Chapter 1 Recap — Alexis Rondeau</title>
+<meta name="description" content="This is a series of small blog posts about following along the book 'The Little Schemer' using Clojure.">
+<link rel="canonical" href="https://alexisrondeau.me/notes/the-little-schemer-in-clojure-chapter-1-recap/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alexis Rondeau">
+<meta property="og:title" content="The Little Schemer in Clojure – Chapter 1 Recap — Alexis Rondeau">
+<meta property="og:description" content="This is a series of small blog posts about following along the book 'The Little Schemer' using Clojure.">
+<meta property="og:url" content="https://alexisrondeau.me/notes/the-little-schemer-in-clojure-chapter-1-recap/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@SpringStreetNYC">
+<link rel="alternate" type="application/atom+xml" title="Alexis Rondeau — Feed" href="https://alexisrondeau.me/feed/feed.xml">
+<link rel="stylesheet" href="/tufte.css">
+<link rel="stylesheet" href="/feed/feed.css">
+<meta property="article:published_time" content="2017-04-24T22:00:00Z">
+<meta property="article:author" content="Alexis Rondeau">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Alexis Rondeau","sameAs":["https://x.com/SpringStreetNYC"],"url":"https://alexisrondeau.me/"},"dateModified":"2025-04-01T14:37:14Z","datePublished":"2017-04-24T22:00:00Z","description":"This is a series of small blog posts about following along the book 'The Little Schemer' using Clojure.","headline":"The Little Schemer in Clojure – Chapter 1 Recap","mainEntityOfPage":"https://alexisrondeau.me/notes/the-little-schemer-in-clojure-chapter-1-recap/","url":"https://alexisrondeau.me/notes/the-little-schemer-in-clojure-chapter-1-recap/"}</script>
+
+</head>
+<body>
+<header class="hero">
+<div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
+<h1><a href="/feed/">Feed</a></h1>
+<p class="sub">Note · Tuesday, April 25, 2017 · 00:00</p>
+<div class="nav"><a href="/">Home</a><a href="/feed/">Feed</a><a href="/feed/archive/">Archive</a><a href="https://x.com/SpringStreetNYC">@SpringStreetNYC on Twitter</a></div>
+</header>
+<div class="wrap">
+<section class="feed single">
+<article class="item kind-note" id="n-the-little-schemer-in-clojure-chapter-1-recap">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/the-little-schemer-in-clojure-chapter-1-recap/"><time datetime="2017-04-24T22:00:00Z">Tuesday, April 25, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/the-little-schemer-in-clojure-chapter-1-recap/">The Little Schemer in Clojure – Chapter 1 Recap</a></h2>
+<div class="text note-body">
+<p>This is a series of small blog posts about following along the book ‘The Little Schemer’ using Clojure.</p>
+<p>The book is great fun to read and it is easy to understand. The format is a kind conversation between the author and reader. And finally, the book even has dedicated pages for jelly-stains! It teaches programming small but realistic applications with the least amount of jargon and concepts. I think it is a perfect place to start learning to program if you haven’t done so yet. It also helps seasoned developers like myself get back to the fundamentals of how to think about computation.</p>
+<p>For me, the challenge was to follow along in the book via programming in Clojure, a recent JVM-based Lisp. I recently worked on a side-project where the most smartest solution would have been a recursive algorithm but I wasn’t able to solve it without head-scratching all the way through. With this series I want to recap my recursion skills and learn them through Clojure, my favorite programming language.</p>
+<p>I’m currently using a very barebones setup to follow along: I used Leiningen to create a standalone Clojure project <code>lein new the-little-clojurian</code>. I use GNU Emacs 25 with Cider on a 3-year old Macbook Air.</p>
+<h2>Workflow</h2>
+<p>My workflow is as follows:</p>
+<p>Once… 1. I open <code>project.clj</code> in a buffer and 2. run <code>M-x cider-jack-in</code> to get a REPL</p>
+<p>Then, I… 1. Write the test as it appears in the book, 2. use <code>C-c k</code> to compile the file and 3. <code>C-c ,</code> to run the tests.</p>
+<p>When I have a failing test, I fix the implementation only as much as to get the test to pass. Following the book, I continue this pattern until the chapter is over.</p>
+<p>I am using the <code>with-test</code> macro and write my tests and implementation all in the main core namespace. Normally, we tend to write our tests in separate files but I’ve grown fond of <code>with-test</code> because of</p>
+<ol>
+<li>less switching between buffers</li>
+<li>having all code right in front of me.</li>
+</ol>
+<p>I like it.</p>
+<p>In a way, the book is written in a conversational, assumptions-first, almost test-driven way, so I write the assertion first and then gradually implement the function itself.</p>
+<p>The function-definition, including tests for <code>lat?</code> looks like this for example:</p>
+<pre><code class="language-clojure">(ns the-little-clojurian.chapter2
+  (:require [clojure.test :refer :all]
+            [the-little-clojurian.chapter1 :refer :all]))
+
+(with-test 
+  ;; Function-definition
+  (def lat? 
+    (fn [l]
+      (cond (null? l) true
+            (atom? (car l)) (lat? (cdr l))
+            :else false)))
+  ;; Tests
+  (testing &quot;returns true&quot;
+    (is (= (lat? '(Jack Sprat could eat no chicken fat)) true))
+    (is (= (lat? '()) true))
+    (is (= (lat? '(bacon and eggs)) true)))
+  (testing &quot;returns false&quot;
+    (is (= (lat? '((Jack) Sprat could eat no chicken fat)) false))
+    (is (= (lat? '(Jack (Sprat could) eat no chicken fat)) false))
+    (is (= (lat? '(bacon (and eggs))) false))))
+</code></pre>
+<p>The full transcript of Chapter 1 in Clojure is:</p>
+<pre><code class="language-clojure">(ns the-little-clojurian.chapter1
+  (:require [clojure.test :refer :all]))
+
+(declare listp? atom? s-expression? car cdr conss null? eq?)
+
+(with-test 
+  (def atom? 
+    (fn [a] 
+      (not (listp? a))))
+  (testing &quot;returns true&quot;
+    (is (= true (atom? 'atom)))
+    (is (= true (atom? 'turkey)))
+    (is (= true (atom? '1492)))
+    (is (= true (atom? 'u)))
+    (is (= true (atom? '*abc$)))
+    (is (= (atom? 'Harry) true))
+    (is (= (atom? (car '(Harry had a heap of apples))) true))
+    (is (= (atom? (car (cdr '(swing low sweet cherry oat)))) true)))
+  (testing &quot;returns false&quot;
+    (is (= false (atom? '())))
+    (is (= false (atom? '(a b c))))
+    (is (= (atom? '(Harry had a heap of apples)) false))
+    (is (= (atom? (cdr '(Harry had a heap of apples))) false))
+    (is (= (atom? (car (cdr '(swing (low sweet) cherry oat)))) false))))
+
+(with-test 
+  (def listp? 
+    (fn [s] 
+      (list? s)))
+  (testing &quot;returns true&quot;
+    (is (= true (listp? '(atom))))
+    (is (= true (listp? '(atom? turkey or))))
+    (is (= true (listp? '((atom turkey) or))))
+    (is (= true (listp? '())))
+    (is (= true (listp? '(() () () ())))))
+  (testing &quot;returns false&quot;
+    (is (= false (listp? 'atom)))
+    (is (= false (listp? nil)))))
+
+(with-test
+  (def s-expression? 
+    (fn [x] 
+      (not (nil? x))))
+  (testing &quot;returns true&quot;
+    (is (= true (s-expression? 'xyz)))
+    (is (= true (s-expression? '(x y z))))
+    (is (= true (s-expression? '((x y) z))))
+    (is (= true (s-expression? '(how are you doing so far))))
+    (is (= true (s-expression? '(((how) are) ((you) (doing so)) far)))))
+  (testing &quot;returns false&quot;
+    (is (= false (s-expression? nil)))))
+
+(with-test
+  (def car 
+    (fn [x] 
+      (first x)))
+  (testing &quot;returns s-expression&quot;
+    (is (= 'a (car '(a b c))))
+    (is (= '(a b c) (car '((a b c) x y z))))
+    (is (= '((hotdogs)) (car '(((hotdogs)) (and) (pickle) relish))))
+    (is (= '(hotdogs) (car (car '(((hotdogs)) (and)))))))
+  (testing &quot;returns nil&quot;
+    (is (nil? (car '()))))
+  (testing &quot;throws Exception&quot;
+    (is (thrown? IllegalArgumentException  (car 'hotdog)))))
+
+(with-test 
+  (def cdr 
+    (fn [l] 
+      (rest l)))
+  (testing &quot;returns list&quot;
+    (is (= '(b c) (cdr '(a b c))))
+    (is (= '(x y z) (cdr '((a b c) x y z))))
+    (is (= '() (cdr '(hamburger))))
+    (is (= '(t r) (cdr '((x) t r))))
+    (is (= '() (cdr '())))
+    (is (= (cdr nil) '())))
+  (testing &quot;throws Exception&quot;
+    (is (thrown? IllegalArgumentException (cdr 'hotdogs)))))
+
+(deftest car-and-cdr-tests
+  (is (= '(x y) (car (cdr '((b) (x y) (()))))))
+  (is (= '(((c))) (cdr (cdr '((b) (x y) ((c)))))))
+  (is (thrown? IllegalArgumentException (cdr (car '(a (b (c)) d))))))
+
+(with-test 
+  (def conss 
+    (fn [a l] 
+      (cons a l)))
+  (testing &quot;returns the consed list&quot;
+    (is (= '(peanut butter and jelly) (conss 'peanut '(butter and jelly))))
+    (is (= '((banana and) peanut butter and jelly) (conss '(banana and) '(peanut butter and jelly))))
+    (is (= '(((help) this) is very ((hard) to learn)) (conss '((help) this) '(is very ((hard) to learn)))))
+    (is (= '((a b (c))) (conss '(a b (c)) '())))
+    (is (= '(a) (conss 'a '()))))
+  (testing &quot;throws Exception&quot;
+    (is (thrown? IllegalArgumentException (conss '() 'a)))
+    (is (thrown? IllegalArgumentException (conss 'a 'b)))))
+
+(deftest cons-and-car-and-cdr-tests
+  (is (= '(a b) (conss 'a (car '((b) c d)))))
+  (is (= '(a c d) (conss 'a (cdr '((b) c d))))))
+
+(with-test 
+  (def null? 
+    (fn [x] 
+      (empty? x)))
+  (testing &quot;returns true&quot;
+    (is (= true (null? '())))
+    (is (= (null? (quote ())) true)))
+  (testing &quot;returns false&quot;
+    (is (= (null? '(a b c)) false)))
+  (testing &quot;throws Exception&quot;
+    (is (thrown? IllegalArgumentException (null? 'spaghetti)))))
+
+(with-test
+  (def eq? 
+    (fn [x y] 
+      (if (or
+           (and (atom? x)
+                (listp? y))
+           (and (listp? x)
+                (atom? y)))
+        (throw (IllegalArgumentException.)) 
+        (= x y))))
+  (testing &quot;returns true&quot;
+    (is (= (eq? 'Harry 'Harry) true))
+    (is (= (eq? '() '(strawberry))) true)
+    (is (= (eq? (car '(Mary had a little lamb)) 'Mary)))
+    (is (= (eq? (car '(beans beans)) (car (cdr '(beans beans)))) true)))
+  (testing &quot;returns false&quot;
+    (is (= (eq? 'margarine 'butter) false))
+    (is (= (eq? 6 7)) false))
+  (testing &quot;throws Exception&quot;
+    (is (thrown? IllegalArgumentException (eq? (cdr '(soured milk)) 'milk)))
+    (is (thrown? IllegalArgumentException (eq? 'milk (cdr '(soured milk)))))))
+</code></pre>
+</div>
+<div class="src"><a href="/notes/the-little-schemer-in-clojure-chapter-1-recap/">Permalink</a></div>
+</article>
+</section>
+<nav class="pager"><a href="/feed/">‹ Back to the feed</a><a href="/feed/archive/2017/04/">April 2017 ›</a></nav>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>April 2017 — Alexis Rondeau</title>
+<meta name="description" content="Alexis Rondeau's posts from April 2017: 5 posts.">
+<link rel="canonical" href="https://alexisrondeau.me/feed/archive/2017/04/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alexis Rondeau">
+<meta property="og:title" content="April 2017 — Alexis Rondeau">
+<meta property="og:description" content="Alexis Rondeau's posts from April 2017: 5 posts.">
+<meta property="og:url" content="https://alexisrondeau.me/feed/archive/2017/04/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@SpringStreetNYC">
+<link rel="alternate" type="application/atom+xml" title="Alexis Rondeau — Feed" href="https://alexisrondeau.me/feed/feed.xml">
+<link rel="stylesheet" href="/tufte.css">
+<link rel="stylesheet" href="/feed/feed.css">
+<link rel="prev" href="https://alexisrondeau.me/feed/archive/2017/05/">
+<link rel="next" href="https://alexisrondeau.me/feed/archive/2017/01/">
+
+</head>
+<body>
+<header class="hero">
+<div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
+<h1><a href="/feed/archive/">Archive</a></h1>
+<p class="sub">April 2017 · 5 posts</p>
+<div class="nav"><a href="/">Home</a><a href="/feed/">Feed</a><a href="/feed/archive/">Archive</a><a href="https://x.com/SpringStreetNYC">@SpringStreetNYC on Twitter</a></div>
+</header>
+<div class="wrap">
+<section class="feed">
+<article class="item kind-note" id="n-the-little-schemer-in-clojure-chapter-4-recap">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/the-little-schemer-in-clojure-chapter-4-recap/"><time datetime="2017-04-27T22:00:00Z">Friday, April 28, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/the-little-schemer-in-clojure-chapter-4-recap/">The Little Schemer in Clojure – Chapter 4 Recap</a></h2>
+<div class="text note-body clamped">
+<p><strong>Number Games</strong></p>
+<p>I’ve enjoyed working through chapter 4. It’s simpler and more dense at the same time since it’s all about numbers. Over the course of this chapter I (re)implemented several arithmetic basic functions such as <code>add1</code>, <code>sub1</code> – Those were rather helper functions – and moved on to implementing <code>pluss</code> and <code>minuss</code>, <code>multiply</code> and <code>divide</code> (I added the extra “s” to pluss and minuss to avoid redefining built-in functions).</p>
+<p>The cool thing about this chapter is that I was able to implement these functions only in terms of very simple operations (add1, sub1) and recursion.</p>
+<p>For example, <code>pluss</code> works as follows:</p>
+<p>Given <code>n</code> and <code>m</code>, I want to evaluate their sum. For that to happen, I need to ask two questions:</p>
+<ul>
+<li>Is <code>m</code> equal to 0? If so, return <code>n</code>. This would make an addition such as 1 + 0 work straight away.</li>
+<li>Else, <code>add1</code> to the natural recursion of <code>pluss</code> with <code>n</code> and <code>(sub1 m)</code>. This counts <code>m</code> down with each recursion until it reaches 0.</li>
+</ul>
+<p>If we were to add 1 and 3, the result of 4 would be calculated as:</p>
+<pre><code class="language-clojure">(pluss 1 3)
+1 + (pluss 1 2)
+1 + 1 + (pluss 1 1)
+1 + 1 + 1 (pluss 1 0)
+1 + 1 + 1 + 1
+</code></pre>
+<p>Pretty cool.</p>
+<pre><code class="language-clojure">(with-test
+  (def pluss
+    (fn [n m]
+      (cond (zero? m) n
+            :else (add1 (pluss n (sub1 m))))))
+
+  (is (= (pluss 0 0) 0))
+  (is (= (pluss 1 0) 1))
+  (is (= (pluss 0 1) 1))
+  (is (= (pluss 1 1) 2))
+  (is (= (pluss 1 2) 3))
+  (is (= (pluss 46 12) 58)))
+</code></pre>
+<p>For every function I write, I also make sure I start with the smallest possible test-case and then only add the code necessary to fix that test. I quiet enjoy it because it gives me confidence that, once I refactor, the functions still work.</p>
+<p>For example, take <code>occur</code> which takes an atom <code>a</code> and a list <code>lat</code> as its arguments and returns the count of <code>a</code> in <code>lat</code>.</p>
+<p>To build the simple algorithm, I start out writing the bare minimum setup for the first, smallest test:</p>
+<pre><code class="language-clojure">(with-test
+  (def occur
+    (fn [a lat]))
+
+  (is (= (occur 'a '()) 0)))
+</code></pre>
+<p>Running the test will fail since the function currently, and intentionally, only returns <code>nil</code> and not 0 when given <code>'a</code> and <code>'()</code> as its inputs.</p>
+<p>I can fix this situation by writing the smallest possible solution which is to return 0, hardcoded:</p>
+<pre><code class="language-clojure">(with-test
+  (def occur
+    (fn [a lat] 0))
+
+  (is (= (occur 'a '()) 0)))
+</code></pre>
+<p>Our first test will now pass. We could, if we wanted to, make a commit at this point. On to the next.</p>
+<pre><code class="language-clojure">(with-test
+  (def occur
+    (fn [a lat] 0))
+
+  (is (= (occur 'a '()) 0))
+  (is (= (occur 'a '(a)) 1)))
+</code></pre>
+<p>Running the tests will now fail for scenario 2 when we expect to receive 1 as the value and not 0. The smallest fix to solve for this is to introduce a conditional.</p>
+<pre><code class="language-clojure">(with-test
+  (def occur
+    (fn [a lat]
+      (cond (null? lat) 0
+            :else 1)))
+
+  (is (= (occur 'a '()) 0))
+  (is (= (occur 'a '(a)) 1)))
+</code></pre>
+<p>Great! All tests are passing now. Now, on to the next, simplest test-case where <code>(occur 'a '(b))</code> should evaluate to 0.</p>
+<pre><code class="language-clojure">(with-test
+  (def occur
+    (fn [a lat]
+      (cond (null? lat) 0
+            :else 1)))
+
+  (is (= (occur 'a '()) 0))
+  (is (= (occur 'a '(a)) 1))
+  (is (= (occur 'a '(b)) 0)))
+</code></pre>
+<p>The third test fails naturally. To fix it, I now have to introduce a new condition to check if <code>(car lat)</code> is equal to <code>a</code>:</p>
+<pre><code class="language-clojure">(with-test
+  (def occur
+    (fn [a lat]
+      (cond (null? lat) 0
+            (equan? (car lat) a) 1
+            :else 0)))
+
+  (is (= (occur 'a '()) 0))
+  (is (= (occur 'a '(a)) 1))
+  (is (= (occur 'a '(b)) 0)))
+</code></pre>
+<p>Now, let’s test for multiple occurrences of <code>a</code> in <code>lat</code>: <code>(is (= (occur 'a '(a a)) 2))</code></p>
+<pre><code class="language-clojure">(with-test
+  (def occur
+    (fn [a lat]
+      (cond (null? lat) 0
+            (equan? (car lat) a) 1
+            :else 0)))
+
+  (is (= (occur 'a '()) 0))
+  (is (= (occur 'a '(a)) 1))
+  (is (= (occur 'a '(b)) 0))
+  (is (= (occur 'a '(a a)) 2)))
+</code></pre>
+<p>The test will fail when run. Now we have to fix it by introducing adding 1 to the natural recursion of the function as follows: <code>(add1 (occur a (cdr lat)))</code></p>
+<pre><code class="language-clojure">(with-test
+  (def occur
+    (fn [a lat]
+      (cond (null? lat) 0
+            (equan? (car lat) a) (add1 (occur a (cdr lat)))
+            :else 0)))
+
+  (is (= (occur 'a '()) 0))
+  (is (= (occur 'a '(a)) 1))
+  (is (= (occur 'a '(b)) 0))
+  (is (= (occur 'a '(a a)) 2)))
+</code></pre>
+<p>Splendid, all tests are passing.</p>
+<p>Now, I want to make sure that we get the right result, when the list is mixed, such as <code>(is (= (occur 'a '(a b c a)) 2))</code></p>
+<pre><code class="language-clojure">(with-test
+  (def occur
+    (fn [a lat]
+      (cond (null? lat) 0
+            (equan? (car lat) a) (add1 (occur a (cdr lat)))
+            :else 0)))
+
+  (is (= (occur 'a '()) 0))
+  (is (= (occur 'a '(a)) 1))
+  (is (= (occur 'a '(b)) 0))
+  (is (= (occur 'a '(a a)) 2))
+  (is (= (occur 'a '(a b c a)) 2)))
+</code></pre>
+<p>Adding the test makes it fail of course, since we’re not accounting for this scenario. It’s a simple fix, we need to allow our <code>:else</code> branch to continue searching for <code>a</code>s with <code>(occur a (cdr lat))</code>. The final solution to <code>occur</code> is</p>
+<pre><code class="language-clojure">(with-test
+  (def occur
+    (fn [a lat]
+      (cond (null? lat) 0
+            (equan? (car lat) a) (add1 (occur a (cdr lat)))
+            :else (occur a (cdr lat)))))
+
+  (is (= (occur 'a '()) 0))
+  (is (= (occur 'a '(a)) 1))
+  (is (= (occur 'a '(b)) 0))
+  (is (= (occur 'a '(a a)) 2))
+  (is (= (occur 'a '(a b c a)) 2)))
+</code></pre>
+<p>I think this is pretty cool. We’ve got a first set of reasonable inputs and outputs covered. This would be a great time to run the full test-suite with <code>lein test</code>, and if everything passes, make a commit and push to master. For this I usually make myself a tiny script named <code>ship.sh</code> that runs the test-suite one final time and does the git push for me:</p>
+<p>ship.sh</p>
+<pre><code class="language-bash">#!/bin/bash
+
+lein test &amp;&amp; git push origin master
+</code></pre>
+<p>Nothing fancy, but it keeps me from habitually doing a <code>git push origin master</code> without running all tests beforehand.</p>
+<p>Anyways, I enjoyed showing you how I build my functions with TDD and baby-steps to arrive at a good place to commit and push. The full listing of my (un-refactored) chapter 4 is as follows:</p>
+<pre><code class="language-clojure">(ns the-little-clojurian.chapter4
+  (:require [clojure.test :refer :all]
+            [the-little-clojurian.chapter1 :refer :all]
+            [the-little-clojurian.chapter2 :refer :all]
+            [the-little-clojurian.chapter3 :refer :all]))
+
+(with-test 
+  (def add1 
+    (fn [x] (+ x 1)))
+
+  (is (= (add1 0) 1))
+  (is (= (add1 67) 68))
+  (is (= (add1 68) 69)))
+
+(with-test
+  (def sub1
+    (fn [x] (- x 1)))
+
+  (is (= (sub1 0) -1))
+  (is (= (sub1 1) 0))
+  (is (= (sub1 2) 1))
+  (is (= (sub1 3) 2)))
+
+(with-test
+  (def pluss
+    (fn [n m]
+      (cond (zero? m) n
+            :else (add1 (pluss n (sub1 m))))))
+
+  (is (= (pluss 0 0) 0))
+  (is (= (pluss 1 0) 1))
+  (is (= (pluss 0 1) 1))
+  (is (= (pluss 1 1) 2))
+  (is (= (pluss 1 2) 3))
+  (is (= (pluss 46 12) 58)))
+
+(with-test
+  (def minuss 
+    (fn [n m]
+      (cond 
+       (zero? m) n
+       :else (sub1 (minuss n (sub1 m))))))
+
+  (is (= (minuss 0 0) 0))
+  (is (= (minuss 1 1) 0))
+  (is (= (minuss 2 1) 1))
+  (is (= (minuss 3 2) 1))
+  (is (= (minuss 100 1) 99)))
+
+(with-test
+  (def tup?
+    (fn [l] 
+      (cond (null? l) true
+            (not (number? (car l))) false
+            :else (tup? (cdr l)))))
+
+  (is (= (tup? '()) true))
+  (is (= (tup? '(a)) false))
+  (is (= (tup? '(1)) true))
+  (is (= (tup? '(1 a)) false))
+  (is (= (tup? '(1 2)) true))
+  (is (= (tup? '(2 11 3 79 47 6))))
+  (is (= (tup? '(8 55 5 555))))
+  (is (= (tup? '(1 2 8 apple 4 3)) false))
+  (is (= (tup? '(3 (7 4) 13 9)) false)))
+
+(with-test
+  (def addtup 
+    (fn [tup] 
+      (cond (null? tup) 0
+            :else (pluss (car tup) (addtup (cdr tup))))))
+
+  (is (= (addtup '()) 0))
+  (is (= (addtup '(1)) 1))
+  (is (= (addtup '(1 2)) 3))
+  (is (= (addtup '(1 2 3)) 6))
+  (is (= (addtup '(3 5 2 8)) 18))
+  (is (= (addtup '(15 6 7 12 3)) 43)))
+
+(with-test
+  (def multiply 
+    (fn [n m]
+      (cond (zero? m) 0
+            :else (pluss n (multiply n (sub1 m))))))
+
+  (is (= (multiply 0 0) 0))
+  (is (= (multiply 1 1) 1))
+  (is (= (multiply 1 0) 0))
+  (is (= (multiply 5 3) 15))
+  (is (= (multiply 13 4) 52)))
+
+(with-test
+  (def tup+ 
+    (fn [tup1 tup2]
+      (cond (null? tup1) tup2
+            (null? tup2) tup1
+            :else (cons (pluss (car tup1) (car tup2)) 
+                        (tup+ 
+                         (cdr tup1) (cdr tup2))))))
+
+  (is (= (tup+ '() '()) '()))
+  (is (= (tup+ '(1) '(1)) '(2)))
+  (is (= (tup+ '(2 3) '(4 6)) '(6 9)))
+  (is (= (tup+ '(3 6 9 11 4) '(8 5 2 0 7)) '(11 11 11 11 11)))
+  (is (= (tup+ '(3 7) '(4 6 8 1)) '(7 13 8 1))))
+
+(with-test
+  (def greater-than
+    (fn [n m] false
+      (cond (zero? n) false
+            (zero? m) true
+            :else (greater-than (sub1 n) (sub1 m)))))
+
+  (is (= (greater-than 0 0) false))
+  (is (= (greater-than 1 0) true))
+  (is (= (greater-than 12 133) false))
+  (is (= (greater-than 120 11) true))
+  (is (= (greater-than 4 6) false)))
+
+(with-test
+  (def smaller-than
+    (fn [n m] 
+      (cond (zero? m) false
+            (zero? n) true
+            :else (smaller-than (sub1 n) (sub1 m)))))
+
+  (is (= (smaller-than 0 0) false))
+  (is (= (smaller-than 0 1) true))
+  (is (= (smaller-than 4 6))))
+
+(with-test
+  (def equal 
+    (fn [n m] 
+      (cond (smaller-than n m) false
+            (greater-than n m) false
+            :else true)))
+
+  (is (= (equal 0 0) true))
+  (is (= (equal 0 1) false))
+  (is (= (equal 1 1) true))
+  (is (= (equal 44 44) true)))
+
+(with-test
+  (def expt 
+    (fn [n m]
+      (cond (zero? m) 1
+            :else (multiply n (expt n (sub1 m))))))
+
+  (is (= (expt 1 1) 1))
+  (is (= (expt 2 2) 4))
+  (is (= (expt 2 3) 8))
+  (is (= (expt 5 3) 125)))
+
+(with-test
+  (def divide
+    (fn [n m]
+      (cond (zero? m) (throw (IllegalArgumentException.))
+            (smaller-than n m) 0
+            :else (add1 (divide (minuss n m) m)))))
+  (is (= (divide 0 1) 0))
+  (is (thrown? IllegalArgumentException (divide 1 0)))
+  (is (= (divide 15 4) 3))
+  (is (= (divide 15 3) 5))
+  (is (= (divide 100 10) 10)))
+
+(with-test
+  (def length 
+    (fn [lat] 
+      (cond (null? lat) 0
+            :else (add1 (length (cdr lat))))))
+
+  (is (= (length '()) 0))
+  (is (= (length '(hotdogs)) 1))
+  (is (= (length '(hotdogs with mustard sauerkraut and pickles)) 6))
+  (is (= (length '(ham and cheese on rye)) 5)))
+
+(with-test 
+  (def pick 
+    (fn [n lat] 
+      (cond (zero? n) nil
+            (one? n) (car lat)
+            :else (pick (sub1 n) (cdr lat)))))
+
+  (is (= (pick 0 '(apple)) nil))
+  (is (= (pick 1 '()) nil))
+  (is (= (pick 1 '(apple)) 'apple))
+  (is (= (pick 2 '(apple bananas)) 'bananas))
+  (is (= (pick 4 '(apple)) nil)))
+
+(with-test
+  (def rempick 
+    (fn [n lat]
+      (cond (zero? n) nil
+            (one? n) (cdr lat)
+            :else (cons (car lat) 
+                        (rempick (sub1 n) 
+                                 (cdr lat))))))
+
+  (is (= (rempick 0 '()) nil))
+  (is (= (rempick 1 '(apple)) '()))
+  (is (= (rempick 2 '(apple bananas gin)) '(apple gin))))
+
+
+(with-test 
+  (def no-nums 
+    (fn [lat]
+      (cond (null? lat) '()
+            (number? (car lat)) (no-nums (cdr lat))
+            :else (cons (car lat) 
+                        (no-nums 
+                         (cdr lat))))))
+
+  (is (= (no-nums '()) '()))
+  (is (= (no-nums '(1)) '()))
+  (is (= (no-nums '(apple)) '(apple)))
+  (is (= (no-nums '(5 pears 6 prunes 9 dates)) '(pears prunes dates))))
+
+(with-test
+  (def all-nums
+    (fn [lat]
+      (cond (null? lat) '()
+            (number? (car lat)) (cons (car lat)
+                                      (all-nums (cdr lat)))
+            :else (all-nums (cdr lat)))))
+
+  (is (= (all-nums '()) '()))
+  (is (= (all-nums '(1)) '(1)))
+  (is (= (all-nums '(apple)) '()))
+  (is (= (all-nums '(1 apple 2 pears 3 bananas)) '(1 2 3))))
+
+(with-test
+  (def equan?
+    (fn [a1 a2]
+      (cond (and (number? a1) (number? a2)) (equal a1 a2)
+            (or (number? a1) (number? a2)) false
+            :else (eq? a1 a2))))
+
+  (is (= (equan? 0 0) true))
+  (is (= (equan? 0 1) false))
+  (is (= (equan? 0 'a) false))
+  (is (= (equan? 'a 'a) true))
+  (is (= (equan? 'a 'b) false)))
+
+(with-test
+  (def occur
+    (fn [a lat] 
+      (cond (null? lat) 0
+            (equan? (car lat) a) (add1 (occur a (cdr lat)))
+            :else (occur a (cdr lat)))))
+
+  (is (= (occur 'a '()) 0))
+  (is (= (occur 'a '(a)) 1))
+  (is (= (occur 'a '(b)) 0))
+  (is (= (occur 'a '(a a)) 2))
+  (is (= (occur 'a '(a b c a)) 2))
+  (is (= (occur 'a '(b c d e)) 0)))
+
+(with-test
+  (def one?
+    (fn [x] (equal x 1)))
+
+  (is (= (one? 0) false))
+  (is (= (one? 1) true))
+  (is (= (one? 2) false)))
+</code></pre>
+</div>
+<div class="more"><a href="/notes/the-little-schemer-in-clojure-chapter-4-recap/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/the-little-schemer-in-clojure-chapter-4-recap/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-the-little-schemer-in-clojure-chapter-3-recap">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/the-little-schemer-in-clojure-chapter-3-recap/"><time datetime="2017-04-27T22:00:00Z">Friday, April 28, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/the-little-schemer-in-clojure-chapter-3-recap/">The Little Schemer in Clojure – Chapter 3 Recap</a></h2>
+<div class="text note-body clamped">
+<p><strong>Cons the magnificent</strong></p>
+<p>In this chapter I learned how to create lists using <code>cons</code> and recursion.</p>
+<p>The first function discussed was <code>rember</code>, which removes the first occurrence of <code>a</code> in <code>lat</code> and returns the result as a new list.</p>
+<p>As you can see from below, the function asks three questions:</p>
+<ol>
+<li>Is <code>lat</code> null?, or empty. If so, return the empty list `()</li>
+<li>Is <code>(car lat)</code> equal to the atom we’re looking to drop? If so, return the rest of the list <code>(cdr lat)</code> and effectively drop <code>(car lat)</code> from the list, implementing the requirement of “remove member”.</li>
+<li>If neither of the above is true, <code>(cons (car lat))</code> onto the natural recursion of <code>rember</code> with <code>a</code> and the rest of <code>lat</code>, which is <code>(cdr lat)</code>.</li>
+</ol>
+<p>*Note that I am using <code>cones</code> in my listings to stay consistent with the book.</p>
+<pre><code class="language-clojure">(with-test
+  (def rember 
+    (fn [a lat] 
+      (cond (null? lat) '()
+            (eq? (car lat) a) (cdr lat)
+            :else (conss (car lat) (rember a 
+                                           (cdr lat))))))
+
+  (is (= (rember 'and '()) '()))
+  (is (= (rember 'and '(and)) '()))
+  (is (= (rember 'and '(bacon lettuce and tomato)) '(bacon lettuce tomato)))
+  (is (= (rember 'mint '(lamb chops and mint jelly)) '(lamb chops and jelly)))
+  (is (= (rember 'mint '(lamb chops and mint flavored mint jelly)) '(lamb chops and flavored mint jelly))))
+</code></pre>
+<p>I have begun to always start my tests with the null-case, here it’s…</p>
+<pre><code class="language-clojure">(is (= (rember 'and '()) '()))
+</code></pre>
+<p>…which drives out the question #1.</p>
+<p>Then I write the minimal test that drives out the main behavior without the need for recursion…</p>
+<pre><code class="language-clojure">(is (= (rember 'and '(and)) '()))
+</code></pre>
+<p>…which drives out the question #2</p>
+<p>And then finally I write a test that drives out question #3 such as…</p>
+<pre><code class="language-clojure">(is (= (rember 'and '(bacon lettuce and tomato)) '(bacon lettuce tomato)))
+</code></pre>
+<p>As the books describes in the beginning, over time, patterns emerge from this simple example.</p>
+<p>The second function I learned was <code>firsts</code> which takes the first s-expression of each nested list in the list.</p>
+<p>This time there are only two questions we ask: 1. Is the list <code>null?</code>, then return the empty list <code>(). This is the necessary terminal clause that will cause a recursion to stop. 2. Else,</code>(cons (car (car l))<code>onto the natural recursion of</code>firsts<code>with</code>(cdr l)`.</p>
+<p>So, for example <code>(firsts '((a b) (c d) (e f)))</code> evaluates to <code>(a c e)</code>.</p>
+<p>Here, again, I started with the simplest case with <code>'()</code> for <code>l</code> and worked through the rest of the example step by step following the book.</p>
+<pre><code class="language-clojure">(with-test
+  (def firsts 
+    (fn [l]
+      (cond (null? l) '()
+            :else (cons (car (car l))
+                        (firsts (cdr l))))))
+
+  (is (= (firsts '()) '()))
+  (is (= (firsts '((apple peach pumpkin)
+                   (plum pear cherry)
+                   (grape raisin pea)
+                   (bean carrot eggplant)))
+         '(apple plum grape bean)))
+  (is (= (firsts '((a b) (c d) (e f)))
+         '(a c e)))
+  (is (= (firsts '((five plums)
+                   (four)
+                   (eleven green oranges)))
+         '(five four eleven)))
+  (is (= (firsts '(((five plums) four)
+                   (eleven green oranges)
+                   ((no) more)))
+         '((five plums)
+           eleven
+           (no)))))
+</code></pre>
+<p>After that I wrote <code>insertR</code> which inserts a new s-expression to the right of an the first occurrence of an existing s-expression inside a list.</p>
+<p>The questions this function needs to ask and answer are:</p>
+<ol>
+<li>Is <code>lat</code> null? If so, return the empty list `().</li>
+<li>Is <code>(car lat)</code> equal to <code>old</code> and if so, <code>(cons old (cons new (cdr lat)))</code> which basically says append <code>new</code>, then <code>old</code> onto the rest.</li>
+<li>Else <code>(cons (car lat))</code> onto the natural recursion of this function with <code>new</code>, <code>old</code> and <code>(cdr lat)</code>.</li>
+</ol>
+<pre><code class="language-clojure">(with-test
+  (def insertR 
+    (fn [new old lat]
+      (cond (null? lat) '()
+            (eq? (car lat) old) (cons old
+                                      (cons new (cdr lat)))
+            :else (cons (car lat)
+                        (insertR new old 
+                                 (cdr lat))))))
+
+  (is (= (insertR 'topping 'fudge '())
+         '()))
+  (is (= (insertR 'topping 'fudge '(ice cream with fudge for dessert))
+         '(ice cream with fudge topping for dessert)))
+  (is (= (insertR 'jalapeno 'and '(tacos tamales and salsa))
+         '(tacos tamales and jalapeno salsa)))
+  (is (= (insertR 'e 'd '(a b c d f g d h))
+         '(a b c d e f g d h))))
+</code></pre>
+<p>Now, the next function, <code>insertL</code> inserts a new element to the left of an existing one. The only difference here was what we do in case <code>(eq? (car lat) old)</code> namely <code>(cons new lat)</code></p>
+<pre><code class="language-clojure">(with-test
+  (def insertL
+    (fn [new old lat]
+      (cond (null? lat) '()
+            (eq? (car lat) old) (conss new lat)
+            :else (cons (car lat) (insertL new old (cdr lat))))))
+
+  (is (= (insertL 'topping 'fudge '())
+         '()))
+  (is (= (insertL 'topping 'fudge '(ice cream with fudge for dessert))
+         '(ice cream with topping fudge for dessert))))
+</code></pre>
+<p>Now up to this point the functions only replace or insert or remove the <em>first occurence</em> of whatever the matching function was. What about multiple occurrences and manipulations?</p>
+<p>When you look at <code>multimember</code> you’ll notice that we drop the current occurrence of <code>a</code> in <code>lat</code> and recur via <code>(multirember a (cdr lat)</code> which will drop any following occurrences as well.</p>
+<pre><code class="language-clojure">(with-test
+  (def multirember 
+    (fn [a lat]
+      (cond (null? lat) '()
+            (eq? (car lat) a) (multirember a (cdr lat))
+            :else (conss (car lat) (multirember a (cdr lat))))))
+  (is (= (multirember 'cup '())
+         '()))
+  (is (= (multirember 'cup '(coffee cup tea cup and hick cup))
+         '(coffee tea and hick))))
+</code></pre>
+<p>This pattern persisted for the following, improved versions of <code>insertL</code>, <code>insertR</code> and <code>subst</code>:</p>
+<pre><code class="language-clojure">(with-test
+  (def multiinsertR
+    (fn [new old lat]
+      (cond (null? lat) '()
+            (eq? (car lat) old) (conss old (conss new (multiinsertR new old (cdr lat))))
+            :else (conss (car lat) (multiinsertR new old (cdr lat))))))
+
+  (is (= (multiinsertR 'new 'old '())
+         '()))
+  (is (= (multiinsertR 'new 'old '(old socks old beer))
+         '(old new socks old new beer))))
+
+(with-test
+  (def multiinsertL
+    (fn [new old lat]
+      (cond (null? lat) '()
+            (eq? (car lat) old) (conss new (conss old (multiinsertL new old (cdr lat))))
+            :else (cons (car lat) (multiinsertL new old (cdr lat))))))
+
+  (is (= (multiinsertL 'new 'old '())
+         '()))
+  (is (= (multiinsertL 'new 'old '(old socks old beer))
+         '(new old socks new old beer))))
+
+(with-test
+  (def multisubst
+    (fn [new old lat]
+      (cond (null? lat) '()
+            (eq? (car lat) old) (conss new (multisubst new old (cdr lat)))
+            :else (conss (car lat) (multisubst new old (cdr lat))))))
+  (is (= (multisubst 'new 'old '())
+         '()))
+  (is (= (multisubst 'new 'old '(frog))
+         '(frog)))
+  (is (= (multisubst 'new 'old '(old))
+         '(new)))
+  (is (= (multisubst 'new 'old '(old old old))
+         '(new new new))))
+</code></pre>
+<p>All in all I had great fun really digging into it. The question/answer style still lends itself to writing the test first and then following along with the implementation.</p>
+</div>
+<div class="more"><a href="/notes/the-little-schemer-in-clojure-chapter-3-recap/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/the-little-schemer-in-clojure-chapter-3-recap/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-the-little-schemer-in-clojure-chapter-2-recap">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/the-little-schemer-in-clojure-chapter-2-recap/"><time datetime="2017-04-27T22:00:00Z">Friday, April 28, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/the-little-schemer-in-clojure-chapter-2-recap/">The Little Schemer in Clojure – Chapter 2 Recap</a></h2>
+<div class="text note-body clamped">
+<p>Yesterday I made it through Chapter 2 and as before I’ve enjoyed it. I have come to copy the question/answer style from the book into the tests:</p>
+<p>First I write the application of the function under test, then the expectation such as:</p>
+<pre><code class="language-clojure">(is (= (lat? '(Jack Sprat could eat no chicken fat)) true))
+</code></pre>
+<p>I understand that calling functions recursively, as done in the book, isn’t idiomatic in Clojure.</p>
+<pre><code class="language-clojure">(def lat? 
+    (fn [l]
+      (cond (null? l) true
+            (atom? (car l)) (lat? (cdr l))
+            :else false)))
+</code></pre>
+<p>There’s <code>recur</code> for that. For now, I like to continue with calling functions regardless. The data-size is small and, since I have tests in place, once I’m through with the book, I can imagine a refactor using <code>recur</code>.</p>
+<p>On the same note, I recognize that Clojure has great helper functions such as <code>every?</code> that I could leverage directly. For example, the above mentioned function <code>lat?</code> could become a one-liner such as by asking “is every expression in the list not a list itself”.</p>
+<pre><code class="language-clojure">(def lat? 
+  (fn [l] 
+    (every? #(not (list? %))) l)))
+</code></pre>
+<p>This is much cleaner (and every? Itself is a recursive function) but in the spirit of the book, I’m going to stick with the functions as they are discussed. Again, my test-suite will allow for refactoring as needed later.</p>
+<p>Lastly, I am getting into the habit of tiny, regular commits. I now make a commit when I have fully tested a function just before moving on to the next one. I can see even smaller commits on every red-to-green test cycle.</p>
+<p>If you are interested, the full listing for Chapter 2 is as follows:</p>
+<pre><code class="language-clojure">(ns the-little-clojurian.chapter2
+  (:require [clojure.test :refer :all]
+            [the-little-clojurian.chapter1 :refer :all]))
+
+(with-test 
+  (def lat? 
+    (fn [l]
+      (cond (null? l) true
+            (atom? (car l)) (lat? (cdr l))
+            :else false)))
+  (testing &quot;returns true&quot;
+    (is (= (lat? '(Jack Sprat could eat no chicken fat)) true))
+    (is (= (lat? '()) true))
+    (is (= (lat? '(bacon and eggs)) true)))
+  (testing &quot;returns false&quot;
+    (is (= (lat? '((Jack) Sprat could eat no chicken fat)) false))
+    (is (= (lat? '(Jack (Sprat could) eat no chicken fat)) false))
+    (is (= (lat? '(bacon (and eggs))) false))))
+
+(deftest boolean-operators
+  (is (= (or (null? '())
+             (atom? '(d e f g)))
+         true))
+  (is (= (or (null? '(a b c))
+             (null? '()))
+         true))
+  (is (= (or (null? '(a b c))
+             (null? '(atom)))
+         false)))
+
+(with-test 
+  (def member? 
+    (fn [a lat]
+      (cond (null? lat) false
+            :else (or (eq? (car lat) a) 
+                      (member? a (cdr lat))))))
+  (testing &quot;evaluates to true&quot;
+    (is (= (member? 'meat '(meat)) true))
+    (is (= (member? 'tea '(coffee tea and milk))))
+    (is (= (member? 'meat '(mashed potatoes and meat gravy)) true)))
+  (testing &quot;evaluates to false&quot;
+    (is (= (member? 'meat '()) false))
+    (is (= (member? 'liver '(bagels and lox)) false))
+    (is (= (member? 'poached '(fried eggs and scrambled eggs))))))
+</code></pre>
+</div>
+<div class="more"><a href="/notes/the-little-schemer-in-clojure-chapter-2-recap/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/the-little-schemer-in-clojure-chapter-2-recap/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-the-little-schemer-in-clojure-chapter-1-recap">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/the-little-schemer-in-clojure-chapter-1-recap/"><time datetime="2017-04-24T22:00:00Z">Tuesday, April 25, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/the-little-schemer-in-clojure-chapter-1-recap/">The Little Schemer in Clojure – Chapter 1 Recap</a></h2>
+<div class="text note-body clamped">
+<p>This is a series of small blog posts about following along the book ‘The Little Schemer’ using Clojure.</p>
+<p>The book is great fun to read and it is easy to understand. The format is a kind conversation between the author and reader. And finally, the book even has dedicated pages for jelly-stains! It teaches programming small but realistic applications with the least amount of jargon and concepts. I think it is a perfect place to start learning to program if you haven’t done so yet. It also helps seasoned developers like myself get back to the fundamentals of how to think about computation.</p>
+<p>For me, the challenge was to follow along in the book via programming in Clojure, a recent JVM-based Lisp. I recently worked on a side-project where the most smartest solution would have been a recursive algorithm but I wasn’t able to solve it without head-scratching all the way through. With this series I want to recap my recursion skills and learn them through Clojure, my favorite programming language.</p>
+<p>I’m currently using a very barebones setup to follow along: I used Leiningen to create a standalone Clojure project <code>lein new the-little-clojurian</code>. I use GNU Emacs 25 with Cider on a 3-year old Macbook Air.</p>
+<h2>Workflow</h2>
+<p>My workflow is as follows:</p>
+<p>Once… 1. I open <code>project.clj</code> in a buffer and 2. run <code>M-x cider-jack-in</code> to get a REPL</p>
+<p>Then, I… 1. Write the test as it appears in the book, 2. use <code>C-c k</code> to compile the file and 3. <code>C-c ,</code> to run the tests.</p>
+<p>When I have a failing test, I fix the implementation only as much as to get the test to pass. Following the book, I continue this pattern until the chapter is over.</p>
+<p>I am using the <code>with-test</code> macro and write my tests and implementation all in the main core namespace. Normally, we tend to write our tests in separate files but I’ve grown fond of <code>with-test</code> because of</p>
+<ol>
+<li>less switching between buffers</li>
+<li>having all code right in front of me.</li>
+</ol>
+<p>I like it.</p>
+<p>In a way, the book is written in a conversational, assumptions-first, almost test-driven way, so I write the assertion first and then gradually implement the function itself.</p>
+<p>The function-definition, including tests for <code>lat?</code> looks like this for example:</p>
+<pre><code class="language-clojure">(ns the-little-clojurian.chapter2
+  (:require [clojure.test :refer :all]
+            [the-little-clojurian.chapter1 :refer :all]))
+
+(with-test 
+  ;; Function-definition
+  (def lat? 
+    (fn [l]
+      (cond (null? l) true
+            (atom? (car l)) (lat? (cdr l))
+            :else false)))
+  ;; Tests
+  (testing &quot;returns true&quot;
+    (is (= (lat? '(Jack Sprat could eat no chicken fat)) true))
+    (is (= (lat? '()) true))
+    (is (= (lat? '(bacon and eggs)) true)))
+  (testing &quot;returns false&quot;
+    (is (= (lat? '((Jack) Sprat could eat no chicken fat)) false))
+    (is (= (lat? '(Jack (Sprat could) eat no chicken fat)) false))
+    (is (= (lat? '(bacon (and eggs))) false))))
+</code></pre>
+<p>The full transcript of Chapter 1 in Clojure is:</p>
+<pre><code class="language-clojure">(ns the-little-clojurian.chapter1
+  (:require [clojure.test :refer :all]))
+
+(declare listp? atom? s-expression? car cdr conss null? eq?)
+
+(with-test 
+  (def atom? 
+    (fn [a] 
+      (not (listp? a))))
+  (testing &quot;returns true&quot;
+    (is (= true (atom? 'atom)))
+    (is (= true (atom? 'turkey)))
+    (is (= true (atom? '1492)))
+    (is (= true (atom? 'u)))
+    (is (= true (atom? '*abc$)))
+    (is (= (atom? 'Harry) true))
+    (is (= (atom? (car '(Harry had a heap of apples))) true))
+    (is (= (atom? (car (cdr '(swing low sweet cherry oat)))) true)))
+  (testing &quot;returns false&quot;
+    (is (= false (atom? '())))
+    (is (= false (atom? '(a b c))))
+    (is (= (atom? '(Harry had a heap of apples)) false))
+    (is (= (atom? (cdr '(Harry had a heap of apples))) false))
+    (is (= (atom? (car (cdr '(swing (low sweet) cherry oat)))) false))))
+
+(with-test 
+  (def listp? 
+    (fn [s] 
+      (list? s)))
+  (testing &quot;returns true&quot;
+    (is (= true (listp? '(atom))))
+    (is (= true (listp? '(atom? turkey or))))
+    (is (= true (listp? '((atom turkey) or))))
+    (is (= true (listp? '())))
+    (is (= true (listp? '(() () () ())))))
+  (testing &quot;returns false&quot;
+    (is (= false (listp? 'atom)))
+    (is (= false (listp? nil)))))
+
+(with-test
+  (def s-expression? 
+    (fn [x] 
+      (not (nil? x))))
+  (testing &quot;returns true&quot;
+    (is (= true (s-expression? 'xyz)))
+    (is (= true (s-expression? '(x y z))))
+    (is (= true (s-expression? '((x y) z))))
+    (is (= true (s-expression? '(how are you doing so far))))
+    (is (= true (s-expression? '(((how) are) ((you) (doing so)) far)))))
+  (testing &quot;returns false&quot;
+    (is (= false (s-expression? nil)))))
+
+(with-test
+  (def car 
+    (fn [x] 
+      (first x)))
+  (testing &quot;returns s-expression&quot;
+    (is (= 'a (car '(a b c))))
+    (is (= '(a b c) (car '((a b c) x y z))))
+    (is (= '((hotdogs)) (car '(((hotdogs)) (and) (pickle) relish))))
+    (is (= '(hotdogs) (car (car '(((hotdogs)) (and)))))))
+  (testing &quot;returns nil&quot;
+    (is (nil? (car '()))))
+  (testing &quot;throws Exception&quot;
+    (is (thrown? IllegalArgumentException  (car 'hotdog)))))
+
+(with-test 
+  (def cdr 
+    (fn [l] 
+      (rest l)))
+  (testing &quot;returns list&quot;
+    (is (= '(b c) (cdr '(a b c))))
+    (is (= '(x y z) (cdr '((a b c) x y z))))
+    (is (= '() (cdr '(hamburger))))
+    (is (= '(t r) (cdr '((x) t r))))
+    (is (= '() (cdr '())))
+    (is (= (cdr nil) '())))
+  (testing &quot;throws Exception&quot;
+    (is (thrown? IllegalArgumentException (cdr 'hotdogs)))))
+
+(deftest car-and-cdr-tests
+  (is (= '(x y) (car (cdr '((b) (x y) (()))))))
+  (is (= '(((c))) (cdr (cdr '((b) (x y) ((c)))))))
+  (is (thrown? IllegalArgumentException (cdr (car '(a (b (c)) d))))))
+
+(with-test 
+  (def conss 
+    (fn [a l] 
+      (cons a l)))
+  (testing &quot;returns the consed list&quot;
+    (is (= '(peanut butter and jelly) (conss 'peanut '(butter and jelly))))
+    (is (= '((banana and) peanut butter and jelly) (conss '(banana and) '(peanut butter and jelly))))
+    (is (= '(((help) this) is very ((hard) to learn)) (conss '((help) this) '(is very ((hard) to learn)))))
+    (is (= '((a b (c))) (conss '(a b (c)) '())))
+    (is (= '(a) (conss 'a '()))))
+  (testing &quot;throws Exception&quot;
+    (is (thrown? IllegalArgumentException (conss '() 'a)))
+    (is (thrown? IllegalArgumentException (conss 'a 'b)))))
+
+(deftest cons-and-car-and-cdr-tests
+  (is (= '(a b) (conss 'a (car '((b) c d)))))
+  (is (= '(a c d) (conss 'a (cdr '((b) c d))))))
+
+(with-test 
+  (def null? 
+    (fn [x] 
+      (empty? x)))
+  (testing &quot;returns true&quot;
+    (is (= true (null? '())))
+    (is (= (null? (quote ())) true)))
+  (testing &quot;returns false&quot;
+    (is (= (null? '(a b c)) false)))
+  (testing &quot;throws Exception&quot;
+    (is (thrown? IllegalArgumentException (null? 'spaghetti)))))
+
+(with-test
+  (def eq? 
+    (fn [x y] 
+      (if (or
+           (and (atom? x)
+                (listp? y))
+           (and (listp? x)
+                (atom? y)))
+        (throw (IllegalArgumentException.)) 
+        (= x y))))
+  (testing &quot;returns true&quot;
+    (is (= (eq? 'Harry 'Harry) true))
+    (is (= (eq? '() '(strawberry))) true)
+    (is (= (eq? (car '(Mary had a little lamb)) 'Mary)))
+    (is (= (eq? (car '(beans beans)) (car (cdr '(beans beans)))) true)))
+  (testing &quot;returns false&quot;
+    (is (= (eq? 'margarine 'butter) false))
+    (is (= (eq? 6 7)) false))
+  (testing &quot;throws Exception&quot;
+    (is (thrown? IllegalArgumentException (eq? (cdr '(soured milk)) 'milk)))
+    (is (thrown? IllegalArgumentException (eq? 'milk (cdr '(soured milk)))))))
+</code></pre>
+</div>
+<div class="more"><a href="/notes/the-little-schemer-in-clojure-chapter-1-recap/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/the-little-schemer-in-clojure-chapter-1-recap/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-my-journey-into-deep-work-retrospective-week-13">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/my-journey-into-deep-work-retrospective-week-13/"><time datetime="2017-04-02T22:00:00Z">Monday, April 3, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/my-journey-into-deep-work-retrospective-week-13/">My Journey Into Deep Work – Retrospective Week 13</a></h2>
+<div class="text note-body clamped">
+<p>Come and learn what I’ve learned! I haven’t posted my retrospectives in a while. Last week was the first week that I had fully to myself and I challenged myself to establish a solid deep work routine at home. Here are some of the things that worked, that were okay and some that didn’t work.</p>
+<h1>Retrospective Week 13 – A total of 13 hours completed.</h1>
+<h2>What worked:</h2>
+<ul>
+<li>I got 13 hours of fully concentrated work in. Awesome! I built myself a custom Scoreboard, too, to keep track of each day’s work-hours.</li>
+<li>I felt productive.</li>
+<li>Started and finished a fully functional <a href="https://redditgrowth.herokuapp.com">Minimum Viable Product</a> called “RedditGrowth” which helps identify trending subreddits that show sustained growth. A simple market research tool for Reddit, basically.</li>
+<li>Creating a backlog, physically with stickies and virtually with Trello worked really well to structure and slice down my work-items</li>
+<li>I used Pomodoros the full week. That made concentrating easier and less exhausting.</li>
+<li>I rewarded myself for staying focussed with a 30 minute break after work. I took a nap, watched a movie or just chilled.</li>
+<li>I made myself an idea backlog.</li>
+<li>I built myself a standing desk and it felt good to focus yet not sit.</li>
+<li>With a simple, physical “Todo -&gt; Doing -&gt; Done” system I always felt in control.</li>
+<li>I used my awesome <a href="http://www.wasdkeyboards.com/index.php/products/code-keyboard.html">WASD mechanical keyboard</a> which made me feel really cool.</li>
+<li>I finally got to make a dream come true and code a web-application in Clojure.</li>
+<li>I wrote my own little DSL for “Given, When, Then”, cucumber-style integration tests.</li>
+<li>I pushed the app to Heroku and learned how to use <a href="https://devcenter.heroku.com/articles/using-multiple-buildpacks-for-an-app">multiple buildpacks</a> for one app because I needed to have <a href="https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-apt">custom apt packages</a> installed for running the <a href="http://incanter.org/docs/api/#member-incanter.stats-linear-model">linear regression</a>. Once I figured out how to do it, it worked really well.</li>
+<li>I wasted far less time on Facebook, Instagram etc. by adding blocking rules directly on my router.</li>
+</ul>
+<p><strong><a href="https://redditgrowth.herokuapp.com/">Check out RedditGrowth as the result of this week’s work!</a></strong></p>
+<p><img src="Attachments/download-718x1024.png" alt="" loading="lazy">]</p>
+<p>Behind the scenes, in case you’re interested, my Trello board:</p>
+<p><img src="Attachments/Screenshot-2017-04-03-18.30.27-copy-1024x650.png" alt="" loading="lazy"></p>
+<h2>What went so-so</h2>
+<ul>
+<li>I didn’t get as much writing done as I had planned to. My action item here is to establish a TinyHabit for it instead.</li>
+<li>I charged ahead and built a product for myself. Not sure if anyone else cares about it but I think it’s pretty cool.</li>
+<li>Getting up in the morning got harder towards Friday. Not sure why, but I couldn’t fall asleep at night. Probably because I didn’t spend insane amounts of energy.</li>
+<li>I spent a lot of time at home by myself because I set myself up with a home office. So far I like it and it makes me productive but I have to make sure that I get outside at least once a day.</li>
+<li>Because all other time-wasting sites like Facebook and News are blocked, I spent a lot of time on Reddit (which wasn’t blocked because my MVP needed access to it.)</li>
+<li>I forgot to celebrate each completed Pomodoro sometimes. Rewards are super important to settle into the new habit and so I want to make sure I reward myself more immediately this week.</li>
+</ul>
+<h2>What didn’t (yet) work so well</h2>
+<ul>
+<li>I felt a sharp drop in productivity during the afternoons.</li>
+<li>I haven’t been biking as much as I used to the week before.</li>
+</ul>
+<h2>Action Items:</h2>
+<ul>
+<li>Celebrate each Pomodoro!</li>
+<li>Clean up my done tasks from last week</li>
+<li>Plan my lunch-time better so that I can overcome the concentration slump at around 1:30pm</li>
+<li>Recap and organize my goals, epics and backlog. Basically do an IPM Monday morning.</li>
+<li>Find a new, lovely project to work on now that the MVP is built.</li>
+<li>Start creating a blogging habit</li>
+</ul>
+<p>Well, thanks for reading. If you have any questions how to implement Deep Work in your life, feel free to reach out at alexis dot rondeau at gmail dot com.</p>
+</div>
+<div class="more"><a href="/notes/my-journey-into-deep-work-retrospective-week-13/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/my-journey-into-deep-work-retrospective-week-13/">Permalink</a></div>
+</article>
+</section>
+<nav class="pager"><a href="/feed/archive/2017/05/">‹ May 2017</a><a class="n" href="/feed/archive/">All months</a><a href="/feed/archive/2017/01/">January 2017 ›</a></nav>
+<aside class="months-nav">
+<h3><a href="/feed/archive/">Archive</a></h3>
+<div class="y">2026</div>
+<ul>
+<li><a href="/feed/archive/2026/09/">September</a> <span class="n">77</span></li>
+<li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
+<li><a href="/feed/archive/2026/07/">July</a> <span class="n">17</span></li>
+<li><a href="/feed/archive/2026/06/">June</a> <span class="n">29</span></li>
+<li><a href="/feed/archive/2026/05/">May</a> <span class="n">10</span></li>
+<li><a href="/feed/archive/2026/04/">April</a> <span class="n">30</span></li>
+<li><a href="/feed/archive/2026/03/">March</a> <span class="n">34</span></li>
+<li><a href="/feed/archive/2026/02/">February</a> <span class="n">57</span></li>
+<li><a href="/feed/archive/2026/01/">January</a> <span class="n">15</span></li>
+</ul>
+<div class="y">2025</div>
+<ul>
+<li><a href="/feed/archive/2025/12/">December</a> <span class="n">28</span></li>
+<li><a href="/feed/archive/2025/11/">November</a> <span class="n">124</span></li>
+<li><a href="/feed/archive/2025/10/">October</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2025/09/">September</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2025/08/">August</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2025/07/">July</a> <span class="n">23</span></li>
+<li><a href="/feed/archive/2025/06/">June</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2025/05/">May</a> <span class="n">18</span></li>
+<li><a href="/feed/archive/2025/04/">April</a> <span class="n">20</span></li>
+<li><a href="/feed/archive/2025/03/">March</a> <span class="n">22</span></li>
+<li><a href="/feed/archive/2025/02/">February</a> <span class="n">11</span></li>
+</ul>
+<div class="y">2024</div>
+<ul>
+<li><a href="/feed/archive/2024/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/11/">November</a> <span class="n">16</span></li>
+<li><a href="/feed/archive/2024/10/">October</a> <span class="n">12</span></li>
+<li><a href="/feed/archive/2024/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/05/">May</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/04/">April</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2023</div>
+<ul>
+<li><a href="/feed/archive/2023/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/10/">October</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/08/">August</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2023/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/06/">June</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/05/">May</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2023/04/">April</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2023/03/">March</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2022</div>
+<ul>
+<li><a href="/feed/archive/2022/10/">October</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2022/04/">April</a> <span class="n">2</span></li>
+</ul>
+<div class="y">2018</div>
+<ul>
+<li><a href="/feed/archive/2018/09/">September</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2018/08/">August</a> <span class="n">2</span></li>
+</ul>
+<div class="y">2017</div>
+<ul>
+<li><a href="/feed/archive/2017/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2017/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/05/">May</a> <span class="n">7</span></li>
+<li class="here"><a href="/feed/archive/2017/04/">April</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2017/01/">January</a> <span class="n">2</span></li>
+</ul>
+<div class="y">2016</div>
+<ul>
+<li><a href="/feed/archive/2016/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2016/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2015</div>
+<ul>
+<li><a href="/feed/archive/2015/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2015/05/">May</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2014</div>
+<ul>
+<li><a href="/feed/archive/2014/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/11/">November</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2014/09/">September</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2014/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2014/05/">May</a> <span class="n">12</span></li>
+<li><a href="/feed/archive/2014/04/">April</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2014/03/">March</a> <span class="n">9</span></li>
+</ul>
+</aside>
+</div>
+
+</body>
+</html>

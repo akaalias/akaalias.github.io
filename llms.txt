@@ -6,13 +6,47 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 
 ## Feed
 
-- [Feed](https://alexisrondeau.me/feed/): 685 posts, newest first, 25 per page
+- [Feed](https://alexisrondeau.me/feed/): 719 posts, newest first, 25 per page
 - [Archive](https://alexisrondeau.me/feed/archive/): the same posts by month
 - [Atom feed](https://alexisrondeau.me/feed/feed.xml): the latest 50 posts
 - [Data](https://alexisrondeau.me/feed/items.json): every item as JSON (source, id, date, text, media, links, permalink)
 
 ## Notes
 
+- [Book Recommendation: \"From Russia With Love\" by Ian Fleming](https://alexisrondeau.me/notes/book-recommendation-from-russia-with-love-by-ian-fleming/): HOLY SHIT. Oof.
+- [Productivity Experiment: My Dream/Plan/Execute Model in One App](https://alexisrondeau.me/notes/productivity-experiment-my-dream-plan-execute-model-in-one-app/): I’m a huge procrastinator. Unless I set myself a goal, make a plan and have a clear, small next step, I’ll just waste m…
+- [Currently Re-Reading: Malcom Gladwell's \"David & Goliath\"](https://alexisrondeau.me/notes/currently-re-reading-malcom-gladwell-s-david-goliath/): It’s funny how, sometimes you can simply ‘ask’ your subconscious to pick the right book for you by just ‘mindlessly’ br…
+- [A Moveable Feast](https://alexisrondeau.me/notes/a-moveable-feast/): As part of my ongoing challenge to read every day, I recently re-discovered Hemingway’s “A Moveable Feast.”
+- [How To Discover Trending High-Growth Communities – Meetup Trends Tracking](https://alexisrondeau.me/notes/how-to-discover-trending-high-growth-communities-meetup-trends-tracking/): To better understand and discover exciting new trends, I built this site about 9 months ago. I’ve been collecting the m…
+- [Microgreen Growth Experiment: Natural Sunlight vs. Indoor LED Light](https://alexisrondeau.me/notes/microgreen-growth-experiment-natural-sunlight-vs-indoor-led-light/): This was an experiment I ran over the summer.
+- [Ask Yourself: What is the most useful, loving and empowering belief I need right now?](https://alexisrondeau.me/notes/ask-yourself-what-is-the-most-useful-loving-and-empowering-belief-i-need-right-n/): I wanted to share this note I made with you because it has helped me take those ‘down’-moments, usually in-between task…
+- [Things We Also Like:  \"Whole Foods\" vs. \"Trader Joes\" in the US](https://alexisrondeau.me/notes/things-we-also-like-whole-foods-vs-trader-joes-in-the-us/): I'm a big fan of Trader Joes. My friend Chris loves Whole Foods.
+- [Mars and Venus Markets – US Male and Female Interest Comparison](https://alexisrondeau.me/notes/mars-and-venus-markets-us-male-and-female-interest-comparison/): So, since I built this market research tool earlier today, I felt like playing around with it.
+- [Growing Delicious Mung Bean Microgreens – Adventures In Indoor Farming](https://alexisrondeau.me/notes/growing-delicious-mung-bean-microgreens-adventures-in-indoor-farming/): In my last post I showed you how Ikea's hydroponics system works. I'm a great fan and it has allowed me to add cut-fres…
+- [Growing Yummy, Hyper-Local Herbs – Adventures In Hydroponics](https://alexisrondeau.me/notes/growing-yummy-hyper-local-herbs-adventures-in-hydroponics/): It's been a month since I started my own little herb garden at home using Ikea's Vaxer system.
+- [Tracking Meetup Growth Rates in Berlin](https://alexisrondeau.me/notes/tracking-meetup-growth-rates-in-berlin/): I've meant to build this for months but never got around to it until this weekend.
+- [How To Get Better At What You Do Every Day With Retrospectives](https://alexisrondeau.me/notes/how-to-get-better-at-what-you-do-every-day-with-retrospectives/): I mentioned the Retrospectives I have been doing for the past years.
+- [Calculating Nonces That Result In Zero-Padded SHA256 Hashes](https://alexisrondeau.me/notes/calculating-nonces-that-result-in-zero-padded-sha256-hashes/): ![Build Status](https://travis-ci.org/akaalias/blockchain-toy)
+- [The Little Schemer in Clojure – Recap Chapter 6](https://alexisrondeau.me/notes/the-little-schemer-in-clojure-recap-chapter-6/): Shadows
+- [My Journey Into Deep Work – Retrospective Week 16](https://alexisrondeau.me/notes/my-journey-into-deep-work-retrospective-week-16/): I managed to work deeply for 9.5 hours. I also traveled over the weekend, so my week was a bit shot.
+- [My Journey Into Deep Work – Retrospective Week 17](https://alexisrondeau.me/notes/my-journey-into-deep-work-retrospective-week-17/): I spent this week in Mallorca with my parents. Stil I got to take time to sit down and get 13 (!) hours of deep work do…
+- [Set Your Priorities Straight In 2 Minutes Without Thinking Hard](https://alexisrondeau.me/notes/set-your-priorities-straight-in-2-minutes-without-thinking-hard/): "I have so much to do but I'm not sure which of the things I should do first."
+- [Thinking and Sleeping Better With Clojure](https://alexisrondeau.me/notes/thinking-and-sleeping-better-with-clojure/): To prioritize a list of todo-items, as in my Prioritization-app I recently launched, I needed to get a list of the uniq…
+- [The Little Schemer in Clojure – Recap Chapter 5](https://alexisrondeau.me/notes/the-little-schemer-in-clojure-recap-chapter-5/): Oh My Gawd, It's Full Of Stars
+- [The Little Schemer in Clojure – Chapter 4 Recap](https://alexisrondeau.me/notes/the-little-schemer-in-clojure-chapter-4-recap/): Number Games
+- [The Little Schemer in Clojure – Chapter 3 Recap](https://alexisrondeau.me/notes/the-little-schemer-in-clojure-chapter-3-recap/): Cons the magnificent
+- [The Little Schemer in Clojure – Chapter 2 Recap](https://alexisrondeau.me/notes/the-little-schemer-in-clojure-chapter-2-recap/): Yesterday I made it through Chapter 2 and as before I've enjoyed it. I have come to copy the question/answer style from…
+- [The Little Schemer in Clojure – Chapter 1 Recap](https://alexisrondeau.me/notes/the-little-schemer-in-clojure-chapter-1-recap/): This is a series of small blog posts about following along the book 'The Little Schemer' using Clojure.
+- [My Journey Into Deep Work – Retrospective Week 13](https://alexisrondeau.me/notes/my-journey-into-deep-work-retrospective-week-13/): Come and learn what I've learned! I haven't posted my retrospectives in a while. Last week was the first week that I ha…
+- [Week 5 – Logbook: My Journey Into Deep Work](https://alexisrondeau.me/notes/week-5-logbook-my-journey-into-deep-work/): Strategizing is easy. Executing is really hard. In his book "Deep Work", Cal Newport recommends to make use of the 4 Di…
+- [My Journey Into Deep Work](https://alexisrondeau.me/notes/my-journey-into-deep-work/): Three weeks ago, my colleague Oleksii Fedorov mentioned that "adults are able to deeply work for about 4 hours per day."
+- [I Am Mr. Bubbles!](https://alexisrondeau.me/notes/i-am-mr-bubbles/): I finally can share this with you. Here is what I've been up to when I came back from work while still in New York.
+- [The Weekend](https://alexisrondeau.me/notes/the-weekend/): The weekend was a good one.
+- [4 New Things I Have Noticed About Berlin](https://alexisrondeau.me/notes/4-new-things-i-have-noticed-about-berlin/): I would like to share a summary of my first impressions of Berlin with you. I have had a great first week. I worked. I…
+- [Should. Would. Could. DID.](https://alexisrondeau.me/notes/should-would-could-did/): ![](Attachments/shouldwouldcould1.jpg)
+- [How To Learn To Code: Test-Drive All The Things!](https://alexisrondeau.me/notes/how-to-learn-to-code-test-drive-all-the-things/): ![](Attachments/ScreenShot2015-05-25at13933PM-1024x646.png)
+- [Add Hilarious Gifs to Your Emails With One Click](https://alexisrondeau.me/notes/add-hilarious-gifs-to-your-emails-with-one-click/): ![](Attachments/best.gif)
+- [Use the Force, Luke! 3 Effective Breathing Techniques For Decision-Makers](https://alexisrondeau.me/notes/use-the-force-luke-3-effective-breathing-techniques-for-decision-makers/): Volume 1 of A Short Course for the Use of Your Nervous System According to the Instructions of the Manufacturers
 - [Do the Right Things Right](https://alexisrondeau.me/notes/do-the-right-things-right/): The odds are 3 to 1 against you, so how will you make sure you win?
 - [How To Translate a Programming Language](https://alexisrondeau.me/notes/how-to-translate-a-programming-language/)
 - [How To Add a \"Maybe\" Operator To Your Programming Language](https://alexisrondeau.me/notes/how-to-add-a-maybe-operator-to-your-programming-language/): In just 4 lines - https://gist.github.com/akaalias/51721a8d6d75ef42586b.js
@@ -100,6 +134,19 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 - [October 2022](https://alexisrondeau.me/feed/archive/2022/10/): 1 posts
 - [July 2022](https://alexisrondeau.me/feed/archive/2022/07/): 3 posts
 - [April 2022](https://alexisrondeau.me/feed/archive/2022/04/): 2 posts
+- [September 2018](https://alexisrondeau.me/feed/archive/2018/09/): 7 posts
+- [August 2018](https://alexisrondeau.me/feed/archive/2018/08/): 2 posts
+- [December 2017](https://alexisrondeau.me/feed/archive/2017/12/): 1 posts
+- [November 2017](https://alexisrondeau.me/feed/archive/2017/11/): 2 posts
+- [June 2017](https://alexisrondeau.me/feed/archive/2017/06/): 1 posts
+- [May 2017](https://alexisrondeau.me/feed/archive/2017/05/): 7 posts
+- [April 2017](https://alexisrondeau.me/feed/archive/2017/04/): 5 posts
+- [January 2017](https://alexisrondeau.me/feed/archive/2017/01/): 2 posts
+- [September 2016](https://alexisrondeau.me/feed/archive/2016/09/): 2 posts
+- [January 2016](https://alexisrondeau.me/feed/archive/2016/01/): 1 posts
+- [June 2015](https://alexisrondeau.me/feed/archive/2015/06/): 1 posts
+- [May 2015](https://alexisrondeau.me/feed/archive/2015/05/): 2 posts
+- [January 2015](https://alexisrondeau.me/feed/archive/2015/01/): 1 posts
 - [December 2014](https://alexisrondeau.me/feed/archive/2014/12/): 3 posts
 - [November 2014](https://alexisrondeau.me/feed/archive/2014/11/): 3 posts
 - [October 2014](https://alexisrondeau.me/feed/archive/2014/10/): 5 posts

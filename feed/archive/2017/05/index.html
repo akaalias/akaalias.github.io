@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>May 2017 — Alexis Rondeau</title>
+<meta name="description" content="Alexis Rondeau's posts from May 2017: 7 posts.">
+<link rel="canonical" href="https://alexisrondeau.me/feed/archive/2017/05/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alexis Rondeau">
+<meta property="og:title" content="May 2017 — Alexis Rondeau">
+<meta property="og:description" content="Alexis Rondeau's posts from May 2017: 7 posts.">
+<meta property="og:url" content="https://alexisrondeau.me/feed/archive/2017/05/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@SpringStreetNYC">
+<link rel="alternate" type="application/atom+xml" title="Alexis Rondeau — Feed" href="https://alexisrondeau.me/feed/feed.xml">
+<link rel="stylesheet" href="/tufte.css">
+<link rel="stylesheet" href="/feed/feed.css">
+<link rel="prev" href="https://alexisrondeau.me/feed/archive/2017/06/">
+<link rel="next" href="https://alexisrondeau.me/feed/archive/2017/04/">
+
+</head>
+<body>
+<header class="hero">
+<div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
+<h1><a href="/feed/archive/">Archive</a></h1>
+<p class="sub">May 2017 · 7 posts</p>
+<div class="nav"><a href="/">Home</a><a href="/feed/">Feed</a><a href="/feed/archive/">Archive</a><a href="https://x.com/SpringStreetNYC">@SpringStreetNYC on Twitter</a></div>
+</header>
+<div class="wrap">
+<section class="feed">
+<article class="item kind-note" id="n-calculating-nonces-that-result-in-zero-padded-sha256-hashes">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/calculating-nonces-that-result-in-zero-padded-sha256-hashes/"><time datetime="2017-05-22T22:00:00Z">Tuesday, May 23, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/calculating-nonces-that-result-in-zero-padded-sha256-hashes/">Calculating Nonces That Result In Zero-Padded SHA256 Hashes</a></h2>
+<div class="text note-body clamped">
+<p><a href="https://travis-ci.org/akaalias/blockchain-toy"><img src="https://travis-ci.org/akaalias/blockchain-toy.svg?branch=master" alt="Build Status" loading="lazy"></a></p>
+<p><a href="https://github.com/akaalias/blockchain-toy">Full Github Repo here</a></p>
+<p>Yesterday I watched <a href="https://github.com/anders94/blockchain-demo">Anders Brownworth’s awesome Blockchain demo</a> and got inspired to follow along in Clojure.</p>
+<p>I <em>had</em> to play around with implementing a toy (read: unoptimized!) algorithm to “mine” for nonces that, when added to the hashing input, produces n zeros at the beginning of the hash:</p>
+<p>I came up with <code>make-nonce-for-zeros-finder</code>, a function which takes the numbers of zeros you want to have at the beginning and a maximum search-depth and returns a function that will calculate the right nonce for your inputs.</p>
+<p>What I personally enjoyed about this little exercise was to express an iterative process in a simple recursive function. And to make a function-maker once I wanted to play around with different types of hashes/nonces I wanted to find.</p>
+<pre><code class="language-clojure">(with-test
+  (defn make-nonce-for-zeros-finder [z-count]
+    (fn
+      ([num data]
+       ((make-nonce-for-zeros-finder z-count) num data 0))
+      ([num data nonce]
+       (cond (= (generate-zeros-string z-count) (subs (generate-hash num data nonce) 0 z-count)) nonce
+             :else (recur num data (inc nonce))))))
+
+  (is (= ((make-nonce-for-zeros-finder 1) nil nil) 39))
+  (is (= ((make-nonce-for-zeros-finder 1) 1 nil) 25))
+  (is (= ((make-nonce-for-zeros-finder 1) 1 1) 11))
+  (is (= ((make-nonce-for-zeros-finder 1) &quot;foo&quot; &quot;bar&quot; 0) 20))
+  (is (= ((make-nonce-for-zeros-finder 2) nil nil) 286))
+  (is (= ((make-nonce-for-zeros-finder 4) nil nil) 88484))
+  (is (= ((make-nonce-for-zeros-finder 4) 1 1) 64840))
+  (is (= ((make-nonce-for-zeros-finder 4) &quot;foo&quot; &quot;bar&quot;) 42515)))
+</code></pre>
+<p>With it, I can quickly create finders for different lengths of zero paddings:</p>
+<pre><code class="language-clojure">(def find-nonce-for-one-zero-padded-hash
+  (make-nonce-for-zeros-finder 1))
+
+(def find-nonce-for-two-zeros-padded-hash
+  (make-nonce-for-zeros-finder 2))
+
+(def find-nonce-for-three-zeros-padded-hash
+  (make-nonce-for-zeros-finder 3))
+
+(def find-nonce-for-four-zeros-padded-hash
+  (make-nonce-for-zeros-finder 4))
+
+(def find-nonce-for-five-zeros-padded-hash
+  (make-nonce-for-zeros-finder 5))
+
+(def find-nonce-for-six-zeros-padded-hash
+  (make-nonce-for-zeros-finder 6))
+
+;; and so on...
+
+</code></pre>
+<p>With these guys set up, we can now calculate the nonce for hashes with 1, 2, 3, 4 and 5 zeros padded. Let’s see how that looks:</p>
+<pre><code class="language-clojure">(find-nonce-for-one-zero-padded-hash &quot;foo&quot; &quot;bar&quot;)
+;; =&gt; 20
+;; takes less than a millisecond
+
+;; we can verify that the hash has one zero at the beginning:
+(generate-hash &quot;foo&quot; &quot;bar&quot; 20)
+;; =&gt; &quot;0fdc57809f5917eba08907d2805e43ce83f4c933a090b4a2b2549923a35e43d7&quot;
+
+(find-nonce-for-two-zeros-padded-hash &quot;foo&quot; &quot;bar&quot;)
+;; =&gt; 102
+;; takes less than a millisecond
+
+;; we can verify that the hash has two zeros at the beginning:
+(generate-hash &quot;foo&quot; &quot;bar&quot; 102)
+;; =&gt; &quot;006668bba91b7e2d5b5357b56600784edb77a72ecf86dc09d515853a841485f6&quot;
+
+(find-nonce-for-three-zeros-padded-hash &quot;foo&quot; &quot;bar&quot;)
+;; =&gt; 4663
+;; takes less than a millisecond
+
+;; we can verify that the hash has three zeros at the beginning:
+(generate-hash &quot;foo&quot; &quot;bar&quot; 4663)
+;; =&gt; &quot;0005d9cd6c13fe6bf56e169fd2a7008003fc3a4c6539f8a1cf7d82975d00210e&quot;
+
+</code></pre>
+<p>And that’s really all there is to it. Once you cross 6 padded zeros, you’ll notice an increase in time it takes to compute.</p>
+<h2>How to test</h2>
+<p>I’ve been a huge fan of the <code>with-test</code> macro. Because of that, you’ll find all test-coverage in core.clj instead of a separate “_test.clj” file.</p>
+<p>To run all tests, use <code>lein test</code></p>
+<h2>Related</h2>
+<ul>
+<li><a class="wikilink" href="/notes/thinking-and-sleeping-better-with-clojure/">Thinking And Sleeping Better With Clojure</a></li>
+</ul>
+</div>
+<div class="more"><a href="/notes/calculating-nonces-that-result-in-zero-padded-sha256-hashes/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/calculating-nonces-that-result-in-zero-padded-sha256-hashes/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-the-little-schemer-in-clojure-recap-chapter-6">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/the-little-schemer-in-clojure-recap-chapter-6/"><time datetime="2017-05-10T22:00:00Z">Thursday, May 11, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/the-little-schemer-in-clojure-recap-chapter-6/">The Little Schemer in Clojure – Recap Chapter 6</a></h2>
+<div class="text note-body clamped">
+<p><strong>Shadows</strong></p>
+<p>Using helper functions increases readability and helps abstract away representations.</p>
+<p>In particular, the example is a simple calculating function <code>value</code> such as <code>(value '(1 + (7 + 11)) ;; =&gt; 19</code></p>
+<p>We can implement this with standard procedures and recursion:</p>
+<pre><code class="language-clojure">(with-test
+  (def value
+    (fn [u] 
+      (cond (atom? u) u
+            (eq? (car (cdr u)) '+) (+ (value (car u))
+                                          (value (car (cdr (cdr u)))))
+            (eq? (car (cdr u)) '*) (- (value (car u))
+                                           (value (car (cdr (cdr u)))))
+            :else (int (java.lang.Math/pow (value (car u))
+                                           (value (car (cdr (cdr u)))))))))
+
+  (is (= (value 13) 13))
+  (is (= (value '(1 + 3)) 4))
+  (is (= (value '(1 + (3 pow 4))) 82)))
+</code></pre>
+<p>Now, you can already see a lot of visual noise. There is a <em>lot</em> of <code>car</code>-ing and <code>cdr</code>-ing about. If you squint your eyes a little, you’ll also notice that they all look similar. in fact, there is a lot of repetition in this function:</p>
+<p>We see this pattern three times and each it’s along the lines of:</p>
+<pre><code class="language-clojure">((eq? (car (cdr u)) 'OPERATOR) (OPERATOR (value (car u)) (value (car (cdr (cdr u))))))
+</code></pre>
+<p>Since we know that our “language” right now is infix arithmetic expressions such as</p>
+<p><code>(1 + 2)</code> and <code>(1 + (4 * 999))</code></p>
+<p>…we can extract helper functions that get the <code>operator</code>, the <code>first sub expression - 1</code> and the <code>second sub expression - 2</code> like so:</p>
+<pre><code class="language-clojure">(with-test
+  (def operator
+    (fn [aexp]
+      (car (cdr aexp))))
+
+  (is (= (operator '()) nil))
+  (is (= (operator '(1)) nil))
+  (is (= (operator '(1 + )) '+))
+  (is (= (operator '(1 + 2)) '+)))
+
+(with-test
+  (def first-sub-exp
+    (fn [aexp]
+      (car aexp)))
+
+  (is (= (first-sub-exp '()) nil))
+  (is (= (first-sub-exp '(1)) 1))
+  (is (= (first-sub-exp '(1 + 2)) 1))
+  (is (= (first-sub-exp '(2 + 1)) 2)))
+
+(with-test
+  (def second-sub-exp
+    (fn [aexp] (car (cdr (cdr aexp)))))
+
+  (is (= (second-sub-exp '()) nil))
+  (is (= (second-sub-exp '(1)) nil))
+  (is (= (second-sub-exp '(1 +)) nil))
+  (is (= (second-sub-exp '(1 + 2)) 2))
+  (is (= (second-sub-exp '(1 + 3)) 3)))
+</code></pre>
+<p>And then, since we have test-coverage already, refactor our <code>value</code> function to be…</p>
+<pre><code class="language-clojure">(with-test
+  (def value
+    (fn [u] 
+      (cond (atom? u) u
+            (eq? (operator u) '+) (+ (value (first-sub-exp u))
+                                          (value (second-sub-exp u)))
+            (eq? (operator u) '*) (- (value (first-sub-exp u))
+                                           (value (second-sub-exp u)))
+            :else (int (java.lang.Math/pow (value (first-sub-exp u))
+                                           (value (second-sub-exp u)))))))
+
+  (is (= (value 13) 13))
+  (is (= (value '(1 + 3)) 4))
+  (is (= (value '(1 + (3 pow 4))) 82)))
+</code></pre>
+<p>Dandy. The new help functions help read this much better.</p>
+<h2>Changing Your Mind</h2>
+<p>Now, say, you wake up today and would like to change your newly-born arithmetic language to be written in prefix notation, such as <code>(+ 1 2)</code>. In a way, I want to say:</p>
+<blockquote>
+<p>I’ve changed my mind. Now, I want have <code>(+ 1 2)</code> express the common arithmetic expression that evaluates to <code>4</code>.</p>
+</blockquote>
+<p>The changes needed to make this happen are now trivial since we have used help functions to hide the representation of <code>operator</code>, <code>first sub expression</code> and <code>second sub expression</code>.</p>
+<p>Simply changing the helper functions as follows implements the prefix notation without having to change our <code>value</code> function.</p>
+<p>You have to adjust your tests accordingly, of course, and, in a way, doing so is as much as saying</p>
+<blockquote>
+<p>“I want to change this and it should work as follows…”</p>
+</blockquote>
+<pre><code class="language-clojure">(with-test
+  (def operator
+    (fn [aexp]
+      (car aexp)))
+
+  (is (= (operator '()) nil))
+  (is (= (operator '(+)) '+))
+  (is (= (operator '(+ 1)) '+)))
+
+(with-test
+  (def first-sub-exp
+    (fn [aexp]
+      (car (cdr aexp))))
+
+  (is (= (first-sub-exp '()) nil))
+  (is (= (first-sub-exp '(+)) nil))
+  (is (= (first-sub-exp '(+ 1)) 1))
+  (is (= (first-sub-exp '(+ 1 2)) 1)))
+
+(with-test
+  (def second-sub-exp
+    (fn [aexp]
+      (car (cdr (cdr aexp)))))
+
+  (is (= (second-sub-exp '()) nil))
+  (is (= (second-sub-exp '(+)) nil))
+  (is (= (second-sub-exp '(+ 1)) nil))
+  (is (= (second-sub-exp '(+ 1 2)) 2))
+  (is (= (second-sub-exp '(+ 1 2 3)) 2)))
+
+(with-test
+  (def value-prefix
+    (fn [nexp]
+      (cond (atom? nexp) nexp
+            (eq? (operator nexp) '+) (+ (value-prefix (first-sub-exp nexp))
+                                         (value-prefix (second-sub-exp nexp)))
+            (eq? (operator nexp) '*) (* (value-prefix (first-sub-exp nexp))
+                                        (value-prefix (second-sub-exp nexp)))
+            :else (int (java.lang.Math/pow (value-prefix (first-sub-exp nexp))
+                                           (value-prefix (second-sub-exp nexp)))))))
+
+  (is (= (value-prefix 1) 1))
+  (is (= (value-prefix '(+ 1 3)) 4))
+  (is (= (value-prefix '(+ 1 (* 2 2))) 5))
+  (is (= (value-prefix '(+ 1 (pow 3 4))) 82)))
+</code></pre>
+<p>This is nice. We have changed <code>value</code>s language by changing the helper functions without changing its own structure.</p>
+<p>This way, we are able to demonstrate that we can represent the arithmetic expression <strong>1 + 1</strong> in several ways:</p>
+<ul>
+<li><code>(+ 1 1)</code> to make it feel lispy</li>
+<li><code>(1 + 1)</code> to make it feel ‘normal’ and</li>
+<li><code>(1 1 +)</code> if we wanted to accommodate friends that read from right to left more naturally</li>
+</ul>
+<p>After all, they <em>mean</em> the same thing but in different ways.</p>
+<h2>Parental Controls – Braces as Numbers</h2>
+<p>Now, another example: Let’s say we wanted to <em>represent</em> numbers differently but wanted, as reasonable human beings, to maintain the idea of plus, minus, multiplication and division.</p>
+<p>So, instead of using the numeral…</p>
+<ul>
+<li><strong>0</strong>, I would like to use <code>()</code> (a list of zero items)</li>
+<li><strong>1</strong>, I would like to use <code>(())</code> (a list of one items)</li>
+<li><strong>2</strong>, I would like to use <code>(() ())</code> (a list of two items)</li>
+<li><strong>3</strong>, I would like to use <code>(() () ())</code> (a list of three items)</li>
+<li>and so on…</li>
+</ul>
+<p>In terms of API, I would like then to be able to write <code>1 + 1</code> as follows:</p>
+<pre><code class="language-clojure">(+ '( () ) '( () ))
+;; =&gt; 2
+</code></pre>
+<p>Clearly, the idea of addition or subtraction doesn’t change just because I’ve changed how I represent my numbers, right?</p>
+<p>Our function to represent the operator <code>+</code> was</p>
+<pre><code class="language-clojure">  (def + (fn [n m] 
+                (cond (zero? m) n
+                      :else (add1 (+ n (sub1 m))))))
+</code></pre>
+<p>To make our dream of (fairly unreadable) parenthesis number crunching real, all we have to do is rewrite our helper functions <code>zero?</code>, <code>add1</code> and <code>sub1</code> and we’re off to the races:</p>
+<pre><code class="language-clojure">(with-test
+  (def zero? 
+    (fn [n] (null? n)))
+
+  (is (= (zero? '()) true))
+  (is (= (zero? '(())) false)))
+
+(with-test
+  (def add1
+    (fn [n]
+      (cons '() n)))
+  (is (= (add1 '()) '(())))
+  (is (= (add1 '(())) '(() ())))
+  (is (= (add1 '(() ())) '(() () ()))))
+
+(with-test
+  (def sub1
+    (fn [n] (cdr n)))
+
+  (is (= (sub1 '()) '()))
+  (is (= (sub1 '(())) '()))
+  (is (= (sub1 '(() ())) '(()))))
+
+(with-test
+  (def + (fn [n m] 
+            (cond (zero? m) n
+                  :else (add1 (+ n (sub1 m))))))
+
+  (is (= (+ '() '()) '()))
+  (is (= (+ '(()) '())) '(()))
+  (is (= (+ '(() ()) '(())) '(() () ()))))
+</code></pre>
+<p>Anyways, that’s what I’ve taken away from the chapter.</p>
+</div>
+<div class="more"><a href="/notes/the-little-schemer-in-clojure-recap-chapter-6/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/the-little-schemer-in-clojure-recap-chapter-6/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-my-journey-into-deep-work-retrospective-week-16">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/my-journey-into-deep-work-retrospective-week-16/"><time datetime="2017-05-08T22:00:00Z">Tuesday, May 9, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/my-journey-into-deep-work-retrospective-week-16/">My Journey Into Deep Work – Retrospective Week 16</a></h2>
+<div class="text note-body clamped">
+<p>I managed to work deeply for 9.5 hours. I also traveled over the weekend, so my week was a bit shot.</p>
+<p>Also, I have decided to extend my retros to look at my overall life not just deep work. Since I am independent right now, I want to make sure I maximize my time spent and minimize distractions. I figured that “Life Retro” combined with action items to improve myself every week is a good idea.</p>
+<h2>What went well</h2>
+<ul>
+<li>Using my Psycho-Cybernetics Imagineering script</li>
+<li>It was easy to get into work-flow</li>
+<li>With everything considered, 9.5 hours is still great!</li>
+<li>Traveled to Mallorca to see my parents :)</li>
+<li>Had good insight into my “stop-and-go” way of working</li>
+<li>Had a good mentoring session with my friend Philip on Friday</li>
+<li>Overall, I have a more positive outlook on my life than last week</li>
+<li>Inspired by reading “Give and Take” [1]</li>
+<li>Inspired by “Amateurs vs. Pros” [2]</li>
+<li>Got up most days before 9am</li>
+<li>Getting back into a daily Yoga and Meditation routine</li>
+<li>I fixed my vaporizer myself</li>
+<li>Feeling less distracted</li>
+<li>Got to hang out with Nina for an afternoon :)</li>
+<li>Went out to a cool bar on Friday with friends</li>
+<li>Made bubbles again</li>
+<li>Cooked delicious food with my father</li>
+</ul>
+<h2>What went okay</h2>
+<ul>
+<li>I didn’t follow up on my Whiteboard experiment</li>
+<li>I haven’t followed up on the Meetup idea I had</li>
+<li>There was a lot of organizational stuff this week</li>
+<li>Waiting for my accountant on paperwork</li>
+<li>The dating-pool in Berlin is rough. Didn’t do well to my self-image</li>
+<li>Didn’t hear back from someone I needed information from</li>
+</ul>
+<h2>What went bad</h2>
+<ul>
+<li>I still don’t have one specific idea/topic that I want to deep-dive into. Instead I jump around from idea to idea.</li>
+<li>Jumping between tasks and ideas is exhausting.</li>
+</ul>
+<h2>Action Items</h2>
+<ul>
+<li>Choose 1 main point of focus for coming week</li>
+<li>Buy a yoga mat while in Mallorca to continue practice there</li>
+<li>Create a visible backlog of tasks</li>
+</ul>
+<p>[1] https://www.amazon.com/dp/B00AFPTSI0/ref=dp-kindle-redirect?_encoding=UTF8&amp;btkr=1 [2] https://medium.com/the-mission/the-7-differences-between-professionals-and-amateurs-f8efc4840861</p>
+</div>
+<div class="more"><a href="/notes/my-journey-into-deep-work-retrospective-week-16/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/my-journey-into-deep-work-retrospective-week-16/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-my-journey-into-deep-work-retrospective-week-17">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/my-journey-into-deep-work-retrospective-week-17/"><time datetime="2017-05-08T22:00:00Z">Tuesday, May 9, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/my-journey-into-deep-work-retrospective-week-17/">My Journey Into Deep Work – Retrospective Week 17</a></h2>
+<div class="text note-body clamped">
+<p>I spent this week in Mallorca with my parents. Stil I got to take time to sit down and get 13 (!) hours of deep work done.</p>
+<p>Here’s my recap:</p>
+<h2>What went well</h2>
+<ul>
+<li>Still very inspired by “<a href="https://medium.com/the-mission/the-7-differences-between-professionals-and-amateurs-f8efc4840861">Amateurs vs. Pros</a>”</li>
+<li>Feel like I’ve made good progress</li>
+<li>1 Focus for the week: Work through “<a href="https://mitpress.mit.edu/books/little-schemer">The Little Schemer</a>” in Clojure. Finished Chapter 1 - 4.</li>
+<li>Wrote and published 4 blogposts</li>
+<li>Daily Yoga and especially Pranayama exercises</li>
+<li>Had an idea for a meditation video</li>
+<li>Very happy with my Psycho-Cybernetic Imagineering script rehearsals</li>
+<li>Cooking good food with the family</li>
+<li>Have a fireplace at home</li>
+<li>Have a minimal but functional work-space set up</li>
+</ul>
+<h2>What went okay</h2>
+<ul>
+<li>Didn’t spend a lot of time outside, especially when there’s the mediterranean just across from me.</li>
+<li>“Give and Take” is getting harder to read</li>
+<li>Access to internet only sometimes</li>
+<li>Still jumping a lot from idea to idea</li>
+<li>Didn’t celebrate/appreciate/acknowledge my progress</li>
+<li>Didn’t edit the blogposts</li>
+<li>Lost interest in RedditGrowth while it still could become something valuable</li>
+</ul>
+<h2>What went bad</h2>
+<ul>
+<li>Have procrastinated on writing the meet up summary</li>
+<li>Too reserved talking about my feelings with my parents</li>
+</ul>
+<h2>Action items</h2>
+<ul>
+<li>Take a daily walk</li>
+<li>Celebrate successes and progress more often</li>
+<li>Edit posts before publishing</li>
+<li>Make a decision if I want to continue reading “Give and Take”</li>
+</ul>
+</div>
+<div class="more"><a href="/notes/my-journey-into-deep-work-retrospective-week-17/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/my-journey-into-deep-work-retrospective-week-17/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-set-your-priorities-straight-in-2-minutes-without-thinking-hard">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/set-your-priorities-straight-in-2-minutes-without-thinking-hard/"><time datetime="2017-05-07T22:00:00Z">Monday, May 8, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/set-your-priorities-straight-in-2-minutes-without-thinking-hard/">Set Your Priorities Straight In 2 Minutes Without Thinking Hard</a></h2>
+<div class="text note-body clamped">
+<blockquote>
+<p>“I have so much to do but I’m not sure which of the things I should do first.”</p>
+</blockquote>
+<p>If you, like me, have struggled with figuring out what should be my No.1priority, then I have good news.</p>
+<p>Prioritizing is hard, especially when your items can be <em>important</em> and/or <em>urgent</em>. The app that I just released gives you the answer to:</p>
+<p><strong>What’s the most important and urgent thing I should do next? (The answer might surprise you!)</strong></p>
+<p>I would like to have someone help me with this and say to me:</p>
+<blockquote>
+<p><strong>Your most important and urgent next step is… Make a balance sheet</strong></p>
+</blockquote>
+<p>Now, <strong><a href="https://prioio.herokuapp.com">I just released a simple web-app</a></strong> that helps you (and me) prioritize a list (a todo-list, a list of chores, whatever you want) by two measures:</p>
+<p>Importance and Urgency. Some things are important, some are urgent. And some are both. Make sure you tackle the one that’s both first.</p>
+<p>The app guides you through comparing each item with each other based on both measures and comes up with the math and sorting automatically.</p>
+<p>Here’s the result for the tasks I had on my list today:</p>
+<p><img src="Attachments/PrioDo-5-1024x641.png" alt="" loading="lazy"></p>
+<p>Clearly, I need to create my balance sheet. After that I can do the other stuff.</p>
+<p>The process is simple.</p>
+<p>Go to the homepage and click the <strong>start button</strong></p>
+<p><img src="Attachments/PrioDo-1-1024x568.png" alt="" loading="lazy"></p>
+<p>Then, insert your list of tasks like so:</p>
+<p><img src="Attachments/PrioDo-2-1024x568.png" alt="" loading="lazy"></p>
+<p>Then, the app will guide you through comparing each item with each other. This is called a binary sort and will make sure that what item is at the top is really the most <em>important</em> and <em>urgent</em> one.</p>
+<p><img src="Attachments/PrioDo-3-1024x537.png" alt="" loading="lazy"></p>
+<p><img src="Attachments/PrioDo-4-1024x537.png" alt="" loading="lazy"></p>
+<p>Finally, you’ll see your result.</p>
+<p>Now, what are you waiting for? Get your priorities straight in a few short minutes and tackle your next, most important and urgent task right away.</p>
+<p><strong>Click here: <a href="https://prioio.herokuapp.com">https://prioio.herokuapp.com</a></strong></p>
+<p>Have fun!</p>
+<p>Alexis</p>
+<p>*</p>
+<p>PS: You can check out the source at <a href="https://github.com/akaalias/prio">https://github.com/akaalias/prio</a> in case you want to poke around a bit.</p>
+<p>PPS: Let me know if you, too, have found a surprising result of your top priority after sorting.</p>
+</div>
+<div class="more"><a href="/notes/set-your-priorities-straight-in-2-minutes-without-thinking-hard/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/set-your-priorities-straight-in-2-minutes-without-thinking-hard/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-thinking-and-sleeping-better-with-clojure">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/thinking-and-sleeping-better-with-clojure/"><time datetime="2017-05-07T22:00:00Z">Monday, May 8, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/thinking-and-sleeping-better-with-clojure/">Thinking and Sleeping Better With Clojure</a></h2>
+<div class="text note-body clamped">
+<p>To prioritize a list of todo-items, as in my <a href="https://prioio.herokuapp.com">Prioritization-app</a> I recently launched, I needed to get a list of the unique combinations for the user to choose from:</p>
+<p>It goes a little bit like this:</p>
+<blockquote>
+<p>Which is more important: <strong>A</strong> or <strong>B</strong>? Which is more important: <strong>A</strong> or <strong>C</strong>? Which is more important: <strong>B</strong> or <strong>C</strong>?</p>
+</blockquote>
+<p>I wrote a version in Ruby for the app and then a sketch in Clojure to compare readability and expressiveness.</p>
+<p>In my opinion, the Clojure version is much more readable and was far easier to reason about.</p>
+<p>Probably because I’m not good to solve problems in Ruby but there might be more than meets the eye here.</p>
+<h2>Creating Comparisons</h2>
+<p>Let’s say I have a todo-list of <code>A, B, C and D</code>.</p>
+<p>The list of comparisons I want is <code>A ↔ B, A ↔ C, A ↔ D, B ↔ C, B ↔ D and C ↔ D</code> to use later in my app.</p>
+<p>From the matrix below, you can see, I want only the <em>unique</em> comparisons (<code>A ↔ B</code> and <code>B ↔ A</code> are interchangeable for my purposes) and skip dupes that compare an element with itself (<code>A ↔ A, B ↔ B, C ↔ C, D ↔ D</code>)</p>
+<p>To demonstrate, I only want the top-right triangle of comparisons:</p>
+<table>
+<thead><tr><th>×</th><th>A</th><th>B</th><th>C</th><th>D</th></tr></thead>
+<tbody>
+<tr><td>A</td><td><em>skip (dupe)</em></td><td><strong>A ↔ B</strong></td><td><strong>A ↔ C</strong></td><td><strong>A ↔ D</strong></td></tr>
+<tr><td>B</td><td><em>skip</em></td><td><em>skip (dupe)</em></td><td><strong>B ↔ C</strong></td><td><strong>B ↔ D</strong></td></tr>
+<tr><td>C</td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip (dupe)</em></td><td><strong>C ↔ D</strong></td></tr>
+<tr><td>D</td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip (dupe)</em></td></tr>
+</tbody>
+</table>
+<h3>Thinking, Testing and Implementing in Ruby</h3>
+<p>Now, since I started the app in Ruby, I translated the behavior above as follows:</p>
+<pre><code class="language-ruby">describe '.unique_combinations' do
+    context 'input list is empty' do
+      it 'returns an empty list' do
+        result = Combinator.unique_combinations([])
+        expect(result).to eq([])
+      end
+    end
+
+    context 'input list only has one element' do
+      it 'returns an empty list' do
+        result = Combinator.unique_combinations([1])
+        expect(result).to eq([])
+      end
+    end
+
+    context 'input list only has two elements' do
+      it 'returns a list with combination a' do
+        result = Combinator.unique_combinations([1, 2])
+        expect(result).to eq(&lt;span class=&quot;wikilink unresolved&quot;&gt;1,2&lt;/span&gt;)
+      end
+
+      it 'returns a list with combination b' do
+        result = Combinator.unique_combinations([:foo, :bar])
+        expect(result).to eq(&lt;span class=&quot;wikilink unresolved&quot;&gt;:foo, :bar&lt;/span&gt;)
+      end
+    end
+
+    context 'input list only has three elements' do
+      it 'returns a list with 3 combinations' do
+        result = Combinator.unique_combinations([1, 2, 3])
+        expect(result).to eq([[1, 2], [1, 3], [2, 3]])
+      end
+    end
+
+    context 'input list only has four elements' do
+      it 'returns a list with 6 combinations' do
+        result = Combinator.unique_combinations([1, 2, 3, 4])
+        expect(result).to eq([[1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]])
+      end
+    end
+  End
+end
+</code></pre>
+<p>…and wrote, after several failed attempts and one sleepless night, the following, working but not very elegant solution. I felt weird about it, because even looking at it now, I can’t fully explain it well. It works, it has reasonable test-coverage. But I’m not proud of it.</p>
+<pre><code class="language-ruby">def self.unique_combinations(ids)
+    return [] if ids.length &lt; 2
+
+    all_combinations = []
+
+    for i1 in ids
+      for i2 in ids
+        if i1 != i2
+          contains = false
+          for c in all_combinations
+            if c[1] &lt;mark&gt; i1 and c[0] &lt;/mark&gt; i2
+              contains = true
+            end
+          end
+          unless contains
+            all_combinations &lt;&lt; [i1, i2]
+          end
+        end
+      end
+    end
+
+    return all_combinations
+  end
+</code></pre>
+<p>Okay, fine I thought. How would I solve this issue in Lisp?</p>
+<h3>Thinking, Testing and Implementing in Clojure</h3>
+<p>I don’t know why but thinking in terms of lists and recursion instead of iteration made it simpler for me.</p>
+<p>The top-level function works as follows:</p>
+<pre><code class="language-clojure">(final-combinations '(A B C D)) 
+;; =&gt; '((A B) (A C) (A D) (B C) (B D) (C D))
+</code></pre>
+<p>Yup, that’s the list I want. Thinking about it I had an idea to break the problem further down:</p>
+<p>The complete list of unique comparisons, the one I want, is…</p>
+<ol>
+<li>the <strong>union</strong> of each row of one element combined with all the others. That’s <code>A</code> combined with <code>B, C and D</code></li>
+<li>Each row has an increasing <strong>offset</strong> from the left that starts at 0 for row 1 and increases by 1 for each following row.</li>
+<li>I have to subtract the <strong>dupes</strong> such as <code>A ↔ A</code> because I don’t need them.</li>
+</ol>
+<p>For illustration purposes, here is the table again:</p>
+<table>
+<thead><tr><th>×</th><th>A</th><th>B</th><th>C</th><th>D</th></tr></thead>
+<tbody>
+<tr><td>A</td><td><em>skip (dupe)</em></td><td><strong>A ↔ B</strong></td><td><strong>A ↔ C</strong></td><td><strong>A ↔ D</strong></td></tr>
+<tr><td>B</td><td><em>skip</em></td><td><em>skip (dupe)</em></td><td><strong>B ↔ C</strong></td><td><strong>B ↔ D</strong></td></tr>
+<tr><td>C</td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip (dupe)</em></td><td><strong>C ↔ D</strong></td></tr>
+<tr><td>D</td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip (dupe)</em></td></tr>
+</tbody>
+</table>
+<p>Given the above 3 steps, I basically just wrote them out as functions.</p>
+<p>I derived the first function, <code>combine</code> which takes <code>x</code> and <code>l</code> and returns a list of all possible combinations, including the ones we’ll later skip.</p>
+<pre><code class="language-clojure">(with-test 
+  (defn combine 
+    ([x l] 
+     (combine x l '()))
+    ([x l acc]
+     (cond (empty? l) (reverse acc)
+           :else (recur x (rest l) (conj acc (list x (first l)))) )))
+
+  (is (= (combine 1 '()) '()))
+  (is (= (combine 1 '(1)) '((1 1))))
+  (is (= (combine 1 '(2)) '((1 2))))
+  (is (= (combine 1 '(1 2)) '((1 1) (1 2))))
+  (is (= (combine 1 '(1 2 3)) '((1 1) (1 2) (1 3)))))
+</code></pre>
+<p>Then, I use <code>combine</code> to create basically the table above but with nothing yet removed.</p>
+<pre><code class="language-clojure">(with-test
+  (defn combine-lists 
+    ([l1 l2] 
+     (combine-lists l1 l2 '()))
+    ([l1 l2 acc]
+     (cond (empty? l1) (reverse acc)
+           :else (recur (rest l1) l2 (cons (combine (first l1) l2) acc)) )))
+
+  (is (= (combine-lists '() '()) '()))
+  (is (= (combine-lists '(1) '(1)) '(((1 1)))))
+  (is (= (combine-lists '(1 2) '(1 2)) '(((1 1) (1 2)) 
+                                         ((2 1) (2 2))))))
+</code></pre>
+<p>Then I introduce the idea of an offset. To only take those elements in a list that are after a certain offset.</p>
+<pre><code class="language-clojure">(with-test
+  (defn take-rest
+    ([offset l]
+     (cond (= offset 0) l
+           :else (recur (dec offset) (rest l)))))
+
+  (is (= (take-rest 0 '()) '()))
+  (is (= (take-rest 1 '()) '()))
+  (is (= (take-rest 0 '(1)) '(1)))
+  (is (= (take-rest 0 '(1 2)) '(1 2)))
+  (is (= (take-rest 1 '(1 2)) '(2)))
+  (is (= (take-rest 1 '(1 2 3)) '(2 3)))
+  (is (= (take-rest 2 '(1 2 3)) '(3)))
+  (is (= (take-rest 2 '(1 2 3 4)) '(3 4))))
+</code></pre>
+<p>Now I can use <code>take-rest</code> and apply it to each row in my matrix…</p>
+<pre><code class="language-clojure">(defn unique-combinations 
+  ([offset ll] 
+   (unique-combinations offset ll '()))
+  ([offset ll acc]
+   (cond (empty? ll) (reverse acc)
+         :else (recur (inc offset) (rest ll) (cons (take-rest offset (first ll)) acc)))))
+</code></pre>
+<p>And finally remove the identity items such as <code>A ↔ A</code></p>
+<pre><code class="language-clojure">(with-test
+  (defn final-combinations 
+    [l]
+    (filter #((= (first %) (second %)))) (partition 2 (flatten (unique-combinations 1 (combine-lists l l)))))
+
+  (is (= (final-combinations '()) '()))
+  (is (= (final-combinations '(1)) '()))
+  (is (= (final-combinations '(1 2)) '((1 2))))
+  (is (= (final-combinations '(1 2 3)) '((1 2) (1 3) (2 3))))
+  (is (= (final-combinations '(1 2 3 4)) '((1 2) (1 3) (1 4) (2 3) (2 4) (3 4)))))
+</code></pre>
+<p>Granted, this code is not yet refactored and in total more lines than the Ruby version, but here is the rub:</p>
+<p>It took me <strong>20 minutes</strong> to think up and implement the solution in Clojure and 2 days including a sleepless night to do it in Ruby.</p>
+<p>I don’t know what that means but I’ll probably use a Lisp like Clojure for problems like this in the future. Just to make sure I get some sleep.</p>
+</div>
+<div class="more"><a href="/notes/thinking-and-sleeping-better-with-clojure/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/thinking-and-sleeping-better-with-clojure/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-the-little-schemer-in-clojure-recap-chapter-5">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/the-little-schemer-in-clojure-recap-chapter-5/"><time datetime="2017-05-04T22:00:00Z">Friday, May 5, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/the-little-schemer-in-clojure-recap-chapter-5/">The Little Schemer in Clojure – Recap Chapter 5</a></h2>
+<div class="text note-body clamped">
+<p><strong>Oh My Gawd, It’s Full Of Stars</strong></p>
+<h2>Dealing With Nested Lists</h2>
+<p>Learned how to deal with nested lists by asking at least 3 questions:</p>
+<ul>
+<li>Is the list null? If so, return the empty element (an empty list if the value of the function is to be a list, or 0 if you’re evaluating to a number)</li>
+<li>Is the first element in the list an atom? – If so, operate on that atom and cons it onto the natural recursion of the function.</li>
+<li>Else, cons the natural recursion of the function of <code>car list</code> onto the natural recursion of the function of <code>cdr list</code></li>
+</ul>
+<p>You can see this pattern in action on <code>rember*</code> which removes any occurrence of <code>a</code> in <code>l</code> regardless of how deep <code>a</code>s are hidden in the nested list. (*, or star is added to the function name to denote that it’s recurring on both, <code>car</code> and <code>cdr</code>.)</p>
+<pre><code class="language-clojure">(with-test
+  (def rember* 
+    (fn [a l]
+      (cond (null? l) '()
+            (atom? (car l)) (cond (eq? (car l) a) (rember* a (cdr l))
+                                  :else (cons (car l)
+                                              (rember* a (cdr l))))
+            :else (cons (rember* a (car l))
+                        (rember* a (cdr l))))))
+
+  (is (= (rember* 'cup '()) '()))
+  (is (= (rember* 'cup '(coffee)) '(coffee)))
+  (is (= (rember* 'cup '(cup)) '()))
+  (is (= (rember* 'cup '(coffee cup)) '(coffee)))
+  (is (= (rember* 'cup '((cup))) '(())))
+  (is (= (rember* 'cup '(coffee (cup) and (another) cup)) '(coffee () and (another))))
+  (is (= (rember* 'sauce '(((tomato sauce)) ((bean) sauce) (and ((flying)) sauce))) '(((tomato)) ((bean)) (and ((flying)))))))
+</code></pre>
+<p>The same applies to <code>insertR and insertL*</code> which respectively return a new list with <code>new</code> inserted next to to <code>old</code> in <code>l</code>.</p>
+<p>The questions are again:</p>
+<ul>
+<li>null? – return an empty list that can be <code>cons</code>-ed onto from previous calls</li>
+<li>atom? – checks if <code>car l</code> is what we’re looking for and if so, adds a new element</li>
+<li>else – recurs on both <code>car l</code> and <code>cdr l</code></li>
+</ul>
+<pre><code class="language-clojure">(with-test
+  (def insertR*
+    (fn [new old l]
+      (cond (null? l) '()
+            (atom? (car l)) (cond (eq? (car l) old) (cons old 
+                                                          (cons new (insertR* new old 
+                                                                              (cdr l))))
+
+                                  :else (cons (car l) 
+                                              (insertR* new old 
+                                                        (cdr l))))
+            :else (cons (insertR* new old (car l))
+                        (insertR* new old (cdr l))))))
+
+  (is (= (insertR* 'new 'old '()) '()))
+  (is (= (insertR* 'new 'old '(old)) '(old new)))
+  (is (= (insertR* 'new 'old '((old))) '((old new))))
+  (is (= (insertR* 'new 'old '((these) old ((shoes old) perfume))) '((these) old new ((shoes old new) perfume)))))
+</code></pre>
+<pre><code class="language-clojure">(with-test
+  (def insertL*
+    (fn [new old l] 
+      (cond (null? l) '()
+            (atom? (car l)) (cond (eq? (car l) old) (cons new (cons old (insertL* new old (cdr l))))
+                                  :else (cons (car l) (insertL* new old (cdr l))))
+            :else (cons (insertL* new old (car l))
+                        (insertL* new old (cdr l))))))
+
+  (is (= (insertL* 'new 'old '()) '()))
+  (is (= (insertL* 'new 'old '(old)) '(new old)))
+  (is (= (insertL* 'new 'old '((old))) '((new old))))
+  (is (= (insertL* 'new 'old '((these) old ((shoes old) perfume))) '((these) new old ((shoes new old) perfume)))))
+</code></pre>
+<p>Then, the same pattern applies to <code>subst*</code> which substitutes <code>new</code> with <code>old</code> in <code>l</code></p>
+<pre><code class="language-clojure">(with-test 
+  (def subst*
+    (fn [new old l] 
+      (cond (null? l) '()
+            (atom? (car l)) (cond (eq? (car l) old) (cons new (subst* new old (cdr l)))
+                                  :else (cons (car l) (subst* new old (cdr l))))
+            :else (cons (subst* new old (car l))
+                        (subst* new old (cdr l))))))
+
+  (is (= (subst* 'orange 'banana '()) '()))
+  (is (= (subst* 'orange 'banana '(banana)) '(orange)))
+  (is (= (subst* 'orange 'banana '((banana))) '((orange))))
+  (is (= (subst* 'cup 'mug '((a mug) in the (((kitchen (mug)))))) '((a cup) in the (((kitchen (cup))))))))
+</code></pre>
+<p>Then, <code>member*</code> returns <code>true</code> if <code>a</code> can be found in <code>l</code>, otherwise it returns <code>false</code>:</p>
+<p>Note that instead of returning a list on <code>(null l)</code> it returns <code>false</code> which represents that the element couldn’t be found and we’ve reached the end where we can’t look no further.</p>
+<pre><code class="language-clojure">(with-test
+  (def member* 
+    (fn [a l] 
+      (cond (null? l) false
+            (atom? (car l)) (or (eq? (car l) a)
+                                (member* a (cdr l)))
+            :else (or (member* a (car l))
+                      (member* a (cdr l))))))
+
+  (is (= (member* 'foo '()) false))
+  (is (= (member* 'foo '(foo)) true))
+  (is (= (member* 'foo '(bar)) false))
+  (is (= (member* 'foo '((foo))) true))
+  (is (= (member* 'foo '((the quick) ((((brown (springy foo)) jumps over)) the dog))))))
+</code></pre>
+<h2>Traversing a Tree</h2>
+<p>A personal favorite of mine is <code>leftmost</code> which returns the left-most element in <code>l</code>. It’s a bit simpler than the functions before. It recurs <strong>only</strong> on <code>(car l)</code> unless it is an atom:</p>
+<pre><code class="language-clojure">(with-test
+  (def leftmost 
+    (fn [l]
+      (cond (null? l) nil
+            (atom? (car l)) (car l)
+            :else (leftmost (car l)))))
+
+  (is (= (leftmost '()) nil))
+  (is (= (leftmost '(apple)) 'apple))
+  (is (= (leftmost '((apple))) 'apple))
+  (is (= (leftmost '(((hot cider) with (green) tea))) 'hot)))
+</code></pre>
+<h2>Testing equality</h2>
+<p>At the end of the chapter, the authors use recurring on a nested list to test for equality of any s-expression:</p>
+<pre><code class="language-clojure">(with-test
+  (def eqlist?
+    (fn [l1 l2] 
+      (cond (and (null? l1) (null? l2)) true
+            (or (null? l1) (null? l2)) false
+            :else (and (equal? (car l1) (car l2))
+                       (eqlist? (cdr l1) (cdr l2))))))
+
+  (is (= (eqlist? '() '()) true))
+  (is (= (eqlist? '() '(foot)) false))
+  (is (= (eqlist? '(foot) '()) false))
+  (is (= (eqlist? '(foot) '(foot)) true))
+  (is (= (eqlist? '(foot rub) '(foot sub)) false))
+  (is (= (eqlist? '(strawberry ice cream) '(strawberry ice cream)) true))
+  (is (= (eqlist? '(strawberry ice cream) '(strawberry cream ice)) false))
+  (is (= (eqlist? '((coffee) (cup)) '((coffee) (cup))) true)))
+
+(with-test
+  (def equal? 
+    (fn [s1 s2]
+      (cond (and (atom? s1) (atom? s2)) (equan? s1 s2)
+            (or (atom? s1) (atom? s2)) false
+            :else (eqlist? s1 s2))))
+
+  (is (= (equal? 'a 'a) true))
+  (is (= (equal? 'a 'b) false))
+  (is (= (equal? 'a '(a)) false))
+  (is (= (equal? '(a) 'a) false))
+  (is (= (equal? '(a) '(a)) true))
+  (is (= (equal? '(a) '(b)) false)))
+</code></pre>
+<p>I am starting to realize how great it is to have a set of tests right away with any function definition. Refactoring will be easy and give me confidence that everything still works. Pretty stoked!</p>
+</div>
+<div class="more"><a href="/notes/the-little-schemer-in-clojure-recap-chapter-5/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/the-little-schemer-in-clojure-recap-chapter-5/">Permalink</a></div>
+</article>
+</section>
+<nav class="pager"><a href="/feed/archive/2017/06/">‹ June 2017</a><a class="n" href="/feed/archive/">All months</a><a href="/feed/archive/2017/04/">April 2017 ›</a></nav>
+<aside class="months-nav">
+<h3><a href="/feed/archive/">Archive</a></h3>
+<div class="y">2026</div>
+<ul>
+<li><a href="/feed/archive/2026/09/">September</a> <span class="n">77</span></li>
+<li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
+<li><a href="/feed/archive/2026/07/">July</a> <span class="n">17</span></li>
+<li><a href="/feed/archive/2026/06/">June</a> <span class="n">29</span></li>
+<li><a href="/feed/archive/2026/05/">May</a> <span class="n">10</span></li>
+<li><a href="/feed/archive/2026/04/">April</a> <span class="n">30</span></li>
+<li><a href="/feed/archive/2026/03/">March</a> <span class="n">34</span></li>
+<li><a href="/feed/archive/2026/02/">February</a> <span class="n">57</span></li>
+<li><a href="/feed/archive/2026/01/">January</a> <span class="n">15</span></li>
+</ul>
+<div class="y">2025</div>
+<ul>
+<li><a href="/feed/archive/2025/12/">December</a> <span class="n">28</span></li>
+<li><a href="/feed/archive/2025/11/">November</a> <span class="n">124</span></li>
+<li><a href="/feed/archive/2025/10/">October</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2025/09/">September</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2025/08/">August</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2025/07/">July</a> <span class="n">23</span></li>
+<li><a href="/feed/archive/2025/06/">June</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2025/05/">May</a> <span class="n">18</span></li>
+<li><a href="/feed/archive/2025/04/">April</a> <span class="n">20</span></li>
+<li><a href="/feed/archive/2025/03/">March</a> <span class="n">22</span></li>
+<li><a href="/feed/archive/2025/02/">February</a> <span class="n">11</span></li>
+</ul>
+<div class="y">2024</div>
+<ul>
+<li><a href="/feed/archive/2024/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/11/">November</a> <span class="n">16</span></li>
+<li><a href="/feed/archive/2024/10/">October</a> <span class="n">12</span></li>
+<li><a href="/feed/archive/2024/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/05/">May</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/04/">April</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2023</div>
+<ul>
+<li><a href="/feed/archive/2023/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/10/">October</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/08/">August</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2023/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/06/">June</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/05/">May</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2023/04/">April</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2023/03/">March</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2022</div>
+<ul>
+<li><a href="/feed/archive/2022/10/">October</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2022/04/">April</a> <span class="n">2</span></li>
+</ul>
+<div class="y">2018</div>
+<ul>
+<li><a href="/feed/archive/2018/09/">September</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2018/08/">August</a> <span class="n">2</span></li>
+</ul>
+<div class="y">2017</div>
+<ul>
+<li><a href="/feed/archive/2017/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2017/06/">June</a> <span class="n">1</span></li>
+<li class="here"><a href="/feed/archive/2017/05/">May</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2017/04/">April</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2017/01/">January</a> <span class="n">2</span></li>
+</ul>
+<div class="y">2016</div>
+<ul>
+<li><a href="/feed/archive/2016/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2016/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2015</div>
+<ul>
+<li><a href="/feed/archive/2015/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2015/05/">May</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2014</div>
+<ul>
+<li><a href="/feed/archive/2014/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/11/">November</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2014/09/">September</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2014/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2014/05/">May</a> <span class="n">12</span></li>
+<li><a href="/feed/archive/2014/04/">April</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2014/03/">March</a> <span class="n">9</span></li>
+</ul>
+</aside>
+</div>
+
+</body>
+</html>
