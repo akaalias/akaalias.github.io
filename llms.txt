@@ -6,13 +6,29 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 
 ## Feed
 
-- [Feed](https://alexisrondeau.me/feed/): 719 posts, newest first, 25 per page
+- [Feed](https://alexisrondeau.me/feed/): 735 posts, newest first, 25 per page
 - [Archive](https://alexisrondeau.me/feed/archive/): the same posts by month
 - [Atom feed](https://alexisrondeau.me/feed/feed.xml): the latest 50 posts
 - [Data](https://alexisrondeau.me/feed/items.json): every item as JSON (source, id, date, text, media, links, permalink)
 
 ## Notes
 
+- [How To Discover What You Really Need the Most With the \"Needs Card Deck\"](https://alexisrondeau.me/notes/how-to-discover-what-you-really-need-the-most-with-the-needs-card-deck/): I totally forgot to mention this, but I made a card deck last year that has helped me explore and discover needs as par…
+- [Wednesday – 14.11.2018](https://alexisrondeau.me/notes/wednesday-14-11-2018/): Wednesday afternoon, at home, not crazy about being here but I think I’m dragging out the cold I got over a week ago, s…
+- [Do I have to decide between \"anything goes\" and a \"specific topic\" for my blog?](https://alexisrondeau.me/notes/do-i-have-to-decide-between-anything-goes-and-a-specific-topic-for-my-blog/): So, I’ve been pretty good at publishing at least one post each week for the past two months. I’m proud of having publis…
+- [How I’ve Rebuilt the Giraffe App with TDD and Speed In Mind](https://alexisrondeau.me/notes/how-i-ve-rebuilt-the-giraffe-app-with-tdd-and-speed-in-mind/): Background: As you may have seen, I built myself a goal-setting, planning and execution app that helps me to consistent…
+- [Happier Through Bright Light! My Winter S.A.D Well-Being Research – 1 Year of Light Therapy Prototypes](https://alexisrondeau.me/notes/happier-through-bright-light-my-winter-s-a-d-well-being-research-1-year-of-light/): Hey there, Alexis here!
+- [Risky Blind Spots – Getting Facebook Ads Delivered](https://alexisrondeau.me/notes/risky-blind-spots-getting-facebook-ads-delivered/): The Sales-Funnel Has Already Started
+- [A Sneak Peek – \"66 Proven Meeting Productivity Strategies\"](https://alexisrondeau.me/notes/a-sneak-peek-66-proven-meeting-productivity-strategies/): Ever been to one of those soul-crushing meetings?
+- [A Few More Books I Recommend](https://alexisrondeau.me/notes/a-few-more-books-i-recommend/): I’m not exactly sure why, but I read a lot of books this week.
+- [Back to Factory](https://alexisrondeau.me/notes/back-to-factory/): Today is my first day back at Factory Görlitzer Park, after I had "hidden out" at the local library close to my home fo…
+- [How I Have Grown My Morning Routine](https://alexisrondeau.me/notes/how-i-have-grown-my-morning-routine/): I’m starting to appreciate how much grounding a solid morning routine can give me. It’s been a labor of love for the pa…
+- [First, Give Them What They Want. Then, Give Them What They Need](https://alexisrondeau.me/notes/first-give-them-what-they-want-then-give-them-what-they-need/): Ouch.
+- [Giraffe App: Sorting Highest-Priority Tasks By Granularity](https://alexisrondeau.me/notes/giraffe-app-sorting-highest-priority-tasks-by-granularity/): ![](Attachments/6a73da2615bca156378ce238d3f20361.png)
+- [Using Color To Signal Task Complexity and the Need to Break It Down Further](https://alexisrondeau.me/notes/using-color-to-signal-task-complexity-and-the-need-to-break-it-down-further/): This didn’t fit anywhere else but I think it may be interesting to others watching how my app’s UI is evolving.
+- [\"Outliers\" by Malcom Gladwell](https://alexisrondeau.me/notes/outliers-by-malcom-gladwell/): Earlier this week I read Gladwell's "David & Goliath" which I enjoyed tremendously. So, I wondered:
+- [Understanding GaryVee and Julius Dein's Audience](https://alexisrondeau.me/notes/understanding-garyvee-and-julius-dein-s-audience/): The audience that GaryVee and Julius Dein share on Facebook and Instagram is... a mass-audience of 15M-20M active users…
+- [Experiment: Field-testing My \"Dream/Plan/Execute\" Application for Ease-of-Use and Productivity](https://alexisrondeau.me/notes/experiment-field-testing-my-dream-plan-execute-application-for-ease-of-use-and-p/): Theory: If I use my Dream/Plan/Execute MVP, THEN I’ll get more done than using Trello
 - [Book Recommendation: \"From Russia With Love\" by Ian Fleming](https://alexisrondeau.me/notes/book-recommendation-from-russia-with-love-by-ian-fleming/): HOLY SHIT. Oof.
 - [Productivity Experiment: My Dream/Plan/Execute Model in One App](https://alexisrondeau.me/notes/productivity-experiment-my-dream-plan-execute-model-in-one-app/): I’m a huge procrastinator. Unless I set myself a goal, make a plan and have a clear, small next step, I’ll just waste m…
 - [Currently Re-Reading: Malcom Gladwell's \"David & Goliath\"](https://alexisrondeau.me/notes/currently-re-reading-malcom-gladwell-s-david-goliath/): It’s funny how, sometimes you can simply ‘ask’ your subconscious to pick the right book for you by just ‘mindlessly’ br…
@@ -134,7 +150,9 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 - [October 2022](https://alexisrondeau.me/feed/archive/2022/10/): 1 posts
 - [July 2022](https://alexisrondeau.me/feed/archive/2022/07/): 3 posts
 - [April 2022](https://alexisrondeau.me/feed/archive/2022/04/): 2 posts
-- [September 2018](https://alexisrondeau.me/feed/archive/2018/09/): 7 posts
+- [November 2018](https://alexisrondeau.me/feed/archive/2018/11/): 4 posts
+- [October 2018](https://alexisrondeau.me/feed/archive/2018/10/): 5 posts
+- [September 2018](https://alexisrondeau.me/feed/archive/2018/09/): 14 posts
 - [August 2018](https://alexisrondeau.me/feed/archive/2018/08/): 2 posts
 - [December 2017](https://alexisrondeau.me/feed/archive/2017/12/): 1 posts
 - [November 2017](https://alexisrondeau.me/feed/archive/2017/11/): 2 posts
