@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hey all! I wanted to share a kind of new development process I’ve bee… — Alexis Rondeau</title>
+<meta name="description" content="Hey all! I wanted to share a kind of new development process I’ve been using lately — I call it &quot;Moonwalk.&quot; Basically it's: - Check out a spike branc…">
+<link rel="canonical" href="https://alexisrondeau.me/feed/t/1988551025565855824/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alexis Rondeau">
+<meta property="og:title" content="Hey all! I wanted to share a kind of new development process I’ve bee… — Alexis Rondeau">
+<meta property="og:description" content="Hey all! I wanted to share a kind of new development process I’ve been using lately — I call it &quot;Moonwalk.&quot; Basically it's: - Check out a spike branc…">
+<meta property="og:url" content="https://alexisrondeau.me/feed/t/1988551025565855824/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@SpringStreetNYC">
+<link rel="stylesheet" href="/tufte.css">
+<link rel="stylesheet" href="/feed/feed.css">
+
+</head>
+<body>
+<header class="hero">
+<div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
+<h1><a href="/feed/">Feed</a></h1>
+<p class="sub">Post · Wednesday, November 12, 2025 · 11:14</p>
+<div class="nav"><a href="/">Home</a><a href="/feed/">Feed</a><a href="https://x.com/SpringStreetNYC">@SpringStreetNYC on X</a></div>
+</header>
+<div class="wrap">
+<section class="feed single">
+<article class="item kind-post" id="t1988551025565855824">
+<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/1988551025565855824/"><time datetime="2025-11-12T10:14:44Z">Wednesday, November 12, 2025 · 11:14</time></a></div>
+<div class="text"><p>Hey all! I wanted to share a kind of new development process I’ve been using lately — I call it &quot;Moonwalk.&quot;</p>
+<p>Basically it's: <br>
+- Check out a spike branch (`git checkout -b reconciliation/spike/mt940`)<br>
+- Vibe code fast (and with vim and vigour!) until it feels just right<br>
+- Generate a spec based on the final version<br>
+- Switch back to main (`git checkout main`)<br>
+- Check out only the spec (`git checkout reconciliation/spike/mt940 -- /job-stories`) &lt;- This is the moonwalk!<br>
+- Let the &quot;professional&quot; agents and sub-agents write production-grade code based on the spec</p>
+<p>It's so effective because I can leverage Claude Code for both: Quickly build a working vibe-heavy prototype spec AND write production-grade code with agentic/sub-agentic quality. </p>
+<p>For the vibe code part, the standard Claude Code top-level agent is more than sufficient. It's great, no need for time-costly delegation to sub-agents here.</p>
+<p>For the production-grade part, since we're an XP shop with a pretty solid TDD process, sub agents make total sense. We turned our existing process and skills into a bunch of sub-agents that work smoothly together:</p>
+<p>We've got...<br>
+- green-minimal-implementer(.)md<br>
+- code-quality-reviewer(.)md<br>
+- code-refactorer(.)md<br>
+- db-migration-specialist(.)md<br>
+- dependency-manager(.)md<br>
+- frontend-design-specialist(.)md<br>
+- locale-translation-specialist(.)md<br>
+- red-test-writer(.)md</p>
+<p>So, yeah, that's what I wanted to share with you. Try it out and let me know how I can help :) </p>
+<p>Cheers!</p>
+<p>PS: For better or worse, this post is 100% written by hand<br>
+PPS: My friend Alex Fedorov reminded me that this is pretty close to the spike/exploration workflow we used to do at Pivotal Labs. I think he's right. </p>
+<p>cc'ing <a class="mention" href="https://x.com/claudeai">@claudeai</a> and <a class="mention" href="https://x.com/Lovable">@Lovable</a> because I feel like it's a nice connection between the two of you &lt;3</p></div>
+<div class="src"><a href="https://x.com/i/status/1988551025565855824">View on X ↗</a></div>
+</article>
+</section>
+<nav class="pager"><a href="/feed/">‹ Back to the feed</a><span></span></nav>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alright! Crazy-ass clang BIP39 scan/verify thingy is on github: https… — Alexis Rondeau</title>
+<meta name="description" content="Alright! Crazy-ass clang BIP39 scan/verify thingy is on github: https://t.co/TO4OcorG4V Here are the three main heavy-lifting workers: - https://t.co…">
+<link rel="canonical" href="https://alexisrondeau.me/feed/t/1998718132408484021/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alexis Rondeau">
+<meta property="og:title" content="Alright! Crazy-ass clang BIP39 scan/verify thingy is on github: https… — Alexis Rondeau">
+<meta property="og:description" content="Alright! Crazy-ass clang BIP39 scan/verify thingy is on github: https://t.co/TO4OcorG4V Here are the three main heavy-lifting workers: - https://t.co…">
+<meta property="og:url" content="https://alexisrondeau.me/feed/t/1998718132408484021/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@SpringStreetNYC">
+<link rel="stylesheet" href="/tufte.css">
+<link rel="stylesheet" href="/feed/feed.css">
+
+</head>
+<body>
+<header class="hero">
+<div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
+<h1><a href="/feed/">Feed</a></h1>
+<p class="sub">Reply · Wednesday, December 10, 2025 · 12:35</p>
+<div class="nav"><a href="/">Home</a><a href="/feed/">Feed</a><a href="https://x.com/SpringStreetNYC">@SpringStreetNYC on X</a></div>
+</header>
+<div class="wrap">
+<section class="feed single">
+<article class="item kind-reply" id="t1998718132408484021">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/1998718132408484021/"><time datetime="2025-12-10T11:35:11Z">Wednesday, December 10, 2025 · 12:35</time></a></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/SpringStreetNYC">@SpringStreetNYC</a> · Dec 5, 2025</cite>
+<div class="ctx-text"><p>LOL, got 100% nerd-sniped by my friend Sönke this week and wound up building a small spaceship.</p>
+<p>On Monday he's like &quot;Hey, what if you found obscure seed phrases embedded in public texts? You'd only need to remember the name of the book and the paragraph and go from there.&quot;</p>
+<p>I honestly could care less about crypto(currencies) and I'm 100% sure this is like cryptanalysis 101. But, yeah, it seemed like an interesting problem anyways. </p>
+<p>First, I downloaded a few hundred books from Gutenberg, wrote a ruby script and found BIP39 word sequences with a tolerable buffer for filler-words. </p>
+<p>Then, I was like, okay, gotta now check them against actual addresses. Downloaded a list of funded ETH addresses. Wrote the checker in ruby. Ran it. No hits but this was now definitely weirdly interesting.</p>
+<p>Because: And what if I downloaded the whole pg19 text corpus to scan! And what if I'd add BTC addresses! And what if I checked every permutation of the seed phrase!</p>
+<p>Everything got really slow once I got to processing 12G of raw text for finding sequences and then checking a few million candidates with 44.000+ variations per candidate. </p>
+<p>So, let's rewrite this into C! And since I've got 16 cores, let's parallelize this puppy! And since it's a MacBook, let's use GCD! Optimize all the things!</p>
+<p>Lol, so NOW this thing is so fucking FAST. Takes four minutes to go through the full pg19 corpus and generates 64,205,390 &quot;interesting&quot; seed phrases. The fully parallelized checker (see Terminal screenshot) processes 460 derived addresses per second. </p>
+<p>I really don't care if I get a match or not. I feel like I started with building a canoo and wound up with a spaceship is in itself just the best thing in the world. </p>
+<p>Anyways. Just wanted to share this. If anyone wants, I can put the whole thing on github, too. Let me know!</p></div>
+<figure class="media"><img src="/feed/media/ref-1996951130526425449-0.jpg" width="1600" height="948" alt="Image from the post" loading="lazy"></figure>
+</blockquote>
+<div class="text"><p>Alright! Crazy-ass clang BIP39 scan/verify thingy is on github: <a href="https://github.com/akaalias/bipscan">github.com/akaalias/bipsc…</a></p>
+<p>Here are the three main heavy-lifting workers:</p>
+<p>- <a href="https://github.com/akaalias/bipscan/blob/main/src/c/generate_paragraph_seeds.c">github.com/akaalias/bipsc…</a><br>
+- <a href="https://github.com/akaalias/bipscan/blob/main/src/c/find_sequences_worker.c">github.com/akaalias/bipsc…</a><br>
+-</p></div>
+<a class="linkcard" href="https://github.com/akaalias/bipscan">
+<img src="/feed/media/link-2de25adc04de87a7.jpg" alt="" loading="lazy">
+<span class="body"><span class="site">GitHub</span><span class="title">GitHub - akaalias/bipscan</span><span class="desc">Contribute to akaalias/bipscan development by creating an account on GitHub.</span><span class="host">↗ github.com</span></span>
+</a>
+<a class="linkcard" href="https://github.com/akaalias/bipscan/blob/main/src/c/generate_paragraph_seeds.c">
+<img src="/feed/media/link-6fe964452a791088.jpg" alt="" loading="lazy">
+<span class="body"><span class="site">GitHub</span><span class="title">bipscan/src/c/generate_paragraph_seeds.c at main · akaalias/bipscan</span><span class="desc">Contribute to akaalias/bipscan development by creating an account on GitHub.</span><span class="host">↗ github.com</span></span>
+</a>
+<a class="linkcard" href="https://github.com/akaalias/bipscan/blob/main/src/c/find_sequences_worker.c">
+<img src="/feed/media/link-0750f3e9fd9c9148.jpg" alt="" loading="lazy">
+<span class="body"><span class="site">GitHub</span><span class="title">bipscan/src/c/find_sequences_worker.c at main · akaalias/bipscan</span><span class="desc">Contribute to akaalias/bipscan development by creating an account on GitHub.</span><span class="host">↗ github.com</span></span>
+</a>
+<a class="linkcard" href="https://github.com/akaalias/bipscan/blob/main/src/c/check_seeds_worker_btc.c">
+<img src="/feed/media/link-5ba376009ac3dc2f.jpg" alt="" loading="lazy">
+<span class="body"><span class="site">GitHub</span><span class="title">bipscan/src/c/check_seeds_worker_btc.c at main · akaalias/bipscan</span><span class="desc">Contribute to akaalias/bipscan development by creating an account on GitHub.</span><span class="host">↗ github.com</span></span>
+</a>
+<div class="src"><a href="https://x.com/i/status/1998718132408484021">View on X ↗</a></div>
+</article>
+</section>
+<nav class="pager"><a href="/feed/">‹ Back to the feed</a><span></span></nav>
+</div>
+
+</body>
+</html>
