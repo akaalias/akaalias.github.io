@@ -25,11 +25,166 @@
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1>Newsfeed</h1>
 <p class="lede">Everything I publish, in the order I published it: dispatches from Twitter and notes from my vault, archived here in full — text, images, video and links — so they outlive the platforms.</p>
-<p class="sub">831 dispatches since March 2014 · page 32 of 34</p>
+<p class="sub">832 dispatches since March 2014 · page 32 of 34</p>
 <div class="nav"><a href="/">Home</a><a href="/feed/">Newsfeed</a><a href="/feed/archive/">Archive</a><a href="https://x.com/SpringStreetNYC">Twitter</a><a href="https://github.com/akaalias">GitHub</a><a href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a></div>
 </header>
 <div class="wrap">
 <section class="feed">
+<article class="item kind-note" id="n-the-little-schemer-in-clojure-recap-chapter-5">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/the-little-schemer-in-clojure-recap-chapter-5/"><time datetime="2017-05-04T22:00:00Z">Friday, May 5, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/the-little-schemer-in-clojure-recap-chapter-5/">The Little Schemer in Clojure – Recap Chapter 5</a></h2>
+<div class="text note-body clamped">
+<p><strong>Oh My Gawd, It’s Full Of Stars</strong></p>
+<h2>Dealing With Nested Lists</h2>
+<p>Learned how to deal with nested lists by asking at least 3 questions:</p>
+<ul>
+<li>Is the list null? If so, return the empty element (an empty list if the value of the function is to be a list, or 0 if you’re evaluating to a number)</li>
+<li>Is the first element in the list an atom? – If so, operate on that atom and cons it onto the natural recursion of the function.</li>
+<li>Else, cons the natural recursion of the function of <code>car list</code> onto the natural recursion of the function of <code>cdr list</code></li>
+</ul>
+<p>You can see this pattern in action on <code>rember*</code> which removes any occurrence of <code>a</code> in <code>l</code> regardless of how deep <code>a</code>s are hidden in the nested list. (*, or star is added to the function name to denote that it’s recurring on both, <code>car</code> and <code>cdr</code>.)</p>
+<pre><code class="language-clojure">(with-test
+  (def rember* 
+    (fn [a l]
+      (cond (null? l) '()
+            (atom? (car l)) (cond (eq? (car l) a) (rember* a (cdr l))
+                                  :else (cons (car l)
+                                              (rember* a (cdr l))))
+            :else (cons (rember* a (car l))
+                        (rember* a (cdr l))))))
+
+  (is (= (rember* 'cup '()) '()))
+  (is (= (rember* 'cup '(coffee)) '(coffee)))
+  (is (= (rember* 'cup '(cup)) '()))
+  (is (= (rember* 'cup '(coffee cup)) '(coffee)))
+  (is (= (rember* 'cup '((cup))) '(())))
+  (is (= (rember* 'cup '(coffee (cup) and (another) cup)) '(coffee () and (another))))
+  (is (= (rember* 'sauce '(((tomato sauce)) ((bean) sauce) (and ((flying)) sauce))) '(((tomato)) ((bean)) (and ((flying)))))))
+</code></pre>
+<p>The same applies to <code>insertR and insertL*</code> which respectively return a new list with <code>new</code> inserted next to to <code>old</code> in <code>l</code>.</p>
+<p>The questions are again:</p>
+<ul>
+<li>null? – return an empty list that can be <code>cons</code>-ed onto from previous calls</li>
+<li>atom? – checks if <code>car l</code> is what we’re looking for and if so, adds a new element</li>
+<li>else – recurs on both <code>car l</code> and <code>cdr l</code></li>
+</ul>
+<pre><code class="language-clojure">(with-test
+  (def insertR*
+    (fn [new old l]
+      (cond (null? l) '()
+            (atom? (car l)) (cond (eq? (car l) old) (cons old 
+                                                          (cons new (insertR* new old 
+                                                                              (cdr l))))
+
+                                  :else (cons (car l) 
+                                              (insertR* new old 
+                                                        (cdr l))))
+            :else (cons (insertR* new old (car l))
+                        (insertR* new old (cdr l))))))
+
+  (is (= (insertR* 'new 'old '()) '()))
+  (is (= (insertR* 'new 'old '(old)) '(old new)))
+  (is (= (insertR* 'new 'old '((old))) '((old new))))
+  (is (= (insertR* 'new 'old '((these) old ((shoes old) perfume))) '((these) old new ((shoes old new) perfume)))))
+</code></pre>
+<pre><code class="language-clojure">(with-test
+  (def insertL*
+    (fn [new old l] 
+      (cond (null? l) '()
+            (atom? (car l)) (cond (eq? (car l) old) (cons new (cons old (insertL* new old (cdr l))))
+                                  :else (cons (car l) (insertL* new old (cdr l))))
+            :else (cons (insertL* new old (car l))
+                        (insertL* new old (cdr l))))))
+
+  (is (= (insertL* 'new 'old '()) '()))
+  (is (= (insertL* 'new 'old '(old)) '(new old)))
+  (is (= (insertL* 'new 'old '((old))) '((new old))))
+  (is (= (insertL* 'new 'old '((these) old ((shoes old) perfume))) '((these) new old ((shoes new old) perfume)))))
+</code></pre>
+<p>Then, the same pattern applies to <code>subst*</code> which substitutes <code>new</code> with <code>old</code> in <code>l</code></p>
+<pre><code class="language-clojure">(with-test 
+  (def subst*
+    (fn [new old l] 
+      (cond (null? l) '()
+            (atom? (car l)) (cond (eq? (car l) old) (cons new (subst* new old (cdr l)))
+                                  :else (cons (car l) (subst* new old (cdr l))))
+            :else (cons (subst* new old (car l))
+                        (subst* new old (cdr l))))))
+
+  (is (= (subst* 'orange 'banana '()) '()))
+  (is (= (subst* 'orange 'banana '(banana)) '(orange)))
+  (is (= (subst* 'orange 'banana '((banana))) '((orange))))
+  (is (= (subst* 'cup 'mug '((a mug) in the (((kitchen (mug)))))) '((a cup) in the (((kitchen (cup))))))))
+</code></pre>
+<p>Then, <code>member*</code> returns <code>true</code> if <code>a</code> can be found in <code>l</code>, otherwise it returns <code>false</code>:</p>
+<p>Note that instead of returning a list on <code>(null l)</code> it returns <code>false</code> which represents that the element couldn’t be found and we’ve reached the end where we can’t look no further.</p>
+<pre><code class="language-clojure">(with-test
+  (def member* 
+    (fn [a l] 
+      (cond (null? l) false
+            (atom? (car l)) (or (eq? (car l) a)
+                                (member* a (cdr l)))
+            :else (or (member* a (car l))
+                      (member* a (cdr l))))))
+
+  (is (= (member* 'foo '()) false))
+  (is (= (member* 'foo '(foo)) true))
+  (is (= (member* 'foo '(bar)) false))
+  (is (= (member* 'foo '((foo))) true))
+  (is (= (member* 'foo '((the quick) ((((brown (springy foo)) jumps over)) the dog))))))
+</code></pre>
+<h2>Traversing a Tree</h2>
+<p>A personal favorite of mine is <code>leftmost</code> which returns the left-most element in <code>l</code>. It’s a bit simpler than the functions before. It recurs <strong>only</strong> on <code>(car l)</code> unless it is an atom:</p>
+<pre><code class="language-clojure">(with-test
+  (def leftmost 
+    (fn [l]
+      (cond (null? l) nil
+            (atom? (car l)) (car l)
+            :else (leftmost (car l)))))
+
+  (is (= (leftmost '()) nil))
+  (is (= (leftmost '(apple)) 'apple))
+  (is (= (leftmost '((apple))) 'apple))
+  (is (= (leftmost '(((hot cider) with (green) tea))) 'hot)))
+</code></pre>
+<h2>Testing equality</h2>
+<p>At the end of the chapter, the authors use recurring on a nested list to test for equality of any s-expression:</p>
+<pre><code class="language-clojure">(with-test
+  (def eqlist?
+    (fn [l1 l2] 
+      (cond (and (null? l1) (null? l2)) true
+            (or (null? l1) (null? l2)) false
+            :else (and (equal? (car l1) (car l2))
+                       (eqlist? (cdr l1) (cdr l2))))))
+
+  (is (= (eqlist? '() '()) true))
+  (is (= (eqlist? '() '(foot)) false))
+  (is (= (eqlist? '(foot) '()) false))
+  (is (= (eqlist? '(foot) '(foot)) true))
+  (is (= (eqlist? '(foot rub) '(foot sub)) false))
+  (is (= (eqlist? '(strawberry ice cream) '(strawberry ice cream)) true))
+  (is (= (eqlist? '(strawberry ice cream) '(strawberry cream ice)) false))
+  (is (= (eqlist? '((coffee) (cup)) '((coffee) (cup))) true)))
+
+(with-test
+  (def equal? 
+    (fn [s1 s2]
+      (cond (and (atom? s1) (atom? s2)) (equan? s1 s2)
+            (or (atom? s1) (atom? s2)) false
+            :else (eqlist? s1 s2))))
+
+  (is (= (equal? 'a 'a) true))
+  (is (= (equal? 'a 'b) false))
+  (is (= (equal? 'a '(a)) false))
+  (is (= (equal? '(a) 'a) false))
+  (is (= (equal? '(a) '(a)) true))
+  (is (= (equal? '(a) '(b)) false)))
+</code></pre>
+<p>I am starting to realize how great it is to have a set of tests right away with any function definition. Refactoring will be easy and give me confidence that everything still works. Pretty stoked!</p>
+</div>
+<div class="more"><a href="/notes/the-little-schemer-in-clojure-recap-chapter-5/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/the-little-schemer-in-clojure-recap-chapter-5/">Permalink</a></div>
+</article>
 <article class="item kind-note" id="n-the-little-schemer-in-clojure-chapter-4-recap">
 <div class="meta"><span class="kind">Note</span><a class="when" href="/notes/the-little-schemer-in-clojure-chapter-4-recap/"><time datetime="2017-04-27T22:00:00Z">Friday, April 28, 2017 · 00:00</time></a></div>
 <h2 class="note-title"><a href="/notes/the-little-schemer-in-clojure-chapter-4-recap/">The Little Schemer in Clojure – Chapter 4 Recap</a></h2>
@@ -1523,49 +1678,13 @@ So, are you ready to make your friend be like this when they get an email from y
 </div>
 <div class="src"><a href="/notes/focus/">Permalink</a></div>
 </article>
-<article class="item kind-note" id="n-a-pivotal-moment">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/a-pivotal-moment/"><time datetime="2014-10-15T22:00:00Z">Thursday, October 16, 2014 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/a-pivotal-moment/">A Pivotal Moment</a></h2>
-<div class="text note-body clamped">
-<p>Dear Friend,</p>
-<p>Today marks a pivotal day in my life.</p>
-<p>Unfortunately (it seems unfortunate today, but only time will tell) we–A, D and I–have not gotten the successful responses from investors we had hoped for.</p>
-<p>I must now shift gears and find a paying job to live. It is a hard pill to swallow. Of all things I have worked on and of all people, it has been an absolute pleasure.</p>
-<p>In fact, if I had (all, or at least enough to live) the money in the world, I would work on this with A and D.</p>
-<p>But I don’t. I have far extended my personal savings.</p>
-<p>I have a runway of 1 month and it does not look like there is venture capital coming in in the coming 3-6 months.</p>
-<p>Our startup “HM” has come a long way in the past 9 months.</p>
-<p>I have learned so much in the process.</p>
-<p>We started out in February with the idea for VA. “What if we worked with VCs and their portfolio to collect everyone’s salary, equity and bonus information, anonymize it in a private network and make it accessible and searchable for all participants?”</p>
-<p>Within 2 months we already had 130 startups on board. In August it was twice that.</p>
-<p>In total, as of today, this pilot system is tracking salaries, equities, bonuses, revenue, marketing costs and much more of companies that themselves have raised $2,270,000,000 in funding.</p>
-<p>We account for more than $224,000,000 in salaries across 6,533 employees nationwide.</p>
-<p>Well, that all sounds good, right? It gets even better!</p>
-<p>2 months ago, around August, we sat down and really analyzed what we were “actually doing” here. We realized that our pilot successfully described what we have come to call a “Data Community.” A safe place for peers to share their most sensitive data at the benefit of everyone. You get to know what’s really market. You can use it make better decisions. For hiring. For allocating equity. For planning your next round. For running your business.</p>
-<p>Since then, I have worked hard on creating a self-serve platform that allows any community (real or imaginary) to create “Data Communities” for themselves and their information.</p>
-<p>It came out really, really nice.</p>
-<p>First, I went ahead and made very rough sketches for the general use cases. There were 2 rounds of review with the team called M(ockup)1 and M2. Those led into developing the actual application prototypes P(rototype)1 and P2. P2 was the basis for V(ersion)1 which we softly released past Thursday.</p>
-<p>As a team of 1 covering planning, specification, designing, modeling, testing, implementing and polishing I am proud. Work was focussed and fast enough to have something in our hands to play with and reason about.</p>
-<p>On a technical level, it is a moderately complex data model with a few nice twists to it. There is the requirement of anonymity of data which we are solving well. There is the ability to basically create a collaborative, focussed spreadsheet with user-defined data types based on what they want the community to share. Similar to a survey data has to be stored in a specific, unconventional way. And we have to push it even further. The end-user experience is important, too. After all, if it’s clunky no one wants to use it.</p>
-<p>But.</p>
-<p>And here comes the big but.</p>
-<p>Even with a polished, elegant and well-designed product and a potential array of markets we can go into, if there is no money to support ourselves, it’s impossible to continue full-time on it.</p>
-<p>Which is where I find myself today.</p>
-<p>Again, if I had enough money to support my basic needs (and maybe move into a nicer place where my room has a bed instead of a couch and a window) I would continue working on this and push the limits on what we can do with it.</p>
-<p>Alas, that’s not happening today. Because, even though we’ve been working with VC funds in the past 9 months, none of them seem to be thoroughly interested in giving us money. Apparently they can see the value created by our Data Community software for their own portfolios but not beyond. And I understand that it is a stretch. But that’s where the Venture in Venture Capital should come in.</p>
-<p>In the meantime, this means finding paid great work.</p>
-<p>I am a creator.</p>
-</div>
-<div class="more"><a href="/notes/a-pivotal-moment/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/a-pivotal-moment/">Permalink</a></div>
-</article>
 </section>
 <nav class="pager"><a href="/feed/page/31/">‹ Newer</a><span class="n">Page 32 of 34</span><a href="/feed/page/33/">Older ›</a></nav>
 <aside class="months-nav">
 <h3><a href="/feed/archive/">Archive</a></h3>
 <div class="y">2026</div>
 <ul>
-<li><a href="/feed/archive/2026/09/">September</a> <span class="n">77</span></li>
+<li><a href="/feed/archive/2026/09/">September</a> <span class="n">78</span></li>
 <li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
 <li><a href="/feed/archive/2026/07/">July</a> <span class="n">22</span></li>
 <li><a href="/feed/archive/2026/06/">June</a> <span class="n">30</span></li>

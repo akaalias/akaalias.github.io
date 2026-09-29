@@ -6,13 +6,14 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 
 ## Newsfeed
 
-- [Newsfeed](https://alexisrondeau.me/feed/): 831 dispatches, newest first, 25 per page
+- [Newsfeed](https://alexisrondeau.me/feed/): 832 dispatches, newest first, 25 per page
 - [Archive](https://alexisrondeau.me/feed/archive/): the same dispatches by month
 - [Atom feed](https://alexisrondeau.me/feed/feed.xml): the latest 50 dispatches
 - [Data](https://alexisrondeau.me/feed/items.json): every item as JSON (source, id, date, text, media, links, permalink)
 
 ## Notes
 
+- [Home](https://alexisrondeau.me/notes/home/): Alexis here — welcome, and thank you for stopping by! Below you'll find some stuff I'm really proud of and want to shar…
 - [Freakonomics Experiments](https://alexisrondeau.me/notes/freakonomics-experiments/): As senior engineering consultant, I designed and shipped the infrastructure for a truly randomized, multi-month, large-…
 - [OneMonth Inc.](https://alexisrondeau.me/notes/onemonth-inc/): My technical co-founder run: I designed and wrote a best-selling "programming for non-programmers" video course that go…
 - [Pivotal Labs, New York City](https://alexisrondeau.me/notes/pivotal-labs-new-york-city/): Working as senior technology consultant, I coached client teams to ship better products faster through lean experiments…
@@ -204,7 +205,7 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 
 ## Months
 
-- [September 2026](https://alexisrondeau.me/feed/archive/2026/09/): 77 dispatches
+- [September 2026](https://alexisrondeau.me/feed/archive/2026/09/): 78 dispatches
 - [August 2026](https://alexisrondeau.me/feed/archive/2026/08/): 37 dispatches
 - [July 2026](https://alexisrondeau.me/feed/archive/2026/07/): 22 dispatches
 - [June 2026](https://alexisrondeau.me/feed/archive/2026/06/): 30 dispatches

@@ -25,11 +25,32 @@
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1>Newsfeed</h1>
 <p class="lede">Everything I publish, in the order I published it: dispatches from Twitter and notes from my vault, archived here in full — text, images, video and links — so they outlive the platforms.</p>
-<p class="sub">831 dispatches since March 2014 · page 14 of 34</p>
+<p class="sub">832 dispatches since March 2014 · page 14 of 34</p>
 <div class="nav"><a href="/">Home</a><a href="/feed/">Newsfeed</a><a href="/feed/archive/">Archive</a><a href="https://x.com/SpringStreetNYC">Twitter</a><a href="https://github.com/akaalias">GitHub</a><a href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a></div>
 </header>
 <div class="wrap">
 <section class="feed">
+<article class="item kind-reply" id="t1998050758730932389">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/1998050758730932389/"><time datetime="2025-12-08T15:23:17Z">Monday, December 8, 2025 · 16:23</time></a></div>
+<div class="stats"><span><b>18</b> views</span></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/SpringStreetNYC">@SpringStreetNYC</a> · Dec 5, 2025</cite>
+<div class="ctx-text"><p>LOL, got 100% nerd-sniped by my friend Sönke this week and wound up building a small spaceship.</p>
+<p>On Monday he's like &quot;Hey, what if you found obscure seed phrases embedded in public texts? You'd only need to remember the name of the book and the paragraph and go from there.&quot;</p>
+<p>I honestly could care less about crypto(currencies) and I'm 100% sure this is like cryptanalysis 101. But, yeah, it seemed like an interesting problem anyways. </p>
+<p>First, I downloaded a few hundred books from Gutenberg, wrote a ruby script and found BIP39 word sequences with a tolerable buffer for filler-words. </p>
+<p>Then, I was like, okay, gotta now check them against actual addresses. Downloaded a list of funded ETH addresses. Wrote the checker in ruby. Ran it. No hits but this was now definitely weirdly interesting.</p>
+<p>Because: And what if I downloaded the whole pg19 text corpus to scan! And what if I'd add BTC addresses! And what if I checked every permutation of the seed phrase!</p>
+<p>Everything got really slow once I got to processing 12G of raw text for finding sequences and then checking a few million candidates with 44.000+ variations per candidate. </p>
+<p>So, let's rewrite this into C! And since I've got 16 cores, let's parallelize this puppy! And since it's a MacBook, let's use GCD! Optimize all the things!</p>
+<p>Lol, so NOW this thing is so fucking FAST. Takes four minutes to go through the full pg19 corpus and generates 64,205,390 &quot;interesting&quot; seed phrases. The fully parallelized checker (see Terminal screenshot) processes 460 derived addresses per second. </p>
+<p>I really don't care if I get a match or not. I feel like I started with building a canoo and wound up with a spaceship is in itself just the best thing in the world. </p>
+<p>Anyways. Just wanted to share this. If anyone wants, I can put the whole thing on github, too. Let me know!</p></div>
+<figure class="media"><img src="/feed/media/ref-1996951130526425449-0.jpg" width="1600" height="948" alt="Image from the post" loading="lazy"></figure>
+</blockquote>
+<div class="text"><p>Small changes, up from 460 to 12,898 checks per second.</p></div>
+<div class="src"><a href="/feed/t/1998050758730932389/">Permalink</a> · <a href="https://x.com/i/status/1998050758730932389">View on Twitter ↗</a></div>
+</article>
 <article class="item kind-quote" id="t1998047770092114083">
 <div class="meta"><span class="kind">Quote</span><a class="when" href="/feed/t/1998047770092114083/"><time datetime="2025-12-08T15:11:24Z">Monday, December 8, 2025 · 16:11</time></a></div>
 <div class="stats"><span><b>37</b> views</span></div>
@@ -323,27 +344,13 @@ On Thursday 4 December, I'm chairing an expert panel discussion at the Hungarian
 <figure class="media"><img src="/feed/media/1994377825147842569-1.png" width="371" height="263" alt="Image from the post" loading="lazy"></figure>
 <div class="src"><a href="/feed/t/1994377825147842569/">Permalink</a> · <a href="https://x.com/i/status/1994377825147842569">View on Twitter ↗</a></div>
 </article>
-<article class="item kind-reply" id="t1994363638392521118">
-<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/1994363638392521118/"><time datetime="2025-11-28T11:11:59Z">Friday, November 28, 2025 · 12:11</time></a></div>
-<div class="stats"><span><b>14</b> views</span></div>
-<blockquote class="ctx">
-<cite>In reply to <a href="https://x.com/SpringStreetNYC">@SpringStreetNYC</a> · Nov 28, 2025</cite>
-<div class="ctx-text"><p>^ This is why I really don't engage in those FUD-dy &quot;AI is just a bubble, it's too early to tell, it can't replace software engineers because blablabla...&quot; conversations anymore. </p>
-<p>AI works. Super, super well. It's one of the best co-workers I've ever had. What are y'all yapping about?</p></div>
-</blockquote>
-<div class="text"><p>On the other hand I ALSO don't engage in the other, equally dark FUD-dy &quot;AI works so well but it's soooo complicated to get it right. Oh my gawd, the only way you'll survive this is by taking my course&quot;  hidden agenda sales pitches.</p>
-<p>AI works AND it is completely accessible to everyone.</p>
-<p>There is NO secret sauce to get started. And there's no secret sauce and to get good either. </p>
-<p>I LOVE that there's no barrier to entry.</p></div>
-<div class="src"><a href="/feed/t/1994363638392521118/">Permalink</a> · <a href="https://x.com/i/status/1994363638392521118">View on Twitter ↗</a></div>
-</article>
 </section>
 <nav class="pager"><a href="/feed/page/13/">‹ Newer</a><span class="n">Page 14 of 34</span><a href="/feed/page/15/">Older ›</a></nav>
 <aside class="months-nav">
 <h3><a href="/feed/archive/">Archive</a></h3>
 <div class="y">2026</div>
 <ul>
-<li><a href="/feed/archive/2026/09/">September</a> <span class="n">77</span></li>
+<li><a href="/feed/archive/2026/09/">September</a> <span class="n">78</span></li>
 <li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
 <li><a href="/feed/archive/2026/07/">July</a> <span class="n">22</span></li>
 <li><a href="/feed/archive/2026/06/">June</a> <span class="n">30</span></li>
