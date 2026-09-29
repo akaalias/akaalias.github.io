@@ -11,6 +11,8 @@ h1 a{color:inherit;text-decoration:none;}
 .meta .kind{color:var(--accent);}
 .meta a{color:var(--muted);text-decoration:none;border-bottom:1px solid transparent;text-align:right;}
 .meta a:hover{border-bottom-color:var(--accent);}
+.stats{margin:-4px 0 12px;font-size:13px;color:var(--faint);font-variant-numeric:tabular-nums;}
+.stats b{font-weight:600;color:var(--muted);}
 .text{font-size:19px;line-height:1.55;overflow-wrap:anywhere;}
 .text p{margin:0 0 12px;}
 .text p:last-child{margin-bottom:0;}
