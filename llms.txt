@@ -205,8 +205,8 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 
 ## Tags
 
+- [#discovery-loops](https://alexisrondeau.me/feed/tag/discovery-loops/): 7 dispatches
 - [#personal-projects](https://alexisrondeau.me/feed/tag/personal-projects/): 6 dispatches
-- [#discovery-loops](https://alexisrondeau.me/feed/tag/discovery-loops/): 4 dispatches
 - [#greatest-hits](https://alexisrondeau.me/feed/tag/greatest-hits/): 3 dispatches
 - [#books](https://alexisrondeau.me/feed/tag/books/): 1 dispatches
 - [#home](https://alexisrondeau.me/feed/tag/home/): 1 dispatches
