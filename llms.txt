@@ -6,13 +6,39 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 
 ## Feed
 
-- [Feed](https://alexisrondeau.me/feed/): 735 posts, newest first, 25 per page
+- [Feed](https://alexisrondeau.me/feed/): 761 posts, newest first, 25 per page
 - [Archive](https://alexisrondeau.me/feed/archive/): the same posts by month
 - [Atom feed](https://alexisrondeau.me/feed/feed.xml): the latest 50 posts
 - [Data](https://alexisrondeau.me/feed/items.json): every item as JSON (source, id, date, text, media, links, permalink)
 
 ## Notes
 
+- [Whiteboard Mastery – Handwriting Workshop Learnings](https://alexisrondeau.me/notes/whiteboard-mastery-handwriting-workshop-learnings/): https://www.youtube.com/watch?v=vZ56szjGqbQ
+- [Whiteboard Mastery – Handwriting, Persuasion and the Path Of Least Resistance](https://alexisrondeau.me/notes/whiteboard-mastery-handwriting-persuasion-and-the-path-of-least-resistance/): https://www.youtube.com/watch?v=MBeNY8NRrMQ
+- [The World's Best Meditation Pillow!](https://alexisrondeau.me/notes/the-world-s-best-meditation-pillow/): https://www.youtube.com/watch?v=kYHQfe9I7DQ
+- [My 100 Day Self-Care Challenge – Week 1 Review (Restorative Yoga)](https://alexisrondeau.me/notes/my-100-day-self-care-challenge-week-1-review-restorative-yoga/): https://www.youtube.com/watch?v=UI7iW42XkVk
+- [This is INSANE: In just 4 days, our campaign generated 1.283 qualified leads for just 200€. That's a 0,16€  cost per lead.](https://alexisrondeau.me/notes/this-is-insane-in-just-4-days-our-campaign-generated-1-283-qualified-leads-for-j/): ![](https://i2.wp.com/freeisaverb.com/wp-content/uploads/2019/03/ScreenShot2019-03-25at102251AM.png?fit=640%2C254)
+- [First Principles: The Most Powerful Way To Think](https://alexisrondeau.me/notes/first-principles-the-most-powerful-way-to-think/): Beautifully written and animated, I truly enjoyed watching this short video on what First Principles are and why they'r…
+- [New Retrospective Format: \"Highlights, Blessings and Successes\"](https://alexisrondeau.me/notes/new-retrospective-format-highlights-blessings-and-successes/): I’ve created an empowering and fun new Retrospective format for myself. I’ve enjoyed it tremendously.
+- [New Retrospective Format: \"Highlights, Blessings and Successes\"](https://alexisrondeau.me/notes/new-retrospective-format-highlights-blessings-and-successes-2/): I’ve created an empowering and fun new Retrospective format for myself. I’ve enjoyed it tremendously.
+- [“...I would recommend this workshop to any entrepreneur who wants to start with a new idea.”](https://alexisrondeau.me/notes/i-would-recommend-this-workshop-to-any-entrepreneur-who-wants-to-start-with-a-ne/): https://www.youtube.com/watch?v=l5oA\XhlnP8
+- [“[Going to the workshop was so useful for our strategy. I realized I couldn’t have done anything better…”](https://alexisrondeau.me/notes/going-to-the-workshop-was-so-useful-for-our-strategy-i-realized-i-couldn-t-have/): https://www.youtube.com/watch?v=o1iPnSqQEvA
+- [“…Es war ein riesen Mehrwert. Ich würde es immer wieder machen und liebend gerne einmal im Monat…”](https://alexisrondeau.me/notes/es-war-ein-riesen-mehrwert-ich-wurde-es-immer-wieder-machen-und-liebend-gerne-ei/): https://www.youtube.com/watch?v=tOLWz7y1yoc
+- [“I realized… Oh my god!  We’re building for the wrong user...”](https://alexisrondeau.me/notes/i-realized-oh-my-god-we-re-building-for-the-wrong-user/): https://www.youtube.com/watch?v=UDOIzpuNmM4
+- [Market Persona \"Reality-Check\": Sonos-Fans in the US](https://alexisrondeau.me/notes/market-persona-reality-check-sonos-fans-in-the-us/): ![](Attachments/SONOS-US-PERSONA-REALITY-CHECK.003-1024x768.jpeg)
+- [Confidence Is Everything: Paul Graham's Startup Curve and the Dunning-Kruger Effect](https://alexisrondeau.me/notes/confidence-is-everything-paul-graham-s-startup-curve-and-the-dunning-kruger-effe/): Yesterday, I was reading in Grant Cardone’s book “Sell Or Be Sold” and got stuck on the idea that “To the degree that y…
+- [Experiment: I'm Shutting Down Internet Access at Home. Again.](https://alexisrondeau.me/notes/experiment-i-m-shutting-down-internet-access-at-home-again/): 3 months ago I canceled my internet service at home for two reasons:
+- [Write Thursday, 29.11.2018](https://alexisrondeau.me/notes/write-thursday-29-11-2018/): A few random thoughts jumbled up and put together.
+- [[Announcing The Ambitious Corporate Intrapreneur’s 1-Week Product Development Training Workshop](https://alexisrondeau.me/notes/announcing-the-ambitious-corporate-intrapreneur-s-1-week-product-development-tra/): If you're an ambitious corporate intrapreneur, I can help you.
+- [[Update My Lessons Learned and Market Research Case Study](https://alexisrondeau.me/notes/update-my-lessons-learned-and-market-research-case-study/): I've updated and revised my case study and lessons learned presentation. You can check it out below and download the fu…
+- [80/20 Rule Insight: Market and Customer Research vs. Everything Else](https://alexisrondeau.me/notes/80-20-rule-insight-market-and-customer-research-vs-everything-else/): I thought about this last night and came to the following realization:
+- [This Week's Challenge: “Only positive thoughts and actions for 24h“](https://alexisrondeau.me/notes/this-week-s-challenge-only-positive-thoughts-and-actions-for-24h/): In Grant Cardone’s book “Sell Or Be Sold”, he challenges the reader to start a timer and aim to only think and act posi…
+- [Community Trend Watch: Shortlist Berlin December 2018](https://alexisrondeau.me/notes/community-trend-watch-shortlist-berlin-december-2018/): For Market Researchers: Social Trends is a free tool that lets you stay ahead of the curve by giving you the fastest gr…
+- [Change The World By Making Your Bed](https://alexisrondeau.me/notes/change-the-world-by-making-your-bed/): This video about why you should start the day by making your bed has kept me motivated over the last few weeks.
+- [HumanCharger Unboxing: First Impressions and Use](https://alexisrondeau.me/notes/humancharger-unboxing-first-impressions-and-use/): My HumanCharger device is finally here, after a long, long, long, long wait.
+- [Why I’m a Slow Learner But Fast Performer](https://alexisrondeau.me/notes/why-i-m-a-slow-learner-but-fast-performer/): Over the last year I went on a deep-dive to learn a new skill: How to market and, by extension, how to sell products th…
+- [Check In: How I Make Consistent Progress Across My Major Life Goals With Giraffe](https://alexisrondeau.me/notes/check-in-how-i-make-consistent-progress-across-my-major-life-goals-with-giraffe/): I wanted to give an update on my usage of Giraffe.app – My personal Goal-Setting, Plan-Making and Task-Executing workfl…
+- [Community Trend Watch: \"Starfish Mission\" in San Francisco](https://alexisrondeau.me/notes/community-trend-watch-starfish-mission-in-san-francisco/): As you may or may not know, I built a Meetup Monitoring Tool last year that allows market enthusiasts like myself to:
 - [How To Discover What You Really Need the Most With the \"Needs Card Deck\"](https://alexisrondeau.me/notes/how-to-discover-what-you-really-need-the-most-with-the-needs-card-deck/): I totally forgot to mention this, but I made a card deck last year that has helped me explore and discover needs as par…
 - [Wednesday – 14.11.2018](https://alexisrondeau.me/notes/wednesday-14-11-2018/): Wednesday afternoon, at home, not crazy about being here but I think I’m dragging out the cold I got over a week ago, s…
 - [Do I have to decide between \"anything goes\" and a \"specific topic\" for my blog?](https://alexisrondeau.me/notes/do-i-have-to-decide-between-anything-goes-and-a-specific-topic-for-my-blog/): So, I’ve been pretty good at publishing at least one post each week for the past two months. I’m proud of having publis…
@@ -150,7 +176,11 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 - [October 2022](https://alexisrondeau.me/feed/archive/2022/10/): 1 posts
 - [July 2022](https://alexisrondeau.me/feed/archive/2022/07/): 3 posts
 - [April 2022](https://alexisrondeau.me/feed/archive/2022/04/): 2 posts
-- [November 2018](https://alexisrondeau.me/feed/archive/2018/11/): 4 posts
+- [August 2019](https://alexisrondeau.me/feed/archive/2019/08/): 4 posts
+- [March 2019](https://alexisrondeau.me/feed/archive/2019/03/): 1 posts
+- [January 2019](https://alexisrondeau.me/feed/archive/2019/01/): 3 posts
+- [December 2018](https://alexisrondeau.me/feed/archive/2018/12/): 7 posts
+- [November 2018](https://alexisrondeau.me/feed/archive/2018/11/): 15 posts
 - [October 2018](https://alexisrondeau.me/feed/archive/2018/10/): 5 posts
 - [September 2018](https://alexisrondeau.me/feed/archive/2018/09/): 14 posts
 - [August 2018](https://alexisrondeau.me/feed/archive/2018/08/): 2 posts
