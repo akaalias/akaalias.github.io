@@ -6,13 +6,37 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 
 ## Feed
 
-- [Feed](https://alexisrondeau.me/feed/): 661 posts, newest first, 25 per page
+- [Feed](https://alexisrondeau.me/feed/): 685 posts, newest first, 25 per page
 - [Archive](https://alexisrondeau.me/feed/archive/): the same posts by month
 - [Atom feed](https://alexisrondeau.me/feed/feed.xml): the latest 50 posts
 - [Data](https://alexisrondeau.me/feed/items.json): every item as JSON (source, id, date, text, media, links, permalink)
 
 ## Notes
 
+- [Do the Right Things Right](https://alexisrondeau.me/notes/do-the-right-things-right/): The odds are 3 to 1 against you, so how will you make sure you win?
+- [How To Translate a Programming Language](https://alexisrondeau.me/notes/how-to-translate-a-programming-language/)
+- [How To Add a \"Maybe\" Operator To Your Programming Language](https://alexisrondeau.me/notes/how-to-add-a-maybe-operator-to-your-programming-language/): In just 4 lines - https://gist.github.com/akaalias/51721a8d6d75ef42586b.js
+- [[Listen Journey Into Paradise: The Larry Levan Story](https://alexisrondeau.me/notes/listen-journey-into-paradise-the-larry-levan-story/)
+- [How to do \"One Minute Breath\" – A farewell present for Jacob](https://alexisrondeau.me/notes/how-to-do-one-minute-breath-a-farewell-present-for-jacob/)
+- [Psycho-Cybernetics – About Purpose Tremor](https://alexisrondeau.me/notes/psycho-cybernetics-about-purpose-tremor/): https://soundcloud.com/akaalias/about-purpose-tremor
+- [Oblique Meta Strategies: What Would Brian Eno Do?](https://alexisrondeau.me/notes/oblique-meta-strategies-what-would-brian-eno-do/): Just of those Great Questions that led me to making big bubbles as ⭐️ Mr Bubbles in Bushwick (Video).
+- [Huddle Metrics](https://alexisrondeau.me/notes/huddle-metrics/): Dear Friends,
+- [Eric Schmidt: How Google Works](https://alexisrondeau.me/notes/eric-schmidt-how-google-works/): How Google Works from Eric Schmidt
+- [Focus.](https://alexisrondeau.me/notes/focus/): Green tea is really, really good for you.
+- [A Pivotal Moment](https://alexisrondeau.me/notes/a-pivotal-moment/): Dear Friend,
+- [Underscore.js](https://alexisrondeau.me/notes/underscore-js/): I usually despise JavaScript (and yes, I'm aware of it's Scheme/Self influences) but this is nice: Underscore.js.
+- [It’s Complex But You Don’t Have To Make It Complicated](https://alexisrondeau.me/notes/it-s-complex-but-you-don-t-have-to-make-it-complicated/): It’s been a very stressful 4 weeks.
+- [Giant Bubbles In Bushwick!](https://alexisrondeau.me/notes/giant-bubbles-in-bushwick/): www.youtube.com/embed/9op8mXvJRrQ
+- [How To Make Big Ass Bubbles](https://alexisrondeau.me/notes/how-to-make-big-ass-bubbles/): I've compiled the following giant bubble solution recipe and instructions after months of trial-and-error, testing doze…
+- [5 Cool New Things I Learned This Week](https://alexisrondeau.me/notes/5-cool-new-things-i-learned-this-week/): Saturday July 12, 2014 2:26pm 95 Spring Street 2nd Floor New York City
+- [Here's One Way To Instantly Relax And Kick-Start Your Subconscious Problem-Solving Mechanism](https://alexisrondeau.me/notes/here-s-one-way-to-instantly-relax-and-kick-start-your-subconscious-problem-solvi/): Tuesday July 1, 4:33pm, New York City
+- [My No.1Inspiration To Learn More Every Day](https://alexisrondeau.me/notes/my-no-1inspiration-to-learn-more-every-day/): If you’re not willing to learn, no one can help you. If you’re determined to learn, no one can stop you.
+- [10 New Things I Learned Today](https://alexisrondeau.me/notes/10-new-things-i-learned-today/): Inspiration by Brian Eno (Dunhill Interview, 2013)
+- [POIs – Persons Of Inspiration & Working Remote](https://alexisrondeau.me/notes/pois-persons-of-inspiration-working-remote/): Wednesday May 28, 3:09pm Kreuzberg, Berlin
+- [2 Thoughts](https://alexisrondeau.me/notes/2-thoughts/): Thought #1: “When do people buy things? When other people SELL things.”
+- [[Recap Berlin 2 Weeks In](https://alexisrondeau.me/notes/recap-berlin-2-weeks-in/): Ready, set, go! It’s been quiet a busy week and I’m ready, happy to just chill today. It’s Saturday, the summer is warm…
+- [It Usually Starts Around 1am Or Later...](https://alexisrondeau.me/notes/it-usually-starts-around-1am-or-later/): Sunday May 11, 7:58pm Freiligrath Strasse 10 Kreuzberg, Berlin Germany
+- [Berlin Is Really, Really Nice Right Now](https://alexisrondeau.me/notes/berlin-is-really-really-nice-right-now/): 9:45am, May 10, 2014 Lilienthaler Strasse 10 Berlin, Germany
 - [How To Get To Newark From Manhattan and How To NOT Fly To Berlin](https://alexisrondeau.me/notes/how-to-get-to-newark-from-manhattan-and-how-to-not-fly-to-berlin/): Alright! The first day of my stay in Berlin for the summer is in full effect. I just got back from meeting Chris at the…
 - [Welcome Back](https://alexisrondeau.me/notes/welcome-back/): Prelude: My friend Mike decided to get frozen in time in 2005 and stayed frozen until 2014. His unfreezing has successf…
 - [Sunday Review](https://alexisrondeau.me/notes/sunday-review/): Today I'm writing to you from my loft apartment in Bushwick, Brooklyn. I am sitting in the living room with my cup of g…
@@ -76,6 +100,13 @@ Canonical home: https://alexisrondeau.me/ · Twitter: https://x.com/SpringStreet
 - [October 2022](https://alexisrondeau.me/feed/archive/2022/10/): 1 posts
 - [July 2022](https://alexisrondeau.me/feed/archive/2022/07/): 3 posts
 - [April 2022](https://alexisrondeau.me/feed/archive/2022/04/): 2 posts
-- [May 2014](https://alexisrondeau.me/feed/archive/2014/05/): 7 posts
+- [December 2014](https://alexisrondeau.me/feed/archive/2014/12/): 3 posts
+- [November 2014](https://alexisrondeau.me/feed/archive/2014/11/): 3 posts
+- [October 2014](https://alexisrondeau.me/feed/archive/2014/10/): 5 posts
+- [September 2014](https://alexisrondeau.me/feed/archive/2014/09/): 3 posts
+- [August 2014](https://alexisrondeau.me/feed/archive/2014/08/): 1 posts
+- [July 2014](https://alexisrondeau.me/feed/archive/2014/07/): 3 posts
+- [June 2014](https://alexisrondeau.me/feed/archive/2014/06/): 1 posts
+- [May 2014](https://alexisrondeau.me/feed/archive/2014/05/): 12 posts
 - [April 2014](https://alexisrondeau.me/feed/archive/2014/04/): 2 posts
 - [March 2014](https://alexisrondeau.me/feed/archive/2014/03/): 9 posts
