@@ -43,6 +43,8 @@ h2.note-title a:hover{border-bottom-color:var(--accent);}
 .note-body pre{background:rgba(0,0,0,.04);padding:12px 14px;overflow:auto;font-size:13px;line-height:1.45;margin:0 0 14px;}
 .note-body pre code{border:0;font-size:inherit;}
 .note-body img{display:block;max-width:100%;height:auto;margin:14px auto;border:1px solid var(--rule-soft);}
+/* the About page opens with a portrait: small and round, not a full-width picture */
+.about .note-body > p:first-child img{width:168px;height:168px;object-fit:cover;border-radius:50%;margin:4px 0 20px;}
 .note-body hr{border:0;border-top:1px solid var(--rule);margin:20px 0;}
 .note-body mark{background:#f4e9a8;padding:0 2px;}
 .note-body table{border-collapse:collapse;font-size:15px;margin:0 0 14px;}
