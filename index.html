@@ -47,7 +47,18 @@
 .links.pinned + .links li:first-child{border-top:1px solid var(--rule);}
 /* a pinned row's social card: full width, natural aspect (1200×630 cards), hairline frame */
 .links.pinned a.card{display:block;border:0;margin:2px 0 12px;}
-.links.pinned a.card img{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:2px;}</style>
+.links.pinned a.card img{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:2px;}
+/* groups: a quiet heading, then a two-column grid of the plain rows (one column on phones) */
+h2.group-title{font-weight:400;font-size:24px;margin:34px 0 2px;}
+.links.pinned + h2.group-title{margin-top:0;}
+.links.grid{display:grid;grid-template-columns:1fr 1fr;column-gap:36px;margin:4px 0 0;}
+.links.grid li{padding:12px 0 12px;}
+.links.grid a{font-size:19px;}
+.links.grid .tag{font-size:14px;}
+.links.grid .d{font-size:15px;line-height:1.4;}
+.links.grid .m,.links.grid .stat{font-size:12.5px;}
+.links.grid .m a{font-size:inherit;}
+@media(max-width:600px){.links.grid{grid-template-columns:1fr;column-gap:0;}}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@id":"https://alexisrondeau.me/#website","@type":"WebSite","description":"Everything I publish, in the order I published it: dispatches from Twitter, videos from YouTube and notes from my vault, archived here in full — text, images, video and links — so they outlive the platforms.","inLanguage":"en","name":"Alexis Rondeau","publisher":{"@id":"https://alexisrondeau.me/#person"},"url":"https://alexisrondeau.me/"},{"@id":"https://alexisrondeau.me/#person","@type":"Person","alternateName":"@SpringStreetNYC","description":"Alexis Rondeau is a product engineer and experimenter based between Berlin, New York and Marseille: co-founder of One Month (Y Combinator), former Pivotal Labs consultant, and author of Obsidian plugins downloaded nearly half a million times.","image":"https://alexisrondeau.me/notes/media/alexis-rondeau.jpg","jobTitle":"Principal Product Engineer","mainEntityOfPage":"https://alexisrondeau.me/about/","name":"Alexis Rondeau","sameAs":["https://x.com/SpringStreetNYC","https://github.com/akaalias","https://www.linkedin.com/in/alexis-rondeau-2099nyc/","https://www.youtube.com/@axsrondeau"],"url":"https://alexisrondeau.me/","worksFor":{"@type":"Organization","name":"FELS Family Office GmbH"}}]}</script>
 
 </head>
@@ -91,39 +102,119 @@
 <span class="m">Note · Autoresearch · Apr 30, 2026 · <a href="/notes/which-city-in-paris-are-you-staying-in-can-an-llm-autoresearch-loop-teach-a-phon/">on this site</a></span>
 </li>
 </ul>
-<ul class="links">
+<h2 class="group-title">Greatest Hits</h2>
+<ul class="links grid">
 <li>
 <a href="https://freakonomics.com">Freakonomics Experiments</a>
 <span class="tag">Let a coin decide — then measure what happens.</span>
 <span class="stat">20,000 subjects · 85% retention over 9 months</span>
 <span class="d">As senior engineering consultant, I designed and shipped the infrastructure for a truly randomized, multi-month, large-scale field experiment for Prof. Steve Levitt of Freakonomics — the engine behin…</span>
-<span class="m">Note · Greatest Hits · Jul 29, 2026 · <a href="/notes/freakonomics-experiments/">on this site</a></span>
+<span class="m">Note · Jul 29, 2026 · <a href="/notes/freakonomics-experiments/">on this site</a></span>
 </li>
 <li>
 <a href="https://onemonth.com">OneMonth Inc.</a>
 <span class="tag">From zero to shipping code in a month.</span>
 <span class="stat">Highly profitable from day one, and still selling · $2.5M raised</span>
 <span class="d">My technical co-founder run: I designed and wrote a best-selling &quot;programming for non-programmers&quot; video course that got complete beginners shipping real code in a month — earning us a spot at Y Comb…</span>
-<span class="m">Note · Greatest Hits · Jul 29, 2026 · <a href="/notes/onemonth-inc/">on this site</a></span>
+<span class="m">Note · Jul 29, 2026 · <a href="/notes/onemonth-inc/">on this site</a></span>
 </li>
 <li>
 <a href="https://tanzu.vmware.com/labs">Pivotal Labs, New York City</a>
 <span class="tag">Coaching teams to ship better, faster.</span>
 <span class="stat">11 client teams coached</span>
 <span class="d">Working as senior technology consultant, I coached client teams to ship better products faster through lean experiments, pair-programming and test-driven development. One team used live data from 250…</span>
-<span class="m">Note · Greatest Hits · Jul 29, 2026 · <a href="/notes/pivotal-labs-new-york-city/">on this site</a></span>
+<span class="m">Note · Jul 29, 2026 · <a href="/notes/pivotal-labs-new-york-city/">on this site</a></span>
 </li>
+<li>
+<a href="/notes/mobilecamps-nyc-sf-la/">MobileCamps (NYC, SF, LA)</a>
+<span class="d">A BarCamp for mobile enthusiasts back in 2007 in New York and 2008 in New York, Los Angeles and San Francisco.</span>
+<span class="m">Note · Apr 1, 2025</span>
+</li>
+<li>
+<a href="/notes/meine-grossten-starken-my-strongest-talents/">Meine größten Stärken – My Strongest Talents</a>
+<span class="d">Restorative: People exceptionally talented in the Restorative theme are adept at dealing with problems. They are good at figuring out what is wrong and resolving it.</span>
+<span class="m">Note · Apr 1, 2025</span>
+</li>
+<li>
+<a href="/notes/i-am-mr-bubbles/">I Am Mr. Bubbles!</a>
+<span class="d">I finally can share this with you. Here is what I've been up to when I came back from work while still in New York.</span>
+<span class="m">Note · Sep 26, 2016</span>
+</li>
+</ul>
+<h2 class="group-title">Personal projects</h2>
+<ul class="links grid">
 <li>
 <a href="https://apps.apple.com/de/app/pudding-homework-helper/id6755304979">Pudding</a>
 <span class="tag">Proof you actually wrote it.</span>
 <span class="d">In a world that assumes everything's written by AI, I made Pudding to let you prove the words are yours. It captures your writing as it actually happened — every edit, pause and rewrite — so you can …</span>
-<span class="m">Note · Personal projects · Nov 14, 2025 · <a href="/notes/pudding/">on this site</a></span>
+<span class="m">Note · Nov 14, 2025 · <a href="/notes/pudding/">on this site</a></span>
 </li>
+<li>
+<a href="https://alexisrondeau.me/jamgpt-homepage/">JamGPT</a>
+<span class="tag">ChatGPT, one keystroke away.</span>
+<span class="d">JamGPT gets you to ChatGPT the instant you need it — one keystroke from whatever app you're in, with no tab-hunting or logging back in. I kept my go-to prompts a click away for the things I do over a…</span>
+<span class="m">Note · Mar 8, 2023 · <a href="/notes/jamgpt/">on this site</a></span>
+</li>
+<li>
+<a href="https://alexisrondeau.me/getstreamline/">Streamline</a>
+<span class="tag">Brain-dump first. Organize later.</span>
+<span class="d">I wanted a calm, blank space to get my thoughts out before the day's noise set in — no menus, no formatting, no friction. As you write, Streamline surfaces your existing notes so a morning brain-dump…</span>
+<span class="m">Note · Oct 28, 2022 · <a href="/notes/streamline/">on this site</a></span>
+</li>
+<li>
+<a href="https://alexisrondeau.me/pudding/">Pudding Research</a>
+<span class="tag">Connect the dots, follow the money, find the story.</span>
+<span class="d">Another open-source OSINT tool I made, this one for Ethereum token ecosystems. Pick any token and instantly see where the money flows — who's moving it, to whom, and how much. The biggest players and…</span>
+<span class="m">Note · Sep 25, 2022 · <a href="/notes/pudding-research/">on this site</a></span>
+</li>
+<li>
+<a href="https://unblah.me/">Unblah</a>
+<span class="tag">Know when to speak up — and when to zip it.</span>
+<span class="d">Ever leave a meeting wondering if you talked too much — or never got a word in? I built Unblah to quietly show your talk-time as it happens, so you can catch yourself in the moment and hit the balanc…</span>
+<span class="m">Note · Jul 8, 2022 · <a href="/notes/unblah/">on this site</a></span>
+</li>
+<li>
+<a href="https://alexisrondeau.me/algorand-ballet/">Algorand Ballet</a>
+<span class="tag">Watch the money move on-chain.</span>
+<span class="d">My open-source OSINT tool for the Algorand blockchain. See who a wallet really deals with: drop in any account and watch its activity unfold as a map you can explore — follow the connections, spot th…</span>
+<span class="m">Note · Nov 24, 2021 · <a href="/notes/algorand-ballet/">on this site</a></span>
+</li>
+</ul>
+<h2 class="group-title">Personal Writing</h2>
+<ul class="links grid">
 <li>
 <a href="/notes/how-to-double-my-rate-of-failure/">How To Double My Rate Of Failure</a>
 <span class="d">My &quot;One Kicks&quot;</span>
 <span class="m">Note · Apr 1, 2025</span>
 </li>
+<li>
+<a href="/notes/my-mothers-death-in-2018/">My mothers death in 2018</a>
+<span class="d">My  motherJoyce Rondeau, Mother  died after a long and courageous battle with cancer.</span>
+<span class="m">Note · Apr 1, 2025</span>
+</li>
+<li>
+<a href="/notes/how-to-make-better-and-faster-investment-decisions-with-lean-experiments/">How To Make Better and Faster Investment-Decisions With Lean Experiments</a>
+<span class="d">As many of you know by now, I strongly believe in the effectiveness of using the scientific method to validate business ideas.</span>
+<span class="m">Note · Apr 1, 2025</span>
+</li>
+<li>
+<a href="/notes/your-amazing-youness/">Your amazing YOUness</a>
+<span class="d">Your YOUness is what makes you a one-in-a-billion event in all of time and space.</span>
+<span class="m">Note · Apr 1, 2025</span>
+</li>
+<li>
+<a href="/notes/wings-of-desire/">Wings of Desire</a>
+<span class="d">I was 20 years old, the year was 1999 and I had just moved to New York City.</span>
+<span class="m">Note · Mar 10, 2014</span>
+</li>
+<li>
+<a href="/notes/gablonzer-strasse-23/">Gablonzer Strasse 23</a>
+<span class="d">I remember the dollops of smoking tobacco placed on the stumps of the trees that until this morning had surrounded the house I grew up in. The cherry, walnut, chestnut and hazelnut.</span>
+<span class="m">Note · Mar 10, 2014</span>
+</li>
+</ul>
+<h2 class="group-title">IRL Experiments</h2>
+<ul class="links grid">
 <li>
 <a href="/notes/pageturner-hack-for-kindle-experiment-w21-mini-project/">Pageturner Hack for Kindle – Experiment (W21 Mini-Project)</a>
 <span class="d">TLDR; After getting frustrated, angry even, with how awkward and unreliable the &quot;touch-screen-to-flipt-to-next-page&quot; on the Kindle Classic is, I experimented with different ways to emulate a physical…</span>
@@ -140,18 +231,26 @@
 <span class="m">Note · Apr 1, 2025</span>
 </li>
 <li>
+<a href="/notes/happier-through-bright-light-my-winter-s-a-d-well-being-research-1-year-of-light/">Happier Through Bright Light! My Winter S.A.D Well-Being Research – 1 Year of Light Therapy Prototypes</a>
+<span class="d">Hey there, Alexis here!</span>
+<span class="m">Note · Oct 17, 2018</span>
+</li>
+<li>
+<a href="/notes/microgreen-growth-experiment-natural-sunlight-vs-indoor-led-light/">Microgreen Growth Experiment: Natural Sunlight vs. Indoor LED Light</a>
+<span class="d">This was an experiment I ran over the summer.</span>
+<span class="m">Note · Sep 4, 2018</span>
+</li>
+<li>
+<a href="/notes/how-to-make-big-ass-bubbles/">How To Make Big Ass Bubbles</a>
+<span class="d">I've compiled the following giant bubble solution recipe and instructions after months of trial-and-error, testing dozens of recipes, ingredients etc.</span>
+<span class="m">Note · Aug 28, 2014</span>
+</li>
+</ul>
+<h2 class="group-title">Small Side Projects</h2>
+<ul class="links grid">
+<li>
 <a href="/notes/hello-my-name-is-buttons-s21-mini-project/">&quot;Hello my name is&quot; Buttons (S21 Mini-Project)</a>
 <span class="d">Basically, have a reusable version of the classic &quot;Hello, my name is&quot; sticker as a button with my name on it and wear it while I'm out and about to show that I'm open to conversation by offering my r…</span>
-<span class="m">Note · Apr 1, 2025</span>
-</li>
-<li>
-<a href="/notes/my-mothers-death-in-2018/">My mothers death in 2018</a>
-<span class="d">My  motherJoyce Rondeau, Mother  died after a long and courageous battle with cancer.</span>
-<span class="m">Note · Apr 1, 2025</span>
-</li>
-<li>
-<a href="/notes/how-to-make-better-and-faster-investment-decisions-with-lean-experiments/">How To Make Better and Faster Investment-Decisions With Lean Experiments</a>
-<span class="d">As many of you know by now, I strongly believe in the effectiveness of using the scientific method to validate business ideas.</span>
 <span class="m">Note · Apr 1, 2025</span>
 </li>
 <li>
@@ -169,93 +268,36 @@
 <span class="d">To build on what's there already and make it better.</span>
 <span class="m">Note · Apr 1, 2025</span>
 </li>
-<li>
-<a href="/notes/your-amazing-youness/">Your amazing YOUness</a>
-<span class="d">Your YOUness is what makes you a one-in-a-billion event in all of time and space.</span>
-<span class="m">Note · Apr 1, 2025</span>
-</li>
-<li>
-<a href="https://alexisrondeau.me/jamgpt-homepage/">JamGPT</a>
-<span class="tag">ChatGPT, one keystroke away.</span>
-<span class="d">JamGPT gets you to ChatGPT the instant you need it — one keystroke from whatever app you're in, with no tab-hunting or logging back in. I kept my go-to prompts a click away for the things I do over a…</span>
-<span class="m">Note · Personal projects · Mar 8, 2023 · <a href="/notes/jamgpt/">on this site</a></span>
-</li>
-<li>
-<a href="https://alexisrondeau.me/getstreamline/">Streamline</a>
-<span class="tag">Brain-dump first. Organize later.</span>
-<span class="d">I wanted a calm, blank space to get my thoughts out before the day's noise set in — no menus, no formatting, no friction. As you write, Streamline surfaces your existing notes so a morning brain-dump…</span>
-<span class="m">Note · Personal projects · Oct 28, 2022 · <a href="/notes/streamline/">on this site</a></span>
-</li>
-<li>
-<a href="https://alexisrondeau.me/pudding/">Pudding Research</a>
-<span class="tag">Connect the dots, follow the money, find the story.</span>
-<span class="d">Another open-source OSINT tool I made, this one for Ethereum token ecosystems. Pick any token and instantly see where the money flows — who's moving it, to whom, and how much. The biggest players and…</span>
-<span class="m">Note · Personal projects · Sep 25, 2022 · <a href="/notes/pudding-research/">on this site</a></span>
-</li>
-<li>
-<a href="https://unblah.me/">Unblah</a>
-<span class="tag">Know when to speak up — and when to zip it.</span>
-<span class="d">Ever leave a meeting wondering if you talked too much — or never got a word in? I built Unblah to quietly show your talk-time as it happens, so you can catch yourself in the moment and hit the balanc…</span>
-<span class="m">Note · Personal projects · Jul 8, 2022 · <a href="/notes/unblah/">on this site</a></span>
-</li>
-<li>
-<a href="https://alexisrondeau.me/algorand-ballet/">Algorand Ballet</a>
-<span class="tag">Watch the money move on-chain.</span>
-<span class="d">My open-source OSINT tool for the Algorand blockchain. See who a wallet really deals with: drop in any account and watch its activity unfold as a map you can explore — follow the connections, spot th…</span>
-<span class="m">Note · Personal projects · Nov 24, 2021 · <a href="/notes/algorand-ballet/">on this site</a></span>
-</li>
+</ul>
+<h2 class="group-title">Obsidian plugins</h2>
+<ul class="links grid">
 <li>
 <a href="https://github.com/akaalias/obsidian-footnotes">Footnotes</a>
 <span class="tag">Footnotes without the bookkeeping.</span>
 <span class="stat">25,808 downloads</span>
 <span class="d">I wanted to add a footnote without breaking my train of thought. One hotkey drops a numbered marker and its note at the bottom of the page, and the same key jumps you between the two — no counting, n…</span>
-<span class="m">Note · Obsidian plugins · Feb 27, 2021 · <a href="/notes/footnotes/">on this site</a></span>
+<span class="m">Note · Feb 27, 2021 · <a href="/notes/footnotes/">on this site</a></span>
 </li>
 <li>
 <a href="https://github.com/akaalias/obsidian-journey-plugin">Journey</a>
 <span class="tag">Find the story hiding in your notes.</span>
 <span class="stat">62,142 downloads</span>
 <span class="d">You've collected hundreds of notes — but where's the story in them? I built Journey to trace a path between any two ideas in your vault and hand you a ready-made outline, surfacing connections you'd …</span>
-<span class="m">Note · Obsidian plugins · Jan 28, 2021 · <a href="/notes/journey/">on this site</a></span>
+<span class="m">Note · Jan 28, 2021 · <a href="/notes/journey/">on this site</a></span>
 </li>
 <li>
 <a href="https://github.com/akaalias/obsidian-extract-pdf-highlights">Extract PDF Highlights</a>
 <span class="tag">Turn your PDF highlights into notes.</span>
 <span class="stat">319,102 downloads</span>
 <span class="d">I was tired of re-typing the passages I'd highlighted while reading. Now you open a marked-up PDF in Obsidian, click once, and every highlight, underline and note lands in a tidy page-ordered note yo…</span>
-<span class="m">Note · Obsidian plugins · Dec 28, 2020 · <a href="/notes/extract-pdf-highlights/">on this site</a></span>
+<span class="m">Note · Dec 28, 2020 · <a href="/notes/extract-pdf-highlights/">on this site</a></span>
 </li>
 <li>
 <a href="https://github.com/akaalias/obsidian-extract-pdf">Extract PDF</a>
 <span class="tag">PDF in, Markdown out.</span>
 <span class="stat">77,003 downloads</span>
 <span class="d">This one frees the text trapped inside a PDF. One click turns a document into clean, editable notes — headings, paragraphs and lists intact — so you can quote it, rework it, and weave it into your ow…</span>
-<span class="m">Note · Obsidian plugins · Dec 21, 2020 · <a href="/notes/extract-pdf/">on this site</a></span>
-</li>
-<li>
-<a href="/notes/happier-through-bright-light-my-winter-s-a-d-well-being-research-1-year-of-light/">Happier Through Bright Light! My Winter S.A.D Well-Being Research – 1 Year of Light Therapy Prototypes</a>
-<span class="d">Hey there, Alexis here!</span>
-<span class="m">Note · Oct 17, 2018</span>
-</li>
-<li>
-<a href="/notes/microgreen-growth-experiment-natural-sunlight-vs-indoor-led-light/">Microgreen Growth Experiment: Natural Sunlight vs. Indoor LED Light</a>
-<span class="d">This was an experiment I ran over the summer.</span>
-<span class="m">Note · Sep 4, 2018</span>
-</li>
-<li>
-<a href="/notes/how-to-make-big-ass-bubbles/">How To Make Big Ass Bubbles</a>
-<span class="d">I've compiled the following giant bubble solution recipe and instructions after months of trial-and-error, testing dozens of recipes, ingredients etc.</span>
-<span class="m">Note · Aug 28, 2014</span>
-</li>
-<li>
-<a href="/notes/wings-of-desire/">Wings of Desire</a>
-<span class="d">I was 20 years old, the year was 1999 and I had just moved to New York City.</span>
-<span class="m">Note · Mar 10, 2014</span>
-</li>
-<li>
-<a href="/notes/gablonzer-strasse-23/">Gablonzer Strasse 23</a>
-<span class="d">I remember the dollops of smoking tobacco placed on the stumps of the trees that until this morning had surrounded the house I grew up in. The cherry, walnut, chestnut and hazelnut.</span>
-<span class="m">Note · Mar 10, 2014</span>
+<span class="m">Note · Dec 21, 2020 · <a href="/notes/extract-pdf/">on this site</a></span>
 </li>
 </ul>
 </section>
@@ -285,7 +327,7 @@
 <li><a href="/feed/archive/2025/07/">July</a> <span class="n">23</span></li>
 <li><a href="/feed/archive/2025/06/">June</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2025/05/">May</a> <span class="n">18</span></li>
-<li><a href="/feed/archive/2025/04/">April</a> <span class="n">61</span></li>
+<li><a href="/feed/archive/2025/04/">April</a> <span class="n">62</span></li>
 <li><a href="/feed/archive/2025/03/">March</a> <span class="n">22</span></li>
 <li><a href="/feed/archive/2025/02/">February</a> <span class="n">11</span></li>
 </ul>

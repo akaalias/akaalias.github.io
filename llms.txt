@@ -6,7 +6,7 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 
 ## Newsfeed
 
-- [Newsfeed](https://alexisrondeau.me/feed/): 859 dispatches, newest first, 25 per page
+- [Newsfeed](https://alexisrondeau.me/feed/): 860 dispatches, newest first, 25 per page
 - [Archive](https://alexisrondeau.me/feed/archive/): the same dispatches by month
 - [Atom feed](https://alexisrondeau.me/feed/feed.xml): the latest 50 dispatches
 - [Data](https://alexisrondeau.me/feed/items.json): every item as JSON (source, id, date, text, media, links, permalink)
@@ -58,6 +58,7 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 - [Pogo – Name the baby](https://alexisrondeau.me/notes/pogo-name-the-baby/): ⭐️ JamGPT Beta Version Launch
 - [Your amazing YOUness](https://alexisrondeau.me/notes/your-amazing-youness/): Your YOUness is what makes you a one-in-a-billion event in all of time and space.
 - [Selected Blog Posts](https://alexisrondeau.me/notes/selected-blog-posts/): ⭐️ Happier Through Bright Light (Experiment)
+- [MobileCamps (NYC, SF, LA)](https://alexisrondeau.me/notes/mobilecamps-nyc-sf-la/): A BarCamp for mobile enthusiasts back in 2007 in New York and 2008 in New York, Los Angeles and San Francisco.
 - [How to make giant bubbles - Workshop](https://alexisrondeau.me/notes/how-to-make-giant-bubbles-workshop/): ⭐️ How to Make Big-Ass Bubbles
 - [My Most Interesting Things At the Moment](https://alexisrondeau.me/notes/my-most-interesting-things-at-the-moment/): ⭐️ Your amazing YOUness
 - [Lean Experiment Board](https://alexisrondeau.me/notes/lean-experiment-board/): ⭐️ How To Make Better Business Decisions⭐️ How To Make Better and Faster Investment-Decisions With Lean Experiments
@@ -232,7 +233,7 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 - [July 2025](https://alexisrondeau.me/feed/archive/2025/07/): 23 dispatches
 - [June 2025](https://alexisrondeau.me/feed/archive/2025/06/): 3 dispatches
 - [May 2025](https://alexisrondeau.me/feed/archive/2025/05/): 18 dispatches
-- [April 2025](https://alexisrondeau.me/feed/archive/2025/04/): 61 dispatches
+- [April 2025](https://alexisrondeau.me/feed/archive/2025/04/): 62 dispatches
 - [March 2025](https://alexisrondeau.me/feed/archive/2025/03/): 22 dispatches
 - [February 2025](https://alexisrondeau.me/feed/archive/2025/02/): 11 dispatches
 - [December 2024](https://alexisrondeau.me/feed/archive/2024/12/): 3 dispatches
