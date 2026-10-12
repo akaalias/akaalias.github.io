@@ -5,8 +5,65 @@
 <link href="https://alexisrondeau.me/feed/"/>
 <link rel="self" href="https://alexisrondeau.me/feed/feed.xml"/>
 <id>https://alexisrondeau.me/feed/</id>
-<updated>2026-09-28T22:00:00Z</updated>
+<updated>2026-10-12T07:36:58Z</updated>
 <author><name>Alexis Rondeau</name><uri>https://alexisrondeau.me/</uri></author>
+<entry>
+<title>Thank you @karpathy because I now realize that, while the curve's vertigo has been real f…</title>
+<link href="https://alexisrondeau.me/feed/t/2109548870082363686/"/>
+<id>https://alexisrondeau.me/feed/t/2109548870082363686/</id>
+<published>2026-10-12T07:36:58Z</published>
+<updated>2026-10-12T07:36:58Z</updated>
+<content type="html">&lt;article class=&quot;item kind-quote&quot; id=&quot;t2109548870082363686&quot;&gt;
+&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Quote&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2109548870082363686/&quot;&gt;&lt;time datetime=&quot;2026-10-12T07:36:58Z&quot;&gt;Monday, October 12, 2026 · 09:36&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;7&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; profile visit&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;text&quot;&gt;&lt;p&gt;Thank you &lt;a class=&quot;mention&quot; href=&quot;https://x.com/karpathy&quot;&gt;@karpathy&lt;/a&gt; because I now realize that, while the curve's vertigo has been real for me for years, there's a HUGE gap in my communication skills to translate what I'm experiencing here on the edge with those closer to the center in a way that makes sense to them.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&amp;quot;So this is the weirdness of the moment. The general public has mostly not interacted with these systems. When they have, it looks like a derpy chatbot. The majority of professionals still see only a modest uplift. And a small sliver of professionals are experiencing the vertigo of the curve going vertical. And it is all happening at the same time.&amp;quot;&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;
+&lt;blockquote class=&quot;ctx&quot;&gt;
+&lt;cite&gt;Quoting &lt;a href=&quot;https://x.com/karpathy&quot;&gt;@karpathy&lt;/a&gt; · Oct 11, 2026&lt;/cite&gt;
+&lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;Dusting off this tweet from April because this gap in shared understanding of LLM capability is &lt;em&gt;widening&lt;/em&gt;. It's now less &amp;quot;two groups of people speaking past each other&amp;quot; and more a sharp funnel.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Napkin math somewhere around 6B people (~75% of the population) have barely come in contact with LLMs at all.&lt;/li&gt;
+&lt;li&gt;Around 1-2B (~20%) are casual and infrequent users of free-tier ChatGPT-like products. This group sees derpy chatbots and treats them a bit like a better Google search, a writing aid, or etc. Maybe an agent tries to book you a flight. I have non-tech friends who (reasonably, imo) say they have not much use for it at all. Even many professionals outside of math&amp;amp;code are in this tier. For example, execs and many other functions spend a lot of their time talking to other people, so while they understand what is happening intellectually, it is still second-hand and a bit abstract.&lt;/li&gt;
+&lt;li&gt;Now we get to professional use of frontier-grade LLMs in math&amp;amp;code. Somewhere around 20M people (0.2%) see first-hand that large, complex projects that used to take them weeks/months can now be completed by agents with a prompt. Building apps, copying apps, translating apps, decompiling apps from binaries... This has all happened very quickly and recently - less than 1 year ago, I was writing code manually by hand, typing memorized computer code commands into a code editor character by character, occasionally pressing Tab to autocomplete a little chunk of code.&lt;/li&gt;
+&lt;li&gt;And finally we get to the ~5,000 people (~0.00006%) with access to frontier-grade systems internally. The external world has seen the preview. It looks like swarms of thousands of agents collaborating over weeks on software mega projects: minting zero days, running cyber attacks and defenses at machine speeds, discovering new science, advancing the frontier of mathematics. Things that would have taken top professionals in the industry years of work. Meanwhile, human review and comprehension are starting to fall behind. For example, people are still involved in the &amp;quot;archeology&amp;quot; of the OpenAI-HF incident from many months ago. Mathematicians may be poring over the 722 manuscripts on frontier mathematics for a while.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The funnel is driven by a combination of factors:&lt;br&gt;
+1. The impact scales with ambition, problem size, and horizon. A question with a paragraph answer barely stresses the system. You need a reservoir of big, difficult problems that you really care about. This aspect drives the consumer / professional dimension of the funnel.&lt;br&gt;
+2. The jaggedness of the system (which I have written about a lot separately). Capability peaks in domains that are digital, verifiable and economically valuable. This is because LLM capability emerges from reinforcement learning on verifiable rewards on a curated environment mixture driven by revenue potential. This aspect primarily drives the area (e.g. math&amp;amp;code) dimension of the funnel.&lt;br&gt;
+3. Access. Free-tier, paid-tier, internal.&lt;/p&gt;
+&lt;p&gt;So this is the weirdness of the moment. The general public has mostly not interacted with these systems. When they have, it looks like a derpy chatbot. The majority of professionals still see only a modest uplift. And a small sliver of professionals are experiencing the vertigo of the curve going vertical. And it is all happening at the same time.&lt;/p&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2109548870082363686/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2109548870082363686&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
+&lt;/article&gt;
+</content>
+</entry>
+<entry>
+<title>Accelerating scientific discovery with AI-powered Empirical Research Assistance: Autorese…</title>
+<link href="https://alexisrondeau.me/feed/t/2108836462015685015/"/>
+<id>https://alexisrondeau.me/feed/t/2108836462015685015/</id>
+<published>2026-10-10T08:26:07Z</published>
+<updated>2026-10-10T08:26:07Z</updated>
+<content type="html">&lt;article class=&quot;item kind-post&quot; id=&quot;t2108836462015685015&quot;&gt;
+&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2108836462015685015/&quot;&gt;&lt;time datetime=&quot;2026-10-10T08:26:07Z&quot;&gt;Saturday, October 10, 2026 · 10:26&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;52&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; bookmark&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;text&quot;&gt;&lt;p&gt;Accelerating scientific discovery with AI-powered Empirical Research Assistance: Autoresearch at Google (2025)&lt;/p&gt;
+&lt;p&gt;Lovely and very relatable: Once you have the experiment harness in place, you wanna test it against at least four kinds of interesting problems.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Genomics: Batch integration of single cell RNA sequencing data&lt;/li&gt;
+&lt;li&gt;Public health: Prediction of U.S. COVID-19 hospitalizations&lt;/li&gt;
+&lt;li&gt;Geospatial analysis: Segmentation of remote sensing images&lt;/li&gt;
+&lt;li&gt;Neuroscience: Whole-brain neural activity prediction&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Same for me. It becomes utterly fascinating. &lt;/p&gt;
+&lt;p&gt;Thank you &lt;a class=&quot;mention&quot; href=&quot;https://x.com/elliottadams&quot;&gt;@elliottadams&lt;/a&gt; for sending me this&lt;/p&gt;&lt;/div&gt;
+&lt;a class=&quot;linkcard&quot; href=&quot;https://research.google/blog/accelerating-scientific-discovery-with-ai-powered-empirical-software/&quot;&gt;
+&lt;img src=&quot;/feed/media/link-0b4363b80b54af2c.jpg&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
+&lt;span class=&quot;body&quot;&gt;&lt;span class=&quot;site&quot;&gt;research.google&lt;/span&gt;&lt;span class=&quot;title&quot;&gt;Accelerating scientific discovery with AI-powered Empirical Research Assistance&lt;/span&gt;&lt;span class=&quot;host&quot;&gt;↗ research.google&lt;/span&gt;&lt;/span&gt;
+&lt;/a&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2108836462015685015/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2108836462015685015&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
+&lt;/article&gt;
+</content>
+</entry>
 <entry>
 <title>Home</title>
 <link href="https://alexisrondeau.me/notes/home/"/>
@@ -34,7 +91,7 @@
 <updated>2026-09-28T11:04:15Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2104527603897913371&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2104527603897913371/&quot;&gt;&lt;time datetime=&quot;2026-09-28T11:04:15Z&quot;&gt;Monday, September 28, 2026 · 13:04&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;7&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;15&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; bookmark&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/SchmidhuberAI&quot;&gt;@SchmidhuberAI&lt;/a&gt; · Dec 23, 2022&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;Machine learning is the science of credit assignment. My new survey (also under arXiv:2212.11279) credits the pioneers of deep learning and modern AI (supplementing my award-winning 2015 deep learning survey): &lt;a href=&quot;https://t.co/MfmqhEh8MA&quot;&gt;t.co/MfmqhEh8MA&lt;/a&gt; P.S. Happy Holidays! &lt;a href=&quot;https://t.co/or6oxAOXgS&quot;&gt;t.co/or6oxAOXgS&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
@@ -81,7 +138,7 @@
 <updated>2026-09-28T08:25:54Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2104487753081655614&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2104487753081655614/&quot;&gt;&lt;time datetime=&quot;2026-09-28T08:25:54Z&quot;&gt;Monday, September 28, 2026 · 10:25&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;23&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; profile visit&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;25&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; profile visit&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/richardcsuwandi&quot;&gt;@richardcsuwandi&lt;/a&gt; · Sep 27, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/SpringStreetNYC&quot;&gt;@SpringStreetNYC&lt;/a&gt; Interesting, thanks for sharing!&lt;/p&gt;&lt;/div&gt;
@@ -110,7 +167,7 @@
 <updated>2026-09-28T08:08:59Z</updated>
 <content type="html">&lt;article class=&quot;item kind-quote&quot; id=&quot;t2104483494919393724&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Quote&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2104483494919393724/&quot;&gt;&lt;time datetime=&quot;2026-09-28T08:08:59Z&quot;&gt;Monday, September 28, 2026 · 10:08&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;2&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;110&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;7&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;2&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;139&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;7&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;Love this. Via &lt;a class=&quot;mention&quot; href=&quot;https://x.com/patrickshafto&quot;&gt;@patrickshafto&lt;/a&gt; and &lt;a class=&quot;mention&quot; href=&quot;https://x.com/DARPA&quot;&gt;@DARPA&lt;/a&gt;'s expMath program, &lt;a class=&quot;mention&quot; href=&quot;https://x.com/ayushkhaitan343&quot;&gt;@ayushkhaitan343&lt;/a&gt; announces:&lt;/p&gt;
 &lt;blockquote&gt;&lt;p&gt;&amp;quot;With Ben Chow, Yuan Liao and Ziyang Qin, we have completed a full Lean formalization of the Hamilton-Perelman proof of the Poincaré conjecture!&amp;quot;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;For context on expMath and in &lt;a class=&quot;mention&quot; href=&quot;https://x.com/r0ck3t23&quot;&gt;@r0ck3t23&lt;/a&gt; words over at &lt;a href=&quot;https://x.com/r0ck3t23/status/1917016776312766901&quot;&gt;x.com/r0ck3t23/statu…&lt;/a&gt;&lt;/p&gt;
@@ -136,20 +193,10 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <id>https://alexisrondeau.me/feed/t/2104481647441612829/</id>
 <published>2026-09-28T08:01:38Z</published>
 <updated>2026-09-28T08:01:38Z</updated>
-<content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2104481647441612829&quot;&gt;
-&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2104481647441612829/&quot;&gt;&lt;time datetime=&quot;2026-09-28T08:01:38Z&quot;&gt;Monday, September 28, 2026 · 10:01&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;3&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;475&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;2&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
-&lt;blockquote class=&quot;ctx&quot;&gt;
-&lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/hardmaru&quot;&gt;@hardmaru&lt;/a&gt; · Sep 28, 2026&lt;/cite&gt;
-&lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;Our Neuroevolution textbook is finally in print!&lt;/p&gt;
-&lt;p&gt;Free online edition: &lt;a href=&quot;https://t.co/3IDTb1remp&quot;&gt;t.co/3IDTb1remp&lt;/a&gt;&lt;br&gt;
-Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;I am incredibly grateful to my co-authors Sebastian Risi, Yujin Tang, and Risto Miikkulainen for making this happen. Neuroevolution is a subject very dear to my heart. It is the field that convinced me that nature has already figured out how to build intelligence: through evolution, collective behavior, and adaptation under constraints.&lt;/p&gt;
-&lt;p&gt;This idea, that intelligence emerges from evolution operating under constraints rather than unlimited resources, is what eventually led me to founding Sakana AI here in Japan.&lt;/p&gt;
-&lt;p&gt;The concepts in this book about open-ended creativity and self-organizing systems are exactly what we build at &lt;a class=&quot;mention&quot; href=&quot;https://x.com/SakanaAILabs&quot;&gt;@SakanaAILabs&lt;/a&gt;. Our name and logo are inspired by schools of fish moving together, adapting as one. It is the core philosophy of what we build. This book captures the theoretical foundations of that belief.&lt;/p&gt;&lt;/div&gt;
-&lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/ref-2104479220349173886-0.jpg&quot; width=&quot;1200&quot; height=&quot;1600&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/hardmaru&quot;&gt;@hardmaru&lt;/a&gt; &lt;a class=&quot;mention&quot; href=&quot;https://x.com/risi1979&quot;&gt;@risi1979&lt;/a&gt; &lt;a class=&quot;mention&quot; href=&quot;https://x.com/yujin_tang&quot;&gt;@yujin_tang&lt;/a&gt; Done! Immediately pre-ordered, can't wait!&lt;/p&gt;&lt;/div&gt;
+<content type="html">&lt;article class=&quot;item kind-post&quot; id=&quot;t2104481647441612829&quot;&gt;
+&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2104481647441612829/&quot;&gt;&lt;time datetime=&quot;2026-09-28T08:01:38Z&quot;&gt;Monday, September 28, 2026 · 10:01&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;4&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;595&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;4&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;text display&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/hardmaru&quot;&gt;@hardmaru&lt;/a&gt; &lt;a class=&quot;mention&quot; href=&quot;https://x.com/risi1979&quot;&gt;@risi1979&lt;/a&gt; &lt;a class=&quot;mention&quot; href=&quot;https://x.com/yujin_tang&quot;&gt;@yujin_tang&lt;/a&gt; Done! Immediately pre-ordered, can't wait!&lt;/p&gt;&lt;/div&gt;
 &lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/2104481647441612829-0.jpg&quot; width=&quot;1218&quot; height=&quot;464&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
 &lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2104481647441612829/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2104481647441612829&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
@@ -199,7 +246,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 <updated>2026-09-27T10:42:29Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2104159739013939696&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2104159739013939696/&quot;&gt;&lt;time datetime=&quot;2026-09-27T10:42:29Z&quot;&gt;Sunday, September 27, 2026 · 12:42&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;57&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;3&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;2&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;76&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;4&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/danielrupawalla&quot;&gt;@danielrupawalla&lt;/a&gt; · Sep 27, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;even within SF, i don't think we're AGI-pilled enough. it doesn't make sense for labs to stop. rn, we're only blocked by infra, not intellect&lt;/p&gt;
@@ -241,7 +288,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 <updated>2026-09-25T09:19:09Z</updated>
 <content type="html">&lt;article class=&quot;item kind-quote&quot; id=&quot;t2103413990265110691&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Quote&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2103413990265110691/&quot;&gt;&lt;time datetime=&quot;2026-09-25T09:19:09Z&quot;&gt;Friday, September 25, 2026 · 11:19&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;26&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;28&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;Oh perfect! Thank you for sharing the slides as well. I watched your talk on youtube yesterday and have been telling all my IRL friends about it :)&lt;/p&gt;
 &lt;p&gt;I love that your system is explicitly designed to hand back the recommendation to a human, not yet another loop.&lt;/p&gt;
 &lt;ul&gt;
@@ -290,7 +337,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 <updated>2026-09-24T12:03:44Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2103093022158155943&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2103093022158155943/&quot;&gt;&lt;time datetime=&quot;2026-09-24T12:03:44Z&quot;&gt;Thursday, September 24, 2026 · 14:03&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;86&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;116&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/wellecks&quot;&gt;@wellecks&lt;/a&gt;' &amp;quot;The Problem is the Problem&amp;quot; is a must-watch for us working in autonomous research and discovery loop engineering.&lt;/p&gt;
 &lt;p&gt;Thus far, I had only considered that my discovery loops would always target solutions to problems. &lt;/p&gt;
 &lt;p&gt;I had the same core-assumption about &lt;a class=&quot;mention&quot; href=&quot;https://x.com/zhengyaojiang&quot;&gt;@zhengyaojiang&lt;/a&gt; 's amazing AIDE² research: We run autoresearch on autoresearch to find optimal solutions to decided-upon problems, including our research methods themselves.&lt;/p&gt;
@@ -314,7 +361,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 <updated>2026-09-23T12:20:08Z</updated>
 <content type="html">&lt;article class=&quot;item kind-post&quot; id=&quot;t2102734759705084006&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2102734759705084006/&quot;&gt;&lt;time datetime=&quot;2026-09-23T12:20:08Z&quot;&gt;Wednesday, September 23, 2026 · 14:20&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;294&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; bookmark&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; profile visit&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;318&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; bookmark&lt;/span&gt; · &lt;span&gt;&lt;b&gt;2&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&amp;quot;Pants down, page up! Is it slop or is it not?&amp;quot;&lt;/p&gt;
 &lt;p&gt;Hey there! Alexis here. I'm the author of Mosey and director of this little film here. As you may (or not) have guessed, the film was created with AI. If you're (like me) skeptical at this point, please read on.&lt;/p&gt;
 &lt;p&gt;On this page here:&lt;/p&gt;
@@ -353,7 +400,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 <updated>2026-09-22T07:16:05Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2102295855352918433&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2102295855352918433/&quot;&gt;&lt;time datetime=&quot;2026-09-22T07:16:05Z&quot;&gt;Tuesday, September 22, 2026 · 09:16&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;15&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;16&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/michaelvolz_x&quot;&gt;@michaelvolz_x&lt;/a&gt; · Aug 21, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;Working with agents often reminds me of that classic German Loriot sketch. He simply wanted to straighten a crooked picture and ended up destroying everything in the process.&lt;/p&gt;
@@ -527,7 +574,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 <updated>2026-09-22T06:39:42Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2102286698327482407&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2102286698327482407/&quot;&gt;&lt;time datetime=&quot;2026-09-22T06:39:42Z&quot;&gt;Tuesday, September 22, 2026 · 08:39&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;121&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; profile visit&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;123&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; profile visit&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/Ryan__Stephen&quot;&gt;@Ryan__Stephen&lt;/a&gt; · Sep 21, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;breakpoints are dead &lt;a href=&quot;https://t.co/I87mhgeAoA&quot;&gt;t.co/I87mhgeAoA&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
@@ -564,7 +611,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 <updated>2026-09-21T12:52:07Z</updated>
 <content type="html">&lt;article class=&quot;item kind-post&quot; id=&quot;t2102018034109923841&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2102018034109923841/&quot;&gt;&lt;time datetime=&quot;2026-09-21T12:52:07Z&quot;&gt;Monday, September 21, 2026 · 14:52&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;123&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;2&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;130&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;The kind of future I want currently costs $470 with a $5 monthly subscription:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Oura ring, $270 + $5/month&lt;/li&gt;
@@ -632,7 +679,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 <updated>2026-09-19T10:34:54Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2101258727743471864&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2101258727743471864/&quot;&gt;&lt;time datetime=&quot;2026-09-19T10:34:54Z&quot;&gt;Saturday, September 19, 2026 · 12:34&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;41&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;42&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/TheMathFlow&quot;&gt;@TheMathFlow&lt;/a&gt; · Sep 18, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;Beauty is inseparable from mathematics...ᝰ. &lt;a href=&quot;https://t.co/rh5wFoe5WM&quot;&gt;t.co/rh5wFoe5WM&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
@@ -714,7 +761,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 <updated>2026-09-14T11:17:19Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2099457460398432480&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2099457460398432480/&quot;&gt;&lt;time datetime=&quot;2026-09-14T11:17:19Z&quot;&gt;Monday, September 14, 2026 · 13:17&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;58&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;77&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/zhengyaojiang&quot;&gt;@zhengyaojiang&lt;/a&gt; · Jul 14, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;The first experimental evidence of recursive self-improvement (RSI). &lt;/p&gt;
@@ -737,7 +784,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 <updated>2026-09-13T12:59:53Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2099120885391061300&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2099120885391061300/&quot;&gt;&lt;time datetime=&quot;2026-09-13T12:59:53Z&quot;&gt;Sunday, September 13, 2026 · 14:59&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;3&lt;/b&gt; reposts&lt;/span&gt; · &lt;span&gt;&lt;b&gt;22&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;3.1K&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; bookmark&lt;/span&gt; · &lt;span&gt;&lt;b&gt;4&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;3&lt;/b&gt; reposts&lt;/span&gt; · &lt;span&gt;&lt;b&gt;21&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;3.1K&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; bookmark&lt;/span&gt; · &lt;span&gt;&lt;b&gt;4&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/DarioAmodei&quot;&gt;@DarioAmodei&lt;/a&gt; · Sep 12, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;We Must Pace the Frontier: I’ve written a new essay on why the AI industry should slow down, with a three-part plan for doing so.&lt;/p&gt;
@@ -819,7 +866,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 <updated>2026-09-12T11:11:44Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2098731282381295729&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2098731282381295729/&quot;&gt;&lt;time datetime=&quot;2026-09-12T11:11:44Z&quot;&gt;Saturday, September 12, 2026 · 13:11&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;5&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; profile visit&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;6&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; profile visit&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/maxjendrall&quot;&gt;@maxjendrall&lt;/a&gt; · Sep 4, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;euromaxxed so hard I missed the mf gpt-6 launch wtfff &lt;a href=&quot;https://t.co/RlaX0XqV05&quot;&gt;t.co/RlaX0XqV05&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
@@ -909,7 +956,7 @@ Kurtis Blow // Liquid Liquid // The Clash // Can // Talking Heads // Incredible 
 <updated>2026-09-11T07:52:52Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2098318844339122200&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2098318844339122200/&quot;&gt;&lt;time datetime=&quot;2026-09-11T07:52:52Z&quot;&gt;Friday, September 11, 2026 · 09:52&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;6&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;7&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/charlesworthjc&quot;&gt;@charlesworthjc&lt;/a&gt; · Apr 20, 2023&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;AI * web3 hack week coming to Lisbon 🇵🇹. If you're a hacker and think AI should be open source and decentralised,  this one is for you: &lt;a href=&quot;https://t.co/OPZ1ayHJC7&quot;&gt;t.co/OPZ1ayHJC7&lt;/a&gt; &lt;a href=&quot;https://t.co/SWKQnPi03o&quot;&gt;t.co/SWKQnPi03o&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
@@ -928,7 +975,7 @@ Kurtis Blow // Liquid Liquid // The Clash // Can // Talking Heads // Incredible 
 <updated>2026-09-11T07:51:40Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2098318546279280947&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2098318546279280947/&quot;&gt;&lt;time datetime=&quot;2026-09-11T07:51:40Z&quot;&gt;Friday, September 11, 2026 · 09:51&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;29&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; profile visit&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;29&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/nicktozi&quot;&gt;@nicktozi&lt;/a&gt; · Feb 16, 2025&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;If you're waking up this morning grateful for another day...&lt;/p&gt;
@@ -1039,7 +1086,7 @@ tomorrow,&lt;/p&gt;
 <updated>2026-09-10T14:42:02Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2098059428163403992&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2098059428163403992/&quot;&gt;&lt;time datetime=&quot;2026-09-10T14:42:02Z&quot;&gt;Thursday, September 10, 2026 · 16:42&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;3&lt;/b&gt; replies&lt;/span&gt; · &lt;span&gt;&lt;b&gt;9&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;8.2K&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;8&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;3&lt;/b&gt; replies&lt;/span&gt; · &lt;span&gt;&lt;b&gt;9&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;8.2K&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/iam_zachi&quot;&gt;@iam_zachi&lt;/a&gt; · Sep 10, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;Huggingfaces security txt after the openai incident 😭 &lt;a href=&quot;https://t.co/kMkNdUti4o&quot;&gt;t.co/kMkNdUti4o&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
@@ -1049,45 +1096,6 @@ tomorrow,&lt;/p&gt;
 &lt;p&gt;Next question: is this real?&lt;/p&gt;
 &lt;p&gt;Because I really, really hope it's real.&lt;/p&gt;&lt;/div&gt;
 &lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098059428163403992/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098059428163403992&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
-&lt;/article&gt;
-</content>
-</entry>
-<entry>
-<title>@kshvyaps Been doing this for a year. Actual thought per reply, no slop, because slop ins…</title>
-<link href="https://alexisrondeau.me/feed/t/2098056469845315918/"/>
-<id>https://alexisrondeau.me/feed/t/2098056469845315918/</id>
-<published>2026-09-10T14:30:17Z</published>
-<updated>2026-09-10T14:30:17Z</updated>
-<content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2098056469845315918&quot;&gt;
-&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2098056469845315918/&quot;&gt;&lt;time datetime=&quot;2026-09-10T14:30:17Z&quot;&gt;Thursday, September 10, 2026 · 16:30&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;11&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
-&lt;blockquote class=&quot;ctx&quot;&gt;
-&lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/kshvyaps&quot;&gt;@kshvyaps&lt;/a&gt; · Sep 25, 2025&lt;/cite&gt;
-&lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;time to be the best reply guy ever &lt;a href=&quot;https://t.co/j7BcgjnDSN&quot;&gt;t.co/j7BcgjnDSN&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
-&lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/ref-1971093610453242057-0.jpg&quot; width=&quot;736&quot; height=&quot;364&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/kshvyaps&quot;&gt;@kshvyaps&lt;/a&gt; Been doing this for a year. Actual thought per reply, no slop, because slop insults the reader's intelligence.&lt;/p&gt;
-&lt;p&gt;Result: basically no followers. And I'm paying for the privilege. Being conscientious as a new account works against you, apparently. Not cool. Really. NOT COOL.&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098056469845315918/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098056469845315918&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
-&lt;/article&gt;
-</content>
-</entry>
-<entry>
-<title>@kshvyaps 100 replies a day, otherwise your reputation gets lowered. That's https://t.co/…</title>
-<link href="https://alexisrondeau.me/feed/t/2098055487165972746/"/>
-<id>https://alexisrondeau.me/feed/t/2098055487165972746/</id>
-<published>2026-09-10T14:26:22Z</published>
-<updated>2026-09-10T14:26:22Z</updated>
-<content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2098055487165972746&quot;&gt;
-&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2098055487165972746/&quot;&gt;&lt;time datetime=&quot;2026-09-10T14:26:22Z&quot;&gt;Thursday, September 10, 2026 · 16:26&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;7&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
-&lt;blockquote class=&quot;ctx&quot;&gt;
-&lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/kshvyaps&quot;&gt;@kshvyaps&lt;/a&gt; · Sep 25, 2025&lt;/cite&gt;
-&lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;time to be the best reply guy ever &lt;a href=&quot;https://t.co/j7BcgjnDSN&quot;&gt;t.co/j7BcgjnDSN&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
-&lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/ref-1971093610453242057-0.jpg&quot; width=&quot;736&quot; height=&quot;364&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/kshvyaps&quot;&gt;@kshvyaps&lt;/a&gt; 100 replies a day, otherwise your reputation gets lowered. That's &lt;a href=&quot;https://insane.So&quot;&gt;insane.So&lt;/a&gt; my actual question: how does everyone do this? Other than pointing an AI at it and cranking out slop.And if that IS how it's done, then is all of it just slop?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098055487165972746/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098055487165972746&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>

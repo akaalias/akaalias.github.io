@@ -30,10 +30,243 @@
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1>Newsfeed</h1>
 <p class="lede">Everything I publish, in the order I published it: dispatches from Twitter, videos from YouTube and notes from my vault, archived here in full — text, images, video and links — so they outlive the platforms.</p>
-<p class="sub">857 dispatches since March 2014 · page 33 of 35</p>
+<p class="sub">859 dispatches since March 2014 · page 33 of 35</p>
 </header>
 <div class="wrap">
 <section class="feed">
+<article class="item kind-note" id="n-set-your-priorities-straight-in-2-minutes-without-thinking-hard">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/set-your-priorities-straight-in-2-minutes-without-thinking-hard/"><time datetime="2017-05-07T22:00:00Z">Monday, May 8, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/set-your-priorities-straight-in-2-minutes-without-thinking-hard/">Set Your Priorities Straight In 2 Minutes Without Thinking Hard</a></h2>
+<div class="text note-body clamped">
+<blockquote>
+<p>“I have so much to do but I’m not sure which of the things I should do first.”</p>
+</blockquote>
+<p>If you, like me, have struggled with figuring out what should be my No.1priority, then I have good news.</p>
+<p>Prioritizing is hard, especially when your items can be <em>important</em> and/or <em>urgent</em>. The app that I just released gives you the answer to:</p>
+<p><strong>What’s the most important and urgent thing I should do next? (The answer might surprise you!)</strong></p>
+<p>I would like to have someone help me with this and say to me:</p>
+<blockquote>
+<p><strong>Your most important and urgent next step is… Make a balance sheet</strong></p>
+</blockquote>
+<p>Now, <strong><a href="https://prioio.herokuapp.com">I just released a simple web-app</a></strong> that helps you (and me) prioritize a list (a todo-list, a list of chores, whatever you want) by two measures:</p>
+<p>Importance and Urgency. Some things are important, some are urgent. And some are both. Make sure you tackle the one that’s both first.</p>
+<p>The app guides you through comparing each item with each other based on both measures and comes up with the math and sorting automatically.</p>
+<p>Here’s the result for the tasks I had on my list today:</p>
+<p><img src="/notes/media/PrioDo-5-1024x641.png" alt="" loading="lazy"></p>
+<p>Clearly, I need to create my balance sheet. After that I can do the other stuff.</p>
+<p>The process is simple.</p>
+<p>Go to the homepage and click the <strong>start button</strong></p>
+<p><img src="/notes/media/PrioDo-1-1024x568.png" alt="" loading="lazy"></p>
+<p>Then, insert your list of tasks like so:</p>
+<p><img src="/notes/media/PrioDo-2-1024x568.png" alt="" loading="lazy"></p>
+<p>Then, the app will guide you through comparing each item with each other. This is called a binary sort and will make sure that what item is at the top is really the most <em>important</em> and <em>urgent</em> one.</p>
+<p><img src="/notes/media/PrioDo-3-1024x537.png" alt="" loading="lazy"></p>
+<p><img src="/notes/media/PrioDo-4-1024x537.png" alt="" loading="lazy"></p>
+<p>Finally, you’ll see your result.</p>
+<p>Now, what are you waiting for? Get your priorities straight in a few short minutes and tackle your next, most important and urgent task right away.</p>
+<p><strong>Click here: <a href="https://prioio.herokuapp.com"><a href="https://prioio.herokuapp.com">https://prioio.herokuapp.com</a></a></strong></p>
+<p>Have fun!</p>
+<p>Alexis</p>
+<p>*</p>
+<p>PS: You can check out the source at <a href="https://github.com/akaalias/prio"><a href="https://github.com/akaalias/prio">https://github.com/akaalias/prio</a></a> in case you want to poke around a bit.</p>
+<p>PPS: Let me know if you, too, have found a surprising result of your top priority after sorting.</p>
+</div>
+<div class="more"><a href="/notes/set-your-priorities-straight-in-2-minutes-without-thinking-hard/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/set-your-priorities-straight-in-2-minutes-without-thinking-hard/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-thinking-and-sleeping-better-with-clojure">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/thinking-and-sleeping-better-with-clojure/"><time datetime="2017-05-07T22:00:00Z">Monday, May 8, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/thinking-and-sleeping-better-with-clojure/">Thinking and Sleeping Better With Clojure</a></h2>
+<div class="text note-body clamped">
+<p>To prioritize a list of todo-items, as in my <a href="https://prioio.herokuapp.com">Prioritization-app</a> I recently launched, I needed to get a list of the unique combinations for the user to choose from:</p>
+<p>It goes a little bit like this:</p>
+<blockquote>
+<p>Which is more important: <strong>A</strong> or <strong>B</strong>? Which is more important: <strong>A</strong> or <strong>C</strong>? Which is more important: <strong>B</strong> or <strong>C</strong>?</p>
+</blockquote>
+<p>I wrote a version in Ruby for the app and then a sketch in Clojure to compare readability and expressiveness.</p>
+<p>In my opinion, the Clojure version is much more readable and was far easier to reason about.</p>
+<p>Probably because I’m not good to solve problems in Ruby but there might be more than meets the eye here.</p>
+<h2>Creating Comparisons</h2>
+<p>Let’s say I have a todo-list of <code>A, B, C and D</code>.</p>
+<p>The list of comparisons I want is <code>A ↔ B, A ↔ C, A ↔ D, B ↔ C, B ↔ D and C ↔ D</code> to use later in my app.</p>
+<p>From the matrix below, you can see, I want only the <em>unique</em> comparisons (<code>A ↔ B</code> and <code>B ↔ A</code> are interchangeable for my purposes) and skip dupes that compare an element with itself (<code>A ↔ A, B ↔ B, C ↔ C, D ↔ D</code>)</p>
+<p>To demonstrate, I only want the top-right triangle of comparisons:</p>
+<table>
+<thead><tr><th>×</th><th>A</th><th>B</th><th>C</th><th>D</th></tr></thead>
+<tbody>
+<tr><td>A</td><td><em>skip (dupe)</em></td><td><strong>A ↔ B</strong></td><td><strong>A ↔ C</strong></td><td><strong>A ↔ D</strong></td></tr>
+<tr><td>B</td><td><em>skip</em></td><td><em>skip (dupe)</em></td><td><strong>B ↔ C</strong></td><td><strong>B ↔ D</strong></td></tr>
+<tr><td>C</td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip (dupe)</em></td><td><strong>C ↔ D</strong></td></tr>
+<tr><td>D</td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip (dupe)</em></td></tr>
+</tbody>
+</table>
+<h3>Thinking, Testing and Implementing in Ruby</h3>
+<p>Now, since I started the app in Ruby, I translated the behavior above as follows:</p>
+<pre><code class="language-ruby">describe '.unique_combinations' do
+    context 'input list is empty' do
+      it 'returns an empty list' do
+        result = Combinator.unique_combinations([])
+        expect(result).to eq([])
+      end
+    end
+
+    context 'input list only has one element' do
+      it 'returns an empty list' do
+        result = Combinator.unique_combinations([1])
+        expect(result).to eq([])
+      end
+    end
+
+    context 'input list only has two elements' do
+      it 'returns a list with combination a' do
+        result = Combinator.unique_combinations([1, 2])
+        expect(result).to eq(&lt;span class=&quot;wikilink unresolved&quot;&gt;1,2&lt;/span&gt;)
+      end
+
+      it 'returns a list with combination b' do
+        result = Combinator.unique_combinations([:foo, :bar])
+        expect(result).to eq(&lt;span class=&quot;wikilink unresolved&quot;&gt;:foo, :bar&lt;/span&gt;)
+      end
+    end
+
+    context 'input list only has three elements' do
+      it 'returns a list with 3 combinations' do
+        result = Combinator.unique_combinations([1, 2, 3])
+        expect(result).to eq([[1, 2], [1, 3], [2, 3]])
+      end
+    end
+
+    context 'input list only has four elements' do
+      it 'returns a list with 6 combinations' do
+        result = Combinator.unique_combinations([1, 2, 3, 4])
+        expect(result).to eq([[1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]])
+      end
+    end
+  End
+end
+</code></pre>
+<p>…and wrote, after several failed attempts and one sleepless night, the following, working but not very elegant solution. I felt weird about it, because even looking at it now, I can’t fully explain it well. It works, it has reasonable test-coverage. But I’m not proud of it.</p>
+<pre><code class="language-ruby">def self.unique_combinations(ids)
+    return [] if ids.length &lt; 2
+
+    all_combinations = []
+
+    for i1 in ids
+      for i2 in ids
+        if i1 != i2
+          contains = false
+          for c in all_combinations
+            if c[1] &lt;mark&gt; i1 and c[0] &lt;/mark&gt; i2
+              contains = true
+            end
+          end
+          unless contains
+            all_combinations &lt;&lt; [i1, i2]
+          end
+        end
+      end
+    end
+
+    return all_combinations
+  end
+</code></pre>
+<p>Okay, fine I thought. How would I solve this issue in Lisp?</p>
+<h3>Thinking, Testing and Implementing in Clojure</h3>
+<p>I don’t know why but thinking in terms of lists and recursion instead of iteration made it simpler for me.</p>
+<p>The top-level function works as follows:</p>
+<pre><code class="language-clojure">(final-combinations '(A B C D)) 
+;; =&gt; '((A B) (A C) (A D) (B C) (B D) (C D))
+</code></pre>
+<p>Yup, that’s the list I want. Thinking about it I had an idea to break the problem further down:</p>
+<p>The complete list of unique comparisons, the one I want, is…</p>
+<ol>
+<li>the <strong>union</strong> of each row of one element combined with all the others. That’s <code>A</code> combined with <code>B, C and D</code></li>
+<li>Each row has an increasing <strong>offset</strong> from the left that starts at 0 for row 1 and increases by 1 for each following row.</li>
+<li>I have to subtract the <strong>dupes</strong> such as <code>A ↔ A</code> because I don’t need them.</li>
+</ol>
+<p>For illustration purposes, here is the table again:</p>
+<table>
+<thead><tr><th>×</th><th>A</th><th>B</th><th>C</th><th>D</th></tr></thead>
+<tbody>
+<tr><td>A</td><td><em>skip (dupe)</em></td><td><strong>A ↔ B</strong></td><td><strong>A ↔ C</strong></td><td><strong>A ↔ D</strong></td></tr>
+<tr><td>B</td><td><em>skip</em></td><td><em>skip (dupe)</em></td><td><strong>B ↔ C</strong></td><td><strong>B ↔ D</strong></td></tr>
+<tr><td>C</td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip (dupe)</em></td><td><strong>C ↔ D</strong></td></tr>
+<tr><td>D</td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip (dupe)</em></td></tr>
+</tbody>
+</table>
+<p>Given the above 3 steps, I basically just wrote them out as functions.</p>
+<p>I derived the first function, <code>combine</code> which takes <code>x</code> and <code>l</code> and returns a list of all possible combinations, including the ones we’ll later skip.</p>
+<pre><code class="language-clojure">(with-test 
+  (defn combine 
+    ([x l] 
+     (combine x l '()))
+    ([x l acc]
+     (cond (empty? l) (reverse acc)
+           :else (recur x (rest l) (conj acc (list x (first l)))) )))
+
+  (is (= (combine 1 '()) '()))
+  (is (= (combine 1 '(1)) '((1 1))))
+  (is (= (combine 1 '(2)) '((1 2))))
+  (is (= (combine 1 '(1 2)) '((1 1) (1 2))))
+  (is (= (combine 1 '(1 2 3)) '((1 1) (1 2) (1 3)))))
+</code></pre>
+<p>Then, I use <code>combine</code> to create basically the table above but with nothing yet removed.</p>
+<pre><code class="language-clojure">(with-test
+  (defn combine-lists 
+    ([l1 l2] 
+     (combine-lists l1 l2 '()))
+    ([l1 l2 acc]
+     (cond (empty? l1) (reverse acc)
+           :else (recur (rest l1) l2 (cons (combine (first l1) l2) acc)) )))
+
+  (is (= (combine-lists '() '()) '()))
+  (is (= (combine-lists '(1) '(1)) '(((1 1)))))
+  (is (= (combine-lists '(1 2) '(1 2)) '(((1 1) (1 2)) 
+                                         ((2 1) (2 2))))))
+</code></pre>
+<p>Then I introduce the idea of an offset. To only take those elements in a list that are after a certain offset.</p>
+<pre><code class="language-clojure">(with-test
+  (defn take-rest
+    ([offset l]
+     (cond (= offset 0) l
+           :else (recur (dec offset) (rest l)))))
+
+  (is (= (take-rest 0 '()) '()))
+  (is (= (take-rest 1 '()) '()))
+  (is (= (take-rest 0 '(1)) '(1)))
+  (is (= (take-rest 0 '(1 2)) '(1 2)))
+  (is (= (take-rest 1 '(1 2)) '(2)))
+  (is (= (take-rest 1 '(1 2 3)) '(2 3)))
+  (is (= (take-rest 2 '(1 2 3)) '(3)))
+  (is (= (take-rest 2 '(1 2 3 4)) '(3 4))))
+</code></pre>
+<p>Now I can use <code>take-rest</code> and apply it to each row in my matrix…</p>
+<pre><code class="language-clojure">(defn unique-combinations 
+  ([offset ll] 
+   (unique-combinations offset ll '()))
+  ([offset ll acc]
+   (cond (empty? ll) (reverse acc)
+         :else (recur (inc offset) (rest ll) (cons (take-rest offset (first ll)) acc)))))
+</code></pre>
+<p>And finally remove the identity items such as <code>A ↔ A</code></p>
+<pre><code class="language-clojure">(with-test
+  (defn final-combinations 
+    [l]
+    (filter #((= (first %) (second %)))) (partition 2 (flatten (unique-combinations 1 (combine-lists l l)))))
+
+  (is (= (final-combinations '()) '()))
+  (is (= (final-combinations '(1)) '()))
+  (is (= (final-combinations '(1 2)) '((1 2))))
+  (is (= (final-combinations '(1 2 3)) '((1 2) (1 3) (2 3))))
+  (is (= (final-combinations '(1 2 3 4)) '((1 2) (1 3) (1 4) (2 3) (2 4) (3 4)))))
+</code></pre>
+<p>Granted, this code is not yet refactored and in total more lines than the Ruby version, but here is the rub:</p>
+<p>It took me <strong>20 minutes</strong> to think up and implement the solution in Clojure and 2 days including a sleepless night to do it in Ruby.</p>
+<p>I don’t know what that means but I’ll probably use a Lisp like Clojure for problems like this in the future. Just to make sure I get some sleep.</p>
+</div>
+<div class="more"><a href="/notes/thinking-and-sleeping-better-with-clojure/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/thinking-and-sleeping-better-with-clojure/">Permalink</a></div>
+</article>
 <article class="item kind-note" id="n-the-little-schemer-in-clojure-recap-chapter-5">
 <div class="meta"><span class="kind">Note</span><a class="when" href="/notes/the-little-schemer-in-clojure-recap-chapter-5/"><time datetime="2017-05-04T22:00:00Z">Friday, May 5, 2017 · 00:00</time></a></div>
 <h2 class="note-title"><a href="/notes/the-little-schemer-in-clojure-recap-chapter-5/">The Little Schemer in Clojure – Recap Chapter 5</a></h2>
@@ -1664,24 +1897,6 @@ So, are you ready to make your friend be like this when they get an email from y
 <div class="more"><a href="/notes/huddle-metrics/">Continue reading ›</a></div>
 <div class="src"><a href="/notes/huddle-metrics/">Permalink</a></div>
 </article>
-<article class="item kind-note" id="n-eric-schmidt-how-google-works">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/eric-schmidt-how-google-works/"><time datetime="2014-10-15T22:00:00Z">Thursday, October 16, 2014 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/eric-schmidt-how-google-works/">Eric Schmidt: How Google Works</a></h2>
-<div class="text note-body">
-<iframe style="border: 1px solid #CCC; border-width: 1px; margin-bottom: 5px; max-width: 100%;" src="//www.slideshare.net/slideshow/embed_code/40175706" width="100%" height="430" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
-
-<p><strong><a href="//www.slideshare.net/ericschmidt76/how-google-works-final-1">How Google Works</a></strong> from <strong><a href="//www.slideshare.net/ericschmidt76">Eric Schmidt</a></strong></p>
-</div>
-<div class="src"><a href="/notes/eric-schmidt-how-google-works/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-focus">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/focus/"><time datetime="2014-10-15T22:00:00Z">Thursday, October 16, 2014 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/focus/">Focus.</a></h2>
-<div class="text note-body">
-<p>Green tea is really, really good for you.</p>
-</div>
-<div class="src"><a href="/notes/focus/">Permalink</a></div>
-</article>
 </section>
 <nav class="pager"><a href="/feed/page/32/">‹ Newer</a><span class="n">Page 33 of 35</span><a href="/feed/page/34/">Older ›</a></nav>
 <aside class="months-nav">
@@ -1689,6 +1904,7 @@ So, are you ready to make your friend be like this when they get an email from y
 <h3><a href="/feed/archive/">Archive</a></h3>
 <div class="y">2026</div>
 <ul>
+<li><a href="/feed/archive/2026/10/">October</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2026/09/">September</a> <span class="n">78</span></li>
 <li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
 <li><a href="/feed/archive/2026/07/">July</a> <span class="n">22</span></li>

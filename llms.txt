@@ -6,7 +6,7 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 
 ## Newsfeed
 
-- [Newsfeed](https://alexisrondeau.me/feed/): 857 dispatches, newest first, 25 per page
+- [Newsfeed](https://alexisrondeau.me/feed/): 859 dispatches, newest first, 25 per page
 - [Archive](https://alexisrondeau.me/feed/archive/): the same dispatches by month
 - [Atom feed](https://alexisrondeau.me/feed/feed.xml): the latest 50 dispatches
 - [Data](https://alexisrondeau.me/feed/items.json): every item as JSON (source, id, date, text, media, links, permalink)
@@ -214,6 +214,7 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 
 ## Months
 
+- [October 2026](https://alexisrondeau.me/feed/archive/2026/10/): 2 dispatches
 - [September 2026](https://alexisrondeau.me/feed/archive/2026/09/): 78 dispatches
 - [August 2026](https://alexisrondeau.me/feed/archive/2026/08/): 37 dispatches
 - [July 2026](https://alexisrondeau.me/feed/archive/2026/07/): 22 dispatches
