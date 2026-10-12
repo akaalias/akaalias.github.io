@@ -6,13 +6,15 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 
 ## Newsfeed
 
-- [Newsfeed](https://alexisrondeau.me/feed/): 860 dispatches, newest first, 25 per page
+- [Newsfeed](https://alexisrondeau.me/feed/): 862 dispatches, newest first, 25 per page
 - [Archive](https://alexisrondeau.me/feed/archive/): the same dispatches by month
 - [Atom feed](https://alexisrondeau.me/feed/feed.xml): the latest 50 dispatches
 - [Data](https://alexisrondeau.me/feed/items.json): every item as JSON (source, id, date, text, media, links, permalink)
 
 ## Notes
 
+- [Mosey](https://alexisrondeau.me/notes/mosey/): The longest-lived people don't exercise — they get up and move every twenty minutes. I built Mosey to put that nudge in…
+- [Quasi](https://alexisrondeau.me/notes/quasi/): We spend ten or more hours a day staring at screens. Quasi is my small experiment in computing without one: you speak i…
 - [Home](https://alexisrondeau.me/notes/home/): Alexis here — welcome, and thank you for stopping by! Below you'll find some stuff I'm really proud of and want to shar…
 - [Freakonomics Experiments](https://alexisrondeau.me/notes/freakonomics-experiments/): As senior engineering consultant, I designed and shipped the infrastructure for a truly randomized, multi-month, large-…
 - [OneMonth Inc.](https://alexisrondeau.me/notes/onemonth-inc/): My technical co-founder run: I designed and wrote a best-selling "programming for non-programmers" video course that go…
@@ -206,7 +208,7 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 
 ## Tags
 
-- [#personal-projects](https://alexisrondeau.me/feed/tag/personal-projects/): 6 dispatches
+- [#personal-projects](https://alexisrondeau.me/feed/tag/personal-projects/): 8 dispatches
 - [#autoresearch](https://alexisrondeau.me/feed/tag/autoresearch/): 4 dispatches
 - [#discovery-loops](https://alexisrondeau.me/feed/tag/discovery-loops/): 3 dispatches
 - [#greatest-hits](https://alexisrondeau.me/feed/tag/greatest-hits/): 3 dispatches
@@ -215,7 +217,7 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 
 ## Months
 
-- [October 2026](https://alexisrondeau.me/feed/archive/2026/10/): 2 dispatches
+- [October 2026](https://alexisrondeau.me/feed/archive/2026/10/): 4 dispatches
 - [September 2026](https://alexisrondeau.me/feed/archive/2026/09/): 78 dispatches
 - [August 2026](https://alexisrondeau.me/feed/archive/2026/08/): 37 dispatches
 - [July 2026](https://alexisrondeau.me/feed/archive/2026/07/): 22 dispatches
