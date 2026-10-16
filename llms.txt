@@ -4,6 +4,28 @@
 
 Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/about/ · Twitter: https://x.com/SpringStreetNYC
 
+## Projects
+
+- [Autonomous Research with AI: "Not all who wander are lost" — can a UAV learn a city by heart, with no GPS, no map on board, just a $4 flight computer?](https://alexisrondeau.me/ballpark/): Yes! An AI agent running an autoresearch loop of 81 experiments ($364) found a special-purpose neural memory architecture that 'remembers' an exact geo-locatio…
+- [Autonomous Research with AI: "The snuggle is real" — evolving quadcopter frame geometry for Wh/km, with Claude as an occasional co-designer](https://alexisrondeau.me/airloom/): An autoresearch loop — a genetic algorithm over fourteen genes of the real, open-source Source One V6 plate drawings, flown through six simulated weather scena…
+- [Autonomous Research with AI: "We don't write the rules. We just discover them." — how an agent searches for the groundrule, and what makes the loop different](https://alexisrondeau.me/llm-heuristic-scientists-workshop/approach.html): Autoresearch on a job-shop scheduling problem dressed up as a lunch rush: one grill, one shared range, sequencing as the only lever, and an AI agent that propo…
+- [Autonomous Research with AI: "Which city in Paris are you staying in?" — can a loop teach a phone-sized small language model to ask frontier-quality questions?](https://alexisrondeau.me/tada/research/FMDiscovery/dashboard/report.html): An AI agent running an autoresearch loop — 96 experiments across every lever we could find: prompting, retrieval, decoding, pipeline, fine-tuning, preference-l…
+- [Mosey](https://alexisrondeau.me/mosey-site/): Walks that start themselves.
+- [Quasi](https://alexisrondeau.me/quasi/): Say it, hear it done.
+- [Freakonomics Experiments](https://doi.org/10.1093/restud/rdaa016): Let a coin decide — then measure what happens. · 20,000 subjects · 85% retention over 9 months
+- [OneMonth Inc.](https://onemonth.com): From zero to shipping code in a month. · Highly profitable from day one, and still selling · $2.5M raised
+- [Pivotal Labs, New York City](https://labspractices.com/learningpaths/application-development-how-we-work/): Coaching teams to ship better, faster. · 11 client teams coached
+- [Pudding](https://apps.apple.com/de/app/pudding-homework-helper/id6755304979): Proof you actually wrote it.
+- [JamGPT](https://alexisrondeau.me/jamgpt-homepage/): ChatGPT, one keystroke away.
+- [Streamline](https://alexisrondeau.me/getstreamline/): Brain-dump first. Organize later.
+- [Pudding Research](https://alexisrondeau.me/pudding/): Connect the dots, follow the money, find the story.
+- [Unblah](https://unblah.me/): Know when to speak up — and when to zip it.
+- [Algorand Ballet](https://alexisrondeau.me/algorand-ballet/): Watch the money move on-chain.
+- [Footnotes](https://github.com/akaalias/obsidian-footnotes): Footnotes without the bookkeeping. · 25,808 downloads
+- [Journey](https://github.com/akaalias/obsidian-journey-plugin): Find the story hiding in your notes. · 62,142 downloads
+- [Extract PDF Highlights](https://github.com/akaalias/obsidian-extract-pdf-highlights): Turn your PDF highlights into notes. · 319,102 downloads
+- [Extract PDF](https://github.com/akaalias/obsidian-extract-pdf): PDF in, Markdown out. · 77,003 downloads
+
 ## Newsfeed
 
 - [Newsfeed](https://alexisrondeau.me/feed/): 862 dispatches, newest first, 25 per page

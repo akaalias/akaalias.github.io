@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://alexisrondeau.me/</loc><lastmod>2026-10-12</lastmod></url>
+<url><loc>https://alexisrondeau.me/</loc><lastmod>2026-10-16</lastmod></url>
 <url><loc>https://alexisrondeau.me/feed/</loc><lastmod>2026-10-12</lastmod></url>
 <url><loc>https://alexisrondeau.me/feed/page/2/</loc><lastmod>2026-09-22</lastmod></url>
 <url><loc>https://alexisrondeau.me/feed/page/3/</loc><lastmod>2026-09-10</lastmod></url>
@@ -162,7 +162,7 @@
 <url><loc>https://alexisrondeau.me/feed/t/2082752063746785419/</loc><lastmod>2026-07-30</lastmod></url>
 <url><loc>https://alexisrondeau.me/notes/freakonomics-experiments/</loc><lastmod>2026-10-12</lastmod></url>
 <url><loc>https://alexisrondeau.me/notes/onemonth-inc/</loc><lastmod>2026-09-29</lastmod></url>
-<url><loc>https://alexisrondeau.me/notes/pivotal-labs-new-york-city/</loc><lastmod>2026-09-29</lastmod></url>
+<url><loc>https://alexisrondeau.me/notes/pivotal-labs-new-york-city/</loc><lastmod>2026-10-16</lastmod></url>
 <url><loc>https://alexisrondeau.me/feed/t/2079583150817091585/</loc><lastmod>2026-07-21</lastmod></url>
 <url><loc>https://alexisrondeau.me/notes/not-all-who-wander-are-lost-can-a-uav-learn-a-city-by-heart-no-gps-no-map-on-boa/</loc><lastmod>2026-10-06</lastmod></url>
 <url><loc>https://alexisrondeau.me/feed/t/2078084709628703209/</loc><lastmod>2026-07-17</lastmod></url>
@@ -996,4 +996,14 @@
 <url><loc>https://alexisrondeau.me/feed/tag/books/</loc><lastmod>2018-09-06</lastmod></url>
 <url><loc>https://alexisrondeau.me/feed/tag/home/</loc><lastmod>2026-09-28</lastmod></url>
 <url><loc>https://alexisrondeau.me/about/</loc><lastmod>2026-10-12</lastmod></url>
+<url><loc>https://alexisrondeau.me/ballpark/</loc></url>
+<url><loc>https://alexisrondeau.me/airloom/</loc></url>
+<url><loc>https://alexisrondeau.me/llm-heuristic-scientists-workshop/approach.html</loc></url>
+<url><loc>https://alexisrondeau.me/tada/research/FMDiscovery/dashboard/report.html</loc></url>
+<url><loc>https://alexisrondeau.me/mosey-site/</loc></url>
+<url><loc>https://alexisrondeau.me/quasi/</loc></url>
+<url><loc>https://alexisrondeau.me/jamgpt-homepage/</loc></url>
+<url><loc>https://alexisrondeau.me/getstreamline/</loc></url>
+<url><loc>https://alexisrondeau.me/pudding/</loc></url>
+<url><loc>https://alexisrondeau.me/algorand-ballet/</loc></url>
 </urlset>
