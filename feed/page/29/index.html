@@ -30,10 +30,455 @@
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1>Newsfeed</h1>
 <p class="lede">Everything I publish, in the order I published it: dispatches from Twitter, videos from YouTube and notes from my vault, archived here in full — text, images, video and links — so they outlive the platforms.</p>
-<p class="sub">862 dispatches since March 2014 · page 29 of 35</p>
+<p class="sub">920 dispatches since January 2012 · page 29 of 37</p>
 </header>
 <div class="wrap">
 <section class="feed">
+<article class="item kind-post" id="t1654558826937618432">
+<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/1654558826937618432/"><time datetime="2023-05-05T18:48:59Z">Friday, May 5, 2023 · 20:48</time></a></div>
+<div class="stats"><span><b>1</b> reply</span> · <span><b>1</b> like</span> · <span><b>235</b> views</span></div>
+<div class="text"><p>Today, ChatGPT API &quot;proactively&quot; followed up with me as my accountability buddy. It sent ME a message. </p>
+<p>I call this &quot;Presence&quot; and I built into our little macOS app called</p></div>
+<figure class="media"><img src="/feed/media/1654558826937618432-0.jpg" width="1192" height="684" alt="Accountability follow-up from ChatGPT API via a native macOS notification. " loading="lazy"></figure>
+<ul class="bare">
+<li><a href="http://jamgpt.app">↗ jamgpt.app</a></li>
+</ul>
+<div class="src"><a href="/feed/t/1654558826937618432/">Permalink</a> · <a href="https://x.com/i/status/1654558826937618432">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-reply" id="t1654558829575585792">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/1654558829575585792/"><time datetime="2023-05-05T18:48:59Z">Friday, May 5, 2023 · 20:48</time></a></div>
+<div class="stats"><span><b>1</b> reply</span> · <span><b>140</b> views</span></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/SpringStreetNYC">@SpringStreetNYC</a> · May 5, 2023</cite>
+<div class="ctx-text"><p>Today, ChatGPT API &quot;proactively&quot; followed up with me as my accountability buddy. It sent ME a message. </p>
+<p>I call this &quot;Presence&quot; and I built into our little macOS app called <a href="https://t.co/8fatWjEzI4">t.co/8fatWjEzI4</a>. <a href="https://t.co/tBTaNuKClE">t.co/tBTaNuKClE</a></p></div>
+<figure class="media"><img src="/feed/media/ref-1654558826937618432-0.jpg" width="1192" height="684" alt="Accountability follow-up from ChatGPT API via a native macOS notification. " loading="lazy"></figure>
+</blockquote>
+<div class="text"><p>Here are the settings in the background. You give it an interval and a &quot;follow-up&quot; prompt that keeps me on track. </p>
+<p>Also, there is a 🪿.</p></div>
+<figure class="media"><img src="/feed/media/1654558829575585792-0.jpg" width="1300" height="860" alt="Image from the post" loading="lazy"></figure>
+<div class="src"><a href="/feed/t/1654558829575585792/">Permalink</a> · <a href="https://x.com/i/status/1654558829575585792">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-repo" id="g-langchaininabox">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/langchaininabox/"><time datetime="2023-04-30T10:36:52Z">Sunday, April 30, 2023 · 12:36</time></a></div>
+<h2 class="note-title"><a href="/code/langchaininabox/">LangChainInABox</a></h2>
+<p class="repo-desc">A native macOS app for playing with LangChain that ships with a self-contained, embedded, Apple-notarisable Python 3.11 and up-to-date LangChain libraries</p>
+<div class="stats"><span><b>2</b> stars</span> · <span>Python</span></div>
+<div class="text note-body repo-readme clamped">
+<p><img src="/code/media/gh-634501875-c7ab8c9e7cdad74c.png" alt="v1.1" loading="lazy"></p>
+<p>Hi there, <a href="https://alexisrondeau.me">Alexis</a> here!</p>
+<p>I love <a href="https://jamgpt.app">making</a> 👏🏻 <a href="https://unblah.me/">things</a> 👏🏻 <a href="https://getpudding.app/">that</a> 👏🏻 <a href="https://getstreamline.app/">do</a> 👏🏻 <a href="https://alexisrondeau.me/algorand-ballet/">things</a> 👏🏻.</p>
+<p>This project is a ‘batteries-included’ macOS UI for LangChain. It ships with a self-contained, embedded, Apple-notarisable Python 3.11 and LangChain libraries. It also includes documentation on how to update langchain dependencies over time.</p>
+<p>Why? Access to LangChain should be easy for those who want to change the world.</p>
+<p>I saw my girlfriend fully embrace GPT-4 via <a href="https://jamgpt.app">an app</a> I built for her. Even though it’s “just a UI to GPT-4”, it comes batteries-included. This allowed her to fully focus only on her projects and not the technology.</p>
+<p>The hard, and tedious, part - like installing brew, getting the right Python version, creating the right venv, updating langchain, choosing and learning an IDE - should not a barrier to entry for her.</p>
+<h2>UI Evolution</h2>
+<p>Here you can see the small user-facing increments.</p>
+<h3>The first (working) UI!</h3>
+<p><img src="/code/media/gh-634501875-c7ab8c9e7cdad74c.png" alt="v1.1" loading="lazy"></p>
+<h3>Got LangChain wired up!</h3>
+<p><img src="/code/media/gh-634501875-90cbb758f2bc3516.png" alt="First Success" loading="lazy"></p>
+<h2>Development Notes</h2>
+<p>To build with XCode, please create APIConfig.xcconfig under $ROOT/EmbeddedPythonSpike/Backend with this content</p>
+<pre><code class="language-bash">$ cd $PROJECT_ROOT
+$ touch ./EmbeddedPythonSpike/Backend/APIConfig.xcconfig
+$ echo &quot;OPENAI_API_KEY = your-api-key&quot; &gt; ./EmbeddedPythonSpike/Backend/APIConfig.xcconfig
+</code></pre>
+<h3>How to update LangChain and its dependencies</h3>
+<p>See <a href="https://github.com/akaalias/LangChainInABox/blob/main/python-langchain/README.md">the documentation</a> for details (Not shown in XCode, use Terminal)</p>
+<h2>Distributing the App</h2>
+<p>This project is based on <a href="https://github.com/akaalias/EmbeddedPythonAppTemplate">my template for embedding Python in a signed macOS app</a>, which itself stands on the shoulders of these giants: <a href="https://medium.com/swift2go/embedding-python-interpreter-inside-a-macos-app-and-publish-to-app-store-successfully-309be9fb96a5">Eldar Eliav</a>, <a href="https://medium.com/@eddieespinal">Eddie Espinal</a>, and <a href="https://butternut-ray-869.notion.site/Embedding-Python-in-a-Swift-App-Using-Xcode-Apple-Silicon-and-Intel-59f5a3c832914a96990dfcc0e610c720">this person</a></p>
+<p>So far, I’ve successfully uploaded and got the bundle signed with my Developer ID.</p>
+<p><img src="/code/media/gh-634501875-3e3c0dc3453eb970.png" alt="Notarized with Developer ID" loading="lazy">
+<img src="/code/media/gh-634501875-755aa3f7ebceec01.png" alt="Upload and Sign" loading="lazy"></p>
+</div>
+<div class="more"><a href="/code/langchaininabox/">Read the whole README ›</a></div>
+<div class="src"><a href="/code/langchaininabox/">Permalink</a> · <a href="https://github.com/akaalias/LangChainInABox">View on GitHub ↗</a></div>
+</article>
+<article class="item kind-repost" id="t1651166109184262145">
+<div class="meta"><span class="kind">Repost</span><a class="when" href="/feed/t/1651166109184262145/"><time datetime="2023-04-26T10:07:32Z">Wednesday, April 26, 2023 · 12:07</time></a></div>
+<div class="stats"><span><b>1.1K</b> reposts</span></div>
+<div class="other">
+<cite>Reposting <a href="https://x.com/Rainmaker1973">@Rainmaker1973</a> · Apr 26, 2023</cite>
+<div class="text"><p>This interactive periodic table has a slider that lets you control nearly all physical properties of each element </p>
+<p>[explore: <a href="https://t.co/jrfghFL2xo]">t.co/jrfghFL2xo]</a><br>
+<a href="https://t.co/z3FNSrcAK3">t.co/z3FNSrcAK3</a></p></div>
+<figure class="media"><video src="/feed/media/ref-1651140676053073926-0.mp4" poster="/feed/media/ref-1651140676053073926-0-poster.jpg" width="600" height="500" controls preload="none" playsinline></video></figure>
+</div>
+<div class="src"><a href="/feed/t/1651166109184262145/">Permalink</a> · <a href="https://x.com/i/status/1651166109184262145">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-reply" id="t1649009610701824001">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/1649009610701824001/"><time datetime="2023-04-20T11:18:22Z">Thursday, April 20, 2023 · 13:18</time></a></div>
+<div class="stats"><span><b>60</b> views</span></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/aashmngo">@aashmngo</a> · Apr 18, 2023</cite>
+<div class="ctx-text"><p><a class="mention" href="https://x.com/upcycledwords">@upcycledwords</a> very cool! might be fun to disallow backspace. this would truly make it a 'stream' of consciousness</p></div>
+</blockquote>
+<div class="text"><p><a class="mention" href="https://x.com/aashmngo">@aashmngo</a> <a class="mention" href="https://x.com/upcycledwords">@upcycledwords</a> Agreed! No backspace and no return-key changes the experience a lot. It has helped me learn to love mistakes and  not worry about typing accuracy at all. -<a class="mention" href="https://x.com/upcycledwords">@upcycledwords</a>!–My typos make little fluffy clouds now. Feel free to give it a spin:  <a href="http://getstreamline.app">getstreamline.app</a> is open-source!</p></div>
+<div class="src"><a href="/feed/t/1649009610701824001/">Permalink</a> · <a href="https://x.com/i/status/1649009610701824001">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-reply" id="t1649006576286457865">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/1649006576286457865/"><time datetime="2023-04-20T11:06:19Z">Thursday, April 20, 2023 · 13:06</time></a></div>
+<div class="stats"><span><b>1</b> reply</span> · <span><b>1</b> like</span> · <span><b>24</b> views</span></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/kepano">@kepano</a> · Apr 19, 2023</cite>
+<div class="ctx-text"><p>made a little <a class="mention" href="https://x.com/obsdmd">@obsdmd</a> plugin last night for stream of consciousness writing — it's so calming to write this way</p>
+<p>credit to <a class="mention" href="https://x.com/upcycledwords">@upcycledwords</a> who shared this idea <a href="https://t.co/eVUpzcDtEv">t.co/eVUpzcDtEv</a></p></div>
+<figure class="media"><video src="/feed/media/ref-1648722969076826112-0.mp4" poster="/feed/media/ref-1648722969076826112-0-poster.jpg" width="1752" height="1268" autoplay loop muted playsinline></video></figure>
+</blockquote>
+<div class="text"><p><a class="mention" href="https://x.com/kepano">@kepano</a> <a class="mention" href="https://x.com/obsdmd">@obsdmd</a> <a class="mention" href="https://x.com/upcycledwords">@upcycledwords</a> Nice one! I wound up building a stream-of-consciousness app for my Obsidian (<a href="https://getstreamline.app/">getstreamline.app</a>)  because my version of a plugin still distracted me. Will try yours!</p></div>
+<div class="src"><a href="/feed/t/1649006576286457865/">Permalink</a> · <a href="https://x.com/i/status/1649006576286457865">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-repo" id="g-embeddedpythonapptemplate">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/embeddedpythonapptemplate/"><time datetime="2023-04-20T09:52:31Z">Thursday, April 20, 2023 · 11:52</time></a></div>
+<h2 class="note-title"><a href="/code/embeddedpythonapptemplate/">EmbeddedPythonAppTemplate</a></h2>
+<p class="repo-desc">A personal template project for a Apple-notarizable macOS app</p>
+<div class="stats"><span><b>1</b> fork</span> · <span>Python</span></div>
+<div class="text note-body repo-readme clamped">
+<h2>Template for embedding Python in a signed macOS app</h2>
+<ul>
+<li>Started here <a href="https://medium.com/swift2go/embedding-python-interpreter-inside-a-macos-app-and-publish-to-app-store-successfully-309be9fb96a5">https://medium.com/swift2go/embedding-python-interpreter-inside-a-macos-app-and-publish-to-app-store-successfully-309be9fb96a5</a></li>
+<li>Didn’t understand the run script part</li>
+<li>Found this comment: <a href="https://medium.com/@eddieespinal/great-tutorial-eldar-thank-you-for-sharing-it-a8206d657e3a">https://medium.com/@eddieespinal/great-tutorial-eldar-thank-you-for-sharing-it-a8206d657e3a</a> that recommended this signing code:</li>
+</ul>
+<pre><code class="language-bash">set -e
+
+echo &quot;Signing contents of $CODESIGNING_FOLDER_PATH/Contents/Resources/python-stdlib/lib-dynload as $EXPANDED_CODE_SIGN_IDENTITY_NAME ($EXPANDED_CODE_SIGN_IDENTITY)&quot;
+
+cd &quot;$CODESIGNING_FOLDER_PATH/Contents/Resources/python-stdlib/lib-dynload&quot;
+
+/usr/bin/codesign --force --sign &quot;$EXPANDED_CODE_SIGN_IDENTITY&quot; --options runtime --timestamp=none --preserve-metadata=identifier,entitlements,flags --generate-entitlement-der *.so
+</code></pre>
+<ul>
+<li>Then found this post <a href="https://butternut-ray-869.notion.site/Embedding-Python-in-a-Swift-App-Using-Xcode-Apple-Silicon-and-Intel-59f5a3c832914a96990dfcc0e610c720">https://butternut-ray-869.notion.site/Embedding-Python-in-a-Swift-App-Using-Xcode-Apple-Silicon-and-Intel-59f5a3c832914a96990dfcc0e610c720</a> which ultimately (except the signing script part) worked</li>
+</ul>
+<h2>Successful Test Output</h2>
+<pre><code class="language-log">Python Version: 3.11
+Python Encoding: UTF-8
+Python Path: ['/Users/$HOME/Library/Developer/Xcode/DerivedData/EmbeddedPythonSpike-ehqmlmwnoppyokdrvctjjjowcsrq/Build/Products/Debug/EmbeddedPythonSpike.app/Contents/Resources/python-stdlib', '/Users/$HOME/Library/Developer/Xcode/DerivedData/EmbeddedPythonSpike-ehqmlmwnoppyokdrvctjjjowcsrq/Build/Products/Debug/EmbeddedPythonSpike.app/Contents/Resources/python-stdlib/lib-dynload', '/Users/$HOME/Library/Developer/Xcode/DerivedData/EmbeddedPythonSpike-ehqmlmwnoppyokdrvctjjjowcsrq/Build/Products/Debug/EmbeddedPythonSpike.app/Contents/Resources/python-stdlib/lib/python311.zip', '/Users/$HOME/Library/Developer/Xcode/DerivedData/EmbeddedPythonSpike-ehqmlmwnoppyokdrvctjjjowcsrq/Build/Products/Debug/EmbeddedPythonSpike.app/Contents/Resources/python-stdlib/lib/python3.11', '/Users/$HOME/Library/Developer/Xcode/DerivedData/EmbeddedPythonSpike-ehqmlmwnoppyokdrvctjjjowcsrq/Build/Products/Debug/EmbeddedPythonSpike.app/Contents/Resources/python-stdlib/lib/python3.11/lib-dynload']
+</code></pre>
+<h2>Archiving and Notarization</h2>
+<ul>
+<li>Product &gt; Archive &gt; Distribute App &gt; ‘Distribute as developer’</li>
+<li>Signing files (takes about a minute)</li>
+<li>Upload to Apple</li>
+<li>Waiting…</li>
+<li>Ready to distribute!</li>
+</ul>
+<p><img src="/code/media/gh-630401322-dff0a6ceb740966b.png" alt="Upload" loading="lazy"></p>
+<p><img src="/code/media/gh-630401322-6b800868f4332a21.png" alt="Ready" loading="lazy"></p>
+</div>
+<div class="more"><a href="/code/embeddedpythonapptemplate/">Read the whole README ›</a></div>
+<div class="src"><a href="/code/embeddedpythonapptemplate/">Permalink</a> · <a href="https://github.com/akaalias/EmbeddedPythonAppTemplate">View on GitHub ↗</a></div>
+</article>
+<article class="item kind-repo" id="g-examplejamgpthero">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/examplejamgpthero/"><time datetime="2023-03-13T08:07:32Z">Monday, March 13, 2023 · 09:07</time></a></div>
+<h2 class="note-title"><a href="/code/examplejamgpthero/">examplejamgpthero</a></h2>
+<div class="stats"><span>HTML</span></div>
+<div class="text note-body repo-readme">
+<h2>Live Demo With Video Background</h2>
+<p>Visit <a href="https://alexisrondeau.me/examplejamgpthero/">https://alexisrondeau.me/examplejamgpthero/</a> for a live demo that has the video background</p>
+<h2>Light Version</h2>
+<p><img src="/code/media/gh-613255798-85eb2d5418b065e2.png" alt="Light version" loading="lazy"></p>
+<h2>Dark Version</h2>
+<p><img src="/code/media/gh-613255798-78c41346b0faef78.png" alt="Dark version" loading="lazy"></p>
+</div>
+<div class="src"><a href="/code/examplejamgpthero/">Permalink</a> · <a href="https://github.com/akaalias/examplejamgpthero">View on GitHub ↗</a> · <a href="http://alexisrondeau.me/examplejamgpthero/">Website ↗</a></div>
+</article>
+<article class="item kind-repo" id="g-sparkleupdatetest">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/sparkleupdatetest/"><time datetime="2023-03-11T08:21:34Z">Saturday, March 11, 2023 · 09:21</time></a></div>
+<h2 class="note-title"><a href="/code/sparkleupdatetest/">SparkleUpdateTest</a></h2>
+<p class="repo-desc">A testing ground for getting Sparkle updates running with a reasonable workflow overhead</p>
+<div class="stats"><span>Swift</span></div>
+<div class="src"><a href="/code/sparkleupdatetest/">Permalink</a> · <a href="https://github.com/akaalias/SparkleUpdateTest">View on GitHub ↗</a></div>
+</article>
+<article class="item kind-repo" id="g-getjamgpt">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/getjamgpt/"><time datetime="2023-03-09T15:40:30Z">Thursday, March 9, 2023 · 16:40</time></a></div>
+<h2 class="note-title"><a href="/code/getjamgpt/">getjamgpt</a></h2>
+<p class="repo-desc">A free, instant &amp; bespoke ChatGPT app for macOS</p>
+<div class="stats"><span><b>5</b> stars</span> · <span>HTML</span></div>
+<div class="text note-body repo-readme">
+<h1>GetJamGPT</h1>
+<p>Download latest at <a href="https://jamgpt.app">https://jamgpt.app</a></p>
+<h2>Publishing updates and releases</h2>
+<p>Use <code>./publish.sh</code></p>
+<h3>Requirements</h3>
+<ul>
+<li>appdmg: <code>npm install appdmg</code></li>
+<li>scout: <code>brew install ABridoux/formulae/scout</code></li>
+<li>generate_appcast: $SPARKLE/bin/generate_appcast from <a href="https://sparkle-project.org/">https://sparkle-project.org/</a></li>
+</ul>
+<h4>Generate folder with icons (Icon.iconset) with the macOS app</h4>
+<pre><code class="language-bash">$ iconutil -c icns ./Icon.iconset
+</code></pre>
+</div>
+<div class="src"><a href="/code/getjamgpt/">Permalink</a> · <a href="https://github.com/akaalias/getjamgpt">View on GitHub ↗</a> · <a href="https://jamgpt.app">Website ↗</a></div>
+</article>
+<article class="item kind-note" id="n-jamgpt">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/jamgpt/"><time datetime="2023-03-07T23:00:00Z">Wednesday, March 8, 2023 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/jamgpt/">JamGPT</a></h2>
+<div class="text note-body">
+<p>JamGPT gets you to ChatGPT the instant you need it — one keystroke from whatever app you’re in, with no tab-hunting or logging back in. I kept my go-to prompts a click away for the things I do over and over, like translating or tightening up a sentence. It’s free to use, and ready the moment you download it.</p>
+<p><a href="https://alexisrondeau.me/jamgpt-homepage/">Open →</a></p>
+</div>
+<div class="tags"><a href="/feed/tag/personal-projects/">#personal-projects</a></div>
+<div class="src"><a href="/notes/jamgpt/">Permalink</a></div>
+</article>
+<article class="item kind-repost" id="t1631324261620019200">
+<div class="meta"><span class="kind">Repost</span><a class="when" href="/feed/t/1631324261620019200/"><time datetime="2023-03-02T16:03:07Z">Thursday, March 2, 2023 · 17:03</time></a></div>
+<div class="stats"><span><b>2</b> reposts</span></div>
+<div class="other">
+<cite>Reposting <a href="https://x.com/chris_lueders_">@chris_lueders_</a> · Mar 1, 2023</cite>
+<div class="text"><p>This is so cool 😂 <a href="https://t.co/lUYfET3ynz">t.co/lUYfET3ynz</a></p></div>
+</div>
+<div class="src"><a href="/feed/t/1631324261620019200/">Permalink</a> · <a href="https://x.com/i/status/1631324261620019200">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-repo" id="g-getpogo">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/getpogo/"><time datetime="2023-02-08T04:09:26Z">Wednesday, February 8, 2023 · 05:09</time></a></div>
+<h2 class="note-title"><a href="/code/getpogo/">getpogo</a></h2>
+<p class="repo-desc">Unlock the Power of GPT3 and OpenAI with a Single Keyboard Shortcut</p>
+<div class="stats"><span><b>1</b> star</span></div>
+<div class="text note-body repo-readme">
+<p>Pogo is now <a href="https://www.jamgpt.app/">https://www.jamgpt.app/</a></p>
+</div>
+<div class="src"><a href="/code/getpogo/">Permalink</a> · <a href="https://github.com/akaalias/getpogo">View on GitHub ↗</a> · <a href="https://www.jamgpt.app/">Website ↗</a></div>
+</article>
+<article class="item kind-repo" id="g-getstreamline">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/getstreamline/"><time datetime="2022-11-12T10:28:19Z">Saturday, November 12, 2022 · 11:28</time></a></div>
+<h2 class="note-title"><a href="/code/getstreamline/">getstreamline</a></h2>
+<p class="repo-desc">Streamline is a stream-of-consciousness writer for Obsidian</p>
+<div class="stats"><span><b>16</b> stars</span> · <span>HTML</span></div>
+<div class="text note-body repo-readme clamped">
+<h2>Cool Alternatives</h2>
+<ul>
+<li><a href="https://github.com/kepano">@kepano</a>’s <a href="https://github.com/kepano/obsidian-serenity">Obsidian Serenity</a> for Obsidian</li>
+<li><a href="https://www.aliciaguo.com/">Alicia Guo</a>’s Demo <a href="https://twitter.com/upcycledwords/status/1648427766151532545">on Twitter</a></li>
+<li><a href="https://ia.net/writer">iA Writer</a></li>
+<li><a href="https://apps.apple.com/us/app/flowstate/id1060276201">FlowState</a></li>
+<li><a href="https://typora.io/">Typora</a></li>
+</ul>
+<h2>Streamline Demo and Download</h2>
+<p>Watch the demo and get Streamline for macOS here:
+<a href="https://alexisrondeau.me/getstreamline/?wvideo=f1xos22k50"><img src="https://github.com/akaalias/getstreamline/blob/main//code/media/gh-565095791-e5202f60327a39b3.png" alt="Demo" loading="lazy"></a></p>
+<h2>Background</h2>
+<p><img src="/code/media/gh-565095791-74c70f917beffbdd.png" alt="Streamline Demo" loading="lazy"></p>
+<p>👋🏻 <strong>HELLO</strong> and welcome!!</p>
+<p>Alexis here, great to have you.</p>
+<p>I take copious notes with Obsidian and journal daily.</p>
+<p>If you do, too, maybe the following sounds familiar :)</p>
+<h2>A FUCKING CONUNDRUM</h2>
+<p>I LOVE journaling with pen and paper in the morning.</p>
+<p>Journaling gives me a safe space where <strong>I let my heart speak</strong>.</p>
+<p>This makes me feel safe.</p>
+<p>I also LOVE note-taking with Obsidian.</p>
+<p>It gives me an exciting space where <strong>I let my mind wander</strong>.</p>
+<p>That makes me feel like a million bucks.</p>
+<p>But…</p>
+<p>Here’s the RUB.</p>
+<h3>Problem #1: Peace without a future</h3>
+<p>When I journal with pen and paper, <strong>I can’t link to Obsidian</strong>.</p>
+<p><strong>There is no easy way to link to a note</strong> in Obsidian without losing the peace and quiet that I cherish.</p>
+<p>So, none of my heart-felt writings will be ever leverage the 6,018 notes in Obsidian because they’re stuck on paper???</p>
+<p>Fuck.</p>
+<h3>Problem #2: Writing as exciting as pink noise</h3>
+<p>And when I try to journal in Obsidian, <strong>it’s extremely hard to focus</strong>.</p>
+<p>Either…</p>
+<p>My <strong>mind wanders off to far</strong> by following one of the 6,018 rabbit-holes I’ve stored in my vault.</p>
+<p>OR <strong>my inner editor criticises my spelling</strong> as I type, ensuring no creativity is left.</p>
+<p>So, my notes in Obsidian will perpetually lack real depth and a heart-felt spontaneity that makes them sparkle???</p>
+<p>FUCK!</p>
+<h1>Streamline is a stream-of-consciousness writer for Obsidian users</h1>
+<p>So I built Streamline.</p>
+<p>It’s a <em>writer</em> that helps me:</p>
+<p>…<strong>Enter</strong> that quiet journaling space.</p>
+<p>…AND <strong>Link</strong> to my notes easily without getting pulled away.</p>
+<p>…AND <strong>Let go</strong> of my inner editor by removing most normal editor features.</p>
+<h3>A completely new journaling flow</h3>
+<p>Instead of journaling by hand, I now do a quick, relaxed Streamline session.</p>
+<p>Usually right after I log in to my laptop.</p>
+<p>The built-in unobtrusive search lets me insert links to Obsidian quickly.</p>
+<p>Then I save it as a markdown note to my vault.</p>
+<p>It’s really simple.</p>
+<p>It works.</p>
+<p>And it feels right.</p>
+<p>—</p>
+<p>So… If <em>you</em> struggle with what I’m talking about.</p>
+<p>Know that you’re NOT crazy and you’re NOT alone.</p>
+<p>Instead: Give your heart a chance to speak AND your mind a place to wander!</p>
+<p>Also, Streamline is free and open-source.</p>
+<p>Click on the link below to download it now!</p>
+<p><a href="https://github.com/akaalias/getstreamline/releases/latest/download/Streamline.dmg">🎁 Download Streamline for macOS 12+</a></p>
+<h2>What you’ll get</h2>
+<p><img src="/code/media/gh-565095791-ccc92593a9e52193.png" alt="Annotated Note" loading="lazy"></p>
+<h3>Learn to listen to your heart</h3>
+<p>If you’ve never done stream-of-consciousness writing before, it can seem daunting and confusing.</p>
+<p>All you need to do is write one word that’s on your mind right now.</p>
+<p>There is no hurry. You can type as slow or fast as you like.</p>
+<p>With a bit of practice, you’ll be able to hear that quiet inner voice.</p>
+<p>You’ll see.</p>
+<p>Your heart has some really important things to say.</p>
+<h3>Learn to love your mistakes</h3>
+<p>Streamline is a writer, not an editor.</p>
+<p>It only moves <em>forward</em>.</p>
+<p>When you make a tYpO, there is no DELETE key.</p>
+<p>You can’t change the mistake.</p>
+<p>What you can do is continue moving forward regardless.</p>
+<p>With a little practice, you’ll start focusing on your flow.</p>
+<p>(No worries, you can save your writing to markdown and give it the old editor treatment later.)</p>
+<h3>Learn to link a lot</h3>
+<p>As you’re writing you can link to a note in Obsidian easily:</p>
+<ul>
+<li><strong>Enter</strong> linking mode by typing <code>[[</code></li>
+<li><strong>Exit</strong> the linking mode with ESC</li>
+<li><strong>Choose</strong> a link with your UP and DOWN arrow keys</li>
+<li><strong>Insert</strong> the link into your stream with RETURN</li>
+</ul>
+<p>It takes less than a minute to learn</p>
+<p>Once you use it the results are remarkable:</p>
+<p>I pepper more links into my journal notes than I do with Obsidian proper.</p>
+<h2>What you’ll miss</h2>
+<p>Again, Streamline is a writer, not an editor.</p>
+<p>It intentionally only <em>moves forward</em>.</p>
+<ul>
+<li>There is <strong>no backspace</strong> to delete a mistake</li>
+<li>There are <strong>no paragraphs</strong> to get off-track</li>
+<li>There is <strong>no markdown syntax highlighting</strong> to distract</li>
+<li>There is <strong>no copy-and-paste</strong> or any other shortcuts</li>
+</ul>
+<p>Streamline is free and <a href="https://github.com/akaalias/Streamline">open-source</a>!</p>
+<p><a href="https://github.com/akaalias/getstreamline/releases/latest/download/Streamline.dmg">🎁 Download Streamline for macOS 12+</a></p>
+</div>
+<div class="more"><a href="/code/getstreamline/">Read the whole README ›</a></div>
+<div class="src"><a href="/code/getstreamline/">Permalink</a> · <a href="https://github.com/akaalias/getstreamline">View on GitHub ↗</a> · <a href="https://alexisrondeau.me/getstreamline/">Website ↗</a></div>
+</article>
+<article class="item kind-repost" id="t1587085487507898370">
+<div class="meta"><span class="kind">Repost</span><a class="when" href="/feed/t/1587085487507898370/"><time datetime="2022-10-31T14:14:01Z">Monday, October 31, 2022 · 15:14</time></a></div>
+<div class="stats"><span><b>3</b> reposts</span></div>
+<div class="other">
+<cite>Reposting <a href="https://x.com/ethplorer">@ethplorer</a> · Oct 28, 2022</cite>
+<div class="text"><p>Which galaxy do you like best? Look at the activity of ERC20 tokens as a map of galaxies in the Alexis pudding project. <a href="https://t.co/nHp0LUYyE3">t.co/nHp0LUYyE3</a> <br>
+Powered by #EthplorerAPI #ERC20 <a href="https://t.co/tLjpRIfTVq">t.co/tLjpRIfTVq</a></p></div>
+<figure class="media"><img src="/feed/media/ref-1585973866219933698-0.jpg" width="1266" height="756" alt="Image from the post" loading="lazy"></figure>
+</div>
+<div class="src"><a href="/feed/t/1587085487507898370/">Permalink</a> · <a href="https://x.com/i/status/1587085487507898370">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-note" id="n-streamline">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/streamline/"><time datetime="2022-10-27T22:00:00Z">Friday, October 28, 2022 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/streamline/">Streamline</a></h2>
+<div class="text note-body">
+<p>I wanted a calm, blank space to get my thoughts out before the day’s noise set in — no menus, no formatting, no friction. As you write, Streamline surfaces your existing notes so a morning brain-dump connects straight into the system you already keep. Everything stays on your machine, with no account and nothing tracked.</p>
+<p><a href="https://alexisrondeau.me/getstreamline/">Open →</a></p>
+</div>
+<div class="tags"><a href="/feed/tag/personal-projects/">#personal-projects</a></div>
+<div class="src"><a href="/notes/streamline/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-pudding-research">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/pudding-research/"><time datetime="2022-09-24T22:00:00Z">Sunday, September 25, 2022 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/pudding-research/">Pudding Research</a></h2>
+<div class="text note-body">
+<p>Another open-source OSINT tool I made, this one for Ethereum token ecosystems. Pick any token and instantly see where the money flows — who’s moving it, to whom, and how much. The biggest players and tightest relationships rise to the top, so you can filter out the noise, zero in on what matters, and pull a real story out of the chain. Export what you find to share it. Try it.</p>
+<p><a href="https://alexisrondeau.me/pudding/">Open →</a></p>
+</div>
+<div class="tags"><a href="/feed/tag/personal-projects/">#personal-projects</a></div>
+<div class="src"><a href="/notes/pudding-research/">Permalink</a></div>
+</article>
+<article class="item kind-repo" id="g-streamline">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/streamline/"><time datetime="2022-09-10T13:57:27Z">Saturday, September 10, 2022 · 15:57</time></a></div>
+<h2 class="note-title"><a href="/code/streamline/">Streamline</a></h2>
+<p class="repo-desc">Streamline is a stream-of-consciousness writer for Obsidian</p>
+<div class="stats"><span><b>39</b> stars</span> · <span><b>2</b> forks</span> · <span>Swift</span></div>
+<div class="text note-body repo-readme">
+<h2>Cool Alternatives</h2>
+<ul>
+<li><a href="https://github.com/kepano">@kepano</a>’s <a href="https://github.com/kepano/obsidian-serenity">Obsidian Serenity</a> for Obsidian</li>
+<li><a href="https://www.aliciaguo.com/">Alicia Guo</a>’s Demo <a href="https://twitter.com/upcycledwords/status/1648427766151532545">on Twitter</a></li>
+<li><a href="https://ia.net/writer">iA Writer</a></li>
+<li><a href="https://apps.apple.com/us/app/flowstate/id1060276201">FlowState</a></li>
+<li><a href="https://typora.io/">Typora</a></li>
+</ul>
+<h2>Streamline Demo and Download</h2>
+<p>Watch the demo and get Streamline for macOS here:
+<a href="https://getstreamline.app?wvideo=f1xos22k50"></a></p>
+</div>
+<div class="src"><a href="/code/streamline/">Permalink</a> · <a href="https://github.com/akaalias/Streamline">View on GitHub ↗</a> · <a href="https://alexisrondeau.me/getstreamline/">Website ↗</a></div>
+</article>
+<article class="item kind-repo" id="g-pudding">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/pudding/"><time datetime="2022-08-21T16:25:53Z">Sunday, August 21, 2022 · 18:25</time></a></div>
+<h2 class="note-title"><a href="/code/pudding/">pudding</a></h2>
+<p class="repo-desc">Open-Source Intelligence (OSINT): connect the dots, follow the money, find the story in Ethereum ERC-20 ecosystems — pulls holders and transfers from public chain data, lays them out as an interactive graph and lets Louvain community detection surface the clusters worth asking about. Runs in the browser, no account needed.</p>
+<div class="stats"><span><b>4</b> stars</span> · <span><b>1</b> fork</span> · <span>TypeScript</span></div>
+<div class="text note-body repo-readme">
+<h2>Project setup</h2>
+<pre><code>npm install
+</code></pre>
+<h3>Compiles and hot-reloads for development</h3>
+<pre><code>npm run serve
+</code></pre>
+<h3>Compiles and minifies for production</h3>
+<pre><code>npm run build
+</code></pre>
+</div>
+<div class="src"><a href="/code/pudding/">Permalink</a> · <a href="https://github.com/akaalias/pudding">View on GitHub ↗</a> · <a href="https://alexisrondeau.me/pudding/">Website ↗</a></div>
+</article>
+<article class="item kind-post" id="t1551613584626663424">
+<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/1551613584626663424/"><time datetime="2022-07-25T17:01:20Z">Monday, July 25, 2022 · 19:01</time></a></div>
+<div class="text"><p><a class="mention" href="https://x.com/vanilla_chief">@vanilla_chief</a> Mega Idee – das von Harry Potter sieht auch richtig gut aus als Illustration. Danke! Ich melde mich gerne, wenn das als Feature dann fertig ist :)</p></div>
+<div class="src"><a href="/feed/t/1551613584626663424/">Permalink</a> · <a href="https://x.com/i/status/1551613584626663424">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-post" id="t1551583261482262528">
+<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/1551583261482262528/"><time datetime="2022-07-25T15:00:51Z">Monday, July 25, 2022 · 17:00</time></a></div>
+<div class="text display"><p><a class="mention" href="https://x.com/vanilla_chief">@vanilla_chief</a> Und noch eine Frage: Was meinst du genau mit &quot;ein Album von Meeting-Color-Codes aufzubauen.&quot;?</p></div>
+<div class="src"><a href="/feed/t/1551583261482262528/">Permalink</a> · <a href="https://x.com/i/status/1551583261482262528">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-post" id="t1551583082754482178">
+<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/1551583082754482178/"><time datetime="2022-07-25T15:00:08Z">Monday, July 25, 2022 · 17:00</time></a></div>
+<div class="text"><p><a class="mention" href="https://x.com/vanilla_chief">@vanilla_chief</a> Hey Christopher! Alexis hier. Super spannend, danke für das Teilen.  Sieht ja erstmal ganz ausgeglichen aus. Wie war das für dich?</p></div>
+<div class="src"><a href="/feed/t/1551583082754482178/">Permalink</a> · <a href="https://x.com/i/status/1551583082754482178">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-video" id="v-ud97kazrtXg">
+<div class="meta"><span class="kind">Video</span><a class="when" href="/videos/unblah-for-people-like-myself-who-talk-too-much-when-they-get-nervous-in-meeting/"><time datetime="2022-07-14T13:45:21Z">Thursday, July 14, 2022 · 15:45</time></a></div>
+<h2 class="note-title"><a href="/videos/unblah-for-people-like-myself-who-talk-too-much-when-they-get-nervous-in-meeting/">Unblah – For people (like myself) who talk too much when they get nervous in meetings</a></h2>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/ud97kazrtXg" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+<div class="text video-desc clamped"><p>Unblah is a little &quot;meeting-buddy&quot;-app that helps you...</p>
+<ul>
+<li>Keep track of how long you've been speaking,</li>
+<li>Catch yourself before you talk too much</li>
+<li>Develop a better sense of timing</li>
+</ul>
+<p>Free download for macOS at: <a href="https://unblah.me/">unblah.me/</a></p>
+<p>Included features: </p>
+<ul>
+<li>Works great with Zoom, Teams, WebEx, Hangouts, even phone calls!</li>
+<li>Gentle, visible &quot;red-green traffic-light&quot; live notification</li>
+<li>Hands-free, speech-triggered countdown timer</li>
+<li>Live timeline for in-meeting adjustments</li>
+<li>Self-contained, works without internet</li>
+<li>Native, bloat-free macOS application</li>
+<li>Get Comfortable Guide (15 minutes)</li>
+<li>Getting Set Up Guide (1 minute)</li>
+<li>Installation Guide (1 minute)</li>
+</ul></div>
+<div class="more"><a href="/videos/unblah-for-people-like-myself-who-talk-too-much-when-they-get-nervous-in-meeting/">Read the full description ›</a></div>
+<div class="stats"><span><b>2:26</b> long</span></div>
+<div class="src"><a href="/videos/unblah-for-people-like-myself-who-talk-too-much-when-they-get-nervous-in-meeting/">Permalink</a> · <a href="https://www.youtube.com/watch?v=ud97kazrtXg">Watch on YouTube ↗</a></div>
+</article>
+<article class="item kind-repo" id="g-getunblah">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/getunblah/"><time datetime="2022-07-08T14:49:10Z">Friday, July 8, 2022 · 16:49</time></a></div>
+<h2 class="note-title"><a href="/code/getunblah/">getunblah</a></h2>
+<p class="repo-desc">Machine learning: a macOS meeting-buddy for those (like myself) who talk too much, or too little, when they get nervous — an on-device sound classifier answers &quot;is someone talking?&quot; every few milliseconds, tracks your airtime and shows a gentle traffic light. No recording, no cloud, no sign-up.</p>
+<div class="stats"><span><b>24</b> stars</span> · <span><b>2</b> forks</span> · <span>SCSS</span></div>
+<div class="text note-body repo-readme">
+<h1>Unblah – For those (like myself) who talk too much, or too little, when they get nervous in meetings</h1>
+<p>Unblah is a little “meeting-buddy”-app that helps…</p>
+<ul>
+<li>Keep track of how long you’ve been speaking,</li>
+<li>Catch yourself before you talk too much, or too little</li>
+<li>Develop a better sense of timing</li>
+</ul>
+<p>Check it out at <a href="https://unblah.me">https://unblah.me</a></p>
+</div>
+<div class="src"><a href="/code/getunblah/">Permalink</a> · <a href="https://github.com/akaalias/getunblah">View on GitHub ↗</a> · <a href="https://unblah.me">Website ↗</a></div>
+</article>
 <article class="item kind-note" id="n-unblah">
 <div class="meta"><span class="kind">Note</span><a class="when" href="/notes/unblah/"><time datetime="2022-07-07T22:00:00Z">Friday, July 8, 2022 · 00:00</time></a></div>
 <h2 class="note-title"><a href="/notes/unblah/">Unblah</a></h2>
@@ -44,469 +489,28 @@
 <div class="tags"><a href="/feed/tag/personal-projects/">#personal-projects</a></div>
 <div class="src"><a href="/notes/unblah/">Permalink</a></div>
 </article>
-<article class="item kind-video" id="v-7hnNzSf2-Ak">
-<div class="meta"><span class="kind">Video</span><a class="when" href="/videos/feature-demo-qualitative-relationship-analysis-with-algorand-ballet/"><time datetime="2022-04-16T10:15:38Z">Saturday, April 16, 2022 · 12:15</time></a></div>
-<h2 class="note-title"><a href="/videos/feature-demo-qualitative-relationship-analysis-with-algorand-ballet/">Feature Demo: Qualitative Relationship Analysis with Algorand Ballet</a></h2>
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/7hnNzSf2-Ak" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-<div class="text video-desc clamped"><p>Hi there, Alexis here - maker of Ballet. Today I want to give you a quick run-through to demo the features for relationship analysis of Algorand accounts with Ballet.</p>
-<p>Start exploring any account at <a href="https://akaalias.github.io/algorand-ballet/">akaalias.github.io/algorand-ballet/</a></p>
-<p>The video is fast-paced and uncommented to give you an idea of what you can do with Ballet. The wallet you're looking at was chosen for demonstration-purposes only. </p>
-<p>PS: If you want, you can play around with the exact same starting-point here: <a href="https://akaalias.github.io/algorand-ballet/?deeplink=true&amp;network=main&amp;accountid=INEJIL5V2QATMUAWWWUVUFBV2YDM3O7IGVCAO25BYYQ26XTCPLTLH5JT2A&amp;focus=graph&amp;layout=concentric">akaalias.github.io/algorand-ballet/?deeplink=…</a><br>
-PPS: For a full &quot;download&quot; on who/what/why/how you can also check out the project on Github: <a href="https://github.com/akaalias/algorand-ballet">github.com/akaalias/algorand-ballet</a></p></div>
-<div class="more"><a href="/videos/feature-demo-qualitative-relationship-analysis-with-algorand-ballet/">Read the full description ›</a></div>
-<div class="stats"><span><b>0:56</b> long</span></div>
-<div class="src"><a href="/videos/feature-demo-qualitative-relationship-analysis-with-algorand-ballet/">Permalink</a> · <a href="https://www.youtube.com/watch?v=7hnNzSf2-Ak">Watch on YouTube ↗</a></div>
-</article>
-<article class="item kind-reply" id="t1513957290533179398">
-<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/1513957290533179398/"><time datetime="2022-04-12T19:08:40Z">Tuesday, April 12, 2022 · 21:08</time></a></div>
-<blockquote class="ctx">
-<cite>In reply to <a href="https://x.com/SpringStreetNYC">@SpringStreetNYC</a> · Apr 9, 2022</cite>
-<div class="ctx-text"><p>Dear <a class="mention" href="https://x.com/Medallia">@Medallia</a>, intrigued by your product and your blue-yellow icon – Can you please clarify if you are currently still serving Russian companies, like Beeline? Thanks! <a href="https://t.co/ZjvbUoWmx1">t.co/ZjvbUoWmx1</a></p></div>
-<figure class="media"><img src="/feed/media/ref-1512803765178572809-0.jpg" width="1190" height="958" alt="Image from the post" loading="lazy"></figure>
-</blockquote>
-<div class="text"><p>Hi <a class="mention" href="https://x.com/Medallia">@Medallia</a>, would love to hear from you on my question above. Thanks!</p></div>
-<div class="src"><a href="/feed/t/1513957290533179398/">Permalink</a> · <a href="https://x.com/i/status/1513957290533179398">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-post" id="t1512803765178572809">
-<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/1512803765178572809/"><time datetime="2022-04-09T14:44:58Z">Saturday, April 9, 2022 · 16:44</time></a></div>
-<div class="stats"><span><b>1</b> reply</span></div>
-<div class="text"><p>Dear <a class="mention" href="https://x.com/Medallia">@Medallia</a>, intrigued by your product and your blue-yellow icon – Can you please clarify if you are currently still serving Russian companies, like Beeline? Thanks!</p></div>
-<figure class="media"><img src="/feed/media/1512803765178572809-0.jpg" width="1190" height="958" alt="Image from the post" loading="lazy"></figure>
-<div class="src"><a href="/feed/t/1512803765178572809/">Permalink</a> · <a href="https://x.com/i/status/1512803765178572809">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-note" id="n-algorand-ballet">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/algorand-ballet/"><time datetime="2021-11-23T23:00:00Z">Wednesday, November 24, 2021 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/algorand-ballet/">Algorand Ballet</a></h2>
-<div class="text note-body">
-<p>My open-source OSINT tool for the Algorand blockchain. See who a wallet really deals with: drop in any account and watch its activity unfold as a map you can explore — follow the connections, spot the patterns, and dig into any account, asset or app with a click. I built it as a simple way to do your own homework before you trust, invest, or just satisfy your curiosity.</p>
-<p><a href="https://alexisrondeau.me/algorand-ballet/">Open →</a></p>
-</div>
-<div class="tags"><a href="/feed/tag/personal-projects/">#personal-projects</a></div>
-<div class="src"><a href="/notes/algorand-ballet/">Permalink</a></div>
-</article>
-<article class="item kind-video" id="v-qr7842cbgr8">
-<div class="meta"><span class="kind">Video</span><a class="when" href="/videos/how-my-obsidian-digital-garden-has-exploded-march-2020-september-2021/"><time datetime="2021-09-23T11:29:40Z">Thursday, September 23, 2021 · 13:29</time></a></div>
-<h2 class="note-title"><a href="/videos/how-my-obsidian-digital-garden-has-exploded-march-2020-september-2021/">How my Obsidian &quot;digital garden&quot; has exploded (March 2020 - September 2021)</a></h2>
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/qr7842cbgr8" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-<div class="text video-desc"><p>This is a time-lapse video of how my digital garden grew since starting to use Obsidian in March 2020 up to today. See it at <a href="https://publish.obsidian.md/alexisrondeau">publish.obsidian.md/alexisrondeau</a></p>
-<ul>
-<li>⚫️ Gray dots are notes that I've written</li>
-<li>🔗 Lines between dots are links between notes</li>
-<li>🟡 Yellow dots are tags</li>
-<li>🔵 Blue dots are attachments (like pictures, drawings)</li>
-</ul>
-<p>Software: <a href="https://obsidian.md">obsidian.md</a><br>
-Music: TheSpirit by XendomArts - <a href="https://pixabay.com/users/xendomarts-11117859">pixabay.com/users/xendomarts-11117859</a></p></div>
-<div class="stats"><span><b>3:41</b> long</span></div>
-<div class="src"><a href="/videos/how-my-obsidian-digital-garden-has-exploded-march-2020-september-2021/">Permalink</a> · <a href="https://www.youtube.com/watch?v=qr7842cbgr8">Watch on YouTube ↗</a></div>
-</article>
-<article class="item kind-note" id="n-footnotes">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/footnotes/"><time datetime="2021-02-26T23:00:00Z">Saturday, February 27, 2021 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/footnotes/">Footnotes</a></h2>
-<div class="text note-body">
-<p>I wanted to add a footnote without breaking my train of thought. One hotkey drops a numbered marker and its note at the bottom of the page, and the same key jumps you between the two — no counting, no scrolling, no losing your place. Footnote-heavy writing finally feels effortless.</p>
-<p><a href="https://github.com/akaalias/obsidian-footnotes">Open →</a></p>
-</div>
-<div class="src"><a href="/notes/footnotes/">Permalink</a></div>
-</article>
-<article class="item kind-video" id="v-SNNODf6NkJk">
-<div class="meta"><span class="kind">Video</span><a class="when" href="/videos/super-heroes-super-villains-and-an-ancient-code-in-obsidian/"><time datetime="2021-02-26T13:07:27Z">Friday, February 26, 2021 · 14:07</time></a></div>
-<h2 class="note-title"><a href="/videos/super-heroes-super-villains-and-an-ancient-code-in-obsidian/">Super-Heroes, Super-Villains and an Ancient Code in Obsidian</a></h2>
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/SNNODf6NkJk" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-<div class="text video-desc"><p>Here's the story how I discovered an ancient code hidden inside Obsidian with the help of a super-hero and a super-villain.</p>
-<p>Before we dive in, a heads-up:</p>
-<p>1. This journey is not for the faint of heart<br>
-2. It's is going to be long and raw and unpolished<br>
-3. There will with high-HIGHS and low-LOWS</p>
-<p>Please share your super-hero and super-villain story in the forum: <br>
-<a href="https://forum.obsidian.md/t/video-super-heroes-super-villains-and-an-ancient-code-in-obsidian/13702">forum.obsidian.md/t/video-super-heroes-super-…</a></p></div>
-<div class="stats"><span><b>23:40</b> long</span></div>
-<div class="src"><a href="/videos/super-heroes-super-villains-and-an-ancient-code-in-obsidian/">Permalink</a> · <a href="https://www.youtube.com/watch?v=SNNODf6NkJk">Watch on YouTube ↗</a></div>
-</article>
-<article class="item kind-video" id="v-6k2Lp1pCZpY">
-<div class="meta"><span class="kind">Video</span><a class="when" href="/videos/how-to-use-obsidian-journey-plugin/"><time datetime="2021-02-08T10:29:15Z">Monday, February 8, 2021 · 11:29</time></a></div>
-<h2 class="note-title"><a href="/videos/how-to-use-obsidian-journey-plugin/">How To Use: Obsidian Journey Plugin</a></h2>
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/6k2Lp1pCZpY" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-<div class="text video-desc clamped"><p>Discover the stories between your notes with Journey!</p>
-<p>In this video, you'll learn<br>
-1. The basic usage to find your stories fast<br>
-2. How to use the &quot;I feel lucky&quot; button to get inspired<br>
-3. How to configure your search using #tags to add more possibilities<br>
-4. How to configure your search excluding MOCs to avoid boring notes<br>
-5. How to configure your search excluding certain folders to avoid irrelevant notes<br>
-6. How to configure high-contrast mode to see better :) </p>
-<p>Join the conversation at: <a href="https://forum.obsidian.md/t/new-plugin-journey-find-the-story-between-your-notes/12153">forum.obsidian.md/t/new-plugin-journey-find-t…</a><br>
-Post issues at: <a href="https://github.com/akaalias/obsidian-journey-plugin/issues/new">github.com/akaalias/obsidian-journey-plugin/i…</a></p></div>
-<div class="more"><a href="/videos/how-to-use-obsidian-journey-plugin/">Read the full description ›</a></div>
-<div class="stats"><span><b>6:58</b> long</span></div>
-<div class="src"><a href="/videos/how-to-use-obsidian-journey-plugin/">Permalink</a> · <a href="https://www.youtube.com/watch?v=6k2Lp1pCZpY">Watch on YouTube ↗</a></div>
-</article>
-<article class="item kind-video" id="v-iRydNlinRlc">
-<div class="meta"><span class="kind">Video</span><a class="when" href="/videos/how-to-create-outlines-for-publishing-faster-journey-for-obsidian-plugin-demo/"><time datetime="2021-01-29T12:37:19Z">Friday, January 29, 2021 · 13:37</time></a></div>
-<h2 class="note-title"><a href="/videos/how-to-create-outlines-for-publishing-faster-journey-for-obsidian-plugin-demo/">How to Create Outlines for Publishing Faster - Journey for Obsidian Plugin Demo</a></h2>
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/iRydNlinRlc" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-<div class="text video-desc clamped"><p>NEWS: </p>
-<ul>
-<li>🎉 The plugin is officially released in the Obsidian Plugin Directory 🎉</li>
-<li>For an overview, check the README: <a href="https://github.com/akaalias/obsidian-journey-plugin">github.com/akaalias/obsidian-journey-plugin</a></li>
-</ul>
-<p>SHARE YOUR EXPERIENCE!</p>
-<ul>
-<li>Please join the conversation on the forum: <a href="https://forum.obsidian.md/t/new-plugin-journey-find-the-story-between-your-notes/12153/56">forum.obsidian.md/t/new-plugin-journey-find-t…</a></li>
-<li>For new features and issues you encounter, please share them on Github Issues: <a href="https://github.com/akaalias/obsidian-journey-plugin/issues">github.com/akaalias/obsidian-journey-plugin/i…</a></li>
-</ul>
-<p>Hey there! Alexis here - Obsidian enthusiast and student at the University of Life! I want to show you a new Obsidian plugin I've been working on. This plugin automatically creates an outline for your publishing (An outline for an article, a blog post, or even a book!). </p>
-<p>Why? I’ve noticed that my creative output using Obsidian hasn't been as prolific as I’d like it to be. I have hundreds of atomic notes, I’ve followed every best-practice, but right now, Obsidian doesn’t help me take that next step. </p>
-<p>It’s really hard to extract a good story from my vault. </p>
-<p>That's why I've created this new plugin :)</p></div>
-<div class="more"><a href="/videos/how-to-create-outlines-for-publishing-faster-journey-for-obsidian-plugin-demo/">Read the full description ›</a></div>
-<div class="stats"><span><b>7:24</b> long</span></div>
-<div class="src"><a href="/videos/how-to-create-outlines-for-publishing-faster-journey-for-obsidian-plugin-demo/">Permalink</a> · <a href="https://www.youtube.com/watch?v=iRydNlinRlc">Watch on YouTube ↗</a></div>
-</article>
-<article class="item kind-note" id="n-journey">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/journey/"><time datetime="2021-01-27T23:00:00Z">Thursday, January 28, 2021 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/journey/">Journey</a></h2>
-<div class="text note-body">
-<p>You’ve collected hundreds of notes — but where’s the story in them? I built Journey to trace a path between any two ideas in your vault and hand you a ready-made outline, surfacing connections you’d forgotten you made. A blank-page cure that turns your scattered thinking into the first draft of something worth publishing.</p>
-<p><a href="https://github.com/akaalias/obsidian-journey-plugin">Open →</a></p>
-</div>
-<div class="src"><a href="/notes/journey/">Permalink</a></div>
-</article>
-<article class="item kind-video" id="v-W56SCsrMPz0">
-<div class="meta"><span class="kind">Video</span><a class="when" href="/videos/how-self-esteem-works/"><time datetime="2021-01-21T12:01:51Z">Thursday, January 21, 2021 · 13:01</time></a></div>
-<h2 class="note-title"><a href="/videos/how-self-esteem-works/">How Self-Esteem Works</a></h2>
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/W56SCsrMPz0" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-<div class="text video-desc"><p>A quick and easy introduction to the psychology of self-esteem, self-worth and confidence!</p></div>
-<div class="stats"><span><b>12:06</b> long</span></div>
-<div class="src"><a href="/videos/how-self-esteem-works/">Permalink</a> · <a href="https://www.youtube.com/watch?v=W56SCsrMPz0">Watch on YouTube ↗</a></div>
-</article>
-<article class="item kind-video" id="v-n3YW5bmnETg">
-<div class="meta"><span class="kind">Video</span><a class="when" href="/videos/tips-tricks-a-secret-highlight-mode-for-obsidian/"><time datetime="2021-01-16T11:28:12Z">Saturday, January 16, 2021 · 12:28</time></a></div>
-<h2 class="note-title"><a href="/videos/tips-tricks-a-secret-highlight-mode-for-obsidian/">[Tips &amp; Tricks] A SECRET Highlight Mode for Obsidian</a></h2>
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/n3YW5bmnETg" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-<div class="text video-desc"><p>A follow-up video to the SECRET Highlight Mode for Obsidian!</p></div>
-<div class="stats"><span><b>9:30</b> long</span></div>
-<div class="src"><a href="/videos/tips-tricks-a-secret-highlight-mode-for-obsidian/">Permalink</a> · <a href="https://www.youtube.com/watch?v=n3YW5bmnETg">Watch on YouTube ↗</a></div>
-</article>
-<article class="item kind-video" id="v-5kkcqAn6joU">
-<div class="meta"><span class="kind">Video</span><a class="when" href="/videos/a-secret-highlight-mode-for-obsidian/"><time datetime="2021-01-15T13:52:19Z">Friday, January 15, 2021 · 14:52</time></a></div>
-<h2 class="note-title"><a href="/videos/a-secret-highlight-mode-for-obsidian/">A SECRET Highlight Mode for Obsidian</a></h2>
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/5kkcqAn6joU" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-<div class="text video-desc"><p>Hey all, here's a quick run-through of a secret new power mode for working with your highlights in Obsidian. </p>
-<ul>
-<li>To install the plugin, search for &quot;Extract Highlights&quot; in the Obsidian 3rd-party plugin directory.</li>
-<li>To enable the mode for your Obsidian, watch till the end of the video. </li>
-</ul>
-<p>Thanks for watching! </p>
-<p>Alexis</p></div>
-<div class="stats"><span><b>6:24</b> long</span></div>
-<div class="src"><a href="/videos/a-secret-highlight-mode-for-obsidian/">Permalink</a> · <a href="https://www.youtube.com/watch?v=5kkcqAn6joU">Watch on YouTube ↗</a></div>
-</article>
-<article class="item kind-note" id="n-extract-pdf-highlights">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/extract-pdf-highlights/"><time datetime="2020-12-27T23:00:00Z">Monday, December 28, 2020 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/extract-pdf-highlights/">Extract PDF Highlights</a></h2>
-<div class="text note-body">
-<p>I was tired of re-typing the passages I’d highlighted while reading. Now you open a marked-up PDF in Obsidian, click once, and every highlight, underline and note lands in a tidy page-ordered note you can actually search, link and build on. Hours of manual copying gone — your reading turns straight into usable notes.</p>
-<p><a href="https://github.com/akaalias/obsidian-extract-pdf-highlights">Open →</a></p>
-</div>
-<div class="src"><a href="/notes/extract-pdf-highlights/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-extract-pdf">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/extract-pdf/"><time datetime="2020-12-20T23:00:00Z">Monday, December 21, 2020 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/extract-pdf/">Extract PDF</a></h2>
-<div class="text note-body">
-<p>This one frees the text trapped inside a PDF. One click turns a document into clean, editable notes — headings, paragraphs and lists intact — so you can quote it, rework it, and weave it into your own writing instead of squinting at a locked-up file.</p>
-<p><a href="https://github.com/akaalias/obsidian-extract-pdf">Open →</a></p>
-</div>
-<div class="src"><a href="/notes/extract-pdf/">Permalink</a></div>
-</article>
-<article class="item kind-video" id="v-KWdEatdD2bo">
-<div class="meta"><span class="kind">Video</span><a class="when" href="/videos/how-to-create-ad-hoc-mocs-with-obsidian/"><time datetime="2020-12-07T10:16:06Z">Monday, December 7, 2020 · 11:16</time></a></div>
-<h2 class="note-title"><a href="/videos/how-to-create-ad-hoc-mocs-with-obsidian/">How To Create Ad-Hoc MOCs With Obsidian</a></h2>
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/KWdEatdD2bo" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-<div class="text video-desc"><p>A quick walk-through of the process to using the Highlight Plugin from <a href="https://github.com/akaalias/extract-highlights-plugin">github.com/akaalias/extract-highlights-plugin</a></p>
-<p>The Chrome &quot;Markdownload&quot; plugin I'm using in the beginning is here: <a href="https://chrome.google.com/webstore/detail/markdownload-markdown-web/pcmpcfapbekmbjjkdalcgopdkipoggdi?hl=en-GB">chrome.google.com/webstore/detail/markdownloa…</a></p></div>
-<div class="stats"><span><b>9:37</b> long</span></div>
-<div class="src"><a href="/videos/how-to-create-ad-hoc-mocs-with-obsidian/">Permalink</a> · <a href="https://www.youtube.com/watch?v=KWdEatdD2bo">Watch on YouTube ↗</a></div>
-</article>
-<article class="item kind-video" id="v-pP4AeGY2mz4">
-<div class="meta"><span class="kind">Video</span><a class="when" href="/videos/how-to-use-obsidian-to-write-a-book/"><time datetime="2020-09-25T12:00:58Z">Friday, September 25, 2020 · 14:00</time></a></div>
-<h2 class="note-title"><a href="/videos/how-to-use-obsidian-to-write-a-book/">How To Use Obsidian to Write a Book</a></h2>
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/pP4AeGY2mz4" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-<div class="text video-desc clamped"><p>🎉 UPDATE: The Journey Plugin automatically creates your book outline for you ➡️ <a href="https://youtu.be/iRydNlinRlc">youtu.be/iRydNlinRlc</a>  🎉</p>
-<p>This is a video for my buddy Chris who is writing a book currently. </p>
-<p>It's a short walk-through on how to leverage Obsidian to collect, connect and contribute interesting and novel ideas.</p>
-<p>The software I'm using is called Obsidian. I'm obsessed with it and I happily pay for it as well. You can download it for free for personal-use <a href="https://obsidian.md/">obsidian.md/</a> </p>
-<p>A lot of the ideas are based on Curtis McHale's videos at <a href="https://www.youtube.com/user/SFNdesignWP">youtube.com/user/SFNdesignWP</a></p>
-<p>If you have any questions, let me know in the comments below!</p>
-<p>PS: I guess it's more of a general &quot;How I use Obsidian to Come Up with New Ideas&quot; and less about the writing/editing process for a book. But, yeah, I think those things are well-covered. I recorded it with the intention to look at the discovery process.</p></div>
-<div class="more"><a href="/videos/how-to-use-obsidian-to-write-a-book/">Read the full description ›</a></div>
-<div class="stats"><span><b>16:29</b> long</span></div>
-<div class="src"><a href="/videos/how-to-use-obsidian-to-write-a-book/">Permalink</a> · <a href="https://www.youtube.com/watch?v=pP4AeGY2mz4">Watch on YouTube ↗</a></div>
-</article>
-<article class="item kind-note" id="n-100-interview-challenge-16-6-2020">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/100-interview-challenge-16-6-2020/"><time datetime="2020-08-09T20:41:47Z">Sunday, August 9, 2020 · 22:41</time></a></div>
-<h2 class="note-title"><a href="/notes/100-interview-challenge-16-6-2020/">100 Interview Challenge 16.6.2020</a></h2>
-<div class="text note-body clamped">
-<h2>Background</h2>
-<p>I’m not 100% sure how I will take my dream about doing this and make it happen. Today I feel very tired and less motivated. I enjoy dreaming about it and I enjoy imagining the benefits of it but I’m not yet ready to start the work. Or at least I’m pushing that away. Yesterday I spent most of the time fantasizing and then 1 hour actually planning this challenge.</p>
-<p>And maybe that’s okay right now. Maybe I need to give myself time to get into it. Maybe <em>I need to clarify the vision</em> for this challenge and <em>get really excited</em> about it BEFORE I start planning all the details and todos.</p>
-<p>Good question. How do I envision this process? How do I envision this project? I know there’s an outcome, at least for now, with <span class="wikilink unresolved">300 In-Depth Interviews Challenge</span>… So that’s <em>good</em> but not really exciting. 100 beans. 100 cups. 100 people. <span class="wikilink unresolved">300 In-Depth Interviews Challenge</span>. Doesn’t say anything. 100 problems captured. 100 ideas generated. 100 business ideas. 100 problems to solve to make money. 100 opportunities to empathize and be creative about something someone cares about.</p>
-<h2>How I want this experience - The “HOW” to the “WHAT”</h2>
-<p>I want to experience my ‘ONE Thing’ in work. I want to focus and know and feel absolutely right. I want to work on it every day and see progress and results and changes and improvements. I want to become an expert in listening. I want to become an expert in generating ideas. I want to create what Dane M. created but even better and bigger and more exciting. I want to be the person that people think of when they think of profitable business ideas. I want to be desired and asked to help and asked to join teams in amazing companies. I want to start and focus on the most important part in work, the problem and pain that people face and figure out ways to solve those in exchange for money. I want to connect with those I interview. I want to make them feel special. I want them to feel safe and cared for. I want them to unlock their potential and creativity safely and with joy. I want others to see that process and begin themselves. I want to share the interviews and help business owners build better products that actually help people. I want to OWN this part. I want to unearth, discover the gems that are hidden. I want to bring those gems to the surface. I want to help 100 people solve their biggest pain in business and life. I want to feel success in conducting these interviews. I want to talk to amazing people. I want to connect with amazing people. I want to build a portfolio site and channel and following that is the foundation for my work. I want to start at the core source of energy and drive incredibly successful business from it. I want to help and co-uncover ideas that are so simple and so clear that it’s completely obvious and doable to build a solution and make money immediately. I want to be sought after and courted by companies and venture firms and start ups and businesses to help them unearth gems. I want to experience work as a joyful and incredibly fun experience that uplifts me and those I am in connection with. I want to experience connection and joy and fun as part of work. I want to build a new life for myself that works for me and that feels right and good. I want this to be my project, my focus, my source of motivation. I want to feel excited and amped up and curious and surprised and connected and referred to and I want to publish and spread and impress and have a portfolio and content and a clear stance.</p>
-<p>I see myself contacting amazing people and getting their yes and sending them the invite and starting the session and recording the session and kicking off the conversation and feeling great and focused and connected and asking and listening and taking notes and reflecting and probing and making them feel good and confident and creative and digging a little more and being careful and respectful and finding an idea and polishing that idea and getting excitement and feeling relief and feeling a sense of liberation and clarity and gratitude and recapping and finding an actual price and feeling good about it. And then slowly finishing off and getting a referral to the next IDEAL interview partner and hearing that they’d love to talk another round because they got so much out of it this time.</p>
-<p>And I see myself finishing the zoom call and feeling really good and excited and inspired and I see myself taking a few more notes and organizing the note and the follow-up and the referral and the recording. I see myself editing the recording and uploading it and getting the transcript for it and publishing it on my site and on Facebook and on Instagram and LinkedIn and getting amazing responses and feeling an immense sense of success. I see myself adding one more interview to my list and looking forward to the next one.</p>
-<h2>Reflection</h2>
-<p>Yes, this feels much better. Much more in tune with actually doing it. This feels like I’m already doing it. This makes so much sense. I believe that focusing on the feeling and the experience as I want to have it is good. I’m definitely more amped up than I was an hour ago.</p>
-<p>Having a vision of “HOW” is super important. The “WHAT” has been clear (<span class="wikilink unresolved">300 In-Depth Interviews Challenge</span>) for a few days and I can get excited about that as a challenge but it’s also important to get emotional about it to have the energy and the vibe and the creativity that’s needed to make it happen.</p>
-<p>I’ve also done the <em>“Why do I want this?”</em> and <em>“Why do I believe I will get this?”</em> and I guess the <em>“How do I want this?”</em> is another part in this process to give it color and dimension and emotions.</p>
-<p>I’ll let this sink in for a little bit and then decide on what’s next in this process.</p>
-<p>Now for a little break.</p>
-<ul>
-<li><span class="wikilink unresolved">100 Interview Challenge 15.6.2020</span></li>
-</ul>
-<h3>Tags</h3>
-<ul>
-<li>#100daychallenge</li>
-<li>#interviews</li>
-<li>#abrahamworkshop</li>
-</ul>
-</div>
-<div class="more"><a href="/notes/100-interview-challenge-16-6-2020/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/100-interview-challenge-16-6-2020/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-03-07-2020">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/03-07-2020/"><time datetime="2020-07-02T22:00:00Z">Friday, July 3, 2020 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/03-07-2020/">03.07.2020</a></h2>
-<div class="text note-body clamped">
-<ul>
-<li>Did a <span class="wikilink unresolved">Retrospective 3.7.2020</span></li>
-<li>Sent out the complete <span class="wikilink unresolved">LifeScan Phase Two Interviews – First Impressions</span> as PDF to my team…</li>
-<li>Still got to edit my own rent contract</li>
-<li>Print it out</li>
-<li><p>Buy stuff for tomorrow:</p>
-<ul>
-<li><p>Fennel Salad #done</p>
-<ul>
-<li>Fennel</li>
-<li>Lemons</li>
-<li>Parmigiano</li>
-</ul>
-</li>
-<li>Burger buns 3 x 6 #done</li>
-<li>Iceberg Salad x 1 #done</li>
-<li>Tomatos x 1 #done</li>
-<li><p>Once I get there:</p>
-<ul>
-<li>Ice cubes</li>
-<li>2 x six-packs of american beers</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>Learned a little more about Obsidian, enabled the daily note plugin since I’ve been creating a daily note already by hand most days. Got the $25/life license to get beta builds (worth it already because backlinks were broken and CPU used 100% by the graph renderer.)</p>
-<p>Talked to <span class="wikilink unresolved">Jonathan Najarian</span> on the phone for a bit; we did a quick check-in because he was headed to a gig and I had to go buy stuff. Printed out the rent contracts before. What else? Got all the stuff for the grilling tomorrow. I’m not sure if I want to head back to <span class="wikilink unresolved">What I love about Franziska Krüger</span> tonight after 10pm. I kind of feel like spending some time with myself. A lot has happened this week and I’m exhausted. I spent a lot of Money. I didn’t make that much Money in return… But in the idea of expanding, I feel good about spending money on myself for myself. And most of it was Food-related anyway, which I think is good and worth it.</p>
-<p>I’m good sitting around right now. Maybe watch <span class="wikilink unresolved">Notes on Dane Maxwell</span>’s video about <span class="wikilink unresolved">Pick a Niche Article</span> later.</p>
-<p>Read the article, overall good, just not feeling particularly marketing-y or sales-y right now. I just want to chill and maybe eat something later and then go to bed and start the weekend tomorrow.</p>
-</div>
-<div class="more"><a href="/notes/03-07-2020/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/03-07-2020/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-24-06-2020">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/24-06-2020/"><time datetime="2020-06-23T22:00:00Z">Wednesday, June 24, 2020 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/24-06-2020/">24.06.2020</a></h2>
-<div class="text note-body clamped">
-<p>Woke up tired, got out of bed at 9. Feeling like shit. Feeling exhausted and incredibly sad. Sat on the couch yesterday all day. No Dopamine-hits, no scrolling etc. I think that’s the right decision. Same today. I have two interviews. The one I did yesterday was the highlight of my day. Other than that, I didn’t do much. I went shopping and cooked chicken. That was good.</p>
-<p>For right now I’m glad I went out for a walk through the park. I wish I could cry it all out. I wish I could cry so that this pain and suffering has a place to be. I looked at that tree that reminds me of me. It has a vine plant creeping up and someone other than me cut that vine. And now there’s a skeleton left of that vine and the tree is growing much better now than last year. I identify with the tree and hope I am in the process of cutting my vine off.</p>
-<p>I feel slow and sad and heavy. At least allergies are back to a manageable level. This month sucked ass. It was basically 4 weeks of not sleeping because of allergies, becoming aware of how bad my early “work”-experience was and that I’m a survivor. No one really cares even if I tell them. I have to pay too much money that I don’t have. I feel small and hurt and sad and alone and broke and broken.</p>
-<p>Maybe that’s why I’ve been Broke so much. I’m just a nobody with nothing of value. I’m just someone you pass on the street, a somebody who serves you dinner. My life has no meaning anymore. <span class="wikilink unresolved">Twenty years</span> of living a lie, lying to myself just to survive. That’s what they call a survivor. I haven’t thrived once in the last <span class="wikilink unresolved">Twenty years</span>. I’ve been on the edge of failure, ruin, heart-break and death and I managed to never fall off the rails. No wonder I smoked like a chimney. No wonder.</p>
-<p>It wasn’t my fault but it still happened to me.</p>
-<p>And now I know why nothing ever worked out for me in the last fucking <span class="wikilink unresolved">Twenty years</span>. At least I know now. Getting glasses when you’re short-sighted is great because you start seeing the world clearly. It also shows you the stuff that’s wrong and broken or where you suffered. Clarity sheds a light on everything, the good, the bad and the ugly truths. And so, finally, I’ve been in a position to look at the ugly truths in my life. And the ugly people in my life that made my time miserable and maimed me for the rest of my life. What happened was not okay. It was not appropriate. It was completely inappropriate and wrong. It was wrong.</p>
-<p>So, for today, what’s my plan?</p>
-<ul>
-<li>Interview #2 with Dr. Moaz [DONE]</li>
-<li>???</li>
-<li>Interview #3 with Annika [DONE]</li>
-<li>???</li>
-<li>???</li>
-<li>???</li>
-<li>Call with JN at 6pm: Interview</li>
-<li>Head over to <span class="wikilink unresolved">What I love about Franziska Krüger</span>’s at 7pm for dinner</li>
-<li>Get an overview of current finances/expenses</li>
-</ul>
-<p>I don’t know yet what comes after the interviews. Gotta make sure I write down my first impressions again. That seemed to be valuable to me and the client.</p>
-<p>Worrying about money. 40 and Broke. 40 and Broke. 40 and broken. 40 and worthless. 40 and nobody. 40 and survived. 40 and… ?</p>
-<h2>Dopamine Fast Day 2</h2>
-<p>I’m supposed to focus on what I want. I want to focus on what I want. But it’s hard today. It’s hard when you’re depressed.</p>
-<p>I should keep moving more.</p>
-<ul>
-<li>I will not check my phone.</li>
-<li>I will not go on social media.</li>
-<li>I will not read news.</li>
-<li>I will not eat sugar.</li>
-<li>I will not eat fast food.</li>
-<li>I will not watch porn.</li>
-</ul>
-<p><strong>I will not get high on bullshit, low-value, high-dopamine hits to avoid difficult feelings anymore.</strong> I’m doing this for ME. Instead, I’ll do stuff that’s good for me and that will feel good when I don’t baseline myself with those drugs!</p>
-<p>And I was successful there yesterday. No random dopamine hits throughout the day.</p>
-<p>No mindless scrolling to ease the pain.</p>
-<p>No coffee or nicotine! (Non-smoker for over 4 months now!)</p>
-<p>Instead,</p>
-<ul>
-<li>I will move my body</li>
-<li>I will eat good food</li>
-<li>I will read good books</li>
-<li>I will exercise my body</li>
-<li>I will meditate</li>
-<li>I will allow difficult emotions</li>
-<li>I will allow difficult conversations</li>
-<li>I will write</li>
-</ul>
-<p>And I don’t need to stress out that I’m not yet the productivity-machine reading 3 books every day on day 2 of my <span class="wikilink unresolved">dopamine fast</span>. If I can avoid the brain-sugar bullshit, all other productive things will come back one by one.</p>
-<p>Maybe I’ve been so hooked on that shit is because my trauma was so big as well. Where others just dipped their toes once in a while, I was fully invested because it gave me relief from my pain.</p>
-<h2>Interview #2 Preparations</h2>
-<p>Anyways, the interview is coming up in 25 minutes. I don’t have much more coherent thinking available at the moment. And that’s okay. Just kept writing and got some ideas out of it. I wonder how air conditioning works in the new place on <span class="wikilink unresolved">Alexanderplatz Apartment</span>?</p>
-<p>Still got 5 minutes left on my tomato timer. What else can I write about that’s relevant and interesting?</p>
-<h2>How I want to feel</h2>
-<p>I want to wake up in the morning full of energy and feel tirelessly motivated to live my own life. To work on something that fulfills me and that lets me enjoy success and financial independence. To have a loving relationship with my partner and my family and my friends. To be free of worry about money. To choose experiences because I want them, being certain that all resources like money will be available to me. To be full of energy and focused. To be alert and “there” and flow effortlessly through my day from one activity to the next to a different place, in and out of conversations etc. Free of feeling hurt and sadness. Full of positive, hopeful, optimistic feelings.</p>
-<h2>After Interview with Dr. Moaz</h2>
-<p>Super nice, learned a lot. Had fun. I think she enjoyed it as well. Good intuitions on what she said. Good training for my own interviews. Good probing, good memory on what was said. Good notes. Good first impressions. Overall a success! Time flew by, I asked mostly open-ended questions.</p>
-<p>Now, I have one hours to spend before the next call. That’ll be at 1:30, then I’ll have a longer break until talking to <span class="wikilink unresolved">Jonathan Najarian</span> at 6pm. Feels crazy that the day is already that far ahead. But I slept in until 9am, so…</p>
-<h2>Idea Regarding “Interviews”</h2>
-<p>“Start with ONE” - Marketing course that starts with ONE customer that gets interviewed for problems and solutions. Find a really painful problem, then come up with solutions until a paid solution is found and that pain is solved.</p>
-<ol>
-<li>One Person that I like spending time with</li>
-<li>One Problem that they seriously struggle with</li>
-<li>One Solution that they’ll pay for</li>
-</ol>
-<p>Use interview to come up with a “Person(a)” like <span class="wikilink unresolved">Jonathan Najarian</span>, 30 years old, lives in Boston, works with his girlfriend as wedding-photographer, 2-person team, city-wide booking. Could even be a friend, because it’s about their problem and their solution and not some random idea I’ve come up with. Maybe. This needs to be seen.</p>
-<p>Use interview to capture emotionally charged problem description “XYZ fucking sucks, man. If this doesn’t go away, things’ll get fucking ugly.” This can be used directly in sales copy for this one particular person. A sales-letter for ONE that basically recaps the conversation and the idea/offer that was created together.</p>
-<p>Use interview to create product/idea/offer in a way that it’s valuable to them and they’re ready to pay for it. Using quotes and the feature-list, build a landing-page (could be email) to presell the service.</p>
-<p>BOOM!</p>
-<p>Deliver the service as discussed and promised and paid for. Ask for feedback, improvements.</p>
-<p>Get testimonial, referrals and introductions.</p>
-<p>Scale business system slowly.</p>
-<blockquote>
-<p>“We’re all just walking each other home.” – Ram Dass</p>
-</blockquote>
-<h2>Thought: Would any of these notes I’ve been writing be worth/useful to others?</h2>
-<p>Just thought, I could publish this on a site so that at least <span class="wikilink unresolved">What I love about Franziska Krüger</span> and my dad would have an idea of where I’m at…</p>
-<p>Where is freeisaverb.com hosted actually?</p>
-<p>Requested account deletion on HostGator, BlueHost, Medium, Twitter</p>
-<p>Should make my LinkedIn profile private!</p>
-<p>Should probably cancel <span class="wikilink unresolved">Clickfunnels</span>…</p>
-<h2>Related</h2>
-<ul>
-<li><span class="wikilink unresolved">Daily Journaling</span></li>
-<li><span class="wikilink unresolved">Regular Journal 23.6.2020</span></li>
-<li><span class="wikilink unresolved">Abraham Workshop</span></li>
-<li><span class="wikilink unresolved">Build a Biz in 2 Hours Course</span></li>
-</ul>
-<h3>Tags</h3>
-<ul>
-<li>#regularjournal</li>
-<li>#iwanttoknowwhatiwant</li>
-<li>#dopaminefast</li>
-<li>#100daychallenge</li>
-<li>#interviews</li>
-</ul>
-</div>
-<div class="more"><a href="/notes/24-06-2020/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/24-06-2020/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-post-shadow-journal-09-06-2020">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/post-shadow-journal-09-06-2020/"><time datetime="2020-06-08T22:00:00Z">Tuesday, June 9, 2020 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/post-shadow-journal-09-06-2020/">Post-Shadow Journal 09.06.2020</a></h2>
-<div class="text note-body clamped">
-<p>Uff, ja, also heute ging’s nochmal richtig um’s Eingemachte. Und ich bin froh, dass ich gerade die Zeit und den Kopf dafür habe. Ich kann mich relativ fokussiert daran setzen und da irgendwie durch arbeiten. Es muss raus. Es geht hier um MEIN LEBEN. Und erst jetzt, mit Medikament, kann ich erst damit wirklich umgehen. Was ein Glück, dass ich das für mich entdeckt habe. Schreiben scheint ein guter Weg zu sein, das zu verarbeiten. Ich weiss nicht, was da gerade noch besser wäre, aber ich fühle mich wohl hier am Keyboard, in Ruhe. Ich hatte mir gewünscht, dass ich irgendwie schon weiter bin in meinem Leben. Dass ich mich total auf Jobsuche und Beziehung und Wohnung und Spass und Freunde und Berlin konzentrieren kann. Aber ich bin da einfach nicht. Und ich werde da auch erst dann sein, wenn ich das hier heile. Und ich bin so froh, dass mit der Hilfe von <span class="wikilink unresolved">Psilocybin</span> und Ritalin ich das Problem erkenne und es aktiv lösen kann, weil ich mich fokussieren kann. Alles, war in meinem Leben in den letzten 20 Jahren los war, war in direktem Bezug auf das <span class="wikilink unresolved">Traumatic Experience at Work</span>, das ich momentan bespreche. Es ist irrsinnig krass, was damals passiert ist, wie rücksichtslos mit mir umgegangen wurde. Wie krass, dass es den Tätern nur um Macht und Geld ging und ich die Geschichte vom Weltverbessern geglaubt habe.</p>
-<p>Ohne da jetzt wieder einzusteigen: Ich sollte nach dieser Runde etwas leckeres Essen, eine Pause machen und mich auf das konzentrieren, was ich will. Das tut mir wirklich gut und es macht Sinn und wenn ich mich mit dem Scheiss beschäftigen muss, dann ist es immer in Beziehung zu meinem besseren Leben in meiner nahen Zukunft! Diesen Fokus auf die guten Dinge zu halten ist jetzt noch viel wichtiger als jemals zuvor! Denn so kann ich mein Leben zurückgewinnen und meine Stabilität und meinen Selbstwert. Ich bin stolz darauf, hier und jetzt genau diese Arbeit zu machen. Ich bin stolz darauf, denn ich stehe hier und jetzt für mich und mein Leben ein und setze Grenzen und schaffe mir meine Zukunft in der es mir gut geht, in der ich aufblühe, in der ich und mein Leben und meine Arbeit und mein Geld und meine Beziehungen gedeihen. Genau so wie damals, <span class="wikilink unresolved">1999</span> in <span class="wikilink unresolved">New York</span>, und noch viel besser! Und darum geht es. Es geht um mich. Es geht um meine Bedürfnisse. Es geht um mein Leben. Um meine Zeit. Dass es mir wieder gut geht. Dass ich mein Leben lebe. Ich bin stolz, dass ich es bis hier her geschafft habe. Dass ich nicht aufgegeben habe. Dass ich mich nicht umgebracht habe. Dass ich andere so gut es ging vor diesem Problem geschützt habe. Dass ich an mir selbst gearbeitet habe. Dass ich mir selbst zugehört habe, dass ich meinem inneren Klang gefolgt bin auch wenn es schwer war. Dass ich mir selbst Stufen in den Stein gehauen habe um aus dem Loch herauszukommen. Ich finde, ich mache das sehr, sehr gut. Ich finde, dass ich jetzt schon, im Verarbeiten und Heilen dieses Themas einen Riesen Erfolg schaffe. Ich fühle mich jetzt schon besser und größer und stärker und fokussierter als jemals in den letzten 20 Jahren!</p>
-<p>Also, daher die abschliessenden Worte…</p>
-<p>Das ist die richtige Arbeit, die ich hier mache. Es ist die wichtige Arbeit, die mich dahin führt wo ich es mir wünsche. Es ist ganz schön harte Arbeit, aber ich habe sie gemacht. Es ist härter, nichts zu tun und sein Leben kaputt gehen zu sehen. Daher ist diese Arbeit und diese Zeit und diese Herausforderung die beste Investition in meine Zukunft. In meine Arbeit. In mein Vermächtnis. In den Spass und die Freude, die ich in meinem Leben erleben will. Dieses Thema, diese Befreiung ist die wichtigste Arbeit, die ich in meinem Leben jetzt verrichten kann. Und ich bin unglaublich dankbar, dass ich körperlich und geistig und seelisch dazu jetzt in der Lage bin. Und vielleicht kann ich irgendwann jemand Anderem helfen, sich so zu befreien.</p>
-<p>AR</p>
-</div>
-<div class="more"><a href="/notes/post-shadow-journal-09-06-2020/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/post-shadow-journal-09-06-2020/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-05-06-2020">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/05-06-2020/"><time datetime="2020-06-04T22:00:00Z">Friday, June 5, 2020 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/05-06-2020/">05.06.2020</a></h2>
-<div class="text note-body clamped">
-<p>Noch ein weiterer Eintrag für heute…</p>
-<p>I did 2 hours of Deep Work – got the funnel ready and even found a good name for the overarching brand: <span class="wikilink unresolved">MindSky Academy</span>. Nice! Got the domain, that’s  verifying, but once it is, I’ll finalize the Google Suite thing and then head over to mailerlite to verify my account with my fancy alexis@mindskyacademy.com email address. Pretty cool!</p>
-<p>I’m happy it’s the end of the week, I’m not that sharp anymore after working every day since Monday but I feel like I’ve pushed myself forward and kept  good records of every amount of effort I put in. In total it’s 14 hours of Deep Work (not counting  work for C Space) working on my MindSky funnel and products and copy and videos. 14 hours I’ve invested in myself and my future and that worked. I need to eat more throughout the day, that was the only issue I haven’t tackled yet. I’ll try <span class="wikilink unresolved">HUEL</span> to make sure I eat <em>something</em> until I have the time to cook a meal.</p>
-<p>So yeah, I’m pretty stoked about this week! I bought myself flowers that I put on my desk and that makes it nice to sit here. They have a calming effect and are beautiful to look at. I think they’re enjoying their stay. I hope.</p>
-<p>Since I cleaned up my desk last week and continued to remove anything that wasn’t essential from it I like working here much more. It’s the bare necessities I need to work and no distractions. The checklist above the table has also helped tremendously. I don’t yet know how to ensure 100% that I start a timer before I go into work but it’s working. I’m missing 20% maximum of sessions from my timer this week. That happens when I’m just in the zone I think. The little triangle stars I’m using to reward and celebrate are cute. I wish there were more of them. Or different stickers. And those that I don’t know what it’s going to be ahead of time (like a variable reward kind of thing) – I’ll look into that next week. Maybe Modulor is open again or that toy store down the street.</p>
-<p>In either case, I feel like I’m developing, rapidly, a way for me to work hard and long and feel good about it. This is a major progress for me from staring into space or sleeping to working and getting things done consistently. I am proud that I’ve found a solution to my problem (Ritalin) and am excited to be ABLE to shape my life the way I want it to.</p>
-<p>YES!</p>
-</div>
-<div class="more"><a href="/notes/05-06-2020/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/05-06-2020/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-18-05-2020">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/18-05-2020/"><time datetime="2020-05-17T22:00:00Z">Monday, May 18, 2020 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/18-05-2020/">18.05.2020</a></h2>
-<div class="text note-body clamped">
-<p>Montag, 18.5.2020 – Irgendwie fühle ich mich seit Freitag komisch. Also auch schon davor, aber heute bin ich erst um 10:00 aus dem Bett gekommen. Irgendwas stört mich oder macht mich traurig. Ich glaube, es hat mit <span class="wikilink unresolved">What I love about Franziska Krüger</span> zu tun. Dem Streit von letztens. Und das hängt mir glaube ich noch nach. Also, den Elan von den letzten Wochen habe ich gerade nicht. Vielleicht bin ich auch enttäuscht, dass das mit dem <span class="wikilink unresolved">OFAC</span> Projekt doch nicht, gar nicht, hinhaut und ich da so viel Arbeit reingesteckt habe. Vielleicht auch das. Die Bewerbungen gehen eigentlich ganz gut. Aber heute schon mit Oleksii zu sprechen wegen einer Position geht mir etwas schnell. Also, wenn ich mich frage ob es mir gut geht muss ich sagen nein, ich fühle mich irgendwie off oder daneben. Sehr komisch. Könnte auch vom Essen letzte Woche kommen. Und dieser Fokus Mode hier geht auch irgendwie nicht so wie er sollte. Das der gesamte Text immer gehighlighted wird ist doch nicht die Idee, oder?</p>
-<p>Was gibt’s denn sonst so? Fühl mich müde und umfokussiert. Vielleicht hat das auch damit zu tun, dass ich am Samstag nicht dosiert hatte. Oder, dass ich jeden Tag dosier und das zu viel oder zu oft ist. Ich weiss es nicht.</p>
-<p>Zumindest habe ich für die Woche noch keine gute Vision.</p>
-<p>Also, irgendwie ist da der Wurm drin gerade.</p>
-<p>Erstmal habe ich schlechte Laune, bin frustriert, bin traurig. Fühle mich alleine. Fühle mich schwer.</p>
-<p>Das ist echt komisch weil es mir eigentlich gut geht!</p>
-<p>Ich hatte ein tolles Wochenende. Hab gut geschlafen. Hab hier gerade meine Ruhe… Also an sich passt doch alles.</p>
-<p>Was kann ich tun, damit ich mich irgendwie besser fühle? Welcher Gedanke macht da gerade für mich Sinn?</p>
-</div>
-<div class="more"><a href="/notes/18-05-2020/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/18-05-2020/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-27-04-2020">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/27-04-2020/"><time datetime="2020-04-26T22:00:00Z">Monday, April 27, 2020 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/27-04-2020/">27.04.2020</a></h2>
-<div class="text note-body clamped">
-<p>So. Today was a good day so far. I finally broke my own record of working 4h straight (with pauses every 30 minutes) on my Deep Work – specifically building my funnel following the <span class="wikilink unresolved">OFAC</span> framework. I’m proud because I still have time and energy to write about it now and I feel like I can do this again. I crossed the 4h mile! And yes, the Ritalin is definitely helping with this, especially in the moments where there’s a distraction and I’m able to ignore it and re-focus. I also made  myself a first draft of a checklist before getting to work. Here are the check-marks that have to be answered with ‘yes’ before I actually start the work:</p>
-<p>Do I have…</p>
-<ol>
-<li>A goal?</li>
-<li>Taken a break?</li>
-<li>A plan?</li>
-<li>A good task?</li>
-<li>A reward?</li>
-<li>Removed distractions?</li>
-<li>Water and snacks?</li>
-<li>A timer set?</li>
-</ol>
-<p>So far, through 8 sessions of 30 minutes each (a longer pomodoro) I used the checklist to make sure I could fully focus  on the task before me.</p>
-<p>One task, setting up the email integration, took much longer than expected because I wanted to use a service that doesn’t cost anything (yet), works with CF and allows for automations in the free tier. It took me an hour of trying different services out until I settled on MailerLite with Zapier. It’s a little hacky but it works as much as I need it to. The only thing missing is getting the MailerLite account verified for which I need a custom email address like alexis@mindsky.com – Which prompted me to (capture the need for) brainstorm a company name/product suite name. Something like MindSky is really nice… But that will have to wait until tomorrow, that’s the next task at hand to finish up my email system: A verified MailerLite account. It’ll cost ~$5 per month for the Google business suite which I wish I didn’t have to pay for (didn’t they have a free offer as well??)</p>
-<p>Anyways, yes, pretty excited. Implemented the opt-in page, the responder (including a fresh account), the sequence of 5 emails, the 5 pages that belong to it. I’m so fucking glad to use PLR.me templates instead of having to come up with all of that on my own. For training purposes, this is really helpful. And I used FunnelScripts to write a good headline and sub-headline and the CTA for me. If anything, If I can really, truly stay to be the CONDUCTOR/COMPOSER focusing on the offers, the story and the hook and leave EVERYTHING else to someone or something else, would be tremendous.</p>
-<p>In other news, I got a mouse, a bluetooth one and I like it a lot. It does need a mouse pad on my table which is unfortunate but I think that would’ve been the case with any mouse I buy. Other than that it works really well! I haven’t had a mouse in a decade I believe. But with my table/seat/keyboard set up this makes a lot of sense. Like right now, I’m using my external keyboard to type and if I need anything I can just lean right, grab my mouse instead of having to completely shift my body to reach OVER my keyboard and use my trackpad on my laptop.</p>
-<p>Oh, this reminds me, I still get to do my prosperity game today (and yesterday’s) which means I have a lot of money (play-money for now) to “spend” on something I’d love. Like a enormous display and/or fully loaded iMac. Maybe that’s the idea. The fully loaded iMac and a long trip to Paris.</p>
-<p>You know what? That’s what I’m going to do now to make sure I’ve spent good time on it.</p>
-</div>
-<div class="more"><a href="/notes/27-04-2020/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/27-04-2020/">Permalink</a></div>
-</article>
 </section>
-<nav class="pager"><a href="/feed/page/28/">‹ Newer</a><span class="n">Page 29 of 35</span><a href="/feed/page/30/">Older ›</a></nav>
+<nav class="pager"><a href="/feed/page/28/">‹ Newer</a><span class="n">Page 29 of 37</span><a href="/feed/page/30/">Older ›</a></nav>
 <aside class="months-nav">
 <div class="group">
 <h3><a href="/feed/archive/">Archive</a></h3>
 <div class="y">2026</div>
 <ul>
-<li><a href="/feed/archive/2026/10/">October</a> <span class="n">4</span></li>
-<li><a href="/feed/archive/2026/09/">September</a> <span class="n">78</span></li>
+<li><a href="/feed/archive/2026/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2026/09/">September</a> <span class="n">79</span></li>
 <li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
-<li><a href="/feed/archive/2026/07/">July</a> <span class="n">22</span></li>
-<li><a href="/feed/archive/2026/06/">June</a> <span class="n">30</span></li>
+<li><a href="/feed/archive/2026/07/">July</a> <span class="n">24</span></li>
+<li><a href="/feed/archive/2026/06/">June</a> <span class="n">31</span></li>
 <li><a href="/feed/archive/2026/05/">May</a> <span class="n">10</span></li>
-<li><a href="/feed/archive/2026/04/">April</a> <span class="n">31</span></li>
+<li><a href="/feed/archive/2026/04/">April</a> <span class="n">33</span></li>
 <li><a href="/feed/archive/2026/03/">March</a> <span class="n">34</span></li>
 <li><a href="/feed/archive/2026/02/">February</a> <span class="n">57</span></li>
 <li><a href="/feed/archive/2026/01/">January</a> <span class="n">15</span></li>
 </ul>
 <div class="y">2025</div>
 <ul>
-<li><a href="/feed/archive/2025/12/">December</a> <span class="n">28</span></li>
-<li><a href="/feed/archive/2025/11/">November</a> <span class="n">125</span></li>
+<li><a href="/feed/archive/2025/12/">December</a> <span class="n">29</span></li>
+<li><a href="/feed/archive/2025/11/">November</a> <span class="n">126</span></li>
 <li><a href="/feed/archive/2025/10/">October</a> <span class="n">7</span></li>
 <li><a href="/feed/archive/2025/09/">September</a> <span class="n">5</span></li>
 <li><a href="/feed/archive/2025/08/">August</a> <span class="n">7</span></li>
@@ -534,33 +538,41 @@ Post issues at: <a href="https://github.com/akaalias/obsidian-journey-plugin/iss
 <ul>
 <li><a href="/feed/archive/2023/11/">November</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2023/10/">October</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2023/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/09/">September</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2023/08/">August</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2023/07/">July</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2023/06/">June</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2023/05/">May</a> <span class="n">7</span></li>
-<li><a href="/feed/archive/2023/04/">April</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2023/03/">March</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/06/">June</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2023/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2023/04/">April</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/03/">March</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/02/">February</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2022</div>
 <ul>
+<li><a href="/feed/archive/2022/11/">November</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2022/10/">October</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2022/09/">September</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2022/07/">July</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2022/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/07/">July</a> <span class="n">6</span></li>
 <li><a href="/feed/archive/2022/04/">April</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2022/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2021</div>
 <ul>
-<li><a href="/feed/archive/2021/11/">November</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/11/">November</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2021/09/">September</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2021/02/">February</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2021/01/">January</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2021/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/02/">February</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2021/01/">January</a> <span class="n">8</span></li>
 </ul>
 <div class="y">2020</div>
 <ul>
-<li><a href="/feed/archive/2020/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2020/12/">December</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2020/11/">November</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2020/09/">September</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2020/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/08/">August</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2020/07/">July</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2020/06/">June</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2020/05/">May</a> <span class="n">1</span></li>
@@ -590,20 +602,26 @@ Post issues at: <a href="https://github.com/akaalias/obsidian-journey-plugin/iss
 <ul>
 <li><a href="/feed/archive/2017/12/">December</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2017/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2017/09/">September</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2017/06/">June</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2017/05/">May</a> <span class="n">7</span></li>
-<li><a href="/feed/archive/2017/04/">April</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2017/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2017/04/">April</a> <span class="n">7</span></li>
 <li><a href="/feed/archive/2017/01/">January</a> <span class="n">2</span></li>
 </ul>
 <div class="y">2016</div>
 <ul>
 <li><a href="/feed/archive/2016/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2016/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2016/02/">February</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2016/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2015</div>
 <ul>
+<li><a href="/feed/archive/2015/10/">October</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2015/06/">June</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2015/05/">May</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/03/">March</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/02/">February</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2015/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2014</div>
@@ -618,11 +636,21 @@ Post issues at: <a href="https://github.com/akaalias/obsidian-journey-plugin/iss
 <li><a href="/feed/archive/2014/05/">May</a> <span class="n">12</span></li>
 <li><a href="/feed/archive/2014/04/">April</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2014/03/">March</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2014/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2013</div>
+<ul>
+<li><a href="/feed/archive/2013/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2013/05/">May</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2012</div>
+<ul>
+<li><a href="/feed/archive/2012/01/">January</a> <span class="n">1</span></li>
 </ul>
 </div>
 </aside>
 <footer class="site">
-<p>© 2014–2026 Alexis Rondeau. All rights reserved.</p>
+<p>© 2012–2026 Alexis Rondeau. All rights reserved.</p>
 <p>This is my personal site. Everything here — dispatches, notes, opinions — is my own and does not represent any employer, client or organisation I'm affiliated with.</p>
 <p><a href="/">Home</a> · <a href="/about/">About</a> · <a href="/feed/">Newsfeed</a> · <a href="/feed/archive/">Archive</a> · <a href="/feed/feed.xml">Atom</a> · <a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a> · <a rel="me" href="https://github.com/akaalias">GitHub</a> · <a rel="me" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a></p>
 </footer>

@@ -30,10 +30,150 @@
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1>Newsfeed</h1>
 <p class="lede">Everything I publish, in the order I published it: dispatches from Twitter, videos from YouTube and notes from my vault, archived here in full — text, images, video and links — so they outlive the platforms.</p>
-<p class="sub">862 dispatches since March 2014 · page 20 of 35</p>
+<p class="sub">920 dispatches since January 2012 · page 20 of 37</p>
 </header>
 <div class="wrap">
 <section class="feed">
+<article class="item kind-reply" id="t1988583115233857557">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/1988583115233857557/"><time datetime="2025-11-12T12:22:15Z">Wednesday, November 12, 2025 · 13:22</time></a></div>
+<div class="stats"><span><b>1</b> reply</span> · <span><b>3</b> likes</span> · <span><b>583</b> views</span></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/Ananyo">@Ananyo</a> · Nov 12, 2025</cite>
+<div class="ctx-text"><p><a class="mention" href="https://x.com/pickover">@pickover</a> Your regular reminder that an excellent intellectual biography of the man exists that focuses on what he actually accomplished for humanity through maths, rather than what others said about him <a href="https://t.co/lQiiHZFq6r">t.co/lQiiHZFq6r</a></p></div>
+</blockquote>
+<div class="text"><p><a class="mention" href="https://x.com/Ananyo">@Ananyo</a> <a class="mention" href="https://x.com/pickover">@pickover</a> Ananyo's biography of John Von Neumann is so good that it landed in my top-5 all-time favorites. Totally unexpected. Again, thank you for it :D</p></div>
+<div class="src"><a href="/feed/t/1988583115233857557/">Permalink</a> · <a href="https://x.com/i/status/1988583115233857557">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-reply" id="t1988552180849062094">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/1988552180849062094/"><time datetime="2025-11-12T10:19:20Z">Wednesday, November 12, 2025 · 11:19</time></a></div>
+<div class="stats"><span><b>1</b> like</span> · <span><b>632</b> views</span></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/AutismCapital">@AutismCapital</a> · Nov 12, 2025</cite>
+<div class="ctx-text"><p>In times of darkness you call the Autism Knights. <a href="https://t.co/mCXmuywME9">t.co/mCXmuywME9</a> <a href="https://t.co/ybnaIBgdii">t.co/ybnaIBgdii</a></p></div>
+<figure class="media"><img src="/feed/media/ref-1988422179667800452-0.jpg" width="1580" height="1400" alt="Image from the post" loading="lazy"></figure>
+<figure class="media"><img src="/feed/media/ref-1988422179667800452-1.jpg" width="1200" height="1157" alt="Image from the post" loading="lazy"></figure>
+<figure class="media"><img src="/feed/media/ref-1988422179667800452-2.jpg" width="225" height="224" alt="Image from the post" loading="lazy"></figure>
+<figure class="media"><img src="/feed/media/ref-1988422179667800452-3.jpg" width="640" height="400" alt="Image from the post" loading="lazy"></figure>
+</blockquote>
+<div class="text"><p><a class="mention" href="https://x.com/AutismCapital">@AutismCapital</a> Since no one seems to have posted this one – Here's my favorite</p></div>
+<a class="linkcard" href="https://xkcd.com/225/">
+<img src="/feed/media/link-f94e063588908cc3.png" alt="" loading="lazy">
+<span class="body"><span class="site">xkcd</span><span class="title">Open Source</span><span class="host">↗ xkcd.com</span></span>
+</a>
+<div class="src"><a href="/feed/t/1988552180849062094/">Permalink</a> · <a href="https://x.com/i/status/1988552180849062094">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-post" id="t1988551025565855824">
+<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/1988551025565855824/"><time datetime="2025-11-12T10:14:44Z">Wednesday, November 12, 2025 · 11:14</time></a></div>
+<div class="stats"><span><b>2</b> likes</span> · <span><b>86</b> views</span></div>
+<div class="text"><p>Hey all! I wanted to share a kind of new development process I’ve been using lately — I call it &quot;Moonwalk.&quot;</p>
+<p>Basically it's: </p>
+<ul>
+<li>Check out a spike branch (<code>git checkout -b reconciliation/spike/mt940</code>)</li>
+<li>Vibe code fast (and with vim and vigour!) until it feels just right</li>
+<li>Generate a spec based on the final version</li>
+<li>Switch back to main (<code>git checkout main</code>)</li>
+<li>Check out only the spec (<code>git checkout reconciliation/spike/mt940 -- /job-stories</code>) &lt;- This is the moonwalk!</li>
+<li>Let the &quot;professional&quot; agents and sub-agents write production-grade code based on the spec</li>
+</ul>
+<p>It's so effective because I can leverage Claude Code for both: Quickly build a working vibe-heavy prototype spec AND write production-grade code with agentic/sub-agentic quality. </p>
+<p>For the vibe code part, the standard Claude Code top-level agent is more than sufficient. It's great, no need for time-costly delegation to sub-agents here.</p>
+<p>For the production-grade part, since we're an XP shop with a pretty solid TDD process, sub agents make total sense. We turned our existing process and skills into a bunch of sub-agents that work smoothly together:</p>
+<p>We've got...</p>
+<ul>
+<li>green-minimal-implementer(.)md</li>
+<li>code-quality-reviewer(.)md</li>
+<li>code-refactorer(.)md</li>
+<li>db-migration-specialist(.)md</li>
+<li>dependency-manager(.)md</li>
+<li>frontend-design-specialist(.)md</li>
+<li>locale-translation-specialist(.)md</li>
+<li>red-test-writer(.)md</li>
+</ul>
+<p>So, yeah, that's what I wanted to share with you. Try it out and let me know how I can help :) </p>
+<p>Cheers!</p>
+<p>PS: For better or worse, this post is 100% written by hand<br>
+PPS: My friend Alex Fedorov reminded me that this is pretty close to the spike/exploration workflow we used to do at Pivotal Labs. I think he's right. </p>
+<p>cc'ing <a class="mention" href="https://x.com/claudeai">@claudeai</a> and <a class="mention" href="https://x.com/Lovable">@Lovable</a> because I feel like it's a nice connection between the two of you &lt;3</p></div>
+<div class="src"><a href="/feed/t/1988551025565855824/">Permalink</a> · <a href="https://x.com/i/status/1988551025565855824">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-reply" id="t1988537924397281631">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/1988537924397281631/"><time datetime="2025-11-12T09:22:41Z">Wednesday, November 12, 2025 · 10:22</time></a></div>
+<div class="stats"><span><b>1</b> repost</span> · <span><b>11</b> likes</span> · <span><b>15K</b> views</span> · <span><b>5</b> bookmarks</span></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/netcapgirl">@netcapgirl</a> · Nov 12, 2025</cite>
+<div class="ctx-text"><p>bro can you try to be chill in front of the hos tonight?</p>
+<p>bro:<br>
+<a href="https://t.co/NWEMrIbH2Z">t.co/NWEMrIbH2Z</a></p></div>
+<figure class="media"><video src="/feed/media/ref-1988387384267075675-0.mp4" poster="/feed/media/ref-1988387384267075675-0-poster.jpg" width="1280" height="720" controls preload="none" playsinline></video></figure>
+</blockquote>
+<div class="text"><p>This reminds me: I always loved xkcd's &quot;RMS sleeping with a katana under his pillow&quot; from years ago</p></div>
+<a class="linkcard" href="https://xkcd.com/225/">
+<img src="/feed/media/link-f94e063588908cc3.png" alt="" loading="lazy">
+<span class="body"><span class="site">xkcd</span><span class="title">Open Source</span><span class="host">↗ xkcd.com</span></span>
+</a>
+<a class="linkcard" href="https://xkcd.com/225/">
+<img src="/feed/media/link-f94e063588908cc3.png" alt="" loading="lazy">
+<span class="body"><span class="site">xkcd</span><span class="title">Open Source</span><span class="host">↗ xkcd.com</span></span>
+</a>
+<div class="src"><a href="/feed/t/1988537924397281631/">Permalink</a> · <a href="https://x.com/i/status/1988537924397281631">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-reply" id="t1988536135702757668">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/1988536135702757668/"><time datetime="2025-11-12T09:15:34Z">Wednesday, November 12, 2025 · 10:15</time></a></div>
+<div class="stats"><span><b>42</b> views</span></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/SpringStreetNYC">@SpringStreetNYC</a> · Apr 18, 2025</cite>
+<div class="ctx-text"><p><a class="mention" href="https://x.com/ChatGPTapp">@ChatGPTapp</a> PPS: Here's another before/after illustration for how we may think about AI, AGI and it's impacts (Originally from Rem Kolhaas' Delirious New York)</p>
+<p>Before 1930: What we think this is<br>
+After 1930: What the future actually is and means <a href="https://t.co/gMaXevHaWy">t.co/gMaXevHaWy</a></p></div>
+<figure class="media"><img src="/feed/media/ref-1913225534651187401-0.png" width="684" height="864" alt="&quot;BUY A COZY COTTAGE IN OUR STEEL CONSTRUCTED CHOICE LOTS, LESS THAN A MILE ABOVE BROADWAY.
+ONLY TEN MINUTES BY ELEVATOR.
+ALL THE COMFORTS OF THE COUNTRY WITH NONE OF ITS DISADVANTAGES.&quot; – Celestial Real Estate Company. – From Life Magazine 1909" loading="lazy"></figure>
+<figure class="media"><img src="/feed/media/ref-1913225534651187401-1.jpg" width="1600" height="1277" alt="The Empire State Building, 1930" loading="lazy"></figure>
+</blockquote>
+<div class="text"><p><a class="mention" href="https://x.com/ChatGPTapp">@ChatGPTapp</a> Love the tagline: <br>
+&quot;Buy a cozy cottage in our steel constructed choice lots, less than a mile above broadwy. Only ten minutes by elevator. All the comforts of the country with none of its disadvantages.&quot; – Celestial Real Estate Company</p></div>
+<div class="src"><a href="/feed/t/1988536135702757668/">Permalink</a> · <a href="https://x.com/i/status/1988536135702757668">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-reply" id="t1976455021379387638">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/1976455021379387638/"><time datetime="2025-10-10T01:09:32Z">Friday, October 10, 2025 · 03:09</time></a></div>
+<div class="stats"><span><b>8</b> views</span></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/chiefaioffice">@chiefaioffice</a> · Nov 4, 2024</cite>
+<div class="ctx-text"><p>Maintaining a database of VC rounds in AI this year</p>
+<p>1500+ rounds, $55B+ raised</p>
+<p>Comment if you'd like access <a href="https://t.co/igcirxWqR6">t.co/igcirxWqR6</a></p></div>
+<figure class="media"><img src="/feed/media/ref-1853517663391174813-0.jpg" width="1600" height="1185" alt="Image from the post" loading="lazy"></figure>
+</blockquote>
+<div class="text"><p><a class="mention" href="https://x.com/chiefaioffice">@chiefaioffice</a> Yup! Would love to.</p></div>
+<div class="src"><a href="/feed/t/1976455021379387638/">Permalink</a> · <a href="https://x.com/i/status/1976455021379387638">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-reply" id="t1976417843563593884">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/1976417843563593884/"><time datetime="2025-10-09T22:41:48Z">Friday, October 10, 2025 · 00:41</time></a></div>
+<div class="stats"><span><b>1</b> reply</span> · <span><b>51</b> views</span></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/SpringStreetNYC">@SpringStreetNYC</a> · Oct 10, 2025</cite>
+<div class="ctx-text"><p>Finished reading &quot;Lords and Ladies&quot; today</p></div>
+</blockquote>
+<div class="text"><p><a href="https://t.co/U3erLLhvBy">t.co/U3erLLhvBy</a></p></div>
+<figure class="media"><img src="/feed/media/1976417843563593884-0.jpg" width="1042" height="1600" alt="Image from the post" loading="lazy"></figure>
+<div class="src"><a href="/feed/t/1976417843563593884/">Permalink</a> · <a href="https://x.com/i/status/1976417843563593884">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-post" id="t1976417769089532339">
+<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/1976417769089532339/"><time datetime="2025-10-09T22:41:30Z">Friday, October 10, 2025 · 00:41</time></a></div>
+<div class="stats"><span><b>1</b> reply</span> · <span><b>51</b> views</span></div>
+<div class="text display"><p>Finished reading &quot;Lords and Ladies&quot; today</p></div>
+<div class="src"><a href="/feed/t/1976417769089532339/">Permalink</a> · <a href="https://x.com/i/status/1976417769089532339">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-post" id="t1976416531878903931">
+<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/1976416531878903931/"><time datetime="2025-10-09T22:36:35Z">Friday, October 10, 2025 · 00:36</time></a></div>
+<div class="stats"><span><b>39</b> views</span></div>
+<div class="text display"><p><a href="http://press.stripe.com/scaling">press.stripe.com/scaling</a></p></div>
+<a class="linkcard" href="http://press.stripe.com/scaling">
+<img src="/feed/media/link-cfde6333261032df.jpg" alt="" loading="lazy">
+<span class="body"><span class="site">press.stripe.com</span><span class="title">Stripe Press — The Scaling Era</span><span class="desc">An inside view of the AI revolution, from the people and companies making it happen.</span><span class="host">↗ press.stripe.com</span></span>
+</a>
+<div class="src"><a href="/feed/t/1976416531878903931/">Permalink</a> · <a href="https://x.com/i/status/1976416531878903931">View on Twitter ↗</a></div>
+</article>
 <article class="item kind-reply" id="t1976415051868512284">
 <div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/1976415051868512284/"><time datetime="2025-10-09T22:30:43Z">Friday, October 10, 2025 · 00:30</time></a></div>
 <div class="stats"><span><b>1.4K</b> views</span></div>
@@ -254,145 +394,28 @@ Afterwards, Mae struggles to prepare her people for what is to come while learni
 <p>Wow. Air is even better than I remembered. On pretty much every level: Story, characters, momentum, unexpected segways and new horizons. It's a really, really good book.</p></div>
 <div class="src"><a href="/feed/t/1950482973964259608/">Permalink</a> · <a href="https://x.com/i/status/1950482973964259608">View on Twitter ↗</a></div>
 </article>
-<article class="item kind-post" id="t1950479911551963329">
-<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/1950479911551963329/"><time datetime="2025-07-30T08:53:43Z">Wednesday, July 30, 2025 · 10:53</time></a></div>
-<div class="stats"><span><b>1</b> reply</span> · <span><b>50</b> views</span></div>
-<div class="text"><p>cc'ing <a class="mention" href="https://x.com/emollick">@emollick</a> and <a class="mention" href="https://x.com/ryancarson">@ryancarson</a>: 20 years later, &quot;Air&quot; by <a class="mention" href="https://x.com/geoffryman">@geoffryman</a>  feels surprisingly more urgent and nuanced in explaining the before and after of the global AI rollout. </p>
-<blockquote><p>Air is the story of a town's fashion expert Chung Mae, a smart but illiterate peasant woman in a small village in the fictional country of Karzistan (loosely based on the country of Kazakhstan), and her suddenly leading role in reaction to dramatic, worldwide experiments with a new information technology called Air. <br>
-Air is information exchange, not unlike the Internet, that occurs in everyone's brain and is intended to connect the world. After a test of Air is imposed on Mae's unprepared mountain town, everyone and everything changes, especially Mae who was deeper into Air than any other person. <br>
-Afterwards, Mae struggles to prepare her people for what is to come while learning all about the world outside her home.</p></blockquote></div>
-<figure class="media"><img src="/feed/media/1950479911551963329-0.jpg" width="977" height="1500" alt="Image from the post" loading="lazy"></figure>
-<a class="linkcard" href="https://en.wikipedia.org/wiki/Air_(novel)">
-<img src="/feed/media/link-6b9409011c3f6cb4.jpg" alt="" loading="lazy">
-<span class="body"><span class="site">en.wikipedia.org</span><span class="title">Air (novel) - Wikipedia</span><span class="host">↗ en.wikipedia.org</span></span>
-</a>
-<div class="src"><a href="/feed/t/1950479911551963329/">Permalink</a> · <a href="https://x.com/i/status/1950479911551963329">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-post" id="t1950476274545430828">
-<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/1950476274545430828/"><time datetime="2025-07-30T08:39:16Z">Wednesday, July 30, 2025 · 10:39</time></a></div>
-<div class="stats"><span><b>64</b> views</span></div>
-<div class="text"><p>Remarkable, especially now that we can <code>@-invoke</code> agents directly. Now, as an IC, I need to really brush up on my delegation skills :) </p>
-<p>Discovered via <a class="mention" href="https://x.com/iannuttall">@iannuttall</a>, created by <a class="mention" href="https://x.com/msg">@msg</a></p></div>
-<figure class="media"><img src="/feed/media/1950476274545430828-0.jpg" width="1234" height="368" alt="Image from the post" loading="lazy"></figure>
-<a class="linkcard" href="https://github.com/contains-studio/agents">
-<img src="/feed/media/link-b0532657e50c4bd5.jpg" alt="" loading="lazy">
-<span class="body"><span class="site">GitHub</span><span class="title">GitHub - contains-studio/agents: sharing current agents in use</span><span class="desc">sharing current agents in use. Contribute to contains-studio/agents development by creating an account on GitHub.</span><span class="host">↗ github.com</span></span>
-</a>
-<div class="src"><a href="/feed/t/1950476274545430828/">Permalink</a> · <a href="https://x.com/i/status/1950476274545430828">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-reply" id="t1949833884394283030">
-<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/1949833884394283030/"><time datetime="2025-07-28T14:06:38Z">Monday, July 28, 2025 · 16:06</time></a></div>
-<div class="stats"><span><b>9</b> views</span></div>
-<blockquote class="ctx">
-<cite>In reply to <a href="https://x.com/TheLewisW">@TheLewisW</a> · Jul 28, 2025</cite>
-<div class="ctx-text"><p>Your brand not growing?</p>
-<p>Stop being so value driven.</p>
-<p>Post for vibes:</p>
-<ul>
-<li>Stories</li>
-<li>Insights</li>
-<li>Personal life</li>
-</ul>
-<p>Clients don’t want robots.</p>
-<p>They want someone they can get along with.</p></div>
-</blockquote>
-<div class="text"><p><a class="mention" href="https://x.com/TheLewisW">@TheLewisW</a> Agreed, and I believe, inversely true: Slow growth? Stop being vibe-driven. Clients want to see what's in it for them, not what you're doing on the weekends with your family.</p></div>
-<div class="src"><a href="/feed/t/1949833884394283030/">Permalink</a> · <a href="https://x.com/i/status/1949833884394283030">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-post" id="t1949831451488231724">
-<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/1949831451488231724/"><time datetime="2025-07-28T13:56:58Z">Monday, July 28, 2025 · 15:56</time></a></div>
-<div class="stats"><span><b>1</b> reply</span> · <span><b>4</b> likes</span> · <span><b>2.1K</b> views</span></div>
-<div class="text"><blockquote><p>my churn is way to high<br>
-if you signed up for post bridge: can you tell me WHY? what drove you to it?</p></blockquote>
-<p>I can tell you what drove me away: When you suddenly switched to building a food app. Postbridge was a solid MVP but without focus it felt stale quickly. </p>
-<p>Note: I've made the exact same mistake in the past.</p></div>
-<div class="src"><a href="/feed/t/1949831451488231724/">Permalink</a> · <a href="https://x.com/i/status/1949831451488231724">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-reply" id="t1949801828993978553">
-<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/1949801828993978553/"><time datetime="2025-07-28T11:59:16Z">Monday, July 28, 2025 · 13:59</time></a></div>
-<div class="stats"><span><b>39</b> views</span></div>
-<blockquote class="ctx">
-<cite>In reply to <a href="https://x.com/aryanXmahajan">@aryanXmahajan</a> · Jul 27, 2025</cite>
-<div class="ctx-text"><p>My Claude MCP Agent just wrote a sales proposal that closed a $6K deal.</p>
-<p>Not kidding. One MCP setup:</p>
-<ul>
-<li>syncs Airtable transcripts automatically</li>
-<li>extracts pain points with Claude reasoning</li>
-<li>runs Perplexity research on prospects</li>
-<li>generates Google Doc proposals that convert</li>
-</ul>
-<p>basically everything to automate your sales process</p>
-<p>reply &quot;CLOSER&quot; + retweet and i'll send the workflow (must be following so i can dm)</p>
-<p>only FREE for 48 hours before it goes into the void.</p></div>
-<figure class="media"><video src="/feed/media/ref-1949522816191361336-0.mp4" poster="/feed/media/ref-1949522816191361336-0-poster.jpg" width="3216" height="2160" controls preload="none" playsinline></video></figure>
-</blockquote>
-<div class="text"><p><a class="mention" href="https://x.com/aryanXmahajan">@aryanXmahajan</a> Closer! :D</p></div>
-<div class="src"><a href="/feed/t/1949801828993978553/">Permalink</a> · <a href="https://x.com/i/status/1949801828993978553">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-reply" id="t1949466095569514526">
-<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/1949466095569514526/"><time datetime="2025-07-27T13:45:11Z">Sunday, July 27, 2025 · 15:45</time></a></div>
-<div class="stats"><span><b>1</b> reply</span> · <span><b>120</b> views</span></div>
-<blockquote class="ctx">
-<cite>In reply to <a href="https://x.com/grok">@grok</a> · Jul 27, 2025</cite>
-<div class="ctx-text"><p><a class="mention" href="https://x.com/SpringStreetNYC">@SpringStreetNYC</a> <a class="mention" href="https://x.com/SejalSud">@SejalSud</a> Based on mutual connections and engagement data, the most famous person to visit your profile is Ryan Carson, CEO and founder who built and sold 3 startups, with over 152K followers.</p></div>
-</blockquote>
-<div class="text"><p><a class="mention" href="https://x.com/grok">@grok</a> <a class="mention" href="https://x.com/SejalSud">@SejalSud</a> <a class="mention" href="https://x.com/ryancarson">@ryancarson</a> you're famous! 😁</p></div>
-<div class="src"><a href="/feed/t/1949466095569514526/">Permalink</a> · <a href="https://x.com/i/status/1949466095569514526">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-reply" id="t1949462236046721117">
-<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/1949462236046721117/"><time datetime="2025-07-27T13:29:50Z">Sunday, July 27, 2025 · 15:29</time></a></div>
-<div class="stats"><span><b>1</b> reply</span> · <span><b>2.0K</b> views</span></div>
-<blockquote class="ctx">
-<cite>In reply to <a href="https://x.com/SejalSud">@SejalSud</a> · Jul 26, 2025</cite>
-<div class="ctx-text"><p>Hey, <a class="mention" href="https://x.com/grok">@grok</a>, who was the most famous person to visit my profile? It doesn't need to be a mutual, don't tag them, just say who it was</p></div>
-</blockquote>
-<div class="text"><p><a class="mention" href="https://x.com/SejalSud">@SejalSud</a> <a class="mention" href="https://x.com/grok">@grok</a> I would also like to know for my profile <a class="mention" href="https://x.com/grok">@grok</a></p></div>
-<div class="src"><a href="/feed/t/1949462236046721117/">Permalink</a> · <a href="https://x.com/i/status/1949462236046721117">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-reply" id="t1948829720897823105">
-<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/1948829720897823105/"><time datetime="2025-07-25T19:36:27Z">Friday, July 25, 2025 · 21:36</time></a></div>
-<div class="stats"><span><b>137</b> views</span></div>
-<blockquote class="ctx">
-<cite>In reply to <a href="https://x.com/ludwigABAP">@ludwigABAP</a> · Jul 25, 2025</cite>
-<div class="ctx-text"><p><a class="mention" href="https://x.com/ECMAScript4">@ECMAScript4</a> the engineering culture moved to the US to build bombs and rockets decades ago</p>
-<p>what’s left there is bureaucratic hellholes full of deeply unoptimized public organizations where most people don’t really do any work, and dirty streets</p></div>
-</blockquote>
-<div class="text"><p><a class="mention" href="https://x.com/ludwigABAP">@ludwigABAP</a> <a class="mention" href="https://x.com/ECMAScript4">@ECMAScript4</a> Correct 📎</p></div>
-<div class="src"><a href="/feed/t/1948829720897823105/">Permalink</a> · <a href="https://x.com/i/status/1948829720897823105">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-reply" id="t1948814788320264390">
-<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/1948814788320264390/"><time datetime="2025-07-25T18:37:07Z">Friday, July 25, 2025 · 20:37</time></a></div>
-<div class="stats"><span><b>2</b> replies</span> · <span><b>1</b> like</span> · <span><b>43</b> views</span></div>
-<blockquote class="ctx">
-<cite>In reply to <a href="https://x.com/GENIC0N">@GENIC0N</a> · Jul 25, 2025</cite>
-<div class="ctx-text"><p>Would you eat psilocybin mushrooms for the rest of your life if it made you live longer? <a href="https://t.co/y8JAy5j1Sh">t.co/y8JAy5j1Sh</a></p></div>
-<figure class="media"><img src="/feed/media/ref-1948570480291491996-0.jpg" width="720" height="864" alt="Image from the post" loading="lazy"></figure>
-</blockquote>
-<div class="text"><p><a class="mention" href="https://x.com/GENIC0N">@GENIC0N</a> I have, I do and I will.</p></div>
-<div class="src"><a href="/feed/t/1948814788320264390/">Permalink</a> · <a href="https://x.com/i/status/1948814788320264390">View on Twitter ↗</a></div>
-</article>
 </section>
-<nav class="pager"><a href="/feed/page/19/">‹ Newer</a><span class="n">Page 20 of 35</span><a href="/feed/page/21/">Older ›</a></nav>
+<nav class="pager"><a href="/feed/page/19/">‹ Newer</a><span class="n">Page 20 of 37</span><a href="/feed/page/21/">Older ›</a></nav>
 <aside class="months-nav">
 <div class="group">
 <h3><a href="/feed/archive/">Archive</a></h3>
 <div class="y">2026</div>
 <ul>
-<li><a href="/feed/archive/2026/10/">October</a> <span class="n">4</span></li>
-<li><a href="/feed/archive/2026/09/">September</a> <span class="n">78</span></li>
+<li><a href="/feed/archive/2026/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2026/09/">September</a> <span class="n">79</span></li>
 <li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
-<li><a href="/feed/archive/2026/07/">July</a> <span class="n">22</span></li>
-<li><a href="/feed/archive/2026/06/">June</a> <span class="n">30</span></li>
+<li><a href="/feed/archive/2026/07/">July</a> <span class="n">24</span></li>
+<li><a href="/feed/archive/2026/06/">June</a> <span class="n">31</span></li>
 <li><a href="/feed/archive/2026/05/">May</a> <span class="n">10</span></li>
-<li><a href="/feed/archive/2026/04/">April</a> <span class="n">31</span></li>
+<li><a href="/feed/archive/2026/04/">April</a> <span class="n">33</span></li>
 <li><a href="/feed/archive/2026/03/">March</a> <span class="n">34</span></li>
 <li><a href="/feed/archive/2026/02/">February</a> <span class="n">57</span></li>
 <li><a href="/feed/archive/2026/01/">January</a> <span class="n">15</span></li>
 </ul>
 <div class="y">2025</div>
 <ul>
-<li><a href="/feed/archive/2025/12/">December</a> <span class="n">28</span></li>
-<li><a href="/feed/archive/2025/11/">November</a> <span class="n">125</span></li>
+<li><a href="/feed/archive/2025/12/">December</a> <span class="n">29</span></li>
+<li><a href="/feed/archive/2025/11/">November</a> <span class="n">126</span></li>
 <li><a href="/feed/archive/2025/10/">October</a> <span class="n">7</span></li>
 <li><a href="/feed/archive/2025/09/">September</a> <span class="n">5</span></li>
 <li><a href="/feed/archive/2025/08/">August</a> <span class="n">7</span></li>
@@ -420,33 +443,41 @@ if you signed up for post bridge: can you tell me WHY? what drove you to it?</p>
 <ul>
 <li><a href="/feed/archive/2023/11/">November</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2023/10/">October</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2023/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/09/">September</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2023/08/">August</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2023/07/">July</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2023/06/">June</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2023/05/">May</a> <span class="n">7</span></li>
-<li><a href="/feed/archive/2023/04/">April</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2023/03/">March</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/06/">June</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2023/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2023/04/">April</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/03/">March</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/02/">February</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2022</div>
 <ul>
+<li><a href="/feed/archive/2022/11/">November</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2022/10/">October</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2022/09/">September</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2022/07/">July</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2022/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/07/">July</a> <span class="n">6</span></li>
 <li><a href="/feed/archive/2022/04/">April</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2022/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2021</div>
 <ul>
-<li><a href="/feed/archive/2021/11/">November</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/11/">November</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2021/09/">September</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2021/02/">February</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2021/01/">January</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2021/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/02/">February</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2021/01/">January</a> <span class="n">8</span></li>
 </ul>
 <div class="y">2020</div>
 <ul>
-<li><a href="/feed/archive/2020/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2020/12/">December</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2020/11/">November</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2020/09/">September</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2020/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/08/">August</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2020/07/">July</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2020/06/">June</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2020/05/">May</a> <span class="n">1</span></li>
@@ -476,20 +507,26 @@ if you signed up for post bridge: can you tell me WHY? what drove you to it?</p>
 <ul>
 <li><a href="/feed/archive/2017/12/">December</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2017/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2017/09/">September</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2017/06/">June</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2017/05/">May</a> <span class="n">7</span></li>
-<li><a href="/feed/archive/2017/04/">April</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2017/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2017/04/">April</a> <span class="n">7</span></li>
 <li><a href="/feed/archive/2017/01/">January</a> <span class="n">2</span></li>
 </ul>
 <div class="y">2016</div>
 <ul>
 <li><a href="/feed/archive/2016/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2016/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2016/02/">February</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2016/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2015</div>
 <ul>
+<li><a href="/feed/archive/2015/10/">October</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2015/06/">June</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2015/05/">May</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/03/">March</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/02/">February</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2015/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2014</div>
@@ -504,11 +541,21 @@ if you signed up for post bridge: can you tell me WHY? what drove you to it?</p>
 <li><a href="/feed/archive/2014/05/">May</a> <span class="n">12</span></li>
 <li><a href="/feed/archive/2014/04/">April</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2014/03/">March</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2014/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2013</div>
+<ul>
+<li><a href="/feed/archive/2013/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2013/05/">May</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2012</div>
+<ul>
+<li><a href="/feed/archive/2012/01/">January</a> <span class="n">1</span></li>
 </ul>
 </div>
 </aside>
 <footer class="site">
-<p>© 2014–2026 Alexis Rondeau. All rights reserved.</p>
+<p>© 2012–2026 Alexis Rondeau. All rights reserved.</p>
 <p>This is my personal site. Everything here — dispatches, notes, opinions — is my own and does not represent any employer, client or organisation I'm affiliated with.</p>
 <p><a href="/">Home</a> · <a href="/about/">About</a> · <a href="/feed/">Newsfeed</a> · <a href="/feed/archive/">Archive</a> · <a href="/feed/feed.xml">Atom</a> · <a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a> · <a rel="me" href="https://github.com/akaalias">GitHub</a> · <a rel="me" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a></p>
 </footer>

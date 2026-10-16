@@ -30,10 +30,32 @@
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1>Newsfeed</h1>
 <p class="lede">Everything I publish, in the order I published it: dispatches from Twitter, videos from YouTube and notes from my vault, archived here in full — text, images, video and links — so they outlive the platforms.</p>
-<p class="sub">862 dispatches since March 2014 · page 6 of 35</p>
+<p class="sub">920 dispatches since January 2012 · page 6 of 37</p>
 </header>
 <div class="wrap">
 <section class="feed">
+<article class="item kind-reply" id="t2082752063746785419">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2082752063746785419/"><time datetime="2026-07-30T08:56:02Z">Thursday, July 30, 2026 · 10:56</time></a></div>
+<div class="stats"><span><b>1</b> reply</span> · <span><b>102</b> views</span></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/AnthropicAI">@AnthropicAI</a> · Jul 28, 2026</cite>
+<div class="ctx-text"><p>New Anthropic research: Discovering cryptographic weaknesses with Claude.</p>
+<p>Claude Mythos Preview has helped our researchers find weaknesses in cryptographic algorithms—the mathematical methods that are used to keep data private.</p>
+<p>Read more: <a href="https://t.co/TYKLjb3Q7V">t.co/TYKLjb3Q7V</a></p></div>
+</blockquote>
+<div class="text"><p><a class="mention" href="https://x.com/AnthropicAI">@AnthropicAI</a> <a class="mention" href="https://x.com/grok">@grok</a> eli5 and help me distinguish between marketing and reality</p></div>
+<div class="src"><a href="/feed/t/2082752063746785419/">Permalink</a> · <a href="https://x.com/i/status/2082752063746785419">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-note" id="n-freakonomics-experiments">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/freakonomics-experiments/"><time datetime="2026-07-28T22:00:00Z">Wednesday, July 29, 2026 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/freakonomics-experiments/">Freakonomics Experiments</a></h2>
+<div class="text note-body">
+<p>As senior engineering consultant, I designed and shipped the infrastructure for a truly randomized, multi-month, large-scale field experiment for Prof. Steve Levitt of Freakonomics — the engine behind his study “Heads or Tails: The Impact of a Coin Toss on Major Life Decisions and Subsequent Happiness” (The Review of Economic Studies, 2021).</p>
+<p><a href="https://doi.org/10.1093/restud/rdaa016">Read the paper →</a></p>
+</div>
+<div class="tags"><a href="/feed/tag/greatest-hits/">#greatest-hits</a></div>
+<div class="src"><a href="/notes/freakonomics-experiments/">Permalink</a></div>
+</article>
 <article class="item kind-note" id="n-onemonth-inc">
 <div class="meta"><span class="kind">Note</span><a class="when" href="/notes/onemonth-inc/"><time datetime="2026-07-28T22:00:00Z">Wednesday, July 29, 2026 · 00:00</time></a></div>
 <h2 class="note-title"><a href="/notes/onemonth-inc/">OneMonth Inc.</a></h2>
@@ -77,6 +99,194 @@
 </div>
 <div class="tags"><a href="/feed/tag/autoresearch/">#autoresearch</a></div>
 <div class="src"><a href="/notes/not-all-who-wander-are-lost-can-a-uav-learn-a-city-by-heart-no-gps-no-map-on-boa/">Permalink</a></div>
+</article>
+<article class="item kind-repo" id="g-ballpark">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/ballpark/"><time datetime="2026-07-20T17:19:42Z">Monday, July 20, 2026 · 19:19</time></a></div>
+<h2 class="note-title"><a href="/code/ballpark/">ballpark</a></h2>
+<p class="repo-desc">Autonomous Research with AI: can a UAV learn a city by heart? An AI agent running an autoresearch loop (81 experiments, $364) found a 3.1 MB neural memory that geolocates in-flight pictures of Berlin to ~27 m — no GPS, no map on board, built for a &lt;$5 ESP32-P4 flight computer.</p>
+<div class="stats"><span>HTML</span></div>
+<div class="text note-body repo-readme clamped">
+<p><strong>Can a UAV learn a city by heart?</strong> Given a geographic bounding box, this
+repo trains a compact per-area model that takes a single downward camera
+frame from a UAV and returns
+<code>estimate_position(frame) -&gt; (lat, lon, confidence)</code> — no reference imagery
+on the aircraft, no connectivity, targeting an ESP32-P4 companion board.
+The interesting part: the model-side code is improved by an <strong>autonomous
+research loop</strong> (Karpathy <code>autoresearch</code>-style) that designs experiments,
+rewrites architecture/loss/training, and keeps or reverts by a single frozen
+metric. Full context: <code>CLAUDE.md</code>.</p>
+<h2>Repo layout</h2>
+<table>
+<thead><tr><th>Path</th><th>Status</th><th>What</th></tr></thead>
+<tbody>
+<tr><td><code>pipeline/</code></td><td><strong>FROZEN</strong></td><td>bbox-generic fetch (Sentinel-2, open-licensed), 6-bucket synthetic low-light relighting (collapsed to a daytime pass-through in the current berlin-slim configuration), deterministic split holding out <strong>viewpoints, not regions</strong> (training covers the whole bbox; eval frames sit 11-17 m off the nearest training vantage — see <code>pipeline/dataset.py</code> for why a region-based holdout was wrong), §6 scoring — the mission score, (1 - usable_fix_rate) + false_fix_rate, which is the product requirement rather than an error statistic — with ESP32-P4 deployment gates</td></tr>
+<tr><td><code>areas.yaml</code></td><td><strong>FROZEN</strong></td><td>4 development areas + hamburg blind holdout</td></tr>
+<tr><td><code>model/</code></td><td>agent-editable</td><td>model architecture + training procedure (the loop’s playground)</td></tr>
+<tr><td><code>autoresearch/</code></td><td>mostly frozen</td><td><code>loop.sh</code> harness, SQLite schema + logger, gallery renderer, per-iteration agent prompt</td></tr>
+<tr><td><code>FROZEN</code></td><td>—</td><td>the exact list of files the loop may never touch (enforced by <code>loop.sh</code> via git revert)</td></tr>
+<tr><td><code>runs/</code></td><td>generated</td><td>per-experiment artifacts (models, metrics, heatmaps, samples)</td></tr>
+<tr><td><code>experiments.sqlite</code></td><td>generated</td><td>full experiment lineage: hypothesis, method, expected outcome, result, conclusion, all metrics</td></tr>
+<tr><td><code>gallery/</code></td><td>generated</td><td>self-refreshing pages: research log (<code>index.html</code>, samples + error heatmaps) and proposed inference paths (<code>inference-paths.html</code>, every experiment’s pre-registered architecture figure)</td></tr>
+<tr><td><code>sim/</code></td><td>tool, not frozen</td><td>virtual UAV flight simulator (<code>flightsim.py</code>) — flies the exported champion from a to b with its fixes as the only position source — and the flight-path page renderer (<code>render_flightpath.py</code>). Reads the frozen pipeline, never modifies it</td></tr>
+</tbody>
+</table>
+<h2>Quickstart (already proven end-to-end by the bootstrap run)</h2>
+<pre><code class="language-bash">uv venv --python 3.12 .venv
+uv pip install --python .venv/bin/python numpy pillow rasterio pystac-client torch onnx onnxruntime pyyaml
+
+# Frozen pipeline — any bbox works, named areas are just presets:
+.venv/bin/python -m pipeline.fetch --area berlin          # or: --name x --bbox w,s,e,n
+.venv/bin/python -m pipeline.relight --area berlin
+.venv/bin/python -m model.train --area berlin --out-dir runs/test --epochs 3
+.venv/bin/python -m pipeline.score --areas berlin --model-dir runs/test/models --out runs/test/metrics.json
+.venv/bin/python -m autoresearch.gallery                  # open gallery/index.html
+</code></pre>
+<p>Bootstrap proving runs: experiment #1 (commit <code>15b43a2</code>) ran berlin +
+prignitz on 10 m Sentinel-2 data → 2926 m. Experiment #3 (commit <code>c0a1bdf</code>,
+pipeline <strong>data v2</strong>) re-proved the harness on 1 m/px DOP imagery across all
+four development areas → <strong>2765.67 m</strong> worst-case median error, coverage 1.0
+(historical: that bootstrap run predates the current metric — the primary
+score is now the §6 <strong>mission score</strong>, not a median; see <code>pipeline/score.py</code>)
+in all 24 area×bucket cells (target ≤ 20 m; a center-guess on a ~7 km box is
+~2.8 km — the baseline is deliberately naive). All deployment gates passed.
+The §6 anti-abstention gate was exercised for real en route: two confidence
+calibrations collapsed dark-bucket coverage and were correctly scored FAIL.</p>
+<h2>Phase 2 — running the autoresearch loop (run this yourself, separately)</h2>
+<blockquote>
+<p><strong>Current configuration: <code>berlin-slim</code></strong> (merged into <code>main</code> 2026-07-31).
+Berlin only, raw daytime imagery, no synthetic relighting, figures off,
+pivot gate off. See CLAUDE.md’s “SCOPE OVERRIDE” for what it supersedes
+and why — low-light is the full spec’s goal, out of scope in this
+configuration, and the relighting machinery is kept, not deleted.</p>
+</blockquote>
+<pre><code class="language-bash">./autoresearch/loop.sh 12               # run until the DB holds 12 experiments
+SKIP_AGENT=1 ./autoresearch/loop.sh 1   # smoke-test the harness without an agent
+touch state/stop                        # graceful stop after the current experiment
+</code></pre>
+<p>Data for berlin is already fetched and relit; the other areas are only
+needed if you restore the full four-area scope:</p>
+<pre><code class="language-bash">for a in prignitz munich frankfurt hamburg; do
+  .venv/bin/python -m pipeline.fetch --area $a
+  .venv/bin/python -m pipeline.relight --area $a
+done
+</code></pre>
+<p>Per experiment the design agent pre-registers <code>title / category / hypothesis / method / expected_outcome</code> (written to the run’s <code>experiment.json</code>); the
+harness appends the measured <code>result</code> and a kept/reverted <code>conclusion</code>, logs
+to SQLite, snapshots <code>model/*.py</code> into <code>runs/&lt;id&gt;/model_src/</code> <strong>whatever the
+outcome</strong>, and commits kept improvements so git history is the research trail.</p>
+<p>Watch progress: <code>open gallery/index.html</code> (re-rendered when a design lands
+<em>and</em> again when the experiment finishes), or
+<code>sqlite3 experiments.sqlite &quot;SELECT id,title,primary_metric,kept FROM experiments ORDER BY id DESC LIMIT 10;&quot;</code></p>
+<h3>Compute</h3>
+<p>Training runs <strong>locally on the M1</strong> (<code>model/train.py</code> auto-selects
+cuda &gt; mps &gt; cpu). Viable on a laptop again only because this branch trains
+one area instead of four.</p>
+<p>Two remote paths exist and are dormant:</p>
+<table>
+<thead><tr><th></th><th>status</th></tr></thead>
+<tbody>
+<tr><td><strong>Modal</strong> (<code>REMOTE_TRAIN=1 REMOTE_BACKEND=modal</code>)</td><td>stateless per-area trainer, never touches git. Used 23–30 Jul; <strong>credits exhausted</strong>, so unusable until topped up.</td></tr>
+<tr><td><strong>RunPod</strong> (<code>infra/runpod.sh</code>, <code>REMOTE_BACKEND=runpod</code>)</td><td><strong>abandoned 2026-07-23</strong> after three days of stuck commits and merge conflicts. Scripts kept for reference; do not restart it without reading <code>docs/infra.md</code> first.</td></tr>
+</tbody>
+</table>
+<p>The rule that came out of that period and still holds: <strong>one git writer,
+always.</strong> The laptop commits; a remote may only train and hand back
+artifacts. Two writers on one branch was the root cause of the whole
+mess, not the provider.</p>
+<h2>Flight test (<code>sim/</code>) — does the champion actually get a UAV from a to b?</h2>
+<p>A virtual-UAV flight simulator closes the loop on the mission score’s own
+premise (§2: the vision fix is the only drift correction). A point-mass
+fixed-wing flies through wind, gusts and gyro bias its navigator cannot see;
+every fix interval the sim crops the reference raster at the aircraft’s
+<strong>true</strong> pose, runs the exported champion ONNX, and hands the answer to a
+dead-reckoning navigator that accepts false fixes like any other. Arrival is
+declared on the navigator’s estimate and scored against the truth. Honesty
+rules are documented at the top of <code>sim/flightsim.py</code>; the known best-case
+caveats (camera = the memorized reference imagery; fixed 1 m/px altitude) are
+stated on the results page rather than hidden.</p>
+<p>Headline (100 flights, seed 1): <strong>91/100 arrive within 100 m</strong>, median
+declared miss 45 m; the dead-reckoning control arrives 0/100. All three
+catastrophic failures had targets on the never-trained region-holdout
+diagnostic ground — an artifact of simulating over the research
+configuration, reported as flown. Results are rendered as the
+<code>gallery/flight-path.html</code> page (replay, estimation-error sawtooth,
+100-flight record).</p>
+<pre><code class="language-bash">.venv/bin/python -m sim.flightsim --seed 6 --start 350,350 --target 6800,6600 \
+    --save-crops --out sim/out/showcase.json      # the page's showcase flight
+.venv/bin/python -m sim.flightsim --flights 100 --seed 1 --out sim/out/mc.json
+.venv/bin/python -m sim.flightsim --flights 100 --seed 1 --no-vision --out sim/out/mc_dr.json
+.venv/bin/python -m sim.render_flightpath         # rebuild the page from sim/out/
+</code></pre>
+<h2>Reference imagery (pipeline data v2) &amp; licensing</h2>
+<p>Fetching is driven by a <strong>source registry</strong> (<code>pipeline/sources.yaml</code>,
+frozen): for any bbox, the finest open-licensed source covering it wins,
+falling back to global Sentinel-2. The pipeline code stays fully
+bbox-generic — regional knowledge is config, not code.</p>
+<table>
+<thead><tr><th>Source</th><th>Covers</th><th>Native</th><th>License / attribution</th></tr></thead>
+<tbody>
+<tr><td><a href="https://isk.geobasis-bb.de/mapproxy/dop20c/service/wms?REQUEST=GetCapabilities&amp;SERVICE=WMS">BB-BE DOP20 WMS</a></td><td>Brandenburg <strong>+ Berlin</strong></td><td>20 cm</td><td>dl-de/by-2-0 — © GeoBasis-DE/LGB</td></tr>
+<tr><td><a href="https://geoservices.bayern.de/od/wms/dop/v1/dop40?SERVICE=WMS&amp;REQUEST=GetCapabilities">Bavaria DOP40 WMS</a></td><td>Bavaria (Munich)</td><td>40 cm</td><td>CC BY 4.0 — © Bayerische Vermessungsverwaltung</td></tr>
+<tr><td><a href="https://www.gds-srv.hessen.de/cgi-bin/lika-services/ogc-free-images.ows?SERVICE=WMS&amp;REQUEST=GetCapabilities">Hesse DOP20 WMS</a></td><td>Hesse (Frankfurt)</td><td>20 cm</td><td>dl-de/by-2-0 — © HVBG Hessen</td></tr>
+<tr><td><a href="https://geodienste.hamburg.de/wms_dop_zeitreihe_unbelaubt?Service=WMS&amp;Request=GetCapabilities">Hamburg DOP WMS</a></td><td>Hamburg</td><td>20 cm</td><td>dl-de/by-2-0 — © FHH LGV</td></tr>
+<tr><td>Sentinel-2 L2A (Earth Search STAC → AWS COGs)</td><td>global fallback</td><td>10 m</td><td>Copernicus — “Contains modified Copernicus Sentinel data”</td></tr>
+</tbody>
+</table>
+<p>Everything is server-resampled to a <strong>1 m/px</strong> reference grid (<code>target_gsd_m</code>
+in the registry): a 128 px model crop = 128 m ground footprint, matching a
+typical UAV camera at ~100 m AGL — so training imagery scale ≈ deployment
+imagery scale. No Google/Bing tiles anywhere. Expect roughly 0.5–3 GB of
+imagery per area on disk after relighting.</p>
+<h2>Validated hardware setup (§9 resolved for bring-up; stretch sensor still open)</h2>
+<p><strong>Buy-now, documented-working stack:</strong></p>
+<ul>
+<li><strong>Board:</strong> <a href="https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32p4/esp32-p4-function-ev-board/user_guide.html">ESP32-P4-Function-EV-Board</a>
+— Espressif’s official P4 dev kit; <strong>ships with a 2 MP MIPI-CSI camera
+module (SC2336)</strong> in the box.</li>
+<li><strong>Sensor:</strong> SmartSens <strong>SC2336</strong> (2 MP, 1/3”, RAW out over MIPI CSI-2;
+SmartSens’ “SmartClarity-2” low-light line). Driver ships in Espressif’s
+<a href="https://components.espressif.com/components/espressif/esp_cam_sensor/versions/2.3.0/readme">esp_cam_sensor</a>
+component; the P4’s on-chip ISP handles debayer/AWB/denoise
+(<a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32p4/api-reference/peripherals/camera_driver.html">camera driver docs</a>),
+and a <a href="https://github.com/jeff-cn/esp32-p4-cam">community P4+SC2336 example</a> exists.</li>
+<li><strong>Software path:</strong> esp-video (V4L2-style capture) → esp-dl (quantized CNN
+inference on the P4’s PPA/vector unit). Model export here is ONNX, which
+esp-dl’s toolchain ingests for int8 quantization.</li>
+<li>For the flight article (vs. dev kit), the same chip + SC2336 module on a
+minimal carrier lands well under the 50 g / 2 W targets of §2.</li>
+</ul>
+<p><strong>Still open (stretch):</strong> a true STARVIS2/IMX585-class starlight sensor on
+the P4 has no documented pairing — IMX585 typically wants 4-lane MIPI (P4
+has 2) and a custom driver. Path: prove the full system on SC2336 first;
+invest in starlight bring-up only if night accuracy turns out sensor-limited.
+(The <a href="https://github.com/ams-OSRAM/esp32_p4_MIPI_DSI_CSI_mira220">ams MIRA220 NIR example</a>
+shows third-party sensor bring-up on the P4 is feasible.)</p>
+<h2>Adding a new deployment area</h2>
+<p><code>.venv/bin/python -m pipeline.fetch --name myarea --bbox 9.10,48.70,9.20,48.76</code>
+then relight/train/score as above — nothing in the pipeline knows about
+specific areas. Only add entries to <code>areas.yaml</code> if it should become part of
+the frozen evaluation set (that’s a human decision, not the loop’s).</p>
+<h2>License</h2>
+<p><strong>GPL-3.0-or-later</strong> (see <code>LICENSE</code>). The choice is deliberate: the point of
+this project is that anyone can generate their own tiny, self-contained,
+geo-boxed localization model — so the pipeline that makes that possible must
+stay free. Copyleft guarantees it: you may use, study, modify and
+redistribute everything here, but a distributed fork — improved or otherwise
+— must remain under the GPL. Freedom is the priority here, not adoption.</p>
+<p>Two boundaries, spelled out in <code>NOTICE</code>:</p>
+<ul>
+<li><strong>Model weights you train are yours.</strong> They are your output, not a
+derivative of this code in the license’s sense; this repository claims no
+rights over them.</li>
+<li><strong>Imagery-derived figures</strong> (under <code>runs/</code> and <code>site_assets/</code>) carry their
+geodata sources’ attribution terms (dl-de/by-2-0, CC BY 4.0, Copernicus)
+independent of the code license.</li>
+</ul>
+<p>The repository was MIT-licensed before 2026-08-01; the relicense was made by
+the sole copyright holder.</p>
+</div>
+<div class="more"><a href="/code/ballpark/">Read the whole README ›</a></div>
+<div class="src"><a href="/code/ballpark/">Permalink</a> · <a href="https://github.com/akaalias/ballpark">View on GitHub ↗</a> · <a href="http://alexisrondeau.me/ballpark/">Website ↗</a></div>
 </article>
 <article class="item kind-reply" id="t2078084709628703209">
 <div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2078084709628703209/"><time datetime="2026-07-17T11:49:38Z">Friday, July 17, 2026 · 13:49</time></a></div>
@@ -157,6 +367,310 @@
 </div>
 <div class="tags"><a href="/feed/tag/autoresearch/">#autoresearch</a></div>
 <div class="src"><a href="/notes/the-snuggle-is-real-evolving-quadcopter-frame-geometry-for-wh-km-with-claude-as/">Permalink</a></div>
+</article>
+<article class="item kind-repo" id="g-airloom">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/airloom/"><time datetime="2026-07-12T18:10:22Z">Sunday, July 12, 2026 · 20:10</time></a></div>
+<h2 class="note-title"><a href="/code/airloom/">airloom</a></h2>
+<p class="repo-desc">Autonomous Research with AI: evolving quadcopter frame geometry for Wh/km — an autoresearch loop of a genetic algorithm over the open-source Source One V6 plate drawings, six simulated weather scenarios, and Claude as an AI agent co-designing. The champion flies 16% more efficiently.</p>
+<div class="stats"><span>Python</span></div>
+<div class="text note-body repo-readme clamped">
+<h1>Airloom — evolving quadcopter frames for Wh/km</h1>
+<p><em>(heirloom + air: every frame inherits from its ancestors, and the gallery
+is the family archive. Formerly <code>framevo</code>; the old CLI name still works
+as an alias.)</em></p>
+<p>A fully automated, headless research loop that evolves quadcopter <strong>frame
+geometry</strong> to minimize <strong>energy per distance (Wh/km)</strong> flown through a
+portfolio of adverse-weather scenarios. Everything except the frame — battery,
+motors, propellers, flight controller — is fixed. Runs unattended, is
+resumable after a crash, and produces a ranked, visual archive of every frame
+it ever evaluated.</p>
+<pre><code>make demo        # 3 generations x population 8, ~2-4 min on 8 cores
+make test        # pytest suite
+.venv/bin/airloom run --generations 100            # starts, or RESUMES the
+                                                   #  latest run by default
+.venv/bin/airloom run --generations 100 --fresh    # snapshot + CLEAR results,
+                                                   #  then a brand-new run
+.venv/bin/airloom lineage &lt;genome_hash&gt;            # ancestor chain w/ fitness
+.venv/bin/airloom gallery                          # rebuild artifacts from db
+.venv/bin/airloom robustness                       # is the RANKING an artifact
+                                                   #  of the model knobs?
+.venv/bin/airloom verify-champions                 # refined structural check of
+                                                   #  the top frames + print-
+                                                   #  and-test protocol
+</code></pre>
+<p>While a run is live, type <code>quit</code> + enter (or ctrl-c) to stop gracefully — the
+tasks in flight finish and the run stays resumable. If the latest run’s
+genomes predate the current genome spec, <code>airloom run</code> starts a fresh run
+automatically; a <code>run.db</code> written by an older schema is archived (never
+deleted) and recreated.</p>
+<p>Local-first: plain <code>pip install -e .</code> on macOS (Apple Silicon) or Linux x86,
+CPU-only, no Docker/GPU/EGL. Thumbnails render through headless matplotlib.
+Worker count auto-scales to the core count.</p>
+<p>Every <code>airloom run</code> first <strong>commits a snapshot of <code>results/</code> into its own
+nested repo</strong> (<code>results/.git</code> — separate from the project repo, so big run
+artifacts never bloat it). <code>--fresh</code> then actually clears the folder.
+Restore any past state with <code>git -C results log</code> +
+<code>git -C results checkout &lt;hash&gt; -- .</code></p>
+<h2>What it produces (in <code>results/</code>)</h2>
+<ul>
+<li><code>index.html</code> — the gallery: static, no frameworks, no server, open with
+<code>file://</code> (auto-reloads every 30 s while a run is live — locally only);
+also mirrored into <code>docs/</code>, the GitHub Pages root, on every refresh.
+Tufte-styled (cream paper, ink, one rust
+accent, hairlines). At the top: a <strong>progress chart</strong> of every candidate in
+evaluation order — gray dots, a best-so-far step line with labeled
+improvements, invalid candidates as rust ×, generation ticks, and two
+horizontal benchmark lines (≈5.0 Wh/km aggregate = current 7-inch
+long-range practice, ≈4.0 = record-class stretch; both set in
+<code>scenarios.yaml</code>) — so you can see what moved the needle and where the
+search plateaued. Below: one row
+per generation sorted by fitness, then detail blocks showing a
+<strong>from-below still</strong> of each candidate — click it to open a full-screen
+overlay with two tabs: the interactive 3D model (depth-buffered WebGL,
+drag/scroll/double-click), and a <strong>side-by-side comparison with the
+oldest ancestor of its lineage whose rotation and zoom stay in sync</strong>.
+A metric/value table, the genome table, parent thumbnails and the
+candidate’s <strong>lab-notebook notes</strong> (hypothesis / method / result — see
+the narrator below) sit beside each still. Parts are colored by role: rust arms and
+near-black deck plates are the <strong>evolved</strong> geometry; the blue Li-Ion pack,
+gray motor cans and pale translucent prop disks are the <strong>fixed</strong> kit.</li>
+<li><code>leaderboard.md</code> — top 10 with all metrics and per-scenario columns.</li>
+<li><code>lineage.html</code> (+ raw <code>lineage.svg</code>, <code>lineage.dot</code>) — a dedicated family
+tree page: nodes shaded by fitness (dark = better), hollow nodes = invalid,
+edges colored by operator, elite carry-overs as dotted pass-throughs.</li>
+<li><code>convergence.png</code> — fitness vs. generation.</li>
+<li><code>frames/gen_XXXX/&lt;hash&gt;.stl</code> + <code>.png</code> — <strong>every</strong> candidate, including
+invalid ones (<code>_INVALID</code> suffix; the failures are instructive).</li>
+<li><code>gen_XXXX_best.stl</code> — the generation’s champion (fused), plus
+<code>gen_XXXX_best_parts/</code> — the same frame as separate flat, printable pieces.</li>
+<li><code>designer_log.md</code> — the designer rounds’ proposals with their one-line
+rationales (see below).</li>
+<li><code>robustness.md</code> (on demand, <code>airloom robustness</code>) — the top candidates
+re-flown under perturbed model knobs (±30 % handbook Cds, ±10 % rotor
+tables, rain knobs, wash term): rank correlation, top-5 overlap and
+champion identity vs the baseline ordering, with a STABLE / MODERATE /
+FRAGILE verdict. Answers “is the leaderboard a frame property or a model
+artifact?” and names the knob where Phase B fidelity would matter first.</li>
+<li><code>champion_check.md</code> (on demand, <code>airloom verify-champions</code>) — the top
+frames re-analyzed with the same station-by-station variable-section
+bending model the in-loop constraint now runs (net-section stress
+concentration at holes/cutouts via Peterson Kt, and the taper gene),
+adding the one thing the fast in-loop gate deliberately doesn’t apply:
+as-built strength knockdowns for printed materials — plus a bench
+print-and-test protocol with hold and predicted-failure loads.</li>
+<li><code>run.db</code> — SQLite: genomes, lineage (self-referencing, <code>WITH RECURSIVE</code>
+ancestry), per-scenario metrics, populations, lab-notebook notes, config
+snapshot, git hash. Written by an older schema? It gets archived
+automatically (never deleted) and recreated.</li>
+<li><code>glossary.html</code> (copied from <code>docs/glossary.html</code>, linked from the gallery)
+— definitions of both the evolutionary-algorithm terms and the domain terms
+(genes, Wh/km, constraints, physics vocabulary).</li>
+</ul>
+<h2>The fixed platform (never evolved)</h2>
+<p>Matched to the <strong>official DroneAid Collective (drone-aid.de) workshop kit</strong>,
+a 7-inch long-range build in the most popular open-source plate-frame
+archetype — the <a href="https://github.com/tbs-trappy/source_one">TBS Source One</a>
+family (open-source: 2 mm deck plates, M3 standoffs, sandwiched plate arms;
+the upstream repo carries no license file, so terms are unconfirmed).
+Kit components as modeled: 4× 2806-class ~1300KV motors with 7×4-class
+3-blade props (ground truth: UIUC Master Airscrew GF 7×4 measurements),
+a self-built 6S1P 21700 Li-Ion pack (4.2 Ah, 470 g, strapped on top of the
+deck), 30.5 mm Betaflight FC + 4-in-1 ESC stack between the plates, micro
+FPV camera, VTX + antenna, ELRS receiver. Fixed non-frame mass: 0.78 kg;
+baseline AUW ≈ 1.0 kg.</p>
+<p>The generation-0 baseline genome is <strong>measured from the official Source One
+V6 7in DC plate drawing</strong> (cached with provenance notes in
+<code>data/source_one/</code>): 106.6×48.5 mm bottom plate, 2 mm plates, 6 mm arms,
+M3×30 standoffs, ~160 mm arms. Assembly is modeled the way the real frame
+bolts together: arm root tongues rest on the bottom plate inside the
+sandwich (tongues may not collide — hard constraint), the FC/ESC boards sit
+in the gap (and count as a bluff body for drag), the battery wedge hinges on
+its front bottom edge so it never sinks into the plate, and the XT60/lead
+are modeled visually. The best candidate of each generation is also exported
+as individual print/cut-ready pieces in <code>gen_XXXX_best_parts/</code>
+(bottom_plate, top_plate, arm ×4).</p>
+<h2>The genome: morphs of the REAL parts (14 genes)</h2>
+<p>The genome no longer describes primitives — it deforms the <strong>official
+Source One V6 7in DC plate drawings</strong> (<code>data/source_one/</code>, parsed from the
+DXF with arcs, cutouts and every bolt hole) under zone constraints that keep
+each candidate a printable/cuttable derivative of the real design:</p>
+<ul>
+<li><code>arm_length_scale</code>, <code>arm_width_scale</code>, <code>arm_waist_scale</code>, <code>arm_thickness</code>
+— stretch/reshape the real arm outlines; the bolt tongue and the 16×19 mm
+motor-mount end stay rigid.</li>
+<li><code>tip_thickness_scale</code> — mid-shaft thickness dip as a fraction of root
+thickness (a bump profile: full thickness stays at the tongue and the
+motor mount, where it’s needed for the plate-sandwich fit and screw
+engagement; 1.0 = uniform, no dip).</li>
+<li><code>arm_cutout_scale</code> — three lightening holes drilled along each arm’s
+shaft centerline, radius scaled off the local width there (0 = none).</li>
+<li><code>front_sweep_deg</code>, <code>rear_sweep_deg</code> — rotate the arms about their
+drawing-registered plate anchors (front anchors are exact bolt-pattern
+registrations; DC arms keep their true left/right mirrored chirality).</li>
+<li><code>plate_length_scale</code>, <code>plate_width_scale</code>, <code>plate_thickness_scale</code>,
+<code>deck_gap</code> — stretch the real main/mid/top plates (the 30.5 mm stack
+pattern stays pinned exactly), set the standoff length.</li>
+<li><code>battery_wedge_deg</code> — tilt of the pack on the top plate.</li>
+<li><code>material</code> — carbon plate / PA12-CF / PET-CF / PLA+ / PETG / ASA library.</li>
+</ul>
+<p>Gene value 1.0 on every scale gene reproduces the real V6 exactly (the
+generation-0 seed; its frame mass comes out at 144 g — the real frame weighs
+~145 g). Every candidate assembles the full kit: 6×21700 cell pack, FC/ESC
+stack, 2806 motors, 3-blade props, camera, VTX + ELRS antennas, GPS, XT60
+and routed wire looms — dimension-accurate meshes (<code>components.py</code>).</p>
+<p>Hard constraints (fitness = ∞, no simulation): the FC/ESC stack must fit the
+deck gap, placed arm outlines must not overlap (the real notch interlock is
+not redesigned), each tongue’s bolt pair must land on main-plate material,
+rotors need ≥ 5 mm from each other, and prop disks are checked against the
+deck/battery <strong>in 3D</strong> (the real V6’s rear props sweep below the top-plate
+corners; <code>deck_gap</code> trades that margin).</p>
+<h2>Scenario portfolio</h2>
+<p>Six scenarios (config/scenarios.yaml): <code>calm_warm</code>, <code>cold_headwind</code>, <code>storm</code>
+(25 mm/h rain), <code>crosswind</code>, <code>gusty_light</code> (severe Dryden gusts),
+<code>hot_thin</code> (1500 m density altitude). Every candidate flies <strong>all</strong> of them
+over the identical mission: 2 km north + 2 km south at 12 m/s, 30 m AGL.
+Each scenario has a fixed turbulence seed, so all candidates fly identical
+gust histories — fitness differences are frame differences, never gust luck.</p>
+<p><strong>Designer rounds (headless Claude):</strong> every 6 generations (config:
+<code>designer</code> in <code>evolution.yaml</code>), a headless <code>claude -p</code> call receives the
+elite genomes with per-scenario results and the invalid-design histogram,
+and proposes new genome vectors as design hypotheses — injected as operator
+<code>designer</code> (violet in the family tree), rationales appended to
+<code>results/designer_log.md</code>. The brief includes the known constraint couplings
+(deck gap vs. FC stack, sweep vs. tongue collisions and bolt registration).
+Fail-soft: if the CLI is unavailable the round is skipped.</p>
+<p><strong>Lab-notebook narrator (headless Claude):</strong> after each generation, ONE
+<code>claude -p</code> call writes three short notes for every new candidate —
+<em>hypothesis</em> (the pre-flight “why”: what the search had observed and what
+bet this design makes), <em>method</em> (what concretely changed vs. the parents),
+<em>result</em> (outcome vs. parents and best-so-far, or the constraint that killed
+it, plus one idea worth testing next). Rule-based fallback notes are written
+instantly; the Claude enrichment runs on a background thread <strong>off the
+loop’s critical path</strong> and upgrades them in place. The notes appear in the
+gallery detail blocks and the family-tree hover cards. Config: <code>narrator</code>
+in <code>evolution.yaml</code>; fail-soft like the designer.</p>
+<p><strong>Patience:</strong> if the best-so-far stalls for 6 generations (no ≥0.5 %
+improvement), the loop pivots — it crosses tournament winners with <em>far
+parents</em> (the most genetically distant still-decent candidates in the run’s
+history) under boosted mutation, escalating to random parents if the plateau
+persists. Derived from persisted history, so it survives <code>--resume</code>;
+configured under <code>ga.patience</code> in <code>config/evolution.yaml</code>.</p>
+<p>Fitness = mean Wh/km + λ·worst Wh/km (λ = 0.5), or pure worst-case with
+<code>aggregation: minimax</code>. Thrust limiting (rotor RPM ceiling incl. battery
+sag, per-motor power, pack deliverable power) <strong>clamps</strong> rather than
+instantly failing — a gust transient costs tracking and energy, like real
+flight. A scenario fails on <em>sustained</em> infeasibility: thrust-limited
+beyond 10 % of the nominal mission time (blamed on the dominant limiter),
+altitude/track divergence, mission not completed within 1.6× nominal time,
+or the structural check. Any scenario failure ⇒ invalid. An optional
+early-reject screen
+(<code>early_reject.enabled</code>) flies <code>calm_warm</code> first and gives clearly-losing
+candidates a finite penalized fitness without flying the other five.</p>
+<h2>Physics (Phase A — deliberately boring and verifiable)</h2>
+<table>
+<thead><tr><th>piece</th><th>model</th><th>source / check</th></tr></thead>
+<tbody>
+<tr><td>rotor</td><td>CT(J), CP(J) interpolated from measured tables; <code>T = ρn²D⁴CT</code>, <code>P = ρn³D⁵CP / 0.85</code> (motor+ESC)</td><td>UIUC Propeller DB, Master Airscrew GF 7×4 (static + 4 RPM sweeps), cached in <code>data/uiuc/</code>; unit-tested against tabulated points</td></tr>
+<tr><td>frame drag</td><td>component buildup: projected areas from rasterizing the STL along the flow at 0–60° tilt; handbook per-class Cds <strong>corrected by CFD-fitted tilt-dependent ratios and an assembly interference factor</strong> (wake shielding + silhouette double-count, −6 %/−27 %/−37 % at 0°/20°/40°); rotor-wash download on arm planform under the disks</td><td>calibrated against 12 OpenFOAM v2512 k-ω SST cases (<code>cfd/calibration.md</code>); round-trip unit-tested to ±3 % of the measured CdAs</td></tr>
+<tr><td>turbulence</td><td>Dryden, MIL-F-8785C low-altitude forms, spectral synthesis, fixed seeds</td><td>variance unit-tested against σ² spec</td></tr>
+<tr><td>rain</td><td>(a) water-film added mass ∝ top area, (b) momentum drag via equivalent suspended-water density + vertical impact force, (c) 15 % thrust-coefficient penalty</td><td>empirical knobs, see NASA TP-2671 (Dunham et al.) heavy-rain research; all in config</td></tr>
+<tr><td>flight</td><td>100 Hz point-mass 3-DOF sim; quasi-static attitude (the quad tilts into the relative wind), P velocity loop with accel limits; rotor speeds solved each step from the CT tables; electrical energy integrated</td><td>zero-wind mission unit-tested against a quasi-static analytic power balance (±6 %)</td></tr>
+<tr><td>battery</td><td>quasi-static pack model: V = V0 − I·R, current solved from demanded motor power each step; energy integrated at the pack terminals (incl. I²R loss); RPM ceiling scales with sagged voltage; deliverable-power (V0²/4R ≈ 820 W) and cell-current (45 A) limits feed the saturation clock</td><td>P42A-class DC IR + discharge-curve sag; unit-tested (quadratic solve, IR-loss share, storm clamp behavior)</td></tr>
+<tr><td>structure</td><td>station-by-station variable-section Euler–Bernoulli bending along the real morphed arm outline (net width minus any hole/cutout, Peterson Kt where one pierces a station, genome-selected thickness taper): worst-case per-rotor thrust across all scenarios × 1.5 safety factor; max stress ≤ material strength, tip deflection ≤ 5 % L, first bending mode outside ±15 % of hover 1P</td><td>stress/deflection unit-tested against hand calculations on a plain (untapered, unpierced) section, which reduces to the classic constant-section formulas</td></tr>
+</tbody>
+</table>
+<p>Sanity anchors (unit-tested): the original spec anchor — a 5-inch quad at
+1.1 kg AUW hovers at ~195 W (180–280 W band), checked against the cached
+GWS 5×4.3 dataset — plus the shipped platform: the baseline 7-inch deck
+(~0.34 m wheelbase, ~1.0 kg AUW) hovers in a plausible 90–230 W band on
+the MA GF 7×4 data.</p>
+<h2>Known limitations (please read before trusting numbers)</h2>
+<ul>
+<li><strong>Phase A drag is approximate.</strong> Component buildup with handbook Cd values
+and a cos²-blend between body-x and body-y flow azimuths; no interference
+drag beyond the rotor-wash term, no Reynolds corrections.</li>
+<li><strong>Rotor model is axial-flow data stretched to edgewise flight.</strong> UIUC wind
+tunnel sweeps measure propellers in axial advance; a quadcopter in cruise
+sees mostly edgewise inflow. J is computed from the axial inflow component
+only, and there is <strong>no rotor–rotor interaction</strong>.</li>
+<li><strong>The rain model is empirical.</strong> Film mass, momentum drag and the 15 %
+thrust penalty are literature-inspired config knobs, not physics.</li>
+<li><strong>No rotational dynamics.</strong> Attitude is quasi-static; control effort in
+gusts appears as thrust modulation, not motor differential torques. Gust
+series are synthesized at the commanded cruise speed rather than the
+instantaneous airspeed.</li>
+<li><strong>UIUC data was measured at 2.5k–7k RPM and on a 2-blade prop</strong>; the kit
+flies 3-blade 7×4s and hovers near 9k RPM. CT/CP are treated as
+Re-independent and blade-count effects are absorbed into the tables.</li>
+<li><strong>Print-material properties are XY/datasheet values.</strong> FDM parts are
+weaker across layer lines (often 40–60 % in Z); in the LOOP the 1.5
+safety factor is the only allowance for anisotropy, print quality, or
+temperature — datasheet strength, not as-built. <code>airloom verify-champions</code> re-checks the top frames with per-material as-built
+strength knockdowns on top of the same station-by-station model, and
+emits a bench print-and-test protocol.</li>
+<li>Structural model checks the arms only (station-by-station stress along
+the shaft, tip deflection, resonance off the root station’s stiffness);
+the deck is assumed rigid and the standoffs ideal.</li>
+<li><strong>The battery model is quasi-static.</strong> Constant open-circuit voltage at
+the nominal 3.7 V/cell (no state-of-charge curve — conservative for a
+short mission that only uses ~15 % of the pack), constant DC internal
+resistance (no temperature or transient effects), no thermal limits for
+pack or motors. It exists to catch physically undeliverable power
+demands, not to predict voltage traces.</li>
+<li><strong>Printability is enforced by real-outline geometry constraints, not full
+DFM.</strong> Parts are the actual (morphed) V6 outlines with their holes and
+cutouts, exported as separate flat pieces; but tongue bolt holes are
+assumed re-cut with the plates when sweep deviates from stock, the rear
+anchor is a best-fit (98 % clamp coverage) rather than a hole registration,
+and tolerances/print-orientation strength are not modeled.</li>
+<li>CMA-ES mode (<code>--optimizer cmaes</code>) has no discrete parents — it samples from
+an adapted Gaussian — so the family tree is skipped and distribution-level
+provenance (mean, σ per generation) is stored in <code>cma_state</code> instead.</li>
+</ul>
+<h2>Phase B (CFD) — milestone 1 complete: calibrated, verdict STABLE</h2>
+<p><code>airloom cfd-calibrate</code> generated 12 OpenFOAM cases (arms alone, deck/kit
+alone, full assembly, and a contrasting genome’s full assembly — each at
+0°/20°/40° tilt, freestream BCs, one snappyHexMesh per geometry) and the
+overnight solve produced <code>cfd/calibration.md</code>. Findings: the handbook
+buildup overestimated drag ~2× at cruise tilt; assembly interference
+(wake shielding + silhouette double-count) is −27 % at 20°; and the
+contrast genome’s ratios matched the baseline’s within ~2 points at every
+angle — the error is <strong>systematic, not gene-dependent</strong>. The corrections
+now live in <code>aero.py</code> (<code>CAL_*</code> tables, applied in
+<code>drag_table_from_areas</code>), and the post-calibration <code>airloom robustness</code>
+verdict is <strong>STABLE</strong> (min Spearman 0.958, no champion flips): the
+ranking is a frame property, not a model artifact. Consequence: the
+originally-planned per-candidate CFD pipeline (top-N per generation,
+cached by genome hash) is <strong>not needed</strong>; the seam (<code>DragTable</code> from
+<code>AreaTable</code>) remains if a future genome expansion moves outside the
+calibrated shape envelope. Note: absolute Wh/km dropped with the
+calibration, so the gallery’s 5.0/4.0 benchmark lines predate it and need
+re-derivation.</p>
+<h2>Layout</h2>
+<pre><code>config/          platform.yaml (fixed hardware), scenarios.yaml (mission,
+                 portfolio, aggregation + benchmark lines), evolution.yaml
+                 (GA, patience, designer, narrator, execution)
+data/uiuc/       cached UIUC propeller measurements (scripts/fetch_uiuc.py refreshes)
+data/source_one/ official Source One V6 7in DC plate DXF + provenance notes
+docs/            glossary.html (copied into results/ next to the gallery)
+src/airloom/     config, genome, realgeo (DXF outline parsing), frame_gen,
+                 components, meshutil, rotor_model, aero, dryden, simulator,
+                 structures, evaluate, parallel, evolution, designer,
+                 narrator, loop, dbstore, lineage, gallery, render, cli
+tests/           frame validity (baseline reproduces the real V6), kit
+                 components, materials, designer parsing, patience/pivot,
+                 UIUC points, beam hand-calc, Dryden variance, zero-wind
+                 energy, hover sanity anchors
+results/         everything a run produces (see above)
+</code></pre>
+<h2>License</h2>
+<p>airloom is free software: you can redistribute it and/or modify it under the
+terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version. See <a href="https://github.com/akaalias/airloom/blob/main/LICENSE">LICENSE</a> for the full text.</p>
+</div>
+<div class="more"><a href="/code/airloom/">Read the whole README ›</a></div>
+<div class="src"><a href="/code/airloom/">Permalink</a> · <a href="https://github.com/akaalias/airloom">View on GitHub ↗</a> · <a href="http://alexisrondeau.me/airloom/">Website ↗</a></div>
 </article>
 <article class="item kind-reply" id="t2074512600407199987">
 <div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2074512600407199987/"><time datetime="2026-07-07T15:15:21Z">Tuesday, July 7, 2026 · 17:15</time></a></div>
@@ -302,6 +816,208 @@ E  he best music</p>
 </a>
 <div class="src"><a href="/feed/t/2067293043074441678/">Permalink</a> · <a href="https://x.com/i/status/2067293043074441678">View on Twitter ↗</a></div>
 </article>
+<article class="item kind-repo" id="g-kern">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/kern/"><time datetime="2026-06-17T14:25:47Z">Wednesday, June 17, 2026 · 16:25</time></a></div>
+<h2 class="note-title"><a href="/code/kern/">kern</a></h2>
+<p class="repo-desc">The text editor I've always wanted: The beefy love-child of Emacs, iA Writer, and Obsidian</p>
+<div class="stats"><span><b>2</b> stars</span> · <span>C</span></div>
+<div class="text note-body repo-readme clamped">
+<p>A minimalist text editor — a cross between Emacs and iA Writer. Emacs-style
+keybindings and editing model, with a clean, distraction-free iA Writer look:
+the iA Writer Quattro/Mono typefaces, live markdown styling, and a full-window
+writing surface.</p>
+<p>A macOS app: a thin SwiftUI shell launches the editor, which is written in C
+with SDL2 + OpenGL for rendering and
+<a href="https://github.com/nothings/stb">stb_truetype</a> for font rasterization. There’s
+no UI toolkit — the editor draws everything immediately through a small
+12-function renderer interface (<code>renderer.h</code>) over a ~30-line geometry/color
+header (<code>gfx.h</code>). SDL2 is statically linked from a vendored library, so the
+<code>.app</code> is self-contained (no Homebrew dependency) and runs with Hardened
+Runtime + App Sandbox.</p>
+<h2>Building</h2>
+<pre><code class="language-sh">open application/Kern/Kern.xcodeproj
+</code></pre>
+<p>Then Build &amp; Run (⌘R). Produces a self-contained <code>Kern.app</code> with the fonts
+bundled as resources. Apple Silicon only.</p>
+<h2>Usage</h2>
+<p>On launch it opens today’s daily note (<code>YYYY-MM-DD.md</code>, seeded with a date
+heading). The buffer auto-saves every few seconds while modified. Files live in
+the app’s sandbox container:</p>
+<pre><code>~/Library/Containers/com.rondeau.Kern/Data/Documents/
+</code></pre>
+<p>Open/save paths resolve relative to that folder (reach it in Finder via
+<strong>Go → Go to Folder</strong>).</p>
+<h3>Keybindings (Emacs-style)</h3>
+<p>Meta (<code>M-</code>) is either <strong>Alt</strong> or the <strong>Esc</strong> prefix — e.g. <code>M-d</code> = Alt-D, or Esc then D.</p>
+<p><strong>Files</strong></p>
+<table>
+<thead><tr><th>Keys</th><th>Action</th></tr></thead>
+<tbody>
+<tr><td><code>C-x C-f</code></td><td>Find/open file (inline completion — Tab to accept)</td></tr>
+<tr><td><code>C-x C-s</code></td><td>Save</td></tr>
+<tr><td><code>C-x C-w</code></td><td>Write file (save as)</td></tr>
+<tr><td><code>C-x b</code></td><td>Switch buffer (recent files — Tab to list/cycle)</td></tr>
+<tr><td><code>C-x C-c</code></td><td>Quit</td></tr>
+</tbody>
+</table>
+<p><strong>Movement</strong></p>
+<table>
+<thead><tr><th>Keys</th><th>Action</th></tr></thead>
+<tbody>
+<tr><td><code>C-f</code> / <code>C-b</code></td><td>Forward / backward char</td></tr>
+<tr><td><code>C-n</code> / <code>C-p</code></td><td>Next / previous line (by visual row)</td></tr>
+<tr><td><code>C-a</code> / <code>C-e</code></td><td>Start / end of line</td></tr>
+<tr><td><code>M-f</code> / <code>M-b</code></td><td>Forward / backward word</td></tr>
+<tr><td><code>C-v</code> / <code>M-v</code></td><td>Page down / up</td></tr>
+<tr><td><code>M-&lt;</code> / <code>M-&gt;</code></td><td>Beginning / end of buffer</td></tr>
+<tr><td><code>C-l</code></td><td>Recenter (center → top → bottom)</td></tr>
+<tr><td><code>C-x t</code></td><td>Typewriter mode (pin active line at golden ratio)</td></tr>
+<tr><td><code>C-x y</code></td><td>Syntax highlight (parts of speech, by brightness)</td></tr>
+<tr><td><code>C-x s</code></td><td>Style check (strike cuttable fillers/redundancies)</td></tr>
+<tr><td><code>C-x l</code></td><td>Symbols on/off (draw <code>-&gt;</code> <code>--</code> <code>!=</code> <code>(c)</code> quotes <code>lambda</code> <code>forall</code> as → — ≠ © “ ” λ ∀; on by default)</td></tr>
+<tr><td><code>C-x p</code></td><td>Page borders on/off (hide/show the page rails, gutters &amp; note margins)</td></tr>
+<tr><td><code>C-x g</code></td><td>Graph view (interactive map of wikilinks, same-day &amp; opened-after relations; click a node to open it, drag the background to pan)</td></tr>
+<tr><td><code>M-g</code></td><td>Go to line</td></tr>
+</tbody>
+</table>
+<p><strong>Editing</strong></p>
+<table>
+<thead><tr><th>Keys</th><th>Action</th></tr></thead>
+<tbody>
+<tr><td><code>C-d</code></td><td>Delete char forward</td></tr>
+<tr><td><code>C-k</code></td><td>Kill to end of line</td></tr>
+<tr><td><code>M-d</code> / <code>M-⌫</code></td><td>Kill word forward / backward</td></tr>
+<tr><td><code>C-t</code></td><td>Transpose characters</td></tr>
+<tr><td><code>C-o</code></td><td>Open line</td></tr>
+<tr><td><code>Tab</code> / <code>Shift-Tab</code></td><td>Indent / outdent list item</td></tr>
+<tr><td><code>M-u</code> / <code>M-l</code> / <code>M-c</code></td><td>Upcase / downcase / capitalize word</td></tr>
+<tr><td><code>C-/</code></td><td>Undo</td></tr>
+</tbody>
+</table>
+<p><strong>Selection &amp; clipboard</strong> (cut/copy/yank sync with the macOS clipboard)</p>
+<table>
+<thead><tr><th>Keys</th><th>Action</th></tr></thead>
+<tbody>
+<tr><td><code>C-Space</code></td><td>Set mark</td></tr>
+<tr><td><code>Backspace</code> / <code>Delete</code></td><td>Delete the selected region</td></tr>
+<tr><td><code>C-w</code> / <code>M-w</code></td><td>Cut / copy region</td></tr>
+<tr><td><code>⌘C</code></td><td>Copy region</td></tr>
+<tr><td><code>C-y</code> / <code>⌘V</code></td><td>Yank (paste)</td></tr>
+<tr><td><code>C-x h</code></td><td>Select whole buffer</td></tr>
+<tr><td><code>C-x C-x</code></td><td>Exchange point &amp; mark</td></tr>
+<tr><td><code>**</code> <code>*</code> <code>==</code> <code>++</code> <code>`</code></td><td>With a region marked, wrap it: bold / italic / highlight / underline / code</td></tr>
+<tr><td><code>Cmd-Shift-H</code></td><td>Toggle <code>&lt;mark&gt;highlight&lt;/mark&gt;</code> around the caret’s sentence</td></tr>
+<tr><td><code>Cmd-Shift-U</code></td><td>Toggle <code>++underline++</code> around the caret’s sentence</td></tr>
+</tbody>
+</table>
+<p><strong>Search &amp; view</strong></p>
+<table>
+<thead><tr><th>Keys</th><th>Action</th></tr></thead>
+<tbody>
+<tr><td><code>C-s</code> / <code>C-r</code></td><td>Incremental search fwd / back</td></tr>
+<tr><td><code>⌘=</code> / <code>⌘-</code></td><td>Increase / decrease font size</td></tr>
+<tr><td><code>Esc</code></td><td>Cancel / clear mark</td></tr>
+</tbody>
+</table>
+<p>Markdown headings, bold, italic, highlight (<code>==</code>), and underline (<code>++text++</code>)
+are styled live as you type. Each document also grows a read-only <strong>Context</strong>
+section at the bottom listing backlinks and notes created the same day.</p>
+<p><strong>Notes &amp; wikilinks</strong></p>
+<table>
+<thead><tr><th>Keys</th><th>Action</th></tr></thead>
+<tbody>
+<tr><td>`<span class="wikilink unresolved"> Wikilink autocomplete (↑/↓ to pick, Tab/Enter to accept)</td><td></td></tr>
+<tr><td><code>Cmd-Enter</code></td><td>Follow the <code>[[wikilink&lt;/span&gt;</code> under the cursor</td></tr>
+<tr><td><code>Cmd-Shift-←</code> / <code>Cmd-Shift-→</code></td><td>Back / forward through note history</td></tr>
+<tr><td><code>Cmd-Shift-N</code></td><td>Extract the selected region into a new linked note</td></tr>
+<tr><td><code>Cmd-Shift-M</code></td><td>Write a margin note (footnote) at the caret</td></tr>
+<tr><td><code>Cmd-Shift-T</code></td><td>Open (or create) today’s daily note</td></tr>
+<tr><td><code>C-x n</code></td><td>Download your X home feed into a time-stamped news note</td></tr>
+<tr><td><code>C-x m</code></td><td>Download ALL your X bookmarks into a time-stamped note</td></tr>
+</tbody>
+</table>
+<h2>Publishing to X (Twitter)</h2>
+<p>When an X account is connected, a <strong>paper-plane button</strong> appears in the top-right
+of the title bar (next to the help and folder buttons). Click it to post the note
+you’re viewing — or the marked region, if one is active — straight to your X
+timeline. The result shows up both as a macOS notification (<code>Posted to X ✓</code> / a
+failure banner) and in the editor’s status bar. The button is hidden until you
+link an account.</p>
+<p>The connection also works the other way: <code>C-x n</code> downloads your <strong>home feed</strong>
+into a time-stamped <code>Twitter-Home-Newsfeed-YYYY-MM-DD-HHMM.md</code> note — one
+<code>## author — date at time</code> entry per post, with the text as a <code>&gt;</code> blockquote
+(rendered in italics), the byline, and the URL below it, so you can mark up a
+post and <code>Cmd-Shift-N</code> it into a note of its own. Image-only posts (just a
+media link) and one-liners are filtered out.</p>
+<p><code>C-x m</code> does the same for your <strong>bookmarks</strong>: every bookmarked post (paginated
+through the whole list, nothing filtered — you marked them for a reason) lands
+in a <code>Twitter-Bookmarks-YYYY-MM-DD-HHMM.md</code> note in the same format. Requires
+the <code>bookmark.read</code> scope — accounts connected before this feature must
+disconnect and reconnect once in Settings → X. (Reading
+the timeline uses X’s <code>timelines/reverse_chronological</code> endpoint, which needs
+an API tier that includes read access.)</p>
+<p><strong>One-time setup</strong></p>
+<ol>
+<li><p><strong>Create an X app</strong> at <a href="https://console.x.com">console.x.com</a> (pay-per-use;
+~$0.015/post). In <em>User authentication settings</em>:</p>
+<ul>
+<li><strong>App permissions:</strong> Read and write</li>
+<li><strong>Type of App:</strong> Native App (public client — PKCE, no secret)</li>
+<li><strong>Callback URI:</strong> <code>&lt;http://127.0.0.1:8123/callback</code>&gt;</li>
+</ul>
+</li>
+<li><p><strong>Add your Client ID locally.</strong> Copy the OAuth 2.0 <strong>Client ID</strong> from the
+portal into a gitignored config file:</p>
+<pre><code class="language-sh">cp application/Kern/Config/Secrets.example.xcconfig \
+   application/Kern/Config/Secrets.xcconfig
+# then paste your id into X_CLIENT_ID
+</code></pre>
+<p>It’s injected at build time via <code>Info.plist</code>, so it never enters the repo. A
+clone without this file still builds; the X feature just reports
+“not configured”.</p>
+</li>
+<li><strong>Connect.</strong> Build &amp; run, open <strong>Settings (⌘,) → X</strong>, click <strong>Connect X
+Account</strong>, and approve in your browser. Tokens are stored in the macOS
+Keychain and auto-refreshed, so you only do this once. (The panel reads state
+when opened — use <strong>Refresh</strong> if it looks stale.)</li>
+</ol>
+<p><strong>Behavior</strong></p>
+<ul>
+<li>≤ 280 characters → a normal post.</li>
+<li>&gt; 280 characters → sent as one long-form post (requires X Premium). Note that
+X’s API support for &gt;280 is inconsistent even for Premium; if it’s rejected
+you’ll see <code>X: Your Tweet text is too long</code> and nothing is posted.</li>
+</ul>
+<p><strong>How it works.</strong> OAuth 2.0 with PKCE via a short-lived loopback redirect
+listener (RFC 8252), all on a background thread — <code>editor_main</code> parks the main
+thread in the SDL event loop, so the Swift networking layer must stay off the
+main actor and report through the C status bar.</p>
+<h2>Layout</h2>
+<pre><code>application/Kern/
+  Kern.xcodeproj    the app project (open this)
+  Info.plist        app metadata; injects X_CLIENT_ID from the xcconfig
+  Config/           Base.xcconfig + Secrets.example.xcconfig (Secrets.xcconfig
+                    is local-only / gitignored)
+  Kern/
+    App/            SwiftUI shell + X publishing, bridging header, asset catalog
+    Editor/         the C editor: textview, buffer, editing, navigation,
+                    undo, md_render, commands, recent, clipboard, clock,
+                    gfx, editor_types
+    Platform/       SDL/GL renderer + macOS window chrome
+    ThirdParty/     stb_truetype
+    Resources/      iA Writer fonts + OFL.txt
+  Vendor/SDL2/      vendored SDL2 static lib + headers
+</code></pre>
+<h2>License</h2>
+<p>MIT — see <a href="https://github.com/akaalias/kern/blob/main/LICENSE">LICENSE</a>. Includes SDL2 (zlib) and stb_truetype (public
+domain), each under their own licenses. Typeset in the
+<a href="https://github.com/iaolo/iA-Fonts">iA Writer</a> Quattro &amp; Mono typefaces
+(© Information Architects), used under the SIL Open Font License 1.1 — see
+<a href="https://github.com/akaalias/kern/blob/main/application/Kern/Kern/Resources/OFL.txt">OFL.txt</a>.</p>
+</div>
+<div class="more"><a href="/code/kern/">Read the whole README ›</a></div>
+<div class="src"><a href="/code/kern/">Permalink</a> · <a href="https://github.com/akaalias/kern">View on GitHub ↗</a> · <a href="http://alexisrondeau.me/kern/">Website ↗</a></div>
+</article>
 <article class="item kind-post" id="t2067217137496637620">
 <div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/2067217137496637620/"><time datetime="2026-06-17T12:05:47Z">Wednesday, June 17, 2026 · 14:05</time></a></div>
 <div class="stats"><span><b>4</b> likes</span> · <span><b>8.3K</b> views</span> · <span><b>2</b> bookmarks</span></div>
@@ -324,91 +1040,28 @@ The loop talks to any OpenAI-compatible endpoint, so the proposing model can run
 </a>
 <div class="src"><a href="/feed/t/2067217137496637620/">Permalink</a> · <a href="https://x.com/i/status/2067217137496637620">View on Twitter ↗</a></div>
 </article>
-<article class="item kind-post" id="t2065381545137901847">
-<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/2065381545137901847/"><time datetime="2026-06-12T10:31:47Z">Friday, June 12, 2026 · 12:31</time></a></div>
-<div class="stats"><span><b>1</b> like</span> · <span><b>37</b> views</span></div>
-<div class="text display"><p>I wholeheartedly agree with Tom Bedor's thesis: &quot;If You are Asking for Human Attention, Demonstrate Human Effort&quot; over at</p></div>
-<a class="linkcard" href="https://tombedor.dev/human-attention-and-human-effort/">
-<span class="body"><span class="site">tombedor.dev</span><span class="title">If You are Asking for Human Attention, Demonstrate Human Effort | Tom Bedor's Blog</span><span class="host">↗ tombedor.dev</span></span>
-</a>
-<a class="linkcard" href="https://tombedor.dev/human-attention-and-human-effort/">
-<span class="body"><span class="site">tombedor.dev</span><span class="title">If You are Asking for Human Attention, Demonstrate Human Effort | Tom Bedor's Blog</span><span class="host">↗ tombedor.dev</span></span>
-</a>
-<div class="src"><a href="/feed/t/2065381545137901847/">Permalink</a> · <a href="https://x.com/i/status/2065381545137901847">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-repost" id="t2065052574101725429">
-<div class="meta"><span class="kind">Repost</span><a class="when" href="/feed/t/2065052574101725429/"><time datetime="2026-06-11T12:44:35Z">Thursday, June 11, 2026 · 14:44</time></a></div>
-<div class="stats"><span><b>3</b> reposts</span></div>
-<div class="other">
-<cite>Reposting <a href="https://x.com/maxjendrall">@maxjendrall</a> · Jun 11, 2026</cite>
-<div class="text"><p>Yesterday I organised Europe’s first community Cafe Compute with <a class="mention" href="https://x.com/cerebras">@cerebras</a> in Berlin!</p>
-<p>We had over 200 signups and ~80 people join us to talk about fast inference and running frontier intelligence at the speed of 1000+ tokens per second.</p>
-<p>Special thank you for Cerebras and <a class="mention" href="https://x.com/communidiyi">@communidiyi</a> for entrusting me with the Ambassadorship and <a class="mention" href="https://x.com/WigetJanette">@WigetJanette</a> with <a class="mention" href="https://x.com/aicampusberlin">@aicampusberlin</a> for hosting us and helping me organise this evening.</p>
-<p>In the first half we had Zigfrid (Solutions Architect at Cerebras) join us and answer all the questions we had about what they do and how their chips work.</p>
-<p>And in the second half we had great demos from the community:</p>
-<p><a class="mention" href="https://x.com/slobkebap">@slobkebap</a> presented a real time GenUI flow to build UI in realtime by talking to it using <a class="mention" href="https://x.com/OpenAIDevs">@OpenAIDevs</a>'s realtime v2 api combined with Cerebras GLM-4.7</p>
-<p><a class="mention" href="https://x.com/SpringStreetNYC">@SpringStreetNYC</a> presented his autonomous AI research lab experiment in which he tried to teach a small model to ask great questions on the level of frontier models.</p>
-<p>Hoang Minh showcased how he finds vulnerabilities in big OSS projects very fast and helps patch them.</p>
-<p>And my personal favourite demo that night: <a class="mention" href="https://x.com/leolurch">@leolurch</a>, who showed us his machine learning pipeline to find lost art pieces on auction platforms. Basically face recognition but for art, to recover potentially stolen or simply lost art from the last centuries. </p>
-<p>I had so many cool chats and am glad that so many very talented people showed up.</p>
-<p>Thank you everyone for coming!</p>
-<p>And thank you so much <a class="mention" href="https://x.com/0xSero">@0xSero</a> for sharing the event!</p></div>
-<figure class="media"><img src="/feed/media/ref-2065048498530078742-0.jpg" width="1600" height="1066" alt="Image from the post" loading="lazy"></figure>
-</div>
-<div class="src"><a href="/feed/t/2065052574101725429/">Permalink</a> · <a href="https://x.com/i/status/2065052574101725429">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-post" id="t2064984908674535826">
-<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/2064984908674535826/"><time datetime="2026-06-11T08:15:42Z">Thursday, June 11, 2026 · 10:15</time></a></div>
-<div class="stats"><span><b>4</b> likes</span> · <span><b>368</b> views</span></div>
-<div class="text"><p>Me, trying to touch the future while giving a quick demo of &quot;'Which city in Paris are you staying in?'–Can an LLM autoresearch loop teach a phone-sized small language model (SLM) to ask frontier-quality questions? Can it? Does it? Let's find out!&quot;</p></div>
-<figure class="media"><img src="/feed/media/2064984908674535826-0.jpg" width="1600" height="1066" alt="Me, trying to touch the future while giving a quick demo of &quot;'Which city in Paris are you staying in?'–Can an LLM autoresearch loop teach a phone-sized small language model (SLM) to ask frontier-quality questions? Can it? Does it? Let's find out!&quot;" loading="lazy"></figure>
-<div class="src"><a href="/feed/t/2064984908674535826/">Permalink</a> · <a href="https://x.com/i/status/2064984908674535826">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-post" id="t2064982462036410475">
-<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/2064982462036410475/"><time datetime="2026-06-11T08:05:59Z">Thursday, June 11, 2026 · 10:05</time></a></div>
-<div class="stats"><span><b>2</b> replies</span> · <span><b>2</b> likes</span> · <span><b>721</b> views</span> · <span><b>1</b> bookmark</span></div>
-<div class="text"><p>Hey <a class="mention" href="https://x.com/LumaHQ">@LumaHQ</a>! You app is absolutely fantastic. In only three weeks, I've been to five top-notch events meeting new, totally cool people.</p>
-<p>But now that you've solved meeting new people for (thank you), I have a NEW problem:</p>
-<p>As the events start to wrap up, we often want to stay in touch. Cool! Yay!</p>
-<p>Now, to &quot;connect-connect&quot;, the norm is to use LinkedIn. So, now I've to go back to (<em>shudder</em>) LinkedIn as well. You know, that place. And it's super-duper awkward: their app has a QR-code contact scan thing that gets more embarrassing every passing second while you're both fiddling with your phone (&quot;...oh, doesn't work, there's a glare on your screen. Oh, it's my camera?...&quot;)</p>
-<p>After yesterday's event (awesome btw.), I seriously consider printing contact cards. But then, what do I put on there? My phone? My email? My Twitter? And then?</p>
-<p>What actually HAS worked a few times: I meet them, memorize their first name, then go to Luma, check the participant list (when it's visible) for their first name, when there are multiple &quot;Davids&quot;, deduce based on first impressions which one and then try to find them online. Somehow.</p>
-<p>So, team Luma, as a huge fan: I would like to ask you to let me find and connect and stay in touch with these new peers via your app. Thank you so much :)</p></div>
-<div class="src"><a href="/feed/t/2064982462036410475/">Permalink</a> · <a href="https://x.com/i/status/2064982462036410475">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-post" id="t2064075080598983040">
-<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/2064075080598983040/"><time datetime="2026-06-08T20:00:22Z">Monday, June 8, 2026 · 22:00</time></a></div>
-<div class="stats"><span><b>30</b> views</span></div>
-<div class="text"><p><a class="mention" href="https://x.com/iGayProMax">@iGayProMax</a> Found it! She's Lost Control from Bains Douches Paris 1979 remastered complete version (free CD version out of print) by JOY DIVISION at</p></div>
-<figure class="media"><video src="/feed/media/2064075080598983040-0.mp4" poster="/feed/media/2064075080598983040-0-poster.jpg" width="802" height="720" controls preload="none" playsinline></video></figure>
-<a class="linkcard" href="https://hivmusic1.bandcamp.com/track/shes-lost-control">
-<img src="/feed/media/link-bb379a4cfe91a215.jpg" alt="" loading="lazy">
-<span class="body"><span class="site">UNKNOWN PLEASURES RECORDS</span><span class="title">She's Lost Control, by JOY DIVISION</span><span class="desc">from the album Bains Douches Paris 1979 remastered complete version (free CD version out of print)</span><span class="host">↗ hivmusic1.bandcamp.com</span></span>
-</a>
-<div class="src"><a href="/feed/t/2064075080598983040/">Permalink</a> · <a href="https://x.com/i/status/2064075080598983040">View on Twitter ↗</a></div>
-</article>
 </section>
-<nav class="pager"><a href="/feed/page/5/">‹ Newer</a><span class="n">Page 6 of 35</span><a href="/feed/page/7/">Older ›</a></nav>
+<nav class="pager"><a href="/feed/page/5/">‹ Newer</a><span class="n">Page 6 of 37</span><a href="/feed/page/7/">Older ›</a></nav>
 <aside class="months-nav">
 <div class="group">
 <h3><a href="/feed/archive/">Archive</a></h3>
 <div class="y">2026</div>
 <ul>
-<li><a href="/feed/archive/2026/10/">October</a> <span class="n">4</span></li>
-<li><a href="/feed/archive/2026/09/">September</a> <span class="n">78</span></li>
+<li><a href="/feed/archive/2026/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2026/09/">September</a> <span class="n">79</span></li>
 <li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
-<li><a href="/feed/archive/2026/07/">July</a> <span class="n">22</span></li>
-<li><a href="/feed/archive/2026/06/">June</a> <span class="n">30</span></li>
+<li><a href="/feed/archive/2026/07/">July</a> <span class="n">24</span></li>
+<li><a href="/feed/archive/2026/06/">June</a> <span class="n">31</span></li>
 <li><a href="/feed/archive/2026/05/">May</a> <span class="n">10</span></li>
-<li><a href="/feed/archive/2026/04/">April</a> <span class="n">31</span></li>
+<li><a href="/feed/archive/2026/04/">April</a> <span class="n">33</span></li>
 <li><a href="/feed/archive/2026/03/">March</a> <span class="n">34</span></li>
 <li><a href="/feed/archive/2026/02/">February</a> <span class="n">57</span></li>
 <li><a href="/feed/archive/2026/01/">January</a> <span class="n">15</span></li>
 </ul>
 <div class="y">2025</div>
 <ul>
-<li><a href="/feed/archive/2025/12/">December</a> <span class="n">28</span></li>
-<li><a href="/feed/archive/2025/11/">November</a> <span class="n">125</span></li>
+<li><a href="/feed/archive/2025/12/">December</a> <span class="n">29</span></li>
+<li><a href="/feed/archive/2025/11/">November</a> <span class="n">126</span></li>
 <li><a href="/feed/archive/2025/10/">October</a> <span class="n">7</span></li>
 <li><a href="/feed/archive/2025/09/">September</a> <span class="n">5</span></li>
 <li><a href="/feed/archive/2025/08/">August</a> <span class="n">7</span></li>
@@ -436,33 +1089,41 @@ The loop talks to any OpenAI-compatible endpoint, so the proposing model can run
 <ul>
 <li><a href="/feed/archive/2023/11/">November</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2023/10/">October</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2023/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/09/">September</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2023/08/">August</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2023/07/">July</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2023/06/">June</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2023/05/">May</a> <span class="n">7</span></li>
-<li><a href="/feed/archive/2023/04/">April</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2023/03/">March</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/06/">June</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2023/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2023/04/">April</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/03/">March</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/02/">February</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2022</div>
 <ul>
+<li><a href="/feed/archive/2022/11/">November</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2022/10/">October</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2022/09/">September</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2022/07/">July</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2022/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/07/">July</a> <span class="n">6</span></li>
 <li><a href="/feed/archive/2022/04/">April</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2022/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2021</div>
 <ul>
-<li><a href="/feed/archive/2021/11/">November</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/11/">November</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2021/09/">September</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2021/02/">February</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2021/01/">January</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2021/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/02/">February</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2021/01/">January</a> <span class="n">8</span></li>
 </ul>
 <div class="y">2020</div>
 <ul>
-<li><a href="/feed/archive/2020/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2020/12/">December</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2020/11/">November</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2020/09/">September</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2020/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/08/">August</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2020/07/">July</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2020/06/">June</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2020/05/">May</a> <span class="n">1</span></li>
@@ -492,20 +1153,26 @@ The loop talks to any OpenAI-compatible endpoint, so the proposing model can run
 <ul>
 <li><a href="/feed/archive/2017/12/">December</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2017/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2017/09/">September</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2017/06/">June</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2017/05/">May</a> <span class="n">7</span></li>
-<li><a href="/feed/archive/2017/04/">April</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2017/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2017/04/">April</a> <span class="n">7</span></li>
 <li><a href="/feed/archive/2017/01/">January</a> <span class="n">2</span></li>
 </ul>
 <div class="y">2016</div>
 <ul>
 <li><a href="/feed/archive/2016/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2016/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2016/02/">February</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2016/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2015</div>
 <ul>
+<li><a href="/feed/archive/2015/10/">October</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2015/06/">June</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2015/05/">May</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/03/">March</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/02/">February</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2015/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2014</div>
@@ -520,11 +1187,21 @@ The loop talks to any OpenAI-compatible endpoint, so the proposing model can run
 <li><a href="/feed/archive/2014/05/">May</a> <span class="n">12</span></li>
 <li><a href="/feed/archive/2014/04/">April</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2014/03/">March</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2014/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2013</div>
+<ul>
+<li><a href="/feed/archive/2013/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2013/05/">May</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2012</div>
+<ul>
+<li><a href="/feed/archive/2012/01/">January</a> <span class="n">1</span></li>
 </ul>
 </div>
 </aside>
 <footer class="site">
-<p>© 2014–2026 Alexis Rondeau. All rights reserved.</p>
+<p>© 2012–2026 Alexis Rondeau. All rights reserved.</p>
 <p>This is my personal site. Everything here — dispatches, notes, opinions — is my own and does not represent any employer, client or organisation I'm affiliated with.</p>
 <p><a href="/">Home</a> · <a href="/about/">About</a> · <a href="/feed/">Newsfeed</a> · <a href="/feed/archive/">Archive</a> · <a href="/feed/feed.xml">Atom</a> · <a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a> · <a rel="me" href="https://github.com/akaalias">GitHub</a> · <a rel="me" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a></p>
 </footer>

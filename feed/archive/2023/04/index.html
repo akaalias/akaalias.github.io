@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>April 2023 — Alexis Rondeau</title>
-<meta name="description" content="Alexis Rondeau's dispatches from April 2023: 3 dispatches.">
+<meta name="description" content="Alexis Rondeau's dispatches from April 2023: 5 dispatches.">
 <link rel="canonical" href="https://alexisrondeau.me/feed/archive/2023/04/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Alexis Rondeau">
 <meta property="og:title" content="April 2023">
-<meta property="og:description" content="Alexis Rondeau's dispatches from April 2023: 3 dispatches.">
+<meta property="og:description" content="Alexis Rondeau's dispatches from April 2023: 5 dispatches.">
 <meta property="og:url" content="https://alexisrondeau.me/feed/archive/2023/04/">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@SpringStreetNYC">
@@ -29,10 +29,46 @@
 <header class="hero">
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1><a href="/feed/archive/">Archive</a></h1>
-<p class="sub">April 2023 · 3 dispatches</p>
+<p class="sub">April 2023 · 5 dispatches</p>
 </header>
 <div class="wrap">
 <section class="feed">
+<article class="item kind-repo" id="g-langchaininabox">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/langchaininabox/"><time datetime="2023-04-30T10:36:52Z">Sunday, April 30, 2023 · 12:36</time></a></div>
+<h2 class="note-title"><a href="/code/langchaininabox/">LangChainInABox</a></h2>
+<p class="repo-desc">A native macOS app for playing with LangChain that ships with a self-contained, embedded, Apple-notarisable Python 3.11 and up-to-date LangChain libraries</p>
+<div class="stats"><span><b>2</b> stars</span> · <span>Python</span></div>
+<div class="text note-body repo-readme clamped">
+<p><img src="/code/media/gh-634501875-c7ab8c9e7cdad74c.png" alt="v1.1" loading="lazy"></p>
+<p>Hi there, <a href="https://alexisrondeau.me">Alexis</a> here!</p>
+<p>I love <a href="https://jamgpt.app">making</a> 👏🏻 <a href="https://unblah.me/">things</a> 👏🏻 <a href="https://getpudding.app/">that</a> 👏🏻 <a href="https://getstreamline.app/">do</a> 👏🏻 <a href="https://alexisrondeau.me/algorand-ballet/">things</a> 👏🏻.</p>
+<p>This project is a ‘batteries-included’ macOS UI for LangChain. It ships with a self-contained, embedded, Apple-notarisable Python 3.11 and LangChain libraries. It also includes documentation on how to update langchain dependencies over time.</p>
+<p>Why? Access to LangChain should be easy for those who want to change the world.</p>
+<p>I saw my girlfriend fully embrace GPT-4 via <a href="https://jamgpt.app">an app</a> I built for her. Even though it’s “just a UI to GPT-4”, it comes batteries-included. This allowed her to fully focus only on her projects and not the technology.</p>
+<p>The hard, and tedious, part - like installing brew, getting the right Python version, creating the right venv, updating langchain, choosing and learning an IDE - should not a barrier to entry for her.</p>
+<h2>UI Evolution</h2>
+<p>Here you can see the small user-facing increments.</p>
+<h3>The first (working) UI!</h3>
+<p><img src="/code/media/gh-634501875-c7ab8c9e7cdad74c.png" alt="v1.1" loading="lazy"></p>
+<h3>Got LangChain wired up!</h3>
+<p><img src="/code/media/gh-634501875-90cbb758f2bc3516.png" alt="First Success" loading="lazy"></p>
+<h2>Development Notes</h2>
+<p>To build with XCode, please create APIConfig.xcconfig under $ROOT/EmbeddedPythonSpike/Backend with this content</p>
+<pre><code class="language-bash">$ cd $PROJECT_ROOT
+$ touch ./EmbeddedPythonSpike/Backend/APIConfig.xcconfig
+$ echo &quot;OPENAI_API_KEY = your-api-key&quot; &gt; ./EmbeddedPythonSpike/Backend/APIConfig.xcconfig
+</code></pre>
+<h3>How to update LangChain and its dependencies</h3>
+<p>See <a href="https://github.com/akaalias/LangChainInABox/blob/main/python-langchain/README.md">the documentation</a> for details (Not shown in XCode, use Terminal)</p>
+<h2>Distributing the App</h2>
+<p>This project is based on <a href="https://github.com/akaalias/EmbeddedPythonAppTemplate">my template for embedding Python in a signed macOS app</a>, which itself stands on the shoulders of these giants: <a href="https://medium.com/swift2go/embedding-python-interpreter-inside-a-macos-app-and-publish-to-app-store-successfully-309be9fb96a5">Eldar Eliav</a>, <a href="https://medium.com/@eddieespinal">Eddie Espinal</a>, and <a href="https://butternut-ray-869.notion.site/Embedding-Python-in-a-Swift-App-Using-Xcode-Apple-Silicon-and-Intel-59f5a3c832914a96990dfcc0e610c720">this person</a></p>
+<p>So far, I’ve successfully uploaded and got the bundle signed with my Developer ID.</p>
+<p><img src="/code/media/gh-634501875-3e3c0dc3453eb970.png" alt="Notarized with Developer ID" loading="lazy">
+<img src="/code/media/gh-634501875-755aa3f7ebceec01.png" alt="Upload and Sign" loading="lazy"></p>
+</div>
+<div class="more"><a href="/code/langchaininabox/">Read the whole README ›</a></div>
+<div class="src"><a href="/code/langchaininabox/">Permalink</a> · <a href="https://github.com/akaalias/LangChainInABox">View on GitHub ↗</a></div>
+</article>
 <article class="item kind-repost" id="t1651166109184262145">
 <div class="meta"><span class="kind">Repost</span><a class="when" href="/feed/t/1651166109184262145/"><time datetime="2023-04-26T10:07:32Z">Wednesday, April 26, 2023 · 12:07</time></a></div>
 <div class="stats"><span><b>1.1K</b> reposts</span></div>
@@ -67,6 +103,48 @@
 <div class="text"><p><a class="mention" href="https://x.com/kepano">@kepano</a> <a class="mention" href="https://x.com/obsdmd">@obsdmd</a> <a class="mention" href="https://x.com/upcycledwords">@upcycledwords</a> Nice one! I wound up building a stream-of-consciousness app for my Obsidian (<a href="https://getstreamline.app/">getstreamline.app</a>)  because my version of a plugin still distracted me. Will try yours!</p></div>
 <div class="src"><a href="/feed/t/1649006576286457865/">Permalink</a> · <a href="https://x.com/i/status/1649006576286457865">View on Twitter ↗</a></div>
 </article>
+<article class="item kind-repo" id="g-embeddedpythonapptemplate">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/embeddedpythonapptemplate/"><time datetime="2023-04-20T09:52:31Z">Thursday, April 20, 2023 · 11:52</time></a></div>
+<h2 class="note-title"><a href="/code/embeddedpythonapptemplate/">EmbeddedPythonAppTemplate</a></h2>
+<p class="repo-desc">A personal template project for a Apple-notarizable macOS app</p>
+<div class="stats"><span><b>1</b> fork</span> · <span>Python</span></div>
+<div class="text note-body repo-readme clamped">
+<h2>Template for embedding Python in a signed macOS app</h2>
+<ul>
+<li>Started here <a href="https://medium.com/swift2go/embedding-python-interpreter-inside-a-macos-app-and-publish-to-app-store-successfully-309be9fb96a5">https://medium.com/swift2go/embedding-python-interpreter-inside-a-macos-app-and-publish-to-app-store-successfully-309be9fb96a5</a></li>
+<li>Didn’t understand the run script part</li>
+<li>Found this comment: <a href="https://medium.com/@eddieespinal/great-tutorial-eldar-thank-you-for-sharing-it-a8206d657e3a">https://medium.com/@eddieespinal/great-tutorial-eldar-thank-you-for-sharing-it-a8206d657e3a</a> that recommended this signing code:</li>
+</ul>
+<pre><code class="language-bash">set -e
+
+echo &quot;Signing contents of $CODESIGNING_FOLDER_PATH/Contents/Resources/python-stdlib/lib-dynload as $EXPANDED_CODE_SIGN_IDENTITY_NAME ($EXPANDED_CODE_SIGN_IDENTITY)&quot;
+
+cd &quot;$CODESIGNING_FOLDER_PATH/Contents/Resources/python-stdlib/lib-dynload&quot;
+
+/usr/bin/codesign --force --sign &quot;$EXPANDED_CODE_SIGN_IDENTITY&quot; --options runtime --timestamp=none --preserve-metadata=identifier,entitlements,flags --generate-entitlement-der *.so
+</code></pre>
+<ul>
+<li>Then found this post <a href="https://butternut-ray-869.notion.site/Embedding-Python-in-a-Swift-App-Using-Xcode-Apple-Silicon-and-Intel-59f5a3c832914a96990dfcc0e610c720">https://butternut-ray-869.notion.site/Embedding-Python-in-a-Swift-App-Using-Xcode-Apple-Silicon-and-Intel-59f5a3c832914a96990dfcc0e610c720</a> which ultimately (except the signing script part) worked</li>
+</ul>
+<h2>Successful Test Output</h2>
+<pre><code class="language-log">Python Version: 3.11
+Python Encoding: UTF-8
+Python Path: ['/Users/$HOME/Library/Developer/Xcode/DerivedData/EmbeddedPythonSpike-ehqmlmwnoppyokdrvctjjjowcsrq/Build/Products/Debug/EmbeddedPythonSpike.app/Contents/Resources/python-stdlib', '/Users/$HOME/Library/Developer/Xcode/DerivedData/EmbeddedPythonSpike-ehqmlmwnoppyokdrvctjjjowcsrq/Build/Products/Debug/EmbeddedPythonSpike.app/Contents/Resources/python-stdlib/lib-dynload', '/Users/$HOME/Library/Developer/Xcode/DerivedData/EmbeddedPythonSpike-ehqmlmwnoppyokdrvctjjjowcsrq/Build/Products/Debug/EmbeddedPythonSpike.app/Contents/Resources/python-stdlib/lib/python311.zip', '/Users/$HOME/Library/Developer/Xcode/DerivedData/EmbeddedPythonSpike-ehqmlmwnoppyokdrvctjjjowcsrq/Build/Products/Debug/EmbeddedPythonSpike.app/Contents/Resources/python-stdlib/lib/python3.11', '/Users/$HOME/Library/Developer/Xcode/DerivedData/EmbeddedPythonSpike-ehqmlmwnoppyokdrvctjjjowcsrq/Build/Products/Debug/EmbeddedPythonSpike.app/Contents/Resources/python-stdlib/lib/python3.11/lib-dynload']
+</code></pre>
+<h2>Archiving and Notarization</h2>
+<ul>
+<li>Product &gt; Archive &gt; Distribute App &gt; ‘Distribute as developer’</li>
+<li>Signing files (takes about a minute)</li>
+<li>Upload to Apple</li>
+<li>Waiting…</li>
+<li>Ready to distribute!</li>
+</ul>
+<p><img src="/code/media/gh-630401322-dff0a6ceb740966b.png" alt="Upload" loading="lazy"></p>
+<p><img src="/code/media/gh-630401322-6b800868f4332a21.png" alt="Ready" loading="lazy"></p>
+</div>
+<div class="more"><a href="/code/embeddedpythonapptemplate/">Read the whole README ›</a></div>
+<div class="src"><a href="/code/embeddedpythonapptemplate/">Permalink</a> · <a href="https://github.com/akaalias/EmbeddedPythonAppTemplate">View on GitHub ↗</a></div>
+</article>
 </section>
 <nav class="pager"><a href="/feed/archive/2023/05/">‹ May 2023</a><a class="n" href="/feed/archive/">All months</a><a href="/feed/archive/2023/03/">March 2023 ›</a></nav>
 <aside class="months-nav">
@@ -74,21 +152,21 @@
 <h3><a href="/feed/archive/">Archive</a></h3>
 <div class="y">2026</div>
 <ul>
-<li><a href="/feed/archive/2026/10/">October</a> <span class="n">4</span></li>
-<li><a href="/feed/archive/2026/09/">September</a> <span class="n">78</span></li>
+<li><a href="/feed/archive/2026/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2026/09/">September</a> <span class="n">79</span></li>
 <li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
-<li><a href="/feed/archive/2026/07/">July</a> <span class="n">22</span></li>
-<li><a href="/feed/archive/2026/06/">June</a> <span class="n">30</span></li>
+<li><a href="/feed/archive/2026/07/">July</a> <span class="n">24</span></li>
+<li><a href="/feed/archive/2026/06/">June</a> <span class="n">31</span></li>
 <li><a href="/feed/archive/2026/05/">May</a> <span class="n">10</span></li>
-<li><a href="/feed/archive/2026/04/">April</a> <span class="n">31</span></li>
+<li><a href="/feed/archive/2026/04/">April</a> <span class="n">33</span></li>
 <li><a href="/feed/archive/2026/03/">March</a> <span class="n">34</span></li>
 <li><a href="/feed/archive/2026/02/">February</a> <span class="n">57</span></li>
 <li><a href="/feed/archive/2026/01/">January</a> <span class="n">15</span></li>
 </ul>
 <div class="y">2025</div>
 <ul>
-<li><a href="/feed/archive/2025/12/">December</a> <span class="n">28</span></li>
-<li><a href="/feed/archive/2025/11/">November</a> <span class="n">125</span></li>
+<li><a href="/feed/archive/2025/12/">December</a> <span class="n">29</span></li>
+<li><a href="/feed/archive/2025/11/">November</a> <span class="n">126</span></li>
 <li><a href="/feed/archive/2025/10/">October</a> <span class="n">7</span></li>
 <li><a href="/feed/archive/2025/09/">September</a> <span class="n">5</span></li>
 <li><a href="/feed/archive/2025/08/">August</a> <span class="n">7</span></li>
@@ -116,33 +194,41 @@
 <ul>
 <li><a href="/feed/archive/2023/11/">November</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2023/10/">October</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2023/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/09/">September</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2023/08/">August</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2023/07/">July</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2023/06/">June</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2023/05/">May</a> <span class="n">7</span></li>
-<li class="here"><a href="/feed/archive/2023/04/">April</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2023/03/">March</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/06/">June</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2023/05/">May</a> <span class="n">9</span></li>
+<li class="here"><a href="/feed/archive/2023/04/">April</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/03/">March</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/02/">February</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2022</div>
 <ul>
+<li><a href="/feed/archive/2022/11/">November</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2022/10/">October</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2022/09/">September</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2022/07/">July</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2022/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/07/">July</a> <span class="n">6</span></li>
 <li><a href="/feed/archive/2022/04/">April</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2022/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2021</div>
 <ul>
-<li><a href="/feed/archive/2021/11/">November</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/11/">November</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2021/09/">September</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2021/02/">February</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2021/01/">January</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2021/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/02/">February</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2021/01/">January</a> <span class="n">8</span></li>
 </ul>
 <div class="y">2020</div>
 <ul>
-<li><a href="/feed/archive/2020/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2020/12/">December</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2020/11/">November</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2020/09/">September</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2020/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/08/">August</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2020/07/">July</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2020/06/">June</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2020/05/">May</a> <span class="n">1</span></li>
@@ -172,20 +258,26 @@
 <ul>
 <li><a href="/feed/archive/2017/12/">December</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2017/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2017/09/">September</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2017/06/">June</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2017/05/">May</a> <span class="n">7</span></li>
-<li><a href="/feed/archive/2017/04/">April</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2017/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2017/04/">April</a> <span class="n">7</span></li>
 <li><a href="/feed/archive/2017/01/">January</a> <span class="n">2</span></li>
 </ul>
 <div class="y">2016</div>
 <ul>
 <li><a href="/feed/archive/2016/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2016/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2016/02/">February</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2016/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2015</div>
 <ul>
+<li><a href="/feed/archive/2015/10/">October</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2015/06/">June</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2015/05/">May</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/03/">March</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/02/">February</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2015/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2014</div>
@@ -200,11 +292,21 @@
 <li><a href="/feed/archive/2014/05/">May</a> <span class="n">12</span></li>
 <li><a href="/feed/archive/2014/04/">April</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2014/03/">March</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2014/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2013</div>
+<ul>
+<li><a href="/feed/archive/2013/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2013/05/">May</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2012</div>
+<ul>
+<li><a href="/feed/archive/2012/01/">January</a> <span class="n">1</span></li>
 </ul>
 </div>
 </aside>
 <footer class="site">
-<p>© 2014–2026 Alexis Rondeau. All rights reserved.</p>
+<p>© 2012–2026 Alexis Rondeau. All rights reserved.</p>
 <p>This is my personal site. Everything here — dispatches, notes, opinions — is my own and does not represent any employer, client or organisation I'm affiliated with.</p>
 <p><a href="/">Home</a> · <a href="/about/">About</a> · <a href="/feed/">Newsfeed</a> · <a href="/feed/archive/">Archive</a> · <a href="/feed/feed.xml">Atom</a> · <a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a> · <a rel="me" href="https://github.com/akaalias">GitHub</a> · <a rel="me" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a></p>
 </footer>

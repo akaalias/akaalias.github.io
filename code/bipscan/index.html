@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>bipscan — Alexis Rondeau</title>
+<meta name="description" content="bipscan, an open-source repository by Alexis Rondeau.">
+<link rel="canonical" href="https://alexisrondeau.me/code/bipscan/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alexis Rondeau">
+<meta property="og:title" content="bipscan">
+<meta property="og:description" content="bipscan, an open-source repository by Alexis Rondeau.">
+<meta property="og:url" content="https://alexisrondeau.me/code/bipscan/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@SpringStreetNYC">
+<meta name="twitter:creator" content="@SpringStreetNYC">
+<meta property="og:image" content="https://alexisrondeau.me/notes/media/alexis-rondeau.jpg">
+<meta property="og:image:alt" content="bipscan">
+<meta name="twitter:image" content="https://alexisrondeau.me/notes/media/alexis-rondeau.jpg">
+<link rel="alternate" type="application/atom+xml" title="Alexis Rondeau — Newsfeed" href="https://alexisrondeau.me/feed/feed.xml">
+<link rel="stylesheet" href="/tufte.css">
+<link rel="stylesheet" href="/feed/feed.css">
+<meta property="article:published_time" content="2025-12-10T11:02:45Z">
+<meta property="article:modified_time" content="2026-06-16T08:30:17Z">
+<meta property="article:author" content="Alexis Rondeau">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","author":{"@id":"https://alexisrondeau.me/#person","@type":"Person","name":"Alexis Rondeau","sameAs":["https://x.com/SpringStreetNYC","https://github.com/akaalias","https://www.linkedin.com/in/alexis-rondeau-2099nyc/","https://www.youtube.com/@axsrondeau"],"url":"https://alexisrondeau.me/"},"codeRepository":"https://github.com/akaalias/bipscan","dateCreated":"2025-12-10T11:02:45Z","dateModified":"2026-06-16T08:30:17Z","datePublished":"2025-12-10T11:02:45Z","description":"bipscan, an open-source repository by Alexis Rondeau.","mainEntityOfPage":"https://alexisrondeau.me/code/bipscan/","name":"bipscan","programmingLanguage":"Ruby","url":"https://alexisrondeau.me/code/bipscan/"}</script>
+
+</head>
+<body>
+<nav class="topnav"><a href="/">Home</a><a href="/about/">About</a><a href="/feed/">Newsfeed</a><a href="/feed/archive/">Archive</a><a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a><a rel="me" href="https://github.com/akaalias">GitHub</a><a rel="me" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a></nav>
+<header class="hero">
+<div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
+<h1><a href="/feed/">Newsfeed</a></h1>
+<p class="sub">Repository · Wednesday, December 10, 2025 · 12:02</p>
+</header>
+<div class="wrap">
+<section class="feed single">
+<article class="item kind-repo" id="g-bipscan">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/bipscan/"><time datetime="2025-12-10T11:02:45Z">Wednesday, December 10, 2025 · 12:02</time></a></div>
+<h2 class="note-title"><a href="/code/bipscan/">bipscan</a></h2>
+<div class="stats"><span><b>2</b> stars</span> · <span>Ruby</span></div>
+<div class="text note-body repo-readme">
+<h1>BIP-39 Seed Phrase Finder</h1>
+<p>Find BIP-39 seed phrase sequences hidden in classic literature and generate seeds from common patterns.</p>
+<h2>Project Structure</h2>
+<pre><code>bip39/
+├── README.md
+├── Gemfile
+│
+├── src/                        # All source code
+│   ├── ruby/
+│   │   ├── generators/         # Seed generators
+│   │   │   ├── generate_paragraph_seeds.rb      # Text-based seeds
+│   │   │   ├── generate_birthday_seeds.rb       # Birthday index patterns
+│   │   │   ├── generate_birthday_hash_seeds.rb  # SHA256(date) seeds
+│   │   │   ├── generate_password_seeds.rb       # Common password seeds
+│   │   │   ├── generate_rockyou_seeds.rb        # Rockyou wordlist seeds
+│   │   │   ├── generate_character_sequences.rb  # Pattern-based seeds
+│   │   │   ├── find_sequences.rb                # Find sequences in texts
+│   │   │   ├── find_sequences_texts.rb          # Wrapper for texts/
+│   │   │   ├── find_sequences_pg19.rb           # Wrapper for pg19/
+│   │   │   └── check_seeds_etherscan.rb         # Etherscan API checker
+│   │   └── lib/                # Shared modules
+│   │       ├── bip39_common.rb
+│   │       ├── seed_utils.rb
+│   │       ├── sequence_utils.rb
+│   │       └── sequence_generators/   # Pattern generator modules
+│   │           ├── base.rb
+│   │           ├── character_based.rb
+│   │           ├── constructed_constants.rb
+│   │           ├── cultural.rb
+│   │           ├── deeper_constants.rb
+│   │           ├── famous_random.rb
+│   │           ├── math_based.rb
+│   │           ├── mathematical_constants.rb
+│   │           ├── memorable_patterns.rb
+│   │           ├── misc.rb
+│   │           ├── name_based.rb
+│   │           ├── name_crypto.rb
+│   │           ├── pattern_based.rb
+│   │           ├── physics_constants.rb
+│   │           ├── pin_patterns.rb
+│   │           ├── prime_patterns.rb
+│   │           ├── report.rb
+│   │           ├── visual_spatial.rb
+│   │           └── weak_known.rb
+│   │
+│   ├── c/                      # High-performance C implementation
+│   │   ├── check_seeds_manager.c      # TUI manager for checking
+│   │   ├── check_seeds_worker_btc.c   # ETH+BTC address checker
+│   │   ├── check_seeds_worker.c       # ETH-only address checker
+│   │   ├── check_seeds_gpu.c          # GPU-accelerated checker
+│   │   ├── generate_paragraph_seeds.c # Fast paragraph seed generator
+│   │   ├── find_sequences_worker.c    # Fast sequence finder
+│   │   ├── base58.c / base58.h        # Base58 encoding for BTC
+│   │   ├── bech32.c / bech32.h        # Bech32 encoding for SegWit
+│   │   ├── keccak256.h                # Keccak hash for ETH
+│   │   ├── ripemd160_neon.h           # RIPEMD160 with NEON optimization
+│   │   ├── uthash.h                   # Hash table library
+│   │   ├── Makefile
+│   │   └── metal/                     # Apple Metal GPU shaders
+│   │       ├── metal_pbkdf2.h
+│   │       ├── metal_pbkdf2.m
+│   │       └── pbkdf2_sha512.metal
+│   │
+│   ├── scripts/                # Download utilities
+│   │   ├── download_data.sh
+│   │   ├── download_texts.sh
+│   │   └── download_pg19.sh
+│   │
+│   ├── assets/                 # Report styling
+│   │   └── pdf-style.css
+│   │
+│   └── test/                   # Test scripts
+│       └── test_paragraph_seeds.sh
+│
+├── data/                       # Reference data (downloaded)
+│   ├── bip39.txt               # BIP-39 wordlist (2048 words)
+│   ├── eth_rich_addresses.txt  # ETH addresses to check
+│   ├── btc_rich_addresses.txt  # BTC addresses to check
+│   ├── metadata.csv            # Book metadata
+│   └── wordlists/              # Password wordlists
+│       └── rockyou.txt
+│
+├── docs/                       # Documentation
+│   ├── BOOTSTRAPPING.md
+│   ├── HISTORY.md
+│   ├── PERFORMANCE.md
+│   ├── RESEARCH.md
+│   ├── STRATEGIES.md
+│   └── SUMMARY.md
+│
+├── inputs/                     # Text corpora (downloaded, gitignored)
+│   ├── texts/                  # Curated texts (~150 books)
+│   └── pg19/                   # Project Gutenberg (~28K books)
+│       └── batch_01..10/       # Split into 10 batches
+│
+├── output/                     # Generated files (gitignored)
+│   └── seeds/                  # Generated seed phrases
+│
+└── reports/                    # Generated reports
+</code></pre>
+<h2>Quick Start</h2>
+<h3>1. Bootstrap Data</h3>
+<p>Download the essential data files (BIP-39 wordlist, address lists):</p>
+<pre><code class="language-bash">./src/scripts/download_data.sh
+</code></pre>
+<h3>2. Download Text Corpora</h3>
+<pre><code class="language-bash"># Curated texts (~150 classic books)
+./src/scripts/download_texts.sh
+
+# Or full PG19 corpus (~28K books, ~12GB)
+./src/scripts/download_pg19.sh
+</code></pre>
+<h3>3. Build C Workers</h3>
+<pre><code class="language-bash">cd src/c &amp;&amp; make btc manager paragraph
+</code></pre>
+<h2>Generate Seeds</h2>
+<h3>Paragraph-Based Seeds (from texts)</h3>
+<p>Extract BIP-39 words from paragraph starting points in literature:</p>
+<pre><code class="language-bash"># Generate 24-word seeds from curated texts (default)
+ruby src/ruby/generators/generate_paragraph_seeds.rb texts
+
+# Generate 12-word seeds
+ruby src/ruby/generators/generate_paragraph_seeds.rb texts --words=12
+
+# From PG19 corpus (split into 10 batches of ~2800 books each)
+ruby src/ruby/generators/generate_paragraph_seeds.rb pg19/batch_01 --words=24
+ruby src/ruby/generators/generate_paragraph_seeds.rb pg19/batch_02 --words=12
+# ... through batch_10
+</code></pre>
+<h3>Birthday-Based Seeds</h3>
+<p>Generate seeds using birthday date components as word indices:</p>
+<pre><code class="language-bash"># 24-word seeds (default)
+ruby src/ruby/generators/generate_birthday_seeds.rb
+
+# 12-word seeds
+ruby src/ruby/generators/generate_birthday_seeds.rb --words=12
+</code></pre>
+<p>Generates seeds for years 1960-2000 using:</p>
+<ul>
+<li>Multiple date formats (US, EU, ISO)</li>
+<li>Full year and short year variants</li>
+<li>Absolute indexing and walk-through modes</li>
+</ul>
+<h3>Birthday Hash Seeds</h3>
+<p>SHA256(date_string) derivation for all date formats:</p>
+<pre><code class="language-bash">ruby src/ruby/generators/generate_birthday_hash_seeds.rb --words=12
+ruby src/ruby/generators/generate_birthday_hash_seeds.rb --words=24
+</code></pre>
+<h3>Password-Based Seeds</h3>
+<p>Generate seeds from common passwords using SHA256 derivation:</p>
+<pre><code class="language-bash">ruby src/ruby/generators/generate_password_seeds.rb --words=12
+ruby src/ruby/generators/generate_password_seeds.rb --words=24
+</code></pre>
+<h3>Rockyou Wordlist Seeds</h3>
+<p>Generate seeds from the full rockyou.txt password list:</p>
+<pre><code class="language-bash"># First download rockyou.txt to data/wordlists/
+ruby src/ruby/generators/generate_rockyou_seeds.rb --words=24
+</code></pre>
+<h3>Character Sequence Seeds</h3>
+<p>Generate seeds using mathematical and linguistic patterns:</p>
+<pre><code class="language-bash">ruby src/ruby/generators/generate_character_sequences.rb
+</code></pre>
+<p>Methods include:</p>
+<ul>
+<li>Character-based (a-z groupings, reverse order, alternating)</li>
+<li>Mathematical (Fibonacci, primes, golden ratio, triangular numbers)</li>
+<li>Pattern-based (word length, skip patterns, phonetic)</li>
+<li>Cultural (keyboard layouts, musical scales, chess notation)</li>
+</ul>
+<h2>Regenerate All Seeds</h2>
+<pre><code class="language-bash">mkdir -p output/seeds
+
+ruby src/ruby/generators/generate_paragraph_seeds.rb texts --words=12
+ruby src/ruby/generators/generate_paragraph_seeds.rb texts --words=24
+ruby src/ruby/generators/generate_birthday_seeds.rb --words=12
+ruby src/ruby/generators/generate_birthday_seeds.rb --words=24
+ruby src/ruby/generators/generate_birthday_hash_seeds.rb --words=12
+ruby src/ruby/generators/generate_birthday_hash_seeds.rb --words=24
+ruby src/ruby/generators/generate_password_seeds.rb --words=12
+ruby src/ruby/generators/generate_password_seeds.rb --words=24
+ruby src/ruby/generators/generate_character_sequences.rb --words=12
+ruby src/ruby/generators/generate_character_sequences.rb --words=24
+
+ruby src/ruby/generators/generate_paragraph_seeds.rb texts --words=12
+ruby src/ruby/generators/generate_paragraph_seeds.rb texts --words=24
+
+ruby src/ruby/generators/generate_paragraph_seeds.rb pg19/batch_01 --words=12
+ruby src/ruby/generators/generate_paragraph_seeds.rb pg19/batch_01 --words=24
+ruby src/ruby/generators/generate_paragraph_seeds.rb pg19/batch_02 --words=12
+ruby src/ruby/generators/generate_paragraph_seeds.rb pg19/batch_02 --words=24
+
+</code></pre>
+<h2>Check Seed Phrases</h2>
+<p>Use the C-based parallel manager with live TUI:</p>
+<pre><code class="language-bash">./src/c/check_seeds_manager output/seeds/my_seeds.txt [workers]
+</code></pre>
+<p><strong>Example UI:</strong></p>
+<pre><code>╔══════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                              SEED CHECKER MANAGER - PARALLEL TUI                                 ║
+╠══════════════════════════════════════════════════════════════════════════════════════════════════╣
+║  File: my_seeds.txt                                                                              ║
+║  Seeds: 75   Skipped: 25   Workers: 8   Hits: 0                                                  ║
+║  Done:  10   Speed: 2.5/s   Elapsed: 4s   ETA: 26s                                               ║
+╠══════════════════════════════════════════════════════════════════════════════════════════════════╣
+║  OVERALL: [######################------------------------------] 40%  (10/25)                    ║
+╠══════════════════════════════════════════════════════════════════════════════════════════════════╣
+║  Worker  1 ● [##############################] deriving  85%      abandon ability able...         ║
+║  Worker  2 ● [######################--------] checking 53000 addr  abuse access accident...      ║
+╚══════════════════════════════════════════════════════════════════════════════════════════════════╝
+</code></pre>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Splits work across all CPU cores (configurable)</li>
+<li>Live progress display for each worker</li>
+<li>Shows derivation and checking phases</li>
+<li><strong>Resume support</strong>: Progress is saved automatically</li>
+<li><strong>Skip duplicates</strong>: Already-processed seeds are automatically skipped</li>
+<li>Graceful Ctrl+C handling with progress persistence</li>
+</ul>
+<h3>Etherscan API Check</h3>
+<p>Check actual on-chain balances:</p>
+<pre><code class="language-bash">ruby src/ruby/generators/check_seeds_etherscan.rb output/seeds/my_seeds.txt YOUR_ETHERSCAN_API_KEY
+</code></pre>
+<p>Get an API key: <a href="https://etherscan.io/apis">https://etherscan.io/apis</a> (free tier: 100K requests/day)</p>
+<h2>Output Files</h2>
+<p>All generators support <code>--words=12</code> or <code>--words=24</code> and include a marker in the filename:</p>
+<ul>
+<li><code>texts-paragraph-12w-seeds-YYYYMMDD-HHMMSS.txt</code> (12-word)</li>
+<li><code>texts-paragraph-24w-seeds-YYYYMMDD-HHMMSS.txt</code> (24-word)</li>
+<li><code>birthday-absolute-full-year-us-12w-YYYYMMDD-HHMMSS.txt</code></li>
+<li>etc.</li>
+</ul>
+<h2>Derivation Paths Covered</h2>
+<p>The seed checkers derive addresses from 14 different wallet formats:</p>
+<table>
+<thead><tr><th>Name</th><th>Path</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>BIP-44 Standard</td><td><code>m/44'/60'/0'/0/{i}</code></td><td>MetaMask, Trezor, most wallets</td></tr>
+<tr><td>BIP-44 Accounts</td><td><code>m/44'/60'/{a}'/0/{i}</code></td><td>Multiple accounts (MetaMask)</td></tr>
+<tr><td>Ledger Live</td><td><code>m/44'/60'/{a}'/0/0</code></td><td>Ledger Live (one addr per account)</td></tr>
+<tr><td>Ledger Legacy</td><td><code>m/44'/60'/0'/{i}</code></td><td>Ledger legacy, old MEW/Jaxx</td></tr>
+<tr><td>BTC Legacy</td><td><code>m/44'/0'/0'/0/{i}</code></td><td>Bitcoin P2PKH (1…)</td></tr>
+<tr><td>BTC SegWit</td><td><code>m/49'/0'/0'/0/{i}</code></td><td>Bitcoin P2SH-SegWit (3…)</td></tr>
+<tr><td>BTC Native SegWit</td><td><code>m/84'/0'/0'/0/{i}</code></td><td>Bitcoin Bech32 (bc1q…)</td></tr>
+</tbody>
+</table>
+<p>Where <code>{a}</code> = account index (0-19) and <code>{i}</code> = address index (0-499).</p>
+<p><strong>Total addresses derived per seed:</strong> ~53,000</p>
+</div>
+<div class="src"><a href="/code/bipscan/">Permalink</a> · <a href="https://github.com/akaalias/bipscan">View on GitHub ↗</a></div>
+</article>
+</section>
+<nav class="pager"><a href="/feed/">‹ Back to the newsfeed</a><a href="/feed/archive/2025/12/">December 2025 ›</a></nav>
+<aside class="months-nav">
+<div class="group">
+<h3><a href="/feed/archive/">Archive</a></h3>
+<div class="y">2026</div>
+<ul>
+<li><a href="/feed/archive/2026/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2026/09/">September</a> <span class="n">79</span></li>
+<li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
+<li><a href="/feed/archive/2026/07/">July</a> <span class="n">24</span></li>
+<li><a href="/feed/archive/2026/06/">June</a> <span class="n">31</span></li>
+<li><a href="/feed/archive/2026/05/">May</a> <span class="n">10</span></li>
+<li><a href="/feed/archive/2026/04/">April</a> <span class="n">33</span></li>
+<li><a href="/feed/archive/2026/03/">March</a> <span class="n">34</span></li>
+<li><a href="/feed/archive/2026/02/">February</a> <span class="n">57</span></li>
+<li><a href="/feed/archive/2026/01/">January</a> <span class="n">15</span></li>
+</ul>
+<div class="y">2025</div>
+<ul>
+<li><a href="/feed/archive/2025/12/">December</a> <span class="n">29</span></li>
+<li><a href="/feed/archive/2025/11/">November</a> <span class="n">126</span></li>
+<li><a href="/feed/archive/2025/10/">October</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2025/09/">September</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2025/08/">August</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2025/07/">July</a> <span class="n">23</span></li>
+<li><a href="/feed/archive/2025/06/">June</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2025/05/">May</a> <span class="n">18</span></li>
+<li><a href="/feed/archive/2025/04/">April</a> <span class="n">62</span></li>
+<li><a href="/feed/archive/2025/03/">March</a> <span class="n">22</span></li>
+<li><a href="/feed/archive/2025/02/">February</a> <span class="n">11</span></li>
+</ul>
+<div class="y">2024</div>
+<ul>
+<li><a href="/feed/archive/2024/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/11/">November</a> <span class="n">16</span></li>
+<li><a href="/feed/archive/2024/10/">October</a> <span class="n">12</span></li>
+<li><a href="/feed/archive/2024/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/05/">May</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/04/">April</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2023</div>
+<ul>
+<li><a href="/feed/archive/2023/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/10/">October</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/08/">August</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2023/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/06/">June</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2023/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2023/04/">April</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/03/">March</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/02/">February</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2022</div>
+<ul>
+<li><a href="/feed/archive/2022/11/">November</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/10/">October</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/07/">July</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2022/04/">April</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2022/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2021</div>
+<ul>
+<li><a href="/feed/archive/2021/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2021/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/02/">February</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2021/01/">January</a> <span class="n">8</span></li>
+</ul>
+<div class="y">2020</div>
+<ul>
+<li><a href="/feed/archive/2020/12/">December</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2020/11/">November</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2020/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/08/">August</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2020/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/06/">June</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2020/05/">May</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/04/">April</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/03/">March</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2019</div>
+<ul>
+<li><a href="/feed/archive/2019/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/08/">August</a> <span class="n">10</span></li>
+<li><a href="/feed/archive/2019/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/06/">June</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2019/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/01/">January</a> <span class="n">3</span></li>
+</ul>
+<div class="y">2018</div>
+<ul>
+<li><a href="/feed/archive/2018/12/">December</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2018/11/">November</a> <span class="n">15</span></li>
+<li><a href="/feed/archive/2018/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2018/09/">September</a> <span class="n">14</span></li>
+<li><a href="/feed/archive/2018/08/">August</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2018/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2018/05/">May</a> <span class="n">3</span></li>
+</ul>
+<div class="y">2017</div>
+<ul>
+<li><a href="/feed/archive/2017/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2017/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2017/04/">April</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2017/01/">January</a> <span class="n">2</span></li>
+</ul>
+<div class="y">2016</div>
+<ul>
+<li><a href="/feed/archive/2016/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2016/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2016/02/">February</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2016/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2015</div>
+<ul>
+<li><a href="/feed/archive/2015/10/">October</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2015/05/">May</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/03/">March</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/02/">February</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2015/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2014</div>
+<ul>
+<li><a href="/feed/archive/2014/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/11/">November</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2014/09/">September</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2014/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2014/05/">May</a> <span class="n">12</span></li>
+<li><a href="/feed/archive/2014/04/">April</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2014/03/">March</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2014/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2013</div>
+<ul>
+<li><a href="/feed/archive/2013/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2013/05/">May</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2012</div>
+<ul>
+<li><a href="/feed/archive/2012/01/">January</a> <span class="n">1</span></li>
+</ul>
+</div>
+</aside>
+<footer class="site">
+<p>© 2012–2026 Alexis Rondeau. All rights reserved.</p>
+<p>This is my personal site. Everything here — dispatches, notes, opinions — is my own and does not represent any employer, client or organisation I'm affiliated with.</p>
+<p><a href="/">Home</a> · <a href="/about/">About</a> · <a href="/feed/">Newsfeed</a> · <a href="/feed/archive/">Archive</a> · <a href="/feed/feed.xml">Atom</a> · <a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a> · <a rel="me" href="https://github.com/akaalias">GitHub</a> · <a rel="me" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a></p>
+</footer>
+</div>
+
+</body>
+</html>

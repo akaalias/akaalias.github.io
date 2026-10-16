@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>quasi — Alexis Rondeau</title>
+<meta name="description" content="Say it, hear it done.">
+<link rel="canonical" href="https://alexisrondeau.me/code/quasi/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alexis Rondeau">
+<meta property="og:title" content="quasi">
+<meta property="og:description" content="Say it, hear it done.">
+<meta property="og:url" content="https://alexisrondeau.me/code/quasi/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@SpringStreetNYC">
+<meta name="twitter:creator" content="@SpringStreetNYC">
+<meta property="og:image" content="https://alexisrondeau.me/code/media/gh-1405887776-card.png">
+<meta property="og:image:alt" content="quasi">
+<meta name="twitter:image" content="https://alexisrondeau.me/code/media/gh-1405887776-card.png">
+<link rel="alternate" type="application/atom+xml" title="Alexis Rondeau — Newsfeed" href="https://alexisrondeau.me/feed/feed.xml">
+<link rel="stylesheet" href="/tufte.css">
+<link rel="stylesheet" href="/feed/feed.css">
+<meta property="article:published_time" content="2026-10-05T14:24:06Z">
+<meta property="article:modified_time" content="2026-10-15T11:41:16Z">
+<meta property="article:author" content="Alexis Rondeau">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","author":{"@id":"https://alexisrondeau.me/#person","@type":"Person","name":"Alexis Rondeau","sameAs":["https://x.com/SpringStreetNYC","https://github.com/akaalias","https://www.linkedin.com/in/alexis-rondeau-2099nyc/","https://www.youtube.com/@axsrondeau"],"url":"https://alexisrondeau.me/"},"codeRepository":"https://github.com/akaalias/quasi","dateCreated":"2026-10-05T14:24:06Z","dateModified":"2026-10-15T11:41:16Z","datePublished":"2026-10-05T14:24:06Z","description":"Say it, hear it done.","image":["https://alexisrondeau.me/code/media/gh-1405887776-card.png"],"license":"https://spdx.org/licenses/GPL-3.0.html","mainEntityOfPage":"https://alexisrondeau.me/code/quasi/","name":"quasi","programmingLanguage":"Swift","sameAs":["https://alexisrondeau.me/quasi/"],"url":"https://alexisrondeau.me/code/quasi/"}</script>
+
+</head>
+<body>
+<nav class="topnav"><a href="/">Home</a><a href="/about/">About</a><a href="/feed/">Newsfeed</a><a href="/feed/archive/">Archive</a><a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a><a rel="me" href="https://github.com/akaalias">GitHub</a><a rel="me" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a></nav>
+<header class="hero">
+<div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
+<h1><a href="/feed/">Newsfeed</a></h1>
+<p class="sub">Repository · Monday, October 5, 2026 · 16:24</p>
+</header>
+<div class="wrap">
+<section class="feed single">
+<article class="item kind-repo" id="g-quasi">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/quasi/"><time datetime="2026-10-05T14:24:06Z">Monday, October 5, 2026 · 16:24</time></a></div>
+<h2 class="note-title"><a href="/code/quasi/">quasi</a></h2>
+<p class="repo-desc">Say it, hear it done.</p>
+<div class="stats"><span>Swift</span></div>
+<div class="text note-body repo-readme">
+<p><strong>Say it, hear it done.</strong> <a href="https://alexisrondeau.me/quasi/">The project’s page</a> has the sounds to
+listen to. Quasi is a small experiment in computing without a screen. You speak
+into a pocket recorder. Your phone stays in your bag, dark and locked. A few notes of wood and
+chime tell you that you were heard, understood, and that the thing you asked for is done. If you
+ever want to check, there is a logbook. Most days you won’t open it.</p>
+<p>In practice: an iPhone app and a Mac menu bar app that talk directly to a
+<a href="https://www.comulytic.com">Comulytic Note Pro</a> voice recorder over Bluetooth. No vendor app, no
+account: audio goes from the recorder to your own device, is written down by OpenAI and read by
+Claude with keys of your own, and tasks you ask for are added to Todoist. The phone has to be switched on and within Bluetooth range; it does
+not have to be looked at.</p>
+<p>This is a personal project for one recorder and one owner, not a product. It is not affiliated
+with Comulytic.</p>
+<h2>What it does</h2>
+<p>Press record on the recorder, and within a second or two:</p>
+<ul>
+<li><strong>Live view.</strong> A waveform of what the recorder hears, with a running timer.</li>
+<li><strong>Transcript.</strong> When you stop, the audio is transcribed and shown. By OpenAI’s
+<code>gpt-transcribe</code>, which follows a note from one language into another and is told which
+languages to expect; the app asks for the OpenAI key on its first launch. Without network,
+or without a key, the device transcribes in the one language chosen in the settings. Audio is
+saved as <code>.m4a</code>, the transcript as <code>.txt</code>, named by the recording’s start time.</li>
+<li><strong>Stored recordings.</strong> “Download Stored Recordings” fetches the complete copies from the
+recorder’s own storage. Nothing is ever deleted from the recorder.</li>
+<li><strong>Tasks.</strong> If you store an Anthropic API key in the app, each transcript is sent to Claude,
+which finds the tasks you asked for (“add a new task…”, “oh, add that as a task”, “three
+tasks: …”): none, one or several per note. For each it works out what you said about it: title,
+due day and time, repeats, deadline, priority, how long it takes, and the project, section and
+labels to file it under. With a Todoist token stored as well, the tasks are added to Todoist
+with the transcript in their description.</li>
+<li><strong>Messages.</strong> “Send a message to Alex that I’ll be five minutes late” sends an iMessage to
+Alex from your own number, with the phone still in your pocket. No app may send an iMessage
+itself, so Quasi texts your phone through <a href="https://linqapp.com">Linq</a> (a service with a line
+of its own) and an automation in Shortcuts, set up once by hand, sends it on. The person is
+looked up in Contacts, among the people you have chosen; if the name could mean several of
+them, or nobody, a chime asks, and your next recording is the answer. The transcript and, when
+a name does not match as written, the names of those chosen contacts go to Claude; the
+relay sees only the number and the text. Claude, Todoist and Linq are the only places where
+text leaves your device, and only if you store their keys.</li>
+</ul>
+<p>On the Mac this is a menu bar item with a small floating window that appears when a recording
+starts. Files go to <code>~/Recordings/Comulytic</code>.</p>
+<p>On the iPhone the home screen is a log: every recording, newest first, as your own words and one
+line saying what became of them. A note opens to its transcript with the words that asked for the
+task marked, the task as it was understood, and Undo. The live view rises as a sheet while you
+record, with the waveform and your words appearing as you speak; settings are behind the gear. Plus:</p>
+<ul>
+<li>It keeps working with the phone locked and in your pocket.</li>
+<li>A banner on the Lock Screen and in the Dynamic Island shows whether the recorder is connected,
+its battery level, and a timer while recording.</li>
+<li>Lock Screen widgets you can add under the clock: your last note and what became of it, whether
+the recorder is nearby, and its battery.</li>
+<li>Sound and touch for every step, so you know without looking: two rising chime notes when a
+recording starts, a wooden note when it has arrived and another when it is transcribed, then a
+chime that says what happened (nothing to do, a task added, or a failure, which falls and rings).
+An even, quiet tick-tock in between when a step takes more than a moment.</li>
+<li>Files are visible in the Files app under On My iPhone → Quasi.</li>
+</ul>
+<p>Only one device can hold the recorder at a time. The Mac app and the iPhone app compete for
+it; run one.</p>
+<h2>Try it with your own phone and Xcode</h2>
+<p>This puts the iPhone app on your own phone, talking to your own recorder. It takes about ten
+minutes. It has only ever been run against one recorder, so expect rough edges. Without Xcode,
+<a href="https://testflight.apple.com/join/vgKzkyHd">TestFlight</a> installs the same app in a minute. The
+keys and the message relay are set up afterwards, in the app;
+<a href="https://alexisrondeau.me/quasi/setup.html">the setup page</a> walks through all of it, step by step.</p>
+<p><strong>You need</strong></p>
+<ul>
+<li>A Mac with Xcode 26 and an iPhone on iOS 26 or later.</li>
+<li>An Apple account signed in to Xcode (Xcode → Settings → Accounts). A free one works; the app
+then stops opening after 7 days until you run it from Xcode again.</li>
+<li>A Comulytic Note Pro that has been set up once with Comulytic’s own app.</li>
+</ul>
+<p><strong>Steps</strong></p>
+<ol>
+<li>Clone this repository and open <code>app/Quasi.xcodeproj</code> in Xcode.</li>
+<li><p>Make the signing yours. In the project editor, do this for both the <strong>QuasiPhone</strong> and the
+<strong>QuasiWidgets</strong> target, under Signing &amp; Capabilities:</p>
+<ul>
+<li>choose your own Team;</li>
+<li>change the bundle identifier to something of your own, for example <code>com.yourname.Quasi</code>
+for QuasiPhone and <code>com.yourname.Quasi.Widgets</code> for QuasiWidgets. The second must
+start with the first.</li>
+</ul>
+</li>
+<li>On the iPhone, turn on Developer Mode (Settings → Privacy &amp; Security → Developer Mode) and
+connect it to the Mac with a cable.</li>
+<li>Free the recorder: close Comulytic’s app completely on every phone it is set up on (swipe it
+away in the app switcher). A recorder that is connected to another app is invisible to this one.</li>
+<li>In Xcode’s toolbar choose the <strong>QuasiPhone</strong> scheme and your iPhone, then press Run.</li>
+<li>On the phone, allow Bluetooth when asked. With a free Apple account you also have to trust
+yourself as a developer once: Settings → General → VPN &amp; Device Management.</li>
+<li>The app should show “Connected” within a few seconds. Press record on the recorder.</li>
+</ol>
+<p><strong>If it does not connect</strong></p>
+<ul>
+<li>“Looking for the recorder…” that never ends usually means another app still holds the recorder,
+or the recorder is off or out of range.</li>
+<li>It connects to the first Note Pro it sees. With more than one nearby, it may pick the wrong one.</li>
+<li>A different hardware model or firmware may speak a different protocol. This was built against
+hardware “TN12” on firmware 2.3.5.</li>
+</ul>
+<p>The app never deletes, formats or changes settings on the recorder, and Comulytic’s app keeps
+working afterwards; just do not run both at the same time.</p>
+<h2>What has been tested</h2>
+<p>Tested by hand with one recorder (firmware 2.3.5), a Mac on macOS 26 and an iPhone 15 on iOS 26.2,
+between 2026-10-01 and 2026-10-05.</p>
+<h3>iPhone</h3>
+<table>
+<thead><tr><th>Test</th><th>Result</th></tr></thead>
+<tbody>
+<tr><td>App in front: record, live view, stop, transcript</td><td>Works</td></tr>
+<tr><td>Phone locked for 3 minutes, off the cable, then record</td><td>Captured and transcribed</td></tr>
+<tr><td>Phone locked and untouched for 50 minutes, then record</td><td>Captured and transcribed</td></tr>
+<tr><td>Used through an evening, a night and a morning, phone mostly locked</td><td>Every recording arrived live</td></tr>
+<tr><td>Phone taken out of range</td><td>Banner shows the recorder as out of reach</td></tr>
+<tr><td>Phone brought back, still locked</td><td>Reconnects by itself, banner returns to “Recorder connected”</td></tr>
+<tr><td>Lock Screen / Dynamic Island banner</td><td>Shows “Recorder connected”</td></tr>
+<tr><td>Double vibration at the end of a recording while locked</td><td>Works</td></tr>
+<tr><td>Recorder battery with the phone holding the link all the time</td><td>96 % to 90 % in about 16 to 18 hours, test recordings included: roughly 8 % a day</td></tr>
+</tbody>
+</table>
+<h3>Mac</h3>
+<table>
+<thead><tr><th>Test</th><th>Result</th></tr></thead>
+<tbody>
+<tr><td>Recorder battery with the link dropped while away from the Mac</td><td>100 % to 96 % in 24 hours</td></tr>
+<tr><td>Mac woken from sleep by Bluetooth</td><td>11 to 18 times a day, down from 3,198 on the day before the fix</td></tr>
+<tr><td>Battery level shown</td><td>Follows the recorder (99, 97, 96 %); it used to read 100 % always</td></tr>
+</tbody>
+</table>
+<h3>Task extraction</h3>
+<p>There is an eval in <code>evals/task-extraction</code>: 206 transcripts (169 that ask for a task, 32 of
+those for more than one, and 37 that ask for none), all written for it, with the expected tasks
+and the expected value of every field. On 2026-10-05, Claude Sonnet 5.5 read every one of them
+entirely correctly: the right number of tasks each time, none missed, none invented, no request
+split in two. Median 2 seconds and about two thirds of a cent per note. The cases were written by
+the same hand as the prompt, so treat this as an optimistic score. On the iPhone, notes recorded
+in daily use have produced single and several tasks; the newer fields (time, repeats, priority,
+project and so on) have mostly been exercised by the eval.</p>
+<p>Adding to Todoist was tested from a script with one task (created with the right title, due day
+and description, then deleted). It has not been used from the apps yet.</p>
+<h3>Not tested yet</h3>
+<ul>
+<li><strong>iPhone, after iOS removes the app from memory.</strong> The code to come back from this exists
+(see below) but has never been seen to trigger.</li>
+<li><strong>iPhone, downloading stored recordings.</strong> Same code as on the Mac, not exercised on the phone.</li>
+<li><strong>Mac, the current build.</strong> The measurements above were made with the build of 2026-10-03.
+The code has since been split into shared and Mac-only parts; that build compiles but has
+not been run.</li>
+<li><strong>Lock, display-sleep and sleep handling on the Mac</strong> was verified by its effect (the numbers
+above), not by watching each transition.</li>
+</ul>
+<h2>How it works</h2>
+<h3>The recorder</h3>
+<p>The recorder speaks Bluetooth LE. The apps implement the small part of its protocol that they
+need: connecting, keeping the connection alive, receiving the recording in progress as a live
+stream, and listing and downloading stored recordings. They never send anything that changes,
+unbinds or deletes what is on the recorder.</p>
+<p>Three facts about the recorder shape everything else:</p>
+<ol>
+<li><strong>It only streams to a connected client.</strong> Its advertisement does not change when it starts
+recording, so there is no way to notice a recording from the outside. A live view within
+seconds requires holding the connection.</li>
+<li><strong>Holding the connection costs its battery.</strong> Connected and kept awake by the heartbeat, it
+uses far more than when left alone.</li>
+<li><strong>The live stream can have small gaps;</strong> the copy stored on the recorder is complete. That is
+what “Download Stored Recordings” is for.</li>
+</ol>
+<h3>Shared by both apps</h3>
+<p>About three quarters of the Swift code is in <code>app/Shared</code> and compiled into both apps:</p>
+<ul>
+<li><code>RecorderProtocol</code>, <code>RecorderClient</code>: the wire format and the Bluetooth session described above.</li>
+<li><code>LiveMP3Decoder</code>: decodes the MP3 stream as it arrives and resynchronises after gaps.</li>
+<li><code>AudioFiles</code>: keeps the right channel (the microphone; the left mostly carries handling noise)
+and writes mono AAC.</li>
+<li><code>Transcriber</code>: Apple’s on-device <code>SpeechAnalyzer</code>. The language model is downloaded by the
+system on first use; no audio leaves the device. Used when no OpenAI key is stored, and as
+the fallback when OpenAI cannot be reached.</li>
+<li><code>OpenAITranscriber</code>: the same job done by OpenAI, for notes spoken in more than one language.
+Sends the recording with the chosen language and the phone’s languages as hints, and a prompt
+that keeps every word in the language it was spoken.</li>
+<li><code>AppModel</code>: ties these together, and decides when the link may be dropped.</li>
+<li><code>LiveView</code>: the waveform and transcript.</li>
+</ul>
+<p>Each app adds a thin layer for what differs. The difference that matters is when to hold the link.</p>
+<h3>macOS: hold the link only while you are there</h3>
+<p>A Mac app keeps running in the background without restrictions, so holding the link is easy.
+The problem was the opposite: it was held too much.</p>
+<p>The first version connected whenever the recorder was in range and reconnected at once after
+every drop. With the lid closed that became a loop: the Mac sleeps, the heartbeat stops, the
+recorder drops the link and advertises, the Mac’s pending connection wakes it, the app runs the
+handshake, the Mac sleeps again. This repeated about every 14 seconds all night. The recorder
+drained in a day or two, and the Mac lost battery as well.</p>
+<p>The live window is only useful when someone can see it, so now:</p>
+<ul>
+<li><code>MacServices</code> watches for screen lock, display sleep and system sleep.</li>
+<li>While any of those holds, the app disconnects and cancels its pending connection, so the
+recorder idles and the Mac sleeps undisturbed.</li>
+<li>A recording or download already in progress is allowed to finish first. System sleep drops the
+link immediately.</li>
+<li>On unlock or wake it reconnects.</li>
+</ul>
+<p>Idle time is not used: sitting in front of the Mac without touching it still counts as being there.</p>
+<h3>iOS: hold the link especially while locked</h3>
+<p>On the phone the goal is reversed. The recorder and the phone travel together, and the point is
+that a recording made with the phone in a pocket arrives anyway.</p>
+<p>iOS works against this by default: an app in the background is suspended within seconds, and a
+suspended app’s timers do not fire, so the heartbeat would stop and the recorder would drop the
+link. Four pieces keep it alive:</p>
+<ul>
+<li><strong>Bluetooth background mode</strong> (<code>bluetooth-central</code>). iOS keeps the connection open at system
+level and wakes the app briefly for every packet from the recorder.</li>
+<li><strong><code>BackgroundLink</code>.</strong> Each packet renews a short background task. The recorder answers every
+heartbeat, so the answer keeps the app awake long enough to send the next one: a chain that
+holds for as long as the recorder is in range.</li>
+<li><strong>Pending connection.</strong> When the recorder goes out of range the chain ends and the app is
+suspended, but iOS keeps the connection request and wakes the app when the recorder is seen
+again. The recorder advertises no service identifiers, so background scanning cannot find it;
+the phone has to have connected once with the app in front.</li>
+<li><strong>State restoration.</strong> If iOS removes the app from memory, it relaunches it in the background
+when the recorder connects or disconnects. (Untested, see above.)</li>
+</ul>
+<p>The Lock Screen banner is a Live Activity drawn by a small widget extension. While connected the
+app refreshes it every two minutes and marks it valid for five. If the app stops running, the
+refreshes stop and the banner turns to “Lost contact” by itself, so the banner is also the check
+that the app is alive.</p>
+<p>What iOS does not allow:</p>
+<ul>
+<li>Swiping the app away in the app switcher stops it until it is opened again. So does restarting
+the phone.</li>
+<li>A Live Activity ends after eight hours and can only be started with the app in front. Opening
+the app starts a new one.</li>
+</ul>
+<h2>Building</h2>
+<p>Requires Xcode 26. Both apps need macOS 26 / iOS 26 for the transcription.</p>
+<pre><code class="language-sh">app/tools/release.sh   # Mac: build, install to /Applications, launch
+app/tools/phone.sh     # iPhone: build, install and launch on the connected phone
+</code></pre>
+<p>The first connection is made with whichever app you open first; the recorder needs to have been
+set up once with the vendor’s app, which is where the token the recorder hands out on
+connecting most likely comes from; a recorder straight from the box has not been tried.</p>
+<h2>Repository layout</h2>
+<table>
+<thead><tr><th>Path</th><th>Contents</th></tr></thead>
+<tbody>
+<tr><td><code>app/Shared</code></td><td>Code compiled into both apps</td></tr>
+<tr><td><code>app/Quasi</code></td><td>Mac only: menu, floating window, presence, launch at login</td></tr>
+<tr><td><code>app/QuasiPhone</code></td><td>iPhone only: the logbook screens, background link, sounds, Live Activity controller</td></tr>
+<tr><td><code>app/PhoneShared</code>, <code>app/QuasiWidgets</code></td><td>The Live Activity, the Lock Screen widgets and what they share with the app</td></tr>
+<tr><td><code>evals/task-extraction</code></td><td>The eval for turning transcripts into tasks</td></tr>
+<tr><td><code>design/directions</code></td><td>The three design directions the iPhone app was chosen from</td></tr>
+<tr><td><code>site</code></td><td>The project’s web page (published from <code>docs/</code> in the public repository)</td></tr>
+</tbody>
+</table>
+<p>Quasi is free software under the GNU General Public License, version 3 (see <code>LICENSE</code>). It is an
+independent project and is not affiliated with or endorsed by Comulytic. The research
+notes on the recorder itself are not part of this repository.</p>
+</div>
+<div class="src"><a href="/code/quasi/">Permalink</a> · <a href="https://github.com/akaalias/quasi">View on GitHub ↗</a> · <a href="https://alexisrondeau.me/quasi/">Website ↗</a></div>
+</article>
+</section>
+<nav class="pager"><a href="/feed/">‹ Back to the newsfeed</a><a href="/feed/archive/2026/10/">October 2026 ›</a></nav>
+<aside class="months-nav">
+<div class="group">
+<h3><a href="/feed/archive/">Archive</a></h3>
+<div class="y">2026</div>
+<ul>
+<li><a href="/feed/archive/2026/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2026/09/">September</a> <span class="n">79</span></li>
+<li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
+<li><a href="/feed/archive/2026/07/">July</a> <span class="n">24</span></li>
+<li><a href="/feed/archive/2026/06/">June</a> <span class="n">31</span></li>
+<li><a href="/feed/archive/2026/05/">May</a> <span class="n">10</span></li>
+<li><a href="/feed/archive/2026/04/">April</a> <span class="n">33</span></li>
+<li><a href="/feed/archive/2026/03/">March</a> <span class="n">34</span></li>
+<li><a href="/feed/archive/2026/02/">February</a> <span class="n">57</span></li>
+<li><a href="/feed/archive/2026/01/">January</a> <span class="n">15</span></li>
+</ul>
+<div class="y">2025</div>
+<ul>
+<li><a href="/feed/archive/2025/12/">December</a> <span class="n">29</span></li>
+<li><a href="/feed/archive/2025/11/">November</a> <span class="n">126</span></li>
+<li><a href="/feed/archive/2025/10/">October</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2025/09/">September</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2025/08/">August</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2025/07/">July</a> <span class="n">23</span></li>
+<li><a href="/feed/archive/2025/06/">June</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2025/05/">May</a> <span class="n">18</span></li>
+<li><a href="/feed/archive/2025/04/">April</a> <span class="n">62</span></li>
+<li><a href="/feed/archive/2025/03/">March</a> <span class="n">22</span></li>
+<li><a href="/feed/archive/2025/02/">February</a> <span class="n">11</span></li>
+</ul>
+<div class="y">2024</div>
+<ul>
+<li><a href="/feed/archive/2024/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/11/">November</a> <span class="n">16</span></li>
+<li><a href="/feed/archive/2024/10/">October</a> <span class="n">12</span></li>
+<li><a href="/feed/archive/2024/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/05/">May</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/04/">April</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2023</div>
+<ul>
+<li><a href="/feed/archive/2023/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/10/">October</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/08/">August</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2023/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/06/">June</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2023/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2023/04/">April</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/03/">March</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/02/">February</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2022</div>
+<ul>
+<li><a href="/feed/archive/2022/11/">November</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/10/">October</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/07/">July</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2022/04/">April</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2022/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2021</div>
+<ul>
+<li><a href="/feed/archive/2021/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2021/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/02/">February</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2021/01/">January</a> <span class="n">8</span></li>
+</ul>
+<div class="y">2020</div>
+<ul>
+<li><a href="/feed/archive/2020/12/">December</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2020/11/">November</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2020/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/08/">August</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2020/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/06/">June</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2020/05/">May</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/04/">April</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/03/">March</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2019</div>
+<ul>
+<li><a href="/feed/archive/2019/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/08/">August</a> <span class="n">10</span></li>
+<li><a href="/feed/archive/2019/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/06/">June</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2019/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/01/">January</a> <span class="n">3</span></li>
+</ul>
+<div class="y">2018</div>
+<ul>
+<li><a href="/feed/archive/2018/12/">December</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2018/11/">November</a> <span class="n">15</span></li>
+<li><a href="/feed/archive/2018/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2018/09/">September</a> <span class="n">14</span></li>
+<li><a href="/feed/archive/2018/08/">August</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2018/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2018/05/">May</a> <span class="n">3</span></li>
+</ul>
+<div class="y">2017</div>
+<ul>
+<li><a href="/feed/archive/2017/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2017/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2017/04/">April</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2017/01/">January</a> <span class="n">2</span></li>
+</ul>
+<div class="y">2016</div>
+<ul>
+<li><a href="/feed/archive/2016/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2016/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2016/02/">February</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2016/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2015</div>
+<ul>
+<li><a href="/feed/archive/2015/10/">October</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2015/05/">May</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/03/">March</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/02/">February</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2015/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2014</div>
+<ul>
+<li><a href="/feed/archive/2014/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/11/">November</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2014/09/">September</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2014/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2014/05/">May</a> <span class="n">12</span></li>
+<li><a href="/feed/archive/2014/04/">April</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2014/03/">March</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2014/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2013</div>
+<ul>
+<li><a href="/feed/archive/2013/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2013/05/">May</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2012</div>
+<ul>
+<li><a href="/feed/archive/2012/01/">January</a> <span class="n">1</span></li>
+</ul>
+</div>
+</aside>
+<footer class="site">
+<p>© 2012–2026 Alexis Rondeau. All rights reserved.</p>
+<p>This is my personal site. Everything here — dispatches, notes, opinions — is my own and does not represent any employer, client or organisation I'm affiliated with.</p>
+<p><a href="/">Home</a> · <a href="/about/">About</a> · <a href="/feed/">Newsfeed</a> · <a href="/feed/archive/">Archive</a> · <a href="/feed/feed.xml">Atom</a> · <a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a> · <a rel="me" href="https://github.com/akaalias">GitHub</a> · <a rel="me" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a></p>
+</footer>
+</div>
+
+</body>
+</html>

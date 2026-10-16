@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ballpark — Alexis Rondeau</title>
+<meta name="description" content="Autonomous Research with AI: can a UAV learn a city by heart? An AI agent running an autoresearch loop (81 experiments, $364) found a 3.1 MB neural m…">
+<link rel="canonical" href="https://alexisrondeau.me/code/ballpark/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alexis Rondeau">
+<meta property="og:title" content="ballpark">
+<meta property="og:description" content="Autonomous Research with AI: can a UAV learn a city by heart? An AI agent running an autoresearch loop (81 experiments, $364) found a 3.1 MB neural m…">
+<meta property="og:url" content="https://alexisrondeau.me/code/ballpark/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@SpringStreetNYC">
+<meta name="twitter:creator" content="@SpringStreetNYC">
+<meta property="og:image" content="https://alexisrondeau.me/code/media/gh-1307445047-card.png">
+<meta property="og:image:alt" content="ballpark">
+<meta name="twitter:image" content="https://alexisrondeau.me/code/media/gh-1307445047-card.png">
+<link rel="alternate" type="application/atom+xml" title="Alexis Rondeau — Newsfeed" href="https://alexisrondeau.me/feed/feed.xml">
+<link rel="stylesheet" href="/tufte.css">
+<link rel="stylesheet" href="/feed/feed.css">
+<meta property="article:published_time" content="2026-07-20T17:19:42Z">
+<meta property="article:modified_time" content="2026-09-28T17:00:14Z">
+<meta property="article:author" content="Alexis Rondeau">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","author":{"@id":"https://alexisrondeau.me/#person","@type":"Person","name":"Alexis Rondeau","sameAs":["https://x.com/SpringStreetNYC","https://github.com/akaalias","https://www.linkedin.com/in/alexis-rondeau-2099nyc/","https://www.youtube.com/@axsrondeau"],"url":"https://alexisrondeau.me/"},"codeRepository":"https://github.com/akaalias/ballpark","dateCreated":"2026-07-20T17:19:42Z","dateModified":"2026-09-28T17:00:14Z","datePublished":"2026-07-20T17:19:42Z","description":"Autonomous Research with AI: can a UAV learn a city by heart? An AI agent running an autoresearch loop (81 experiments, $364) found a 3.1 MB neural m…","image":["https://alexisrondeau.me/code/media/gh-1307445047-card.png"],"keywords":"agentic-ai, ai-agents, ai-for-science, ai-research, autonomous-agents, autoresearch, claude, claude-code, computer-vision, esp32, geolocation, llm, llm-agents, machinelearning, neural-architecture-search, research-automation, self-improving, uav, visual-localization","license":"https://spdx.org/licenses/GPL-3.0.html","mainEntityOfPage":"https://alexisrondeau.me/code/ballpark/","name":"ballpark","programmingLanguage":"HTML","sameAs":["http://alexisrondeau.me/ballpark/"],"url":"https://alexisrondeau.me/code/ballpark/"}</script>
+
+</head>
+<body>
+<nav class="topnav"><a href="/">Home</a><a href="/about/">About</a><a href="/feed/">Newsfeed</a><a href="/feed/archive/">Archive</a><a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a><a rel="me" href="https://github.com/akaalias">GitHub</a><a rel="me" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a></nav>
+<header class="hero">
+<div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
+<h1><a href="/feed/">Newsfeed</a></h1>
+<p class="sub">Repository · Monday, July 20, 2026 · 19:19</p>
+</header>
+<div class="wrap">
+<section class="feed single">
+<article class="item kind-repo" id="g-ballpark">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/ballpark/"><time datetime="2026-07-20T17:19:42Z">Monday, July 20, 2026 · 19:19</time></a></div>
+<h2 class="note-title"><a href="/code/ballpark/">ballpark</a></h2>
+<p class="repo-desc">Autonomous Research with AI: can a UAV learn a city by heart? An AI agent running an autoresearch loop (81 experiments, $364) found a 3.1 MB neural memory that geolocates in-flight pictures of Berlin to ~27 m — no GPS, no map on board, built for a &lt;$5 ESP32-P4 flight computer.</p>
+<div class="stats"><span>HTML</span></div>
+<div class="text note-body repo-readme">
+<p><strong>Can a UAV learn a city by heart?</strong> Given a geographic bounding box, this
+repo trains a compact per-area model that takes a single downward camera
+frame from a UAV and returns
+<code>estimate_position(frame) -&gt; (lat, lon, confidence)</code> — no reference imagery
+on the aircraft, no connectivity, targeting an ESP32-P4 companion board.
+The interesting part: the model-side code is improved by an <strong>autonomous
+research loop</strong> (Karpathy <code>autoresearch</code>-style) that designs experiments,
+rewrites architecture/loss/training, and keeps or reverts by a single frozen
+metric. Full context: <code>CLAUDE.md</code>.</p>
+<h2>Repo layout</h2>
+<table>
+<thead><tr><th>Path</th><th>Status</th><th>What</th></tr></thead>
+<tbody>
+<tr><td><code>pipeline/</code></td><td><strong>FROZEN</strong></td><td>bbox-generic fetch (Sentinel-2, open-licensed), 6-bucket synthetic low-light relighting (collapsed to a daytime pass-through in the current berlin-slim configuration), deterministic split holding out <strong>viewpoints, not regions</strong> (training covers the whole bbox; eval frames sit 11-17 m off the nearest training vantage — see <code>pipeline/dataset.py</code> for why a region-based holdout was wrong), §6 scoring — the mission score, (1 - usable_fix_rate) + false_fix_rate, which is the product requirement rather than an error statistic — with ESP32-P4 deployment gates</td></tr>
+<tr><td><code>areas.yaml</code></td><td><strong>FROZEN</strong></td><td>4 development areas + hamburg blind holdout</td></tr>
+<tr><td><code>model/</code></td><td>agent-editable</td><td>model architecture + training procedure (the loop’s playground)</td></tr>
+<tr><td><code>autoresearch/</code></td><td>mostly frozen</td><td><code>loop.sh</code> harness, SQLite schema + logger, gallery renderer, per-iteration agent prompt</td></tr>
+<tr><td><code>FROZEN</code></td><td>—</td><td>the exact list of files the loop may never touch (enforced by <code>loop.sh</code> via git revert)</td></tr>
+<tr><td><code>runs/</code></td><td>generated</td><td>per-experiment artifacts (models, metrics, heatmaps, samples)</td></tr>
+<tr><td><code>experiments.sqlite</code></td><td>generated</td><td>full experiment lineage: hypothesis, method, expected outcome, result, conclusion, all metrics</td></tr>
+<tr><td><code>gallery/</code></td><td>generated</td><td>self-refreshing pages: research log (<code>index.html</code>, samples + error heatmaps) and proposed inference paths (<code>inference-paths.html</code>, every experiment’s pre-registered architecture figure)</td></tr>
+<tr><td><code>sim/</code></td><td>tool, not frozen</td><td>virtual UAV flight simulator (<code>flightsim.py</code>) — flies the exported champion from a to b with its fixes as the only position source — and the flight-path page renderer (<code>render_flightpath.py</code>). Reads the frozen pipeline, never modifies it</td></tr>
+</tbody>
+</table>
+<h2>Quickstart (already proven end-to-end by the bootstrap run)</h2>
+<pre><code class="language-bash">uv venv --python 3.12 .venv
+uv pip install --python .venv/bin/python numpy pillow rasterio pystac-client torch onnx onnxruntime pyyaml
+
+# Frozen pipeline — any bbox works, named areas are just presets:
+.venv/bin/python -m pipeline.fetch --area berlin          # or: --name x --bbox w,s,e,n
+.venv/bin/python -m pipeline.relight --area berlin
+.venv/bin/python -m model.train --area berlin --out-dir runs/test --epochs 3
+.venv/bin/python -m pipeline.score --areas berlin --model-dir runs/test/models --out runs/test/metrics.json
+.venv/bin/python -m autoresearch.gallery                  # open gallery/index.html
+</code></pre>
+<p>Bootstrap proving runs: experiment #1 (commit <code>15b43a2</code>) ran berlin +
+prignitz on 10 m Sentinel-2 data → 2926 m. Experiment #3 (commit <code>c0a1bdf</code>,
+pipeline <strong>data v2</strong>) re-proved the harness on 1 m/px DOP imagery across all
+four development areas → <strong>2765.67 m</strong> worst-case median error, coverage 1.0
+(historical: that bootstrap run predates the current metric — the primary
+score is now the §6 <strong>mission score</strong>, not a median; see <code>pipeline/score.py</code>)
+in all 24 area×bucket cells (target ≤ 20 m; a center-guess on a ~7 km box is
+~2.8 km — the baseline is deliberately naive). All deployment gates passed.
+The §6 anti-abstention gate was exercised for real en route: two confidence
+calibrations collapsed dark-bucket coverage and were correctly scored FAIL.</p>
+<h2>Phase 2 — running the autoresearch loop (run this yourself, separately)</h2>
+<blockquote>
+<p><strong>Current configuration: <code>berlin-slim</code></strong> (merged into <code>main</code> 2026-07-31).
+Berlin only, raw daytime imagery, no synthetic relighting, figures off,
+pivot gate off. See CLAUDE.md’s “SCOPE OVERRIDE” for what it supersedes
+and why — low-light is the full spec’s goal, out of scope in this
+configuration, and the relighting machinery is kept, not deleted.</p>
+</blockquote>
+<pre><code class="language-bash">./autoresearch/loop.sh 12               # run until the DB holds 12 experiments
+SKIP_AGENT=1 ./autoresearch/loop.sh 1   # smoke-test the harness without an agent
+touch state/stop                        # graceful stop after the current experiment
+</code></pre>
+<p>Data for berlin is already fetched and relit; the other areas are only
+needed if you restore the full four-area scope:</p>
+<pre><code class="language-bash">for a in prignitz munich frankfurt hamburg; do
+  .venv/bin/python -m pipeline.fetch --area $a
+  .venv/bin/python -m pipeline.relight --area $a
+done
+</code></pre>
+<p>Per experiment the design agent pre-registers <code>title / category / hypothesis / method / expected_outcome</code> (written to the run’s <code>experiment.json</code>); the
+harness appends the measured <code>result</code> and a kept/reverted <code>conclusion</code>, logs
+to SQLite, snapshots <code>model/*.py</code> into <code>runs/&lt;id&gt;/model_src/</code> <strong>whatever the
+outcome</strong>, and commits kept improvements so git history is the research trail.</p>
+<p>Watch progress: <code>open gallery/index.html</code> (re-rendered when a design lands
+<em>and</em> again when the experiment finishes), or
+<code>sqlite3 experiments.sqlite &quot;SELECT id,title,primary_metric,kept FROM experiments ORDER BY id DESC LIMIT 10;&quot;</code></p>
+<h3>Compute</h3>
+<p>Training runs <strong>locally on the M1</strong> (<code>model/train.py</code> auto-selects
+cuda &gt; mps &gt; cpu). Viable on a laptop again only because this branch trains
+one area instead of four.</p>
+<p>Two remote paths exist and are dormant:</p>
+<table>
+<thead><tr><th></th><th>status</th></tr></thead>
+<tbody>
+<tr><td><strong>Modal</strong> (<code>REMOTE_TRAIN=1 REMOTE_BACKEND=modal</code>)</td><td>stateless per-area trainer, never touches git. Used 23–30 Jul; <strong>credits exhausted</strong>, so unusable until topped up.</td></tr>
+<tr><td><strong>RunPod</strong> (<code>infra/runpod.sh</code>, <code>REMOTE_BACKEND=runpod</code>)</td><td><strong>abandoned 2026-07-23</strong> after three days of stuck commits and merge conflicts. Scripts kept for reference; do not restart it without reading <code>docs/infra.md</code> first.</td></tr>
+</tbody>
+</table>
+<p>The rule that came out of that period and still holds: <strong>one git writer,
+always.</strong> The laptop commits; a remote may only train and hand back
+artifacts. Two writers on one branch was the root cause of the whole
+mess, not the provider.</p>
+<h2>Flight test (<code>sim/</code>) — does the champion actually get a UAV from a to b?</h2>
+<p>A virtual-UAV flight simulator closes the loop on the mission score’s own
+premise (§2: the vision fix is the only drift correction). A point-mass
+fixed-wing flies through wind, gusts and gyro bias its navigator cannot see;
+every fix interval the sim crops the reference raster at the aircraft’s
+<strong>true</strong> pose, runs the exported champion ONNX, and hands the answer to a
+dead-reckoning navigator that accepts false fixes like any other. Arrival is
+declared on the navigator’s estimate and scored against the truth. Honesty
+rules are documented at the top of <code>sim/flightsim.py</code>; the known best-case
+caveats (camera = the memorized reference imagery; fixed 1 m/px altitude) are
+stated on the results page rather than hidden.</p>
+<p>Headline (100 flights, seed 1): <strong>91/100 arrive within 100 m</strong>, median
+declared miss 45 m; the dead-reckoning control arrives 0/100. All three
+catastrophic failures had targets on the never-trained region-holdout
+diagnostic ground — an artifact of simulating over the research
+configuration, reported as flown. Results are rendered as the
+<code>gallery/flight-path.html</code> page (replay, estimation-error sawtooth,
+100-flight record).</p>
+<pre><code class="language-bash">.venv/bin/python -m sim.flightsim --seed 6 --start 350,350 --target 6800,6600 \
+    --save-crops --out sim/out/showcase.json      # the page's showcase flight
+.venv/bin/python -m sim.flightsim --flights 100 --seed 1 --out sim/out/mc.json
+.venv/bin/python -m sim.flightsim --flights 100 --seed 1 --no-vision --out sim/out/mc_dr.json
+.venv/bin/python -m sim.render_flightpath         # rebuild the page from sim/out/
+</code></pre>
+<h2>Reference imagery (pipeline data v2) &amp; licensing</h2>
+<p>Fetching is driven by a <strong>source registry</strong> (<code>pipeline/sources.yaml</code>,
+frozen): for any bbox, the finest open-licensed source covering it wins,
+falling back to global Sentinel-2. The pipeline code stays fully
+bbox-generic — regional knowledge is config, not code.</p>
+<table>
+<thead><tr><th>Source</th><th>Covers</th><th>Native</th><th>License / attribution</th></tr></thead>
+<tbody>
+<tr><td><a href="https://isk.geobasis-bb.de/mapproxy/dop20c/service/wms?REQUEST=GetCapabilities&amp;SERVICE=WMS">BB-BE DOP20 WMS</a></td><td>Brandenburg <strong>+ Berlin</strong></td><td>20 cm</td><td>dl-de/by-2-0 — © GeoBasis-DE/LGB</td></tr>
+<tr><td><a href="https://geoservices.bayern.de/od/wms/dop/v1/dop40?SERVICE=WMS&amp;REQUEST=GetCapabilities">Bavaria DOP40 WMS</a></td><td>Bavaria (Munich)</td><td>40 cm</td><td>CC BY 4.0 — © Bayerische Vermessungsverwaltung</td></tr>
+<tr><td><a href="https://www.gds-srv.hessen.de/cgi-bin/lika-services/ogc-free-images.ows?SERVICE=WMS&amp;REQUEST=GetCapabilities">Hesse DOP20 WMS</a></td><td>Hesse (Frankfurt)</td><td>20 cm</td><td>dl-de/by-2-0 — © HVBG Hessen</td></tr>
+<tr><td><a href="https://geodienste.hamburg.de/wms_dop_zeitreihe_unbelaubt?Service=WMS&amp;Request=GetCapabilities">Hamburg DOP WMS</a></td><td>Hamburg</td><td>20 cm</td><td>dl-de/by-2-0 — © FHH LGV</td></tr>
+<tr><td>Sentinel-2 L2A (Earth Search STAC → AWS COGs)</td><td>global fallback</td><td>10 m</td><td>Copernicus — “Contains modified Copernicus Sentinel data”</td></tr>
+</tbody>
+</table>
+<p>Everything is server-resampled to a <strong>1 m/px</strong> reference grid (<code>target_gsd_m</code>
+in the registry): a 128 px model crop = 128 m ground footprint, matching a
+typical UAV camera at ~100 m AGL — so training imagery scale ≈ deployment
+imagery scale. No Google/Bing tiles anywhere. Expect roughly 0.5–3 GB of
+imagery per area on disk after relighting.</p>
+<h2>Validated hardware setup (§9 resolved for bring-up; stretch sensor still open)</h2>
+<p><strong>Buy-now, documented-working stack:</strong></p>
+<ul>
+<li><strong>Board:</strong> <a href="https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32p4/esp32-p4-function-ev-board/user_guide.html">ESP32-P4-Function-EV-Board</a>
+— Espressif’s official P4 dev kit; <strong>ships with a 2 MP MIPI-CSI camera
+module (SC2336)</strong> in the box.</li>
+<li><strong>Sensor:</strong> SmartSens <strong>SC2336</strong> (2 MP, 1/3”, RAW out over MIPI CSI-2;
+SmartSens’ “SmartClarity-2” low-light line). Driver ships in Espressif’s
+<a href="https://components.espressif.com/components/espressif/esp_cam_sensor/versions/2.3.0/readme">esp_cam_sensor</a>
+component; the P4’s on-chip ISP handles debayer/AWB/denoise
+(<a href="https://docs.espressif.com/projects/esp-idf/en/stable/esp32p4/api-reference/peripherals/camera_driver.html">camera driver docs</a>),
+and a <a href="https://github.com/jeff-cn/esp32-p4-cam">community P4+SC2336 example</a> exists.</li>
+<li><strong>Software path:</strong> esp-video (V4L2-style capture) → esp-dl (quantized CNN
+inference on the P4’s PPA/vector unit). Model export here is ONNX, which
+esp-dl’s toolchain ingests for int8 quantization.</li>
+<li>For the flight article (vs. dev kit), the same chip + SC2336 module on a
+minimal carrier lands well under the 50 g / 2 W targets of §2.</li>
+</ul>
+<p><strong>Still open (stretch):</strong> a true STARVIS2/IMX585-class starlight sensor on
+the P4 has no documented pairing — IMX585 typically wants 4-lane MIPI (P4
+has 2) and a custom driver. Path: prove the full system on SC2336 first;
+invest in starlight bring-up only if night accuracy turns out sensor-limited.
+(The <a href="https://github.com/ams-OSRAM/esp32_p4_MIPI_DSI_CSI_mira220">ams MIRA220 NIR example</a>
+shows third-party sensor bring-up on the P4 is feasible.)</p>
+<h2>Adding a new deployment area</h2>
+<p><code>.venv/bin/python -m pipeline.fetch --name myarea --bbox 9.10,48.70,9.20,48.76</code>
+then relight/train/score as above — nothing in the pipeline knows about
+specific areas. Only add entries to <code>areas.yaml</code> if it should become part of
+the frozen evaluation set (that’s a human decision, not the loop’s).</p>
+<h2>License</h2>
+<p><strong>GPL-3.0-or-later</strong> (see <code>LICENSE</code>). The choice is deliberate: the point of
+this project is that anyone can generate their own tiny, self-contained,
+geo-boxed localization model — so the pipeline that makes that possible must
+stay free. Copyleft guarantees it: you may use, study, modify and
+redistribute everything here, but a distributed fork — improved or otherwise
+— must remain under the GPL. Freedom is the priority here, not adoption.</p>
+<p>Two boundaries, spelled out in <code>NOTICE</code>:</p>
+<ul>
+<li><strong>Model weights you train are yours.</strong> They are your output, not a
+derivative of this code in the license’s sense; this repository claims no
+rights over them.</li>
+<li><strong>Imagery-derived figures</strong> (under <code>runs/</code> and <code>site_assets/</code>) carry their
+geodata sources’ attribution terms (dl-de/by-2-0, CC BY 4.0, Copernicus)
+independent of the code license.</li>
+</ul>
+<p>The repository was MIT-licensed before 2026-08-01; the relicense was made by
+the sole copyright holder.</p>
+</div>
+<div class="src"><a href="/code/ballpark/">Permalink</a> · <a href="https://github.com/akaalias/ballpark">View on GitHub ↗</a> · <a href="http://alexisrondeau.me/ballpark/">Website ↗</a></div>
+</article>
+</section>
+<nav class="pager"><a href="/feed/">‹ Back to the newsfeed</a><a href="/feed/archive/2026/07/">July 2026 ›</a></nav>
+<aside class="months-nav">
+<div class="group">
+<h3><a href="/feed/archive/">Archive</a></h3>
+<div class="y">2026</div>
+<ul>
+<li><a href="/feed/archive/2026/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2026/09/">September</a> <span class="n">79</span></li>
+<li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
+<li><a href="/feed/archive/2026/07/">July</a> <span class="n">24</span></li>
+<li><a href="/feed/archive/2026/06/">June</a> <span class="n">31</span></li>
+<li><a href="/feed/archive/2026/05/">May</a> <span class="n">10</span></li>
+<li><a href="/feed/archive/2026/04/">April</a> <span class="n">33</span></li>
+<li><a href="/feed/archive/2026/03/">March</a> <span class="n">34</span></li>
+<li><a href="/feed/archive/2026/02/">February</a> <span class="n">57</span></li>
+<li><a href="/feed/archive/2026/01/">January</a> <span class="n">15</span></li>
+</ul>
+<div class="y">2025</div>
+<ul>
+<li><a href="/feed/archive/2025/12/">December</a> <span class="n">29</span></li>
+<li><a href="/feed/archive/2025/11/">November</a> <span class="n">126</span></li>
+<li><a href="/feed/archive/2025/10/">October</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2025/09/">September</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2025/08/">August</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2025/07/">July</a> <span class="n">23</span></li>
+<li><a href="/feed/archive/2025/06/">June</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2025/05/">May</a> <span class="n">18</span></li>
+<li><a href="/feed/archive/2025/04/">April</a> <span class="n">62</span></li>
+<li><a href="/feed/archive/2025/03/">March</a> <span class="n">22</span></li>
+<li><a href="/feed/archive/2025/02/">February</a> <span class="n">11</span></li>
+</ul>
+<div class="y">2024</div>
+<ul>
+<li><a href="/feed/archive/2024/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/11/">November</a> <span class="n">16</span></li>
+<li><a href="/feed/archive/2024/10/">October</a> <span class="n">12</span></li>
+<li><a href="/feed/archive/2024/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/05/">May</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/04/">April</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2023</div>
+<ul>
+<li><a href="/feed/archive/2023/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/10/">October</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/08/">August</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2023/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/06/">June</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2023/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2023/04/">April</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/03/">March</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/02/">February</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2022</div>
+<ul>
+<li><a href="/feed/archive/2022/11/">November</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/10/">October</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/07/">July</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2022/04/">April</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2022/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2021</div>
+<ul>
+<li><a href="/feed/archive/2021/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2021/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/02/">February</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2021/01/">January</a> <span class="n">8</span></li>
+</ul>
+<div class="y">2020</div>
+<ul>
+<li><a href="/feed/archive/2020/12/">December</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2020/11/">November</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2020/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/08/">August</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2020/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/06/">June</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2020/05/">May</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/04/">April</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/03/">March</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2019</div>
+<ul>
+<li><a href="/feed/archive/2019/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/08/">August</a> <span class="n">10</span></li>
+<li><a href="/feed/archive/2019/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/06/">June</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2019/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/01/">January</a> <span class="n">3</span></li>
+</ul>
+<div class="y">2018</div>
+<ul>
+<li><a href="/feed/archive/2018/12/">December</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2018/11/">November</a> <span class="n">15</span></li>
+<li><a href="/feed/archive/2018/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2018/09/">September</a> <span class="n">14</span></li>
+<li><a href="/feed/archive/2018/08/">August</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2018/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2018/05/">May</a> <span class="n">3</span></li>
+</ul>
+<div class="y">2017</div>
+<ul>
+<li><a href="/feed/archive/2017/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2017/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2017/04/">April</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2017/01/">January</a> <span class="n">2</span></li>
+</ul>
+<div class="y">2016</div>
+<ul>
+<li><a href="/feed/archive/2016/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2016/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2016/02/">February</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2016/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2015</div>
+<ul>
+<li><a href="/feed/archive/2015/10/">October</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2015/05/">May</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/03/">March</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/02/">February</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2015/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2014</div>
+<ul>
+<li><a href="/feed/archive/2014/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/11/">November</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2014/09/">September</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2014/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2014/05/">May</a> <span class="n">12</span></li>
+<li><a href="/feed/archive/2014/04/">April</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2014/03/">March</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2014/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2013</div>
+<ul>
+<li><a href="/feed/archive/2013/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2013/05/">May</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2012</div>
+<ul>
+<li><a href="/feed/archive/2012/01/">January</a> <span class="n">1</span></li>
+</ul>
+</div>
+</aside>
+<footer class="site">
+<p>© 2012–2026 Alexis Rondeau. All rights reserved.</p>
+<p>This is my personal site. Everything here — dispatches, notes, opinions — is my own and does not represent any employer, client or organisation I'm affiliated with.</p>
+<p><a href="/">Home</a> · <a href="/about/">About</a> · <a href="/feed/">Newsfeed</a> · <a href="/feed/archive/">Archive</a> · <a href="/feed/feed.xml">Atom</a> · <a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a> · <a rel="me" href="https://github.com/akaalias">GitHub</a> · <a rel="me" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a></p>
+</footer>
+</div>
+
+</body>
+</html>

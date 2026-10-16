@@ -28,7 +28,7 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 
 ## Newsfeed
 
-- [Newsfeed](https://alexisrondeau.me/feed/): 862 dispatches, newest first, 25 per page
+- [Newsfeed](https://alexisrondeau.me/feed/): 920 dispatches, newest first, 25 per page
 - [Archive](https://alexisrondeau.me/feed/archive/): the same dispatches by month
 - [Atom feed](https://alexisrondeau.me/feed/feed.xml): the latest 50 dispatches
 - [Data](https://alexisrondeau.me/feed/items.json): every item as JSON (source, id, date, text, media, links, permalink)
@@ -228,6 +228,67 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 - [3 Things That Have Improved My Life (and Can Do the Same For You)](https://alexisrondeau.me/notes/3-things-that-have-improved-my-life-and-can-do-the-same-for-you/): Alexis Rondeau 95 Spring Street, New York Monday, 8:37 a.m.
 - [How To Breathe Long and Deep](https://alexisrondeau.me/notes/how-to-breathe-long-and-deep/): It’s simple.
 
+## Open source
+
+- [quasi](https://alexisrondeau.me/code/quasi/): Say it, hear it done.
+- [mosey-site](https://alexisrondeau.me/code/mosey-site/): Mosey — walks that start themselves. Site, blog, support.
+- [ballpark](https://alexisrondeau.me/code/ballpark/): Autonomous Research with AI: can a UAV learn a city by heart? An AI agent running an autoresearch loop (81 experiments,…
+- [airloom](https://alexisrondeau.me/code/airloom/): Autonomous Research with AI: evolving quadcopter frame geometry for Wh/km — an autoresearch loop of a genetic algorithm…
+- [kern](https://alexisrondeau.me/code/kern/): The text editor I've always wanted: The beefy love-child of Emacs, iA Writer, and Obsidian
+- [tada](https://alexisrondeau.me/code/tada/): Autonomous Research with AI: can an AI agent's autoresearch loop teach Apple's phone-sized 3B Foundation Model to ask f…
+- [jamgpt-homepage](https://alexisrondeau.me/code/jamgpt-homepage/)
+- [bipscan](https://alexisrondeau.me/code/bipscan/): BIP-39 Seed Phrase Finder Find BIP-39 seed phrase sequences hidden in classic literature and generate seeds from common…
+- [pudding-app](https://alexisrondeau.me/code/pudding-app/): A better way to show you did the work
+- [SubSpot](https://alexisrondeau.me/code/subspot/): A streamlined UI subset for Hubspot Deals
+- [getfridgemagnets](https://alexisrondeau.me/code/getfridgemagnets/): Fridge Magnets Live photos of your loved ones on your macOS desktop 🎁 Download for macOS here https://github.com/akaali…
+- [KeyPair](https://alexisrondeau.me/code/keypair/): KeyPair makes using keyboard shortcuts during pair programming sessions easier.
+- [Poppy](https://alexisrondeau.me/code/poppy/): Poppy keeps your single most important webpage on top of all other windows. Very useful while writing with ChatGPT or p…
+- [obsidian-airgap](https://alexisrondeau.me/code/obsidian-airgap/): This plugin allows you to link to notes in an airgapped vault. This is useful if you want to link to ideas from one vau…
+- [LangChainInABox](https://alexisrondeau.me/code/langchaininabox/): A native macOS app for playing with LangChain that ships with a self-contained, embedded, Apple-notarisable Python 3.11…
+- [EmbeddedPythonAppTemplate](https://alexisrondeau.me/code/embeddedpythonapptemplate/): A personal template project for a Apple-notarizable macOS app
+- [examplejamgpthero](https://alexisrondeau.me/code/examplejamgpthero/): Live Demo With Video Background Visit https://alexisrondeau.me/examplejamgpthero/ for a live demo that has the video ba…
+- [SparkleUpdateTest](https://alexisrondeau.me/code/sparkleupdatetest/): A testing ground for getting Sparkle updates running with a reasonable workflow overhead
+- [getjamgpt](https://alexisrondeau.me/code/getjamgpt/): A free, instant & bespoke ChatGPT app for macOS
+- [getpogo](https://alexisrondeau.me/code/getpogo/): Unlock the Power of GPT3 and OpenAI with a Single Keyboard Shortcut
+- [getstreamline](https://alexisrondeau.me/code/getstreamline/): Streamline is a stream-of-consciousness writer for Obsidian
+- [Streamline](https://alexisrondeau.me/code/streamline/): Streamline is a stream-of-consciousness writer for Obsidian
+- [pudding](https://alexisrondeau.me/code/pudding/): Open-Source Intelligence (OSINT): connect the dots, follow the money, find the story in Ethereum ERC-20 ecosystems — pu…
+- [getunblah](https://alexisrondeau.me/code/getunblah/): Machine learning: a macOS meeting-buddy for those (like myself) who talk too much, or too little, when they get nervous…
+- [plotto-for-obsidian](https://alexisrondeau.me/code/plotto-for-obsidian/): Write your plots faster with this 'batteries-included' collection of Plotto plain text markdown files for Obsidian.md
+- [getquickdown](https://alexisrondeau.me/code/getquickdown/): QuickDown – A better inbox for your ideas.
+- [quickdown](https://alexisrondeau.me/code/quickdown/): QuickDown – A better inbox for your ideas
+- [algorand-ballet](https://alexisrondeau.me/code/algorand-ballet/): A qualitative analysis tool for the Algorand blockchain
+- [obsidian-recursor](https://alexisrondeau.me/code/obsidian-recursor/): An ambient plugin that will place your cursor back to where you left off.
+- [obsidian-footnotes](https://alexisrondeau.me/code/obsidian-footnotes/): Makes creating footnotes in Obsidian more fun!
+- [extracthighlights-dist](https://alexisrondeau.me/code/extracthighlights-dist/): Custom PDFJS library for highlights
+- [obsidian-journey-plugin](https://alexisrondeau.me/code/obsidian-journey-plugin/): Discover the story between your notes in Obsidian
+- [obsidian-shuffle](https://alexisrondeau.me/code/obsidian-shuffle/): Create custom and randomized writing prompts
+- [obsidian-dashboard](https://alexisrondeau.me/code/obsidian-dashboard/): Dashboard for Obsidian
+- [obsidian-extract-pdf-highlights](https://alexisrondeau.me/code/obsidian-extract-pdf-highlights/): Extract highlights, underlines and annotations from your PDFs into Obsidian
+- [obsidian-extract-pdf](https://alexisrondeau.me/code/obsidian-extract-pdf/): Extract PDFs to Markdown within Obsidian
+- [dangerzone-writing-plugin](https://alexisrondeau.me/code/dangerzone-writing-plugin/): A plugin that forces you to write for X seconds. If you pause for more than 5 seconds, everything you've written in thi…
+- [text-expander-plugin](https://alexisrondeau.me/code/text-expander-plugin/): A bare-bones and opinionated proof-of-concept text expander utility for Obsidian
+- [extract-highlights-plugin](https://alexisrondeau.me/code/extract-highlights-plugin/): Manage your highlights in Obsidian by easily creating, removing and exporting them.
+- [menu-bar-breathing](https://alexisrondeau.me/code/menu-bar-breathing/): A small MacOS menu bar app that helps you breathe
+- [led-table](https://alexisrondeau.me/code/led-table/): A datatable implementation of https://www.derlichtpeter.de/de/lichtflimmern/markttests/
+- [blockchain-toy](https://alexisrondeau.me/code/blockchain-toy/): A recursive toy algorithm to calculate the nonce for zero-padded SHA256 hashes
+- [clojure-scribbles](https://alexisrondeau.me/code/clojure-scribbles/): Thinking and Sleeping Better With Clojure: Experiments in Recursion
+- [prio](https://alexisrondeau.me/code/prio/): A simple Rails app that allows users to prioritize a list of tasks based on their importance and urgency using binary s…
+- [the-little-clojurian](https://alexisrondeau.me/code/the-little-clojurian/): My TDD implementation of "The Little Schemer" in Clojure.
+- [elemental-tdd](https://alexisrondeau.me/code/elemental-tdd/): Boilerplate for TDD with Elemental.js
+- [base-angular-tdd](https://alexisrondeau.me/code/base-angular-tdd/): Personal boilerplate for TDD in Angular.js with Karma. Uses Bower for dependency-management.
+- [quickread](https://alexisrondeau.me/code/quickread/): Summarize blog posts for fast reading using Abby Marks-Beale's 'Previewing' algorithm
+- [set-stuff](https://alexisrondeau.me/code/set-stuff/): A quick throw-away utility to compare two sets of numbers from two files
+- [the-hook](https://alexisrondeau.me/code/the-hook/): A simple and fun Arduino game implementing a very simplified version of Nir Eyal's "Hook" model
+- [gmail-pictures](https://alexisrondeau.me/code/gmail-pictures/): A Chrome Extension and Rails API to add Gif images to emails from within Gmail
+- [bookmarks-HATEOAS](https://alexisrondeau.me/code/bookmarks-hateoas/): A simple Spring Boot Application persisting Users and Bookmarks to a Hibernate DB and providing a RESTful, HATEOAS-enab…
+- [bookmarks](https://alexisrondeau.me/code/bookmarks/): A simple Spring Boot Application persisting Users and Bookmarks to a Hibernate DB and providing a RESTful interface
+- [bookmarks-HATEOAS-Secured](https://alexisrondeau.me/code/bookmarks-hateoas-secured/): A simple Spring Boot Application persisting Users and Bookmarks to a Hibernate DB and providing a OAuth2 secured RESTfu…
+- [homework](https://alexisrondeau.me/code/homework/): Learn Web Development Through Testing
+- [emacs.d](https://alexisrondeau.me/code/emacs-d/): Personal .emacs setup
+- [lisping](https://alexisrondeau.me/code/lisping/): Playground for my Lisp education
+- [GetYourKliks](https://alexisrondeau.me/code/getyourkliks/): Demand validation and lead collection site for Klik prototype.
+
 ## Tags
 
 - [#personal-projects](https://alexisrondeau.me/feed/tag/personal-projects/): 8 dispatches
@@ -239,18 +300,18 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 
 ## Months
 
-- [October 2026](https://alexisrondeau.me/feed/archive/2026/10/): 4 dispatches
-- [September 2026](https://alexisrondeau.me/feed/archive/2026/09/): 78 dispatches
+- [October 2026](https://alexisrondeau.me/feed/archive/2026/10/): 5 dispatches
+- [September 2026](https://alexisrondeau.me/feed/archive/2026/09/): 79 dispatches
 - [August 2026](https://alexisrondeau.me/feed/archive/2026/08/): 37 dispatches
-- [July 2026](https://alexisrondeau.me/feed/archive/2026/07/): 22 dispatches
-- [June 2026](https://alexisrondeau.me/feed/archive/2026/06/): 30 dispatches
+- [July 2026](https://alexisrondeau.me/feed/archive/2026/07/): 24 dispatches
+- [June 2026](https://alexisrondeau.me/feed/archive/2026/06/): 31 dispatches
 - [May 2026](https://alexisrondeau.me/feed/archive/2026/05/): 10 dispatches
-- [April 2026](https://alexisrondeau.me/feed/archive/2026/04/): 31 dispatches
+- [April 2026](https://alexisrondeau.me/feed/archive/2026/04/): 33 dispatches
 - [March 2026](https://alexisrondeau.me/feed/archive/2026/03/): 34 dispatches
 - [February 2026](https://alexisrondeau.me/feed/archive/2026/02/): 57 dispatches
 - [January 2026](https://alexisrondeau.me/feed/archive/2026/01/): 15 dispatches
-- [December 2025](https://alexisrondeau.me/feed/archive/2025/12/): 28 dispatches
-- [November 2025](https://alexisrondeau.me/feed/archive/2025/11/): 125 dispatches
+- [December 2025](https://alexisrondeau.me/feed/archive/2025/12/): 29 dispatches
+- [November 2025](https://alexisrondeau.me/feed/archive/2025/11/): 126 dispatches
 - [October 2025](https://alexisrondeau.me/feed/archive/2025/10/): 7 dispatches
 - [September 2025](https://alexisrondeau.me/feed/archive/2025/09/): 5 dispatches
 - [August 2025](https://alexisrondeau.me/feed/archive/2025/08/): 7 dispatches
@@ -272,24 +333,32 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 - [January 2024](https://alexisrondeau.me/feed/archive/2024/01/): 1 dispatches
 - [November 2023](https://alexisrondeau.me/feed/archive/2023/11/): 2 dispatches
 - [October 2023](https://alexisrondeau.me/feed/archive/2023/10/): 1 dispatches
-- [September 2023](https://alexisrondeau.me/feed/archive/2023/09/): 1 dispatches
+- [September 2023](https://alexisrondeau.me/feed/archive/2023/09/): 2 dispatches
 - [August 2023](https://alexisrondeau.me/feed/archive/2023/08/): 3 dispatches
 - [July 2023](https://alexisrondeau.me/feed/archive/2023/07/): 1 dispatches
-- [June 2023](https://alexisrondeau.me/feed/archive/2023/06/): 2 dispatches
-- [May 2023](https://alexisrondeau.me/feed/archive/2023/05/): 7 dispatches
-- [April 2023](https://alexisrondeau.me/feed/archive/2023/04/): 3 dispatches
-- [March 2023](https://alexisrondeau.me/feed/archive/2023/03/): 2 dispatches
+- [June 2023](https://alexisrondeau.me/feed/archive/2023/06/): 4 dispatches
+- [May 2023](https://alexisrondeau.me/feed/archive/2023/05/): 9 dispatches
+- [April 2023](https://alexisrondeau.me/feed/archive/2023/04/): 5 dispatches
+- [March 2023](https://alexisrondeau.me/feed/archive/2023/03/): 5 dispatches
+- [February 2023](https://alexisrondeau.me/feed/archive/2023/02/): 1 dispatches
+- [November 2022](https://alexisrondeau.me/feed/archive/2022/11/): 1 dispatches
 - [October 2022](https://alexisrondeau.me/feed/archive/2022/10/): 2 dispatches
-- [September 2022](https://alexisrondeau.me/feed/archive/2022/09/): 1 dispatches
-- [July 2022](https://alexisrondeau.me/feed/archive/2022/07/): 5 dispatches
+- [September 2022](https://alexisrondeau.me/feed/archive/2022/09/): 2 dispatches
+- [August 2022](https://alexisrondeau.me/feed/archive/2022/08/): 1 dispatches
+- [July 2022](https://alexisrondeau.me/feed/archive/2022/07/): 6 dispatches
 - [April 2022](https://alexisrondeau.me/feed/archive/2022/04/): 3 dispatches
-- [November 2021](https://alexisrondeau.me/feed/archive/2021/11/): 1 dispatches
+- [March 2022](https://alexisrondeau.me/feed/archive/2022/03/): 1 dispatches
+- [January 2022](https://alexisrondeau.me/feed/archive/2022/01/): 1 dispatches
+- [December 2021](https://alexisrondeau.me/feed/archive/2021/12/): 1 dispatches
+- [November 2021](https://alexisrondeau.me/feed/archive/2021/11/): 2 dispatches
 - [September 2021](https://alexisrondeau.me/feed/archive/2021/09/): 1 dispatches
-- [February 2021](https://alexisrondeau.me/feed/archive/2021/02/): 3 dispatches
-- [January 2021](https://alexisrondeau.me/feed/archive/2021/01/): 5 dispatches
-- [December 2020](https://alexisrondeau.me/feed/archive/2020/12/): 3 dispatches
+- [March 2021](https://alexisrondeau.me/feed/archive/2021/03/): 1 dispatches
+- [February 2021](https://alexisrondeau.me/feed/archive/2021/02/): 5 dispatches
+- [January 2021](https://alexisrondeau.me/feed/archive/2021/01/): 8 dispatches
+- [December 2020](https://alexisrondeau.me/feed/archive/2020/12/): 5 dispatches
+- [November 2020](https://alexisrondeau.me/feed/archive/2020/11/): 3 dispatches
 - [September 2020](https://alexisrondeau.me/feed/archive/2020/09/): 1 dispatches
-- [August 2020](https://alexisrondeau.me/feed/archive/2020/08/): 1 dispatches
+- [August 2020](https://alexisrondeau.me/feed/archive/2020/08/): 2 dispatches
 - [July 2020](https://alexisrondeau.me/feed/archive/2020/07/): 1 dispatches
 - [June 2020](https://alexisrondeau.me/feed/archive/2020/06/): 3 dispatches
 - [May 2020](https://alexisrondeau.me/feed/archive/2020/05/): 1 dispatches
@@ -310,14 +379,20 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 - [May 2018](https://alexisrondeau.me/feed/archive/2018/05/): 3 dispatches
 - [December 2017](https://alexisrondeau.me/feed/archive/2017/12/): 1 dispatches
 - [November 2017](https://alexisrondeau.me/feed/archive/2017/11/): 2 dispatches
+- [September 2017](https://alexisrondeau.me/feed/archive/2017/09/): 1 dispatches
 - [June 2017](https://alexisrondeau.me/feed/archive/2017/06/): 1 dispatches
-- [May 2017](https://alexisrondeau.me/feed/archive/2017/05/): 7 dispatches
-- [April 2017](https://alexisrondeau.me/feed/archive/2017/04/): 5 dispatches
+- [May 2017](https://alexisrondeau.me/feed/archive/2017/05/): 9 dispatches
+- [April 2017](https://alexisrondeau.me/feed/archive/2017/04/): 7 dispatches
 - [January 2017](https://alexisrondeau.me/feed/archive/2017/01/): 2 dispatches
 - [September 2016](https://alexisrondeau.me/feed/archive/2016/09/): 2 dispatches
+- [March 2016](https://alexisrondeau.me/feed/archive/2016/03/): 1 dispatches
+- [February 2016](https://alexisrondeau.me/feed/archive/2016/02/): 1 dispatches
 - [January 2016](https://alexisrondeau.me/feed/archive/2016/01/): 1 dispatches
+- [October 2015](https://alexisrondeau.me/feed/archive/2015/10/): 2 dispatches
 - [June 2015](https://alexisrondeau.me/feed/archive/2015/06/): 1 dispatches
 - [May 2015](https://alexisrondeau.me/feed/archive/2015/05/): 2 dispatches
+- [March 2015](https://alexisrondeau.me/feed/archive/2015/03/): 2 dispatches
+- [February 2015](https://alexisrondeau.me/feed/archive/2015/02/): 3 dispatches
 - [January 2015](https://alexisrondeau.me/feed/archive/2015/01/): 1 dispatches
 - [December 2014](https://alexisrondeau.me/feed/archive/2014/12/): 3 dispatches
 - [November 2014](https://alexisrondeau.me/feed/archive/2014/11/): 3 dispatches
@@ -329,3 +404,7 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 - [May 2014](https://alexisrondeau.me/feed/archive/2014/05/): 12 dispatches
 - [April 2014](https://alexisrondeau.me/feed/archive/2014/04/): 2 dispatches
 - [March 2014](https://alexisrondeau.me/feed/archive/2014/03/): 9 dispatches
+- [January 2014](https://alexisrondeau.me/feed/archive/2014/01/): 1 dispatches
+- [June 2013](https://alexisrondeau.me/feed/archive/2013/06/): 1 dispatches
+- [May 2013](https://alexisrondeau.me/feed/archive/2013/05/): 1 dispatches
+- [January 2012](https://alexisrondeau.me/feed/archive/2012/01/): 1 dispatches

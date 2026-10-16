@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>airloom — Alexis Rondeau</title>
+<meta name="description" content="Autonomous Research with AI: evolving quadcopter frame geometry for Wh/km — an autoresearch loop of a genetic algorithm over the open-source Source O…">
+<link rel="canonical" href="https://alexisrondeau.me/code/airloom/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alexis Rondeau">
+<meta property="og:title" content="airloom">
+<meta property="og:description" content="Autonomous Research with AI: evolving quadcopter frame geometry for Wh/km — an autoresearch loop of a genetic algorithm over the open-source Source O…">
+<meta property="og:url" content="https://alexisrondeau.me/code/airloom/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@SpringStreetNYC">
+<meta name="twitter:creator" content="@SpringStreetNYC">
+<meta property="og:image" content="https://alexisrondeau.me/code/media/gh-1299063025-card.png">
+<meta property="og:image:alt" content="airloom">
+<meta name="twitter:image" content="https://alexisrondeau.me/code/media/gh-1299063025-card.png">
+<link rel="alternate" type="application/atom+xml" title="Alexis Rondeau — Newsfeed" href="https://alexisrondeau.me/feed/feed.xml">
+<link rel="stylesheet" href="/tufte.css">
+<link rel="stylesheet" href="/feed/feed.css">
+<meta property="article:published_time" content="2026-07-12T18:10:22Z">
+<meta property="article:modified_time" content="2026-07-30T12:58:48Z">
+<meta property="article:author" content="Alexis Rondeau">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","author":{"@id":"https://alexisrondeau.me/#person","@type":"Person","name":"Alexis Rondeau","sameAs":["https://x.com/SpringStreetNYC","https://github.com/akaalias","https://www.linkedin.com/in/alexis-rondeau-2099nyc/","https://www.youtube.com/@axsrondeau"],"url":"https://alexisrondeau.me/"},"codeRepository":"https://github.com/akaalias/airloom","dateCreated":"2026-07-12T18:10:22Z","dateModified":"2026-07-30T12:58:48Z","datePublished":"2026-07-12T18:10:22Z","description":"Autonomous Research with AI: evolving quadcopter frame geometry for Wh/km — an autoresearch loop of a genetic algorithm over the open-source Source O…","image":["https://alexisrondeau.me/code/media/gh-1299063025-card.png"],"keywords":"agentic-ai, ai-agents, ai-for-science, ai-research, autonomous-agents, autoresearch, claude, evolutionary-algorithms, genetic-algorithm, llm, llm-agents, quadcopter, research-automation, self-improving, simulation","license":"https://spdx.org/licenses/GPL-3.0.html","mainEntityOfPage":"https://alexisrondeau.me/code/airloom/","name":"airloom","programmingLanguage":"Python","sameAs":["http://alexisrondeau.me/airloom/"],"url":"https://alexisrondeau.me/code/airloom/"}</script>
+
+</head>
+<body>
+<nav class="topnav"><a href="/">Home</a><a href="/about/">About</a><a href="/feed/">Newsfeed</a><a href="/feed/archive/">Archive</a><a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a><a rel="me" href="https://github.com/akaalias">GitHub</a><a rel="me" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a></nav>
+<header class="hero">
+<div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
+<h1><a href="/feed/">Newsfeed</a></h1>
+<p class="sub">Repository · Sunday, July 12, 2026 · 20:10</p>
+</header>
+<div class="wrap">
+<section class="feed single">
+<article class="item kind-repo" id="g-airloom">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/airloom/"><time datetime="2026-07-12T18:10:22Z">Sunday, July 12, 2026 · 20:10</time></a></div>
+<h2 class="note-title"><a href="/code/airloom/">airloom</a></h2>
+<p class="repo-desc">Autonomous Research with AI: evolving quadcopter frame geometry for Wh/km — an autoresearch loop of a genetic algorithm over the open-source Source One V6 plate drawings, six simulated weather scenarios, and Claude as an AI agent co-designing. The champion flies 16% more efficiently.</p>
+<div class="stats"><span>Python</span></div>
+<div class="text note-body repo-readme">
+<h1>Airloom — evolving quadcopter frames for Wh/km</h1>
+<p><em>(heirloom + air: every frame inherits from its ancestors, and the gallery
+is the family archive. Formerly <code>framevo</code>; the old CLI name still works
+as an alias.)</em></p>
+<p>A fully automated, headless research loop that evolves quadcopter <strong>frame
+geometry</strong> to minimize <strong>energy per distance (Wh/km)</strong> flown through a
+portfolio of adverse-weather scenarios. Everything except the frame — battery,
+motors, propellers, flight controller — is fixed. Runs unattended, is
+resumable after a crash, and produces a ranked, visual archive of every frame
+it ever evaluated.</p>
+<pre><code>make demo        # 3 generations x population 8, ~2-4 min on 8 cores
+make test        # pytest suite
+.venv/bin/airloom run --generations 100            # starts, or RESUMES the
+                                                   #  latest run by default
+.venv/bin/airloom run --generations 100 --fresh    # snapshot + CLEAR results,
+                                                   #  then a brand-new run
+.venv/bin/airloom lineage &lt;genome_hash&gt;            # ancestor chain w/ fitness
+.venv/bin/airloom gallery                          # rebuild artifacts from db
+.venv/bin/airloom robustness                       # is the RANKING an artifact
+                                                   #  of the model knobs?
+.venv/bin/airloom verify-champions                 # refined structural check of
+                                                   #  the top frames + print-
+                                                   #  and-test protocol
+</code></pre>
+<p>While a run is live, type <code>quit</code> + enter (or ctrl-c) to stop gracefully — the
+tasks in flight finish and the run stays resumable. If the latest run’s
+genomes predate the current genome spec, <code>airloom run</code> starts a fresh run
+automatically; a <code>run.db</code> written by an older schema is archived (never
+deleted) and recreated.</p>
+<p>Local-first: plain <code>pip install -e .</code> on macOS (Apple Silicon) or Linux x86,
+CPU-only, no Docker/GPU/EGL. Thumbnails render through headless matplotlib.
+Worker count auto-scales to the core count.</p>
+<p>Every <code>airloom run</code> first <strong>commits a snapshot of <code>results/</code> into its own
+nested repo</strong> (<code>results/.git</code> — separate from the project repo, so big run
+artifacts never bloat it). <code>--fresh</code> then actually clears the folder.
+Restore any past state with <code>git -C results log</code> +
+<code>git -C results checkout &lt;hash&gt; -- .</code></p>
+<h2>What it produces (in <code>results/</code>)</h2>
+<ul>
+<li><code>index.html</code> — the gallery: static, no frameworks, no server, open with
+<code>file://</code> (auto-reloads every 30 s while a run is live — locally only);
+also mirrored into <code>docs/</code>, the GitHub Pages root, on every refresh.
+Tufte-styled (cream paper, ink, one rust
+accent, hairlines). At the top: a <strong>progress chart</strong> of every candidate in
+evaluation order — gray dots, a best-so-far step line with labeled
+improvements, invalid candidates as rust ×, generation ticks, and two
+horizontal benchmark lines (≈5.0 Wh/km aggregate = current 7-inch
+long-range practice, ≈4.0 = record-class stretch; both set in
+<code>scenarios.yaml</code>) — so you can see what moved the needle and where the
+search plateaued. Below: one row
+per generation sorted by fitness, then detail blocks showing a
+<strong>from-below still</strong> of each candidate — click it to open a full-screen
+overlay with two tabs: the interactive 3D model (depth-buffered WebGL,
+drag/scroll/double-click), and a <strong>side-by-side comparison with the
+oldest ancestor of its lineage whose rotation and zoom stay in sync</strong>.
+A metric/value table, the genome table, parent thumbnails and the
+candidate’s <strong>lab-notebook notes</strong> (hypothesis / method / result — see
+the narrator below) sit beside each still. Parts are colored by role: rust arms and
+near-black deck plates are the <strong>evolved</strong> geometry; the blue Li-Ion pack,
+gray motor cans and pale translucent prop disks are the <strong>fixed</strong> kit.</li>
+<li><code>leaderboard.md</code> — top 10 with all metrics and per-scenario columns.</li>
+<li><code>lineage.html</code> (+ raw <code>lineage.svg</code>, <code>lineage.dot</code>) — a dedicated family
+tree page: nodes shaded by fitness (dark = better), hollow nodes = invalid,
+edges colored by operator, elite carry-overs as dotted pass-throughs.</li>
+<li><code>convergence.png</code> — fitness vs. generation.</li>
+<li><code>frames/gen_XXXX/&lt;hash&gt;.stl</code> + <code>.png</code> — <strong>every</strong> candidate, including
+invalid ones (<code>_INVALID</code> suffix; the failures are instructive).</li>
+<li><code>gen_XXXX_best.stl</code> — the generation’s champion (fused), plus
+<code>gen_XXXX_best_parts/</code> — the same frame as separate flat, printable pieces.</li>
+<li><code>designer_log.md</code> — the designer rounds’ proposals with their one-line
+rationales (see below).</li>
+<li><code>robustness.md</code> (on demand, <code>airloom robustness</code>) — the top candidates
+re-flown under perturbed model knobs (±30 % handbook Cds, ±10 % rotor
+tables, rain knobs, wash term): rank correlation, top-5 overlap and
+champion identity vs the baseline ordering, with a STABLE / MODERATE /
+FRAGILE verdict. Answers “is the leaderboard a frame property or a model
+artifact?” and names the knob where Phase B fidelity would matter first.</li>
+<li><code>champion_check.md</code> (on demand, <code>airloom verify-champions</code>) — the top
+frames re-analyzed with the same station-by-station variable-section
+bending model the in-loop constraint now runs (net-section stress
+concentration at holes/cutouts via Peterson Kt, and the taper gene),
+adding the one thing the fast in-loop gate deliberately doesn’t apply:
+as-built strength knockdowns for printed materials — plus a bench
+print-and-test protocol with hold and predicted-failure loads.</li>
+<li><code>run.db</code> — SQLite: genomes, lineage (self-referencing, <code>WITH RECURSIVE</code>
+ancestry), per-scenario metrics, populations, lab-notebook notes, config
+snapshot, git hash. Written by an older schema? It gets archived
+automatically (never deleted) and recreated.</li>
+<li><code>glossary.html</code> (copied from <code>docs/glossary.html</code>, linked from the gallery)
+— definitions of both the evolutionary-algorithm terms and the domain terms
+(genes, Wh/km, constraints, physics vocabulary).</li>
+</ul>
+<h2>The fixed platform (never evolved)</h2>
+<p>Matched to the <strong>official DroneAid Collective (drone-aid.de) workshop kit</strong>,
+a 7-inch long-range build in the most popular open-source plate-frame
+archetype — the <a href="https://github.com/tbs-trappy/source_one">TBS Source One</a>
+family (open-source: 2 mm deck plates, M3 standoffs, sandwiched plate arms;
+the upstream repo carries no license file, so terms are unconfirmed).
+Kit components as modeled: 4× 2806-class ~1300KV motors with 7×4-class
+3-blade props (ground truth: UIUC Master Airscrew GF 7×4 measurements),
+a self-built 6S1P 21700 Li-Ion pack (4.2 Ah, 470 g, strapped on top of the
+deck), 30.5 mm Betaflight FC + 4-in-1 ESC stack between the plates, micro
+FPV camera, VTX + antenna, ELRS receiver. Fixed non-frame mass: 0.78 kg;
+baseline AUW ≈ 1.0 kg.</p>
+<p>The generation-0 baseline genome is <strong>measured from the official Source One
+V6 7in DC plate drawing</strong> (cached with provenance notes in
+<code>data/source_one/</code>): 106.6×48.5 mm bottom plate, 2 mm plates, 6 mm arms,
+M3×30 standoffs, ~160 mm arms. Assembly is modeled the way the real frame
+bolts together: arm root tongues rest on the bottom plate inside the
+sandwich (tongues may not collide — hard constraint), the FC/ESC boards sit
+in the gap (and count as a bluff body for drag), the battery wedge hinges on
+its front bottom edge so it never sinks into the plate, and the XT60/lead
+are modeled visually. The best candidate of each generation is also exported
+as individual print/cut-ready pieces in <code>gen_XXXX_best_parts/</code>
+(bottom_plate, top_plate, arm ×4).</p>
+<h2>The genome: morphs of the REAL parts (14 genes)</h2>
+<p>The genome no longer describes primitives — it deforms the <strong>official
+Source One V6 7in DC plate drawings</strong> (<code>data/source_one/</code>, parsed from the
+DXF with arcs, cutouts and every bolt hole) under zone constraints that keep
+each candidate a printable/cuttable derivative of the real design:</p>
+<ul>
+<li><code>arm_length_scale</code>, <code>arm_width_scale</code>, <code>arm_waist_scale</code>, <code>arm_thickness</code>
+— stretch/reshape the real arm outlines; the bolt tongue and the 16×19 mm
+motor-mount end stay rigid.</li>
+<li><code>tip_thickness_scale</code> — mid-shaft thickness dip as a fraction of root
+thickness (a bump profile: full thickness stays at the tongue and the
+motor mount, where it’s needed for the plate-sandwich fit and screw
+engagement; 1.0 = uniform, no dip).</li>
+<li><code>arm_cutout_scale</code> — three lightening holes drilled along each arm’s
+shaft centerline, radius scaled off the local width there (0 = none).</li>
+<li><code>front_sweep_deg</code>, <code>rear_sweep_deg</code> — rotate the arms about their
+drawing-registered plate anchors (front anchors are exact bolt-pattern
+registrations; DC arms keep their true left/right mirrored chirality).</li>
+<li><code>plate_length_scale</code>, <code>plate_width_scale</code>, <code>plate_thickness_scale</code>,
+<code>deck_gap</code> — stretch the real main/mid/top plates (the 30.5 mm stack
+pattern stays pinned exactly), set the standoff length.</li>
+<li><code>battery_wedge_deg</code> — tilt of the pack on the top plate.</li>
+<li><code>material</code> — carbon plate / PA12-CF / PET-CF / PLA+ / PETG / ASA library.</li>
+</ul>
+<p>Gene value 1.0 on every scale gene reproduces the real V6 exactly (the
+generation-0 seed; its frame mass comes out at 144 g — the real frame weighs
+~145 g). Every candidate assembles the full kit: 6×21700 cell pack, FC/ESC
+stack, 2806 motors, 3-blade props, camera, VTX + ELRS antennas, GPS, XT60
+and routed wire looms — dimension-accurate meshes (<code>components.py</code>).</p>
+<p>Hard constraints (fitness = ∞, no simulation): the FC/ESC stack must fit the
+deck gap, placed arm outlines must not overlap (the real notch interlock is
+not redesigned), each tongue’s bolt pair must land on main-plate material,
+rotors need ≥ 5 mm from each other, and prop disks are checked against the
+deck/battery <strong>in 3D</strong> (the real V6’s rear props sweep below the top-plate
+corners; <code>deck_gap</code> trades that margin).</p>
+<h2>Scenario portfolio</h2>
+<p>Six scenarios (config/scenarios.yaml): <code>calm_warm</code>, <code>cold_headwind</code>, <code>storm</code>
+(25 mm/h rain), <code>crosswind</code>, <code>gusty_light</code> (severe Dryden gusts),
+<code>hot_thin</code> (1500 m density altitude). Every candidate flies <strong>all</strong> of them
+over the identical mission: 2 km north + 2 km south at 12 m/s, 30 m AGL.
+Each scenario has a fixed turbulence seed, so all candidates fly identical
+gust histories — fitness differences are frame differences, never gust luck.</p>
+<p><strong>Designer rounds (headless Claude):</strong> every 6 generations (config:
+<code>designer</code> in <code>evolution.yaml</code>), a headless <code>claude -p</code> call receives the
+elite genomes with per-scenario results and the invalid-design histogram,
+and proposes new genome vectors as design hypotheses — injected as operator
+<code>designer</code> (violet in the family tree), rationales appended to
+<code>results/designer_log.md</code>. The brief includes the known constraint couplings
+(deck gap vs. FC stack, sweep vs. tongue collisions and bolt registration).
+Fail-soft: if the CLI is unavailable the round is skipped.</p>
+<p><strong>Lab-notebook narrator (headless Claude):</strong> after each generation, ONE
+<code>claude -p</code> call writes three short notes for every new candidate —
+<em>hypothesis</em> (the pre-flight “why”: what the search had observed and what
+bet this design makes), <em>method</em> (what concretely changed vs. the parents),
+<em>result</em> (outcome vs. parents and best-so-far, or the constraint that killed
+it, plus one idea worth testing next). Rule-based fallback notes are written
+instantly; the Claude enrichment runs on a background thread <strong>off the
+loop’s critical path</strong> and upgrades them in place. The notes appear in the
+gallery detail blocks and the family-tree hover cards. Config: <code>narrator</code>
+in <code>evolution.yaml</code>; fail-soft like the designer.</p>
+<p><strong>Patience:</strong> if the best-so-far stalls for 6 generations (no ≥0.5 %
+improvement), the loop pivots — it crosses tournament winners with <em>far
+parents</em> (the most genetically distant still-decent candidates in the run’s
+history) under boosted mutation, escalating to random parents if the plateau
+persists. Derived from persisted history, so it survives <code>--resume</code>;
+configured under <code>ga.patience</code> in <code>config/evolution.yaml</code>.</p>
+<p>Fitness = mean Wh/km + λ·worst Wh/km (λ = 0.5), or pure worst-case with
+<code>aggregation: minimax</code>. Thrust limiting (rotor RPM ceiling incl. battery
+sag, per-motor power, pack deliverable power) <strong>clamps</strong> rather than
+instantly failing — a gust transient costs tracking and energy, like real
+flight. A scenario fails on <em>sustained</em> infeasibility: thrust-limited
+beyond 10 % of the nominal mission time (blamed on the dominant limiter),
+altitude/track divergence, mission not completed within 1.6× nominal time,
+or the structural check. Any scenario failure ⇒ invalid. An optional
+early-reject screen
+(<code>early_reject.enabled</code>) flies <code>calm_warm</code> first and gives clearly-losing
+candidates a finite penalized fitness without flying the other five.</p>
+<h2>Physics (Phase A — deliberately boring and verifiable)</h2>
+<table>
+<thead><tr><th>piece</th><th>model</th><th>source / check</th></tr></thead>
+<tbody>
+<tr><td>rotor</td><td>CT(J), CP(J) interpolated from measured tables; <code>T = ρn²D⁴CT</code>, <code>P = ρn³D⁵CP / 0.85</code> (motor+ESC)</td><td>UIUC Propeller DB, Master Airscrew GF 7×4 (static + 4 RPM sweeps), cached in <code>data/uiuc/</code>; unit-tested against tabulated points</td></tr>
+<tr><td>frame drag</td><td>component buildup: projected areas from rasterizing the STL along the flow at 0–60° tilt; handbook per-class Cds <strong>corrected by CFD-fitted tilt-dependent ratios and an assembly interference factor</strong> (wake shielding + silhouette double-count, −6 %/−27 %/−37 % at 0°/20°/40°); rotor-wash download on arm planform under the disks</td><td>calibrated against 12 OpenFOAM v2512 k-ω SST cases (<code>cfd/calibration.md</code>); round-trip unit-tested to ±3 % of the measured CdAs</td></tr>
+<tr><td>turbulence</td><td>Dryden, MIL-F-8785C low-altitude forms, spectral synthesis, fixed seeds</td><td>variance unit-tested against σ² spec</td></tr>
+<tr><td>rain</td><td>(a) water-film added mass ∝ top area, (b) momentum drag via equivalent suspended-water density + vertical impact force, (c) 15 % thrust-coefficient penalty</td><td>empirical knobs, see NASA TP-2671 (Dunham et al.) heavy-rain research; all in config</td></tr>
+<tr><td>flight</td><td>100 Hz point-mass 3-DOF sim; quasi-static attitude (the quad tilts into the relative wind), P velocity loop with accel limits; rotor speeds solved each step from the CT tables; electrical energy integrated</td><td>zero-wind mission unit-tested against a quasi-static analytic power balance (±6 %)</td></tr>
+<tr><td>battery</td><td>quasi-static pack model: V = V0 − I·R, current solved from demanded motor power each step; energy integrated at the pack terminals (incl. I²R loss); RPM ceiling scales with sagged voltage; deliverable-power (V0²/4R ≈ 820 W) and cell-current (45 A) limits feed the saturation clock</td><td>P42A-class DC IR + discharge-curve sag; unit-tested (quadratic solve, IR-loss share, storm clamp behavior)</td></tr>
+<tr><td>structure</td><td>station-by-station variable-section Euler–Bernoulli bending along the real morphed arm outline (net width minus any hole/cutout, Peterson Kt where one pierces a station, genome-selected thickness taper): worst-case per-rotor thrust across all scenarios × 1.5 safety factor; max stress ≤ material strength, tip deflection ≤ 5 % L, first bending mode outside ±15 % of hover 1P</td><td>stress/deflection unit-tested against hand calculations on a plain (untapered, unpierced) section, which reduces to the classic constant-section formulas</td></tr>
+</tbody>
+</table>
+<p>Sanity anchors (unit-tested): the original spec anchor — a 5-inch quad at
+1.1 kg AUW hovers at ~195 W (180–280 W band), checked against the cached
+GWS 5×4.3 dataset — plus the shipped platform: the baseline 7-inch deck
+(~0.34 m wheelbase, ~1.0 kg AUW) hovers in a plausible 90–230 W band on
+the MA GF 7×4 data.</p>
+<h2>Known limitations (please read before trusting numbers)</h2>
+<ul>
+<li><strong>Phase A drag is approximate.</strong> Component buildup with handbook Cd values
+and a cos²-blend between body-x and body-y flow azimuths; no interference
+drag beyond the rotor-wash term, no Reynolds corrections.</li>
+<li><strong>Rotor model is axial-flow data stretched to edgewise flight.</strong> UIUC wind
+tunnel sweeps measure propellers in axial advance; a quadcopter in cruise
+sees mostly edgewise inflow. J is computed from the axial inflow component
+only, and there is <strong>no rotor–rotor interaction</strong>.</li>
+<li><strong>The rain model is empirical.</strong> Film mass, momentum drag and the 15 %
+thrust penalty are literature-inspired config knobs, not physics.</li>
+<li><strong>No rotational dynamics.</strong> Attitude is quasi-static; control effort in
+gusts appears as thrust modulation, not motor differential torques. Gust
+series are synthesized at the commanded cruise speed rather than the
+instantaneous airspeed.</li>
+<li><strong>UIUC data was measured at 2.5k–7k RPM and on a 2-blade prop</strong>; the kit
+flies 3-blade 7×4s and hovers near 9k RPM. CT/CP are treated as
+Re-independent and blade-count effects are absorbed into the tables.</li>
+<li><strong>Print-material properties are XY/datasheet values.</strong> FDM parts are
+weaker across layer lines (often 40–60 % in Z); in the LOOP the 1.5
+safety factor is the only allowance for anisotropy, print quality, or
+temperature — datasheet strength, not as-built. <code>airloom verify-champions</code> re-checks the top frames with per-material as-built
+strength knockdowns on top of the same station-by-station model, and
+emits a bench print-and-test protocol.</li>
+<li>Structural model checks the arms only (station-by-station stress along
+the shaft, tip deflection, resonance off the root station’s stiffness);
+the deck is assumed rigid and the standoffs ideal.</li>
+<li><strong>The battery model is quasi-static.</strong> Constant open-circuit voltage at
+the nominal 3.7 V/cell (no state-of-charge curve — conservative for a
+short mission that only uses ~15 % of the pack), constant DC internal
+resistance (no temperature or transient effects), no thermal limits for
+pack or motors. It exists to catch physically undeliverable power
+demands, not to predict voltage traces.</li>
+<li><strong>Printability is enforced by real-outline geometry constraints, not full
+DFM.</strong> Parts are the actual (morphed) V6 outlines with their holes and
+cutouts, exported as separate flat pieces; but tongue bolt holes are
+assumed re-cut with the plates when sweep deviates from stock, the rear
+anchor is a best-fit (98 % clamp coverage) rather than a hole registration,
+and tolerances/print-orientation strength are not modeled.</li>
+<li>CMA-ES mode (<code>--optimizer cmaes</code>) has no discrete parents — it samples from
+an adapted Gaussian — so the family tree is skipped and distribution-level
+provenance (mean, σ per generation) is stored in <code>cma_state</code> instead.</li>
+</ul>
+<h2>Phase B (CFD) — milestone 1 complete: calibrated, verdict STABLE</h2>
+<p><code>airloom cfd-calibrate</code> generated 12 OpenFOAM cases (arms alone, deck/kit
+alone, full assembly, and a contrasting genome’s full assembly — each at
+0°/20°/40° tilt, freestream BCs, one snappyHexMesh per geometry) and the
+overnight solve produced <code>cfd/calibration.md</code>. Findings: the handbook
+buildup overestimated drag ~2× at cruise tilt; assembly interference
+(wake shielding + silhouette double-count) is −27 % at 20°; and the
+contrast genome’s ratios matched the baseline’s within ~2 points at every
+angle — the error is <strong>systematic, not gene-dependent</strong>. The corrections
+now live in <code>aero.py</code> (<code>CAL_*</code> tables, applied in
+<code>drag_table_from_areas</code>), and the post-calibration <code>airloom robustness</code>
+verdict is <strong>STABLE</strong> (min Spearman 0.958, no champion flips): the
+ranking is a frame property, not a model artifact. Consequence: the
+originally-planned per-candidate CFD pipeline (top-N per generation,
+cached by genome hash) is <strong>not needed</strong>; the seam (<code>DragTable</code> from
+<code>AreaTable</code>) remains if a future genome expansion moves outside the
+calibrated shape envelope. Note: absolute Wh/km dropped with the
+calibration, so the gallery’s 5.0/4.0 benchmark lines predate it and need
+re-derivation.</p>
+<h2>Layout</h2>
+<pre><code>config/          platform.yaml (fixed hardware), scenarios.yaml (mission,
+                 portfolio, aggregation + benchmark lines), evolution.yaml
+                 (GA, patience, designer, narrator, execution)
+data/uiuc/       cached UIUC propeller measurements (scripts/fetch_uiuc.py refreshes)
+data/source_one/ official Source One V6 7in DC plate DXF + provenance notes
+docs/            glossary.html (copied into results/ next to the gallery)
+src/airloom/     config, genome, realgeo (DXF outline parsing), frame_gen,
+                 components, meshutil, rotor_model, aero, dryden, simulator,
+                 structures, evaluate, parallel, evolution, designer,
+                 narrator, loop, dbstore, lineage, gallery, render, cli
+tests/           frame validity (baseline reproduces the real V6), kit
+                 components, materials, designer parsing, patience/pivot,
+                 UIUC points, beam hand-calc, Dryden variance, zero-wind
+                 energy, hover sanity anchors
+results/         everything a run produces (see above)
+</code></pre>
+<h2>License</h2>
+<p>airloom is free software: you can redistribute it and/or modify it under the
+terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version. See <a href="https://github.com/akaalias/airloom/blob/main/LICENSE">LICENSE</a> for the full text.</p>
+</div>
+<div class="src"><a href="/code/airloom/">Permalink</a> · <a href="https://github.com/akaalias/airloom">View on GitHub ↗</a> · <a href="http://alexisrondeau.me/airloom/">Website ↗</a></div>
+</article>
+</section>
+<nav class="pager"><a href="/feed/">‹ Back to the newsfeed</a><a href="/feed/archive/2026/07/">July 2026 ›</a></nav>
+<aside class="months-nav">
+<div class="group">
+<h3><a href="/feed/archive/">Archive</a></h3>
+<div class="y">2026</div>
+<ul>
+<li><a href="/feed/archive/2026/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2026/09/">September</a> <span class="n">79</span></li>
+<li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
+<li><a href="/feed/archive/2026/07/">July</a> <span class="n">24</span></li>
+<li><a href="/feed/archive/2026/06/">June</a> <span class="n">31</span></li>
+<li><a href="/feed/archive/2026/05/">May</a> <span class="n">10</span></li>
+<li><a href="/feed/archive/2026/04/">April</a> <span class="n">33</span></li>
+<li><a href="/feed/archive/2026/03/">March</a> <span class="n">34</span></li>
+<li><a href="/feed/archive/2026/02/">February</a> <span class="n">57</span></li>
+<li><a href="/feed/archive/2026/01/">January</a> <span class="n">15</span></li>
+</ul>
+<div class="y">2025</div>
+<ul>
+<li><a href="/feed/archive/2025/12/">December</a> <span class="n">29</span></li>
+<li><a href="/feed/archive/2025/11/">November</a> <span class="n">126</span></li>
+<li><a href="/feed/archive/2025/10/">October</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2025/09/">September</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2025/08/">August</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2025/07/">July</a> <span class="n">23</span></li>
+<li><a href="/feed/archive/2025/06/">June</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2025/05/">May</a> <span class="n">18</span></li>
+<li><a href="/feed/archive/2025/04/">April</a> <span class="n">62</span></li>
+<li><a href="/feed/archive/2025/03/">March</a> <span class="n">22</span></li>
+<li><a href="/feed/archive/2025/02/">February</a> <span class="n">11</span></li>
+</ul>
+<div class="y">2024</div>
+<ul>
+<li><a href="/feed/archive/2024/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/11/">November</a> <span class="n">16</span></li>
+<li><a href="/feed/archive/2024/10/">October</a> <span class="n">12</span></li>
+<li><a href="/feed/archive/2024/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/05/">May</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/04/">April</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2023</div>
+<ul>
+<li><a href="/feed/archive/2023/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/10/">October</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/08/">August</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2023/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/06/">June</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2023/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2023/04/">April</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/03/">March</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/02/">February</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2022</div>
+<ul>
+<li><a href="/feed/archive/2022/11/">November</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/10/">October</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/07/">July</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2022/04/">April</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2022/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2021</div>
+<ul>
+<li><a href="/feed/archive/2021/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2021/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/02/">February</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2021/01/">January</a> <span class="n">8</span></li>
+</ul>
+<div class="y">2020</div>
+<ul>
+<li><a href="/feed/archive/2020/12/">December</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2020/11/">November</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2020/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/08/">August</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2020/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/06/">June</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2020/05/">May</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/04/">April</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/03/">March</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2019</div>
+<ul>
+<li><a href="/feed/archive/2019/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/08/">August</a> <span class="n">10</span></li>
+<li><a href="/feed/archive/2019/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/06/">June</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2019/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/01/">January</a> <span class="n">3</span></li>
+</ul>
+<div class="y">2018</div>
+<ul>
+<li><a href="/feed/archive/2018/12/">December</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2018/11/">November</a> <span class="n">15</span></li>
+<li><a href="/feed/archive/2018/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2018/09/">September</a> <span class="n">14</span></li>
+<li><a href="/feed/archive/2018/08/">August</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2018/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2018/05/">May</a> <span class="n">3</span></li>
+</ul>
+<div class="y">2017</div>
+<ul>
+<li><a href="/feed/archive/2017/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2017/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2017/04/">April</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2017/01/">January</a> <span class="n">2</span></li>
+</ul>
+<div class="y">2016</div>
+<ul>
+<li><a href="/feed/archive/2016/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2016/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2016/02/">February</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2016/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2015</div>
+<ul>
+<li><a href="/feed/archive/2015/10/">October</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2015/05/">May</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/03/">March</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/02/">February</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2015/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2014</div>
+<ul>
+<li><a href="/feed/archive/2014/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/11/">November</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2014/09/">September</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2014/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2014/05/">May</a> <span class="n">12</span></li>
+<li><a href="/feed/archive/2014/04/">April</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2014/03/">March</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2014/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2013</div>
+<ul>
+<li><a href="/feed/archive/2013/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2013/05/">May</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2012</div>
+<ul>
+<li><a href="/feed/archive/2012/01/">January</a> <span class="n">1</span></li>
+</ul>
+</div>
+</aside>
+<footer class="site">
+<p>© 2012–2026 Alexis Rondeau. All rights reserved.</p>
+<p>This is my personal site. Everything here — dispatches, notes, opinions — is my own and does not represent any employer, client or organisation I'm affiliated with.</p>
+<p><a href="/">Home</a> · <a href="/about/">About</a> · <a href="/feed/">Newsfeed</a> · <a href="/feed/archive/">Archive</a> · <a href="/feed/feed.xml">Atom</a> · <a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a> · <a rel="me" href="https://github.com/akaalias">GitHub</a> · <a rel="me" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a></p>
+</footer>
+</div>
+
+</body>
+</html>

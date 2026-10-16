@@ -52,6 +52,8 @@ h2.note-title a:hover{border-bottom-color:var(--accent);}
 .note-body th{font-weight:600;border-bottom:1.5px solid var(--ink);}
 .note-body a.wikilink{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--rule);}
 .note-body .wikilink.unresolved{color:var(--muted);border-bottom:1px dotted var(--rule);}
+.repo-desc{font-size:19px;font-style:italic;color:var(--muted);margin:0 0 10px;}
+.repo-readme img[src$=".svg"]{display:inline-block;margin:0 4px 4px 0;border:0;vertical-align:middle;}
 .video-desc{font-size:17px;color:var(--muted);}
 .video-desc.clamped{max-height:160px;overflow:hidden;position:relative;}
 .video-desc.clamped::after{content:"";position:absolute;left:0;right:0;bottom:0;height:60px;

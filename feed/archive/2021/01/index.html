@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>January 2021 — Alexis Rondeau</title>
-<meta name="description" content="Alexis Rondeau's dispatches from January 2021: 5 dispatches.">
+<meta name="description" content="Alexis Rondeau's dispatches from January 2021: 8 dispatches.">
 <link rel="canonical" href="https://alexisrondeau.me/feed/archive/2021/01/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Alexis Rondeau">
 <meta property="og:title" content="January 2021">
-<meta property="og:description" content="Alexis Rondeau's dispatches from January 2021: 5 dispatches.">
+<meta property="og:description" content="Alexis Rondeau's dispatches from January 2021: 8 dispatches.">
 <meta property="og:url" content="https://alexisrondeau.me/feed/archive/2021/01/">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@SpringStreetNYC">
@@ -29,7 +29,7 @@
 <header class="hero">
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1><a href="/feed/archive/">Archive</a></h1>
-<p class="sub">January 2021 · 5 dispatches</p>
+<p class="sub">January 2021 · 8 dispatches</p>
 </header>
 <div class="wrap">
 <section class="feed">
@@ -54,6 +54,126 @@
 <div class="more"><a href="/videos/how-to-create-outlines-for-publishing-faster-journey-for-obsidian-plugin-demo/">Read the full description ›</a></div>
 <div class="stats"><span><b>7:24</b> long</span></div>
 <div class="src"><a href="/videos/how-to-create-outlines-for-publishing-faster-journey-for-obsidian-plugin-demo/">Permalink</a> · <a href="https://www.youtube.com/watch?v=iRydNlinRlc">Watch on YouTube ↗</a></div>
+</article>
+<article class="item kind-repo" id="g-obsidian-journey-plugin">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/obsidian-journey-plugin/"><time datetime="2021-01-28T09:11:22Z">Thursday, January 28, 2021 · 10:11</time></a></div>
+<h2 class="note-title"><a href="/code/obsidian-journey-plugin/">obsidian-journey-plugin</a></h2>
+<p class="repo-desc">Discover the story between your notes in Obsidian</p>
+<div class="stats"><span><b>167</b> stars</span> · <span><b>7</b> forks</span> · <span>TypeScript</span></div>
+<div class="text note-body repo-readme clamped">
+<h2>Obsidian Journey Plugin - Discover the story between your notes!</h2>
+<p><img src="/code/media/gh-333704870-91e5dca94343f089.svg" alt="GitHub release)" loading="lazy">
+<img src="/code/media/gh-333704870-8034e82f8aee4fb7.svg" alt="GitHub all releases" loading="lazy"></p>
+<p><img src="/code/media/gh-333704870-fa0e3169c45763b.gif" alt="" loading="lazy"></p>
+<p>Hey there and welcome!</p>
+<p>Alexis here - Obsidian enthusiast and student at the University of Life!</p>
+<p>I want to show you a new Obsidian plugin I’ve been working on.</p>
+<p>This plugin automatically creates an outline for your publishing.</p>
+<p>An outline for an article, a blog post, or even a book!</p>
+<p>Why do we need this?</p>
+<p><strong>I’ve noticed that my creative output using Obsidian hasn’t been as prolific as I’d like it to be.</strong></p>
+<p>I have hundreds of atomic notes in my vault, I’ve followed every best-practice, but right now, Obsidian didn’t help me take that next step.</p>
+<p>It’s really hard to extract a good story from my vault.</p>
+<p>This plugin automatically finds and creates the outline of my story like so:</p>
+<p><img src="/code/media/gh-333704870-14e8114e650aecf4.png" alt="What the plugin finds for you" loading="lazy"></p>
+<h2>Tutorial</h2>
+<p>Watch on Youtube: <a href="https://youtu.be/6k2Lp1pCZpY">https://youtu.be/6k2Lp1pCZpY</a></p>
+<p><a href="https://youtu.be/6k2Lp1pCZpY"><img src="https://github.com/akaalias/obsidian-journey-plugin/blob/master//code/media/gh-333704870-169b6728fecb0ed5.png" alt="" loading="lazy"></a></p>
+<h2>Included Features</h2>
+<p>Based on the <a href="https://forum.obsidian.md/t/new-plugin-journey-find-the-story-between-your-notes/12153">amazing community feedback and comments</a>, I realized that there are many different ways to go on that journey and so I’ve created a bunch of features you can toggle on or of to your liking.</p>
+<p>These features are like preferences you can give your navigation-system in your car. Maybe today, all you care about is getting from A to B quickly. Maybe tomorrow, you have more time to “take the scenic route.” I want you to be as flexible as possible.</p>
+<h3>✔ Path-Finding Features</h3>
+<h4>➡️ Use “Forward-Links” (Enabled by default)</h4>
+<p>If set, allows to travel using forward-links. If you have a graph like this: A -&gt; B -&gt; C and you ask about the story between A and C, it will give you ‘A, B, C’ since A forward-links to B and B forward-links to C</p>
+<h4>⬅️ Use “Back-Links” (Enabled by default)</h4>
+<p>If set, allows to travel using back-links. If you have a graph like this: A -&gt; B -&gt; C and you ask about the story between C and A, it will give you ‘C, B, A’ since C has a back-link from B and B has a back-link from A</p>
+<h3>✔ Include Tags Feature</h3>
+<h4>🏷 Use tags (Disabled by default)</h4>
+<p>If set, allows to travel using tags.</p>
+<h3>✔ Avoid Traveling via Certain Notes Features</h3>
+<h4>🏞 “Take the scenic route” (Disabled by default)</h4>
+<p>If set, will skip ‘hub’ notes with too many links (MOCs). Configure exactly how many links make a MOC below.</p>
+<h4>⚙️ “How many links make a MOC?”</h4>
+<p>Configure at which point to skip a note because it contains too many out-bound links. Applies only if ‘Take the scenic route’ above is set.</p>
+<h4>🙅🏻‍♀️Exclude specific folders (Disabled by default)</h4>
+<p>If set, will note include notes from the specified folders in your search. Please use comma to deliminate several folders</p>
+<h3>✔ Clipboard Settings Feature</h3>
+<h4>🔗 Enable automatic linking (Disabled by default)</h4>
+<p>If set, will turn titles in the list into links to their respective note</p>
+<h4>🤪 Enable automatic transclusion (Disabled by default)</h4>
+<p>If set, will automatically create transcluding links for you (’<span class="wikilink unresolved">note</span>’ instead of ‘- <span class="wikilink unresolved">note</span>’)</p>
+<h3>✔ Accessibility Feature</h3>
+<h4>🔎 Enable High-Contrast</h4>
+<p>If set, will increase the contrast to make the result-list easier to read.</p>
+<h2>Join the Discussion!</h2>
+<p>Share your ideas and feedback on the plugin. We regularly vote on which features should be built next</p>
+<p><a href="https://forum.obsidian.md/t/new-plugin-journey-find-the-story-between-your-notes/12153">https://forum.obsidian.md/t/new-plugin-journey-find-the-story-between-your-notes/12153</a></p>
+<p><a href="https://forum.obsidian.md/t/new-plugin-journey-find-the-story-between-your-notes/12153"><img src="https://github.com/akaalias/obsidian-journey-plugin/blob/master//code/media/gh-333704870-cc2585d39fcef57a.png" alt="" loading="lazy"></a></p>
+<p>A huge shout-out to <a href="https://forum.obsidian.md/u/thoresson">thoresson</a>, <a href="https://forum.obsidian.md/u/alltagsverstand">alltagsverstand</a>, <a href="https://forum.obsidian.md/u/Thecookiemomma">Thecookiemomma</a>, <a href="https://forum.obsidian.md/u/cestvrai">cestvrai</a>, <a href="https://forum.obsidian.md/u/matteor">matteor</a>, <a href="https://forum.obsidian.md/u/Danashafir">Danashafir</a>, <a href="https://forum.obsidian.md/u/EhuddRomero">EhuddRomero</a>, <a href="https://forum.obsidian.md/u/I-d-as">I-d-as</a>, <a href="https://forum.obsidian.md/u/osgav">osgav</a>, <a href="https://forum.obsidian.md/u/Erick_James_Dodge">Erick_James_Dodge</a>, <a href="https://forum.obsidian.md/u/3mbry0">3mbry0</a>, <a href="https://forum.obsidian.md/u/Klaas">Klaas</a>, <a href="https://forum.obsidian.md/u/ryanjamurphy">ryanjamurphy</a>, <a href="https://forum.obsidian.md/u/EdElgar">EdElgar</a> and <a href="https://forum.obsidian.md/u/Daveb08">Daveb08</a> for helping making this awesome for everyone!</p>
+<h2>How to submit an issue</h2>
+<p>🐞 If you run into a TECHNICAL ISSUE or BUG: Please submit a Github Issues at <a href="https://github.com/akaalias/obsidian-journey-plugin/issues">https://github.com/akaalias/obsidian-journey-plugin/issues</a></p>
+<p><a href="https://github.com/akaalias/obsidian-journey-plugin/issues"><img src="https://github.com/akaalias/obsidian-journey-plugin/blob/master//code/media/gh-333704870-f8da5f4bb1031147.png" alt="" loading="lazy"></a></p>
+<h2>See what features are coming up</h2>
+<p><a href="https://trello.com/b/ICKWjoBu/obsidian-journey-plugin-backlog">https://trello.com/b/ICKWjoBu/obsidian-journey-plugin-backlog</a></p>
+<p><img src="/code/media/gh-333704870-f146901b8f7ed0ef.png" alt="Trello" loading="lazy"></p>
+<h2>Path-Finding Feature Deep Dive</h2>
+<p>Because each feature has an impact to whether the plugin CAN FIND or CANNOT FIND a path between your two notes, I want to demonstrate what each does as simply as possible.</p>
+<p>So, let’s start by imagining this very basic vault with 4 notes. “Note A”, “Note B”, “Note C” and “Note D”</p>
+<ul>
+<li>A links to B</li>
+<li>B links to C</li>
+<li>C shares the same tag as D</li>
+</ul>
+<p><img src="/code/media/gh-333704870-5c43ee368216ba50.png" alt="Vault" loading="lazy"></p>
+<h4>Feature 1: Use “Forward-Links” (Enabled by default)</h4>
+<p>Links are basically one-way streets from one note to the next. That means the plugin will show you only a path IF a forward-linked path exists but it won’t show you a path that goes “against” the one-way street.</p>
+<p><img src="/code/media/gh-333704870-de185815f689be03.png" alt="forwardlink" loading="lazy"></p>
+<p>With the example and this feature turned ON, the plugin will…</p>
+<ul>
+<li>Successfully find you a path from A to C (Via B)</li>
+<li>NOT find you a path from C to A because that would be against the one-way street</li>
+</ul>
+<h4>Feature 2: Use “Back-Links” (Enabled by default)</h4>
+<p>This is basically the inverse of using “forward-links”. With this feature, you navigation system will find ONLY paths that are based on going against the one-way streets.</p>
+<p><img src="/code/media/gh-333704870-5cfe967ef904f21e.png" alt="backlink" loading="lazy"></p>
+<p>With the example and this feature turned ON, the plugin will…</p>
+<ul>
+<li>NOT find a path from A to C because there are no back-links to follow</li>
+<li>Successfully find you the path from C to A (Via B) because the back-links point that direction</li>
+</ul>
+<h4>Feature 3: Using Tags (Disabled by default)</h4>
+<p>Thank you <a href="https://forum.obsidian.md/u/alltagsverstand/summary">alltagsverstand</a> for the idea which I had not thought of and which resonated with many of you.</p>
+<p>As the name suggests, Tags can now also be paths between notes.</p>
+<p><img src="/code/media/gh-333704870-c0bee6f9cd215482.png" alt="tag" loading="lazy"></p>
+<p>With the example and this feature turned ON, the plugin will…</p>
+<ul>
+<li>Successfully find the path from C to D (C -&gt; #tag -&gt; D) and from D to C (D -&gt; #tag -&gt; C)</li>
+</ul>
+<p>If I now have Back-Links and Forward-Links enabled as well, I can now find the path from:</p>
+<ul>
+<li>A to D (A -&gt; B -&gt; C -&gt; #tag -&gt; D)</li>
+<li>D to A (D -&gt; #tag -&gt; C -&gt; B -&gt; A)</li>
+</ul>
+<p>Note that this feature is disabled by default.</p>
+<h4>Feature 4: “Take the scenic route” aka Avoid MOCs (Disabled by default)</h4>
+<p>One of <a href="https://forum.obsidian.md/u/thoresson/summary">thoresson</a>’s many ideas that turned out to be really, really useful when I started to pressure-test finding cool paths.</p>
+<blockquote>
+<p>Avoid Y (perhaps a tag used for MOC and other structured notes so that only atomic notes are included in the journey)</p>
+</blockquote>
+<p>If turned on, this feature will exclude finding a path via MOC notes and help you “take the scenic route” instead. With this feature, you avoid passing through the “big city” (aka MOC) and instead find a path less traveled.</p>
+<p>In the following example, with this feature turned ON, the path from A to C would be:</p>
+<ul>
+<li>A -&gt; Foo -&gt; Bar -&gt; C (instead of A -&gt; MOC -&gt; C)</li>
+</ul>
+<p><img src="/code/media/gh-333704870-41555f720be513e2.png" alt="MOC" loading="lazy"></p>
+<h5>“How many links make an MOC?”</h5>
+<p>A sub-feature for “taking the scenic route” where you can define at what amount of links inside a note makes it an MOC to avoid.</p>
+<h2>The original launch demo</h2>
+<p>Watch on Youtube: <a href="https://youtu.be/iRydNlinRlc">https://youtu.be/iRydNlinRlc</a></p>
+<p><a href="https://youtu.be/iRydNlinRlc"><img src="https://github.com/akaalias/obsidian-journey-plugin/blob/master//code/media/gh-333704870-16a482b40c7282b2.png" alt="" loading="lazy"></a></p>
+</div>
+<div class="more"><a href="/code/obsidian-journey-plugin/">Read the whole README ›</a></div>
+<div class="src"><a href="/code/obsidian-journey-plugin/">Permalink</a> · <a href="https://github.com/akaalias/obsidian-journey-plugin">View on GitHub ↗</a></div>
 </article>
 <article class="item kind-note" id="n-journey">
 <div class="meta"><span class="kind">Note</span><a class="when" href="/notes/journey/"><time datetime="2021-01-27T23:00:00Z">Thursday, January 28, 2021 · 00:00</time></a></div>
@@ -94,6 +214,69 @@
 <div class="stats"><span><b>6:24</b> long</span></div>
 <div class="src"><a href="/videos/a-secret-highlight-mode-for-obsidian/">Permalink</a> · <a href="https://www.youtube.com/watch?v=5kkcqAn6joU">Watch on YouTube ↗</a></div>
 </article>
+<article class="item kind-repo" id="g-obsidian-shuffle">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/obsidian-shuffle/"><time datetime="2021-01-04T19:47:58Z">Monday, January 4, 2021 · 20:47</time></a></div>
+<h2 class="note-title"><a href="/code/obsidian-shuffle/">obsidian-shuffle</a></h2>
+<p class="repo-desc">Create custom and randomized writing prompts</p>
+<div class="stats"><span><b>53</b> stars</span> · <span><b>3</b> forks</span> · <span>TypeScript</span></div>
+<div class="text note-body repo-readme clamped">
+<h2>Shuffle for Obsidian</h2>
+<p>This plugin allows you to create your custom, randomized writing-prompts from lists of variables you define.</p>
+<p>Based on Eleanor Konik’s post at <a href="https://forum.obsidian.md/t/rfc-oblique-strategies-writing-prompts-reflection-creators-block/9997/2">https://forum.obsidian.md/t/rfc-oblique-strategies-writing-prompts-reflection-creators-block/9997/2</a></p>
+<h2>Example</h2>
+<h3>Input template</h3>
+<pre><code class="language-markdown">## Prompt
+1. Include one of these words: $WORD, $WORD or $WORD
+2. Begin with a word that starts with `$LETTER`
+3. Take place in $LOCATION or $LOCATION
+</code></pre>
+<h3>Randomized output:</h3>
+<pre><code class="language-markdown">## Prompt
+1. Include one of these words: Wall, Wind or Book
+2. Begin with a word that starts with `g`
+3. Take place in London or Los Angeles
+</code></pre>
+<h2>How to to install manually</h2>
+<ul>
+<li>Download the latest <code>main.js, mainfest.json and styles.css</code> from <a href="https://github.com/akaalias/obsidian-shuffle/releases/">https://github.com/akaalias/obsidian-shuffle/releases/</a></li>
+<li>Create a new folder named ‘obsidian-shuffle’</li>
+<li>Place the two files in the folder</li>
+<li>Place the folder in your .obsidian/plugins directory</li>
+<li>Reload plugins</li>
+<li>Activate the “Shuffle” plugin</li>
+</ul>
+<h2>How to use the plugin</h2>
+<ul>
+<li>Hit the ‘Dice’ button in the sidebar to generate a new prompt note</li>
+<li>Customize your variable names, values and template to your liking in the settings</li>
+</ul>
+<h2>Load custom packs</h2>
+<p>Try out new prompts by loading their pack into your settings. (Will replace your custom prompts.)</p>
+<h3>Currently available packs:</h3>
+<ul>
+<li>⚫ <code>Oblique Strategies</code> by Brian Eno and Peter Schmidt</li>
+<li>⚡️ <code>Flash Fiction Pack</code> by Eleanor Konik</li>
+</ul>
+<h3>Share YOUR custom prompts!</h3>
+<p>If you have created your own custom set of prompts, PLEASE SHARE them! Contact me via the Obsidian Forum or per issue in this repo.</p>
+</div>
+<div class="more"><a href="/code/obsidian-shuffle/">Read the whole README ›</a></div>
+<div class="src"><a href="/code/obsidian-shuffle/">Permalink</a> · <a href="https://github.com/akaalias/obsidian-shuffle">View on GitHub ↗</a></div>
+</article>
+<article class="item kind-repo" id="g-obsidian-dashboard">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/obsidian-dashboard/"><time datetime="2021-01-04T14:10:49Z">Monday, January 4, 2021 · 15:10</time></a></div>
+<h2 class="note-title"><a href="/code/obsidian-dashboard/">obsidian-dashboard</a></h2>
+<p class="repo-desc">Dashboard for Obsidian</p>
+<div class="stats"><span><b>1</b> star</span> · <span>TypeScript</span></div>
+<div class="text note-body repo-readme">
+<h2>Obsidian Dashboard</h2>
+<p>Shows you your vault metrics and trends</p>
+<h2>Demo</h2>
+<h2>Backlog</h2>
+<h2>Thank You</h2>
+</div>
+<div class="src"><a href="/code/obsidian-dashboard/">Permalink</a> · <a href="https://github.com/akaalias/obsidian-dashboard">View on GitHub ↗</a></div>
+</article>
 </section>
 <nav class="pager"><a href="/feed/archive/2021/02/">‹ February 2021</a><a class="n" href="/feed/archive/">All months</a><a href="/feed/archive/2020/12/">December 2020 ›</a></nav>
 <aside class="months-nav">
@@ -101,21 +284,21 @@
 <h3><a href="/feed/archive/">Archive</a></h3>
 <div class="y">2026</div>
 <ul>
-<li><a href="/feed/archive/2026/10/">October</a> <span class="n">4</span></li>
-<li><a href="/feed/archive/2026/09/">September</a> <span class="n">78</span></li>
+<li><a href="/feed/archive/2026/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2026/09/">September</a> <span class="n">79</span></li>
 <li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
-<li><a href="/feed/archive/2026/07/">July</a> <span class="n">22</span></li>
-<li><a href="/feed/archive/2026/06/">June</a> <span class="n">30</span></li>
+<li><a href="/feed/archive/2026/07/">July</a> <span class="n">24</span></li>
+<li><a href="/feed/archive/2026/06/">June</a> <span class="n">31</span></li>
 <li><a href="/feed/archive/2026/05/">May</a> <span class="n">10</span></li>
-<li><a href="/feed/archive/2026/04/">April</a> <span class="n">31</span></li>
+<li><a href="/feed/archive/2026/04/">April</a> <span class="n">33</span></li>
 <li><a href="/feed/archive/2026/03/">March</a> <span class="n">34</span></li>
 <li><a href="/feed/archive/2026/02/">February</a> <span class="n">57</span></li>
 <li><a href="/feed/archive/2026/01/">January</a> <span class="n">15</span></li>
 </ul>
 <div class="y">2025</div>
 <ul>
-<li><a href="/feed/archive/2025/12/">December</a> <span class="n">28</span></li>
-<li><a href="/feed/archive/2025/11/">November</a> <span class="n">125</span></li>
+<li><a href="/feed/archive/2025/12/">December</a> <span class="n">29</span></li>
+<li><a href="/feed/archive/2025/11/">November</a> <span class="n">126</span></li>
 <li><a href="/feed/archive/2025/10/">October</a> <span class="n">7</span></li>
 <li><a href="/feed/archive/2025/09/">September</a> <span class="n">5</span></li>
 <li><a href="/feed/archive/2025/08/">August</a> <span class="n">7</span></li>
@@ -143,33 +326,41 @@
 <ul>
 <li><a href="/feed/archive/2023/11/">November</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2023/10/">October</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2023/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/09/">September</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2023/08/">August</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2023/07/">July</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2023/06/">June</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2023/05/">May</a> <span class="n">7</span></li>
-<li><a href="/feed/archive/2023/04/">April</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2023/03/">March</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/06/">June</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2023/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2023/04/">April</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/03/">March</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/02/">February</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2022</div>
 <ul>
+<li><a href="/feed/archive/2022/11/">November</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2022/10/">October</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2022/09/">September</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2022/07/">July</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2022/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/07/">July</a> <span class="n">6</span></li>
 <li><a href="/feed/archive/2022/04/">April</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2022/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2021</div>
 <ul>
-<li><a href="/feed/archive/2021/11/">November</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/11/">November</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2021/09/">September</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2021/02/">February</a> <span class="n">3</span></li>
-<li class="here"><a href="/feed/archive/2021/01/">January</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2021/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/02/">February</a> <span class="n">5</span></li>
+<li class="here"><a href="/feed/archive/2021/01/">January</a> <span class="n">8</span></li>
 </ul>
 <div class="y">2020</div>
 <ul>
-<li><a href="/feed/archive/2020/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2020/12/">December</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2020/11/">November</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2020/09/">September</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2020/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/08/">August</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2020/07/">July</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2020/06/">June</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2020/05/">May</a> <span class="n">1</span></li>
@@ -199,20 +390,26 @@
 <ul>
 <li><a href="/feed/archive/2017/12/">December</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2017/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2017/09/">September</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2017/06/">June</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2017/05/">May</a> <span class="n">7</span></li>
-<li><a href="/feed/archive/2017/04/">April</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2017/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2017/04/">April</a> <span class="n">7</span></li>
 <li><a href="/feed/archive/2017/01/">January</a> <span class="n">2</span></li>
 </ul>
 <div class="y">2016</div>
 <ul>
 <li><a href="/feed/archive/2016/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2016/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2016/02/">February</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2016/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2015</div>
 <ul>
+<li><a href="/feed/archive/2015/10/">October</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2015/06/">June</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2015/05/">May</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/03/">March</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/02/">February</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2015/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2014</div>
@@ -227,11 +424,21 @@
 <li><a href="/feed/archive/2014/05/">May</a> <span class="n">12</span></li>
 <li><a href="/feed/archive/2014/04/">April</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2014/03/">March</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2014/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2013</div>
+<ul>
+<li><a href="/feed/archive/2013/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2013/05/">May</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2012</div>
+<ul>
+<li><a href="/feed/archive/2012/01/">January</a> <span class="n">1</span></li>
 </ul>
 </div>
 </aside>
 <footer class="site">
-<p>© 2014–2026 Alexis Rondeau. All rights reserved.</p>
+<p>© 2012–2026 Alexis Rondeau. All rights reserved.</p>
 <p>This is my personal site. Everything here — dispatches, notes, opinions — is my own and does not represent any employer, client or organisation I'm affiliated with.</p>
 <p><a href="/">Home</a> · <a href="/about/">About</a> · <a href="/feed/">Newsfeed</a> · <a href="/feed/archive/">Archive</a> · <a href="/feed/feed.xml">Atom</a> · <a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a> · <a rel="me" href="https://github.com/akaalias">GitHub</a> · <a rel="me" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a></p>
 </footer>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>extract-highlights-plugin — Alexis Rondeau</title>
+<meta name="description" content="Manage your highlights in Obsidian by easily creating, removing and exporting them.">
+<link rel="canonical" href="https://alexisrondeau.me/code/extract-highlights-plugin/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alexis Rondeau">
+<meta property="og:title" content="extract-highlights-plugin">
+<meta property="og:description" content="Manage your highlights in Obsidian by easily creating, removing and exporting them.">
+<meta property="og:url" content="https://alexisrondeau.me/code/extract-highlights-plugin/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@SpringStreetNYC">
+<meta name="twitter:creator" content="@SpringStreetNYC">
+<meta property="og:image" content="https://alexisrondeau.me/code/media/gh-311072640-be544d10ca3bc850.png">
+<meta property="og:image:alt" content="extract-highlights-plugin">
+<meta name="twitter:image" content="https://alexisrondeau.me/code/media/gh-311072640-be544d10ca3bc850.png">
+<link rel="alternate" type="application/atom+xml" title="Alexis Rondeau — Newsfeed" href="https://alexisrondeau.me/feed/feed.xml">
+<link rel="stylesheet" href="/tufte.css">
+<link rel="stylesheet" href="/feed/feed.css">
+<meta property="article:published_time" content="2020-11-08T13:47:29Z">
+<meta property="article:modified_time" content="2021-02-25T10:11:38Z">
+<meta property="article:author" content="Alexis Rondeau">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","author":{"@id":"https://alexisrondeau.me/#person","@type":"Person","name":"Alexis Rondeau","sameAs":["https://x.com/SpringStreetNYC","https://github.com/akaalias","https://www.linkedin.com/in/alexis-rondeau-2099nyc/","https://www.youtube.com/@axsrondeau"],"url":"https://alexisrondeau.me/"},"codeRepository":"https://github.com/akaalias/extract-highlights-plugin","dateCreated":"2020-11-08T13:47:29Z","dateModified":"2021-02-25T10:11:38Z","datePublished":"2020-11-08T13:47:29Z","description":"Manage your highlights in Obsidian by easily creating, removing and exporting them.","image":["https://alexisrondeau.me/code/media/gh-311072640-be544d10ca3bc850.png"],"keywords":"clipboard, command-palette, default-hotkey, extract-highlights, highlight-sentences, highlights-hot-key, hotkey, markdown, moc, obsidian, workflow","mainEntityOfPage":"https://alexisrondeau.me/code/extract-highlights-plugin/","name":"extract-highlights-plugin","programmingLanguage":"TypeScript","url":"https://alexisrondeau.me/code/extract-highlights-plugin/"}</script>
+
+</head>
+<body>
+<nav class="topnav"><a href="/">Home</a><a href="/about/">About</a><a href="/feed/">Newsfeed</a><a href="/feed/archive/">Archive</a><a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a><a rel="me" href="https://github.com/akaalias">GitHub</a><a rel="me" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a></nav>
+<header class="hero">
+<div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
+<h1><a href="/feed/">Newsfeed</a></h1>
+<p class="sub">Repository · Sunday, November 8, 2020 · 14:47</p>
+</header>
+<div class="wrap">
+<section class="feed single">
+<article class="item kind-repo" id="g-extract-highlights-plugin">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/extract-highlights-plugin/"><time datetime="2020-11-08T13:47:29Z">Sunday, November 8, 2020 · 14:47</time></a></div>
+<h2 class="note-title"><a href="/code/extract-highlights-plugin/">extract-highlights-plugin</a></h2>
+<p class="repo-desc">Manage your highlights in Obsidian by easily creating, removing and exporting them.</p>
+<div class="stats"><span><b>95</b> stars</span> · <span><b>10</b> forks</span> · <span>TypeScript</span></div>
+<div class="text note-body repo-readme">
+<h2>Extract Highlights Plugin</h2>
+<p>Create and extract highlights from a current markdown note in Obsidian into your clipboard. Based on <a href="https://forum.obsidian.md/t/extract-highlights-from-note/7867">icebear’s plugin request</a>.</p>
+<h2>Training Videos</h2>
+<h3>Watch: The Quick-Start Tutorial!</h3>
+<p><a href="https://youtu.be/KWdEatdD2bo"><img src="https://github.com/akaalias/extract-highlights-plugin/blob/master//code/media/gh-311072640-be544d10ca3bc850.png" alt="" loading="lazy"></a></p>
+<h3>Watch: A SECRET NEW highlight mode</h3>
+<p><a href="https://youtu.be/5kkcqAn6joU"><img src="https://github.com/akaalias/extract-highlights-plugin/blob/master//code/media/gh-311072640-d67e452d421f5187.png" alt="" loading="lazy"></a></p>
+<h3>Watch: Tips and Tricks for the SECRET mode</h3>
+<p><a href="https://youtu.be/n3YW5bmnETg"><img src="https://github.com/akaalias/extract-highlights-plugin/blob/master//code/media/gh-311072640-b520be449dc05cf9.png" alt="" loading="lazy"></a></p>
+<h3>How it works</h3>
+<p>This plugin will copy the highlights delimited by <code>==</code>, <code>**</code> and <code>&lt;mark&gt;&lt;/mark&gt;</code> into your clipboard as a bullet-list.</p>
+<p>Optionally you can customize…</p>
+<ul>
+<li><strong>The heading text of the list</strong>, include the note-title or hide it all-together</li>
+<li><strong>Adding a footnote</strong> to each that link back to the source-file</li>
+<li><strong>Creating an ad-hoc map-of-content (MOC)</strong> by turning each highlight into an <code>&lt;span class=&quot;wikilink unresolved&quot;&gt;</code> Obsidian link <code>&lt;/span&gt;</code></li>
+<li><strong>Auto-capitalize</strong> the first letter in each highlight for consistency</li>
+</ul>
+<h3>Demo Creating and Extracting Highlights</h3>
+<ol>
+<li>First you see how I use the CREATE highlights hot-key to highlight sentences</li>
+<li>Then you see how I use the EXTRACT highlights hot-key to create a new file with the highlights</li>
+</ol>
+<p><img src="/code/media/gh-311072640-8f660bed38bc67c0.gif" alt="basic functionality" loading="lazy"></p>
+<h4>Using the Hotkey to HIGHLIGHT (and UN-HIGHLIGHT) the sentence under cursor</h4>
+<p>The default hotkey for this is:</p>
+<p><kbd>SHIFT</kbd> + <kbd>ALT</kbd> + <kbd>_</kbd></p>
+<p>Super useful for when you’re reading and just don’t want to switch to your mouse for selecting the sentence.</p>
+<p><img src="/code/media/gh-311072640-296dec36db3f6006.gif" alt="demo" loading="lazy"></p>
+<p>Will remove highlighting if the sentence under your cursor is currently delimited by “==”.</p>
+<h4>Using the Hotkey to EXTRACT highlights</h4>
+<p>The default hotkey is:</p>
+<p><kbd>SHIFT</kbd> + <kbd>ALT</kbd> + <kbd>=</kbd></p>
+<h4>Using the Ribbon Button</h4>
+<p>There is also a button (a circle-shape) that’s added to your left-side ribbon.</p>
+<p>Clicking on it will also extract all highlighted parts in your current note and place it in your clipboard.</p>
+<h4>Using the Command Palette</h4>
+<p>I looked into it and there’s a bug the way clipboard works with the Command Palette. Basically everything but the “Paste” works.</p>
+<p>But I’ve found a temporary work-around. It’s weird but it works.</p>
+<ol>
+<li>Trigger Command Palette (Command-P)</li>
+<li>Find “Extract Highlights”</li>
+<li>Hit Enter (You should see a notification (“Highlights copied to clipboard!”)</li>
+<li>Workaround: At this point, briefly switch to a different note and back (This materialises the clipboard data for pasting)</li>
+<li>Paste works now the same as with the Hotkey and Button-press</li>
+</ol>
+<h4>Pasting highlights from your clipboard</h4>
+<p>After using the hotkey, button or command palette, anywhere you want, just paste the clipboard!</p>
+<p><kbd>Command</kbd> + <kbd>v</kbd> (MacOS) or the equivalent on Windows/Linux</p>
+<p>The output is a markdown-block titled “Highlights” with a bullet-list of the highlights.</p>
+<h3>Feedback</h3>
+<p>Are you using Extract Highlights? I’d love to hear from you!</p>
+<p><a href="https://forum.obsidian.md/t/extract-highlights-plugin/8763/12">Share your questions and suggestions in the forum</a></p>
+<h3>Backlog</h3>
+<h4>TODO</h4>
+<ul>
+<li><p>Record video on using the “explosion mode” for research and creating atomic notes</p>
+<ul>
+<li><p>Pre-requisites</p>
+<ul>
+<li><p>Highlights Plugin</p>
+<ul>
+<li>Create links</li>
+<li>Create page</li>
+<li>Enable explode mode</li>
+<li>Open notes on creation</li>
+</ul>
+</li>
+<li>Sliding Panes Plugin</li>
+</ul>
+</li>
+<li>Start with a good article (Economist)</li>
+<li>Go through and highlight sentences</li>
+<li><p>Create MOC and explode into notes</p>
+<ul>
+<li>BOOOMMMMM!!!</li>
+<li>You’ve got an MOC</li>
+<li>You’ve got the core for single-idea, atomic notes</li>
+<li>You’ve got a backlink to the original file</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4>DOING</h4>
+<p>…</p>
+<h4>DONE</h4>
+<ul>
+<li><input type="checkbox" disabled checked> “Explode” highlights into individual notes (assumes I’m creating the list of links as well)</li>
+<li><input type="checkbox" disabled checked> command (<kbd>SHIFT</kbd> + <kbd>ALT</kbd> + <kbd>=</kbd>) which then copies all of the highlighted text either into:</li>
+<li><input type="checkbox" disabled checked> click a button which then copies all of the highlighted text either into:</li>
+<li><input type="checkbox" disabled checked> allow for <code>&lt;mark&gt;&lt;/mark&gt;</code> to be used as highlights</li>
+<li><input type="checkbox" disabled checked> allow for standard bold (<code>**</code>) to be used as highlights</li>
+<li><input type="checkbox" disabled checked> allow to optionally include or completely exclude <code>## Highlights</code> heading</li>
+<li><input type="checkbox" disabled checked> allow to change text in heading <code>## My Custom Highlights</code></li>
+<li><input type="checkbox" disabled checked> allow to include note-name in heading such as <code>## From: $NOTE_TITLE</code></li>
+<li><input type="checkbox" disabled checked> allow to add footnotes for each highlight and include link to source-note</li>
+<li><input type="checkbox" disabled checked> allow to optionally enable bold for highlights</li>
+<li><input type="checkbox" disabled checked> allow for Command Palette to trigger copying (Works sort of, bug in Electron)</li>
+<li><input type="checkbox" disabled checked> my clipboard</li>
+<li><input type="checkbox" disabled checked> a new note</li>
+</ul>
+</div>
+<div class="src"><a href="/code/extract-highlights-plugin/">Permalink</a> · <a href="https://github.com/akaalias/extract-highlights-plugin">View on GitHub ↗</a></div>
+</article>
+</section>
+<nav class="pager"><a href="/feed/">‹ Back to the newsfeed</a><a href="/feed/archive/2020/11/">November 2020 ›</a></nav>
+<aside class="months-nav">
+<div class="group">
+<h3><a href="/feed/archive/">Archive</a></h3>
+<div class="y">2026</div>
+<ul>
+<li><a href="/feed/archive/2026/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2026/09/">September</a> <span class="n">79</span></li>
+<li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
+<li><a href="/feed/archive/2026/07/">July</a> <span class="n">24</span></li>
+<li><a href="/feed/archive/2026/06/">June</a> <span class="n">31</span></li>
+<li><a href="/feed/archive/2026/05/">May</a> <span class="n">10</span></li>
+<li><a href="/feed/archive/2026/04/">April</a> <span class="n">33</span></li>
+<li><a href="/feed/archive/2026/03/">March</a> <span class="n">34</span></li>
+<li><a href="/feed/archive/2026/02/">February</a> <span class="n">57</span></li>
+<li><a href="/feed/archive/2026/01/">January</a> <span class="n">15</span></li>
+</ul>
+<div class="y">2025</div>
+<ul>
+<li><a href="/feed/archive/2025/12/">December</a> <span class="n">29</span></li>
+<li><a href="/feed/archive/2025/11/">November</a> <span class="n">126</span></li>
+<li><a href="/feed/archive/2025/10/">October</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2025/09/">September</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2025/08/">August</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2025/07/">July</a> <span class="n">23</span></li>
+<li><a href="/feed/archive/2025/06/">June</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2025/05/">May</a> <span class="n">18</span></li>
+<li><a href="/feed/archive/2025/04/">April</a> <span class="n">62</span></li>
+<li><a href="/feed/archive/2025/03/">March</a> <span class="n">22</span></li>
+<li><a href="/feed/archive/2025/02/">February</a> <span class="n">11</span></li>
+</ul>
+<div class="y">2024</div>
+<ul>
+<li><a href="/feed/archive/2024/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/11/">November</a> <span class="n">16</span></li>
+<li><a href="/feed/archive/2024/10/">October</a> <span class="n">12</span></li>
+<li><a href="/feed/archive/2024/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/05/">May</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/04/">April</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2023</div>
+<ul>
+<li><a href="/feed/archive/2023/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/10/">October</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/08/">August</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2023/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/06/">June</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2023/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2023/04/">April</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/03/">March</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/02/">February</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2022</div>
+<ul>
+<li><a href="/feed/archive/2022/11/">November</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/10/">October</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/07/">July</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2022/04/">April</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2022/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2021</div>
+<ul>
+<li><a href="/feed/archive/2021/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2021/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/02/">February</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2021/01/">January</a> <span class="n">8</span></li>
+</ul>
+<div class="y">2020</div>
+<ul>
+<li><a href="/feed/archive/2020/12/">December</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2020/11/">November</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2020/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/08/">August</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2020/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/06/">June</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2020/05/">May</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/04/">April</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/03/">March</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2019</div>
+<ul>
+<li><a href="/feed/archive/2019/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/08/">August</a> <span class="n">10</span></li>
+<li><a href="/feed/archive/2019/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/06/">June</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2019/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/01/">January</a> <span class="n">3</span></li>
+</ul>
+<div class="y">2018</div>
+<ul>
+<li><a href="/feed/archive/2018/12/">December</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2018/11/">November</a> <span class="n">15</span></li>
+<li><a href="/feed/archive/2018/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2018/09/">September</a> <span class="n">14</span></li>
+<li><a href="/feed/archive/2018/08/">August</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2018/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2018/05/">May</a> <span class="n">3</span></li>
+</ul>
+<div class="y">2017</div>
+<ul>
+<li><a href="/feed/archive/2017/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2017/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2017/04/">April</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2017/01/">January</a> <span class="n">2</span></li>
+</ul>
+<div class="y">2016</div>
+<ul>
+<li><a href="/feed/archive/2016/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2016/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2016/02/">February</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2016/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2015</div>
+<ul>
+<li><a href="/feed/archive/2015/10/">October</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2015/05/">May</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/03/">March</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/02/">February</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2015/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2014</div>
+<ul>
+<li><a href="/feed/archive/2014/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/11/">November</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2014/09/">September</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2014/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2014/05/">May</a> <span class="n">12</span></li>
+<li><a href="/feed/archive/2014/04/">April</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2014/03/">March</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2014/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2013</div>
+<ul>
+<li><a href="/feed/archive/2013/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2013/05/">May</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2012</div>
+<ul>
+<li><a href="/feed/archive/2012/01/">January</a> <span class="n">1</span></li>
+</ul>
+</div>
+</aside>
+<footer class="site">
+<p>© 2012–2026 Alexis Rondeau. All rights reserved.</p>
+<p>This is my personal site. Everything here — dispatches, notes, opinions — is my own and does not represent any employer, client or organisation I'm affiliated with.</p>
+<p><a href="/">Home</a> · <a href="/about/">About</a> · <a href="/feed/">Newsfeed</a> · <a href="/feed/archive/">Archive</a> · <a href="/feed/feed.xml">Atom</a> · <a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a> · <a rel="me" href="https://github.com/akaalias">GitHub</a> · <a rel="me" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">LinkedIn</a></p>
+</footer>
+</div>
+
+</body>
+</html>
