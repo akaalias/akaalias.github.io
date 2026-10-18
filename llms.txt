@@ -6,6 +6,7 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 
 ## Projects
 
+- [Autonomous Research with AI: "We believe so, but we have not yet found our champion." — can an autonomous research loop find the secret of Kryptos K4?](https://alexisrondeau.me/k4/): Not solved yet: an AI agent running an autoresearch loop of 198 experiments (19.7 hours) on K4, the last unread message on Jim Sanborn's Kryptos sculpture at t…
 - [Autonomous Research with AI: "Not all who wander are lost" — can a UAV learn a city by heart, with no GPS, no map on board, just a $4 flight computer?](https://alexisrondeau.me/ballpark/): Yes! An AI agent running an autoresearch loop of 81 experiments ($364) found a special-purpose neural memory architecture that 'remembers' an exact geo-locatio…
 - [Autonomous Research with AI: "The snuggle is real" — evolving quadcopter frame geometry for Wh/km, with Claude as an occasional co-designer](https://alexisrondeau.me/airloom/): An autoresearch loop — a genetic algorithm over fourteen genes of the real, open-source Source One V6 plate drawings, flown through six simulated weather scena…
 - [Autonomous Research with AI: "We don't write the rules. We just discover them." — how an agent searches for the groundrule, and what makes the loop different](https://alexisrondeau.me/llm-heuristic-scientists-workshop/approach.html): Autoresearch on a job-shop scheduling problem dressed up as a lunch rush: one grill, one shared range, sequencing as the only lever, and an AI agent that propo…
@@ -28,13 +29,14 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 
 ## Newsfeed
 
-- [Newsfeed](https://alexisrondeau.me/feed/): 920 dispatches, newest first, 25 per page
+- [Newsfeed](https://alexisrondeau.me/feed/): 921 dispatches, newest first, 25 per page
 - [Archive](https://alexisrondeau.me/feed/archive/): the same dispatches by month
 - [Atom feed](https://alexisrondeau.me/feed/feed.xml): the latest 50 dispatches
 - [Data](https://alexisrondeau.me/feed/items.json): every item as JSON (source, id, date, text, media, links, permalink)
 
 ## Notes
 
+- [Autonomous Research with AI: "We believe so, but we have not yet found our champion." — can an autonomous research loop find the secret of Kryptos K4?](https://alexisrondeau.me/notes/can-an-autonomous-research-loop-find-the-secret-of-kryptos-k4/): Not solved yet: an AI agent running an autoresearch loop of 198 experiments (19.7 hours) on K4, the last unread message…
 - [Mosey](https://alexisrondeau.me/notes/mosey/): The longest-lived people don't exercise — they get up and move every twenty minutes. I built Mosey to put that nudge in…
 - [Quasi](https://alexisrondeau.me/notes/quasi/): We spend ten or more hours a day staring at screens. Quasi is my small experiment in computing without one: you speak i…
 - [Home](https://alexisrondeau.me/notes/home/): Alexis here — welcome, and thank you for stopping by! Below you'll find some stuff I'm really proud of and want to shar…
@@ -292,7 +294,7 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 ## Tags
 
 - [#personal-projects](https://alexisrondeau.me/feed/tag/personal-projects/): 8 dispatches
-- [#autoresearch](https://alexisrondeau.me/feed/tag/autoresearch/): 4 dispatches
+- [#autoresearch](https://alexisrondeau.me/feed/tag/autoresearch/): 5 dispatches
 - [#discovery-loops](https://alexisrondeau.me/feed/tag/discovery-loops/): 3 dispatches
 - [#greatest-hits](https://alexisrondeau.me/feed/tag/greatest-hits/): 3 dispatches
 - [#books](https://alexisrondeau.me/feed/tag/books/): 1 dispatches
@@ -300,7 +302,7 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 
 ## Months
 
-- [October 2026](https://alexisrondeau.me/feed/archive/2026/10/): 5 dispatches
+- [October 2026](https://alexisrondeau.me/feed/archive/2026/10/): 6 dispatches
 - [September 2026](https://alexisrondeau.me/feed/archive/2026/09/): 79 dispatches
 - [August 2026](https://alexisrondeau.me/feed/archive/2026/08/): 37 dispatches
 - [July 2026](https://alexisrondeau.me/feed/archive/2026/07/): 24 dispatches
