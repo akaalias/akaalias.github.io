@@ -30,7 +30,7 @@
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1>Newsfeed</h1>
 <p class="lede">Everything I publish, in the order I published it: dispatches from Twitter, videos from YouTube and notes from my vault, archived here in full — text, images, video and links — so they outlive the platforms.</p>
-<p class="sub">921 dispatches since January 2012 · page 6 of 37</p>
+<p class="sub">922 dispatches since January 2012 · page 6 of 37</p>
 </header>
 <div class="wrap">
 <section class="feed">
@@ -707,6 +707,30 @@ version. See <a href="https://github.com/akaalias/airloom/blob/main/LICENSE">LIC
 <div class="more"><a href="/code/airloom/">Read the whole README ›</a></div>
 <div class="src"><a href="/code/airloom/">Permalink</a> · <a href="https://github.com/akaalias/airloom">View on GitHub ↗</a> · <a href="http://alexisrondeau.me/airloom/">Website ↗</a></div>
 </article>
+<article class="item kind-note" id="n-human-as-sensor">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/human-as-sensor/"><time datetime="2026-07-10T22:00:00Z">Saturday, July 11, 2026 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/human-as-sensor/">Human as Sensor: Call-Based Reporting for C2 | European Defense Tech Hackathon – Berlin 2026</a></h2>
+<div class="text note-body clamped">
+<p>Our project at the European Defense Tech Hackathon in Berlin, July 2026, in the words of my teammate <a href="https://www.linkedin.com/feed/update/urn:li:activity:7483589708627922947/">Won YI</a>:</p>
+<blockquote>
+<p>Together with Eugen Leikom from strixx.ai and Alexis Rondeau, we built “Human as Sensor”, a lightweight call-based reporting and intake prototype.</p>
+<p>The idea was simple. A civilian or service member reports an incident through an ordinary phone call. Calls can be handled in DE, EN and other major languages, then converted into structured text and data for a C2 environment.</p>
+<p>The phone-call format was deliberate. In degraded conditions, basic voice may remain usable when apps or higher-bandwidth services are unavailable. Where available, GSM/2G can provide an additional fallback. The same interface becomes usable once basic civilian voice service returns, without a new app, device or additional training.</p>
+<p>— Won YI</p>
+</blockquote>
+<h2>Human as Sensor in six slides</h2>
+<p><img src="/notes/media/edth-00-cover.jpg" alt="Human as Sensor: Call-Based Reporting for C2 | European Defense Tech Hackathon – Berlin 2026" loading="lazy"></p>
+<p><img src="/notes/media/edth-01-idea.jpg" alt="The idea was simple." loading="lazy"></p>
+<p><img src="/notes/media/edth-02-call.jpg" alt="The phone-call format was deliberate." loading="lazy"></p>
+<p><img src="/notes/media/edth-03-c2.jpg" alt="Structured text and data for a C2 environment" loading="lazy"></p>
+<p><img src="/notes/media/edth-04-hydris.jpg" alt="Transfer into the operational picture" loading="lazy"></p>
+<p><img src="/notes/media/edth-10-closing.jpg" alt="Connecting systems and data is only one part." loading="lazy"></p>
+<p><a href="https://www.linkedin.com/feed/update/urn:li:activity:7483589708627922947/">Won YI’s full write-up and the video →</a></p>
+</div>
+<div class="more"><a href="/notes/human-as-sensor/">Continue reading ›</a></div>
+<div class="tags"><a href="/feed/tag/personal-projects/">#personal-projects</a></div>
+<div class="src"><a href="/notes/human-as-sensor/">Permalink</a></div>
+</article>
 <article class="item kind-reply" id="t2074512600407199987">
 <div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2074512600407199987/"><time datetime="2026-07-07T15:15:21Z">Tuesday, July 7, 2026 · 17:15</time></a></div>
 <div class="stats"><span><b>522</b> views</span> · <span><b>1</b> bookmark</span></div>
@@ -851,208 +875,6 @@ E  he best music</p>
 </a>
 <div class="src"><a href="/feed/t/2067293043074441678/">Permalink</a> · <a href="https://x.com/i/status/2067293043074441678">View on Twitter ↗</a></div>
 </article>
-<article class="item kind-repo" id="g-kern">
-<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/kern/"><time datetime="2026-06-17T14:25:47Z">Wednesday, June 17, 2026 · 16:25</time></a></div>
-<h2 class="note-title"><a href="/code/kern/">kern</a></h2>
-<p class="repo-desc">The text editor I've always wanted: The beefy love-child of Emacs, iA Writer, and Obsidian</p>
-<div class="stats"><span><b>2</b> stars</span> · <span>C</span></div>
-<div class="text note-body repo-readme clamped">
-<p>A minimalist text editor — a cross between Emacs and iA Writer. Emacs-style
-keybindings and editing model, with a clean, distraction-free iA Writer look:
-the iA Writer Quattro/Mono typefaces, live markdown styling, and a full-window
-writing surface.</p>
-<p>A macOS app: a thin SwiftUI shell launches the editor, which is written in C
-with SDL2 + OpenGL for rendering and
-<a href="https://github.com/nothings/stb">stb_truetype</a> for font rasterization. There’s
-no UI toolkit — the editor draws everything immediately through a small
-12-function renderer interface (<code>renderer.h</code>) over a ~30-line geometry/color
-header (<code>gfx.h</code>). SDL2 is statically linked from a vendored library, so the
-<code>.app</code> is self-contained (no Homebrew dependency) and runs with Hardened
-Runtime + App Sandbox.</p>
-<h2>Building</h2>
-<pre><code class="language-sh">open application/Kern/Kern.xcodeproj
-</code></pre>
-<p>Then Build &amp; Run (⌘R). Produces a self-contained <code>Kern.app</code> with the fonts
-bundled as resources. Apple Silicon only.</p>
-<h2>Usage</h2>
-<p>On launch it opens today’s daily note (<code>YYYY-MM-DD.md</code>, seeded with a date
-heading). The buffer auto-saves every few seconds while modified. Files live in
-the app’s sandbox container:</p>
-<pre><code>~/Library/Containers/com.rondeau.Kern/Data/Documents/
-</code></pre>
-<p>Open/save paths resolve relative to that folder (reach it in Finder via
-<strong>Go → Go to Folder</strong>).</p>
-<h3>Keybindings (Emacs-style)</h3>
-<p>Meta (<code>M-</code>) is either <strong>Alt</strong> or the <strong>Esc</strong> prefix — e.g. <code>M-d</code> = Alt-D, or Esc then D.</p>
-<p><strong>Files</strong></p>
-<table>
-<thead><tr><th>Keys</th><th>Action</th></tr></thead>
-<tbody>
-<tr><td><code>C-x C-f</code></td><td>Find/open file (inline completion — Tab to accept)</td></tr>
-<tr><td><code>C-x C-s</code></td><td>Save</td></tr>
-<tr><td><code>C-x C-w</code></td><td>Write file (save as)</td></tr>
-<tr><td><code>C-x b</code></td><td>Switch buffer (recent files — Tab to list/cycle)</td></tr>
-<tr><td><code>C-x C-c</code></td><td>Quit</td></tr>
-</tbody>
-</table>
-<p><strong>Movement</strong></p>
-<table>
-<thead><tr><th>Keys</th><th>Action</th></tr></thead>
-<tbody>
-<tr><td><code>C-f</code> / <code>C-b</code></td><td>Forward / backward char</td></tr>
-<tr><td><code>C-n</code> / <code>C-p</code></td><td>Next / previous line (by visual row)</td></tr>
-<tr><td><code>C-a</code> / <code>C-e</code></td><td>Start / end of line</td></tr>
-<tr><td><code>M-f</code> / <code>M-b</code></td><td>Forward / backward word</td></tr>
-<tr><td><code>C-v</code> / <code>M-v</code></td><td>Page down / up</td></tr>
-<tr><td><code>M-&lt;</code> / <code>M-&gt;</code></td><td>Beginning / end of buffer</td></tr>
-<tr><td><code>C-l</code></td><td>Recenter (center → top → bottom)</td></tr>
-<tr><td><code>C-x t</code></td><td>Typewriter mode (pin active line at golden ratio)</td></tr>
-<tr><td><code>C-x y</code></td><td>Syntax highlight (parts of speech, by brightness)</td></tr>
-<tr><td><code>C-x s</code></td><td>Style check (strike cuttable fillers/redundancies)</td></tr>
-<tr><td><code>C-x l</code></td><td>Symbols on/off (draw <code>-&gt;</code> <code>--</code> <code>!=</code> <code>(c)</code> quotes <code>lambda</code> <code>forall</code> as → — ≠ © “ ” λ ∀; on by default)</td></tr>
-<tr><td><code>C-x p</code></td><td>Page borders on/off (hide/show the page rails, gutters &amp; note margins)</td></tr>
-<tr><td><code>C-x g</code></td><td>Graph view (interactive map of wikilinks, same-day &amp; opened-after relations; click a node to open it, drag the background to pan)</td></tr>
-<tr><td><code>M-g</code></td><td>Go to line</td></tr>
-</tbody>
-</table>
-<p><strong>Editing</strong></p>
-<table>
-<thead><tr><th>Keys</th><th>Action</th></tr></thead>
-<tbody>
-<tr><td><code>C-d</code></td><td>Delete char forward</td></tr>
-<tr><td><code>C-k</code></td><td>Kill to end of line</td></tr>
-<tr><td><code>M-d</code> / <code>M-⌫</code></td><td>Kill word forward / backward</td></tr>
-<tr><td><code>C-t</code></td><td>Transpose characters</td></tr>
-<tr><td><code>C-o</code></td><td>Open line</td></tr>
-<tr><td><code>Tab</code> / <code>Shift-Tab</code></td><td>Indent / outdent list item</td></tr>
-<tr><td><code>M-u</code> / <code>M-l</code> / <code>M-c</code></td><td>Upcase / downcase / capitalize word</td></tr>
-<tr><td><code>C-/</code></td><td>Undo</td></tr>
-</tbody>
-</table>
-<p><strong>Selection &amp; clipboard</strong> (cut/copy/yank sync with the macOS clipboard)</p>
-<table>
-<thead><tr><th>Keys</th><th>Action</th></tr></thead>
-<tbody>
-<tr><td><code>C-Space</code></td><td>Set mark</td></tr>
-<tr><td><code>Backspace</code> / <code>Delete</code></td><td>Delete the selected region</td></tr>
-<tr><td><code>C-w</code> / <code>M-w</code></td><td>Cut / copy region</td></tr>
-<tr><td><code>⌘C</code></td><td>Copy region</td></tr>
-<tr><td><code>C-y</code> / <code>⌘V</code></td><td>Yank (paste)</td></tr>
-<tr><td><code>C-x h</code></td><td>Select whole buffer</td></tr>
-<tr><td><code>C-x C-x</code></td><td>Exchange point &amp; mark</td></tr>
-<tr><td><code>**</code> <code>*</code> <code>==</code> <code>++</code> <code>`</code></td><td>With a region marked, wrap it: bold / italic / highlight / underline / code</td></tr>
-<tr><td><code>Cmd-Shift-H</code></td><td>Toggle <code>&lt;mark&gt;highlight&lt;/mark&gt;</code> around the caret’s sentence</td></tr>
-<tr><td><code>Cmd-Shift-U</code></td><td>Toggle <code>++underline++</code> around the caret’s sentence</td></tr>
-</tbody>
-</table>
-<p><strong>Search &amp; view</strong></p>
-<table>
-<thead><tr><th>Keys</th><th>Action</th></tr></thead>
-<tbody>
-<tr><td><code>C-s</code> / <code>C-r</code></td><td>Incremental search fwd / back</td></tr>
-<tr><td><code>⌘=</code> / <code>⌘-</code></td><td>Increase / decrease font size</td></tr>
-<tr><td><code>Esc</code></td><td>Cancel / clear mark</td></tr>
-</tbody>
-</table>
-<p>Markdown headings, bold, italic, highlight (<code>==</code>), and underline (<code>++text++</code>)
-are styled live as you type. Each document also grows a read-only <strong>Context</strong>
-section at the bottom listing backlinks and notes created the same day.</p>
-<p><strong>Notes &amp; wikilinks</strong></p>
-<table>
-<thead><tr><th>Keys</th><th>Action</th></tr></thead>
-<tbody>
-<tr><td>`<span class="wikilink unresolved"> Wikilink autocomplete (↑/↓ to pick, Tab/Enter to accept)</td><td></td></tr>
-<tr><td><code>Cmd-Enter</code></td><td>Follow the <code>[[wikilink&lt;/span&gt;</code> under the cursor</td></tr>
-<tr><td><code>Cmd-Shift-←</code> / <code>Cmd-Shift-→</code></td><td>Back / forward through note history</td></tr>
-<tr><td><code>Cmd-Shift-N</code></td><td>Extract the selected region into a new linked note</td></tr>
-<tr><td><code>Cmd-Shift-M</code></td><td>Write a margin note (footnote) at the caret</td></tr>
-<tr><td><code>Cmd-Shift-T</code></td><td>Open (or create) today’s daily note</td></tr>
-<tr><td><code>C-x n</code></td><td>Download your X home feed into a time-stamped news note</td></tr>
-<tr><td><code>C-x m</code></td><td>Download ALL your X bookmarks into a time-stamped note</td></tr>
-</tbody>
-</table>
-<h2>Publishing to X (Twitter)</h2>
-<p>When an X account is connected, a <strong>paper-plane button</strong> appears in the top-right
-of the title bar (next to the help and folder buttons). Click it to post the note
-you’re viewing — or the marked region, if one is active — straight to your X
-timeline. The result shows up both as a macOS notification (<code>Posted to X ✓</code> / a
-failure banner) and in the editor’s status bar. The button is hidden until you
-link an account.</p>
-<p>The connection also works the other way: <code>C-x n</code> downloads your <strong>home feed</strong>
-into a time-stamped <code>Twitter-Home-Newsfeed-YYYY-MM-DD-HHMM.md</code> note — one
-<code>## author — date at time</code> entry per post, with the text as a <code>&gt;</code> blockquote
-(rendered in italics), the byline, and the URL below it, so you can mark up a
-post and <code>Cmd-Shift-N</code> it into a note of its own. Image-only posts (just a
-media link) and one-liners are filtered out.</p>
-<p><code>C-x m</code> does the same for your <strong>bookmarks</strong>: every bookmarked post (paginated
-through the whole list, nothing filtered — you marked them for a reason) lands
-in a <code>Twitter-Bookmarks-YYYY-MM-DD-HHMM.md</code> note in the same format. Requires
-the <code>bookmark.read</code> scope — accounts connected before this feature must
-disconnect and reconnect once in Settings → X. (Reading
-the timeline uses X’s <code>timelines/reverse_chronological</code> endpoint, which needs
-an API tier that includes read access.)</p>
-<p><strong>One-time setup</strong></p>
-<ol>
-<li><p><strong>Create an X app</strong> at <a href="https://console.x.com">console.x.com</a> (pay-per-use;
-~$0.015/post). In <em>User authentication settings</em>:</p>
-<ul>
-<li><strong>App permissions:</strong> Read and write</li>
-<li><strong>Type of App:</strong> Native App (public client — PKCE, no secret)</li>
-<li><strong>Callback URI:</strong> <code>&lt;http://127.0.0.1:8123/callback</code>&gt;</li>
-</ul>
-</li>
-<li><p><strong>Add your Client ID locally.</strong> Copy the OAuth 2.0 <strong>Client ID</strong> from the
-portal into a gitignored config file:</p>
-<pre><code class="language-sh">cp application/Kern/Config/Secrets.example.xcconfig \
-   application/Kern/Config/Secrets.xcconfig
-# then paste your id into X_CLIENT_ID
-</code></pre>
-<p>It’s injected at build time via <code>Info.plist</code>, so it never enters the repo. A
-clone without this file still builds; the X feature just reports
-“not configured”.</p>
-</li>
-<li><strong>Connect.</strong> Build &amp; run, open <strong>Settings (⌘,) → X</strong>, click <strong>Connect X
-Account</strong>, and approve in your browser. Tokens are stored in the macOS
-Keychain and auto-refreshed, so you only do this once. (The panel reads state
-when opened — use <strong>Refresh</strong> if it looks stale.)</li>
-</ol>
-<p><strong>Behavior</strong></p>
-<ul>
-<li>≤ 280 characters → a normal post.</li>
-<li>&gt; 280 characters → sent as one long-form post (requires X Premium). Note that
-X’s API support for &gt;280 is inconsistent even for Premium; if it’s rejected
-you’ll see <code>X: Your Tweet text is too long</code> and nothing is posted.</li>
-</ul>
-<p><strong>How it works.</strong> OAuth 2.0 with PKCE via a short-lived loopback redirect
-listener (RFC 8252), all on a background thread — <code>editor_main</code> parks the main
-thread in the SDL event loop, so the Swift networking layer must stay off the
-main actor and report through the C status bar.</p>
-<h2>Layout</h2>
-<pre><code>application/Kern/
-  Kern.xcodeproj    the app project (open this)
-  Info.plist        app metadata; injects X_CLIENT_ID from the xcconfig
-  Config/           Base.xcconfig + Secrets.example.xcconfig (Secrets.xcconfig
-                    is local-only / gitignored)
-  Kern/
-    App/            SwiftUI shell + X publishing, bridging header, asset catalog
-    Editor/         the C editor: textview, buffer, editing, navigation,
-                    undo, md_render, commands, recent, clipboard, clock,
-                    gfx, editor_types
-    Platform/       SDL/GL renderer + macOS window chrome
-    ThirdParty/     stb_truetype
-    Resources/      iA Writer fonts + OFL.txt
-  Vendor/SDL2/      vendored SDL2 static lib + headers
-</code></pre>
-<h2>License</h2>
-<p>MIT — see <a href="https://github.com/akaalias/kern/blob/main/LICENSE">LICENSE</a>. Includes SDL2 (zlib) and stb_truetype (public
-domain), each under their own licenses. Typeset in the
-<a href="https://github.com/iaolo/iA-Fonts">iA Writer</a> Quattro &amp; Mono typefaces
-(© Information Architects), used under the SIL Open Font License 1.1 — see
-<a href="https://github.com/akaalias/kern/blob/main/application/Kern/Kern/Resources/OFL.txt">OFL.txt</a>.</p>
-</div>
-<div class="more"><a href="/code/kern/">Read the whole README ›</a></div>
-<div class="src"><a href="/code/kern/">Permalink</a> · <a href="https://github.com/akaalias/kern">View on GitHub ↗</a> · <a href="http://alexisrondeau.me/kern/">Website ↗</a></div>
-</article>
 </section>
 <nav class="pager"><a href="/feed/page/5/">‹ Newer</a><span class="n">Page 6 of 37</span><a href="/feed/page/7/">Older ›</a></nav>
 <aside class="months-nav">
@@ -1063,7 +885,7 @@ domain), each under their own licenses. Typeset in the
 <li><a href="/feed/archive/2026/10/">October</a> <span class="n">6</span></li>
 <li><a href="/feed/archive/2026/09/">September</a> <span class="n">79</span></li>
 <li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
-<li><a href="/feed/archive/2026/07/">July</a> <span class="n">24</span></li>
+<li><a href="/feed/archive/2026/07/">July</a> <span class="n">25</span></li>
 <li><a href="/feed/archive/2026/06/">June</a> <span class="n">31</span></li>
 <li><a href="/feed/archive/2026/05/">May</a> <span class="n">10</span></li>
 <li><a href="/feed/archive/2026/04/">April</a> <span class="n">33</span></li>
