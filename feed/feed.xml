@@ -63,14 +63,14 @@
 </content>
 </entry>
 <entry>
-<title>Mosey</title>
+<title>Mosey: Walks that start themselves — the world's longest-lived people don't exercise. The…</title>
 <link href="https://alexisrondeau.me/notes/mosey/"/>
 <id>https://alexisrondeau.me/notes/mosey/</id>
 <published>2026-10-11T22:00:00Z</published>
 <updated>2026-10-11T22:00:00Z</updated>
 <content type="html">&lt;article class=&quot;item kind-note&quot; id=&quot;n-mosey&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Note&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/notes/mosey/&quot;&gt;&lt;time datetime=&quot;2026-10-11T22:00:00Z&quot;&gt;Monday, October 12, 2026 · 00:00&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;h2 class=&quot;note-title&quot;&gt;&lt;a href=&quot;/notes/mosey/&quot;&gt;Mosey&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 class=&quot;note-title&quot;&gt;&lt;a href=&quot;/notes/mosey/&quot;&gt;Mosey: Walks that start themselves — the world's longest-lived people don't exercise. They simply get up and move every 20 minutes.&lt;/a&gt;&lt;/h2&gt;
 &lt;div class=&quot;text note-body&quot;&gt;
 &lt;p&gt;The longest-lived people don’t exercise — they get up and move every twenty minutes. I built Mosey to put that nudge into a Mac workday: after twenty minutes at the desk, your walking pad starts on its own, three to twenty minutes, a different walk each time at a pace it sets. Step on when you’re ready, step off whenever you like. Nothing counts down at you, no streaks, no account — and it’s free. Coming to the Mac App Store.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://alexisrondeau.me/mosey-site/&quot;&gt;Open →&lt;/a&gt;&lt;/p&gt;
@@ -81,16 +81,23 @@
 </content>
 </entry>
 <entry>
-<title>Quasi</title>
+<title>Quasi: &quot;Say it, hear it done&quot; — an experiment in computing without a screen</title>
 <link href="https://alexisrondeau.me/notes/quasi/"/>
 <id>https://alexisrondeau.me/notes/quasi/</id>
 <published>2026-10-11T22:00:00Z</published>
 <updated>2026-10-11T22:00:00Z</updated>
 <content type="html">&lt;article class=&quot;item kind-note&quot; id=&quot;n-quasi&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Note&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/notes/quasi/&quot;&gt;&lt;time datetime=&quot;2026-10-11T22:00:00Z&quot;&gt;Monday, October 12, 2026 · 00:00&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;h2 class=&quot;note-title&quot;&gt;&lt;a href=&quot;/notes/quasi/&quot;&gt;Quasi&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 class=&quot;note-title&quot;&gt;&lt;a href=&quot;/notes/quasi/&quot;&gt;Quasi: &amp;quot;Say it, hear it done&amp;quot; — an experiment in computing without a screen&lt;/a&gt;&lt;/h2&gt;
 &lt;div class=&quot;text note-body&quot;&gt;
 &lt;p&gt;We spend ten or more hours a day staring at screens. Quasi is my small experiment in computing without one: you speak into a pocket recorder while your phone stays locked in your bag, and a few short sounds tell you that you were heard, understood, and that the thing you asked for is done. An aural language for a screen-free life — an experiment, not a product.&lt;/p&gt;
+&lt;h2&gt;Quasi in six slides&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;/notes/media/quasi-01-three.jpg&quot; alt=&quot;Quasi only does three things. For now.&quot; loading=&quot;lazy&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/notes/media/quasi-02-example.jpg&quot; alt=&quot;Example 1: A voice note turns into two tasks&quot; loading=&quot;lazy&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/notes/media/quasi-03-vocabulary.jpg&quot; alt=&quot;Quasi’s vocabulary used here&quot; loading=&quot;lazy&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/notes/media/quasi-04-examples.jpg&quot; alt=&quot;More examples&quot; loading=&quot;lazy&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/notes/media/quasi-05-screen.jpg&quot; alt=&quot;The screen is for afterwards.&quot; loading=&quot;lazy&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/notes/media/quasi-06-lockscreen.jpg&quot; alt=&quot;On the Lock Screen&quot; loading=&quot;lazy&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://alexisrondeau.me/quasi/&quot;&gt;Open →&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&quot;tags&quot;&gt;&lt;a href=&quot;/feed/tag/personal-projects/&quot;&gt;#personal-projects&lt;/a&gt;&lt;/div&gt;
