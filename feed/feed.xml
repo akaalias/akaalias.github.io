@@ -33,6 +33,7 @@
 &lt;a href=&quot;https://t.co/WAz8aIztKT&quot;&gt;t.co/WAz8aIztKT&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;All LLM frontier labs will do this. It's the final boss battle. It's a lot more complex at scale of course - you don't just have a single train. py file to tune. But doing it is &amp;quot;just engineering&amp;quot; and it's going to work. You spin up a swarm of agents, you have them collaborate to tune smaller models, you promote the most promising ideas to increasingly larger scales, and humans (optionally) contribute on the edges.&lt;/p&gt;
 &lt;p&gt;And more generally, &lt;em&gt;any&lt;/em&gt; metric you care about that is reasonably efficient to evaluate (or that has more efficient proxy metrics such as training a smaller network) can be autoresearched by an agent swarm. It's worth thinking about whether your problem falls into this bucket too.&lt;/p&gt;&lt;/div&gt;
+&lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/ref-2031135152349524125-0.jpg&quot; width=&quot;1600&quot; height=&quot;798&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2119818626815635709/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2119818626815635709&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
@@ -48,9 +49,18 @@
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2118986367086801028/&quot;&gt;&lt;time datetime=&quot;2026-11-07T08:38:13Z&quot;&gt;Saturday, November 7, 2026 · 09:38&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;47&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; link click&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text display&quot;&gt;&lt;p&gt;Just ordered my Cyclone phone!&lt;/p&gt;&lt;/div&gt;
-&lt;ul class=&quot;bare&quot;&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/posts/cyclon-yc-f26-is-building-an-ai-phone-to-ugcPost-7524372594402430976-wW5y&quot;&gt;↗ Cyclon (YC F26) is building an AI phone to replace your iPhone. Tell it what you want, and it uses your apps for you or builds the ones you need. Cyclon is building the phone for the AI era, where… | Y Combinator | 203 comments&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;a class=&quot;linkcard&quot; href=&quot;https://www.linkedin.com/posts/cyclon-yc-f26-is-building-an-ai-phone-to-ugcPost-7524372594402430976-wW5y&quot;&gt;
+&lt;img src=&quot;/feed/media/link-7f8bd0d4d9d5ab87.jpg&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
+&lt;span class=&quot;body&quot;&gt;&lt;span class=&quot;site&quot;&gt;LinkedIn&lt;/span&gt;&lt;span class=&quot;title&quot;&gt;Cyclon (YC F26) is building an AI phone to replace your iPhone. 
+
+Tell it what you want, and it uses your apps for you or builds the ones you need.
+
+Cyclon is building the phone for the AI era, where… | Y Combinator | 283 comments&lt;/span&gt;&lt;span class=&quot;desc&quot;&gt;Cyclon (YC F26) is building an AI phone to replace your iPhone. 
+
+Tell it what you want, and it uses your apps for you or builds the ones you need.
+
+Cyclon is building the phone for the AI era, where everything gets done without you having to open apps or tap through screens. People spend hours on their phones doing tasks they could explain in one sentence. Cyclon puts AI inside the operating syst…&lt;/span&gt;&lt;span class=&quot;host&quot;&gt;↗ linkedin.com&lt;/span&gt;&lt;/span&gt;
+&lt;/a&gt;
 &lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2118986367086801028/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2118986367086801028&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
@@ -100,6 +110,8 @@
 &lt;p&gt;2. One hour later and we have not moved an inch: “We are still waiting on a locomotive to move the train.”&lt;/p&gt;
 &lt;p&gt;3. Just now: “The locomotive could not move the train. A replacement needs to be found. There is a chance though that we might return to Munich Hbf.”&lt;/p&gt;
 &lt;p&gt;Deutsche Bahn, what is wrong with you? Seriously.&lt;/p&gt;&lt;/div&gt;
+&lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/2114746695414149323-0.jpg&quot; width=&quot;1200&quot; height=&quot;1600&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
+&lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/2114746695414149323-1.jpg&quot; width=&quot;1200&quot; height=&quot;1600&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
 &lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2114746695414149323/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2114746695414149323&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
@@ -143,9 +155,11 @@
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/Ananyo&quot;&gt;@Ananyo&lt;/a&gt; · Oct 15, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;👇 👀 &lt;a href=&quot;https://t.co/9nuqSgnsc5&quot;&gt;t.co/9nuqSgnsc5&lt;/a&gt; &lt;a href=&quot;https://t.co/KDluvsqXKb&quot;&gt;t.co/KDluvsqXKb&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/ref-2110731486282600795-0.png&quot; width=&quot;625&quot; height=&quot;301&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/Ananyo&quot;&gt;@Ananyo&lt;/a&gt; Proud owner since October 2023! &lt;/p&gt;
 &lt;p&gt;(I'd buy it again if Amazon let me)&lt;/p&gt;&lt;/div&gt;
+&lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/2111031241294168280-0.jpg&quot; width=&quot;1248&quot; height=&quot;1064&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
 &lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2111031241294168280/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2111031241294168280&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
@@ -690,6 +704,7 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;p&gt;I am incredibly grateful to my co-authors Sebastian Risi, Yujin Tang, and Risto Miikkulainen for making this happen. Neuroevolution is a subject very dear to my heart. It is the field that convinced me that nature has already figured out how to build intelligence: through evolution, collective behavior, and adaptation under constraints.&lt;/p&gt;
 &lt;p&gt;This idea, that intelligence emerges from evolution operating under constraints rather than unlimited resources, is what eventually led me to founding Sakana AI here in Japan.&lt;/p&gt;
 &lt;p&gt;The concepts in this book about open-ended creativity and self-organizing systems are exactly what we build at &lt;a class=&quot;mention&quot; href=&quot;https://x.com/SakanaAILabs&quot;&gt;@SakanaAILabs&lt;/a&gt;. Our name and logo are inspired by schools of fish moving together, adapting as one. It is the core philosophy of what we build. This book captures the theoretical foundations of that belief.&lt;/p&gt;&lt;/div&gt;
+&lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/ref-2104479220349173886-0.jpg&quot; width=&quot;1200&quot; height=&quot;1600&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
 &lt;/blockquote&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/hardmaru&quot;&gt;@hardmaru&lt;/a&gt; &lt;a class=&quot;mention&quot; href=&quot;https://x.com/risi1979&quot;&gt;@risi1979&lt;/a&gt; &lt;a class=&quot;mention&quot; href=&quot;https://x.com/yujin_tang&quot;&gt;@yujin_tang&lt;/a&gt; Done! Immediately pre-ordered, can't wait!&lt;/p&gt;&lt;/div&gt;
 &lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/2104481647441612829-0.jpg&quot; width=&quot;1218&quot; height=&quot;464&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
