@@ -29,10 +29,67 @@
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1>Newsfeed</h1>
 <p class="lede">Everything I publish, in the order I published it: dispatches from Twitter, videos from YouTube and notes from my vault, archived here in full — text, images, video and links — so they outlive the platforms.</p>
-<p class="sub">922 dispatches since January 2012 · page 1 of 37</p>
+<p class="sub">929 dispatches since January 2012 · page 1 of 38</p>
 </header>
 <div class="wrap">
 <section class="feed">
+<article class="item kind-quote" id="t2119818626815635709">
+<div class="meta"><span class="kind">Quote</span><a class="when" href="/feed/t/2119818626815635709/"><time datetime="2026-11-09T15:45:19Z">Monday, November 9, 2026 · 16:45</time></a></div>
+<div class="stats"><span><b>15</b> views</span></div>
+<div class="text"><p>Autoresearch is barely 6 months old, yet it has become the bedrock of most of my projects.</p></div>
+<blockquote class="ctx">
+<cite>Quoting <a href="https://x.com/karpathy">@karpathy</a> · Mar 9, 2026</cite>
+<div class="ctx-text"><p>Three days ago I left autoresearch tuning nanochat for ~2 days on depth=12 model. It found ~20 changes that improved the validation loss. I tested these changes yesterday and all of them were additive and transferred to larger (depth=24) models. Stacking up all of these changes, today I measured that the leaderboard's &quot;Time to GPT-2&quot; drops from 2.02 hours to 1.80 hours (~11% improvement), this will be the new leaderboard entry. So yes, these are real improvements and they make an actual difference. I am mildly surprised that my very first naive attempt already worked this well on top of what I thought was already a fairly manually well-tuned project.</p>
+<p>This is a first for me because I am very used to doing the iterative optimization of neural network training manually. You come up with ideas, you implement them, you check if they work (better validation loss), you come up with new ideas based on that, you read some papers for inspiration, etc etc. This is the bread and butter of what I do daily for 2 decades. Seeing the agent do this entire workflow end-to-end and all by itself as it worked through approx. 700 changes autonomously is wild. It really looked at the sequence of results of experiments and used that to plan the next ones. It's not novel, ground-breaking &quot;research&quot; (yet), but all the adjustments are &quot;real&quot;, I didn't find them manually previously, and they stack up and actually improved nanochat. Among the bigger things e.g.:</p>
+<ul>
+<li>It noticed an oversight that my parameterless QKnorm didn't have a scaler multiplier attached, so my attention was too diffuse. The agent found multipliers to sharpen it, pointing to future work.</li>
+<li>It found that the Value Embeddings really like regularization and I wasn't applying any (oops).</li>
+<li>It found that my banded attention was too conservative (i forgot to tune it).</li>
+<li>It found that AdamW betas were all messed up.</li>
+<li>It tuned the weight decay schedule.</li>
+<li>It tuned the network initialization.</li>
+</ul>
+<p>This is on top of all the tuning I've already done over a good amount of time. The exact commit is here, from this &quot;round 1&quot; of autoresearch. I am going to kick off &quot;round 2&quot;, and in parallel I am looking at how multiple agents can collaborate to unlock parallelism.<br>
+<a href="https://t.co/WAz8aIztKT">t.co/WAz8aIztKT</a></p>
+<p>All LLM frontier labs will do this. It's the final boss battle. It's a lot more complex at scale of course - you don't just have a single train. py file to tune. But doing it is &quot;just engineering&quot; and it's going to work. You spin up a swarm of agents, you have them collaborate to tune smaller models, you promote the most promising ideas to increasingly larger scales, and humans (optionally) contribute on the edges.</p>
+<p>And more generally, <em>any</em> metric you care about that is reasonably efficient to evaluate (or that has more efficient proxy metrics such as training a smaller network) can be autoresearched by an agent swarm. It's worth thinking about whether your problem falls into this bucket too.</p></div>
+</blockquote>
+<div class="src"><a href="/feed/t/2119818626815635709/">Permalink</a> · <a href="https://x.com/i/status/2119818626815635709">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-post" id="t2118986367086801028">
+<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/2118986367086801028/"><time datetime="2026-11-07T08:38:13Z">Saturday, November 7, 2026 · 09:38</time></a></div>
+<div class="stats"><span><b>1</b> like</span> · <span><b>47</b> views</span> · <span><b>1</b> link click</span></div>
+<div class="text display"><p>Just ordered my Cyclone phone!</p></div>
+<ul class="bare">
+<li><a href="https://www.linkedin.com/posts/cyclon-yc-f26-is-building-an-ai-phone-to-ugcPost-7524372594402430976-wW5y">↗ Cyclon (YC F26) is building an AI phone to replace your iPhone. Tell it what you want, and it uses your apps for you or builds the ones you need. Cyclon is building the phone for the AI era, where… | Y Combinator | 203 comments</a></li>
+</ul>
+<div class="src"><a href="/feed/t/2118986367086801028/">Permalink</a> · <a href="https://x.com/i/status/2118986367086801028">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-post" id="t2115387835566248378">
+<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/2115387835566248378/"><time datetime="2026-10-28T10:18:56Z">Wednesday, October 28, 2026 · 11:18</time></a></div>
+<div class="stats"><span><b>14</b> views</span></div>
+<div class="text display"><p>Genie 4: A way to create high-fidelity synthetic video training data sets?</p></div>
+<div class="src"><a href="/feed/t/2115387835566248378/">Permalink</a> · <a href="https://x.com/i/status/2115387835566248378">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-reply" id="t2115121491285012864">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2115121491285012864/"><time datetime="2026-10-27T16:40:35Z">Tuesday, October 27, 2026 · 17:40</time></a></div>
+<div class="stats"><span><b>1</b> like</span> · <span><b>15</b> views</span> · <span><b>1</b> profile visit</span></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/DougStandley">@DougStandley</a> · Oct 27, 2026</cite>
+<div class="ctx-text"><p><a class="mention" href="https://x.com/Seanfrank">@Seanfrank</a> A great job is an opportunity, not a guarantee. Layoffs remind us that even a great job comes with risks.</p></div>
+</blockquote>
+<div class="text"><p><a class="mention" href="https://x.com/DougStandley">@DougStandley</a> <a class="mention" href="https://x.com/Seanfrank">@Seanfrank</a> Agreed. And honestly, colleagues that cling to their job (in my experience by calcifying some part of the domain or creating artificial layers) are the bleeping worst to work with.</p></div>
+<div class="src"><a href="/feed/t/2115121491285012864/">Permalink</a> · <a href="https://x.com/i/status/2115121491285012864">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-post" id="t2114746695414149323">
+<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/2114746695414149323/"><time datetime="2026-10-26T15:51:16Z">Monday, October 26, 2026 · 16:51</time></a></div>
+<div class="stats"><span><b>48</b> views</span></div>
+<div class="text"><p>1. Less than five minutes after leaving Munich Hbf, this train stops because “…there is a freight train blocking our tracks. It can’t move on its own.”</p>
+<p>2. One hour later and we have not moved an inch: “We are still waiting on a locomotive to move the train.”</p>
+<p>3. Just now: “The locomotive could not move the train. A replacement needs to be found. There is a chance though that we might return to Munich Hbf.”</p>
+<p>Deutsche Bahn, what is wrong with you? Seriously.</p></div>
+<div class="src"><a href="/feed/t/2114746695414149323/">Permalink</a> · <a href="https://x.com/i/status/2114746695414149323">View on Twitter ↗</a></div>
+</article>
 <article class="item kind-note" id="n-can-an-autonomous-research-loop-find-the-secret-of-kryptos-k4">
 <div class="meta"><span class="kind">Note</span><a class="when" href="/notes/can-an-autonomous-research-loop-find-the-secret-of-kryptos-k4/"><time datetime="2026-10-17T22:00:00Z">Sunday, October 18, 2026 · 00:00</time></a></div>
 <h2 class="note-title"><a href="/notes/can-an-autonomous-research-loop-find-the-secret-of-kryptos-k4/">Autonomous Research with AI: &quot;Results! Why, man, I have gotten a lot of results! I know 198 things that won't work.&quot; — can an autonomous research loop find the secret of Kryptos K4?</a></h2>
@@ -52,9 +109,28 @@
 <div class="tags"><a href="/feed/tag/autoresearch/">#autoresearch</a></div>
 <div class="src"><a href="/notes/can-an-autonomous-research-loop-find-the-secret-of-kryptos-k4/">Permalink</a></div>
 </article>
+<article class="item kind-reply" id="t2111031241294168280">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2111031241294168280/"><time datetime="2026-10-16T09:47:23Z">Friday, October 16, 2026 · 11:47</time></a></div>
+<div class="stats"><span><b>1</b> reply</span> · <span><b>1</b> like</span> · <span><b>20</b> views</span></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/Ananyo">@Ananyo</a> · Oct 15, 2026</cite>
+<div class="ctx-text"><p>👇 👀 <a href="https://t.co/9nuqSgnsc5">t.co/9nuqSgnsc5</a> <a href="https://t.co/KDluvsqXKb">t.co/KDluvsqXKb</a></p></div>
+</blockquote>
+<div class="text"><p><a class="mention" href="https://x.com/Ananyo">@Ananyo</a> Proud owner since October 2023! </p>
+<p>(I'd buy it again if Amazon let me)</p></div>
+<div class="src"><a href="/feed/t/2111031241294168280/">Permalink</a> · <a href="https://x.com/i/status/2111031241294168280">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-post" id="t2110294020794519787">
+<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/2110294020794519787/"><time datetime="2026-10-14T08:57:56Z">Wednesday, October 14, 2026 · 10:57</time></a></div>
+<div class="stats"><span><b>2</b> replies</span> · <span><b>3</b> likes</span> · <span><b>141</b> views</span> · <span><b>4</b> profile visits</span></div>
+<div class="text"><p>I've decided: I will host a &quot;Autonomous Research 101&quot; training during the <a class="mention" href="https://x.com/Eurodefensetech">@Eurodefensetech</a> Hackathon in 🇨🇭 Switzerland next week.</p>
+<p><a class="mention" href="https://x.com/zhengyaojiang">@zhengyaojiang</a>: Could my participants use <a class="mention" href="https://x.com/WecoAI">@WecoAI</a> to run their first experiment loops instead of bootstrapping everything via Claude Code? </p>
+<p>And if not, what would you recommend?</p></div>
+<div class="src"><a href="/feed/t/2110294020794519787/">Permalink</a> · <a href="https://x.com/i/status/2110294020794519787">View on Twitter ↗</a></div>
+</article>
 <article class="item kind-quote" id="t2109548870082363686">
 <div class="meta"><span class="kind">Quote</span><a class="when" href="/feed/t/2109548870082363686/"><time datetime="2026-10-12T07:36:58Z">Monday, October 12, 2026 · 09:36</time></a></div>
-<div class="stats"><span><b>7</b> views</span> · <span><b>1</b> profile visit</span></div>
+<div class="stats"><span><b>52</b> views</span></div>
 <div class="text"><p>Thank you <a class="mention" href="https://x.com/karpathy">@karpathy</a> because I now realize that, while the curve's vertigo has been real for me for years, there's a HUGE gap in my communication skills to translate what I'm experiencing here on the edge with those closer to the center in a way that makes sense to them.</p>
 <blockquote><p>&quot;So this is the weirdness of the moment. The general public has mostly not interacted with these systems. When they have, it looks like a derpy chatbot. The majority of professionals still see only a modest uplift. And a small sliver of professionals are experiencing the vertigo of the curve going vertical. And it is all happening at the same time.&quot;</p></blockquote></div>
 <blockquote class="ctx">
@@ -111,7 +187,7 @@
 </article>
 <article class="item kind-post" id="t2108836462015685015">
 <div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/2108836462015685015/"><time datetime="2026-10-10T08:26:07Z">Saturday, October 10, 2026 · 10:26</time></a></div>
-<div class="stats"><span><b>1</b> like</span> · <span><b>52</b> views</span> · <span><b>1</b> bookmark</span></div>
+<div class="stats"><span><b>1</b> like</span> · <span><b>66</b> views</span> · <span><b>1</b> bookmark</span></div>
 <div class="text"><p>Accelerating scientific discovery with AI-powered Empirical Research Assistance: Autoresearch at Google (2025)</p>
 <p>Lovely and very relatable: Once you have the experiment harness in place, you wanna test it against at least four kinds of interesting problems.</p>
 <ul>
@@ -409,7 +485,7 @@ notes on the recorder itself are not part of this repository.</p>
 </article>
 <article class="item kind-reply" id="t2104527603897913371">
 <div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2104527603897913371/"><time datetime="2026-09-28T11:04:15Z">Monday, September 28, 2026 · 13:04</time></a></div>
-<div class="stats"><span><b>15</b> views</span> · <span><b>1</b> bookmark</span></div>
+<div class="stats"><span><b>16</b> views</span> · <span><b>1</b> bookmark</span></div>
 <blockquote class="ctx">
 <cite>In reply to <a href="https://x.com/SchmidhuberAI">@SchmidhuberAI</a> · Dec 23, 2022</cite>
 <div class="ctx-text"><p>Machine learning is the science of credit assignment. My new survey (also under arXiv:2212.11279) credits the pioneers of deep learning and modern AI (supplementing my award-winning 2015 deep learning survey): <a href="https://t.co/MfmqhEh8MA">t.co/MfmqhEh8MA</a> P.S. Happy Holidays! <a href="https://t.co/or6oxAOXgS">t.co/or6oxAOXgS</a></p></div>
@@ -440,7 +516,7 @@ notes on the recorder itself are not part of this repository.</p>
 </article>
 <article class="item kind-reply" id="t2104487753081655614">
 <div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2104487753081655614/"><time datetime="2026-09-28T08:25:54Z">Monday, September 28, 2026 · 10:25</time></a></div>
-<div class="stats"><span><b>1</b> reply</span> · <span><b>1</b> like</span> · <span><b>25</b> views</span> · <span><b>1</b> profile visit</span></div>
+<div class="stats"><span><b>1</b> reply</span> · <span><b>1</b> like</span> · <span><b>25</b> views</span></div>
 <blockquote class="ctx">
 <cite>In reply to <a href="https://x.com/richardcsuwandi">@richardcsuwandi</a> · Sep 27, 2026</cite>
 <div class="ctx-text"><p><a class="mention" href="https://x.com/SpringStreetNYC">@SpringStreetNYC</a> Interesting, thanks for sharing!</p></div>
@@ -461,7 +537,7 @@ notes on the recorder itself are not part of this repository.</p>
 </article>
 <article class="item kind-quote" id="t2104483494919393724">
 <div class="meta"><span class="kind">Quote</span><a class="when" href="/feed/t/2104483494919393724/"><time datetime="2026-09-28T08:08:59Z">Monday, September 28, 2026 · 10:08</time></a></div>
-<div class="stats"><span><b>2</b> likes</span> · <span><b>139</b> views</span> · <span><b>7</b> profile visits</span></div>
+<div class="stats"><span><b>2</b> likes</span> · <span><b>150</b> views</span></div>
 <div class="text"><p>Love this. Via <a class="mention" href="https://x.com/patrickshafto">@patrickshafto</a> and <a class="mention" href="https://x.com/DARPA">@DARPA</a>'s expMath program, <a class="mention" href="https://x.com/ayushkhaitan343">@ayushkhaitan343</a> announces:</p>
 <blockquote><p>&quot;With Ben Chow, Yuan Liao and Ziyang Qin, we have completed a full Lean formalization of the Hamilton-Perelman proof of the Poincaré conjecture!&quot;</p></blockquote>
 <p>For context on expMath and in <a class="mention" href="https://x.com/r0ck3t23">@r0ck3t23</a> words over at <a href="https://x.com/r0ck3t23/status/1917016776312766901">x.com/r0ck3t23/statu…</a></p>
@@ -479,10 +555,19 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 </a>
 <div class="src"><a href="/feed/t/2104483494919393724/">Permalink</a> · <a href="https://x.com/i/status/2104483494919393724">View on Twitter ↗</a></div>
 </article>
-<article class="item kind-post" id="t2104481647441612829">
-<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/2104481647441612829/"><time datetime="2026-09-28T08:01:38Z">Monday, September 28, 2026 · 10:01</time></a></div>
-<div class="stats"><span><b>4</b> likes</span> · <span><b>595</b> views</span> · <span><b>4</b> profile visits</span></div>
-<div class="text display"><p><a class="mention" href="https://x.com/hardmaru">@hardmaru</a> <a class="mention" href="https://x.com/risi1979">@risi1979</a> <a class="mention" href="https://x.com/yujin_tang">@yujin_tang</a> Done! Immediately pre-ordered, can't wait!</p></div>
+<article class="item kind-reply" id="t2104481647441612829">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2104481647441612829/"><time datetime="2026-09-28T08:01:38Z">Monday, September 28, 2026 · 10:01</time></a></div>
+<div class="stats"><span><b>4</b> likes</span> · <span><b>614</b> views</span></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/hardmaru">@hardmaru</a> · Sep 28, 2026</cite>
+<div class="ctx-text"><p>Our Neuroevolution textbook is finally in print!</p>
+<p>Free online edition: <a href="https://t.co/3IDTb1remp">t.co/3IDTb1remp</a><br>
+Pre-order: <a href="https://t.co/SUpqBz1HK8">t.co/SUpqBz1HK8</a></p>
+<p>I am incredibly grateful to my co-authors Sebastian Risi, Yujin Tang, and Risto Miikkulainen for making this happen. Neuroevolution is a subject very dear to my heart. It is the field that convinced me that nature has already figured out how to build intelligence: through evolution, collective behavior, and adaptation under constraints.</p>
+<p>This idea, that intelligence emerges from evolution operating under constraints rather than unlimited resources, is what eventually led me to founding Sakana AI here in Japan.</p>
+<p>The concepts in this book about open-ended creativity and self-organizing systems are exactly what we build at <a class="mention" href="https://x.com/SakanaAILabs">@SakanaAILabs</a>. Our name and logo are inspired by schools of fish moving together, adapting as one. It is the core philosophy of what we build. This book captures the theoretical foundations of that belief.</p></div>
+</blockquote>
+<div class="text"><p><a class="mention" href="https://x.com/hardmaru">@hardmaru</a> <a class="mention" href="https://x.com/risi1979">@risi1979</a> <a class="mention" href="https://x.com/yujin_tang">@yujin_tang</a> Done! Immediately pre-ordered, can't wait!</p></div>
 <figure class="media"><img src="/feed/media/2104481647441612829-0.jpg" width="1218" height="464" alt="Image from the post" loading="lazy"></figure>
 <div class="src"><a href="/feed/t/2104481647441612829/">Permalink</a> · <a href="https://x.com/i/status/2104481647441612829">View on Twitter ↗</a></div>
 </article>
@@ -498,7 +583,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 </article>
 <article class="item kind-reply" id="t2104165182817661175">
 <div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2104165182817661175/"><time datetime="2026-09-27T11:04:07Z">Sunday, September 27, 2026 · 13:04</time></a></div>
-<div class="stats"><span><b>1</b> reply</span> · <span><b>80</b> views</span> · <span><b>3</b> profile visits</span></div>
+<div class="stats"><span><b>1</b> reply</span> · <span><b>80</b> views</span></div>
 <div class="text"><p>In one recent HF/OpenAI-related article I read </p>
 <blockquote><p>&quot;[...] the agents created millions of short URLs to affect another system.&quot; and immediately, pictures of early industrial revolution-era polluted rivers with dead fish floating popped into my mind.</p></blockquote>
 <p>I believe Buckminster Fuller's definition of &quot;nature&quot; included human artifacts like cities, airplanes, art. </p>
@@ -508,7 +593,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 </article>
 <article class="item kind-reply" id="t2104159739013939696">
 <div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2104159739013939696/"><time datetime="2026-09-27T10:42:29Z">Sunday, September 27, 2026 · 12:42</time></a></div>
-<div class="stats"><span><b>1</b> reply</span> · <span><b>2</b> likes</span> · <span><b>76</b> views</span> · <span><b>4</b> profile visits</span></div>
+<div class="stats"><span><b>1</b> reply</span> · <span><b>2</b> likes</span> · <span><b>76</b> views</span></div>
 <blockquote class="ctx">
 <cite>In reply to <a href="https://x.com/danielrupawalla">@danielrupawalla</a> · Sep 27, 2026</cite>
 <div class="ctx-text"><p>even within SF, i don't think we're AGI-pilled enough. it doesn't make sense for labs to stop. rn, we're only blocked by infra, not intellect</p>
@@ -520,7 +605,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 </article>
 <article class="item kind-reply" id="t2104158438511308952">
 <div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2104158438511308952/"><time datetime="2026-09-27T10:37:19Z">Sunday, September 27, 2026 · 12:37</time></a></div>
-<div class="stats"><span><b>1</b> reply</span> · <span><b>1</b> like</span> · <span><b>22</b> views</span> · <span><b>2</b> profile visits</span></div>
+<div class="stats"><span><b>1</b> reply</span> · <span><b>1</b> like</span> · <span><b>22</b> views</span></div>
 <blockquote class="ctx">
 <cite>In reply to <a href="https://x.com/richardcsuwandi">@richardcsuwandi</a> · Sep 26, 2026</cite>
 <div class="ctx-text"><p>In 1991, James G. March showed that a learning system can become less intelligent by learning too quickly.</p>
@@ -534,7 +619,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 </article>
 <article class="item kind-quote" id="t2103413990265110691">
 <div class="meta"><span class="kind">Quote</span><a class="when" href="/feed/t/2103413990265110691/"><time datetime="2026-09-25T09:19:09Z">Friday, September 25, 2026 · 11:19</time></a></div>
-<div class="stats"><span><b>28</b> views</span></div>
+<div class="stats"><span><b>31</b> views</span></div>
 <div class="text"><p>Oh perfect! Thank you for sharing the slides as well. I watched your talk on youtube yesterday and have been telling all my IRL friends about it :)</p>
 <p>I love that your system is explicitly designed to hand back the recommendation to a human, not yet another loop.</p>
 <ul>
@@ -565,133 +650,15 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <div class="tags"><a href="/feed/tag/discovery-loops/">#discovery-loops</a></div>
 <div class="src"><a href="/feed/t/2103411175429976184/">Permalink</a> · <a href="https://x.com/i/status/2103411175429976184">View on Twitter ↗</a></div>
 </article>
-<article class="item kind-reply" id="t2103093022158155943">
-<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2103093022158155943/"><time datetime="2026-09-24T12:03:44Z">Thursday, September 24, 2026 · 14:03</time></a></div>
-<div class="stats"><span><b>1</b> like</span> · <span><b>116</b> views</span></div>
-<div class="text"><p><a class="mention" href="https://x.com/wellecks">@wellecks</a>' &quot;The Problem is the Problem&quot; is a must-watch for us working in autonomous research and discovery loop engineering.</p>
-<p>Thus far, I had only considered that my discovery loops would always target solutions to problems. </p>
-<p>I had the same core-assumption about <a class="mention" href="https://x.com/zhengyaojiang">@zhengyaojiang</a> 's amazing AIDE² research: We run autoresearch on autoresearch to find optimal solutions to decided-upon problems, including our research methods themselves.</p>
-<p>But what if... we use autoresearch facilities to discover juicy, interesting and important problems as well?</p>
-<p>Mind. Blown.</p>
-<p>Oh, and with perfect timing, AIDE²'s paper finally dropped two days ago, too. It's of course the parallel must-read of the year:</p></div>
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/pXEp6CDXWV8" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-<a class="linkcard" href="https://arxiv.org/abs/2609.26457">
-<img src="/feed/media/link-f330de6f12df20ba.png" alt="" loading="lazy">
-<span class="body"><span class="site">arXiv.org</span><span class="title">Recursive self-improvement of AI research agents</span><span class="desc">AI agents are beginning to automate research and development across the AI stack, from improving training efficiency to optimizing inference. A natural next step is to improve the research efficiency of the agents themselves. When an AI research agent's own code is the object of optimization, each accepted rewrite becomes the agent that the next round edits. We refer to this loop as recursive self…</span><span class="host">↗ arxiv.org</span></span>
-</a>
-<div class="src"><a href="/feed/t/2103093022158155943/">Permalink</a> · <a href="https://x.com/i/status/2103093022158155943">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-post" id="t2102734759705084006">
-<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/2102734759705084006/"><time datetime="2026-09-23T12:20:08Z">Wednesday, September 23, 2026 · 14:20</time></a></div>
-<div class="stats"><span><b>1</b> like</span> · <span><b>318</b> views</span> · <span><b>1</b> bookmark</span> · <span><b>2</b> profile visits</span></div>
-<div class="text"><p>&quot;Pants down, page up! Is it slop or is it not?&quot;</p>
-<p>Hey there! Alexis here. I'm the author of Mosey and director of this little film here. As you may (or not) have guessed, the film was created with AI. If you're (like me) skeptical at this point, please read on.</p>
-<p>On this page here:</p>
-<p><a href="https://alexisrondeau.me/mosey-site/conversation/#the-final-cut">alexisrondeau.me/mosey-site/con…</a></p>
-<p>I want to show you exactly HOW I created it with AI so that you have a chance deciding for yourself if it's &quot;slop or not.&quot;</p>
-<p>Why is this important?</p>
-<p>Well, it's important to me. I'm personally getting more and more sensitive and frustrated with content because a.) I can't tell the difference between human-made and AI-generated anymore and b.) </p>
-<p>I can't tell if the person behind the artifact (blog-post, twitter message, promo video like this one) actually even cared about making it.</p>
-<p>In fact, this page above is a kind of &quot;prototype&quot; of how I wish digital, AI-created content emerged. Was it a sloppy, careless one-shot of &quot;Hey Claude. Make a cool video. Make no mistakes&quot; or did the person behind the keyboard (in this case myself) actually put in the legwork?</p>
-<p>I believe that giving you full access to my honest, imperfect, human side of the &quot;creation&quot; (warts and all), you and I get a fair chance to meet at eye-level on all of this.</p>
-<p>How does the page work?</p>
-<p>The first thing you'll see is the final cut of my little film. It's short and I highly recommend watching it first (if you haven't yet) so that you know what the rest of the page is about.</p>
-<p>Then you'll see the full transcript of the &quot;conversation&quot; that I had with Claude Code to create the film withe the goal to put it on the frontpage to explain what this whole Mosey . app is about and, to a lesser degree, why someone should get it.</p>
-<p>On the left side, you see my actual text inputs (or prompts although I would not call them that) which I sent to Claude Code. On the right side you'll see the assets (pictures, video clips and audio files) that Claude Code created in response.</p>
-<p>When there was a intermediate deliverable (called &quot;Cuts&quot;) where I felt like we had reached a milestone, you'll see them in row on their own. They're small highlights on the way to the final cut.</p>
-<p>What I've left out: I've left out Claude Code's textual parts of the responses because they were mostly blathery fill-in wordsalat padding around the assets (which is what I cared for the most)</p>
-<p>What I've left IN: In this version I'm leaving in ALL of it. ESPECIALLY the warts. You'll see my cursing and insulting and threatening Claude Code in ALL CAPS. Basically, you'll see me at my worst. This is incredibly embarassing to share but I feel like it's the most honest, too. It's how this sausage was made.</p>
-<p>Your task now is: watch the short film itself, then peruse the full, pants-down &quot;making of&quot; of it.</p>
-<p>Thank you and with best wishes,</p>
-<p>Alexis</p>
-<p>PS: Hey <a class="mention" href="https://x.com/isidentical">@isidentical</a> I love fal and in message #107 you'll see me switching from elevenlabs to your company. What do you think of all of this?</p></div>
-<figure class="media"><a class="toobig" href="https://x.com/i/status/2102734759705084006"><img src="/feed/media/2102734759705084006-0-poster.jpg" width="1200" height="675" alt="Video from the post" loading="lazy"><span>▶ Watch on Twitter</span></a></figure>
-<a class="linkcard" href="https://alexisrondeau.me/mosey-site/conversation/#the-final-cut">
-<img src="/feed/media/link-23954675c4eba544.jpg" alt="" loading="lazy">
-<span class="body"><span class="site">Mosey</span><span class="title">The conversation · Mosey</span><span class="desc">The film, as it was made: what Alexis typed, and what came out.</span><span class="host">↗ alexisrondeau.me</span></span>
-</a>
-<div class="src"><a href="/feed/t/2102734759705084006/">Permalink</a> · <a href="https://x.com/i/status/2102734759705084006">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-reply" id="t2102295855352918433">
-<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2102295855352918433/"><time datetime="2026-09-22T07:16:05Z">Tuesday, September 22, 2026 · 09:16</time></a></div>
-<div class="stats"><span><b>1</b> like</span> · <span><b>16</b> views</span></div>
-<blockquote class="ctx">
-<cite>In reply to <a href="https://x.com/michaelvolz_x">@michaelvolz_x</a> · Aug 21, 2026</cite>
-<div class="ctx-text"><p>Working with agents often reminds me of that classic German Loriot sketch. He simply wanted to straighten a crooked picture and ended up destroying everything in the process.</p>
-<p>fyi: The spoken words are not important to get the joke.<br>
- <br>
-<a href="https://t.co/wI1ysUUDf7">t.co/wI1ysUUDf7</a></p></div>
-</blockquote>
-<div class="text"><p><a class="mention" href="https://x.com/michaelvolz_x">@michaelvolz_x</a> Oh krass! Ich wusste tatsächlich nicht, dass Loriot auch so &quot;physical comedy&quot; gemacht hat. </p>
-<p>(Ich dachte immer, er wäre nur kopfig aber das ist echt gut gespielt.)</p>
-<p>Danke für das Teilen :)</p></div>
-<div class="src"><a href="/feed/t/2102295855352918433/">Permalink</a> · <a href="https://x.com/i/status/2102295855352918433">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-reply" id="t2102294924150395013">
-<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2102294924150395013/"><time datetime="2026-09-22T07:12:23Z">Tuesday, September 22, 2026 · 09:12</time></a></div>
-<div class="stats"><span><b>12</b> views</span></div>
-<blockquote class="ctx">
-<cite>In reply to <a href="https://x.com/michaelvolz_x">@michaelvolz_x</a> · Sep 22, 2026</cite>
-<div class="ctx-text"><p><a class="mention" href="https://x.com/signulll">@signulll</a> Twitter already had that. </p>
-<p>It was massively abused professionally. </p>
-<p>They removed it.</p></div>
-</blockquote>
-<div class="text"><p><a class="mention" href="https://x.com/michaelvolz_x">@michaelvolz_x</a> <a class="mention" href="https://x.com/signulll">@signulll</a> I bet. Can you imagine the price people would pay to get or stay off &quot;ze list&quot;? 😂</p></div>
-<div class="src"><a href="/feed/t/2102294924150395013/">Permalink</a> · <a href="https://x.com/i/status/2102294924150395013">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-reply" id="t2102293865692557606">
-<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2102293865692557606/"><time datetime="2026-09-22T07:08:10Z">Tuesday, September 22, 2026 · 09:08</time></a></div>
-<div class="stats"><span><b>2</b> likes</span> · <span><b>16</b> views</span> · <span><b>2</b> profile visits</span></div>
-<blockquote class="ctx">
-<cite>In reply to <a href="https://x.com/Ananyo">@Ananyo</a> · Sep 22, 2026</cite>
-<div class="ctx-text"><p><a class="mention" href="https://x.com/SpringStreetNYC">@SpringStreetNYC</a> <a class="mention" href="https://x.com/patrickshafto">@patrickshafto</a> Feel free to drop by <a class="mention" href="https://x.com/London_Inst">@London_Inst</a> on your next visit to London!</p></div>
-</blockquote>
-<div class="text"><p><a class="mention" href="https://x.com/Ananyo">@Ananyo</a> <a class="mention" href="https://x.com/patrickshafto">@patrickshafto</a> <a class="mention" href="https://x.com/London_Inst">@London_Inst</a> Awwwwww thank you, that is very kind ☺️</p>
-<p>And vice-versa when you're in Berlin!</p></div>
-<div class="src"><a href="/feed/t/2102293865692557606/">Permalink</a> · <a href="https://x.com/i/status/2102293865692557606">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-reply" id="t2102292293503811797">
-<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2102292293503811797/"><time datetime="2026-09-22T07:01:56Z">Tuesday, September 22, 2026 · 09:01</time></a></div>
-<div class="stats"><span><b>18</b> views</span></div>
-<blockquote class="ctx">
-<cite>In reply to <a href="https://x.com/SpringStreetNYC">@SpringStreetNYC</a> · Sep 5, 2026</cite>
-<div class="ctx-text"><p>Ever wonder &quot;Why is my apartment so warm all the time?&quot;</p>
-<p>Turns out: my router has been quietly moonlighting 24/7 as a small space heater at 36℃/97℉.</p>
-<p>And my fridge at 27℃/82℉. You can see how the hot air flows up, and makes sure my ceiling is nice and, err..., crispy. </p>
-<p>I'm so glad I got this thermal phone adapter because I would NEVER even have considered these two as candidates. (I was 100% convinced the problem came from a broken floor-heating unit and/or wall-emission.)</p>
-<p>Highly recommended!</p>
-<p>PS: I now turn off the router at night. And yes, ambient temps have finally dropped to expected levels.</p></div>
-<figure class="media"><img src="/feed/media/ref-2096233370212585692-0.jpg" width="1200" height="1600" alt="Image from the post" loading="lazy"></figure>
-<figure class="media"><img src="/feed/media/ref-2096233370212585692-1.jpg" width="1200" height="1600" alt="Image from the post" loading="lazy"></figure>
-</blockquote>
-<div class="text"><p>Hey <a class="mention" href="https://x.com/Topdon_Official">@Topdon_Official</a> 👋🏼 I'm using your TC002C Duo here. Works fantastic.</p>
-<p>Also: I had a technical issue yesterday and Mr. Morad from your Germany office helped me resolve the issue in minutes! Really appreciated his support.</p></div>
-<div class="src"><a href="/feed/t/2102292293503811797/">Permalink</a> · <a href="https://x.com/i/status/2102292293503811797">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-reply" id="t2102291024089374884">
-<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2102291024089374884/"><time datetime="2026-09-22T06:56:53Z">Tuesday, September 22, 2026 · 08:56</time></a></div>
-<div class="stats"><span><b>9</b> views</span> · <span><b>3</b> link clicks</span></div>
-<blockquote class="ctx">
-<cite>In reply to <a href="https://x.com/SpringStreetNYC">@SpringStreetNYC</a> · Sep 19, 2026</cite>
-<div class="ctx-text"><p>PS: Boosting this (via paid ads) for a day because I'm really curious to hear your thoughts.</p>
-<p>And yes, I do feel like I'm putting my ass on the line here a bit. Mosey is &quot;just&quot; a personal project but still. </p>
-<p>Be kind and let's have an honest conversation here.</p></div>
-</blockquote>
-<div class="text"><p>Hm, interesting. Got a few thousand impressions but not one reply.</p>
-<p>I asked on HN and got some really solid responses:</p></div>
-<a class="linkcard" href="https://news.ycombinator.com/item?id=49766006">
-<span class="body"><span class="site">news.ycombinator.com</span><span class="title">I agree. This week, I created a video for a personal project using AI. And, as t... | Hacker News</span><span class="host">↗ news.ycombinator.com</span></span>
-</a>
-<div class="src"><a href="/feed/t/2102291024089374884/">Permalink</a> · <a href="https://x.com/i/status/2102291024089374884">View on Twitter ↗</a></div>
-</article>
 </section>
-<nav class="pager"><span></span><span class="n">Page 1 of 37</span><a href="/feed/page/2/">Older ›</a></nav>
+<nav class="pager"><span></span><span class="n">Page 1 of 38</span><a href="/feed/page/2/">Older ›</a></nav>
 <aside class="months-nav">
 <div class="group">
 <h3><a href="/feed/archive/">Archive</a></h3>
 <div class="y">2026</div>
 <ul>
-<li><a href="/feed/archive/2026/10/">October</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2026/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2026/10/">October</a> <span class="n">11</span></li>
 <li><a href="/feed/archive/2026/09/">September</a> <span class="n">79</span></li>
 <li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
 <li><a href="/feed/archive/2026/07/">July</a> <span class="n">25</span></li>
@@ -847,7 +814,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <footer class="site">
 <p>© 2012–2026 Alexis Rondeau. All rights reserved.</p>
 <p>This is my personal site. Everything here — dispatches, notes, opinions — is my own and does not represent any employer, client or organisation I'm affiliated with.</p>
-<p><a href="/">Home</a> · <a href="/about/">About</a> · <a href="/feed/">Newsfeed</a> · <a href="/feed/archive/">Archive</a> · <a href="/feed/feed.xml">Atom</a> · <a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a> · <a rel="me" href="https://github.com/akaalias">GitHub</a> · <a rel="me" class="cta-link" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">Let's connect on LinkedIn!</a></p>
+<p><a href="/">Home</a> · <a href="/about/">About</a> · <a href="/feed/">Newsfeed</a> · <a href="/feed/archive/">Archive</a> · <a href="/bookmarks/">Bookmarks</a> · <a href="/feed/feed.xml">Atom</a> · <a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a> · <a rel="me" href="https://github.com/akaalias">GitHub</a> · <a rel="me" class="cta-link" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">Let's connect on LinkedIn!</a></p>
 </footer>
 </div>
 

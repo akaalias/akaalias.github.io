@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autoresearch is barely 6 months old, yet it has become the bedrock of… — Alexis Rondeau</title>
+<meta name="description" content="Autoresearch is barely 6 months old, yet it has become the bedrock of most of my projects.">
+<link rel="canonical" href="https://alexisrondeau.me/feed/t/2119818626815635709/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alexis Rondeau">
+<meta property="og:title" content="Autoresearch is barely 6 months old, yet it has become the bedrock of…">
+<meta property="og:description" content="Autoresearch is barely 6 months old, yet it has become the bedrock of most of my projects.">
+<meta property="og:url" content="https://alexisrondeau.me/feed/t/2119818626815635709/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@SpringStreetNYC">
+<meta name="twitter:creator" content="@SpringStreetNYC">
+<meta property="og:image" content="https://alexisrondeau.me/notes/media/alexis-rondeau.jpg">
+<meta property="og:image:alt" content="Alexis Rondeau">
+<meta name="twitter:image" content="https://alexisrondeau.me/notes/media/alexis-rondeau.jpg">
+<link rel="alternate" type="application/atom+xml" title="Alexis Rondeau — Newsfeed" href="https://alexisrondeau.me/feed/feed.xml">
+<link rel="stylesheet" href="/tufte.css">
+<link rel="stylesheet" href="/feed/feed.css">
+<meta property="article:published_time" content="2026-11-09T15:45:19Z">
+<meta property="article:author" content="Alexis Rondeau">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SocialMediaPosting","articleBody":"Autoresearch is barely 6 months old, yet it has become the bedrock of most of my projects.","author":{"@id":"https://alexisrondeau.me/#person","@type":"Person","name":"Alexis Rondeau","sameAs":["https://x.com/SpringStreetNYC","https://github.com/akaalias","https://www.linkedin.com/in/alexis-rondeau-2099nyc/","https://www.youtube.com/@axsrondeau"],"url":"https://alexisrondeau.me/"},"datePublished":"2026-11-09T15:45:19Z","headline":"Autoresearch is barely 6 months old, yet it has become the bedrock of most of my projects.","mainEntityOfPage":"https://alexisrondeau.me/feed/t/2119818626815635709/","sameAs":"https://x.com/i/status/2119818626815635709","url":"https://alexisrondeau.me/feed/t/2119818626815635709/"}</script>
+
+</head>
+<body>
+<nav class="topnav"><a href="/">Home</a><a href="/about/">About</a><a href="/feed/">Newsfeed</a><a href="/feed/archive/">Archive</a><a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a><a rel="me" href="https://github.com/akaalias">GitHub</a><a rel="me" class="cta" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">Let's connect on LinkedIn!</a></nav>
+<header class="hero">
+<div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
+<h1><a href="/feed/">Newsfeed</a></h1>
+<p class="sub">Quote · Monday, November 9, 2026 · 16:45</p>
+</header>
+<div class="wrap">
+<section class="feed single">
+<article class="item kind-quote" id="t2119818626815635709">
+<div class="meta"><span class="kind">Quote</span><a class="when" href="/feed/t/2119818626815635709/"><time datetime="2026-11-09T15:45:19Z">Monday, November 9, 2026 · 16:45</time></a></div>
+<div class="stats"><span><b>15</b> views</span></div>
+<div class="text"><p>Autoresearch is barely 6 months old, yet it has become the bedrock of most of my projects.</p></div>
+<blockquote class="ctx">
+<cite>Quoting <a href="https://x.com/karpathy">@karpathy</a> · Mar 9, 2026</cite>
+<div class="ctx-text"><p>Three days ago I left autoresearch tuning nanochat for ~2 days on depth=12 model. It found ~20 changes that improved the validation loss. I tested these changes yesterday and all of them were additive and transferred to larger (depth=24) models. Stacking up all of these changes, today I measured that the leaderboard's &quot;Time to GPT-2&quot; drops from 2.02 hours to 1.80 hours (~11% improvement), this will be the new leaderboard entry. So yes, these are real improvements and they make an actual difference. I am mildly surprised that my very first naive attempt already worked this well on top of what I thought was already a fairly manually well-tuned project.</p>
+<p>This is a first for me because I am very used to doing the iterative optimization of neural network training manually. You come up with ideas, you implement them, you check if they work (better validation loss), you come up with new ideas based on that, you read some papers for inspiration, etc etc. This is the bread and butter of what I do daily for 2 decades. Seeing the agent do this entire workflow end-to-end and all by itself as it worked through approx. 700 changes autonomously is wild. It really looked at the sequence of results of experiments and used that to plan the next ones. It's not novel, ground-breaking &quot;research&quot; (yet), but all the adjustments are &quot;real&quot;, I didn't find them manually previously, and they stack up and actually improved nanochat. Among the bigger things e.g.:</p>
+<ul>
+<li>It noticed an oversight that my parameterless QKnorm didn't have a scaler multiplier attached, so my attention was too diffuse. The agent found multipliers to sharpen it, pointing to future work.</li>
+<li>It found that the Value Embeddings really like regularization and I wasn't applying any (oops).</li>
+<li>It found that my banded attention was too conservative (i forgot to tune it).</li>
+<li>It found that AdamW betas were all messed up.</li>
+<li>It tuned the weight decay schedule.</li>
+<li>It tuned the network initialization.</li>
+</ul>
+<p>This is on top of all the tuning I've already done over a good amount of time. The exact commit is here, from this &quot;round 1&quot; of autoresearch. I am going to kick off &quot;round 2&quot;, and in parallel I am looking at how multiple agents can collaborate to unlock parallelism.<br>
+<a href="https://t.co/WAz8aIztKT">t.co/WAz8aIztKT</a></p>
+<p>All LLM frontier labs will do this. It's the final boss battle. It's a lot more complex at scale of course - you don't just have a single train. py file to tune. But doing it is &quot;just engineering&quot; and it's going to work. You spin up a swarm of agents, you have them collaborate to tune smaller models, you promote the most promising ideas to increasingly larger scales, and humans (optionally) contribute on the edges.</p>
+<p>And more generally, <em>any</em> metric you care about that is reasonably efficient to evaluate (or that has more efficient proxy metrics such as training a smaller network) can be autoresearched by an agent swarm. It's worth thinking about whether your problem falls into this bucket too.</p></div>
+</blockquote>
+<div class="src"><a href="/feed/t/2119818626815635709/">Permalink</a> · <a href="https://x.com/i/status/2119818626815635709">View on Twitter ↗</a></div>
+</article>
+</section>
+<nav class="pager"><a href="/feed/">‹ Back to the newsfeed</a><a href="/feed/archive/2026/11/">November 2026 ›</a></nav>
+<aside class="months-nav">
+<div class="group">
+<h3><a href="/feed/archive/">Archive</a></h3>
+<div class="y">2026</div>
+<ul>
+<li><a href="/feed/archive/2026/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2026/10/">October</a> <span class="n">11</span></li>
+<li><a href="/feed/archive/2026/09/">September</a> <span class="n">79</span></li>
+<li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
+<li><a href="/feed/archive/2026/07/">July</a> <span class="n">25</span></li>
+<li><a href="/feed/archive/2026/06/">June</a> <span class="n">31</span></li>
+<li><a href="/feed/archive/2026/05/">May</a> <span class="n">10</span></li>
+<li><a href="/feed/archive/2026/04/">April</a> <span class="n">33</span></li>
+<li><a href="/feed/archive/2026/03/">March</a> <span class="n">34</span></li>
+<li><a href="/feed/archive/2026/02/">February</a> <span class="n">57</span></li>
+<li><a href="/feed/archive/2026/01/">January</a> <span class="n">15</span></li>
+</ul>
+<div class="y">2025</div>
+<ul>
+<li><a href="/feed/archive/2025/12/">December</a> <span class="n">29</span></li>
+<li><a href="/feed/archive/2025/11/">November</a> <span class="n">126</span></li>
+<li><a href="/feed/archive/2025/10/">October</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2025/09/">September</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2025/08/">August</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2025/07/">July</a> <span class="n">23</span></li>
+<li><a href="/feed/archive/2025/06/">June</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2025/05/">May</a> <span class="n">18</span></li>
+<li><a href="/feed/archive/2025/04/">April</a> <span class="n">62</span></li>
+<li><a href="/feed/archive/2025/03/">March</a> <span class="n">22</span></li>
+<li><a href="/feed/archive/2025/02/">February</a> <span class="n">11</span></li>
+</ul>
+<div class="y">2024</div>
+<ul>
+<li><a href="/feed/archive/2024/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/11/">November</a> <span class="n">16</span></li>
+<li><a href="/feed/archive/2024/10/">October</a> <span class="n">12</span></li>
+<li><a href="/feed/archive/2024/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/05/">May</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/04/">April</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2023</div>
+<ul>
+<li><a href="/feed/archive/2023/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/10/">October</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/08/">August</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2023/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/06/">June</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2023/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2023/04/">April</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/03/">March</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/02/">February</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2022</div>
+<ul>
+<li><a href="/feed/archive/2022/11/">November</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/10/">October</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/07/">July</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2022/04/">April</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2022/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2021</div>
+<ul>
+<li><a href="/feed/archive/2021/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2021/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/02/">February</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2021/01/">January</a> <span class="n">8</span></li>
+</ul>
+<div class="y">2020</div>
+<ul>
+<li><a href="/feed/archive/2020/12/">December</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2020/11/">November</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2020/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/08/">August</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2020/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/06/">June</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2020/05/">May</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/04/">April</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/03/">March</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2019</div>
+<ul>
+<li><a href="/feed/archive/2019/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/08/">August</a> <span class="n">10</span></li>
+<li><a href="/feed/archive/2019/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/06/">June</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2019/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/01/">January</a> <span class="n">3</span></li>
+</ul>
+<div class="y">2018</div>
+<ul>
+<li><a href="/feed/archive/2018/12/">December</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2018/11/">November</a> <span class="n">15</span></li>
+<li><a href="/feed/archive/2018/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2018/09/">September</a> <span class="n">14</span></li>
+<li><a href="/feed/archive/2018/08/">August</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2018/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2018/05/">May</a> <span class="n">3</span></li>
+</ul>
+<div class="y">2017</div>
+<ul>
+<li><a href="/feed/archive/2017/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2017/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2017/04/">April</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2017/01/">January</a> <span class="n">2</span></li>
+</ul>
+<div class="y">2016</div>
+<ul>
+<li><a href="/feed/archive/2016/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2016/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2016/02/">February</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2016/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2015</div>
+<ul>
+<li><a href="/feed/archive/2015/10/">October</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2015/05/">May</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/03/">March</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/02/">February</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2015/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2014</div>
+<ul>
+<li><a href="/feed/archive/2014/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/11/">November</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2014/09/">September</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2014/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2014/05/">May</a> <span class="n">12</span></li>
+<li><a href="/feed/archive/2014/04/">April</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2014/03/">March</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2014/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2013</div>
+<ul>
+<li><a href="/feed/archive/2013/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2013/05/">May</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2012</div>
+<ul>
+<li><a href="/feed/archive/2012/01/">January</a> <span class="n">1</span></li>
+</ul>
+</div>
+</aside>
+<footer class="site">
+<p>© 2012–2026 Alexis Rondeau. All rights reserved.</p>
+<p>This is my personal site. Everything here — dispatches, notes, opinions — is my own and does not represent any employer, client or organisation I'm affiliated with.</p>
+<p><a href="/">Home</a> · <a href="/about/">About</a> · <a href="/feed/">Newsfeed</a> · <a href="/feed/archive/">Archive</a> · <a href="/bookmarks/">Bookmarks</a> · <a href="/feed/feed.xml">Atom</a> · <a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a> · <a rel="me" href="https://github.com/akaalias">GitHub</a> · <a rel="me" class="cta-link" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">Let's connect on LinkedIn!</a></p>
+</footer>
+</div>
+
+</body>
+</html>

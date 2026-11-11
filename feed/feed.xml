@@ -5,8 +5,105 @@
 <link href="https://alexisrondeau.me/feed/"/>
 <link rel="self" href="https://alexisrondeau.me/feed/feed.xml"/>
 <id>https://alexisrondeau.me/feed/</id>
-<updated>2026-10-17T22:00:00Z</updated>
+<updated>2026-11-09T15:45:19Z</updated>
 <author><name>Alexis Rondeau</name><uri>https://alexisrondeau.me/</uri></author>
+<entry>
+<title>Autoresearch is barely 6 months old, yet it has become the bedrock of most of my projects.</title>
+<link href="https://alexisrondeau.me/feed/t/2119818626815635709/"/>
+<id>https://alexisrondeau.me/feed/t/2119818626815635709/</id>
+<published>2026-11-09T15:45:19Z</published>
+<updated>2026-11-09T15:45:19Z</updated>
+<content type="html">&lt;article class=&quot;item kind-quote&quot; id=&quot;t2119818626815635709&quot;&gt;
+&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Quote&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2119818626815635709/&quot;&gt;&lt;time datetime=&quot;2026-11-09T15:45:19Z&quot;&gt;Monday, November 9, 2026 · 16:45&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;15&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;text&quot;&gt;&lt;p&gt;Autoresearch is barely 6 months old, yet it has become the bedrock of most of my projects.&lt;/p&gt;&lt;/div&gt;
+&lt;blockquote class=&quot;ctx&quot;&gt;
+&lt;cite&gt;Quoting &lt;a href=&quot;https://x.com/karpathy&quot;&gt;@karpathy&lt;/a&gt; · Mar 9, 2026&lt;/cite&gt;
+&lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;Three days ago I left autoresearch tuning nanochat for ~2 days on depth=12 model. It found ~20 changes that improved the validation loss. I tested these changes yesterday and all of them were additive and transferred to larger (depth=24) models. Stacking up all of these changes, today I measured that the leaderboard's &amp;quot;Time to GPT-2&amp;quot; drops from 2.02 hours to 1.80 hours (~11% improvement), this will be the new leaderboard entry. So yes, these are real improvements and they make an actual difference. I am mildly surprised that my very first naive attempt already worked this well on top of what I thought was already a fairly manually well-tuned project.&lt;/p&gt;
+&lt;p&gt;This is a first for me because I am very used to doing the iterative optimization of neural network training manually. You come up with ideas, you implement them, you check if they work (better validation loss), you come up with new ideas based on that, you read some papers for inspiration, etc etc. This is the bread and butter of what I do daily for 2 decades. Seeing the agent do this entire workflow end-to-end and all by itself as it worked through approx. 700 changes autonomously is wild. It really looked at the sequence of results of experiments and used that to plan the next ones. It's not novel, ground-breaking &amp;quot;research&amp;quot; (yet), but all the adjustments are &amp;quot;real&amp;quot;, I didn't find them manually previously, and they stack up and actually improved nanochat. Among the bigger things e.g.:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It noticed an oversight that my parameterless QKnorm didn't have a scaler multiplier attached, so my attention was too diffuse. The agent found multipliers to sharpen it, pointing to future work.&lt;/li&gt;
+&lt;li&gt;It found that the Value Embeddings really like regularization and I wasn't applying any (oops).&lt;/li&gt;
+&lt;li&gt;It found that my banded attention was too conservative (i forgot to tune it).&lt;/li&gt;
+&lt;li&gt;It found that AdamW betas were all messed up.&lt;/li&gt;
+&lt;li&gt;It tuned the weight decay schedule.&lt;/li&gt;
+&lt;li&gt;It tuned the network initialization.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is on top of all the tuning I've already done over a good amount of time. The exact commit is here, from this &amp;quot;round 1&amp;quot; of autoresearch. I am going to kick off &amp;quot;round 2&amp;quot;, and in parallel I am looking at how multiple agents can collaborate to unlock parallelism.&lt;br&gt;
+&lt;a href=&quot;https://t.co/WAz8aIztKT&quot;&gt;t.co/WAz8aIztKT&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;All LLM frontier labs will do this. It's the final boss battle. It's a lot more complex at scale of course - you don't just have a single train. py file to tune. But doing it is &amp;quot;just engineering&amp;quot; and it's going to work. You spin up a swarm of agents, you have them collaborate to tune smaller models, you promote the most promising ideas to increasingly larger scales, and humans (optionally) contribute on the edges.&lt;/p&gt;
+&lt;p&gt;And more generally, &lt;em&gt;any&lt;/em&gt; metric you care about that is reasonably efficient to evaluate (or that has more efficient proxy metrics such as training a smaller network) can be autoresearched by an agent swarm. It's worth thinking about whether your problem falls into this bucket too.&lt;/p&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2119818626815635709/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2119818626815635709&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
+&lt;/article&gt;
+</content>
+</entry>
+<entry>
+<title>Just ordered my Cyclone phone!</title>
+<link href="https://alexisrondeau.me/feed/t/2118986367086801028/"/>
+<id>https://alexisrondeau.me/feed/t/2118986367086801028/</id>
+<published>2026-11-07T08:38:13Z</published>
+<updated>2026-11-07T08:38:13Z</updated>
+<content type="html">&lt;article class=&quot;item kind-post&quot; id=&quot;t2118986367086801028&quot;&gt;
+&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2118986367086801028/&quot;&gt;&lt;time datetime=&quot;2026-11-07T08:38:13Z&quot;&gt;Saturday, November 7, 2026 · 09:38&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;47&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; link click&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;text display&quot;&gt;&lt;p&gt;Just ordered my Cyclone phone!&lt;/p&gt;&lt;/div&gt;
+&lt;ul class=&quot;bare&quot;&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/posts/cyclon-yc-f26-is-building-an-ai-phone-to-ugcPost-7524372594402430976-wW5y&quot;&gt;↗ Cyclon (YC F26) is building an AI phone to replace your iPhone. Tell it what you want, and it uses your apps for you or builds the ones you need. Cyclon is building the phone for the AI era, where… | Y Combinator | 203 comments&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2118986367086801028/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2118986367086801028&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
+&lt;/article&gt;
+</content>
+</entry>
+<entry>
+<title>Genie 4: A way to create high-fidelity synthetic video training data sets?</title>
+<link href="https://alexisrondeau.me/feed/t/2115387835566248378/"/>
+<id>https://alexisrondeau.me/feed/t/2115387835566248378/</id>
+<published>2026-10-28T10:18:56Z</published>
+<updated>2026-10-28T10:18:56Z</updated>
+<content type="html">&lt;article class=&quot;item kind-post&quot; id=&quot;t2115387835566248378&quot;&gt;
+&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2115387835566248378/&quot;&gt;&lt;time datetime=&quot;2026-10-28T10:18:56Z&quot;&gt;Wednesday, October 28, 2026 · 11:18&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;14&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;text display&quot;&gt;&lt;p&gt;Genie 4: A way to create high-fidelity synthetic video training data sets?&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2115387835566248378/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2115387835566248378&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
+&lt;/article&gt;
+</content>
+</entry>
+<entry>
+<title>@DougStandley @Seanfrank Agreed. And honestly, colleagues that cling to their job (in my…</title>
+<link href="https://alexisrondeau.me/feed/t/2115121491285012864/"/>
+<id>https://alexisrondeau.me/feed/t/2115121491285012864/</id>
+<published>2026-10-27T16:40:35Z</published>
+<updated>2026-10-27T16:40:35Z</updated>
+<content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2115121491285012864&quot;&gt;
+&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2115121491285012864/&quot;&gt;&lt;time datetime=&quot;2026-10-27T16:40:35Z&quot;&gt;Tuesday, October 27, 2026 · 17:40&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;15&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; profile visit&lt;/span&gt;&lt;/div&gt;
+&lt;blockquote class=&quot;ctx&quot;&gt;
+&lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/DougStandley&quot;&gt;@DougStandley&lt;/a&gt; · Oct 27, 2026&lt;/cite&gt;
+&lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/Seanfrank&quot;&gt;@Seanfrank&lt;/a&gt; A great job is an opportunity, not a guarantee. Layoffs remind us that even a great job comes with risks.&lt;/p&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/DougStandley&quot;&gt;@DougStandley&lt;/a&gt; &lt;a class=&quot;mention&quot; href=&quot;https://x.com/Seanfrank&quot;&gt;@Seanfrank&lt;/a&gt; Agreed. And honestly, colleagues that cling to their job (in my experience by calcifying some part of the domain or creating artificial layers) are the bleeping worst to work with.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2115121491285012864/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2115121491285012864&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
+&lt;/article&gt;
+</content>
+</entry>
+<entry>
+<title>1. Less than five minutes after leaving Munich Hbf, this train stops because “…there is a…</title>
+<link href="https://alexisrondeau.me/feed/t/2114746695414149323/"/>
+<id>https://alexisrondeau.me/feed/t/2114746695414149323/</id>
+<published>2026-10-26T15:51:16Z</published>
+<updated>2026-10-26T15:51:16Z</updated>
+<content type="html">&lt;article class=&quot;item kind-post&quot; id=&quot;t2114746695414149323&quot;&gt;
+&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2114746695414149323/&quot;&gt;&lt;time datetime=&quot;2026-10-26T15:51:16Z&quot;&gt;Monday, October 26, 2026 · 16:51&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;48&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;text&quot;&gt;&lt;p&gt;1. Less than five minutes after leaving Munich Hbf, this train stops because “…there is a freight train blocking our tracks. It can’t move on its own.”&lt;/p&gt;
+&lt;p&gt;2. One hour later and we have not moved an inch: “We are still waiting on a locomotive to move the train.”&lt;/p&gt;
+&lt;p&gt;3. Just now: “The locomotive could not move the train. A replacement needs to be found. There is a chance though that we might return to Munich Hbf.”&lt;/p&gt;
+&lt;p&gt;Deutsche Bahn, what is wrong with you? Seriously.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2114746695414149323/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2114746695414149323&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
+&lt;/article&gt;
+</content>
+</entry>
 <entry>
 <title>Autonomous Research with AI: &quot;Results! Why, man, I have gotten a lot of results! I know 1…</title>
 <link href="https://alexisrondeau.me/notes/can-an-autonomous-research-loop-find-the-secret-of-kryptos-k4/"/>
@@ -35,6 +132,41 @@
 </content>
 </entry>
 <entry>
+<title>@Ananyo Proud owner since October 2023! (I'd buy it again if Amazon let me)</title>
+<link href="https://alexisrondeau.me/feed/t/2111031241294168280/"/>
+<id>https://alexisrondeau.me/feed/t/2111031241294168280/</id>
+<published>2026-10-16T09:47:23Z</published>
+<updated>2026-10-16T09:47:23Z</updated>
+<content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2111031241294168280&quot;&gt;
+&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2111031241294168280/&quot;&gt;&lt;time datetime=&quot;2026-10-16T09:47:23Z&quot;&gt;Friday, October 16, 2026 · 11:47&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;20&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;blockquote class=&quot;ctx&quot;&gt;
+&lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/Ananyo&quot;&gt;@Ananyo&lt;/a&gt; · Oct 15, 2026&lt;/cite&gt;
+&lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;👇 👀 &lt;a href=&quot;https://t.co/9nuqSgnsc5&quot;&gt;t.co/9nuqSgnsc5&lt;/a&gt; &lt;a href=&quot;https://t.co/KDluvsqXKb&quot;&gt;t.co/KDluvsqXKb&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/Ananyo&quot;&gt;@Ananyo&lt;/a&gt; Proud owner since October 2023! &lt;/p&gt;
+&lt;p&gt;(I'd buy it again if Amazon let me)&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2111031241294168280/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2111031241294168280&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
+&lt;/article&gt;
+</content>
+</entry>
+<entry>
+<title>I've decided: I will host a &quot;Autonomous Research 101&quot; training during the @Eurodefensetec…</title>
+<link href="https://alexisrondeau.me/feed/t/2110294020794519787/"/>
+<id>https://alexisrondeau.me/feed/t/2110294020794519787/</id>
+<published>2026-10-14T08:57:56Z</published>
+<updated>2026-10-14T08:57:56Z</updated>
+<content type="html">&lt;article class=&quot;item kind-post&quot; id=&quot;t2110294020794519787&quot;&gt;
+&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2110294020794519787/&quot;&gt;&lt;time datetime=&quot;2026-10-14T08:57:56Z&quot;&gt;Wednesday, October 14, 2026 · 10:57&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;2&lt;/b&gt; replies&lt;/span&gt; · &lt;span&gt;&lt;b&gt;3&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;141&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;4&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;text&quot;&gt;&lt;p&gt;I've decided: I will host a &amp;quot;Autonomous Research 101&amp;quot; training during the &lt;a class=&quot;mention&quot; href=&quot;https://x.com/Eurodefensetech&quot;&gt;@Eurodefensetech&lt;/a&gt; Hackathon in 🇨🇭 Switzerland next week.&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/zhengyaojiang&quot;&gt;@zhengyaojiang&lt;/a&gt;: Could my participants use &lt;a class=&quot;mention&quot; href=&quot;https://x.com/WecoAI&quot;&gt;@WecoAI&lt;/a&gt; to run their first experiment loops instead of bootstrapping everything via Claude Code? &lt;/p&gt;
+&lt;p&gt;And if not, what would you recommend?&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2110294020794519787/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2110294020794519787&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
+&lt;/article&gt;
+</content>
+</entry>
+<entry>
 <title>Thank you @karpathy because I now realize that, while the curve's vertigo has been real f…</title>
 <link href="https://alexisrondeau.me/feed/t/2109548870082363686/"/>
 <id>https://alexisrondeau.me/feed/t/2109548870082363686/</id>
@@ -42,7 +174,7 @@
 <updated>2026-10-12T07:36:58Z</updated>
 <content type="html">&lt;article class=&quot;item kind-quote&quot; id=&quot;t2109548870082363686&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Quote&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2109548870082363686/&quot;&gt;&lt;time datetime=&quot;2026-10-12T07:36:58Z&quot;&gt;Monday, October 12, 2026 · 09:36&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;7&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; profile visit&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;52&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;Thank you &lt;a class=&quot;mention&quot; href=&quot;https://x.com/karpathy&quot;&gt;@karpathy&lt;/a&gt; because I now realize that, while the curve's vertigo has been real for me for years, there's a HUGE gap in my communication skills to translate what I'm experiencing here on the edge with those closer to the center in a way that makes sense to them.&lt;/p&gt;
 &lt;blockquote&gt;&lt;p&gt;&amp;quot;So this is the weirdness of the moment. The general public has mostly not interacted with these systems. When they have, it looks like a derpy chatbot. The majority of professionals still see only a modest uplift. And a small sliver of professionals are experiencing the vertigo of the curve going vertical. And it is all happening at the same time.&amp;quot;&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
@@ -123,7 +255,7 @@
 <updated>2026-10-10T08:26:07Z</updated>
 <content type="html">&lt;article class=&quot;item kind-post&quot; id=&quot;t2108836462015685015&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2108836462015685015/&quot;&gt;&lt;time datetime=&quot;2026-10-10T08:26:07Z&quot;&gt;Saturday, October 10, 2026 · 10:26&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;52&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; bookmark&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;66&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; bookmark&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;Accelerating scientific discovery with AI-powered Empirical Research Assistance: Autoresearch at Google (2025)&lt;/p&gt;
 &lt;p&gt;Lovely and very relatable: Once you have the experiment harness in place, you wanna test it against at least four kinds of interesting problems.&lt;/p&gt;
 &lt;ul&gt;
@@ -445,7 +577,7 @@ notes on the recorder itself are not part of this repository.&lt;/p&gt;
 <updated>2026-09-28T11:04:15Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2104527603897913371&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2104527603897913371/&quot;&gt;&lt;time datetime=&quot;2026-09-28T11:04:15Z&quot;&gt;Monday, September 28, 2026 · 13:04&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;15&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; bookmark&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;16&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; bookmark&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/SchmidhuberAI&quot;&gt;@SchmidhuberAI&lt;/a&gt; · Dec 23, 2022&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;Machine learning is the science of credit assignment. My new survey (also under arXiv:2212.11279) credits the pioneers of deep learning and modern AI (supplementing my award-winning 2015 deep learning survey): &lt;a href=&quot;https://t.co/MfmqhEh8MA&quot;&gt;t.co/MfmqhEh8MA&lt;/a&gt; P.S. Happy Holidays! &lt;a href=&quot;https://t.co/or6oxAOXgS&quot;&gt;t.co/or6oxAOXgS&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
@@ -492,7 +624,7 @@ notes on the recorder itself are not part of this repository.&lt;/p&gt;
 <updated>2026-09-28T08:25:54Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2104487753081655614&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2104487753081655614/&quot;&gt;&lt;time datetime=&quot;2026-09-28T08:25:54Z&quot;&gt;Monday, September 28, 2026 · 10:25&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;25&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; profile visit&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;25&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/richardcsuwandi&quot;&gt;@richardcsuwandi&lt;/a&gt; · Sep 27, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/SpringStreetNYC&quot;&gt;@SpringStreetNYC&lt;/a&gt; Interesting, thanks for sharing!&lt;/p&gt;&lt;/div&gt;
@@ -521,7 +653,7 @@ notes on the recorder itself are not part of this repository.&lt;/p&gt;
 <updated>2026-09-28T08:08:59Z</updated>
 <content type="html">&lt;article class=&quot;item kind-quote&quot; id=&quot;t2104483494919393724&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Quote&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2104483494919393724/&quot;&gt;&lt;time datetime=&quot;2026-09-28T08:08:59Z&quot;&gt;Monday, September 28, 2026 · 10:08&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;2&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;139&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;7&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;2&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;150&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;Love this. Via &lt;a class=&quot;mention&quot; href=&quot;https://x.com/patrickshafto&quot;&gt;@patrickshafto&lt;/a&gt; and &lt;a class=&quot;mention&quot; href=&quot;https://x.com/DARPA&quot;&gt;@DARPA&lt;/a&gt;'s expMath program, &lt;a class=&quot;mention&quot; href=&quot;https://x.com/ayushkhaitan343&quot;&gt;@ayushkhaitan343&lt;/a&gt; announces:&lt;/p&gt;
 &lt;blockquote&gt;&lt;p&gt;&amp;quot;With Ben Chow, Yuan Liao and Ziyang Qin, we have completed a full Lean formalization of the Hamilton-Perelman proof of the Poincaré conjecture!&amp;quot;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;For context on expMath and in &lt;a class=&quot;mention&quot; href=&quot;https://x.com/r0ck3t23&quot;&gt;@r0ck3t23&lt;/a&gt; words over at &lt;a href=&quot;https://x.com/r0ck3t23/status/1917016776312766901&quot;&gt;x.com/r0ck3t23/statu…&lt;/a&gt;&lt;/p&gt;
@@ -547,10 +679,19 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <id>https://alexisrondeau.me/feed/t/2104481647441612829/</id>
 <published>2026-09-28T08:01:38Z</published>
 <updated>2026-09-28T08:01:38Z</updated>
-<content type="html">&lt;article class=&quot;item kind-post&quot; id=&quot;t2104481647441612829&quot;&gt;
-&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2104481647441612829/&quot;&gt;&lt;time datetime=&quot;2026-09-28T08:01:38Z&quot;&gt;Monday, September 28, 2026 · 10:01&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;4&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;595&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;4&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
-&lt;div class=&quot;text display&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/hardmaru&quot;&gt;@hardmaru&lt;/a&gt; &lt;a class=&quot;mention&quot; href=&quot;https://x.com/risi1979&quot;&gt;@risi1979&lt;/a&gt; &lt;a class=&quot;mention&quot; href=&quot;https://x.com/yujin_tang&quot;&gt;@yujin_tang&lt;/a&gt; Done! Immediately pre-ordered, can't wait!&lt;/p&gt;&lt;/div&gt;
+<content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2104481647441612829&quot;&gt;
+&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2104481647441612829/&quot;&gt;&lt;time datetime=&quot;2026-09-28T08:01:38Z&quot;&gt;Monday, September 28, 2026 · 10:01&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;4&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;614&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;blockquote class=&quot;ctx&quot;&gt;
+&lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/hardmaru&quot;&gt;@hardmaru&lt;/a&gt; · Sep 28, 2026&lt;/cite&gt;
+&lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;Our Neuroevolution textbook is finally in print!&lt;/p&gt;
+&lt;p&gt;Free online edition: &lt;a href=&quot;https://t.co/3IDTb1remp&quot;&gt;t.co/3IDTb1remp&lt;/a&gt;&lt;br&gt;
+Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I am incredibly grateful to my co-authors Sebastian Risi, Yujin Tang, and Risto Miikkulainen for making this happen. Neuroevolution is a subject very dear to my heart. It is the field that convinced me that nature has already figured out how to build intelligence: through evolution, collective behavior, and adaptation under constraints.&lt;/p&gt;
+&lt;p&gt;This idea, that intelligence emerges from evolution operating under constraints rather than unlimited resources, is what eventually led me to founding Sakana AI here in Japan.&lt;/p&gt;
+&lt;p&gt;The concepts in this book about open-ended creativity and self-organizing systems are exactly what we build at &lt;a class=&quot;mention&quot; href=&quot;https://x.com/SakanaAILabs&quot;&gt;@SakanaAILabs&lt;/a&gt;. Our name and logo are inspired by schools of fish moving together, adapting as one. It is the core philosophy of what we build. This book captures the theoretical foundations of that belief.&lt;/p&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/hardmaru&quot;&gt;@hardmaru&lt;/a&gt; &lt;a class=&quot;mention&quot; href=&quot;https://x.com/risi1979&quot;&gt;@risi1979&lt;/a&gt; &lt;a class=&quot;mention&quot; href=&quot;https://x.com/yujin_tang&quot;&gt;@yujin_tang&lt;/a&gt; Done! Immediately pre-ordered, can't wait!&lt;/p&gt;&lt;/div&gt;
 &lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/2104481647441612829-0.jpg&quot; width=&quot;1218&quot; height=&quot;464&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
 &lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2104481647441612829/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2104481647441612829&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
@@ -582,7 +723,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-27T11:04:07Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2104165182817661175&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2104165182817661175/&quot;&gt;&lt;time datetime=&quot;2026-09-27T11:04:07Z&quot;&gt;Sunday, September 27, 2026 · 13:04&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;80&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;3&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;80&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;In one recent HF/OpenAI-related article I read &lt;/p&gt;
 &lt;blockquote&gt;&lt;p&gt;&amp;quot;[...] the agents created millions of short URLs to affect another system.&amp;quot; and immediately, pictures of early industrial revolution-era polluted rivers with dead fish floating popped into my mind.&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;I believe Buckminster Fuller's definition of &amp;quot;nature&amp;quot; included human artifacts like cities, airplanes, art. &lt;/p&gt;
@@ -600,7 +741,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-27T10:42:29Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2104159739013939696&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2104159739013939696/&quot;&gt;&lt;time datetime=&quot;2026-09-27T10:42:29Z&quot;&gt;Sunday, September 27, 2026 · 12:42&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;2&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;76&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;4&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;2&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;76&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/danielrupawalla&quot;&gt;@danielrupawalla&lt;/a&gt; · Sep 27, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;even within SF, i don't think we're AGI-pilled enough. it doesn't make sense for labs to stop. rn, we're only blocked by infra, not intellect&lt;/p&gt;
@@ -620,7 +761,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-27T10:37:19Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2104158438511308952&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2104158438511308952/&quot;&gt;&lt;time datetime=&quot;2026-09-27T10:37:19Z&quot;&gt;Sunday, September 27, 2026 · 12:37&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;22&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;2&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;22&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/richardcsuwandi&quot;&gt;@richardcsuwandi&lt;/a&gt; · Sep 26, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;In 1991, James G. March showed that a learning system can become less intelligent by learning too quickly.&lt;/p&gt;
@@ -642,7 +783,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-25T09:19:09Z</updated>
 <content type="html">&lt;article class=&quot;item kind-quote&quot; id=&quot;t2103413990265110691&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Quote&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2103413990265110691/&quot;&gt;&lt;time datetime=&quot;2026-09-25T09:19:09Z&quot;&gt;Friday, September 25, 2026 · 11:19&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;28&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;31&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;Oh perfect! Thank you for sharing the slides as well. I watched your talk on youtube yesterday and have been telling all my IRL friends about it :)&lt;/p&gt;
 &lt;p&gt;I love that your system is explicitly designed to hand back the recommendation to a human, not yet another loop.&lt;/p&gt;
 &lt;ul&gt;
@@ -691,7 +832,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-24T12:03:44Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2103093022158155943&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2103093022158155943/&quot;&gt;&lt;time datetime=&quot;2026-09-24T12:03:44Z&quot;&gt;Thursday, September 24, 2026 · 14:03&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;116&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;132&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/wellecks&quot;&gt;@wellecks&lt;/a&gt;' &amp;quot;The Problem is the Problem&amp;quot; is a must-watch for us working in autonomous research and discovery loop engineering.&lt;/p&gt;
 &lt;p&gt;Thus far, I had only considered that my discovery loops would always target solutions to problems. &lt;/p&gt;
 &lt;p&gt;I had the same core-assumption about &lt;a class=&quot;mention&quot; href=&quot;https://x.com/zhengyaojiang&quot;&gt;@zhengyaojiang&lt;/a&gt; 's amazing AIDE² research: We run autoresearch on autoresearch to find optimal solutions to decided-upon problems, including our research methods themselves.&lt;/p&gt;
@@ -715,7 +856,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-23T12:20:08Z</updated>
 <content type="html">&lt;article class=&quot;item kind-post&quot; id=&quot;t2102734759705084006&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2102734759705084006/&quot;&gt;&lt;time datetime=&quot;2026-09-23T12:20:08Z&quot;&gt;Wednesday, September 23, 2026 · 14:20&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;318&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; bookmark&lt;/span&gt; · &lt;span&gt;&lt;b&gt;2&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;323&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; bookmark&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;&amp;quot;Pants down, page up! Is it slop or is it not?&amp;quot;&lt;/p&gt;
 &lt;p&gt;Hey there! Alexis here. I'm the author of Mosey and director of this little film here. As you may (or not) have guessed, the film was created with AI. If you're (like me) skeptical at this point, please read on.&lt;/p&gt;
 &lt;p&gt;On this page here:&lt;/p&gt;
@@ -754,7 +895,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-22T07:16:05Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2102295855352918433&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2102295855352918433/&quot;&gt;&lt;time datetime=&quot;2026-09-22T07:16:05Z&quot;&gt;Tuesday, September 22, 2026 · 09:16&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;16&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;18&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/michaelvolz_x&quot;&gt;@michaelvolz_x&lt;/a&gt; · Aug 21, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;Working with agents often reminds me of that classic German Loriot sketch. He simply wanted to straighten a crooked picture and ended up destroying everything in the process.&lt;/p&gt;
@@ -797,7 +938,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-22T07:08:10Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2102293865692557606&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2102293865692557606/&quot;&gt;&lt;time datetime=&quot;2026-09-22T07:08:10Z&quot;&gt;Tuesday, September 22, 2026 · 09:08&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;2&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;16&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;2&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;2&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;16&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/Ananyo&quot;&gt;@Ananyo&lt;/a&gt; · Sep 22, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/SpringStreetNYC&quot;&gt;@SpringStreetNYC&lt;/a&gt; &lt;a class=&quot;mention&quot; href=&quot;https://x.com/patrickshafto&quot;&gt;@patrickshafto&lt;/a&gt; Feel free to drop by &lt;a class=&quot;mention&quot; href=&quot;https://x.com/London_Inst&quot;&gt;@London_Inst&lt;/a&gt; on your next visit to London!&lt;/p&gt;&lt;/div&gt;
@@ -816,7 +957,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-22T07:01:56Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2102292293503811797&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2102292293503811797/&quot;&gt;&lt;time datetime=&quot;2026-09-22T07:01:56Z&quot;&gt;Tuesday, September 22, 2026 · 09:01&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;18&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;20&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/SpringStreetNYC&quot;&gt;@SpringStreetNYC&lt;/a&gt; · Sep 5, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;Ever wonder &amp;quot;Why is my apartment so warm all the time?&amp;quot;&lt;/p&gt;
@@ -842,7 +983,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-22T06:56:53Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2102291024089374884&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2102291024089374884/&quot;&gt;&lt;time datetime=&quot;2026-09-22T06:56:53Z&quot;&gt;Tuesday, September 22, 2026 · 08:56&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;9&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;3&lt;/b&gt; link clicks&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;9&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/SpringStreetNYC&quot;&gt;@SpringStreetNYC&lt;/a&gt; · Sep 19, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;PS: Boosting this (via paid ads) for a day because I'm really curious to hear your thoughts.&lt;/p&gt;
@@ -866,7 +1007,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-22T06:53:32Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2102290179323036155&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2102290179323036155/&quot;&gt;&lt;time datetime=&quot;2026-09-22T06:53:32Z&quot;&gt;Tuesday, September 22, 2026 · 08:53&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;2&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;14&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;2&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;2&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;14&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/patrickshafto&quot;&gt;@patrickshafto&lt;/a&gt; · Sep 16, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;And I got to meet &lt;a class=&quot;mention&quot; href=&quot;https://x.com/Ananyo&quot;&gt;@Ananyo&lt;/a&gt;, and talk John von Neumann! &lt;/p&gt;
@@ -891,7 +1032,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2102287895406969004/&quot;&gt;&lt;time datetime=&quot;2026-09-22T06:44:27Z&quot;&gt;Tuesday, September 22, 2026 · 08:44&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
 &lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;12&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
-&lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/tunacarlyle&quot;&gt;@tunacarlyle&lt;/a&gt; · Sep 20, 2026&lt;/cite&gt;
+&lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/pardisclub&quot;&gt;@pardisclub&lt;/a&gt; · Sep 20, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;I knew building my account from scratch would be worth the journey &lt;a href=&quot;https://t.co/jEuwvkm0Id&quot;&gt;t.co/jEuwvkm0Id&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
 &lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/ref-2101453502778380737-0.png&quot; width=&quot;212&quot; height=&quot;150&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
 &lt;/blockquote&gt;
@@ -909,7 +1050,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-22T06:40:44Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2102286958215020590&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2102286958215020590/&quot;&gt;&lt;time datetime=&quot;2026-09-22T06:40:44Z&quot;&gt;Tuesday, September 22, 2026 · 08:40&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1.5K&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;3&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1.5K&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/matteopelleg&quot;&gt;@matteopelleg&lt;/a&gt; · Sep 22, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;today i've learned that 2 air gapped computers in the same room can communicate with each other by regulating their CPU temperature&lt;/p&gt;
@@ -928,7 +1069,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-22T06:39:42Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2102286698327482407&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2102286698327482407/&quot;&gt;&lt;time datetime=&quot;2026-09-22T06:39:42Z&quot;&gt;Tuesday, September 22, 2026 · 08:39&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;123&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; profile visit&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;126&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/Ryan__Stephen&quot;&gt;@Ryan__Stephen&lt;/a&gt; · Sep 21, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;breakpoints are dead &lt;a href=&quot;https://t.co/I87mhgeAoA&quot;&gt;t.co/I87mhgeAoA&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
@@ -965,7 +1106,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-21T12:52:07Z</updated>
 <content type="html">&lt;article class=&quot;item kind-post&quot; id=&quot;t2102018034109923841&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2102018034109923841/&quot;&gt;&lt;time datetime=&quot;2026-09-21T12:52:07Z&quot;&gt;Monday, September 21, 2026 · 14:52&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;2&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;130&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;2&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;136&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;The kind of future I want currently costs $470 with a $5 monthly subscription:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Oura ring, $270 + $5/month&lt;/li&gt;
@@ -987,7 +1128,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-19T13:29:48Z</updated>
 <content type="html">&lt;article class=&quot;item kind-post&quot; id=&quot;t2101302739485483149&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2101302739485483149/&quot;&gt;&lt;time datetime=&quot;2026-09-19T13:29:48Z&quot;&gt;Saturday, September 19, 2026 · 15:29&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;66&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;3&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;71&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;Shannon's surprisal needs a friend called &amp;quot;explicability&amp;quot; or &amp;quot;responsibility.&amp;quot;&lt;/p&gt;
 &lt;p&gt;As in: &amp;quot;Oh this solution is surprisingly novel. Can you please walk me through it over a cup of tea?&amp;quot;&lt;/p&gt;&lt;/div&gt;
 &lt;div class=&quot;tags&quot;&gt;&lt;a href=&quot;/feed/tag/discovery-loops/&quot;&gt;#discovery-loops&lt;/a&gt;&lt;/div&gt;
@@ -1003,7 +1144,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-19T12:49:30Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2101292601563304068&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2101292601563304068/&quot;&gt;&lt;time datetime=&quot;2026-09-19T12:49:30Z&quot;&gt;Saturday, September 19, 2026 · 14:49&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;58&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;2&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;58&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;PS: Boosting this (via paid ads) for a day because I'm really curious to hear your thoughts.&lt;/p&gt;
 &lt;p&gt;And yes, I do feel like I'm putting my ass on the line here a bit. Mosey is &amp;quot;just&amp;quot; a personal project but still. &lt;/p&gt;
 &lt;p&gt;Be kind and let's have an honest conversation here.&lt;/p&gt;&lt;/div&gt;
@@ -1019,7 +1160,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-19T10:37:57Z</updated>
 <content type="html">&lt;article class=&quot;item kind-post&quot; id=&quot;t2101259492755222758&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2101259492755222758/&quot;&gt;&lt;time datetime=&quot;2026-09-19T10:37:57Z&quot;&gt;Saturday, September 19, 2026 · 12:37&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;40&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;44&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text display&quot;&gt;&lt;p&gt;Loving is additive in nature: you can always love more no problemo.&lt;/p&gt;&lt;/div&gt;
 &lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2101259492755222758/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2101259492755222758&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
@@ -1053,7 +1194,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-19T10:32:49Z</updated>
 <content type="html">&lt;article class=&quot;item kind-post&quot; id=&quot;t2101258200376906222&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2101258200376906222/&quot;&gt;&lt;time datetime=&quot;2026-09-19T10:32:49Z&quot;&gt;Saturday, September 19, 2026 · 12:32&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;39&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;43&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text display&quot;&gt;&lt;p&gt;Re: Currently reading; I had started DFW's biography alongside Infinite Jest and have now finished reading both. Worth it.&lt;/p&gt;&lt;/div&gt;
 &lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2101258200376906222/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2101258200376906222&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
@@ -1115,7 +1256,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-14T11:17:19Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2099457460398432480&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2099457460398432480/&quot;&gt;&lt;time datetime=&quot;2026-09-14T11:17:19Z&quot;&gt;Monday, September 14, 2026 · 13:17&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;77&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;81&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/zhengyaojiang&quot;&gt;@zhengyaojiang&lt;/a&gt; · Jul 14, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;The first experimental evidence of recursive self-improvement (RSI). &lt;/p&gt;
@@ -1138,7 +1279,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-13T12:59:53Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2099120885391061300&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2099120885391061300/&quot;&gt;&lt;time datetime=&quot;2026-09-13T12:59:53Z&quot;&gt;Sunday, September 13, 2026 · 14:59&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;3&lt;/b&gt; reposts&lt;/span&gt; · &lt;span&gt;&lt;b&gt;21&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;3.1K&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; bookmark&lt;/span&gt; · &lt;span&gt;&lt;b&gt;4&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;3&lt;/b&gt; reposts&lt;/span&gt; · &lt;span&gt;&lt;b&gt;21&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;3.1K&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; bookmark&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/DarioAmodei&quot;&gt;@DarioAmodei&lt;/a&gt; · Sep 12, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;We Must Pace the Frontier: I’ve written a new essay on why the AI industry should slow down, with a three-part plan for doing so.&lt;/p&gt;
@@ -1159,7 +1300,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-12T13:46:26Z</updated>
 <content type="html">&lt;article class=&quot;item kind-post&quot; id=&quot;t2098770213307089076&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2098770213307089076/&quot;&gt;&lt;time datetime=&quot;2026-09-12T13:46:26Z&quot;&gt;Saturday, September 12, 2026 · 15:46&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;42&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;44&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text display&quot;&gt;&lt;p&gt;Removed 52/54 followers and 82/99 people I followed. If you're reading this right now, you are one of the lucky few :)&lt;/p&gt;&lt;/div&gt;
 &lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098770213307089076/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098770213307089076&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
@@ -1173,7 +1314,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-12T11:28:18Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2098735451204964781&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2098735451204964781/&quot;&gt;&lt;time datetime=&quot;2026-09-12T11:28:18Z&quot;&gt;Saturday, September 12, 2026 · 13:28&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;27&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; profile visit&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; reply&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;27&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/DougStandley&quot;&gt;@DougStandley&lt;/a&gt; · Sep 12, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;Take a moment on this one. &lt;a href=&quot;https://t.co/TAJ15W4WAm&quot;&gt;t.co/TAJ15W4WAm&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
@@ -1191,7 +1332,7 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 <updated>2026-09-12T11:22:52Z</updated>
 <content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2098734082905587871&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2098734082905587871/&quot;&gt;&lt;time datetime=&quot;2026-09-12T11:22:52Z&quot;&gt;Saturday, September 12, 2026 · 13:22&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;11&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; link click&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;11&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/andonlabs&quot;&gt;@andonlabs&lt;/a&gt; · Sep 8, 2026&lt;/cite&gt;
 &lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;We've never seen this before.&lt;/p&gt;
@@ -1209,159 +1350,6 @@ DARPA has just kicked off Exponentiating Mathematics (expMath), a three-year pro
 &lt;span class=&quot;body&quot;&gt;&lt;span class=&quot;site&quot;&gt;“Not all who wander are lost”&lt;/span&gt;&lt;span class=&quot;title&quot;&gt;Ballpark — “Not all who wander are lost”: Can a UAV learn a city by heart — no GPS, no map on board, just a $4 flight computer?&lt;/span&gt;&lt;span class=&quot;desc&quot;&gt;Yes: a from-scratch neural memory that knows Berlin by heart. One downward photo in, (lat, lon, confidence) out — the map is the weights, one city in 3.1 MB. Found by an autonomous loop of coding agents in 81 experiments for $364.&lt;/span&gt;&lt;span class=&quot;host&quot;&gt;↗ alexisrondeau.me&lt;/span&gt;&lt;/span&gt;
 &lt;/a&gt;
 &lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098734082905587871/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098734082905587871&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
-&lt;/article&gt;
-</content>
-</entry>
-<entry>
-<title>@maxjendrall This looks like time spent way better than anything AI-related. What kind of…</title>
-<link href="https://alexisrondeau.me/feed/t/2098731282381295729/"/>
-<id>https://alexisrondeau.me/feed/t/2098731282381295729/</id>
-<published>2026-09-12T11:11:44Z</published>
-<updated>2026-09-12T11:11:44Z</updated>
-<content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2098731282381295729&quot;&gt;
-&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2098731282381295729/&quot;&gt;&lt;time datetime=&quot;2026-09-12T11:11:44Z&quot;&gt;Saturday, September 12, 2026 · 13:11&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;6&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; profile visit&lt;/span&gt;&lt;/div&gt;
-&lt;blockquote class=&quot;ctx&quot;&gt;
-&lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/maxjendrall&quot;&gt;@maxjendrall&lt;/a&gt; · Sep 4, 2026&lt;/cite&gt;
-&lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;euromaxxed so hard I missed the mf gpt-6 launch wtfff &lt;a href=&quot;https://t.co/RlaX0XqV05&quot;&gt;t.co/RlaX0XqV05&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
-&lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/ref-2095635260373393482-0.jpg&quot; width=&quot;1600&quot; height=&quot;1200&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
-&lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/ref-2095635260373393482-1.jpg&quot; width=&quot;1600&quot; height=&quot;1200&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
-&lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/ref-2095635260373393482-2.jpg&quot; width=&quot;1600&quot; height=&quot;1200&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
-&lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/ref-2095635260373393482-3.jpg&quot; width=&quot;1200&quot; height=&quot;1600&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/maxjendrall&quot;&gt;@maxjendrall&lt;/a&gt; This looks like time spent way better than anything AI-related.&lt;/p&gt;
-&lt;p&gt;What kind of ideas did you bring back?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098731282381295729/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098731282381295729&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
-&lt;/article&gt;
-</content>
-</entry>
-<entry>
-<title>@Dev__Vishwajeet The side-effect of hyping AI fear by shipping these extreme narratives i…</title>
-<link href="https://alexisrondeau.me/feed/t/2098730737373483093/"/>
-<id>https://alexisrondeau.me/feed/t/2098730737373483093/</id>
-<published>2026-09-12T11:09:34Z</published>
-<updated>2026-09-12T11:09:34Z</updated>
-<content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2098730737373483093&quot;&gt;
-&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2098730737373483093/&quot;&gt;&lt;time datetime=&quot;2026-09-12T11:09:34Z&quot;&gt;Saturday, September 12, 2026 · 13:09&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;9&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
-&lt;blockquote class=&quot;ctx&quot;&gt;
-&lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/Dev__Vishwajeet&quot;&gt;@Dev__Vishwajeet&lt;/a&gt; · Sep 11, 2026&lt;/cite&gt;
-&lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;At this point, I think Anthropic is intentionally hyping AI fear. So that government can intervene and regulate and kill the competition for Anthropic.&lt;/p&gt;
-&lt;p&gt;Remember Anthropic already hate OpenSource LLMs &lt;a href=&quot;https://t.co/Dyxx4wAjf4&quot;&gt;t.co/Dyxx4wAjf4&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/Dev__Vishwajeet&quot;&gt;@Dev__Vishwajeet&lt;/a&gt; The side-effect of hyping AI fear by shipping these extreme narratives is that it disrupts and destabilizes individuals and in consequence communities. &lt;/p&gt;
-&lt;p&gt;How is this different from state-sponsored propaganda?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098730737373483093/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098730737373483093&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
-&lt;/article&gt;
-</content>
-</entry>
-<entry>
-<title>@maxjendrall Wait, this is super interesting. So it's remote, right? Can't be local, obvi…</title>
-<link href="https://alexisrondeau.me/feed/t/2098331644633423881/"/>
-<id>https://alexisrondeau.me/feed/t/2098331644633423881/</id>
-<published>2026-09-11T08:43:43Z</published>
-<updated>2026-09-11T08:43:43Z</updated>
-<content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2098331644633423881&quot;&gt;
-&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2098331644633423881/&quot;&gt;&lt;time datetime=&quot;2026-09-11T08:43:43Z&quot;&gt;Friday, September 11, 2026 · 10:43&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;21&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
-&lt;blockquote class=&quot;ctx&quot;&gt;
-&lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/maxjendrall&quot;&gt;@maxjendrall&lt;/a&gt; · Jul 22, 2026&lt;/cite&gt;
-&lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;pssst people haven't realised that OpenAI literally just rolled out a 15gb RAM 9 core VM in ChatGPT to ALL their paid customers with ChatGPT Work.&lt;/p&gt;
-&lt;p&gt;Non technical people now have remote machines available for their agents with enough resources to do most economically valuable work in that machine. &lt;/p&gt;
-&lt;p&gt;It has its own browser, can install packages and do a whole lot of things.&lt;/p&gt;
-&lt;p&gt;And this is not even the reason why Codex is growing so much right now! We'll see an ever sharper rise when more people realise what they can access now.&lt;/p&gt;
-&lt;p&gt;no need for a dedicated server / vps for most people now.&lt;/p&gt;&lt;/div&gt;
-&lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/ref-2079874049455309023-0.jpg&quot; width=&quot;634&quot; height=&quot;634&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
-&lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/ref-2079874049455309023-1.jpg&quot; width=&quot;618&quot; height=&quot;618&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/maxjendrall&quot;&gt;@maxjendrall&lt;/a&gt; Wait, this is super interesting. So it's remote, right? Can't be local, obviously.&lt;/p&gt;
-&lt;p&gt;Basically every ChatGPT Work customer's assistant gets its own laptop?&lt;/p&gt;
-&lt;p&gt;How and when did you hear about this?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098331644633423881/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098331644633423881&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
-&lt;/article&gt;
-</content>
-</entry>
-<entry>
-<title>@DeeJayMek So much love for the Liquid Liquid x Clash moment. And, there's ALWAYS time fo…</title>
-<link href="https://alexisrondeau.me/feed/t/2098319656649928982/"/>
-<id>https://alexisrondeau.me/feed/t/2098319656649928982/</id>
-<published>2026-09-11T07:56:05Z</published>
-<updated>2026-09-11T07:56:05Z</updated>
-<content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2098319656649928982&quot;&gt;
-&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2098319656649928982/&quot;&gt;&lt;time datetime=&quot;2026-09-11T07:56:05Z&quot;&gt;Friday, September 11, 2026 · 09:56&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;7&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
-&lt;blockquote class=&quot;ctx&quot;&gt;
-&lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/DeeJayMek&quot;&gt;@DeeJayMek&lt;/a&gt; · Sep 5, 2024&lt;/cite&gt;
-&lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;DJing for The Stone Roses last ever Irish show in Belfast. I played this gig with a broken wrist 🚑 Sound system ruled. Last 2 minutes of set⬇️&lt;br&gt;
-Kurtis Blow // Liquid Liquid // The Clash // Can // Talking Heads // Incredible Bongo Band // Ian Dury // Information Society // Hashim &lt;a href=&quot;https://t.co/YQtYOP1zlD&quot;&gt;t.co/YQtYOP1zlD&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
-&lt;figure class=&quot;media&quot;&gt;&lt;a class=&quot;toobig&quot; href=&quot;https://x.com/i/status/7_1831650233203245058&quot;&gt;&lt;img src=&quot;/feed/media/ref-1831651886744633697-0-poster.jpg&quot; width=&quot;1200&quot; height=&quot;675&quot; alt=&quot;Video from the post&quot; loading=&quot;lazy&quot;&gt;&lt;span&gt;▶ Watch on Twitter&lt;/span&gt;&lt;/a&gt;&lt;/figure&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/DeeJayMek&quot;&gt;@DeeJayMek&lt;/a&gt; So much love for the Liquid Liquid x Clash moment. And, there's ALWAYS time for Jaki Liebezeit.&lt;/p&gt;
-&lt;p&gt;How did you get that gig?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098319656649928982/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098319656649928982&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
-&lt;/article&gt;
-</content>
-</entry>
-<entry>
-<title>@charlesworthjc Joe! Using your post here as an excuse to just say hi. How are you doing?…</title>
-<link href="https://alexisrondeau.me/feed/t/2098318844339122200/"/>
-<id>https://alexisrondeau.me/feed/t/2098318844339122200/</id>
-<published>2026-09-11T07:52:52Z</published>
-<updated>2026-09-11T07:52:52Z</updated>
-<content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2098318844339122200&quot;&gt;
-&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2098318844339122200/&quot;&gt;&lt;time datetime=&quot;2026-09-11T07:52:52Z&quot;&gt;Friday, September 11, 2026 · 09:52&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;7&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
-&lt;blockquote class=&quot;ctx&quot;&gt;
-&lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/charlesworthjc&quot;&gt;@charlesworthjc&lt;/a&gt; · Apr 20, 2023&lt;/cite&gt;
-&lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;AI * web3 hack week coming to Lisbon 🇵🇹. If you're a hacker and think AI should be open source and decentralised,  this one is for you: &lt;a href=&quot;https://t.co/OPZ1ayHJC7&quot;&gt;t.co/OPZ1ayHJC7&lt;/a&gt; &lt;a href=&quot;https://t.co/SWKQnPi03o&quot;&gt;t.co/SWKQnPi03o&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/charlesworthjc&quot;&gt;@charlesworthjc&lt;/a&gt; Joe! Using your post here as an excuse to just say hi.&lt;/p&gt;
-&lt;p&gt;How are you doing? Where are you at these days? And how's life with your lovely family?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098318844339122200/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098318844339122200&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
-&lt;/article&gt;
-</content>
-</entry>
-<entry>
-<title>My life hack for this: a little golf counter, the clicker kind. I got a fancy one in silv…</title>
-<link href="https://alexisrondeau.me/feed/t/2098318546279280947/"/>
-<id>https://alexisrondeau.me/feed/t/2098318546279280947/</id>
-<published>2026-09-11T07:51:40Z</published>
-<updated>2026-09-11T07:51:40Z</updated>
-<content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2098318546279280947&quot;&gt;
-&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2098318546279280947/&quot;&gt;&lt;time datetime=&quot;2026-09-11T07:51:40Z&quot;&gt;Friday, September 11, 2026 · 09:51&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;29&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
-&lt;blockquote class=&quot;ctx&quot;&gt;
-&lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/nicktozi&quot;&gt;@nicktozi&lt;/a&gt; · Feb 16, 2025&lt;/cite&gt;
-&lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;If you're waking up this morning grateful for another day...&lt;/p&gt;
-&lt;p&gt;You've already won, friend.&lt;/p&gt;&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;text&quot;&gt;&lt;p&gt;My life hack for this: a little golf counter, the clicker kind. I got a fancy one in silver and I carry it with me. When people say &amp;quot;count your blessings&amp;quot; I took that literally.&lt;/p&gt;
-&lt;p&gt;A few times a day I stop and ask what I could be thankful for, then click. Nice coffee, click, thank you. Easily 20-30 a day, from the mundane to the very high-spirited.&lt;/p&gt;
-&lt;p&gt;Today so far: my lovely mechanical keyboard, the guy who just delivered groceries, green tea.&lt;/p&gt;
-&lt;p&gt;What are you grateful for today?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098318546279280947/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098318546279280947&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
-&lt;/article&gt;
-</content>
-</entry>
-<entry>
-<title>@mehdizare Does this mean you actually have a $55k bill for your private work with Fable?</title>
-<link href="https://alexisrondeau.me/feed/t/2098312965464158490/"/>
-<id>https://alexisrondeau.me/feed/t/2098312965464158490/</id>
-<published>2026-09-11T07:29:30Z</published>
-<updated>2026-09-11T07:29:30Z</updated>
-<content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2098312965464158490&quot;&gt;
-&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2098312965464158490/&quot;&gt;&lt;time datetime=&quot;2026-09-11T07:29:30Z&quot;&gt;Friday, September 11, 2026 · 09:29&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;4&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
-&lt;blockquote class=&quot;ctx&quot;&gt;
-&lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/mehdizare&quot;&gt;@mehdizare&lt;/a&gt; · Sep 3, 2026&lt;/cite&gt;
-&lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;Claude shipped Fable 5.1. The feed will treat that as the model you should use now.&lt;/p&gt;
-&lt;p&gt;I looked at my own usage. The list-price meter was about $56k in 30 days. Memberships made it about $800. That is the gap the labs are selling: sticker vs seat.&lt;/p&gt;
-&lt;p&gt;I still use cheap or free models for rewrites and first drafts. OpenCode plus DeepSeek covers a lot of that. I save the expensive slow model for a long agent run, the same way I would not hire a specialist for a sore throat.&lt;/p&gt;
-&lt;p&gt;If the job is simple, use the simple tool.&lt;/p&gt;&lt;/div&gt;
-&lt;figure class=&quot;media&quot;&gt;&lt;img src=&quot;/feed/media/ref-2095497760493691170-0.jpg&quot; width=&quot;1000&quot; height=&quot;528&quot; alt=&quot;Image from the post&quot; loading=&quot;lazy&quot;&gt;&lt;/figure&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;text&quot;&gt;&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/mehdizare&quot;&gt;@mehdizare&lt;/a&gt; Does this mean you actually have a $55k bill for your private work with Fable?&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2098312965464158490/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2098312965464158490&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>

@@ -30,10 +30,838 @@
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1>Newsfeed</h1>
 <p class="lede">Everything I publish, in the order I published it: dispatches from Twitter, videos from YouTube and notes from my vault, archived here in full — text, images, video and links — so they outlive the platforms.</p>
-<p class="sub">922 dispatches since January 2012 · page 35 of 37</p>
+<p class="sub">929 dispatches since January 2012 · page 35 of 38</p>
 </header>
 <div class="wrap">
 <section class="feed">
+<article class="item kind-note" id="n-calculating-nonces-that-result-in-zero-padded-sha256-hashes">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/calculating-nonces-that-result-in-zero-padded-sha256-hashes/"><time datetime="2017-05-22T22:00:00Z">Tuesday, May 23, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/calculating-nonces-that-result-in-zero-padded-sha256-hashes/">Calculating Nonces That Result In Zero-Padded SHA256 Hashes</a></h2>
+<div class="text note-body clamped">
+<p><a href="https://travis-ci.org/akaalias/blockchain-toy"><img src="https://travis-ci.org/akaalias/blockchain-toy.svg?branch=master" alt="Build Status" loading="lazy"></a></p>
+<p><a href="https://github.com/akaalias/blockchain-toy">Full Github Repo here</a></p>
+<p>Yesterday I watched <a href="https://github.com/anders94/blockchain-demo">Anders Brownworth’s awesome Blockchain demo</a> and got inspired to follow along in Clojure.</p>
+<p>I <em>had</em> to play around with implementing a toy (read: unoptimized!) algorithm to “mine” for nonces that, when added to the hashing input, produces n zeros at the beginning of the hash:</p>
+<p>I came up with <code>make-nonce-for-zeros-finder</code>, a function which takes the numbers of zeros you want to have at the beginning and a maximum search-depth and returns a function that will calculate the right nonce for your inputs.</p>
+<p>What I personally enjoyed about this little exercise was to express an iterative process in a simple recursive function. And to make a function-maker once I wanted to play around with different types of hashes/nonces I wanted to find.</p>
+<pre><code class="language-clojure">(with-test
+  (defn make-nonce-for-zeros-finder [z-count]
+    (fn
+      ([num data]
+       ((make-nonce-for-zeros-finder z-count) num data 0))
+      ([num data nonce]
+       (cond (= (generate-zeros-string z-count) (subs (generate-hash num data nonce) 0 z-count)) nonce
+             :else (recur num data (inc nonce))))))
+
+  (is (= ((make-nonce-for-zeros-finder 1) nil nil) 39))
+  (is (= ((make-nonce-for-zeros-finder 1) 1 nil) 25))
+  (is (= ((make-nonce-for-zeros-finder 1) 1 1) 11))
+  (is (= ((make-nonce-for-zeros-finder 1) &quot;foo&quot; &quot;bar&quot; 0) 20))
+  (is (= ((make-nonce-for-zeros-finder 2) nil nil) 286))
+  (is (= ((make-nonce-for-zeros-finder 4) nil nil) 88484))
+  (is (= ((make-nonce-for-zeros-finder 4) 1 1) 64840))
+  (is (= ((make-nonce-for-zeros-finder 4) &quot;foo&quot; &quot;bar&quot;) 42515)))
+</code></pre>
+<p>With it, I can quickly create finders for different lengths of zero paddings:</p>
+<pre><code class="language-clojure">(def find-nonce-for-one-zero-padded-hash
+  (make-nonce-for-zeros-finder 1))
+
+(def find-nonce-for-two-zeros-padded-hash
+  (make-nonce-for-zeros-finder 2))
+
+(def find-nonce-for-three-zeros-padded-hash
+  (make-nonce-for-zeros-finder 3))
+
+(def find-nonce-for-four-zeros-padded-hash
+  (make-nonce-for-zeros-finder 4))
+
+(def find-nonce-for-five-zeros-padded-hash
+  (make-nonce-for-zeros-finder 5))
+
+(def find-nonce-for-six-zeros-padded-hash
+  (make-nonce-for-zeros-finder 6))
+
+;; and so on...
+
+</code></pre>
+<p>With these guys set up, we can now calculate the nonce for hashes with 1, 2, 3, 4 and 5 zeros padded. Let’s see how that looks:</p>
+<pre><code class="language-clojure">(find-nonce-for-one-zero-padded-hash &quot;foo&quot; &quot;bar&quot;)
+;; =&gt; 20
+;; takes less than a millisecond
+
+;; we can verify that the hash has one zero at the beginning:
+(generate-hash &quot;foo&quot; &quot;bar&quot; 20)
+;; =&gt; &quot;0fdc57809f5917eba08907d2805e43ce83f4c933a090b4a2b2549923a35e43d7&quot;
+
+(find-nonce-for-two-zeros-padded-hash &quot;foo&quot; &quot;bar&quot;)
+;; =&gt; 102
+;; takes less than a millisecond
+
+;; we can verify that the hash has two zeros at the beginning:
+(generate-hash &quot;foo&quot; &quot;bar&quot; 102)
+;; =&gt; &quot;006668bba91b7e2d5b5357b56600784edb77a72ecf86dc09d515853a841485f6&quot;
+
+(find-nonce-for-three-zeros-padded-hash &quot;foo&quot; &quot;bar&quot;)
+;; =&gt; 4663
+;; takes less than a millisecond
+
+;; we can verify that the hash has three zeros at the beginning:
+(generate-hash &quot;foo&quot; &quot;bar&quot; 4663)
+;; =&gt; &quot;0005d9cd6c13fe6bf56e169fd2a7008003fc3a4c6539f8a1cf7d82975d00210e&quot;
+
+</code></pre>
+<p>And that’s really all there is to it. Once you cross 6 padded zeros, you’ll notice an increase in time it takes to compute.</p>
+<h2>How to test</h2>
+<p>I’ve been a huge fan of the <code>with-test</code> macro. Because of that, you’ll find all test-coverage in core.clj instead of a separate “_test.clj” file.</p>
+<p>To run all tests, use <code>lein test</code></p>
+<h2>Related</h2>
+<ul>
+<li><a class="wikilink" href="/notes/thinking-and-sleeping-better-with-clojure/">Thinking And Sleeping Better With Clojure</a></li>
+</ul>
+</div>
+<div class="more"><a href="/notes/calculating-nonces-that-result-in-zero-padded-sha256-hashes/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/calculating-nonces-that-result-in-zero-padded-sha256-hashes/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-the-little-schemer-in-clojure-recap-chapter-6">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/the-little-schemer-in-clojure-recap-chapter-6/"><time datetime="2017-05-10T22:00:00Z">Thursday, May 11, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/the-little-schemer-in-clojure-recap-chapter-6/">The Little Schemer in Clojure – Recap Chapter 6</a></h2>
+<div class="text note-body clamped">
+<p><strong>Shadows</strong></p>
+<p>Using helper functions increases readability and helps abstract away representations.</p>
+<p>In particular, the example is a simple calculating function <code>value</code> such as <code>(value '(1 + (7 + 11)) ;; =&gt; 19</code></p>
+<p>We can implement this with standard procedures and recursion:</p>
+<pre><code class="language-clojure">(with-test
+  (def value
+    (fn [u] 
+      (cond (atom? u) u
+            (eq? (car (cdr u)) '+) (+ (value (car u))
+                                          (value (car (cdr (cdr u)))))
+            (eq? (car (cdr u)) '*) (- (value (car u))
+                                           (value (car (cdr (cdr u)))))
+            :else (int (java.lang.Math/pow (value (car u))
+                                           (value (car (cdr (cdr u)))))))))
+
+  (is (= (value 13) 13))
+  (is (= (value '(1 + 3)) 4))
+  (is (= (value '(1 + (3 pow 4))) 82)))
+</code></pre>
+<p>Now, you can already see a lot of visual noise. There is a <em>lot</em> of <code>car</code>-ing and <code>cdr</code>-ing about. If you squint your eyes a little, you’ll also notice that they all look similar. in fact, there is a lot of repetition in this function:</p>
+<p>We see this pattern three times and each it’s along the lines of:</p>
+<pre><code class="language-clojure">((eq? (car (cdr u)) 'OPERATOR) (OPERATOR (value (car u)) (value (car (cdr (cdr u))))))
+</code></pre>
+<p>Since we know that our “language” right now is infix arithmetic expressions such as</p>
+<p><code>(1 + 2)</code> and <code>(1 + (4 * 999))</code></p>
+<p>…we can extract helper functions that get the <code>operator</code>, the <code>first sub expression - 1</code> and the <code>second sub expression - 2</code> like so:</p>
+<pre><code class="language-clojure">(with-test
+  (def operator
+    (fn [aexp]
+      (car (cdr aexp))))
+
+  (is (= (operator '()) nil))
+  (is (= (operator '(1)) nil))
+  (is (= (operator '(1 + )) '+))
+  (is (= (operator '(1 + 2)) '+)))
+
+(with-test
+  (def first-sub-exp
+    (fn [aexp]
+      (car aexp)))
+
+  (is (= (first-sub-exp '()) nil))
+  (is (= (first-sub-exp '(1)) 1))
+  (is (= (first-sub-exp '(1 + 2)) 1))
+  (is (= (first-sub-exp '(2 + 1)) 2)))
+
+(with-test
+  (def second-sub-exp
+    (fn [aexp] (car (cdr (cdr aexp)))))
+
+  (is (= (second-sub-exp '()) nil))
+  (is (= (second-sub-exp '(1)) nil))
+  (is (= (second-sub-exp '(1 +)) nil))
+  (is (= (second-sub-exp '(1 + 2)) 2))
+  (is (= (second-sub-exp '(1 + 3)) 3)))
+</code></pre>
+<p>And then, since we have test-coverage already, refactor our <code>value</code> function to be…</p>
+<pre><code class="language-clojure">(with-test
+  (def value
+    (fn [u] 
+      (cond (atom? u) u
+            (eq? (operator u) '+) (+ (value (first-sub-exp u))
+                                          (value (second-sub-exp u)))
+            (eq? (operator u) '*) (- (value (first-sub-exp u))
+                                           (value (second-sub-exp u)))
+            :else (int (java.lang.Math/pow (value (first-sub-exp u))
+                                           (value (second-sub-exp u)))))))
+
+  (is (= (value 13) 13))
+  (is (= (value '(1 + 3)) 4))
+  (is (= (value '(1 + (3 pow 4))) 82)))
+</code></pre>
+<p>Dandy. The new help functions help read this much better.</p>
+<h2>Changing Your Mind</h2>
+<p>Now, say, you wake up today and would like to change your newly-born arithmetic language to be written in prefix notation, such as <code>(+ 1 2)</code>. In a way, I want to say:</p>
+<blockquote>
+<p>I’ve changed my mind. Now, I want have <code>(+ 1 2)</code> express the common arithmetic expression that evaluates to <code>4</code>.</p>
+</blockquote>
+<p>The changes needed to make this happen are now trivial since we have used help functions to hide the representation of <code>operator</code>, <code>first sub expression</code> and <code>second sub expression</code>.</p>
+<p>Simply changing the helper functions as follows implements the prefix notation without having to change our <code>value</code> function.</p>
+<p>You have to adjust your tests accordingly, of course, and, in a way, doing so is as much as saying</p>
+<blockquote>
+<p>“I want to change this and it should work as follows…”</p>
+</blockquote>
+<pre><code class="language-clojure">(with-test
+  (def operator
+    (fn [aexp]
+      (car aexp)))
+
+  (is (= (operator '()) nil))
+  (is (= (operator '(+)) '+))
+  (is (= (operator '(+ 1)) '+)))
+
+(with-test
+  (def first-sub-exp
+    (fn [aexp]
+      (car (cdr aexp))))
+
+  (is (= (first-sub-exp '()) nil))
+  (is (= (first-sub-exp '(+)) nil))
+  (is (= (first-sub-exp '(+ 1)) 1))
+  (is (= (first-sub-exp '(+ 1 2)) 1)))
+
+(with-test
+  (def second-sub-exp
+    (fn [aexp]
+      (car (cdr (cdr aexp)))))
+
+  (is (= (second-sub-exp '()) nil))
+  (is (= (second-sub-exp '(+)) nil))
+  (is (= (second-sub-exp '(+ 1)) nil))
+  (is (= (second-sub-exp '(+ 1 2)) 2))
+  (is (= (second-sub-exp '(+ 1 2 3)) 2)))
+
+(with-test
+  (def value-prefix
+    (fn [nexp]
+      (cond (atom? nexp) nexp
+            (eq? (operator nexp) '+) (+ (value-prefix (first-sub-exp nexp))
+                                         (value-prefix (second-sub-exp nexp)))
+            (eq? (operator nexp) '*) (* (value-prefix (first-sub-exp nexp))
+                                        (value-prefix (second-sub-exp nexp)))
+            :else (int (java.lang.Math/pow (value-prefix (first-sub-exp nexp))
+                                           (value-prefix (second-sub-exp nexp)))))))
+
+  (is (= (value-prefix 1) 1))
+  (is (= (value-prefix '(+ 1 3)) 4))
+  (is (= (value-prefix '(+ 1 (* 2 2))) 5))
+  (is (= (value-prefix '(+ 1 (pow 3 4))) 82)))
+</code></pre>
+<p>This is nice. We have changed <code>value</code>s language by changing the helper functions without changing its own structure.</p>
+<p>This way, we are able to demonstrate that we can represent the arithmetic expression <strong>1 + 1</strong> in several ways:</p>
+<ul>
+<li><code>(+ 1 1)</code> to make it feel lispy</li>
+<li><code>(1 + 1)</code> to make it feel ‘normal’ and</li>
+<li><code>(1 1 +)</code> if we wanted to accommodate friends that read from right to left more naturally</li>
+</ul>
+<p>After all, they <em>mean</em> the same thing but in different ways.</p>
+<h2>Parental Controls – Braces as Numbers</h2>
+<p>Now, another example: Let’s say we wanted to <em>represent</em> numbers differently but wanted, as reasonable human beings, to maintain the idea of plus, minus, multiplication and division.</p>
+<p>So, instead of using the numeral…</p>
+<ul>
+<li><strong>0</strong>, I would like to use <code>()</code> (a list of zero items)</li>
+<li><strong>1</strong>, I would like to use <code>(())</code> (a list of one items)</li>
+<li><strong>2</strong>, I would like to use <code>(() ())</code> (a list of two items)</li>
+<li><strong>3</strong>, I would like to use <code>(() () ())</code> (a list of three items)</li>
+<li>and so on…</li>
+</ul>
+<p>In terms of API, I would like then to be able to write <code>1 + 1</code> as follows:</p>
+<pre><code class="language-clojure">(+ '( () ) '( () ))
+;; =&gt; 2
+</code></pre>
+<p>Clearly, the idea of addition or subtraction doesn’t change just because I’ve changed how I represent my numbers, right?</p>
+<p>Our function to represent the operator <code>+</code> was</p>
+<pre><code class="language-clojure">  (def + (fn [n m] 
+                (cond (zero? m) n
+                      :else (add1 (+ n (sub1 m))))))
+</code></pre>
+<p>To make our dream of (fairly unreadable) parenthesis number crunching real, all we have to do is rewrite our helper functions <code>zero?</code>, <code>add1</code> and <code>sub1</code> and we’re off to the races:</p>
+<pre><code class="language-clojure">(with-test
+  (def zero? 
+    (fn [n] (null? n)))
+
+  (is (= (zero? '()) true))
+  (is (= (zero? '(())) false)))
+
+(with-test
+  (def add1
+    (fn [n]
+      (cons '() n)))
+  (is (= (add1 '()) '(())))
+  (is (= (add1 '(())) '(() ())))
+  (is (= (add1 '(() ())) '(() () ()))))
+
+(with-test
+  (def sub1
+    (fn [n] (cdr n)))
+
+  (is (= (sub1 '()) '()))
+  (is (= (sub1 '(())) '()))
+  (is (= (sub1 '(() ())) '(()))))
+
+(with-test
+  (def + (fn [n m] 
+            (cond (zero? m) n
+                  :else (add1 (+ n (sub1 m))))))
+
+  (is (= (+ '() '()) '()))
+  (is (= (+ '(()) '())) '(()))
+  (is (= (+ '(() ()) '(())) '(() () ()))))
+</code></pre>
+<p>Anyways, that’s what I’ve taken away from the chapter.</p>
+</div>
+<div class="more"><a href="/notes/the-little-schemer-in-clojure-recap-chapter-6/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/the-little-schemer-in-clojure-recap-chapter-6/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-my-journey-into-deep-work-retrospective-week-16">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/my-journey-into-deep-work-retrospective-week-16/"><time datetime="2017-05-08T22:00:00Z">Tuesday, May 9, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/my-journey-into-deep-work-retrospective-week-16/">My Journey Into Deep Work – Retrospective Week 16</a></h2>
+<div class="text note-body clamped">
+<p>I managed to work deeply for 9.5 hours. I also traveled over the weekend, so my week was a bit shot.</p>
+<p>Also, I have decided to extend my retros to look at my overall life not just deep work. Since I am independent right now, I want to make sure I maximize my time spent and minimize distractions. I figured that “Life Retro” combined with action items to improve myself every week is a good idea.</p>
+<h2>What went well</h2>
+<ul>
+<li>Using my Psycho-Cybernetics Imagineering script</li>
+<li>It was easy to get into work-flow</li>
+<li>With everything considered, 9.5 hours is still great!</li>
+<li>Traveled to Mallorca to see my parents :)</li>
+<li>Had good insight into my “stop-and-go” way of working</li>
+<li>Had a good mentoring session with my friend Philip on Friday</li>
+<li>Overall, I have a more positive outlook on my life than last week</li>
+<li>Inspired by reading “Give and Take” [1]</li>
+<li>Inspired by “Amateurs vs. Pros” [2]</li>
+<li>Got up most days before 9am</li>
+<li>Getting back into a daily Yoga and Meditation routine</li>
+<li>I fixed my vaporizer myself</li>
+<li>Feeling less distracted</li>
+<li>Got to hang out with Nina for an afternoon :)</li>
+<li>Went out to a cool bar on Friday with friends</li>
+<li>Made bubbles again</li>
+<li>Cooked delicious food with my father</li>
+</ul>
+<h2>What went okay</h2>
+<ul>
+<li>I didn’t follow up on my Whiteboard experiment</li>
+<li>I haven’t followed up on the Meetup idea I had</li>
+<li>There was a lot of organizational stuff this week</li>
+<li>Waiting for my accountant on paperwork</li>
+<li>The dating-pool in Berlin is rough. Didn’t do well to my self-image</li>
+<li>Didn’t hear back from someone I needed information from</li>
+</ul>
+<h2>What went bad</h2>
+<ul>
+<li>I still don’t have one specific idea/topic that I want to deep-dive into. Instead I jump around from idea to idea.</li>
+<li>Jumping between tasks and ideas is exhausting.</li>
+</ul>
+<h2>Action Items</h2>
+<ul>
+<li>Choose 1 main point of focus for coming week</li>
+<li>Buy a yoga mat while in Mallorca to continue practice there</li>
+<li>Create a visible backlog of tasks</li>
+</ul>
+<p>[1] <a href="https://www.amazon.com/dp/B00AFPTSI0/ref=dp-kindle-redirect?\_encoding=UTF8&amp;btkr=1">https://www.amazon.com/dp/B00AFPTSI0/ref=dp-kindle-redirect?\_encoding=UTF8&amp;btkr=1</a> [2] <a href="https://medium.com/the-mission/the-7-differences-between-professionals-and-amateurs-f8efc4840861">https://medium.com/the-mission/the-7-differences-between-professionals-and-amateurs-f8efc4840861</a></p>
+</div>
+<div class="more"><a href="/notes/my-journey-into-deep-work-retrospective-week-16/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/my-journey-into-deep-work-retrospective-week-16/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-my-journey-into-deep-work-retrospective-week-17">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/my-journey-into-deep-work-retrospective-week-17/"><time datetime="2017-05-08T22:00:00Z">Tuesday, May 9, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/my-journey-into-deep-work-retrospective-week-17/">My Journey Into Deep Work – Retrospective Week 17</a></h2>
+<div class="text note-body clamped">
+<p>I spent this week in Mallorca with my parents. Stil I got to take time to sit down and get 13 (!) hours of deep work done.</p>
+<p>Here’s my recap:</p>
+<h2>What went well</h2>
+<ul>
+<li>Still very inspired by “<a href="https://medium.com/the-mission/the-7-differences-between-professionals-and-amateurs-f8efc4840861">Amateurs vs. Pros</a>”</li>
+<li>Feel like I’ve made good progress</li>
+<li>1 Focus for the week: Work through “<a href="https://mitpress.mit.edu/books/little-schemer">The Little Schemer</a>” in Clojure. Finished Chapter 1 - 4.</li>
+<li>Wrote and published 4 blogposts</li>
+<li>Daily Yoga and especially Pranayama exercises</li>
+<li>Had an idea for a meditation video</li>
+<li>Very happy with my Psycho-Cybernetic Imagineering script rehearsals</li>
+<li>Cooking good food with the family</li>
+<li>Have a fireplace at home</li>
+<li>Have a minimal but functional work-space set up</li>
+</ul>
+<h2>What went okay</h2>
+<ul>
+<li>Didn’t spend a lot of time outside, especially when there’s the mediterranean just across from me.</li>
+<li>“Give and Take” is getting harder to read</li>
+<li>Access to internet only sometimes</li>
+<li>Still jumping a lot from idea to idea</li>
+<li>Didn’t celebrate/appreciate/acknowledge my progress</li>
+<li>Didn’t edit the blogposts</li>
+<li>Lost interest in RedditGrowth while it still could become something valuable</li>
+</ul>
+<h2>What went bad</h2>
+<ul>
+<li>Have procrastinated on writing the meet up summary</li>
+<li>Too reserved talking about my feelings with my parents</li>
+</ul>
+<h2>Action items</h2>
+<ul>
+<li>Take a daily walk</li>
+<li>Celebrate successes and progress more often</li>
+<li>Edit posts before publishing</li>
+<li>Make a decision if I want to continue reading “Give and Take”</li>
+</ul>
+</div>
+<div class="more"><a href="/notes/my-journey-into-deep-work-retrospective-week-17/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/my-journey-into-deep-work-retrospective-week-17/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-set-your-priorities-straight-in-2-minutes-without-thinking-hard">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/set-your-priorities-straight-in-2-minutes-without-thinking-hard/"><time datetime="2017-05-07T22:00:00Z">Monday, May 8, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/set-your-priorities-straight-in-2-minutes-without-thinking-hard/">Set Your Priorities Straight In 2 Minutes Without Thinking Hard</a></h2>
+<div class="text note-body clamped">
+<blockquote>
+<p>“I have so much to do but I’m not sure which of the things I should do first.”</p>
+</blockquote>
+<p>If you, like me, have struggled with figuring out what should be my No.1priority, then I have good news.</p>
+<p>Prioritizing is hard, especially when your items can be <em>important</em> and/or <em>urgent</em>. The app that I just released gives you the answer to:</p>
+<p><strong>What’s the most important and urgent thing I should do next? (The answer might surprise you!)</strong></p>
+<p>I would like to have someone help me with this and say to me:</p>
+<blockquote>
+<p><strong>Your most important and urgent next step is… Make a balance sheet</strong></p>
+</blockquote>
+<p>Now, <strong><a href="https://prioio.herokuapp.com">I just released a simple web-app</a></strong> that helps you (and me) prioritize a list (a todo-list, a list of chores, whatever you want) by two measures:</p>
+<p>Importance and Urgency. Some things are important, some are urgent. And some are both. Make sure you tackle the one that’s both first.</p>
+<p>The app guides you through comparing each item with each other based on both measures and comes up with the math and sorting automatically.</p>
+<p>Here’s the result for the tasks I had on my list today:</p>
+<p><img src="/notes/media/PrioDo-5-1024x641.png" alt="" loading="lazy"></p>
+<p>Clearly, I need to create my balance sheet. After that I can do the other stuff.</p>
+<p>The process is simple.</p>
+<p>Go to the homepage and click the <strong>start button</strong></p>
+<p><img src="/notes/media/PrioDo-1-1024x568.png" alt="" loading="lazy"></p>
+<p>Then, insert your list of tasks like so:</p>
+<p><img src="/notes/media/PrioDo-2-1024x568.png" alt="" loading="lazy"></p>
+<p>Then, the app will guide you through comparing each item with each other. This is called a binary sort and will make sure that what item is at the top is really the most <em>important</em> and <em>urgent</em> one.</p>
+<p><img src="/notes/media/PrioDo-3-1024x537.png" alt="" loading="lazy"></p>
+<p><img src="/notes/media/PrioDo-4-1024x537.png" alt="" loading="lazy"></p>
+<p>Finally, you’ll see your result.</p>
+<p>Now, what are you waiting for? Get your priorities straight in a few short minutes and tackle your next, most important and urgent task right away.</p>
+<p><strong>Click here: <a href="https://prioio.herokuapp.com"><a href="https://prioio.herokuapp.com">https://prioio.herokuapp.com</a></a></strong></p>
+<p>Have fun!</p>
+<p>Alexis</p>
+<p>*</p>
+<p>PS: You can check out the source at <a href="https://github.com/akaalias/prio"><a href="https://github.com/akaalias/prio">https://github.com/akaalias/prio</a></a> in case you want to poke around a bit.</p>
+<p>PPS: Let me know if you, too, have found a surprising result of your top priority after sorting.</p>
+</div>
+<div class="more"><a href="/notes/set-your-priorities-straight-in-2-minutes-without-thinking-hard/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/set-your-priorities-straight-in-2-minutes-without-thinking-hard/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-thinking-and-sleeping-better-with-clojure">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/thinking-and-sleeping-better-with-clojure/"><time datetime="2017-05-07T22:00:00Z">Monday, May 8, 2017 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/thinking-and-sleeping-better-with-clojure/">Thinking and Sleeping Better With Clojure</a></h2>
+<div class="text note-body clamped">
+<p>To prioritize a list of todo-items, as in my <a href="https://prioio.herokuapp.com">Prioritization-app</a> I recently launched, I needed to get a list of the unique combinations for the user to choose from:</p>
+<p>It goes a little bit like this:</p>
+<blockquote>
+<p>Which is more important: <strong>A</strong> or <strong>B</strong>? Which is more important: <strong>A</strong> or <strong>C</strong>? Which is more important: <strong>B</strong> or <strong>C</strong>?</p>
+</blockquote>
+<p>I wrote a version in Ruby for the app and then a sketch in Clojure to compare readability and expressiveness.</p>
+<p>In my opinion, the Clojure version is much more readable and was far easier to reason about.</p>
+<p>Probably because I’m not good to solve problems in Ruby but there might be more than meets the eye here.</p>
+<h2>Creating Comparisons</h2>
+<p>Let’s say I have a todo-list of <code>A, B, C and D</code>.</p>
+<p>The list of comparisons I want is <code>A ↔ B, A ↔ C, A ↔ D, B ↔ C, B ↔ D and C ↔ D</code> to use later in my app.</p>
+<p>From the matrix below, you can see, I want only the <em>unique</em> comparisons (<code>A ↔ B</code> and <code>B ↔ A</code> are interchangeable for my purposes) and skip dupes that compare an element with itself (<code>A ↔ A, B ↔ B, C ↔ C, D ↔ D</code>)</p>
+<p>To demonstrate, I only want the top-right triangle of comparisons:</p>
+<table>
+<thead><tr><th>×</th><th>A</th><th>B</th><th>C</th><th>D</th></tr></thead>
+<tbody>
+<tr><td>A</td><td><em>skip (dupe)</em></td><td><strong>A ↔ B</strong></td><td><strong>A ↔ C</strong></td><td><strong>A ↔ D</strong></td></tr>
+<tr><td>B</td><td><em>skip</em></td><td><em>skip (dupe)</em></td><td><strong>B ↔ C</strong></td><td><strong>B ↔ D</strong></td></tr>
+<tr><td>C</td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip (dupe)</em></td><td><strong>C ↔ D</strong></td></tr>
+<tr><td>D</td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip (dupe)</em></td></tr>
+</tbody>
+</table>
+<h3>Thinking, Testing and Implementing in Ruby</h3>
+<p>Now, since I started the app in Ruby, I translated the behavior above as follows:</p>
+<pre><code class="language-ruby">describe '.unique_combinations' do
+    context 'input list is empty' do
+      it 'returns an empty list' do
+        result = Combinator.unique_combinations([])
+        expect(result).to eq([])
+      end
+    end
+
+    context 'input list only has one element' do
+      it 'returns an empty list' do
+        result = Combinator.unique_combinations([1])
+        expect(result).to eq([])
+      end
+    end
+
+    context 'input list only has two elements' do
+      it 'returns a list with combination a' do
+        result = Combinator.unique_combinations([1, 2])
+        expect(result).to eq(&lt;span class=&quot;wikilink unresolved&quot;&gt;1,2&lt;/span&gt;)
+      end
+
+      it 'returns a list with combination b' do
+        result = Combinator.unique_combinations([:foo, :bar])
+        expect(result).to eq(&lt;span class=&quot;wikilink unresolved&quot;&gt;:foo, :bar&lt;/span&gt;)
+      end
+    end
+
+    context 'input list only has three elements' do
+      it 'returns a list with 3 combinations' do
+        result = Combinator.unique_combinations([1, 2, 3])
+        expect(result).to eq([[1, 2], [1, 3], [2, 3]])
+      end
+    end
+
+    context 'input list only has four elements' do
+      it 'returns a list with 6 combinations' do
+        result = Combinator.unique_combinations([1, 2, 3, 4])
+        expect(result).to eq([[1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]])
+      end
+    end
+  End
+end
+</code></pre>
+<p>…and wrote, after several failed attempts and one sleepless night, the following, working but not very elegant solution. I felt weird about it, because even looking at it now, I can’t fully explain it well. It works, it has reasonable test-coverage. But I’m not proud of it.</p>
+<pre><code class="language-ruby">def self.unique_combinations(ids)
+    return [] if ids.length &lt; 2
+
+    all_combinations = []
+
+    for i1 in ids
+      for i2 in ids
+        if i1 != i2
+          contains = false
+          for c in all_combinations
+            if c[1] &lt;mark&gt; i1 and c[0] &lt;/mark&gt; i2
+              contains = true
+            end
+          end
+          unless contains
+            all_combinations &lt;&lt; [i1, i2]
+          end
+        end
+      end
+    end
+
+    return all_combinations
+  end
+</code></pre>
+<p>Okay, fine I thought. How would I solve this issue in Lisp?</p>
+<h3>Thinking, Testing and Implementing in Clojure</h3>
+<p>I don’t know why but thinking in terms of lists and recursion instead of iteration made it simpler for me.</p>
+<p>The top-level function works as follows:</p>
+<pre><code class="language-clojure">(final-combinations '(A B C D)) 
+;; =&gt; '((A B) (A C) (A D) (B C) (B D) (C D))
+</code></pre>
+<p>Yup, that’s the list I want. Thinking about it I had an idea to break the problem further down:</p>
+<p>The complete list of unique comparisons, the one I want, is…</p>
+<ol>
+<li>the <strong>union</strong> of each row of one element combined with all the others. That’s <code>A</code> combined with <code>B, C and D</code></li>
+<li>Each row has an increasing <strong>offset</strong> from the left that starts at 0 for row 1 and increases by 1 for each following row.</li>
+<li>I have to subtract the <strong>dupes</strong> such as <code>A ↔ A</code> because I don’t need them.</li>
+</ol>
+<p>For illustration purposes, here is the table again:</p>
+<table>
+<thead><tr><th>×</th><th>A</th><th>B</th><th>C</th><th>D</th></tr></thead>
+<tbody>
+<tr><td>A</td><td><em>skip (dupe)</em></td><td><strong>A ↔ B</strong></td><td><strong>A ↔ C</strong></td><td><strong>A ↔ D</strong></td></tr>
+<tr><td>B</td><td><em>skip</em></td><td><em>skip (dupe)</em></td><td><strong>B ↔ C</strong></td><td><strong>B ↔ D</strong></td></tr>
+<tr><td>C</td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip (dupe)</em></td><td><strong>C ↔ D</strong></td></tr>
+<tr><td>D</td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip (dupe)</em></td></tr>
+</tbody>
+</table>
+<p>Given the above 3 steps, I basically just wrote them out as functions.</p>
+<p>I derived the first function, <code>combine</code> which takes <code>x</code> and <code>l</code> and returns a list of all possible combinations, including the ones we’ll later skip.</p>
+<pre><code class="language-clojure">(with-test 
+  (defn combine 
+    ([x l] 
+     (combine x l '()))
+    ([x l acc]
+     (cond (empty? l) (reverse acc)
+           :else (recur x (rest l) (conj acc (list x (first l)))) )))
+
+  (is (= (combine 1 '()) '()))
+  (is (= (combine 1 '(1)) '((1 1))))
+  (is (= (combine 1 '(2)) '((1 2))))
+  (is (= (combine 1 '(1 2)) '((1 1) (1 2))))
+  (is (= (combine 1 '(1 2 3)) '((1 1) (1 2) (1 3)))))
+</code></pre>
+<p>Then, I use <code>combine</code> to create basically the table above but with nothing yet removed.</p>
+<pre><code class="language-clojure">(with-test
+  (defn combine-lists 
+    ([l1 l2] 
+     (combine-lists l1 l2 '()))
+    ([l1 l2 acc]
+     (cond (empty? l1) (reverse acc)
+           :else (recur (rest l1) l2 (cons (combine (first l1) l2) acc)) )))
+
+  (is (= (combine-lists '() '()) '()))
+  (is (= (combine-lists '(1) '(1)) '(((1 1)))))
+  (is (= (combine-lists '(1 2) '(1 2)) '(((1 1) (1 2)) 
+                                         ((2 1) (2 2))))))
+</code></pre>
+<p>Then I introduce the idea of an offset. To only take those elements in a list that are after a certain offset.</p>
+<pre><code class="language-clojure">(with-test
+  (defn take-rest
+    ([offset l]
+     (cond (= offset 0) l
+           :else (recur (dec offset) (rest l)))))
+
+  (is (= (take-rest 0 '()) '()))
+  (is (= (take-rest 1 '()) '()))
+  (is (= (take-rest 0 '(1)) '(1)))
+  (is (= (take-rest 0 '(1 2)) '(1 2)))
+  (is (= (take-rest 1 '(1 2)) '(2)))
+  (is (= (take-rest 1 '(1 2 3)) '(2 3)))
+  (is (= (take-rest 2 '(1 2 3)) '(3)))
+  (is (= (take-rest 2 '(1 2 3 4)) '(3 4))))
+</code></pre>
+<p>Now I can use <code>take-rest</code> and apply it to each row in my matrix…</p>
+<pre><code class="language-clojure">(defn unique-combinations 
+  ([offset ll] 
+   (unique-combinations offset ll '()))
+  ([offset ll acc]
+   (cond (empty? ll) (reverse acc)
+         :else (recur (inc offset) (rest ll) (cons (take-rest offset (first ll)) acc)))))
+</code></pre>
+<p>And finally remove the identity items such as <code>A ↔ A</code></p>
+<pre><code class="language-clojure">(with-test
+  (defn final-combinations 
+    [l]
+    (filter #((= (first %) (second %)))) (partition 2 (flatten (unique-combinations 1 (combine-lists l l)))))
+
+  (is (= (final-combinations '()) '()))
+  (is (= (final-combinations '(1)) '()))
+  (is (= (final-combinations '(1 2)) '((1 2))))
+  (is (= (final-combinations '(1 2 3)) '((1 2) (1 3) (2 3))))
+  (is (= (final-combinations '(1 2 3 4)) '((1 2) (1 3) (1 4) (2 3) (2 4) (3 4)))))
+</code></pre>
+<p>Granted, this code is not yet refactored and in total more lines than the Ruby version, but here is the rub:</p>
+<p>It took me <strong>20 minutes</strong> to think up and implement the solution in Clojure and 2 days including a sleepless night to do it in Ruby.</p>
+<p>I don’t know what that means but I’ll probably use a Lisp like Clojure for problems like this in the future. Just to make sure I get some sleep.</p>
+</div>
+<div class="more"><a href="/notes/thinking-and-sleeping-better-with-clojure/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/thinking-and-sleeping-better-with-clojure/">Permalink</a></div>
+</article>
+<article class="item kind-repo" id="g-clojure-scribbles">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/clojure-scribbles/"><time datetime="2017-05-07T18:03:59Z">Sunday, May 7, 2017 · 20:03</time></a></div>
+<h2 class="note-title"><a href="/code/clojure-scribbles/">clojure-scribbles</a></h2>
+<p class="repo-desc">Thinking and Sleeping Better With Clojure: Experiments in Recursion</p>
+<div class="stats"><span><b>1</b> fork</span> · <span>Clojure</span></div>
+<div class="text note-body repo-readme clamped">
+<h1>Thinking and Sleeping Better With Clojure</h1>
+<p>To prioritize a list of todo-items, as in my Prioritization-app I recently launched, I needed to get a list of the unique combinations for the user to choose from:</p>
+<p>It goes a little bit like this:</p>
+<blockquote>
+<p>Which is more important: <strong>A</strong> or <strong>B</strong>?
+Which is more important: <strong>A</strong> or <strong>C</strong>?
+Which is more important: <strong>B</strong> or <strong>C</strong>?</p>
+</blockquote>
+<p>I wrote a version in Ruby for the app and then a sketch in Clojure to compare readability and expressiveness.</p>
+<p>In my opinion, the Clojure version is much more readable and was far easier to reason about.</p>
+<p>Probably because I’m not good to solve problems in Ruby but there might be more than meets the eye here.</p>
+<h2>Creating Comparisons</h2>
+<p>Let’s say I have a todo-list of <code>A, B, C and D</code>.</p>
+<p>The list of comparisons I want is <code>A ↔ B, A ↔ C, A ↔ D, B ↔ C, B ↔ D and C ↔ D</code> to use later in my app.</p>
+<p>From the matrix below, you can see, I want only the <em>unique</em> comparisons (<code>A ↔ B</code> and <code>B ↔ A</code> are interchangeable for my purposes) and skip dupes that compare an element with itself (<code>A ↔ A, B ↔ B, C ↔ C, D ↔ D</code>)</p>
+<p>To demonstrate, I only want the top-right triangle of comparisons:</p>
+<table>
+<thead><tr><th>×</th><th>A</th><th>B</th><th>C</th><th>D</th></tr></thead>
+<tbody>
+<tr><td>A</td><td><em>skip (dupe)</em></td><td><strong>A ↔ B</strong></td><td><strong>A ↔ C</strong></td><td><strong>A ↔ D</strong></td></tr>
+<tr><td>B</td><td><em>skip</em></td><td><em>skip (dupe)</em></td><td><strong>B ↔ C</strong></td><td><strong>B ↔ D</strong></td></tr>
+<tr><td>C</td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip (dupe)</em></td><td><strong>C ↔ D</strong></td></tr>
+<tr><td>D</td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip (dupe)</em></td></tr>
+</tbody>
+</table>
+<h3>Thinking, Testing and Implementing in Ruby</h3>
+<p>Now, since I started the app in Ruby, I translated the behavior above as follows:</p>
+<pre><code class="language-ruby">describe '.unique_combinations' do
+    context 'input list is empty' do
+      it 'returns an empty list' do
+        result = Combinator.unique_combinations([])
+        expect(result).to eq([])
+      end
+    end
+
+    context 'input list only has one element' do
+      it 'returns an empty list' do
+        result = Combinator.unique_combinations([1])
+        expect(result).to eq([])
+      end
+    end
+
+    context 'input list only has two elements' do
+      it 'returns a list with combination a' do
+        result = Combinator.unique_combinations([1, 2])
+        expect(result).to eq(&lt;span class=&quot;wikilink unresolved&quot;&gt;1,2&lt;/span&gt;)
+      end
+
+      it 'returns a list with combination b' do
+        result = Combinator.unique_combinations([:foo, :bar])
+        expect(result).to eq(&lt;span class=&quot;wikilink unresolved&quot;&gt;:foo, :bar&lt;/span&gt;)
+      end
+    end
+
+    context 'input list only has three elements' do
+      it 'returns a list with 3 combinations' do
+        result = Combinator.unique_combinations([1, 2, 3])
+        expect(result).to eq([[1, 2], [1, 3], [2, 3]])
+      end
+    end
+
+    context 'input list only has four elements' do
+      it 'returns a list with 6 combinations' do
+        result = Combinator.unique_combinations([1, 2, 3, 4])
+        expect(result).to eq([[1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]])
+      end
+    end
+  End
+end
+</code></pre>
+<p>…and wrote, after several failed attempts and one sleepless night, the following, working but not very elegant solution. I felt weird about it, because even looking at it now, I can’t fully explain it well. It works, it has reasonable test-coverage. But I’m not proud of it.</p>
+<pre><code class="language-ruby">def self.unique_combinations(ids)
+    return [] if ids.length &lt; 2
+
+    all_combinations = []
+
+    for i1 in ids
+      for i2 in ids
+        if i1 != i2
+          contains = false
+          for c in all_combinations
+            if c[1] &lt;mark&gt; i1 and c[0] &lt;/mark&gt; i2
+              contains = true
+            end
+          end
+          unless contains
+            all_combinations &lt;&lt; [i1, i2]
+          end
+        end
+      end
+    end
+
+    return all_combinations
+  end
+</code></pre>
+<p>Okay, fine I thought. How would I solve this issue in Lisp?</p>
+<h3>Thinking, Testing and Implementing in Clojure</h3>
+<p>I don’t know why but thinking in terms of lists and recursion instead of iteration made it simpler for me.</p>
+<p>The top-level function works as follows:</p>
+<pre><code class="language-clojure">(final-combinations '(A B C D)) 
+;; =&gt; '((A B) (A C) (A D) (B C) (B D) (C D))
+</code></pre>
+<p>Yup, that’s the list I want.
+Thinking about it I had an idea to break the problem further down:</p>
+<p>The complete list of unique comparisons, the one I want,  is…</p>
+<ol>
+<li>the <strong>union</strong> of each row of one element combined with all the others. That’s <code>A</code> combined with <code>B, C and D</code></li>
+<li>Each row has an increasing <strong>offset</strong> from the left that starts at 0 for row 1 and increases by 1 for each following row.</li>
+<li>I have to subtract the <strong>dupes</strong> such as <code>A ↔ A</code> because I don’t need them.</li>
+</ol>
+<p>For illustration purposes, here is the table again:</p>
+<table>
+<thead><tr><th>×</th><th>A</th><th>B</th><th>C</th><th>D</th></tr></thead>
+<tbody>
+<tr><td>A</td><td><em>skip (dupe)</em></td><td><strong>A ↔ B</strong></td><td><strong>A ↔ C</strong></td><td><strong>A ↔ D</strong></td></tr>
+<tr><td>B</td><td><em>skip</em></td><td><em>skip (dupe)</em></td><td><strong>B ↔ C</strong></td><td><strong>B ↔ D</strong></td></tr>
+<tr><td>C</td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip (dupe)</em></td><td><strong>C ↔ D</strong></td></tr>
+<tr><td>D</td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip</em></td><td><em>skip (dupe)</em></td></tr>
+</tbody>
+</table>
+<p>Given the above 3 steps, I basically just wrote them out as functions.</p>
+<p>I derived the first function, <code>combine</code> which takes <code>x</code> and <code>l</code> and returns a list of all possible combinations, including the ones we’ll later skip.</p>
+<pre><code class="language-clojure">(with-test 
+  (defn combine 
+    ([x l] 
+     (combine x l '()))
+    ([x l acc]
+     (cond (empty? l) (reverse acc)
+           :else (recur x (rest l) (conj acc (list x (first l)))) )))
+  
+  (is (= (combine 1 '()) '()))
+  (is (= (combine 1 '(1)) '((1 1))))
+  (is (= (combine 1 '(2)) '((1 2))))
+  (is (= (combine 1 '(1 2)) '((1 1) (1 2))))
+  (is (= (combine 1 '(1 2 3)) '((1 1) (1 2) (1 3)))))
+</code></pre>
+<p>Then, I use <code>combine</code> to create basically the table above but with nothing yet removed.</p>
+<pre><code class="language-clojure">(with-test
+  (defn combine-lists 
+    ([l1 l2] 
+     (combine-lists l1 l2 '()))
+    ([l1 l2 acc]
+     (cond (empty? l1) (reverse acc)
+           :else (recur (rest l1) l2 (cons (combine (first l1) l2) acc)) )))
+  
+  (is (= (combine-lists '() '()) '()))
+  (is (= (combine-lists '(1) '(1)) '(((1 1)))))
+  (is (= (combine-lists '(1 2) '(1 2)) '(((1 1) (1 2)) 
+                                         ((2 1) (2 2))))))
+</code></pre>
+<p>Then I introduce the idea of an offset. To only take those elements in a list that are after a certain offset.</p>
+<pre><code class="language-clojure">(with-test
+  (defn take-rest
+    ([offset l]
+     (cond (= offset 0) l
+           :else (recur (dec offset) (rest l)))))
+  
+  (is (= (take-rest 0 '()) '()))
+  (is (= (take-rest 1 '()) '()))
+  (is (= (take-rest 0 '(1)) '(1)))
+  (is (= (take-rest 0 '(1 2)) '(1 2)))
+  (is (= (take-rest 1 '(1 2)) '(2)))
+  (is (= (take-rest 1 '(1 2 3)) '(2 3)))
+  (is (= (take-rest 2 '(1 2 3)) '(3)))
+  (is (= (take-rest 2 '(1 2 3 4)) '(3 4))))
+</code></pre>
+<p>Now I can use <code>take-rest</code> and apply it to each row in my matrix…</p>
+<pre><code class="language-clojure">(defn unique-combinations 
+  ([offset ll] 
+   (unique-combinations offset ll '()))
+  ([offset ll acc]
+   (cond (empty? ll) (reverse acc)
+         :else (recur (inc offset) (rest ll) (cons (take-rest offset (first ll)) acc)))))
+</code></pre>
+<p>And finally remove the identity items such as <code>A ↔ A</code></p>
+<pre><code class="language-clojure">(with-test
+  (defn final-combinations 
+    [l]
+    (filter #((= (first %) (second %)))) (partition 2 (flatten (unique-combinations 1 (combine-lists l l)))))
+
+  (is (= (final-combinations '()) '()))
+  (is (= (final-combinations '(1)) '()))
+  (is (= (final-combinations '(1 2)) '((1 2))))
+  (is (= (final-combinations '(1 2 3)) '((1 2) (1 3) (2 3))))
+  (is (= (final-combinations '(1 2 3 4)) '((1 2) (1 3) (1 4) (2 3) (2 4) (3 4)))))
+</code></pre>
+<p>Granted, this code is not yet refactored and in total more lines than the Ruby version, but here is the rub:</p>
+<p>It took me <strong>20 minutes</strong> to think up and implement the solution in Clojure and 2 days including a sleepless night to do it in Ruby.</p>
+<p>I don’t know what that means but I’ll probably use a Lisp like Clojure for problems like this in the future. Just to make sure I get some sleep.</p>
+<ul>
+<li></li>
+</ul>
+<h1>clojure-scribbles</h1>
+<p>A few experiments learning Clojure, mostly recursive functions inspired by “The Little Schemer.”</p>
+<h2>Usage</h2>
+<h3>Test</h3>
+<p>All tests are written in-line using the <code>with-test</code> macro. Run with <code>lein test</code></p>
+<h2>License</h2>
+<p>Copyright © 2017 Alexis Rondeau</p>
+<p>Distributed under the Eclipse Public License either version 1.0 or (at
+your option) any later version.</p>
+</div>
+<div class="more"><a href="/code/clojure-scribbles/">Read the whole README ›</a></div>
+<div class="src"><a href="/code/clojure-scribbles/">Permalink</a> · <a href="https://github.com/akaalias/clojure-scribbles">View on GitHub ↗</a></div>
+</article>
 <article class="item kind-note" id="n-the-little-schemer-in-clojure-recap-chapter-5">
 <div class="meta"><span class="kind">Note</span><a class="when" href="/notes/the-little-schemer-in-clojure-recap-chapter-5/"><time datetime="2017-05-04T22:00:00Z">Friday, May 5, 2017 · 00:00</time></a></div>
 <h2 class="note-title"><a href="/notes/the-little-schemer-in-clojure-recap-chapter-5/">The Little Schemer in Clojure – Recap Chapter 5</a></h2>
@@ -2582,183 +3410,15 @@ set-stuff.core&gt; (intersection-files &quot;my-ids.txt&quot; &quot;found-ids.tx
 </div>
 <div class="src"><a href="/notes/should-would-could-did/">Permalink</a></div>
 </article>
-<article class="item kind-note" id="n-how-to-learn-to-code-test-drive-all-the-things">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/how-to-learn-to-code-test-drive-all-the-things/"><time datetime="2015-05-24T22:00:00Z">Monday, May 25, 2015 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/how-to-learn-to-code-test-drive-all-the-things/">How To Learn To Code: Test-Drive All The Things!</a></h2>
-<div class="text note-body">
-<p><img src="Attachments/Screen_Shot_2015-05-25_at_1_39_33_PM-1024x646.png" alt="" loading="lazy"></p>
-<p>Lovely adaption of 4Clojure using Speclj and feature tests via <a href="https://twitter.com/kevinbuch_">@kevinbuch_</a>.</p>
-<p>Take it easy and learn how to code outside-in and test-first.</p>
-<p><a href="https://github.com/kevinbuch/4clojure-speclj"><a href="https://github.com/kevinbuch/4clojure-speclj">https://github.com/kevinbuch/4clojure-speclj</a></a></p>
-<p>Stop following boring tutorials making you feel like this</p>
-<p><img src="Attachments/work.gif" alt="" loading="lazy"></p>
-<p>to user-value driven aka TDD development like this…</p>
-<p><img src="Attachments/dance-party.gif" alt="" loading="lazy"></p>
-</div>
-<div class="src"><a href="/notes/how-to-learn-to-code-test-drive-all-the-things/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-add-hilarious-gifs-to-your-emails-with-one-click">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/add-hilarious-gifs-to-your-emails-with-one-click/"><time datetime="2015-05-23T22:00:00Z">Sunday, May 24, 2015 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/add-hilarious-gifs-to-your-emails-with-one-click/">Add Hilarious Gifs to Your Emails With One Click</a></h2>
-<div class="text note-body">
-<p><img src="Attachments/best.gif" alt="" loading="lazy"></p>
-<p>I made a fun Chrome Extension that lets you add hilarious Gifs to your Gmail mails.</p>
-<p>Start sending your best emails yet.</p>
-<p><img src="Attachments/demo-1024x640.png" alt="" loading="lazy"></p>
-<p> 
-So, are you ready to make your friend be like this when they get an email from you?</p>
-<p><img src="Attachments/ahhh.gif" alt="" loading="lazy"></p>
-<p>Thought so.</p>
-<p>Get the party started right now!</p>
-<p><img src="Attachments/party.gif" alt="" loading="lazy"></p>
-<p><strong><a href="https://chrome.google.com/webstore/detail/gmail-gif-exchange/pobileihpnkigmkjmmbiminofmcfdiee?hl=en">Install with just one click from the official extension page!</a></strong></p>
-</div>
-<div class="src"><a href="/notes/add-hilarious-gifs-to-your-emails-with-one-click/">Permalink</a></div>
-</article>
-<article class="item kind-repo" id="g-the-hook">
-<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/the-hook/"><time datetime="2015-03-19T02:58:27Z">Thursday, March 19, 2015 · 03:58</time></a></div>
-<h2 class="note-title"><a href="/code/the-hook/">the-hook</a></h2>
-<p class="repo-desc">A simple and fun Arduino game implementing a very simplified version of Nir Eyal's &quot;Hook&quot; model</p>
-<div class="stats"><span>Arduino</span></div>
-<div class="text note-body repo-readme">
-<h2>Watch a quick Arduino Demo on YouTube</h2>
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/DS9A2bGTiTQ" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-
-<h2>User-Driven Design Spec</h2>
-<p>Feature: Starting the game</p>
-<ul>
-<li>Scenario: Inactive State</li>
-<li>Given a player plugs in the device in power</li>
-<li>Then the reset led should be flashing</li>
-</ul>
-<p>Feature: Activating the game</p>
-<ul>
-<li>Scenario: Activate Game</li>
-<li>Given the game is in inactive state</li>
-<li>Given a player clicks the activate button</li>
-<li>Then the active led should be on</li>
-<li>Then the reset led should be off</li>
-</ul>
-<p>Feature: Playing the game</p>
-<ul>
-<li>Scenario: Play the game</li>
-<li>Given the game is in active state</li>
-<li>Given a player clicks the play button</li>
-<li>Then the active led should be off</li>
-<li>Then the game leds should flash</li>
-<li>Then the game led should land on either red or green</li>
-<li>Then the reset led should be on after 5 seconds</li>
-</ul>
-</div>
-<div class="src"><a href="/code/the-hook/">Permalink</a> · <a href="https://github.com/akaalias/the-hook">View on GitHub ↗</a> · <a href="https://www.youtube.com/watch?v=DS9A2bGTiTQ">Website ↗</a></div>
-</article>
-<article class="item kind-repo" id="g-gmail-pictures">
-<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/gmail-pictures/"><time datetime="2015-03-15T21:59:25Z">Sunday, March 15, 2015 · 22:59</time></a></div>
-<h2 class="note-title"><a href="/code/gmail-pictures/">gmail-pictures</a></h2>
-<p class="repo-desc">A Chrome Extension and Rails API to add Gif images to emails from within Gmail</p>
-<div class="stats"><span>Ruby</span></div>
-<div class="src"><a href="/code/gmail-pictures/">Permalink</a> · <a href="https://github.com/akaalias/gmail-pictures">View on GitHub ↗</a> · <a href="https://chrome.google.com/webstore/detail/gmail-gif-exchange/pobileihpnkigmkjmmbiminofmcfdiee?hl=en">Website ↗</a></div>
-</article>
-<article class="item kind-repo" id="g-bookmarks-hateoas">
-<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/bookmarks-hateoas/"><time datetime="2015-02-16T23:25:09Z">Tuesday, February 17, 2015 · 00:25</time></a></div>
-<h2 class="note-title"><a href="/code/bookmarks-hateoas/">bookmarks-HATEOAS</a></h2>
-<p class="repo-desc">A simple Spring Boot Application persisting Users and Bookmarks to a Hibernate DB and providing a RESTful, HATEOAS-enabled interface</p>
-<div class="stats"><span>Java</span></div>
-<div class="text note-body repo-readme">
-<h1>Bookmarks REST + HATEOAS Implementation</h1>
-<p>A simple Spring Boot Application persisting Users and Bookmarks to a Hibernate DB and providing a RESTful, HATEOAS-enabled interface</p>
-<h2>To run in STS:</h2>
-<p>Right-click the project folder -&gt; Run as… -&gt; Spring Boot App</p>
-<h2>To run test suite:</h2>
-<p>Right-click the project folder -&gt; Run as… -&gt; JUnit Test</p>
-<h2>To try it out</h2>
-<p><code> curl http://localhost:8080/jhoeller/bookmarks/4 | python -m json.tool</code></p>
-<pre><code>{
-    &quot;bookmark&quot;: {
-        &quot;description&quot;: &quot;A description&quot;,
-        &quot;id&quot;: 4,
-        &quot;uri&quot;: &quot;http://bookmark.com/2/dsyer&quot;
-    },
-    &quot;links&quot;: [
-        {
-            &quot;href&quot;: &quot;http://bookmark.com/2/dsyer&quot;,
-            &quot;rel&quot;: &quot;bookmark-uri&quot;
-        },
-        {
-            &quot;href&quot;: &quot;http://localhost:8080/dsyer/bookmarks&quot;,
-            &quot;rel&quot;: &quot;bookmarks&quot;
-        },
-        {
-            &quot;href&quot;: &quot;http://localhost:8080/dsyer/bookmarks/4&quot;,
-            &quot;rel&quot;: &quot;self&quot;
-        }
-    ]
-}
-</code></pre>
-</div>
-<div class="src"><a href="/code/bookmarks-hateoas/">Permalink</a> · <a href="https://github.com/akaalias/bookmarks-HATEOAS">View on GitHub ↗</a></div>
-</article>
-<article class="item kind-repo" id="g-bookmarks">
-<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/bookmarks/"><time datetime="2015-02-16T23:25:09Z">Tuesday, February 17, 2015 · 00:25</time></a></div>
-<h2 class="note-title"><a href="/code/bookmarks/">bookmarks</a></h2>
-<p class="repo-desc">A simple Spring Boot Application persisting Users and Bookmarks to a Hibernate DB and providing a RESTful interface</p>
-<div class="stats"><span>Java</span></div>
-<div class="text note-body repo-readme">
-<p>A simple Spring Boot Application persisting Users and Bookmarks to a Hibernate DB and providing a RESTful interface</p>
-<h2>To run in STS:</h2>
-<p>Right-click the project folder -&gt; Run as… -&gt; Spring Boot App</p>
-<h2>To run test suite:</h2>
-<p>Right-click the project folder -&gt; Run as… -&gt; JUnit Test</p>
-</div>
-<div class="src"><a href="/code/bookmarks/">Permalink</a> · <a href="https://github.com/akaalias/bookmarks">View on GitHub ↗</a></div>
-</article>
-<article class="item kind-repo" id="g-bookmarks-hateoas-secured">
-<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/bookmarks-hateoas-secured/"><time datetime="2015-02-16T23:25:09Z">Tuesday, February 17, 2015 · 00:25</time></a></div>
-<h2 class="note-title"><a href="/code/bookmarks-hateoas-secured/">bookmarks-HATEOAS-Secured</a></h2>
-<p class="repo-desc">A simple Spring Boot Application persisting Users and Bookmarks to a Hibernate DB and providing a OAuth2 secured RESTful, HATEOAS-enabled interface</p>
-<div class="stats"><span><b>1</b> fork</span> · <span>Java</span></div>
-<div class="text note-body repo-readme">
-<h1>Bookmarks REST + HATEOAS Implementation</h1>
-<p>A simple Spring Boot Application persisting Users and Bookmarks to a Hibernate DB and providing a RESTful, HATEOAS-enabled interface</p>
-<h2>To run in STS:</h2>
-<p>Right-click the project folder -&gt; Run as… -&gt; Spring Boot App</p>
-<h2>To run test suite:</h2>
-<p>Right-click the project folder -&gt; Run as… -&gt; JUnit Test</p>
-<h2>To try it out</h2>
-<p><code> curl http://localhost:8080/jhoeller/bookmarks/4 | python -m json.tool</code></p>
-<pre><code>{
-    &quot;bookmark&quot;: {
-        &quot;description&quot;: &quot;A description&quot;,
-        &quot;id&quot;: 4,
-        &quot;uri&quot;: &quot;http://bookmark.com/2/dsyer&quot;
-    },
-    &quot;links&quot;: [
-        {
-            &quot;href&quot;: &quot;http://bookmark.com/2/dsyer&quot;,
-            &quot;rel&quot;: &quot;bookmark-uri&quot;
-        },
-        {
-            &quot;href&quot;: &quot;http://localhost:8080/dsyer/bookmarks&quot;,
-            &quot;rel&quot;: &quot;bookmarks&quot;
-        },
-        {
-            &quot;href&quot;: &quot;http://localhost:8080/dsyer/bookmarks/4&quot;,
-            &quot;rel&quot;: &quot;self&quot;
-        }
-    ]
-}
-</code></pre>
-</div>
-<div class="src"><a href="/code/bookmarks-hateoas-secured/">Permalink</a> · <a href="https://github.com/akaalias/bookmarks-HATEOAS-Secured">View on GitHub ↗</a></div>
-</article>
 </section>
-<nav class="pager"><a href="/feed/page/34/">‹ Newer</a><span class="n">Page 35 of 37</span><a href="/feed/page/36/">Older ›</a></nav>
+<nav class="pager"><a href="/feed/page/34/">‹ Newer</a><span class="n">Page 35 of 38</span><a href="/feed/page/36/">Older ›</a></nav>
 <aside class="months-nav">
 <div class="group">
 <h3><a href="/feed/archive/">Archive</a></h3>
 <div class="y">2026</div>
 <ul>
-<li><a href="/feed/archive/2026/10/">October</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2026/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2026/10/">October</a> <span class="n">11</span></li>
 <li><a href="/feed/archive/2026/09/">September</a> <span class="n">79</span></li>
 <li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
 <li><a href="/feed/archive/2026/07/">July</a> <span class="n">25</span></li>
@@ -2914,7 +3574,7 @@ So, are you ready to make your friend be like this when they get an email from y
 <footer class="site">
 <p>© 2012–2026 Alexis Rondeau. All rights reserved.</p>
 <p>This is my personal site. Everything here — dispatches, notes, opinions — is my own and does not represent any employer, client or organisation I'm affiliated with.</p>
-<p><a href="/">Home</a> · <a href="/about/">About</a> · <a href="/feed/">Newsfeed</a> · <a href="/feed/archive/">Archive</a> · <a href="/feed/feed.xml">Atom</a> · <a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a> · <a rel="me" href="https://github.com/akaalias">GitHub</a> · <a rel="me" class="cta-link" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">Let's connect on LinkedIn!</a></p>
+<p><a href="/">Home</a> · <a href="/about/">About</a> · <a href="/feed/">Newsfeed</a> · <a href="/feed/archive/">Archive</a> · <a href="/bookmarks/">Bookmarks</a> · <a href="/feed/feed.xml">Atom</a> · <a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a> · <a rel="me" href="https://github.com/akaalias">GitHub</a> · <a rel="me" class="cta-link" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">Let's connect on LinkedIn!</a></p>
 </footer>
 </div>
 

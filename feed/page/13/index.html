@@ -30,10 +30,118 @@
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1>Newsfeed</h1>
 <p class="lede">Everything I publish, in the order I published it: dispatches from Twitter, videos from YouTube and notes from my vault, archived here in full — text, images, video and links — so they outlive the platforms.</p>
-<p class="sub">922 dispatches since January 2012 · page 13 of 37</p>
+<p class="sub">929 dispatches since January 2012 · page 13 of 38</p>
 </header>
 <div class="wrap">
 <section class="feed">
+<article class="item kind-reply" id="t2023677924574925113">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2023677924574925113/"><time datetime="2026-02-17T08:36:29Z">Tuesday, February 17, 2026 · 09:36</time></a></div>
+<div class="stats"><span><b>1</b> reply</span> · <span><b>16</b> views</span></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/nicktozi">@nicktozi</a> · Feb 16, 2026</cite>
+<div class="ctx-text"><p><a class="mention" href="https://x.com/SpringStreetNYC">@SpringStreetNYC</a> That’s growth—delegation is where real leverage begins.</p></div>
+</blockquote>
+<div class="text"><p><a class="mention" href="https://x.com/nicktozi">@nicktozi</a> You're right! </p>
+<p>First cron job I've set up on my OpenClaw assistant is: &quot;Help me learn how to delegate tasks. Be my mentor who teaches me with small delegation exercises throughout the day&quot;</p></div>
+<div class="src"><a href="/feed/t/2023677924574925113/">Permalink</a> · <a href="https://x.com/i/status/2023677924574925113">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-post" id="t2023676503406309707">
+<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/2023676503406309707/"><time datetime="2026-02-17T08:30:51Z">Tuesday, February 17, 2026 · 09:30</time></a></div>
+<div class="stats"><span><b>1</b> like</span> · <span><b>60</b> views</span></div>
+<div class="text"><p>Wtf, I'm actually liking docker. Noooooo!!!!</p>
+<blockquote><p>What this does: apiKeyHelper tells Claude Code to run echo proxy-managed to get its API key. The sandbox’s network proxy intercepts outgoing API calls and swaps this sentinel value for your real Anthropic key, so the actual key never exists inside the sandbox.</p></blockquote>
+<p>From</p></div>
+<a class="linkcard" href="https://www.docker.com/blog/run-nanoclaw-in-docker-shell-sandboxes/">
+<img src="/feed/media/link-a78eddd2ad7d4306.png" alt="" loading="lazy">
+<span class="body"><span class="site">Docker</span><span class="title">Run NanoClaw in Docker Shell Sandboxes | Docker</span><span class="desc">Learn how to run NanoClaw, a Claude-powered WhatsApp assistant, inside a Docker Sandboxes shell sandbox for stronger isolation and proxy-managed API keys.</span><span class="host">↗ docker.com</span></span>
+</a>
+<div class="src"><a href="/feed/t/2023676503406309707/">Permalink</a> · <a href="https://x.com/i/status/2023676503406309707">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-post" id="t2023664514294526351">
+<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/2023664514294526351/"><time datetime="2026-02-17T07:43:12Z">Tuesday, February 17, 2026 · 08:43</time></a></div>
+<div class="stats"><span><b>28</b> views</span></div>
+<div class="text display"><p>Yo, what if the word of the year for 2026 is &quot;cron job&quot;?</p></div>
+<div class="src"><a href="/feed/t/2023664514294526351/">Permalink</a> · <a href="https://x.com/i/status/2023664514294526351">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-reply" id="t2023469577158438951">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2023469577158438951/"><time datetime="2026-02-16T18:48:36Z">Monday, February 16, 2026 · 19:48</time></a></div>
+<div class="stats"><span><b>1</b> like</span> · <span><b>31</b> views</span></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/RealistSec">@RealistSec</a> · Feb 16, 2026</cite>
+<div class="ctx-text"><p>And there lies the trap! 😂<br>
+It's because there isn't any proper auto-compacting for sessions. </p>
+<p>Thus, if you create a tool in a session it is logged both to your<br>
+ ~/.openclaw/agents/main/sessions/sessions.json</p>
+<p>AND will be linked as context via your current session's ~/.openclaw/agents/main/sessions/[UUID].jsonl <br>
+file - both of which are sent as context to the LLM inference API as context of the current chat/request. </p>
+<p>So a simple, 'Hey' can actually contain the full build of your tool, and modifications of it, edits, uses, chats and versions and revisions of it, logged uses of it, + the session file + 'Hey' <br>
+ = shedload of tokens!</p>
+<p>Workarounds for building tools and in general: <br>
+1) Always use a subagent - just ask it to:<br>
+&quot;use another agent to [do X,] and when done add it to 'memory' &quot; <br>
+and it will be in a session file outside the main one, <br>
+1b) (make sure you have the memories skill enabled!)</p>
+<p>2) When working on it for a while, and when done - before finishing the session use: <br>
+/compact slash command <br>
+to keep the tokens controlled, so even if it is referenced in the future it has been pruned. </p>
+<p>3) When finished, run /new to clear the session/tokens and start out with just the base context/memories/last pruned session as context. </p>
+<p>After a while though even memories etc can build up, that's when using lots of individual agents comes into it, the main agent becomes the orchestrator and only sends the relevant request and relevant context needed for it per task to the sub-agent.</p></div>
+<figure class="media"><img src="/feed/media/ref-2023465403054166073-0.png" width="389" height="345" alt="Image from the post" loading="lazy"></figure>
+</blockquote>
+<div class="text"><p>Duuuude! Wow. Thank you so much for helping me understand this. That makes sense.</p>
+<p>In Claude Code, for the exact same reason, we spent a bunch of time last year at work getting sub-agents to work reliably.</p>
+<p>There it works well, I hadn't considered this is an option (or necessity) here. </p>
+<p>Gonna read up on <a href="https://docs.openclaw.ai/tools/subagents">docs.openclaw.ai/tools/subagents</a> and report back </p>
+<p>Again, thank you for taking the time to write this up.</p></div>
+<a class="linkcard" href="https://docs.openclaw.ai/tools/subagents">
+<img src="/feed/media/link-0e16f8d71c9d530a.png" alt="" loading="lazy">
+<span class="body"><span class="site">OpenClaw</span><span class="title">Sub-agents · OpenClaw</span><span class="desc">Index of the OpenClaw sub-agent documentation, one page per reader job</span><span class="host">↗ docs.openclaw.ai</span></span>
+</a>
+<div class="src"><a href="/feed/t/2023469577158438951/">Permalink</a> · <a href="https://x.com/i/status/2023469577158438951">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-reply" id="t2023458968379519160">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2023458968379519160/"><time datetime="2026-02-16T18:06:26Z">Monday, February 16, 2026 · 19:06</time></a></div>
+<div class="stats"><span><b>3</b> replies</span> · <span><b>1</b> like</span> · <span><b>49</b> views</span></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/SpringStreetNYC">@SpringStreetNYC</a> · Feb 16, 2026</cite>
+<div class="ctx-text"><p>Okay, turns out: I was WRONG about tokens.</p>
+<p>Hit rate limit after a day of low-intensity chat that included the aforementioned ad-hoc tool/skill building. </p>
+<p>I'm not yet sure how I got to spend 18.4M tokens today (WTF?) but, yes, <a class="mention" href="https://x.com/RealistSec">@RealistSec</a> your assessment from earlier is correct.</p>
+<p>I need to figure out what just at 18.4M tokens.</p></div>
+</blockquote>
+<div class="text"><p><a class="mention" href="https://x.com/RealistSec">@RealistSec</a> <a class="mention" href="https://x.com/openclaw">@openclaw</a> <a class="mention" href="https://x.com/virustotal">@virustotal</a> <a class="mention" href="https://x.com/good_BOT_boi">@good_BOT_boi</a> Is this normal?</p></div>
+<figure class="media"><img src="/feed/media/2023458968379519160-0.jpg" width="1600" height="578" alt="Image from the post" loading="lazy"></figure>
+<figure class="media"><img src="/feed/media/2023458968379519160-1.jpg" width="1600" height="1233" alt="Image from the post" loading="lazy"></figure>
+<div class="src"><a href="/feed/t/2023458968379519160/">Permalink</a> · <a href="https://x.com/i/status/2023458968379519160">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-reply" id="t2023457458367184909">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2023457458367184909/"><time datetime="2026-02-16T18:00:26Z">Monday, February 16, 2026 · 19:00</time></a></div>
+<div class="stats"><span><b>1</b> reply</span> · <span><b>1</b> like</span> · <span><b>47</b> views</span></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/SpringStreetNYC">@SpringStreetNYC</a> · Feb 16, 2026</cite>
+<div class="ctx-text"><p>Hah! NICE! Thank you, much appreciated.</p>
+<p>Looked at <a class="mention" href="https://x.com/virustotal">@virustotal</a> and they're definitely hitting on a few concerns I had too: semantic worms and cognitive rootkits that would probably be in the skill description more than the actual code. </p>
+<p>So maybe I'm wrong with the hot take. I'll have to think about this a bit :)</p></div>
+</blockquote>
+<div class="text"><p>Okay, turns out: I was WRONG about tokens.</p>
+<p>Hit rate limit after a day of low-intensity chat that included the aforementioned ad-hoc tool/skill building. </p>
+<p>I'm not yet sure how I got to spend 18.4M tokens today (WTF?) but, yes, <a class="mention" href="https://x.com/RealistSec">@RealistSec</a> your assessment from earlier is correct.</p>
+<p>I need to figure out what just at 18.4M tokens.</p></div>
+<div class="src"><a href="/feed/t/2023457458367184909/">Permalink</a> · <a href="https://x.com/i/status/2023457458367184909">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-reply" id="t2023427881427210642">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2023427881427210642/"><time datetime="2026-02-16T16:02:55Z">Monday, February 16, 2026 · 17:02</time></a></div>
+<div class="stats"><span><b>1</b> reply</span> · <span><b>41</b> views</span></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/RealistSec">@RealistSec</a> · Feb 16, 2026</cite>
+<div class="ctx-text"><p><a class="mention" href="https://x.com/SpringStreetNYC">@SpringStreetNYC</a> <a class="mention" href="https://x.com/openclaw">@openclaw</a> <a class="mention" href="https://x.com/virustotal">@virustotal</a> I'm 100% the same, every ounce of my being want's to reject OpenClaw on security risk potential alone - autonomous AI is a whole new world. </p>
+<p>And nah, I have <a class="mention" href="https://x.com/good_BOT_boi">@good_BOT_boi</a>  for spamming people, haha 👀</p></div>
+</blockquote>
+<div class="text"><p>Hah! NICE! Thank you, much appreciated.</p>
+<p>Looked at <a class="mention" href="https://x.com/virustotal">@virustotal</a> and they're definitely hitting on a few concerns I had too: semantic worms and cognitive rootkits that would probably be in the skill description more than the actual code. </p>
+<p>So maybe I'm wrong with the hot take. I'll have to think about this a bit :)</p></div>
+<div class="src"><a href="/feed/t/2023427881427210642/">Permalink</a> · <a href="https://x.com/i/status/2023427881427210642">View on Twitter ↗</a></div>
+</article>
 <article class="item kind-reply" id="t2023422044730462675">
 <div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2023422044730462675/"><time datetime="2026-02-16T15:39:43Z">Monday, February 16, 2026 · 16:39</time></a></div>
 <div class="stats"><span><b>214</b> views</span></div>
@@ -252,144 +360,15 @@ I did <em>not</em> expect this to work so well — even in this first-draft, pri
 <p>Either way, thank you for the reminder!</p></div>
 <div class="src"><a href="/feed/t/2016462111749165451/">Permalink</a> · <a href="https://x.com/i/status/2016462111749165451">View on Twitter ↗</a></div>
 </article>
-<article class="item kind-reply" id="t2016460376615846197">
-<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2016460376615846197/"><time datetime="2026-01-28T10:36:32Z">Wednesday, January 28, 2026 · 11:36</time></a></div>
-<div class="stats"><span><b>165</b> views</span></div>
-<blockquote class="ctx">
-<cite>In reply to <a href="https://x.com/SpringStreetNYC">@SpringStreetNYC</a> · Jan 28, 2026</cite>
-<div class="ctx-text"><p>Just sat on this steel bar stool at <a href="https://t.co/60NA9eoOur">t.co/60NA9eoOur</a> and HOT DANG! They're shockingly comfortable to sit on. And they're pretty. And sturdy. Well done, <a class="mention" href="https://x.com/zarahome">@zarahome</a> </p>
-<p><a href="https://t.co/4q8pJAFTnw">t.co/4q8pJAFTnw</a></p></div>
-<figure class="media"><img src="/feed/media/ref-2016454813953806714-0.jpg" width="1291" height="1600" alt="Image from the post" loading="lazy"></figure>
-<figure class="media"><img src="/feed/media/ref-2016454813953806714-1.jpg" width="1125" height="1394" alt="Image from the post" loading="lazy"></figure>
-<figure class="media"><img src="/feed/media/ref-2016454813953806714-2.jpg" width="1125" height="1394" alt="Image from the post" loading="lazy"></figure>
-<figure class="media"><img src="/feed/media/ref-2016454813953806714-3.jpg" width="1291" height="1600" alt="Image from the post" loading="lazy"></figure>
-</blockquote>
-<div class="text"><p>PS: They also have this steel chair. If it's half as comfy as the bar stool, I want it. <br>
-PPS: I'm not affiliated, just excited about the products</p></div>
-<figure class="media"><img src="/feed/media/2016460376615846197-0.jpg" width="1291" height="1600" alt="Image from the post" loading="lazy"></figure>
-<figure class="media"><img src="/feed/media/2016460376615846197-1.jpg" width="1291" height="1600" alt="Image from the post" loading="lazy"></figure>
-<figure class="media"><img src="/feed/media/2016460376615846197-2.jpg" width="1291" height="1600" alt="Image from the post" loading="lazy"></figure>
-<figure class="media"><img src="/feed/media/2016460376615846197-3.jpg" width="1291" height="1600" alt="Image from the post" loading="lazy"></figure>
-<a class="linkcard" href="https://www.zarahome.com/de/en/textured-steel-chair-l47397073">
-<span class="body"><span class="site">zarahome.com</span><span class="title"></span><span class="host">↗ zarahome.com</span></span>
-</a>
-<a class="linkcard" href="https://www.zarahome.com/de/en/textured-steel-chair-l47397073">
-<span class="body"><span class="site">zarahome.com</span><span class="title"></span><span class="host">↗ zarahome.com</span></span>
-</a>
-<div class="src"><a href="/feed/t/2016460376615846197/">Permalink</a> · <a href="https://x.com/i/status/2016460376615846197">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-post" id="t2016455320042709488">
-<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/2016455320042709488/"><time datetime="2026-01-28T10:16:26Z">Wednesday, January 28, 2026 · 11:16</time></a></div>
-<div class="stats"><span><b>93</b> views</span></div>
-<div class="text display"><p>And just in case you haven't re-read it yet: SITUATIONAL AWARENESS by <a class="mention" href="https://x.com/leopoldasch">@leopoldasch</a> over at</p></div>
-<figure class="media"><img src="/feed/media/2016455320042709488-0.jpg" width="1600" height="1262" alt="Image from the post" loading="lazy"></figure>
-<a class="linkcard" href="https://situational-awareness.ai/">
-<img src="/feed/media/link-1befe71d79c4d102.png" alt="" loading="lazy">
-<span class="body"><span class="site">SITUATIONAL AWARENESS - The Decade Ahead</span><span class="title">Introduction - SITUATIONAL AWARENESS: The Decade Ahead</span><span class="desc">Leopold Aschenbrenner, June 2024 You can see the future first in San Francisco. Over the past year, the talk of the town has shifted from $10 billion compute clusters to $100 billion clusters to trillion-dollar clusters. Every six months another zero is added to the boardroom plans. Behind the scenes, there’s a fierce scramble to</span><span class="host">↗ situational-awareness.ai</span></span>
-</a>
-<div class="src"><a href="/feed/t/2016455320042709488/">Permalink</a> · <a href="https://x.com/i/status/2016455320042709488">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-post" id="t2016454813953806714">
-<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/2016454813953806714/"><time datetime="2026-01-28T10:14:26Z">Wednesday, January 28, 2026 · 11:14</time></a></div>
-<div class="stats"><span><b>1</b> reply</span> · <span><b>102</b> views</span></div>
-<div class="text"><p>Just sat on this steel bar stool at <a href="https://t.co/60NA9eoOur">t.co/60NA9eoOur</a> and HOT DANG! They're shockingly comfortable to sit on. And they're pretty. And sturdy. Well done, <a class="mention" href="https://x.com/zarahome">@zarahome</a></p></div>
-<figure class="media"><img src="/feed/media/2016454813953806714-0.jpg" width="1291" height="1600" alt="Image from the post" loading="lazy"></figure>
-<figure class="media"><img src="/feed/media/2016454813953806714-1.jpg" width="1125" height="1394" alt="Image from the post" loading="lazy"></figure>
-<figure class="media"><img src="/feed/media/2016454813953806714-2.jpg" width="1125" height="1394" alt="Image from the post" loading="lazy"></figure>
-<figure class="media"><img src="/feed/media/2016454813953806714-3.jpg" width="1291" height="1600" alt="Image from the post" loading="lazy"></figure>
-<a class="linkcard" href="http://Ingwer.co">
-<span class="body"><span class="site">Ingwer.co</span><span class="title">ingwer</span><span class="host">↗ Ingwer.co</span></span>
-</a>
-<a class="linkcard" href="https://www.zarahome.com/de/en/steel-bar-stool-l47396073">
-<span class="body"><span class="site">zarahome.com</span><span class="title"></span><span class="host">↗ zarahome.com</span></span>
-</a>
-<a class="linkcard" href="http://Ingwer.co">
-<span class="body"><span class="site">Ingwer.co</span><span class="title">ingwer</span><span class="host">↗ Ingwer.co</span></span>
-</a>
-<a class="linkcard" href="https://www.zarahome.com/de/en/steel-bar-stool-l47396073">
-<span class="body"><span class="site">zarahome.com</span><span class="title"></span><span class="host">↗ zarahome.com</span></span>
-</a>
-<div class="src"><a href="/feed/t/2016454813953806714/">Permalink</a> · <a href="https://x.com/i/status/2016454813953806714">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-reply" id="t2016448935057850768">
-<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/2016448935057850768/"><time datetime="2026-01-28T09:51:04Z">Wednesday, January 28, 2026 · 10:51</time></a></div>
-<div class="stats"><span><b>21</b> views</span></div>
-<blockquote class="ctx">
-<cite>In reply to <a href="https://x.com/SpringStreetNYC">@SpringStreetNYC</a> · Jan 28, 2026</cite>
-<div class="ctx-text"><p>I walked in on a whim and walked out surprised how well done this café/space felt.</p>
-<p>Team: Friendly and relaxed<br>
-Prices: Totally okay<br>
-Americano: Solid<br>
-Ambient soundtrack: Lovely<br>
-Metal chairs: comfortable<br>
-Light/sculptural installation: Intricate<br>
-Temperature: Cozy<br>
-Library: Rick Rubin</p>
-<p>I'll be back!</p>
-<p><a href="https://t.co/qUDKLvK2D0">t.co/qUDKLvK2D0</a></p></div>
-<figure class="media"><img src="/feed/media/ref-2016448360874471429-0.jpg" width="900" height="1600" alt="Image from the post" loading="lazy"></figure>
-</blockquote>
-<div class="text"><p>PS: Ingwer Café at Bürknerstraße 12, 12047 Berlin. <a href="http://Ingwer.co">Ingwer.co</a><br>
-PPS: I have no affiliation or getting kick-backs</p></div>
-<a class="linkcard" href="http://Ingwer.co">
-<span class="body"><span class="site">Ingwer.co</span><span class="title">ingwer</span><span class="host">↗ Ingwer.co</span></span>
-</a>
-<div class="src"><a href="/feed/t/2016448935057850768/">Permalink</a> · <a href="https://x.com/i/status/2016448935057850768">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-post" id="t2016448360874471429">
-<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/2016448360874471429/"><time datetime="2026-01-28T09:48:47Z">Wednesday, January 28, 2026 · 10:48</time></a></div>
-<div class="stats"><span><b>2</b> replies</span> · <span><b>95</b> views</span></div>
-<div class="text"><p>I walked in on a whim and walked out surprised how well done this café/space felt.</p>
-<p>Team: Friendly and relaxed<br>
-Prices: Totally okay<br>
-Americano: Solid<br>
-Ambient soundtrack: Lovely<br>
-Metal chairs: comfortable<br>
-Light/sculptural installation: Intricate<br>
-Temperature: Cozy<br>
-Library: Rick Rubin</p>
-<p>I'll be back!</p></div>
-<figure class="media"><img src="/feed/media/2016448360874471429-0.jpg" width="900" height="1600" alt="Image from the post" loading="lazy"></figure>
-<ul class="bare">
-<li><a href="https://maps.app.goo.gl/MxkSjiWRtNRK2nU1A">↗ maps.app.goo.gl/MxkSjiWRtNRK2n…</a></li>
-</ul>
-<div class="src"><a href="/feed/t/2016448360874471429/">Permalink</a> · <a href="https://x.com/i/status/2016448360874471429">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-post" id="t2014029500523151673">
-<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/2014029500523151673/"><time datetime="2026-01-21T17:37:06Z">Wednesday, January 21, 2026 · 18:37</time></a></div>
-<div class="stats"><span><b>14</b> views</span></div>
-<div class="text display"><p>I love you, but I've chosen Entdramatisierung</p>
-<p>Just revised my following here on Twitter.</p></div>
-<figure class="media"><img src="/feed/media/2014029500523151673-0.jpg" width="1130" height="1600" alt="Image from the post" loading="lazy"></figure>
-<a class="linkcard" href="https://volksbuehne.adk.de/praxis/i_love_you_but_ive_chosen_entdramatisierung/index.html">
-<span class="body"><span class="site">volksbuehne.adk.de</span><span class="title">Volksbühne Berlin</span><span class="host">↗ volksbuehne.adk.de</span></span>
-</a>
-<a class="linkcard" href="https://volksbuehne.adk.de/praxis/i_love_you_but_ive_chosen_entdramatisierung/index.html">
-<span class="body"><span class="site">volksbuehne.adk.de</span><span class="title">Volksbühne Berlin</span><span class="host">↗ volksbuehne.adk.de</span></span>
-</a>
-<div class="src"><a href="/feed/t/2014029500523151673/">Permalink</a> · <a href="https://x.com/i/status/2014029500523151673">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-post" id="t2013987579918434776">
-<div class="meta"><span class="kind">Post</span><a class="when" href="/feed/t/2013987579918434776/"><time datetime="2026-01-21T14:50:31Z">Wednesday, January 21, 2026 · 15:50</time></a></div>
-<div class="stats"><span><b>84</b> views</span></div>
-<div class="text"><p>Context: I'm playing around with a mobile app I've wanted for a while. I built the first version for iOS mostly because I really like Swift. Problem is, I can't really device-test it because I use a Xiaomi 14T (Android) phone. </p>
-<p>So, with Claude Code and the iOS code, I &quot;cloned the app to Android&quot; today. It's a tiny app so that only took 2 hours. (Which, in itself, is totally bonkers of course.)</p>
-<p>Now, what I actually want to say is this: </p>
-<p>Why is everyone always hating on <a class="mention" href="https://x.com/AndroidStudio">@AndroidStudio</a>'s  self-titled IDE? I don't get it. </p>
-<p>It's working really, really nicely for me. It's well-designed. It works. It's hassle-free. It's snappy. </p>
-<p>Sure. It's got a memory footprint of 6GB. That's not ideal but honestly, I've got 128GB of RAM and the overall experience with Android Studio is great. And it's running my app in a full virtual simulator and on my physical device. </p>
-<p>It's a GOOD IDE. It's a GOOD DX. Maybe not my favorite, but I for one had a good experience and am grateful for the work that their team put into the studio. </p>
-<p>Thank y'all. Good stuff!</p></div>
-<div class="src"><a href="/feed/t/2013987579918434776/">Permalink</a> · <a href="https://x.com/i/status/2013987579918434776">View on Twitter ↗</a></div>
-</article>
 </section>
-<nav class="pager"><a href="/feed/page/12/">‹ Newer</a><span class="n">Page 13 of 37</span><a href="/feed/page/14/">Older ›</a></nav>
+<nav class="pager"><a href="/feed/page/12/">‹ Newer</a><span class="n">Page 13 of 38</span><a href="/feed/page/14/">Older ›</a></nav>
 <aside class="months-nav">
 <div class="group">
 <h3><a href="/feed/archive/">Archive</a></h3>
 <div class="y">2026</div>
 <ul>
-<li><a href="/feed/archive/2026/10/">October</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2026/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2026/10/">October</a> <span class="n">11</span></li>
 <li><a href="/feed/archive/2026/09/">September</a> <span class="n">79</span></li>
 <li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
 <li><a href="/feed/archive/2026/07/">July</a> <span class="n">25</span></li>
@@ -545,7 +524,7 @@ Library: Rick Rubin</p>
 <footer class="site">
 <p>© 2012–2026 Alexis Rondeau. All rights reserved.</p>
 <p>This is my personal site. Everything here — dispatches, notes, opinions — is my own and does not represent any employer, client or organisation I'm affiliated with.</p>
-<p><a href="/">Home</a> · <a href="/about/">About</a> · <a href="/feed/">Newsfeed</a> · <a href="/feed/archive/">Archive</a> · <a href="/feed/feed.xml">Atom</a> · <a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a> · <a rel="me" href="https://github.com/akaalias">GitHub</a> · <a rel="me" class="cta-link" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">Let's connect on LinkedIn!</a></p>
+<p><a href="/">Home</a> · <a href="/about/">About</a> · <a href="/feed/">Newsfeed</a> · <a href="/feed/archive/">Archive</a> · <a href="/bookmarks/">Bookmarks</a> · <a href="/feed/feed.xml">Atom</a> · <a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a> · <a rel="me" href="https://github.com/akaalias">GitHub</a> · <a rel="me" class="cta-link" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">Let's connect on LinkedIn!</a></p>
 </footer>
 </div>
 
