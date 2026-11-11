@@ -29,7 +29,7 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 
 ## Newsfeed
 
-- [Newsfeed](https://alexisrondeau.me/feed/): 929 dispatches, newest first, 25 per page
+- [Newsfeed](https://alexisrondeau.me/feed/): 1054 dispatches, newest first, 25 per page
 - [Archive](https://alexisrondeau.me/feed/archive/): the same dispatches by month
 - [Atom feed](https://alexisrondeau.me/feed/feed.xml): the latest 50 dispatches
 - [Data](https://alexisrondeau.me/feed/items.json): every item as JSON (source, id, date, text, media, links, permalink)
@@ -305,24 +305,24 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 
 - [November 2026](https://alexisrondeau.me/feed/archive/2026/11/): 2 dispatches
 - [October 2026](https://alexisrondeau.me/feed/archive/2026/10/): 11 dispatches
-- [September 2026](https://alexisrondeau.me/feed/archive/2026/09/): 79 dispatches
-- [August 2026](https://alexisrondeau.me/feed/archive/2026/08/): 37 dispatches
-- [July 2026](https://alexisrondeau.me/feed/archive/2026/07/): 25 dispatches
+- [September 2026](https://alexisrondeau.me/feed/archive/2026/09/): 85 dispatches
+- [August 2026](https://alexisrondeau.me/feed/archive/2026/08/): 40 dispatches
+- [July 2026](https://alexisrondeau.me/feed/archive/2026/07/): 30 dispatches
 - [June 2026](https://alexisrondeau.me/feed/archive/2026/06/): 31 dispatches
 - [May 2026](https://alexisrondeau.me/feed/archive/2026/05/): 10 dispatches
 - [April 2026](https://alexisrondeau.me/feed/archive/2026/04/): 33 dispatches
 - [March 2026](https://alexisrondeau.me/feed/archive/2026/03/): 34 dispatches
-- [February 2026](https://alexisrondeau.me/feed/archive/2026/02/): 57 dispatches
-- [January 2026](https://alexisrondeau.me/feed/archive/2026/01/): 15 dispatches
-- [December 2025](https://alexisrondeau.me/feed/archive/2025/12/): 29 dispatches
-- [November 2025](https://alexisrondeau.me/feed/archive/2025/11/): 126 dispatches
-- [October 2025](https://alexisrondeau.me/feed/archive/2025/10/): 7 dispatches
-- [September 2025](https://alexisrondeau.me/feed/archive/2025/09/): 5 dispatches
+- [February 2026](https://alexisrondeau.me/feed/archive/2026/02/): 62 dispatches
+- [January 2026](https://alexisrondeau.me/feed/archive/2026/01/): 17 dispatches
+- [December 2025](https://alexisrondeau.me/feed/archive/2025/12/): 31 dispatches
+- [November 2025](https://alexisrondeau.me/feed/archive/2025/11/): 127 dispatches
+- [October 2025](https://alexisrondeau.me/feed/archive/2025/10/): 9 dispatches
+- [September 2025](https://alexisrondeau.me/feed/archive/2025/09/): 7 dispatches
 - [August 2025](https://alexisrondeau.me/feed/archive/2025/08/): 7 dispatches
 - [July 2025](https://alexisrondeau.me/feed/archive/2025/07/): 23 dispatches
 - [June 2025](https://alexisrondeau.me/feed/archive/2025/06/): 3 dispatches
-- [May 2025](https://alexisrondeau.me/feed/archive/2025/05/): 18 dispatches
-- [April 2025](https://alexisrondeau.me/feed/archive/2025/04/): 62 dispatches
+- [May 2025](https://alexisrondeau.me/feed/archive/2025/05/): 21 dispatches
+- [April 2025](https://alexisrondeau.me/feed/archive/2025/04/): 65 dispatches
 - [March 2025](https://alexisrondeau.me/feed/archive/2025/03/): 22 dispatches
 - [February 2025](https://alexisrondeau.me/feed/archive/2025/02/): 11 dispatches
 - [December 2024](https://alexisrondeau.me/feed/archive/2024/12/): 3 dispatches
@@ -335,34 +335,41 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 - [May 2024](https://alexisrondeau.me/feed/archive/2024/05/): 3 dispatches
 - [April 2024](https://alexisrondeau.me/feed/archive/2024/04/): 1 dispatches
 - [January 2024](https://alexisrondeau.me/feed/archive/2024/01/): 1 dispatches
+- [December 2023](https://alexisrondeau.me/feed/archive/2023/12/): 1 dispatches
 - [November 2023](https://alexisrondeau.me/feed/archive/2023/11/): 2 dispatches
-- [October 2023](https://alexisrondeau.me/feed/archive/2023/10/): 1 dispatches
+- [October 2023](https://alexisrondeau.me/feed/archive/2023/10/): 3 dispatches
 - [September 2023](https://alexisrondeau.me/feed/archive/2023/09/): 2 dispatches
 - [August 2023](https://alexisrondeau.me/feed/archive/2023/08/): 3 dispatches
 - [July 2023](https://alexisrondeau.me/feed/archive/2023/07/): 1 dispatches
-- [June 2023](https://alexisrondeau.me/feed/archive/2023/06/): 4 dispatches
-- [May 2023](https://alexisrondeau.me/feed/archive/2023/05/): 9 dispatches
-- [April 2023](https://alexisrondeau.me/feed/archive/2023/04/): 5 dispatches
-- [March 2023](https://alexisrondeau.me/feed/archive/2023/03/): 5 dispatches
-- [February 2023](https://alexisrondeau.me/feed/archive/2023/02/): 1 dispatches
-- [November 2022](https://alexisrondeau.me/feed/archive/2022/11/): 1 dispatches
+- [June 2023](https://alexisrondeau.me/feed/archive/2023/06/): 6 dispatches
+- [May 2023](https://alexisrondeau.me/feed/archive/2023/05/): 11 dispatches
+- [April 2023](https://alexisrondeau.me/feed/archive/2023/04/): 7 dispatches
+- [March 2023](https://alexisrondeau.me/feed/archive/2023/03/): 7 dispatches
+- [February 2023](https://alexisrondeau.me/feed/archive/2023/02/): 2 dispatches
+- [January 2023](https://alexisrondeau.me/feed/archive/2023/01/): 9 dispatches
+- [December 2022](https://alexisrondeau.me/feed/archive/2022/12/): 2 dispatches
+- [November 2022](https://alexisrondeau.me/feed/archive/2022/11/): 4 dispatches
 - [October 2022](https://alexisrondeau.me/feed/archive/2022/10/): 2 dispatches
-- [September 2022](https://alexisrondeau.me/feed/archive/2022/09/): 2 dispatches
-- [August 2022](https://alexisrondeau.me/feed/archive/2022/08/): 1 dispatches
-- [July 2022](https://alexisrondeau.me/feed/archive/2022/07/): 6 dispatches
-- [April 2022](https://alexisrondeau.me/feed/archive/2022/04/): 3 dispatches
-- [March 2022](https://alexisrondeau.me/feed/archive/2022/03/): 1 dispatches
+- [September 2022](https://alexisrondeau.me/feed/archive/2022/09/): 4 dispatches
+- [August 2022](https://alexisrondeau.me/feed/archive/2022/08/): 9 dispatches
+- [July 2022](https://alexisrondeau.me/feed/archive/2022/07/): 38 dispatches
+- [April 2022](https://alexisrondeau.me/feed/archive/2022/04/): 5 dispatches
+- [March 2022](https://alexisrondeau.me/feed/archive/2022/03/): 3 dispatches
+- [February 2022](https://alexisrondeau.me/feed/archive/2022/02/): 4 dispatches
 - [January 2022](https://alexisrondeau.me/feed/archive/2022/01/): 1 dispatches
-- [December 2021](https://alexisrondeau.me/feed/archive/2021/12/): 1 dispatches
+- [December 2021](https://alexisrondeau.me/feed/archive/2021/12/): 2 dispatches
 - [November 2021](https://alexisrondeau.me/feed/archive/2021/11/): 2 dispatches
-- [September 2021](https://alexisrondeau.me/feed/archive/2021/09/): 1 dispatches
-- [March 2021](https://alexisrondeau.me/feed/archive/2021/03/): 1 dispatches
+- [October 2021](https://alexisrondeau.me/feed/archive/2021/10/): 1 dispatches
+- [September 2021](https://alexisrondeau.me/feed/archive/2021/09/): 2 dispatches
+- [May 2021](https://alexisrondeau.me/feed/archive/2021/05/): 1 dispatches
+- [April 2021](https://alexisrondeau.me/feed/archive/2021/04/): 2 dispatches
+- [March 2021](https://alexisrondeau.me/feed/archive/2021/03/): 2 dispatches
 - [February 2021](https://alexisrondeau.me/feed/archive/2021/02/): 5 dispatches
 - [January 2021](https://alexisrondeau.me/feed/archive/2021/01/): 8 dispatches
 - [December 2020](https://alexisrondeau.me/feed/archive/2020/12/): 5 dispatches
 - [November 2020](https://alexisrondeau.me/feed/archive/2020/11/): 3 dispatches
 - [September 2020](https://alexisrondeau.me/feed/archive/2020/09/): 1 dispatches
-- [August 2020](https://alexisrondeau.me/feed/archive/2020/08/): 2 dispatches
+- [August 2020](https://alexisrondeau.me/feed/archive/2020/08/): 4 dispatches
 - [July 2020](https://alexisrondeau.me/feed/archive/2020/07/): 1 dispatches
 - [June 2020](https://alexisrondeau.me/feed/archive/2020/06/): 3 dispatches
 - [May 2020](https://alexisrondeau.me/feed/archive/2020/05/): 1 dispatches
@@ -396,11 +403,11 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 - [June 2015](https://alexisrondeau.me/feed/archive/2015/06/): 1 dispatches
 - [May 2015](https://alexisrondeau.me/feed/archive/2015/05/): 2 dispatches
 - [March 2015](https://alexisrondeau.me/feed/archive/2015/03/): 2 dispatches
-- [February 2015](https://alexisrondeau.me/feed/archive/2015/02/): 3 dispatches
+- [February 2015](https://alexisrondeau.me/feed/archive/2015/02/): 4 dispatches
 - [January 2015](https://alexisrondeau.me/feed/archive/2015/01/): 1 dispatches
-- [December 2014](https://alexisrondeau.me/feed/archive/2014/12/): 3 dispatches
+- [December 2014](https://alexisrondeau.me/feed/archive/2014/12/): 4 dispatches
 - [November 2014](https://alexisrondeau.me/feed/archive/2014/11/): 3 dispatches
-- [October 2014](https://alexisrondeau.me/feed/archive/2014/10/): 5 dispatches
+- [October 2014](https://alexisrondeau.me/feed/archive/2014/10/): 8 dispatches
 - [September 2014](https://alexisrondeau.me/feed/archive/2014/09/): 3 dispatches
 - [August 2014](https://alexisrondeau.me/feed/archive/2014/08/): 1 dispatches
 - [July 2014](https://alexisrondeau.me/feed/archive/2014/07/): 3 dispatches
@@ -409,6 +416,7 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 - [April 2014](https://alexisrondeau.me/feed/archive/2014/04/): 2 dispatches
 - [March 2014](https://alexisrondeau.me/feed/archive/2014/03/): 9 dispatches
 - [January 2014](https://alexisrondeau.me/feed/archive/2014/01/): 1 dispatches
+- [July 2013](https://alexisrondeau.me/feed/archive/2013/07/): 1 dispatches
 - [June 2013](https://alexisrondeau.me/feed/archive/2013/06/): 1 dispatches
 - [May 2013](https://alexisrondeau.me/feed/archive/2013/05/): 1 dispatches
 - [January 2012](https://alexisrondeau.me/feed/archive/2012/01/): 1 dispatches

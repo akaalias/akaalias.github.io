@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I agree it seems weird on first contact. To me it makes a bit of sens… — Alexis Rondeau</title>
+<meta name="description" content="I agree it seems weird on first contact. To me it makes a bit of sense because I had built a GPT3-based chat two weeks ago, based on their completion…">
+<link rel="canonical" href="https://alexisrondeau.me/feed/hn/34994155/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Alexis Rondeau">
+<meta property="og:title" content="I agree it seems weird on first contact. To me it makes a bit of sens…">
+<meta property="og:description" content="I agree it seems weird on first contact. To me it makes a bit of sense because I had built a GPT3-based chat two weeks ago, based on their completion…">
+<meta property="og:url" content="https://alexisrondeau.me/feed/hn/34994155/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@SpringStreetNYC">
+<meta name="twitter:creator" content="@SpringStreetNYC">
+<meta property="og:image" content="https://alexisrondeau.me/notes/media/alexis-rondeau.jpg">
+<meta property="og:image:alt" content="Alexis Rondeau">
+<meta name="twitter:image" content="https://alexisrondeau.me/notes/media/alexis-rondeau.jpg">
+<link rel="alternate" type="application/atom+xml" title="Alexis Rondeau — Newsfeed" href="https://alexisrondeau.me/feed/feed.xml">
+<link rel="stylesheet" href="/tufte.css">
+<link rel="stylesheet" href="/feed/feed.css">
+<meta property="article:published_time" content="2023-03-02T10:29:52Z">
+<meta property="article:author" content="Alexis Rondeau">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Comment","about":{"@type":"DiscussionForumPosting","headline":"ChatML: ChatGPT API expects a structured format, called Chat Markup Language","url":"https://news.ycombinator.com/item?id=34988748"},"author":{"@id":"https://alexisrondeau.me/#person","@type":"Person","name":"Alexis Rondeau","sameAs":["https://x.com/SpringStreetNYC","https://github.com/akaalias","https://www.linkedin.com/in/alexis-rondeau-2099nyc/","https://www.youtube.com/@axsrondeau"],"url":"https://alexisrondeau.me/"},"datePublished":"2023-03-02T10:29:52Z","headline":"I agree it seems weird on first contact. To me it makes a bit of sense because I had buil…","mainEntityOfPage":"https://alexisrondeau.me/feed/hn/34994155/","sameAs":"https://news.ycombinator.com/item?id=34994155","text":"I agree it seems weird on first contact.\n\nTo me it makes a bit of sense because I had built a GPT3-based chat two weeks ago, based on their completion documentation^1\n\nThe \"format\" for this prompt already has everything needed: System prompt and history of messages.\n\n```\n\nThe following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: Hello, who are you?\n\nAI: I am an AI created by OpenAI. How can I help you today?\n\nHuman: Please translate \"Hello\" to German\n\nAI:\n\n```\n\nTo retain context, I kept the system prompt on top and added the prior prompt/completions to the history stack in-between.\n\nEnd-user-experience-wise, this worked really, really well. Practically as good as the ChatGPT UI.\n\nAs a developer though, it was a lot of fiddling, splicing, and dicing of strings. But again, this worked well and I would have kept it as-is for as long as possible.\n\nWhen I saw the ChatML format, it wasn't a giant leap.\n\n```\n\n<|im_start|>system\n\nYou are ChatGPT, a large language model trained by OpenAI. Answer as concisely as possible.\nKnowledge cutoff: 2021-09-01\nCurrent date: 2023-03-01<|im_end|>\n\n<|im_start|>user\n\nHello, who are you?<|im_end|>\n\n<|im_start|>assistant\n\nI am an AI created by OpenAI. How can I help you today?\n<|im_end|>\n\n<|im_start|>user\n\nPlease translate \"Hello\" to German<|im_end|>\n\n```\n\nI've used that, too. Handling of prior conversations became a bit more manageable. But to honest, there's a lot of markup to keep track of.\n\nTo me, the less-discussed JSON format^2 works best. (I'm building a macOS app in Swift)\n\n```\n\n{\n\n  \"model\": \"gpt-3.5-turbo\",\n  \"messages\": [\n\n {\n  \"role\": \"system\", \n  \"content\": \"You are a helpful and succinct assistant AI created by OpenAI.\"\n },\n\n {\n  \"role\": \"user\", \n  \"content\": \"Hello, who are you?\"\n },\n\n {\n  \"role\": \"assistant\", \n  \"content\": \"I am an AI created by OpenAI. How can I help you today?\"\n },\n\n {\n  \"role\": \"user\", \n  \"content\": \"Please translate \"Hello\" to German\"\n }\n\n}\n\n```\n\nWhat do you think?\n\n^1: https://platform.openai.com/docs/guides/completion/conversat...\n\n^2: https://platform.openai.com/docs/api-reference/chat/create","url":"https://alexisrondeau.me/feed/hn/34994155/"}</script>
+
+</head>
+<body>
+<nav class="topnav"><a href="/">Home</a><a href="/about/">About</a><a href="/feed/">Newsfeed</a><a href="/feed/archive/">Archive</a><a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a><a rel="me" href="https://github.com/akaalias">GitHub</a><a rel="me" class="cta" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">Let's connect on LinkedIn!</a></nav>
+<header class="hero">
+<div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
+<h1><a href="/feed/">Newsfeed</a></h1>
+<p class="sub">Hacker News comment · Thursday, March 2, 2023 · 11:29</p>
+</header>
+<div class="wrap">
+<section class="feed single">
+<article class="item kind-hn" id="hn-34994155">
+<div class="meta"><span class="kind">Hacker News comment</span><a class="when" href="/feed/hn/34994155/"><time datetime="2023-03-02T10:29:52Z">Thursday, March 2, 2023 · 11:29</time></a></div>
+<blockquote class="ctx">
+<cite>Comment on <a href="https://news.ycombinator.com/item?id=34988748">ChatML: ChatGPT API expects a structured format, called Chat Markup Language</a></cite>
+</blockquote>
+<div class="text"><p>I agree it seems weird on first contact.<p>To me it makes a bit of sense because I had built a GPT3-based chat two weeks ago, based on their completion documentation^1<p>The &quot;format&quot; for this prompt already has everything needed: System prompt and history of messages.<p>```<p>The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.<p>Human: Hello, who are you?<p>AI: I am an AI created by OpenAI. How can I help you today?<p>Human: Please translate &quot;Hello&quot; to German<p>AI:<p>```<p>To retain context, I kept the system prompt on top and added the prior prompt&#x2F;completions to the history stack in-between.<p>End-user-experience-wise, this worked really, really well. Practically as good as the ChatGPT UI.<p>As a developer though, it was a lot of fiddling, splicing, and dicing of strings. But again, this worked well and I would have kept it as-is for as long as possible.<p>When I saw the ChatML format, it wasn&#x27;t a giant leap.<p>```<p>&lt;|im_start|&gt;system<p>You are ChatGPT, a large language model trained by OpenAI. Answer as concisely as possible.
+Knowledge cutoff: 2021-09-01
+Current date: 2023-03-01&lt;|im_end|&gt;<p>&lt;|im_start|&gt;user<p>Hello, who are you?&lt;|im_end|&gt;<p>&lt;|im_start|&gt;assistant<p>I am an AI created by OpenAI. How can I help you today?
+&lt;|im_end|&gt;<p>&lt;|im_start|&gt;user<p>Please translate &quot;Hello&quot; to German&lt;|im_end|&gt;<p>```<p>I&#x27;ve used that, too. Handling of prior conversations became a bit more manageable. But to honest, there&#x27;s a lot of markup to keep track of.<p>To me, the less-discussed JSON format^2 works best. (I&#x27;m building a macOS app in Swift)<p>```<p>{<p><pre><code>  &quot;model&quot;: &quot;gpt-3.5-turbo&quot;,
+  &quot;messages&quot;: [
+
+ {
+  &quot;role&quot;: &quot;system&quot;, 
+  &quot;content&quot;: &quot;You are a helpful and succinct assistant AI created by OpenAI.&quot;
+ },
+
+ {
+  &quot;role&quot;: &quot;user&quot;, 
+  &quot;content&quot;: &quot;Hello, who are you?&quot;
+ },
+
+ {
+  &quot;role&quot;: &quot;assistant&quot;, 
+  &quot;content&quot;: &quot;I am an AI created by OpenAI. How can I help you today?&quot;
+ },
+
+ {
+  &quot;role&quot;: &quot;user&quot;, 
+  &quot;content&quot;: &quot;Please translate &quot;Hello&quot; to German&quot;
+ }
+</code></pre>
+}<p>```<p>What do you think?<p>^1: <a href="https:&#x2F;&#x2F;platform.openai.com&#x2F;docs&#x2F;guides&#x2F;completion&#x2F;conversation" rel="nofollow">https:&#x2F;&#x2F;platform.openai.com&#x2F;docs&#x2F;guides&#x2F;completion&#x2F;conversat...</a><p>^2: <a href="https:&#x2F;&#x2F;platform.openai.com&#x2F;docs&#x2F;api-reference&#x2F;chat&#x2F;create" rel="nofollow">https:&#x2F;&#x2F;platform.openai.com&#x2F;docs&#x2F;api-reference&#x2F;chat&#x2F;create</a></div>
+<div class="src"><a href="/feed/hn/34994155/">Permalink</a> · <a href="https://news.ycombinator.com/item?id=34994155">View on Hacker News ↗</a></div>
+</article>
+</section>
+<nav class="pager"><a href="/feed/">‹ Back to the newsfeed</a><a href="/feed/archive/2023/03/">March 2023 ›</a></nav>
+<aside class="months-nav">
+<div class="group">
+<h3><a href="/feed/archive/">Archive</a></h3>
+<div class="y">2026</div>
+<ul>
+<li><a href="/feed/archive/2026/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2026/10/">October</a> <span class="n">11</span></li>
+<li><a href="/feed/archive/2026/09/">September</a> <span class="n">85</span></li>
+<li><a href="/feed/archive/2026/08/">August</a> <span class="n">40</span></li>
+<li><a href="/feed/archive/2026/07/">July</a> <span class="n">30</span></li>
+<li><a href="/feed/archive/2026/06/">June</a> <span class="n">31</span></li>
+<li><a href="/feed/archive/2026/05/">May</a> <span class="n">10</span></li>
+<li><a href="/feed/archive/2026/04/">April</a> <span class="n">33</span></li>
+<li><a href="/feed/archive/2026/03/">March</a> <span class="n">34</span></li>
+<li><a href="/feed/archive/2026/02/">February</a> <span class="n">62</span></li>
+<li><a href="/feed/archive/2026/01/">January</a> <span class="n">17</span></li>
+</ul>
+<div class="y">2025</div>
+<ul>
+<li><a href="/feed/archive/2025/12/">December</a> <span class="n">31</span></li>
+<li><a href="/feed/archive/2025/11/">November</a> <span class="n">127</span></li>
+<li><a href="/feed/archive/2025/10/">October</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2025/09/">September</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2025/08/">August</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2025/07/">July</a> <span class="n">23</span></li>
+<li><a href="/feed/archive/2025/06/">June</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2025/05/">May</a> <span class="n">21</span></li>
+<li><a href="/feed/archive/2025/04/">April</a> <span class="n">65</span></li>
+<li><a href="/feed/archive/2025/03/">March</a> <span class="n">22</span></li>
+<li><a href="/feed/archive/2025/02/">February</a> <span class="n">11</span></li>
+</ul>
+<div class="y">2024</div>
+<ul>
+<li><a href="/feed/archive/2024/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/11/">November</a> <span class="n">16</span></li>
+<li><a href="/feed/archive/2024/10/">October</a> <span class="n">12</span></li>
+<li><a href="/feed/archive/2024/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/05/">May</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/04/">April</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2023</div>
+<ul>
+<li><a href="/feed/archive/2023/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/10/">October</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2023/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/08/">August</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2023/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/06/">June</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2023/05/">May</a> <span class="n">11</span></li>
+<li><a href="/feed/archive/2023/04/">April</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2023/03/">March</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2023/02/">February</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/01/">January</a> <span class="n">9</span></li>
+</ul>
+<div class="y">2022</div>
+<ul>
+<li><a href="/feed/archive/2022/12/">December</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/11/">November</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2022/10/">October</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/09/">September</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2022/08/">August</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2022/07/">July</a> <span class="n">38</span></li>
+<li><a href="/feed/archive/2022/04/">April</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2022/03/">March</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2022/02/">February</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2022/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2021</div>
+<ul>
+<li><a href="/feed/archive/2021/12/">December</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2021/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2021/10/">October</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2021/05/">May</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/04/">April</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2021/03/">March</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2021/02/">February</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2021/01/">January</a> <span class="n">8</span></li>
+</ul>
+<div class="y">2020</div>
+<ul>
+<li><a href="/feed/archive/2020/12/">December</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2020/11/">November</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2020/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/08/">August</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2020/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/06/">June</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2020/05/">May</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/04/">April</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/03/">March</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2019</div>
+<ul>
+<li><a href="/feed/archive/2019/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/08/">August</a> <span class="n">10</span></li>
+<li><a href="/feed/archive/2019/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/06/">June</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2019/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/01/">January</a> <span class="n">3</span></li>
+</ul>
+<div class="y">2018</div>
+<ul>
+<li><a href="/feed/archive/2018/12/">December</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2018/11/">November</a> <span class="n">15</span></li>
+<li><a href="/feed/archive/2018/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2018/09/">September</a> <span class="n">14</span></li>
+<li><a href="/feed/archive/2018/08/">August</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2018/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2018/05/">May</a> <span class="n">3</span></li>
+</ul>
+<div class="y">2017</div>
+<ul>
+<li><a href="/feed/archive/2017/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2017/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2017/05/">May</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2017/04/">April</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2017/01/">January</a> <span class="n">2</span></li>
+</ul>
+<div class="y">2016</div>
+<ul>
+<li><a href="/feed/archive/2016/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2016/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2016/02/">February</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2016/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2015</div>
+<ul>
+<li><a href="/feed/archive/2015/10/">October</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2015/05/">May</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/03/">March</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2015/02/">February</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2015/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2014</div>
+<ul>
+<li><a href="/feed/archive/2014/12/">December</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2014/11/">November</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/10/">October</a> <span class="n">8</span></li>
+<li><a href="/feed/archive/2014/09/">September</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2014/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2014/05/">May</a> <span class="n">12</span></li>
+<li><a href="/feed/archive/2014/04/">April</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2014/03/">March</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2014/01/">January</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2013</div>
+<ul>
+<li><a href="/feed/archive/2013/07/">July</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2013/06/">June</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2013/05/">May</a> <span class="n">1</span></li>
+</ul>
+<div class="y">2012</div>
+<ul>
+<li><a href="/feed/archive/2012/01/">January</a> <span class="n">1</span></li>
+</ul>
+</div>
+</aside>
+<footer class="site">
+<p>© 2012–2026 Alexis Rondeau. All rights reserved.</p>
+<p>This is my personal site. Everything here — dispatches, notes, opinions — is my own and does not represent any employer, client or organisation I'm affiliated with.</p>
+<p><a href="/">Home</a> · <a href="/about/">About</a> · <a href="/feed/">Newsfeed</a> · <a href="/feed/archive/">Archive</a> · <a href="/bookmarks/">Bookmarks</a> · <a href="/feed/feed.xml">Atom</a> · <a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a> · <a rel="me" href="https://github.com/akaalias">GitHub</a> · <a rel="me" class="cta-link" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">Let's connect on LinkedIn!</a></p>
+</footer>
+</div>
+
+</body>
+</html>

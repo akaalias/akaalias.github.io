@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>December 2025 — Alexis Rondeau</title>
-<meta name="description" content="Alexis Rondeau's dispatches from December 2025: 29 dispatches.">
+<meta name="description" content="Alexis Rondeau's dispatches from December 2025: 31 dispatches.">
 <link rel="canonical" href="https://alexisrondeau.me/feed/archive/2025/12/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Alexis Rondeau">
 <meta property="og:title" content="December 2025">
-<meta property="og:description" content="Alexis Rondeau's dispatches from December 2025: 29 dispatches.">
+<meta property="og:description" content="Alexis Rondeau's dispatches from December 2025: 31 dispatches.">
 <meta property="og:url" content="https://alexisrondeau.me/feed/archive/2025/12/">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@SpringStreetNYC">
@@ -29,7 +29,7 @@
 <header class="hero">
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1><a href="/feed/archive/">Archive</a></h1>
-<p class="sub">December 2025 · 29 dispatches</p>
+<p class="sub">December 2025 · 31 dispatches</p>
 </header>
 <div class="wrap">
 <section class="feed">
@@ -205,6 +205,14 @@ For anyone interested: I've compiled 8 years of experiments with bright light th
 <span class="body"><span class="site">GitHub</span><span class="title">bipscan/src/c/check_seeds_worker_btc.c at main · akaalias/bipscan</span><span class="desc">Contribute to akaalias/bipscan development by creating an account on GitHub.</span><span class="host">↗ github.com</span></span>
 </a>
 <div class="src"><a href="/feed/t/1998718132408484021/">Permalink</a> · <a href="https://x.com/i/status/1998718132408484021">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-hn" id="hn-46216443">
+<div class="meta"><span class="kind">Hacker News comment</span><a class="when" href="/feed/hn/46216443/"><time datetime="2025-12-10T11:10:46Z">Wednesday, December 10, 2025 · 12:10</time></a></div>
+<blockquote class="ctx">
+<cite>Comment on <a href="https://news.ycombinator.com/item?id=46207505">If you're going to vibe code, why not do it in C?</a></cite>
+</blockquote>
+<div class="text"><p>Anecdote: I vibe-coded a thing in C using Claude Code + Opus 4.5 and, wow, the process and the result worked _shockingly_ well.<p>For reference, here are the two heavy-lifting workers:<p>- <a href="https:&#x2F;&#x2F;github.com&#x2F;akaalias&#x2F;bipscan&#x2F;blob&#x2F;main&#x2F;src&#x2F;c&#x2F;find_sequences_worker.c" rel="nofollow">https:&#x2F;&#x2F;github.com&#x2F;akaalias&#x2F;bipscan&#x2F;blob&#x2F;main&#x2F;src&#x2F;c&#x2F;find_seq...</a><p>- <a href="https:&#x2F;&#x2F;github.com&#x2F;akaalias&#x2F;bipscan&#x2F;blob&#x2F;main&#x2F;src&#x2F;c&#x2F;check_seeds_worker_btc.c" rel="nofollow">https:&#x2F;&#x2F;github.com&#x2F;akaalias&#x2F;bipscan&#x2F;blob&#x2F;main&#x2F;src&#x2F;c&#x2F;check_se...</a><p>and here&#x27;s a screenshot of the thing running:<p>- <a href="https:&#x2F;&#x2F;x.com&#x2F;SpringStreetNYC&#x2F;status&#x2F;1996951130526425449&#x2F;photo&#x2F;1" rel="nofollow">https:&#x2F;&#x2F;x.com&#x2F;SpringStreetNYC&#x2F;status&#x2F;1996951130526425449&#x2F;pho...</a><p>and here&#x27;s the full story:<p>LOL, I got 100% nerd-sniped by my friend Sönke this week and wound up building a small spaceship.<p>On Monday he&#x27;s like &quot;Hey, what if you found obscure seed phrases embedded in public texts? You&#x27;d only need to remember the name of the book and the paragraph and go from there.&quot;<p>I honestly could care less about crypto(currencies) and I&#x27;m 100% sure this is like cryptanalysis 101. But, yeah, it seemed like an interesting problem anyways.<p>First, I downloaded a few hundred books from Gutenberg, wrote a ruby script and found BIP39 word sequences with a tolerable buffer for filler-words.<p>Then, I was like, okay, gotta now check them against actual addresses. Downloaded a list of funded ETH addresses. Wrote the checker in ruby. Ran it. No hits but this was now definitely weirdly interesting.<p>Because: And what if I downloaded the whole pg19 text corpus to scan! And what if I&#x27;d add BTC addresses! And what if I checked every permutation of the seed phrase!<p>Everything got really slow once I got to processing 12G of raw text for finding sequences and then checking a few million candidates with 44.000+ variations per candidate.<p>So, let&#x27;s rewrite this into C! And since I&#x27;ve got 16 cores, let&#x27;s parallelize this puppy! And since it&#x27;s a MacBook, let&#x27;s use GCD! Optimize all the things!<p>Lol, so NOW this thing is so fucking FAST. Takes four minutes to go through the full pg19 corpus and generates 64,205,390 &quot;interesting&quot; seed phrases. The fully parallelized checker (see Terminal screenshot) processes 460 derived addresses per second.<p>I really don&#x27;t care if I get a match or not. I feel like I started with building a canoo and wound up with a spaceship is in itself just the best thing in the world.</div>
+<div class="src"><a href="/feed/hn/46216443/">Permalink</a> · <a href="https://news.ycombinator.com/item?id=46216443">View on Hacker News ↗</a></div>
 </article>
 <article class="item kind-repo" id="g-bipscan">
 <div class="meta"><span class="kind">Repository</span><a class="when" href="/code/bipscan/"><time datetime="2025-12-10T11:02:45Z">Wednesday, December 10, 2025 · 12:02</time></a></div>
@@ -697,6 +705,14 @@ Now, here's the whole dataset :D</p></div>
 </blockquote>
 <div class="src"><a href="/feed/t/1995842714030703004/">Permalink</a> · <a href="https://x.com/i/status/1995842714030703004">View on Twitter ↗</a></div>
 </article>
+<article class="item kind-hn" id="hn-46120343">
+<div class="meta"><span class="kind">Hacker News comment</span><a class="when" href="/feed/hn/46120343/"><time datetime="2025-12-02T11:53:17Z">Tuesday, December 2, 2025 · 12:53</time></a></div>
+<blockquote class="ctx">
+<cite>Comment on <a href="https://news.ycombinator.com/item?id=46118722">How Brian Eno Created Ambient 1: Music for Airports (2019)</a></cite>
+</blockquote>
+<div class="text"><p>Also a huge Eno fan here. Put together, I probably have listened to Music for Airports, Another Green World, Taking Tiger Mountain and Discreet Music more than any other artist. Maybe Philip Glass comes in at a close second.<p>Anyways, in 2016, Tero Parviainen (@teropa) shared this really cool long-form exploration called &quot;JavaScript Systems Music – Learning Web Audio by Recreating The Works of Steve Reich and Brian Eno&quot; that I enjoyed tremendously (and I don&#x27;t even like Javascript!)<p>Check it out at: <a href="https:&#x2F;&#x2F;teropa.info&#x2F;blog&#x2F;2016&#x2F;07&#x2F;28&#x2F;javascript-systems-music.html" rel="nofollow">https:&#x2F;&#x2F;teropa.info&#x2F;blog&#x2F;2016&#x2F;07&#x2F;28&#x2F;javascript-systems-music...</a></div>
+<div class="src"><a href="/feed/hn/46120343/">Permalink</a> · <a href="https://news.ycombinator.com/item?id=46120343">View on Hacker News ↗</a></div>
+</article>
 </section>
 <nav class="pager"><a href="/feed/archive/2026/01/">‹ January 2026</a><a class="n" href="/feed/archive/">All months</a><a href="/feed/archive/2025/11/">November 2025 ›</a></nav>
 <aside class="months-nav">
@@ -706,27 +722,27 @@ Now, here's the whole dataset :D</p></div>
 <ul>
 <li><a href="/feed/archive/2026/11/">November</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2026/10/">October</a> <span class="n">11</span></li>
-<li><a href="/feed/archive/2026/09/">September</a> <span class="n">79</span></li>
-<li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
-<li><a href="/feed/archive/2026/07/">July</a> <span class="n">25</span></li>
+<li><a href="/feed/archive/2026/09/">September</a> <span class="n">85</span></li>
+<li><a href="/feed/archive/2026/08/">August</a> <span class="n">40</span></li>
+<li><a href="/feed/archive/2026/07/">July</a> <span class="n">30</span></li>
 <li><a href="/feed/archive/2026/06/">June</a> <span class="n">31</span></li>
 <li><a href="/feed/archive/2026/05/">May</a> <span class="n">10</span></li>
 <li><a href="/feed/archive/2026/04/">April</a> <span class="n">33</span></li>
 <li><a href="/feed/archive/2026/03/">March</a> <span class="n">34</span></li>
-<li><a href="/feed/archive/2026/02/">February</a> <span class="n">57</span></li>
-<li><a href="/feed/archive/2026/01/">January</a> <span class="n">15</span></li>
+<li><a href="/feed/archive/2026/02/">February</a> <span class="n">62</span></li>
+<li><a href="/feed/archive/2026/01/">January</a> <span class="n">17</span></li>
 </ul>
 <div class="y">2025</div>
 <ul>
-<li class="here"><a href="/feed/archive/2025/12/">December</a> <span class="n">29</span></li>
-<li><a href="/feed/archive/2025/11/">November</a> <span class="n">126</span></li>
-<li><a href="/feed/archive/2025/10/">October</a> <span class="n">7</span></li>
-<li><a href="/feed/archive/2025/09/">September</a> <span class="n">5</span></li>
+<li class="here"><a href="/feed/archive/2025/12/">December</a> <span class="n">31</span></li>
+<li><a href="/feed/archive/2025/11/">November</a> <span class="n">127</span></li>
+<li><a href="/feed/archive/2025/10/">October</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2025/09/">September</a> <span class="n">7</span></li>
 <li><a href="/feed/archive/2025/08/">August</a> <span class="n">7</span></li>
 <li><a href="/feed/archive/2025/07/">July</a> <span class="n">23</span></li>
 <li><a href="/feed/archive/2025/06/">June</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2025/05/">May</a> <span class="n">18</span></li>
-<li><a href="/feed/archive/2025/04/">April</a> <span class="n">62</span></li>
+<li><a href="/feed/archive/2025/05/">May</a> <span class="n">21</span></li>
+<li><a href="/feed/archive/2025/04/">April</a> <span class="n">65</span></li>
 <li><a href="/feed/archive/2025/03/">March</a> <span class="n">22</span></li>
 <li><a href="/feed/archive/2025/02/">February</a> <span class="n">11</span></li>
 </ul>
@@ -745,34 +761,41 @@ Now, here's the whole dataset :D</p></div>
 </ul>
 <div class="y">2023</div>
 <ul>
+<li><a href="/feed/archive/2023/12/">December</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2023/11/">November</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2023/10/">October</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/10/">October</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2023/09/">September</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2023/08/">August</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2023/07/">July</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2023/06/">June</a> <span class="n">4</span></li>
-<li><a href="/feed/archive/2023/05/">May</a> <span class="n">9</span></li>
-<li><a href="/feed/archive/2023/04/">April</a> <span class="n">5</span></li>
-<li><a href="/feed/archive/2023/03/">March</a> <span class="n">5</span></li>
-<li><a href="/feed/archive/2023/02/">February</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/06/">June</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2023/05/">May</a> <span class="n">11</span></li>
+<li><a href="/feed/archive/2023/04/">April</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2023/03/">March</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2023/02/">February</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/01/">January</a> <span class="n">9</span></li>
 </ul>
 <div class="y">2022</div>
 <ul>
-<li><a href="/feed/archive/2022/11/">November</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/12/">December</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/11/">November</a> <span class="n">4</span></li>
 <li><a href="/feed/archive/2022/10/">October</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2022/09/">September</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2022/08/">August</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2022/07/">July</a> <span class="n">6</span></li>
-<li><a href="/feed/archive/2022/04/">April</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2022/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/09/">September</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2022/08/">August</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2022/07/">July</a> <span class="n">38</span></li>
+<li><a href="/feed/archive/2022/04/">April</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2022/03/">March</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2022/02/">February</a> <span class="n">4</span></li>
 <li><a href="/feed/archive/2022/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2021</div>
 <ul>
-<li><a href="/feed/archive/2021/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/12/">December</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2021/11/">November</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2021/09/">September</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2021/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/10/">October</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2021/05/">May</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/04/">April</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2021/03/">March</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2021/02/">February</a> <span class="n">5</span></li>
 <li><a href="/feed/archive/2021/01/">January</a> <span class="n">8</span></li>
 </ul>
@@ -781,7 +804,7 @@ Now, here's the whole dataset :D</p></div>
 <li><a href="/feed/archive/2020/12/">December</a> <span class="n">5</span></li>
 <li><a href="/feed/archive/2020/11/">November</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2020/09/">September</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2020/08/">August</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2020/08/">August</a> <span class="n">4</span></li>
 <li><a href="/feed/archive/2020/07/">July</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2020/06/">June</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2020/05/">May</a> <span class="n">1</span></li>
@@ -830,14 +853,14 @@ Now, here's the whole dataset :D</p></div>
 <li><a href="/feed/archive/2015/06/">June</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2015/05/">May</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2015/03/">March</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2015/02/">February</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2015/02/">February</a> <span class="n">4</span></li>
 <li><a href="/feed/archive/2015/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2014</div>
 <ul>
-<li><a href="/feed/archive/2014/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/12/">December</a> <span class="n">4</span></li>
 <li><a href="/feed/archive/2014/11/">November</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2014/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2014/10/">October</a> <span class="n">8</span></li>
 <li><a href="/feed/archive/2014/09/">September</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2014/08/">August</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2014/07/">July</a> <span class="n">3</span></li>
@@ -849,6 +872,7 @@ Now, here's the whole dataset :D</p></div>
 </ul>
 <div class="y">2013</div>
 <ul>
+<li><a href="/feed/archive/2013/07/">July</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2013/06/">June</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2013/05/">May</a> <span class="n">1</span></li>
 </ul>

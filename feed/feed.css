@@ -90,6 +90,7 @@ a.mention:hover{background:rgba(0,0,0,.1);}
 .ctx,.other{margin:0 0 16px;padding:2px 0 2px 16px;border-left:2px solid var(--accent);}
 .ctx{font-size:16px;line-height:1.5;color:#33312b;}
 .ctx cite,.other cite{display:block;font-style:italic;color:var(--muted);font-size:14px;margin-bottom:6px;}
+.hn-domain{color:var(--muted);font-size:.85em;}
 .ctx cite a,.other cite a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule);}
 .ctx-text{display:-webkit-box;-webkit-line-clamp:8;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere;}
 .ctx-text p{margin:0 0 8px;}

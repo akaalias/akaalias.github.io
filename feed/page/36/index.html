@@ -30,863 +30,724 @@
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1>Newsfeed</h1>
 <p class="lede">Everything I publish, in the order I published it: dispatches from Twitter, videos from YouTube and notes from my vault, archived here in full — text, images, video and links — so they outlive the platforms.</p>
-<p class="sub">929 dispatches since January 2012 · page 36 of 38</p>
+<p class="sub">1054 dispatches since January 2012 · page 36 of 43</p>
 </header>
 <div class="wrap">
 <section class="feed">
-<article class="item kind-note" id="n-how-to-learn-to-code-test-drive-all-the-things">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/how-to-learn-to-code-test-drive-all-the-things/"><time datetime="2015-05-24T22:00:00Z">Monday, May 25, 2015 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/how-to-learn-to-code-test-drive-all-the-things/">How To Learn To Code: Test-Drive All The Things!</a></h2>
+<article class="item kind-note" id="n-extract-pdf-highlights">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/extract-pdf-highlights/"><time datetime="2020-12-27T23:00:00Z">Monday, December 28, 2020 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/extract-pdf-highlights/">Extract PDF Highlights</a></h2>
 <div class="text note-body">
-<p><img src="Attachments/Screen_Shot_2015-05-25_at_1_39_33_PM-1024x646.png" alt="" loading="lazy"></p>
-<p>Lovely adaption of 4Clojure using Speclj and feature tests via <a href="https://twitter.com/kevinbuch_">@kevinbuch_</a>.</p>
-<p>Take it easy and learn how to code outside-in and test-first.</p>
-<p><a href="https://github.com/kevinbuch/4clojure-speclj"><a href="https://github.com/kevinbuch/4clojure-speclj">https://github.com/kevinbuch/4clojure-speclj</a></a></p>
-<p>Stop following boring tutorials making you feel like this</p>
-<p><img src="Attachments/work.gif" alt="" loading="lazy"></p>
-<p>to user-value driven aka TDD development like this…</p>
-<p><img src="Attachments/dance-party.gif" alt="" loading="lazy"></p>
+<p>I was tired of re-typing the passages I’d highlighted while reading. Now you open a marked-up PDF in Obsidian, click once, and every highlight, underline and note lands in a tidy page-ordered note you can actually search, link and build on. Hours of manual copying gone — your reading turns straight into usable notes.</p>
+<p><a href="https://github.com/akaalias/obsidian-extract-pdf-highlights">Open →</a></p>
 </div>
-<div class="src"><a href="/notes/how-to-learn-to-code-test-drive-all-the-things/">Permalink</a></div>
+<div class="src"><a href="/notes/extract-pdf-highlights/">Permalink</a></div>
 </article>
-<article class="item kind-note" id="n-add-hilarious-gifs-to-your-emails-with-one-click">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/add-hilarious-gifs-to-your-emails-with-one-click/"><time datetime="2015-05-23T22:00:00Z">Sunday, May 24, 2015 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/add-hilarious-gifs-to-your-emails-with-one-click/">Add Hilarious Gifs to Your Emails With One Click</a></h2>
-<div class="text note-body">
-<p><img src="Attachments/best.gif" alt="" loading="lazy"></p>
-<p>I made a fun Chrome Extension that lets you add hilarious Gifs to your Gmail mails.</p>
-<p>Start sending your best emails yet.</p>
-<p><img src="Attachments/demo-1024x640.png" alt="" loading="lazy"></p>
-<p> 
-So, are you ready to make your friend be like this when they get an email from you?</p>
-<p><img src="Attachments/ahhh.gif" alt="" loading="lazy"></p>
-<p>Thought so.</p>
-<p>Get the party started right now!</p>
-<p><img src="Attachments/party.gif" alt="" loading="lazy"></p>
-<p><strong><a href="https://chrome.google.com/webstore/detail/gmail-gif-exchange/pobileihpnkigmkjmmbiminofmcfdiee?hl=en">Install with just one click from the official extension page!</a></strong></p>
-</div>
-<div class="src"><a href="/notes/add-hilarious-gifs-to-your-emails-with-one-click/">Permalink</a></div>
-</article>
-<article class="item kind-repo" id="g-the-hook">
-<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/the-hook/"><time datetime="2015-03-19T02:58:27Z">Thursday, March 19, 2015 · 03:58</time></a></div>
-<h2 class="note-title"><a href="/code/the-hook/">the-hook</a></h2>
-<p class="repo-desc">A simple and fun Arduino game implementing a very simplified version of Nir Eyal's &quot;Hook&quot; model</p>
-<div class="stats"><span>Arduino</span></div>
-<div class="text note-body repo-readme">
-<h2>Watch a quick Arduino Demo on YouTube</h2>
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/DS9A2bGTiTQ" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-
-<h2>User-Driven Design Spec</h2>
-<p>Feature: Starting the game</p>
-<ul>
-<li>Scenario: Inactive State</li>
-<li>Given a player plugs in the device in power</li>
-<li>Then the reset led should be flashing</li>
-</ul>
-<p>Feature: Activating the game</p>
-<ul>
-<li>Scenario: Activate Game</li>
-<li>Given the game is in inactive state</li>
-<li>Given a player clicks the activate button</li>
-<li>Then the active led should be on</li>
-<li>Then the reset led should be off</li>
-</ul>
-<p>Feature: Playing the game</p>
-<ul>
-<li>Scenario: Play the game</li>
-<li>Given the game is in active state</li>
-<li>Given a player clicks the play button</li>
-<li>Then the active led should be off</li>
-<li>Then the game leds should flash</li>
-<li>Then the game led should land on either red or green</li>
-<li>Then the reset led should be on after 5 seconds</li>
-</ul>
-</div>
-<div class="src"><a href="/code/the-hook/">Permalink</a> · <a href="https://github.com/akaalias/the-hook">View on GitHub ↗</a> · <a href="https://www.youtube.com/watch?v=DS9A2bGTiTQ">Website ↗</a></div>
-</article>
-<article class="item kind-repo" id="g-gmail-pictures">
-<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/gmail-pictures/"><time datetime="2015-03-15T21:59:25Z">Sunday, March 15, 2015 · 22:59</time></a></div>
-<h2 class="note-title"><a href="/code/gmail-pictures/">gmail-pictures</a></h2>
-<p class="repo-desc">A Chrome Extension and Rails API to add Gif images to emails from within Gmail</p>
-<div class="stats"><span>Ruby</span></div>
-<div class="src"><a href="/code/gmail-pictures/">Permalink</a> · <a href="https://github.com/akaalias/gmail-pictures">View on GitHub ↗</a> · <a href="https://chrome.google.com/webstore/detail/gmail-gif-exchange/pobileihpnkigmkjmmbiminofmcfdiee?hl=en">Website ↗</a></div>
-</article>
-<article class="item kind-repo" id="g-bookmarks-hateoas">
-<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/bookmarks-hateoas/"><time datetime="2015-02-16T23:25:09Z">Tuesday, February 17, 2015 · 00:25</time></a></div>
-<h2 class="note-title"><a href="/code/bookmarks-hateoas/">bookmarks-HATEOAS</a></h2>
-<p class="repo-desc">A simple Spring Boot Application persisting Users and Bookmarks to a Hibernate DB and providing a RESTful, HATEOAS-enabled interface</p>
-<div class="stats"><span>Java</span></div>
-<div class="text note-body repo-readme">
-<h1>Bookmarks REST + HATEOAS Implementation</h1>
-<p>A simple Spring Boot Application persisting Users and Bookmarks to a Hibernate DB and providing a RESTful, HATEOAS-enabled interface</p>
-<h2>To run in STS:</h2>
-<p>Right-click the project folder -&gt; Run as… -&gt; Spring Boot App</p>
-<h2>To run test suite:</h2>
-<p>Right-click the project folder -&gt; Run as… -&gt; JUnit Test</p>
-<h2>To try it out</h2>
-<p><code> curl http://localhost:8080/jhoeller/bookmarks/4 | python -m json.tool</code></p>
-<pre><code>{
-    &quot;bookmark&quot;: {
-        &quot;description&quot;: &quot;A description&quot;,
-        &quot;id&quot;: 4,
-        &quot;uri&quot;: &quot;http://bookmark.com/2/dsyer&quot;
-    },
-    &quot;links&quot;: [
-        {
-            &quot;href&quot;: &quot;http://bookmark.com/2/dsyer&quot;,
-            &quot;rel&quot;: &quot;bookmark-uri&quot;
-        },
-        {
-            &quot;href&quot;: &quot;http://localhost:8080/dsyer/bookmarks&quot;,
-            &quot;rel&quot;: &quot;bookmarks&quot;
-        },
-        {
-            &quot;href&quot;: &quot;http://localhost:8080/dsyer/bookmarks/4&quot;,
-            &quot;rel&quot;: &quot;self&quot;
-        }
-    ]
-}
-</code></pre>
-</div>
-<div class="src"><a href="/code/bookmarks-hateoas/">Permalink</a> · <a href="https://github.com/akaalias/bookmarks-HATEOAS">View on GitHub ↗</a></div>
-</article>
-<article class="item kind-repo" id="g-bookmarks">
-<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/bookmarks/"><time datetime="2015-02-16T23:25:09Z">Tuesday, February 17, 2015 · 00:25</time></a></div>
-<h2 class="note-title"><a href="/code/bookmarks/">bookmarks</a></h2>
-<p class="repo-desc">A simple Spring Boot Application persisting Users and Bookmarks to a Hibernate DB and providing a RESTful interface</p>
-<div class="stats"><span>Java</span></div>
-<div class="text note-body repo-readme">
-<p>A simple Spring Boot Application persisting Users and Bookmarks to a Hibernate DB and providing a RESTful interface</p>
-<h2>To run in STS:</h2>
-<p>Right-click the project folder -&gt; Run as… -&gt; Spring Boot App</p>
-<h2>To run test suite:</h2>
-<p>Right-click the project folder -&gt; Run as… -&gt; JUnit Test</p>
-</div>
-<div class="src"><a href="/code/bookmarks/">Permalink</a> · <a href="https://github.com/akaalias/bookmarks">View on GitHub ↗</a></div>
-</article>
-<article class="item kind-repo" id="g-bookmarks-hateoas-secured">
-<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/bookmarks-hateoas-secured/"><time datetime="2015-02-16T23:25:09Z">Tuesday, February 17, 2015 · 00:25</time></a></div>
-<h2 class="note-title"><a href="/code/bookmarks-hateoas-secured/">bookmarks-HATEOAS-Secured</a></h2>
-<p class="repo-desc">A simple Spring Boot Application persisting Users and Bookmarks to a Hibernate DB and providing a OAuth2 secured RESTful, HATEOAS-enabled interface</p>
-<div class="stats"><span><b>1</b> fork</span> · <span>Java</span></div>
-<div class="text note-body repo-readme">
-<h1>Bookmarks REST + HATEOAS Implementation</h1>
-<p>A simple Spring Boot Application persisting Users and Bookmarks to a Hibernate DB and providing a RESTful, HATEOAS-enabled interface</p>
-<h2>To run in STS:</h2>
-<p>Right-click the project folder -&gt; Run as… -&gt; Spring Boot App</p>
-<h2>To run test suite:</h2>
-<p>Right-click the project folder -&gt; Run as… -&gt; JUnit Test</p>
-<h2>To try it out</h2>
-<p><code> curl http://localhost:8080/jhoeller/bookmarks/4 | python -m json.tool</code></p>
-<pre><code>{
-    &quot;bookmark&quot;: {
-        &quot;description&quot;: &quot;A description&quot;,
-        &quot;id&quot;: 4,
-        &quot;uri&quot;: &quot;http://bookmark.com/2/dsyer&quot;
-    },
-    &quot;links&quot;: [
-        {
-            &quot;href&quot;: &quot;http://bookmark.com/2/dsyer&quot;,
-            &quot;rel&quot;: &quot;bookmark-uri&quot;
-        },
-        {
-            &quot;href&quot;: &quot;http://localhost:8080/dsyer/bookmarks&quot;,
-            &quot;rel&quot;: &quot;bookmarks&quot;
-        },
-        {
-            &quot;href&quot;: &quot;http://localhost:8080/dsyer/bookmarks/4&quot;,
-            &quot;rel&quot;: &quot;self&quot;
-        }
-    ]
-}
-</code></pre>
-</div>
-<div class="src"><a href="/code/bookmarks-hateoas-secured/">Permalink</a> · <a href="https://github.com/akaalias/bookmarks-HATEOAS-Secured">View on GitHub ↗</a></div>
-</article>
-<article class="item kind-note" id="n-use-the-force-luke-3-effective-breathing-techniques-for-decision-makers">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/use-the-force-luke-3-effective-breathing-techniques-for-decision-makers/"><time datetime="2015-01-06T23:00:00Z">Wednesday, January 7, 2015 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/use-the-force-luke-3-effective-breathing-techniques-for-decision-makers/">Use the Force, Luke! 3 Effective Breathing Techniques For Decision-Makers</a></h2>
-<div class="text note-body clamped">
-<p><em>Volume 1 of A Short Course for the Use of Your Nervous System According to the Instructions of the Manufacturers</em></p>
-<p>Welcome!</p>
-<p>The better you know how to breathe, the better you can perform the mental activities of your day.</p>
-<p>If you spend a lot of time making decisions and solving hard problems with your mind, having access to simple techniques like these will help you stay focussed, keep your calm and guide your thoughts towards your goals and aspirations.</p>
-<p>Personally, what I always loved about these techniques is that I can adjust my current mental state rapidly to what I need it to be depending on the situation and challenge ahead.</p>
-<p>It is like an app-store for your mind!</p>
-<p>For example:</p>
+<article class="item kind-repo" id="g-obsidian-extract-pdf">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/obsidian-extract-pdf/"><time datetime="2020-12-21T13:59:46Z">Monday, December 21, 2020 · 14:59</time></a></div>
+<h2 class="note-title"><a href="/code/obsidian-extract-pdf/">obsidian-extract-pdf</a></h2>
+<p class="repo-desc">Extract PDFs to Markdown within Obsidian</p>
+<div class="stats"><span><b>270</b> stars</span> · <span><b>24</b> forks</span> · <span>JavaScript</span></div>
+<div class="text note-body repo-readme clamped">
+<h2>Extract PDF text to Markdown</h2>
+<p>Allows you to extract the basic textual content of a PDF into a Markdown file. Works well with headings, paragraphs and lists.</p>
+<h3>Demo</h3>
+<p><img src="/code/media/gh-323454860-da09323c9ad6ebbe.gif" alt="" loading="lazy"></p>
+<h3>How to use this plugin</h3>
+<p>After you’ve installed and activated the plugin:</p>
 <ol>
-<li>If you have trouble focussing, breathing deeply will get your focus back in mere seconds.</li>
-<li>If you feel stressed out, alternating your breath between your left and right nostril will take off the edge quickly.</li>
-<li>If thoughts crowd your mind and you need to make a decision, practicing one-minute breath will help you rapidly control your mind.</li>
+<li>Drag your PDF into Obsidian</li>
+<li>Open the PDF within Obsidian</li>
+<li>Make sure the pane with your PDF is focused</li>
+<li>Click the “PDF to Markdown” button in the sidebar</li>
+<li>Edit the generated markdown file to your needs</li>
 </ol>
-<p>These techniques exist.</p>
-<p>They’re easy to learn.</p>
-<p>Yet, until recently these techniques were kept secret. You are at the fore-front of learning how to train like a Jedi!</p>
-<p>In the coming days, I would like to teach you 3 essential Kundalini Yoga breathing techniques that I have personally tested and validated their benefits over extended periods of time. I will introduce you to each technique individually and provide you with a simple set of homework exercises respectively.</p>
-<p>The goal for me is to show you simple, easy and effective techniques that you can easily incorporate into your daily life.</p>
-<h3>The real Jedi-Training</h3>
-<p>Kundalini Yoga is the closest we have to real Jedi-Training.</p>
-<p>Historically, Kundalini Yoga is considered the most powerful, most comprehensive and effective yogic school in existence. In practical terms, the techniques taught in Kundalini Yoga are designed to rapidly affect the two control-systems in your body: Your nervous and hormonal system.</p>
-<p>Originating in the north-indian region of Punjab, and passed on through the centuries within the Sikh culture. Its techniques were kept strictly secret until recently.</p>
-<p>In 1969, Kundalini Yoga and Meditation was first openly taught in the West by Harbhajan Singh Khalsa as a very accessible way to feel better, think better and make better decisions.</p>
-<p>It is the only Yogic school that is taught “within society.” This means the techniques I will teach you were designed **for people who have a real life, run businesses, and have a social and a family life to attend to.</p>
-<p>Kundalini Yoga is free of “magical mystery mumbo-jumbo” and instead provides a straight-forward approach to utilizing millennia-old yogic techniques to deal with the challenges of our times.</p>
-<p>It is for people who want to increase their decision-making ability to increase their personal success and the success of the people around them.</p>
-<p>Lastly, Kundalini Yoga does not require you to “believe” in anything else but your personal success. It is practiced and taught very matter-of-factly. Again, if your day-to-day is spent making decisions and solving hard problems you’ll gain an advantage having these tools in your tool-belt.</p>
-<h2>Setting your mind</h2>
-<p>First things first.</p>
-<p>Let’s set you up for success with these 3 techniques.</p>
-<p>The first thing I will teach you is to mentally prepare yourself to benefit at a maximum from these and future breathing techniques. When you have the right mind-set, it will be easier for you to get the most out of the other techniques.</p>
-<p>This first part is considered a Psycho-Cybernetic exercise in which you “pre-experience” your desired outcome by imagination. When given vivid mental scenarios, your nervous system can not distinguish between what is real and what is imagined. We will be using this opportunity to pre-program an ideal outcome before moving on to the actual techniques.</p>
-<p>This type of pre-experiencing a desired outcome is common in sports psychology to maximize the success of the actual practice.</p>
-<h3>Instructions</h3>
-<p>To kick-start your learning process, set aside 3 minutes and read the following section carefully. While you are reading it, mentally form a detailed picture of yourself acting out the instructions. Use your imagination to the fullest and enjoy the process.</p>
-<p>Notice that this is a mental exercise and you are not required to physically act-out the instructions just yet. In the next sections, I will instruct you to implement the actual techniques but for the this first part all you have to do is use your imagination.</p>
-<ul>
-<li>Imagine yourself sitting on a comfortable chair in a quiet room.</li>
-<li>See your feet planted firmly on the floor. Your feet and legs feel alert and relaxed.</li>
-<li>See yourself turning off your phone and any other distractions around you.</li>
-<li>See yourself straightening your spine.</li>
-<li>Notice how the muscles of your back stay relaxed.</li>
-<li>Notice that your chest, your shoulders, your arms and your face relax.</li>
-<li>See yourself sitting calmly with your focus on your breath.</li>
-<li>See yourself breathing deeply and without effort.</li>
-<li>Notice how you feel confident about your breathing.</li>
-<li>Observe yourself staying focussed and staying free of distractions.</li>
-<li>See yourself experiencing a sense of success and accomplishment.</li>
-<li>See yourself calm and clear-headed.</li>
-<li>See yourself bringing this calmness and clear-headedness into your work day.</li>
-<li>See yourself calmly thinking and evaluating options.</li>
-<li>See yourself finding solutions to hard problems.</li>
-<li>See yourself staying calm in the midst of a stressful work day.</li>
-</ul>
-<h3>Your homework for the next 3 days</h3>
-<p>For the next 3 days, find 3 minutes and re-read and mentally rehearse the preceding list carefully.</p>
-<p>While you are reading it, create a clear and sharp mental picture of yourself. Increase the fidelity, the sights, sounds and feelings with every session.</p>
-<p>While you can continue giving the techniques a spin, I highly recommend doing this prep-work beforehand.</p>
-<h3>Next steps</h3>
-<p>Now that you have prepared your mind-set correctly, you are ready to move on the actual techniques.</p>
-<p>In the following parts, we will look at 3 specific breathing techniques. With your mind-set prepared correctly, I am certain that you will quickly pick up the practice.</p>
-<p>I recommend you to learn one technique for a few days instead of rushing through all of them at once.</p>
-<h2>1. Increase your focus with Deep Breathing</h2>
-<p>Deep breathing is an essential yogic technique that underlies all others.</p>
-<p>It is a simple technique but it also is still possible to do it wrong. I want you to know the exact way to do it right. Deep breathing will rapidly relax your body and calm your mind.</p>
-<p>After just a minute of deep breathing you will notice a significant improvement in how you think and feel about yourself, your environment and your challenges ahead.</p>
-<p>And, as a little a teaser, there <em>is</em> a trick to breathing deeper that you most likely do not know.</p>
-<h3>Instructions</h3>
-<p>Here is how to prepare your Deep Breathing session:</p>
+<h3>Tips &amp; Tricks for editing the generated markdown file</h3>
+<p>I just went ahead and turned a 500 page PDF into markdown and found that it worked better and faster than I expected.</p>
+<h4>Bulk-removing page footers</h4>
+<p>The book I used had the same footer on every page. That means they got copied into the markdown file over and over, too.</p>
+<p>For bulk search-and-replace I use the Atom editor (https://atom.io):</p>
+<ol start="0">
+<li>Copy the footer text into your clipboard</li>
+<li>Download and install Atom</li>
+<li>Open Atom and open the Markdown file inside</li>
+<li>Use “Find -&gt; Find in Buffer” and paste the footer text</li>
+<li>Use the button “Replace” or “Replace All” to remove footer text</li>
+</ol>
+<h4>Remove a single space before a new line of text</h4>
+<p>Weirdly, sometimes, new lines of text had a space infront of them. Such as:</p>
+<p><code> Some text</code></p>
+<p>…which resulted in Obisidian treating it as a sub-block of the preceding line.</p>
+<p>To remove the space for those lines, I used a regular expression search-and-replace:</p>
 <ol>
-<li>Sit up and straighten your spine.</li>
-<li>Place your feet firmly on the ground.</li>
-<li>Slightly tilt your pelvis forward to further elongate your spine.</li>
-<li>Gently lift your chest to allow your belly to relax.</li>
-<li>Relax your shoulders.</li>
-<li>Relax your face.</li>
-<li>Close your eyes.</li>
+<li>In “Find in current buffer” activate “Regex Search” (The <code>.*</code> icon)</li>
+<li>Enter <code>^([ ]|\t)+</code> into the search field</li>
+<li>Use the button “Replace” or “Replace All” to remove the space</li>
 </ol>
-<p>For the next moments I want you to observe your breath without manipulating it. If your breath is currently shallow, that’s okay. Give yourself 10–20 seconds for this observation.</p>
-<p>Start deep breathing through your nose on your next EXHALE:</p>
+<h2>Known issues</h2>
+<h3>First-time use</h3>
+<p>If you had a PDF open in Obisidian <em>before</em> you installed and activated the plugin, hitting the button may not work. I’ve had this issue with other plugins as well. The code just doesn’t hook up to already-open files.</p>
+<p>The solution is to simply close the PDF note and re-open it. That will allow the plugin to hook into it.</p>
+<h3>Limited PDF parsing</h3>
+<p>Please understand that this is a basic, best-effort tool to get basic text and headings from a PDF. It really just gets the text from a pdf and turns it into Markdown. The plugin doesn’t handle anything more complex, like tables, images, annotations etc:</p>
+<ul>
+<li>Does not turn PDF highlights and annotations into MD highlights</li>
+<li>Does not retain PDF numbered lists</li>
+<li>Does not skip text in headers and footers</li>
+</ul>
+</div>
+<div class="more"><a href="/code/obsidian-extract-pdf/">Read the whole README ›</a></div>
+<div class="src"><a href="/code/obsidian-extract-pdf/">Permalink</a> · <a href="https://github.com/akaalias/obsidian-extract-pdf">View on GitHub ↗</a></div>
+</article>
+<article class="item kind-note" id="n-extract-pdf">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/extract-pdf/"><time datetime="2020-12-20T23:00:00Z">Monday, December 21, 2020 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/extract-pdf/">Extract PDF</a></h2>
+<div class="text note-body">
+<p>This one frees the text trapped inside a PDF. One click turns a document into clean, editable notes — headings, paragraphs and lists intact — so you can quote it, rework it, and weave it into your own writing instead of squinting at a locked-up file.</p>
+<p><a href="https://github.com/akaalias/obsidian-extract-pdf">Open →</a></p>
+</div>
+<div class="src"><a href="/notes/extract-pdf/">Permalink</a></div>
+</article>
+<article class="item kind-video" id="v-KWdEatdD2bo">
+<div class="meta"><span class="kind">Video</span><a class="when" href="/videos/how-to-create-ad-hoc-mocs-with-obsidian/"><time datetime="2020-12-07T10:16:06Z">Monday, December 7, 2020 · 11:16</time></a></div>
+<h2 class="note-title"><a href="/videos/how-to-create-ad-hoc-mocs-with-obsidian/">How To Create Ad-Hoc MOCs With Obsidian</a></h2>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/KWdEatdD2bo" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+<div class="text video-desc"><p>A quick walk-through of the process to using the Highlight Plugin from <a href="https://github.com/akaalias/extract-highlights-plugin">github.com/akaalias/extract-highlights-plugin</a></p>
+<p>The Chrome &quot;Markdownload&quot; plugin I'm using in the beginning is here: <a href="https://chrome.google.com/webstore/detail/markdownload-markdown-web/pcmpcfapbekmbjjkdalcgopdkipoggdi?hl=en-GB">chrome.google.com/webstore/detail/markdownloa…</a></p></div>
+<div class="stats"><span><b>9:37</b> long</span></div>
+<div class="src"><a href="/videos/how-to-create-ad-hoc-mocs-with-obsidian/">Permalink</a> · <a href="https://www.youtube.com/watch?v=KWdEatdD2bo">Watch on YouTube ↗</a></div>
+</article>
+<article class="item kind-repo" id="g-dangerzone-writing-plugin">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/dangerzone-writing-plugin/"><time datetime="2020-11-19T11:26:58Z">Thursday, November 19, 2020 · 12:26</time></a></div>
+<h2 class="note-title"><a href="/code/dangerzone-writing-plugin/">dangerzone-writing-plugin</a></h2>
+<p class="repo-desc">A plugin that forces you to write for X seconds. If you pause for more than 5 seconds, everything you've written in this note is DELETED.</p>
+<div class="stats"><span><b>81</b> stars</span> · <span><b>5</b> forks</span> · <span>TypeScript</span></div>
+<div class="text note-body repo-readme clamped">
+<h2>🔥 Dangerzone Writing 🔥 for Obsidian</h2>
+<blockquote>
+<p>“Elegant”</p>
+</blockquote>
+<blockquote>
+<p>“Dangerous”</p>
+</blockquote>
+<blockquote>
+<p>“Relaxing”</p>
+</blockquote>
+<blockquote>
+<p>“Perverted”</p>
+</blockquote>
+<blockquote>
+<p>“Your best friend”</p>
+</blockquote>
+<blockquote>
+<p>“Your worst nightmare”</p>
+</blockquote>
+<p>Hey all, I’ve been a paying customer of <a href="https://apps.apple.com/de/app/flowstate/id1060276201">FlowState</a> since 2016 and wanted something similar for Obsidian.</p>
+<p>It’s really fun. And stressful. But mostly fun.</p>
+<p><strong>It’s simple:</strong></p>
 <ol>
-<li>Begin by gently relaxing your upper lungs letting your breath flow out.</li>
-<li>Continue your exhale by gently squeezing your ribcage from top to bottom.</li>
-<li>Continue your exhale by slowly pulling in your navel towards your spine pushing out more air.</li>
-<li>Finish your exhale by pulling your navel just one or two more inches further towards your spine.</li>
-<li>To begin your inhale, relax the muscles around your navel, ribcage and shoulders.</li>
-<li>Let air naturally and without effort flow into your abdominal region, let your belly expand.</li>
-<li>Continue your inhale by letting your ribcage fill and expand itself.</li>
-<li>Finish your inhale by letting your upper lungs fill and expand. It’s easy to tense up a bit here, so mentally remind yourself to relax here.</li>
-<li>Repeat by starting at step 1.</li>
-<li>Finish your session by holding in your last inhale for 3–5 seconds.</li>
-<li>Exhale and relax for 10 seconds.</li>
+<li>You start a timer for X minutes.</li>
+<li>THEN, during those X minutes you MUST write continuously.</li>
+<li>The catch: If you PAUSE for longer than 5 seconds, everything you’ve written is DELETED.</li>
 </ol>
-<h3>Your homework for the next 3 days</h3>
-<h4>Day 1</h4>
+<p>Here’s an example session:</p>
+<p><img src="/code/media/gh-314226453-909187be92b248d6.gif" alt="" loading="lazy"></p>
+<h2>When to use Dangerzone Writing</h2>
 <ul>
-<li>Set aside 3 minutes and re-read the instructions above.</li>
-<li>Begin with 10 seconds of observing your current breath without manipulation.</li>
-<li>Complete 5 deep breaths using the instructions with your eyes closed.</li>
+<li>Use it to “warm” up your writing muscle</li>
+<li>Use it to write that first draft however dirty and ragged</li>
+<li>Use it to keep you laser-focused on writing</li>
 </ul>
-<h4>Day 2:</h4>
-<ul>
-<li>Set aside 3 minutes and re-read the instructions above.</li>
-<li>Begin with 10 seconds of observing your current breath without manipulation.</li>
-<li>Complete 10 deep breaths using the instructions with your eyes closed.</li>
-</ul>
-<h4>Day 3:</h4>
-<ul>
-<li>Set aside 5 minutes and re-read the instructions above.</li>
-<li>Begin with 10 seconds of observing your current breath without manipulation.</li>
-<li>Complete 15 deep breaths using the instructions with your eyes closed.</li>
-</ul>
-<h3>Notes</h3>
-<p>The exhale is done “mechanically.” That is to say, you will use the power of the muscles of your upper chest, the muscles around your ribcage and the muscles of your abdomen to squeeze out the air from your lungs. You start at the top of your lungs and finish with your abdomen and navel.</p>
-<p>The inhale should happen “effortlessly.” That is to say, try to relax the muscles around your lungs and let air flow in. You start inhaling into your abdomen and finish at the top of your lungs.</p>
-<h2>2. Make better, more rational decisions with Alternate Nostril Breathing</h2>
-<p>When your mind is clear and your emotions calm you can observe a situation from all angles and make your best decision.</p>
-<p>When you feel stressed and emotionally crowded it is much harder to make an objective decision.</p>
-<p>This technique will help reset your thinking/feeling system within a minute or two. This is one of my personal all-time favorite ways to feel better when things get crazy and I have to make a clear decision. Alternate nostril breathing is easy and can be done pretty much anywhere and anytime.</p>
-<p>I can’t wait to show you this one.</p>
-<h3>Instructions</h3>
-<p>Here is how to prepare your alternate nostril breathing session:</p>
+<h2>How to use the Dangerzone Writing plugin</h2>
 <ol>
-<li>Sit up and straighten your spine.</li>
-<li>Place your feet firmly on the ground.</li>
-<li>Slightly tilt your pelvis forward to further elongate your spine.</li>
-<li>Gently lift your chest to allow your belly to relax.</li>
-<li>Relax your shoulders.</li>
-<li>Relax your face.</li>
-<li>Close your eyes.</li>
+<li>Open a note in Obsidian^</li>
+<li>Click the “Stopwatch” icon in the left bar to start the timer</li>
+<li>From now on, the count-down from 60 seconds to 0 starts</li>
+<li>Start writing!</li>
+<li>DO. NOT. STOP. WRITING for 60 seconds.</li>
+<li>If you DO stop writing for more than 5 seconds, everything you’ve written in this note so far is DELETED.</li>
 </ol>
-<p>After giving yourself a few seconds to settle into this position, place your left hand on your left thigh. The fingers of your left hand are relaxed.</p>
-<p>Now bring your right hand towards your face. The fingers of your right hand are together and your fingertips point towards the ceiling.</p>
-<p>To practice Alternate Nostril breathing do this:</p>
+<p>Again, let me be clear: If you stop for more than 5 seconds, your writing in this note will be deleted.</p>
+<p>^ I usually create an empty one, but that’s not necessary</p>
+<h2>How to start as a beginner</h2>
+<p>If you’ve never used this type of writing before, I highly recommend starting with the defaults and an empty note to get a feeling for it.</p>
+<h3>A few simple tips and tricks</h3>
 <ol>
-<li>Your INHALE: Place the soft padding of your right thumb under your right nostril to block it off and deeply inhale through your left nostril.</li>
-<li>Your EXHALE: Use your right pinky to gently block off your left nostril. Blocking off your left nostril will direct all the air of your exhale to exit through your right nostril.</li>
-<li>Repeat: INHALE through your LEFT nostril and EXHALE through your RIGHT nostril.</li>
-<li>Continue for 1–3 minutes.</li>
-<li>To finish up, exhale completely and hold your breath out for 3–5 seconds. The relax for a few seconds.</li>
+<li><strong>Fake it till you make it</strong>: It’s totally fine to write a lot of “nothing” such as <code>Well, I don't know what to write here. Nothing comes to mind. I'm sitting here. Writing...</code> - I do this all the time. You’ll eventually find a thought that is interesting, so don’t worry.</li>
+<li><strong>Don’t Panic</strong>: Just because there’s a countdown, doesn’t mean you have to freak out. I know this sounds weird, but as long as you hit a key every second or so, this thing won’t blow up. So, instead of switching to PANIC-MODE as soon as you start a session, just stay calm and start writing.</li>
+<li><strong>Start small</strong>: Gradually increase session time as you get more comfortable with this type of challenge.</li>
+<li><strong>Learn to touch-type</strong>: <a href="https://www.typingclub.com/">Learn to touch-type</a> if you’re not yet fully touch-typing and you’re struggling with the mechanics to keep up. This is one of the most powerful hard-skills I’ve ever learned.</li>
 </ol>
-<h3>Your homework for the next 3 days</h3>
-<h4>Day 1:</h4>
+<h2>How to personalize your sessions and fuse time</h2>
+<p>To optimize your flow experience, you can configure your:</p>
+<h3>Writing Session Timing Settings</h3>
 <ul>
-<li>Set aside 3 minutes and re-read the instructions above.</li>
-<li>Begin with 10 seconds of observing your current breath without manipulation.</li>
-<li>Complete 10 rounds of alternate nostril breathing with your eyes closed.</li>
+<li><strong>Countdown duration in seconds</strong>: Default is 60s, How many seconds you want your Dangerzone Writing session to last?</li>
+<li><strong>Seconds-to-deletion fuse</strong>: Default is 5s, How many seconds until your text is deleted?</li>
 </ul>
-<h4>Day 2:</h4>
+<h3>Immersive Writing Settings</h3>
 <ul>
-<li>Set aside 3 minutes and re-read the instructions above.</li>
-<li>Begin with 10 seconds of observing your current breath without manipulation.</li>
-<li>Complete 15 rounds of alternate nostril breathing with your eyes closed.</li>
+<li><strong>Session Font-Size</strong>: Increases editor font-size temporarily for a more immersive experience. Leave empty to keep default size</li>
+<li><strong>Session Background Color</strong>: Changes background color of editor temporarily for a more immersive experience. Find a good color at <a href="https://htmlcolorcodes.com/"><a href="https://htmlcolorcodes.com">https://htmlcolorcodes.com</a></a>. Leave empty to omit</li>
 </ul>
-<h4>Day 3:</h4>
+<h2>Successful sessions tracking</h2>
+<p>You get a +1 🎉 for every Dangerzone Writing session you complete successfully.
+“Successfully” means that once the timer is up, there is at least <em>some</em> text there (indicating you didn’t just give up and let the countdown finish).</p>
+<h2>Let me know how it goes!</h2>
 <ul>
-<li>Set aside 3 minutes and re-read the instructions above.</li>
-<li>Begin with 10 seconds of observing your current breath without manipulation.</li>
-<li>Complete 20 rounds of alternate nostril breathing with your eyes closed.</li>
+<li>How do YOU use the Dangerzone? <a href="https://forum.obsidian.md/t/dangerzone-flowstate-like-plugin-prototype/8776">Leave a comment in the forum</a></li>
+<li>Got an idea for a setting? <a href="https://forum.obsidian.md/t/dangerzone-flowstate-like-plugin-prototype/8776">Leave a comment in the forum</a></li>
+<li>Wanna share a story of one of your Dangerzone sessions? <a href="https://forum.obsidian.md/t/dangerzone-flowstate-like-plugin-prototype/8776">Leave a comment in the forum</a></li>
+<li>Wanna share your successful sessions count? <a href="https://forum.obsidian.md/t/dangerzone-flowstate-like-plugin-prototype/8776">Leave a comment in the forum</a></li>
+<li>The plugin ate your homework? Well. Sorry but that’s what it does (See disclaimer)</li>
 </ul>
-<h3>Notes</h3>
-<p>One of your nostrils is usually more stuffed than the other. If you feel you’re not getting air in or out fast enough, quickly blow your nose before a session.</p>
-<p>Re-use the deep breathing technique you learned earlier to really get the most out of this one.</p>
-<p>When you use your pinky to block your left nostril, be gentle but ensure that you block off air-flow completely.</p>
-<p>When you use the soft padding of your thumb to block off your right nostril, place it <strong>under</strong> the opening. You will notice it fits nicely.</p>
-<h2>3. Learn how to control your mind with One-Minute Breath</h2>
-<p>Here is a challenge.</p>
-<p>With the two preceding techniques under your belt, it’s time to step up your game.</p>
-<p>Our mind produces hundreds of thoughts per minute (and that’s a good thing.) However, only when you have a steering-wheel you can guide and direct your thoughts towards the goals you have in your professional and personal life. Learning to do the one-minute breath will allow you to rapidly gain control over your thoughts in hectic and stressful times.</p>
-<p>Technically speaking, breathing at the rate of one breath per minute develops cooperation between the hemispheres of the brain, brings the mind under control and releases worry and anxieties.</p>
-<p>Another cool thing is that like Deep Breathing, it’s pretty easy to do without anyone around you noticing you’re doing it. So, here is another really cool stealth technique for you.</p>
-<h4>A heads-up</h4>
-<p>In practice, the goal of a One-Minute Breath is to segment your breath into three 20-second partitions:</p>
-<ul>
-<li>Inhale for 20 seconds</li>
-<li>Hold your breath in for 20 second</li>
-<li>Exhale for 20 seconds</li>
-</ul>
-<p>However, this takes real practice and can be overwhelming the first few times. So, to make it easier for you to learn, we will begin with smaller partitions starting at 3 seconds each and gradually increase over time.</p>
-<h3>Instructions</h3>
-<p>Here is how to prepare your one-minute breath session:</p>
+<h2>Thank you</h2>
+<p>Thank you ryanjamurphy, roberthaisfield, macedotavares, afokapu, tristanbailey, lukeleppan, AutonomyGaps and hicsuntdragons for your feedback and support.</p>
+<h2>Disclaimer</h2>
+<p>This plugin is provided as-is with NO warranty that it’ll work exactly as you expect. It’s made to DELETE text in a note after X seconds of inactivity when you’re start a session. Please do not hold me responsible if it does, in fact, DELETE your text. That’s what it does. On the other hand there is always the possibility of a bug that makes this plugin behave unexpectedly.</p>
+</div>
+<div class="more"><a href="/code/dangerzone-writing-plugin/">Read the whole README ›</a></div>
+<div class="src"><a href="/code/dangerzone-writing-plugin/">Permalink</a> · <a href="https://github.com/akaalias/dangerzone-writing-plugin">View on GitHub ↗</a></div>
+</article>
+<article class="item kind-repo" id="g-text-expander-plugin">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/text-expander-plugin/"><time datetime="2020-11-09T11:56:34Z">Monday, November 9, 2020 · 12:56</time></a></div>
+<h2 class="note-title"><a href="/code/text-expander-plugin/">text-expander-plugin</a></h2>
+<p class="repo-desc">A bare-bones and opinionated proof-of-concept text expander utility for Obsidian</p>
+<div class="stats"><span><b>12</b> stars</span> · <span><b>2</b> forks</span> · <span>TypeScript</span></div>
+<div class="text note-body repo-readme clamped">
+<h2>Text-expander</h2>
+<p>A bare-bones proof-of-concept implementation of a simple text-expander in Obsidian.</p>
 <ol>
-<li>Sit up and straighten your spine.</li>
-<li>Place your feet firmly on the ground.</li>
-<li>Slightly tilt your pelvis forward to further elongate your spine.</li>
-<li>Gently lift your chest to allow your belly to relax.</li>
-<li>Relax your shoulders.</li>
-<li>Relax your face.</li>
-<li>Close your eyes.</li>
+<li>Uses <code>::</code> (two colons) to start the trigger-sequence</li>
+<li>Define your own custom trigger keyword like <code>foo</code></li>
+<li>In the editor, type <kbd>::foo</kbd> + <kbd>ENTER</kbd> (or <kbd>Tab</kbd> or <kbd>Space</kbd>) to expand</li>
 </ol>
-<p>For the next moments I want you to observe your breath without manipulating it. If your breath is currently shallow, that’s okay. Give yourself 10 seconds for this observation.</p>
+<p>Built-in is <kbd>::date</kbd> which will expand to todays date such as <code>Mon Nov 09 2020</code> and <kbd>::time</kbd> which will expand to your current timezone’s time.</p>
+<h2>Demo</h2>
+<p><img src="/code/media/gh-311323968-bd75117eb78252c2.gif" alt="Demo" loading="lazy"></p>
+<h2>Settings</h2>
+<p><img src="/code/media/gh-311323968-5b629d1fabd23c4e.png" alt="Settings" loading="lazy"></p>
+<h2>Hacking and Help</h2>
+<p>This is mostly a proof of concept for myself and it’s rather, erm, “pragmatic” code. If you see something you’d like to change, let me know. Here’s how you can fiddle around on your own yourself and send a pull-request</p>
+<h3>Clone and make new branch</h3>
+<ul>
+<li><code>cd $VAULT/.obsidian/plugins</code></li>
+<li><code>git clone &lt;https://github.com/akaalias/text-expander-plugin</code>&gt;</li>
+<li><code>cd text-expander-plugin</code></li>
+<li><code>git checkout -b my_branch</code></li>
+<li><code>git remote add upstream &lt;https://github.com/akaalias/text-expander-plugin</code>&gt;</li>
+</ul>
+<h3>Install deps</h3>
+<ul>
+<li><code>npm i &amp;&amp; npm install -g prettier &amp;&amp; npm install -g eslint</code></li>
+<li><code>npm run dev</code></li>
+</ul>
+<h3>Edit</h3>
+<ul>
+<li><code>git checkout -b my_branch</code></li>
+<li>Make your edits</li>
+<li>To check your changes, reload Obsidian (Command-R)</li>
+</ul>
+<h3>Commit-prep</h3>
+<ul>
+<li><code>./ship.sh</code> will prettify and elsint once again</li>
+<li><code>git add -p</code> to stage changes individually</li>
+<li><code>git commit -m &quot;my message&quot;</code></li>
+</ul>
+<h3>Publish pull request</h3>
+<ul>
+<li><code>git push -u origin my_branch</code></li>
+</ul>
+</div>
+<div class="more"><a href="/code/text-expander-plugin/">Read the whole README ›</a></div>
+<div class="src"><a href="/code/text-expander-plugin/">Permalink</a> · <a href="https://github.com/akaalias/text-expander-plugin">View on GitHub ↗</a></div>
+</article>
+<article class="item kind-repo" id="g-extract-highlights-plugin">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/extract-highlights-plugin/"><time datetime="2020-11-08T13:47:29Z">Sunday, November 8, 2020 · 14:47</time></a></div>
+<h2 class="note-title"><a href="/code/extract-highlights-plugin/">extract-highlights-plugin</a></h2>
+<p class="repo-desc">Manage your highlights in Obsidian by easily creating, removing and exporting them.</p>
+<div class="stats"><span><b>95</b> stars</span> · <span><b>10</b> forks</span> · <span>TypeScript</span></div>
+<div class="text note-body repo-readme clamped">
+<h2>Extract Highlights Plugin</h2>
+<p>Create and extract highlights from a current markdown note in Obsidian into your clipboard. Based on <a href="https://forum.obsidian.md/t/extract-highlights-from-note/7867">icebear’s plugin request</a>.</p>
+<h2>Training Videos</h2>
+<h3>Watch: The Quick-Start Tutorial!</h3>
+<p><a href="https://youtu.be/KWdEatdD2bo"><img src="https://github.com/akaalias/extract-highlights-plugin/blob/master//code/media/gh-311072640-be544d10ca3bc850.png" alt="" loading="lazy"></a></p>
+<h3>Watch: A SECRET NEW highlight mode</h3>
+<p><a href="https://youtu.be/5kkcqAn6joU"><img src="https://github.com/akaalias/extract-highlights-plugin/blob/master//code/media/gh-311072640-d67e452d421f5187.png" alt="" loading="lazy"></a></p>
+<h3>Watch: Tips and Tricks for the SECRET mode</h3>
+<p><a href="https://youtu.be/n3YW5bmnETg"><img src="https://github.com/akaalias/extract-highlights-plugin/blob/master//code/media/gh-311072640-b520be449dc05cf9.png" alt="" loading="lazy"></a></p>
+<h3>How it works</h3>
+<p>This plugin will copy the highlights delimited by <code>==</code>, <code>**</code> and <code>&lt;mark&gt;&lt;/mark&gt;</code> into your clipboard as a bullet-list.</p>
+<p>Optionally you can customize…</p>
+<ul>
+<li><strong>The heading text of the list</strong>, include the note-title or hide it all-together</li>
+<li><strong>Adding a footnote</strong> to each that link back to the source-file</li>
+<li><strong>Creating an ad-hoc map-of-content (MOC)</strong> by turning each highlight into an <code>&lt;span class=&quot;wikilink unresolved&quot;&gt;</code> Obsidian link <code>&lt;/span&gt;</code></li>
+<li><strong>Auto-capitalize</strong> the first letter in each highlight for consistency</li>
+</ul>
+<h3>Demo Creating and Extracting Highlights</h3>
 <ol>
-<li>Slowly inhale through your nose for 5 seconds.</li>
-<li>Suspend your breath for 5 seconds, lifting your chest and relaxing your shoulders.</li>
-<li>Slowly exhale through your nose for 5 seconds.</li>
-<li>Without pausing, inhale through your nose 5–6 seconds</li>
-<li>Suspend your breath for 5–6 seconds, lifting your chest and relaxing your shoulders.</li>
-<li>Slowly exhale through your nose for 5–6 seconds.</li>
-<li>Continue this cycle for 1–3 minutes while gradually increasing the length of each breath respectively.</li>
-<li>To finish, inhale deeply, hold your breath for 3 seconds, exhale and relax for a few more seconds.</li>
+<li>First you see how I use the CREATE highlights hot-key to highlight sentences</li>
+<li>Then you see how I use the EXTRACT highlights hot-key to create a new file with the highlights</li>
 </ol>
-<h3>Your homework for the coming 3 days</h3>
-<h4>Day 1:</h4>
-<ul>
-<li>Set aside 3 minutes and re-read the instructions above.</li>
-<li>Begin with 10 seconds of observing your current breath without manipulation.</li>
-<li>Complete 5 rounds of one-minute breath starting at 5-second partitions and working up towards 8 seconds.</li>
-</ul>
-<h4>Day 2:</h4>
-<ul>
-<li>Set aside 3 minutes and re-read the instructions above.</li>
-<li>Begin with 10 seconds of observing your current breath without manipulation.</li>
-<li>Complete 10 rounds of one-minute breath starting at 5-second partitions and working up towards 8 seconds.</li>
-</ul>
-<h4>Day 3:</h4>
-<ul>
-<li>Set aside 3 minutes and re-read the instructions above.</li>
-<li>Begin with 10 seconds of observing your current breath without manipulation.</li>
-<li>Complete 20 rounds of one-minute breath starting at 5-second partitions and working up towards 10 seconds.</li>
-</ul>
-<h3>Notes</h3>
-<p>On suspending your breath:</p>
-<p>It’s easy to tense up around your shoulders when suspending your breath. I know I still do sometimes. So, remind yourself periodically to relax your shoulders.</p>
-<p>If you really feel like you’re running out of air, you can always inhale a few more ‘sips’ to make it easier and take away the tension.</p>
-<h2>The tip of the iceberg</h2>
-<p>What you have learned is the tip of the ice-berg.</p>
-<p>There are hundreds more Kundalini Yoga breathing and meditation techniques that, just like an app-store for your mind, can benefit you immensely when tackling the inner and outer challenges you face today and tomorrow.</p>
-<p>You now know how to…</p>
+<p><img src="/code/media/gh-311072640-8f660bed38bc67c0.gif" alt="basic functionality" loading="lazy"></p>
+<h4>Using the Hotkey to HIGHLIGHT (and UN-HIGHLIGHT) the sentence under cursor</h4>
+<p>The default hotkey for this is:</p>
+<p><kbd>SHIFT</kbd> + <kbd>ALT</kbd> + <kbd>_</kbd></p>
+<p>Super useful for when you’re reading and just don’t want to switch to your mouse for selecting the sentence.</p>
+<p><img src="/code/media/gh-311072640-296dec36db3f6006.gif" alt="demo" loading="lazy"></p>
+<p>Will remove highlighting if the sentence under your cursor is currently delimited by “==”.</p>
+<h4>Using the Hotkey to EXTRACT highlights</h4>
+<p>The default hotkey is:</p>
+<p><kbd>SHIFT</kbd> + <kbd>ALT</kbd> + <kbd>=</kbd></p>
+<h4>Using the Ribbon Button</h4>
+<p>There is also a button (a circle-shape) that’s added to your left-side ribbon.</p>
+<p>Clicking on it will also extract all highlighted parts in your current note and place it in your clipboard.</p>
+<h4>Using the Command Palette</h4>
+<p>I looked into it and there’s a bug the way clipboard works with the Command Palette. Basically everything but the “Paste” works.</p>
+<p>But I’ve found a temporary work-around. It’s weird but it works.</p>
 <ol>
-<li>Optimize your practice by pre-programming your mind for success</li>
-<li>Regain focus and clarity using Deep Breathing</li>
-<li>Overcome stress and anxieties using Alternate Nostril Breathing</li>
-<li>Learn to control your thoughts using One-Minute Breath</li>
+<li>Trigger Command Palette (Command-P)</li>
+<li>Find “Extract Highlights”</li>
+<li>Hit Enter (You should see a notification (“Highlights copied to clipboard!”)</li>
+<li>Workaround: At this point, briefly switch to a different note and back (This materialises the clipboard data for pasting)</li>
+<li>Paste works now the same as with the Hotkey and Button-press</li>
 </ol>
-<p>With a little bit of practice, I am confident these techniques can serve you well as they have served me and prepare you for learning more.</p>
-<p>Finally, if you have followed this short course and want to learn more or have questions, I would love to hear from you. Please email me at<a href="mailto:alexis.rondeau@gmail.com">alexis.rondeau@gmail.com</a> or comment below.</p>
-<p>Thank you and with best wishes,</p>
-<p>Alexis Rondeau</p>
-</div>
-<div class="more"><a href="/notes/use-the-force-luke-3-effective-breathing-techniques-for-decision-makers/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/use-the-force-luke-3-effective-breathing-techniques-for-decision-makers/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-do-the-right-things-right">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/do-the-right-things-right/"><time datetime="2014-12-07T23:00:00Z">Monday, December 8, 2014 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/do-the-right-things-right/">Do the Right Things Right</a></h2>
-<div class="text note-body clamped">
-<p>The odds are 3 to 1 against you, so how will you make sure you win?</p>
-<p>I would like to share a simple map on how <strong>Understanding</strong> (<em>What to do</em> to succeed) and <strong>Skill</strong> (<em>How to do</em> things correctly) work either for or against you in your quest to personal and professional success.</p>
-<p>(Right now, I am learning a lot after having done the right things in the wrong order in a recent venture.)</p>
-<p>But, <em>learning is good</em>, so let me indulge you in my failures and successes alike and provide you with a map that will hopefully make sailing smoother for you.</p>
-<p><strong><em>1. The North-Eastern Land of Milk and Honey: Doing the Right Things Right</em></strong></p>
-<p>The best-case scenario (aptly colored in green in our map.)</p>
-<p>You’ve done your research and you’ve practiced your skill-set. You’ve gained an understanding of what the right steps are and you’ve deeply learned how to do them right.</p>
-<p>For example: You know that, to start a business, you want to talk to customers to understand their pain. You understand the premise of it. Plus, you’ve done your research about how to do these customer interviews correctly! You’ve read up on how to avoid leading questions, and that talking to your potential customers actually means listening most of the time.</p>
-<p>There is a very good chance you’ll learn something of value for yourself and create the success you seek.</p>
-<p><strong><em>2. The South-Eastern Mountains of Jon Snow: Doing the Right Things Wrong</em></strong></p>
-<p>One of the two “better” worse-case scenarios (because you’ll at least learn a little bit if you are lucky, but likely you’ll still fail)</p>
-<p>“You know you want to do the right thing but <em>you know nothing</em> on how to do it.”</p>
-<p>For example: You understand how important it is to talk to customers. You’ve read high-level blog posts about how to find them and gotten a few leads. Unfortunately, you did not spend any time learning <em>how</em> to talk to them. So, instead of listening, you wind up pitching your idea and receive luke-warm enthusiasm and a bunch of maybes. You tried to do the right thing (talk to customers) but wound up sweating the technique. This will likely kill your startup. Not right now but in the future.</p>
-<p><strong><em>3. The North-Western Desert of Confusion: Doing the Wrong Things Right</em></strong></p>
-<p>Another one of the “better” worse-case scenarios (because you’ll at least learn a little bit):</p>
-<p>“You’re really good at it but it still doesn’t <em>work</em>.”</p>
-<p>For example: You didn’t read about listening to customers first but instead plowed through (months) of learning to code up web-applications. At this point you can build anything and so you do. An idea pops into your head, you go full-force on it without considering “who” would actually use it. It’s a great idea. You mom thinks it’s a sure winner. And because you’re skilled, you build this thing with all the latest hoo-ha’s the market has to offer. It’s a TDDNoSQLAgileScalaHerokuSSL of a beast. It works and it will scale to millions of users.</p>
-<p>But they never come. Because you did the wrong thing. Albeit, technically, you did it well. It’s a sad story.</p>
-<p><strong><em>4. The South-Western Swamps of Ignorance: Doing the Wrong Things Wrong</em></strong></p>
-<p>This one is arguably the worst. You’re uninformed about what your first step should be and you do not have the skills to execute.</p>
-<p>You’re screwed.</p>
-<p>You “think” that starting a startup today means that, just like Zuck in The Social Network, you bang your fingers (or head) against a keyboard just long enough until, magically, someone throws $100k at you (while you’re wearing a bathrobe.)</p>
-<p>Then, after a bit more banging against your keyboard, mysteriously, millions of users flock to your thing. And although you don’t even know how to code or how to deploy to a server your company is valued at billions of dollar. It’s all magic. Just like in the movies. Except it isn’t.</p>
-<p>If you do the wrong things incorrectly, you’ll wind up with nothing, not even a solid lesson or two. You’ll have to completely revisit how you think about this stuff.</p>
-<p><strong><em>How to Increase Your Chance of Success</em></strong></p>
-<p>Whatever your doing right now–be it starting a company, trying to do a better job at work, improving your lifestyle–you can increase your odds of success knowing about the map above.</p>
-<p><em>Broaden Your Horizon</em></p>
-<p>Increasing your understanding means you have to broaden your horizon.</p>
-<p>Aim to deeply understand the place you’re trying to reach. Understand the dynamics and its life-cycles. You can’t learn enough, always strive to learn more and vaster. Cover a lot of ground. Read books, blogs, newsletters, watch videos, listen to podcasts and talk to experienced entrepreneurs and practitioners. Never stop learning more.</p>
-<p><em>Sharpen your skills</em></p>
-<p>Sharpening your skills means you want to go really deep and master a skill.</p>
-<p>Because, even when you know the right things to do, you’ll still need to make sure you’re doing them right.</p>
-<p>Learn a skill and get really deep into it. Become the reigning expert on it. For example, if you want to be the technical person, learn to program and then implement a couple of projects end-to-end. From the first line of code to the finishing touches on running it in a production environment.</p>
-<p><strong><em>Final words</em></strong></p>
-<p>First of all, thank you for reading this. Clearly, this isn’t a complete theory. But I’ve been using it regularly now to monitor what I am doing against my personal success metrics.</p>
-<p>My examples have been around technology entrepreneurship but I think it can be applied to other fields of interest: Love, sex, education, diets.</p>
-<p>How do you navigate yourself to success? Share your experience in the comments below.</p>
-</div>
-<div class="more"><a href="/notes/do-the-right-things-right/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/do-the-right-things-right/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-how-to-translate-a-programming-language">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/how-to-translate-a-programming-language/"><time datetime="2014-12-04T23:00:00Z">Friday, December 5, 2014 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/how-to-translate-a-programming-language/">How To Translate a Programming Language</a></h2>
-<div class="text note-body">
-<script src="https://gist.github.com/akaalias/ca5e84e10bed72e9a58e.js"></script>
-
-</div>
-<div class="src"><a href="/notes/how-to-translate-a-programming-language/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-how-to-add-a-maybe-operator-to-your-programming-language">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/how-to-add-a-maybe-operator-to-your-programming-language/"><time datetime="2014-12-04T23:00:00Z">Friday, December 5, 2014 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/how-to-add-a-maybe-operator-to-your-programming-language/">How To Add a &quot;Maybe&quot; Operator To Your Programming Language</a></h2>
-<div class="text note-body">
-<p>In just 4 lines -&gt; <a href="https://gist.github.com/akaalias/51721a8d6d75ef42586b.js">https://gist.github.com/akaalias/51721a8d6d75ef42586b.js</a></p>
-</div>
-<div class="src"><a href="/notes/how-to-add-a-maybe-operator-to-your-programming-language/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-listen-journey-into-paradise-the-larry-levan-story">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/listen-journey-into-paradise-the-larry-levan-story/"><time datetime="2014-11-13T23:00:00Z">Friday, November 14, 2014 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/listen-journey-into-paradise-the-larry-levan-story/">[Listen] Journey Into Paradise: The Larry Levan Story</a></h2>
-<div class="text note-body">
-<iframe src="https://embed.spotify.com/?uri=spotify:album:4tbC7RNnfQxJSrLOiCe9da" width="100%" height="500" frameborder="0" allowtransparency="true"></iframe>
-
-</div>
-<div class="src"><a href="/notes/listen-journey-into-paradise-the-larry-levan-story/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-how-to-do-one-minute-breath-a-farewell-present-for-jacob">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/how-to-do-one-minute-breath-a-farewell-present-for-jacob/"><time datetime="2014-11-05T23:00:00Z">Thursday, November 6, 2014 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/how-to-do-one-minute-breath-a-farewell-present-for-jacob/">How to do &quot;One Minute Breath&quot; – A farewell present for Jacob</a></h2>
-<div class="text note-body">
-<iframe id="vid" src="//fast.wistia.net/embed/iframe/anmi674374" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen="" webkitallowfullscreen="" oallowfullscreen="" msallowfullscreen="" width="640" height="360"></iframe>
-
-</div>
-<div class="src"><a href="/notes/how-to-do-one-minute-breath-a-farewell-present-for-jacob/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-psycho-cybernetics-about-purpose-tremor">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/psycho-cybernetics-about-purpose-tremor/"><time datetime="2014-11-05T23:00:00Z">Thursday, November 6, 2014 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/psycho-cybernetics-about-purpose-tremor/">Psycho-Cybernetics – About Purpose Tremor</a></h2>
-<div class="text note-body">
-<p><a href="https://soundcloud.com/akaalias/about-purpose-tremor">https://soundcloud.com/akaalias/about-purpose-tremor</a></p>
-</div>
-<div class="src"><a href="/notes/psycho-cybernetics-about-purpose-tremor/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-oblique-meta-strategies-what-would-brian-eno-do">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/oblique-meta-strategies-what-would-brian-eno-do/"><time datetime="2014-10-21T22:00:00Z">Wednesday, October 22, 2014 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/oblique-meta-strategies-what-would-brian-eno-do/">Oblique Meta Strategies: What Would Brian Eno Do?</a></h2>
-<div class="text note-body">
-<p>Just of those <span class="wikilink unresolved">Great Questions</span> that led me to making big bubbles as <a class="wikilink" href="/notes/i-am-mr-bubbles/">Mr Bubbles in Bushwick (Video)</a>.</p>
-</div>
-<div class="src"><a href="/notes/oblique-meta-strategies-what-would-brian-eno-do/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-huddle-metrics">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/huddle-metrics/"><time datetime="2014-10-19T22:00:00Z">Monday, October 20, 2014 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/huddle-metrics/">Huddle Metrics</a></h2>
-<div class="text note-body clamped">
-<p>Dear Friends,</p>
-<p>It’s been an exciting journey and you are literally the first ones to learn about this.</p>
-<p>I would like to share with what my friend <a href="http://adriangrant.org/">Adrian</a> and I have been working on.</p>
-<p>It’s called “Huddle Metrics” and basically it let’s you safely share and compare the important numbers in your life with other people in a similar place.</p>
-<p>To kick off with an example on how these “Huddles” can help you make better decisions, I’ve created one all around rent and roommates in Brooklyn.</p>
-<p>I’ll explain it in detail below and I think you will like it:</p>
-<p>Do you live with roommates in Brooklyn?</p>
-<p>Do you spend a significant portion of your income on rent and utilities?</p>
-<p>Would you like to know what’s market in your neighborhood?</p>
-<p>This “Huddle” is a safe place to share and compare your own monthly rent with everyone else’s. All you need to do is provide your own rent and utilities anonymously. Then you get to see what everyone else is paying. Filter, slice and dice rent by square footage, the neighborhood, and how many roommates there are.</p>
-<p>Why join? Having access to “real data” allows you to make better decisions for your next move. By joining this Huddle you’ll get a better understanding of the roommate rent market in Brooklyn. In particular, when enough people have joined, you’ll be able to learn what’s market in a neighborhood you’ve been maybe eyeing to move to.</p>
-<p>So, here is what you need to do to get started if you would like to join:</p>
-<p>* <strong><a href="http://app.huddlemetrics.com/start/2195361304">First, check out this demo to get an idea how this works.</a></strong> * Secondly, if you like what you’re seeing, you should sign up! * Lastly, the more people join, the more data you get. If you dig it, please share this link with your Brooklyn friends.</p>
-<p>Happy Huddlin’!</p>
-<p>Alexis</p>
-<p>PS: Feedback, questions are absolutely welcome! Please feel free to comment here or send me an email to alexis.rondeau@gmail.com.</p>
-</div>
-<div class="more"><a href="/notes/huddle-metrics/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/huddle-metrics/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-eric-schmidt-how-google-works">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/eric-schmidt-how-google-works/"><time datetime="2014-10-15T22:00:00Z">Thursday, October 16, 2014 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/eric-schmidt-how-google-works/">Eric Schmidt: How Google Works</a></h2>
-<div class="text note-body">
-<iframe style="border: 1px solid #CCC; border-width: 1px; margin-bottom: 5px; max-width: 100%;" src="//www.slideshare.net/slideshow/embed_code/40175706" width="100%" height="430" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen="allowfullscreen"></iframe>
-
-<p><strong><a href="//www.slideshare.net/ericschmidt76/how-google-works-final-1">How Google Works</a></strong> from <strong><a href="//www.slideshare.net/ericschmidt76">Eric Schmidt</a></strong></p>
-</div>
-<div class="src"><a href="/notes/eric-schmidt-how-google-works/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-focus">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/focus/"><time datetime="2014-10-15T22:00:00Z">Thursday, October 16, 2014 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/focus/">Focus.</a></h2>
-<div class="text note-body">
-<p>Green tea is really, really good for you.</p>
-</div>
-<div class="src"><a href="/notes/focus/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-a-pivotal-moment">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/a-pivotal-moment/"><time datetime="2014-10-15T22:00:00Z">Thursday, October 16, 2014 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/a-pivotal-moment/">A Pivotal Moment</a></h2>
-<div class="text note-body clamped">
-<p>Dear Friend,</p>
-<p>Today marks a pivotal day in my life.</p>
-<p>Unfortunately (it seems unfortunate today, but only time will tell) we–A, D and I–have not gotten the successful responses from investors we had hoped for.</p>
-<p>I must now shift gears and find a paying job to live. It is a hard pill to swallow. Of all things I have worked on and of all people, it has been an absolute pleasure.</p>
-<p>In fact, if I had (all, or at least enough to live) the money in the world, I would work on this with A and D.</p>
-<p>But I don’t. I have far extended my personal savings.</p>
-<p>I have a runway of 1 month and it does not look like there is venture capital coming in in the coming 3-6 months.</p>
-<p>Our startup “HM” has come a long way in the past 9 months.</p>
-<p>I have learned so much in the process.</p>
-<p>We started out in February with the idea for VA. “What if we worked with VCs and their portfolio to collect everyone’s salary, equity and bonus information, anonymize it in a private network and make it accessible and searchable for all participants?”</p>
-<p>Within 2 months we already had 130 startups on board. In August it was twice that.</p>
-<p>In total, as of today, this pilot system is tracking salaries, equities, bonuses, revenue, marketing costs and much more of companies that themselves have raised $2,270,000,000 in funding.</p>
-<p>We account for more than $224,000,000 in salaries across 6,533 employees nationwide.</p>
-<p>Well, that all sounds good, right? It gets even better!</p>
-<p>2 months ago, around August, we sat down and really analyzed what we were “actually doing” here. We realized that our pilot successfully described what we have come to call a “Data Community.” A safe place for peers to share their most sensitive data at the benefit of everyone. You get to know what’s really market. You can use it make better decisions. For hiring. For allocating equity. For planning your next round. For running your business.</p>
-<p>Since then, I have worked hard on creating a self-serve platform that allows any community (real or imaginary) to create “Data Communities” for themselves and their information.</p>
-<p>It came out really, really nice.</p>
-<p>First, I went ahead and made very rough sketches for the general use cases. There were 2 rounds of review with the team called M(ockup)1 and M2. Those led into developing the actual application prototypes P(rototype)1 and P2. P2 was the basis for V(ersion)1 which we softly released past Thursday.</p>
-<p>As a team of 1 covering planning, specification, designing, modeling, testing, implementing and polishing I am proud. Work was focussed and fast enough to have something in our hands to play with and reason about.</p>
-<p>On a technical level, it is a moderately complex data model with a few nice twists to it. There is the requirement of anonymity of data which we are solving well. There is the ability to basically create a collaborative, focussed spreadsheet with user-defined data types based on what they want the community to share. Similar to a survey data has to be stored in a specific, unconventional way. And we have to push it even further. The end-user experience is important, too. After all, if it’s clunky no one wants to use it.</p>
-<p>But.</p>
-<p>And here comes the big but.</p>
-<p>Even with a polished, elegant and well-designed product and a potential array of markets we can go into, if there is no money to support ourselves, it’s impossible to continue full-time on it.</p>
-<p>Which is where I find myself today.</p>
-<p>Again, if I had enough money to support my basic needs (and maybe move into a nicer place where my room has a bed instead of a couch and a window) I would continue working on this and push the limits on what we can do with it.</p>
-<p>Alas, that’s not happening today. Because, even though we’ve been working with VC funds in the past 9 months, none of them seem to be thoroughly interested in giving us money. Apparently they can see the value created by our Data Community software for their own portfolios but not beyond. And I understand that it is a stretch. But that’s where the Venture in Venture Capital should come in.</p>
-<p>In the meantime, this means finding paid great work.</p>
-<p>I am a creator.</p>
-</div>
-<div class="more"><a href="/notes/a-pivotal-moment/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/a-pivotal-moment/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-underscore-js">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/underscore-js/"><time datetime="2014-09-22T22:00:00Z">Tuesday, September 23, 2014 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/underscore-js/">Underscore.js</a></h2>
-<div class="text note-body">
-<p>I usually despise JavaScript (and yes, I’m aware of it’s Scheme/Self influences) but this is nice: <a href="http://underscorejs.org/">Underscore.js</a>.</p>
-</div>
-<div class="src"><a href="/notes/underscore-js/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-it-s-complex-but-you-don-t-have-to-make-it-complicated">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/it-s-complex-but-you-don-t-have-to-make-it-complicated/"><time datetime="2014-09-21T22:00:00Z">Monday, September 22, 2014 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/it-s-complex-but-you-don-t-have-to-make-it-complicated/">It’s Complex But You Don’t Have To Make It Complicated</a></h2>
-<div class="text note-body clamped">
-<p>It’s been a very stressful 4 weeks.</p>
-<p>The uncertainty if we get funding and my debt that I haven’t tackled yet are affecting me negatively. The only way is forward. I try to stay on top of my thoughts to not let a depression creep in. That has been working quiet well.</p>
-<p>With all this stress I have realized a few simple things. First off, my thoughts definitely control my experience of life. In particular, I have been waking up at night with anxiety about me, my future and what I could have or should have done. Just thinking those thoughts in the middle of the night make my body cringe and twist. Isn’t that amazing? Just by thinking about future conflicts and problems (who are not real yet and will unfold as they may happen) turns my body into fight-or-flight mode. That drains my energy that I would rather put towards actually solving the issues at hand.</p>
-<p>It is relatively simple: Control my thoughts so they do not affect me negatively and instead focus on a goal-oriented and positive outcome. If I can get my body into fight-or-flight mode just by thinking stressful thoughts, then I can get my body into success-mode by thinking about the positive aspects of my situation and how I want it to turn out.</p>
-<p>Case in point, just a year ago I actively set time aside every day for a while to “imagineer” a productive, happy and successful future where I would work with great people in an interesting space on something related to Venture Capital. Fast forward less than 12 months and I actually am working with amazing people on an exciting and innovative system with a beautiful office space in the financial district of New York.</p>
-<p>But I forgot to “Imagineer” one thing and this is my great learning.</p>
-<p>In my mind, I created a world (as it exists now!) where the people I work with are smart, driven and that I can learn a lot from myself. I imagined a world where the problem we’re working on is new, exciting and even a little preposterous. Or, as Paul Graham calls this type of problem “Frighteningly Ambitious Startup Ideas.” Again, the work environment is pristine and there is a sense of ambition and heroism that we have thrived upon.</p>
-<p>I just forgot about imagineering that this business would be making copious amounts of money to cover my living expenses and allows me to pay off my tax-debt to feel free again.</p>
-<p>Yup, if we had money coming in right now, enough money to cover my rent, my telephone, my metro card, my food, my tax payments, the occasional night on the town, the occasional trip upstate, 10% to save, I would feel so much better.</p>
-<p>I did just jump into it. I didn’t think about it much. It was a decision coming straight from my gut. “I have to do this.” And I think it was the right decision to drop pretty much everything (not that there was so much going on a year ago anyways) and go “balls-to-the-wall” forward with VA.</p>
-<p>I have learned a lot. I am learning something new every day.</p>
-<p>But as of now, I think we are still missing one of the most important parts of a successful business: A HUNGRY market.</p>
-<p>Plus, since – as Peter Thiel calls it – we have to go from “Zero to One”, and that means extra resistance sometimes, we are also not attracting that level of confidence from outside investors in a way I think we need to.</p>
-<p>Right now, to continue working on this company, I need money. I need fuel. Again, just enough to cover the basics of living. But without it, it won’t work and if nothing happens in the coming 10 days, I will have to find a job immediately to deal with my finances properly.</p>
-<p>Healthcare would be nice to have, too.</p>
-<p>So, what does this mean for today?</p>
-<p>First off, as the next step, I will write out my goals for this week. I am not 100% sure yet what they will be but having some type of plan helps even if it changes.</p>
-<p>Secondly, I will make a list of things that I need to do to reach those goals.</p>
-<p>Thirdly, I will start working on the first piece moving closer to completion.</p>
-<p>Here is an un-ordered list of things on my mind to achieve:</p>
+<h4>Pasting highlights from your clipboard</h4>
+<p>After using the hotkey, button or command palette, anywhere you want, just paste the clipboard!</p>
+<p><kbd>Command</kbd> + <kbd>v</kbd> (MacOS) or the equivalent on Windows/Linux</p>
+<p>The output is a markdown-block titled “Highlights” with a bullet-list of the highlights.</p>
+<h3>Feedback</h3>
+<p>Are you using Extract Highlights? I’d love to hear from you!</p>
+<p><a href="https://forum.obsidian.md/t/extract-highlights-plugin/8763/12">Share your questions and suggestions in the forum</a></p>
+<h3>Backlog</h3>
+<h4>TODO</h4>
 <ul>
-<li>Touch base with friends and begin career networking</li>
-<li>Refine HM forms and views with validations and visually</li>
-<li>Wrap up PRIVATE P3 so that PUBLIC V1 development/configuration can begin coming week</li>
-<li>Consolidate my stuff that’s flying around at The Farm</li>
-<li>Write daily</li>
-<li>Meditate daily</li>
-<li>Cook awesome and healthy food</li>
-</ul>
-</div>
-<div class="more"><a href="/notes/it-s-complex-but-you-don-t-have-to-make-it-complicated/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/it-s-complex-but-you-don-t-have-to-make-it-complicated/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-giant-bubbles-in-bushwick">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/giant-bubbles-in-bushwick/"><time datetime="2014-09-09T22:00:00Z">Wednesday, September 10, 2014 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/giant-bubbles-in-bushwick/">Giant Bubbles In Bushwick!</a></h2>
-<div class="text note-body">
-<p>www.youtube.com/embed/9op8mXvJRrQ</p>
-<p>Shot by Chris Castiglione Bubbles by Alexis Rondeau Music by Birdstar Sound (Chris Castiglione &amp; Kyle Parkinson)</p>
-<h2>Related</h2>
+<li><p>Record video on using the “explosion mode” for research and creating atomic notes</p>
 <ul>
-<li><span class="wikilink unresolved">The relationship between the USA and making giant bubbles</span></li>
-<li><a class="wikilink" href="/notes/how-to-make-big-ass-bubbles/">How to Make Big-Ass Bubbles</a></li>
-<li><a class="wikilink" href="/notes/i-am-mr-bubbles/">Mr Bubbles in Bushwick (Video)</a></li>
-<li><span class="wikilink unresolved">Making Big-Ass Bubbles in Bushwick</span></li>
-<li><span class="wikilink unresolved">My Rainbow-Making Multi-Prism</span></li>
-</ul>
-</div>
-<div class="src"><a href="/notes/giant-bubbles-in-bushwick/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-how-to-make-big-ass-bubbles">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/how-to-make-big-ass-bubbles/"><time datetime="2014-08-27T22:00:00Z">Thursday, August 28, 2014 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/how-to-make-big-ass-bubbles/">How To Make Big Ass Bubbles</a></h2>
-<div class="text note-body clamped">
-<iframe src="https://player.vimeo.com/video/183123867" width="640" height="360" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-
-<h1>How to make giant bubbles</h1>
-<p>I’ve compiled the following giant bubble solution recipe and instructions <em>after months</em> of trial-and-error, testing dozens of recipes, ingredients etc.</p>
-<p>What follows is my personal ultimate recipe and instructions for wands that have allowed me to make giant bubbles in the US and Europe.</p>
-<p>Your upfront cost is about $40, the most expensive is the must-have “secret ingredient” called J-Lube, which costs about $20. It’s not cheap BUT one container of J-Lube will last for dozens and dozens and dozens of buckets of bubble solution.</p>
-<h2>Bubble Solution Recipe</h2>
-<h3>Metric system/European products</h3>
+<li><p>Pre-requisites</p>
 <ul>
-<li>450ml Dish soap concentrate (Fairy Ultra Yellow, 450ml[^3])</li>
-<li>10mg J-Lube[^2]</li>
-<li>10L water</li>
-</ul>
-<h3>US Measurements/US products</h3>
+<li><p>Highlights Plugin</p>
 <ul>
-<li>1 Big Plastic Bucket</li>
-<li>1 Bottle 24floz Dawn Ultra Dish Soap[^4]</li>
-<li>1 Tbsp of J-Lube[^1]</li>
-<li>3 Gallons of luke-warm Water</li>
-</ul>
-<h2>Mixing</h2>
-<ul>
-<li>Mix J-Lube with a cup of warm water</li>
-<li>Mix Soap with water</li>
-<li>Pour in J-Lube/water mix</li>
-</ul>
-<h2>How to make bubble wands</h2>
-<h3>Shopping list (Total ~$10 or less)</h3>
-<ul>
-<li>2 Regular Dowel Sticks</li>
-<li>100% Cotton Rope</li>
-<li>Screws, Zip-Ties or Duct-Tape for attaching</li>
-</ul>
-<h3>Steps</h3>
-<ul>
-<li>Cut off a long piece of rope 3x the length of one dowel</li>
-<li>Cut rope into 2 pieces: 1x length of dowel, 2x length of dowel</li>
-<li>If your rope has a nylon core, pull it out inch by inch</li>
-<li>Knot ropes</li>
-<li>Attach knotted edges to dowels</li>
-</ul>
-<h2>Preparation</h2>
-<ul>
-<li>Let sit for a few hours</li>
-<li>Soak Bubble Wand Ropes in solution for at least 20 minutes</li>
-</ul>
-<h2>Tips &amp; Tricks</h2>
-<ul>
-<li>Even Big Ass Bubbles are sensitive. It will take some time and experiments to figure out what works best in your area and current season</li>
-</ul>
-<h3>Ideal days</h3>
-<p>Anytime there’s high humidty and some wind (but not too strong).</p>
-<ul>
-<li><p>Humid Spring and Fall days</p>
-<ul>
-<li>Bubbles go biggest and last longest right after a rainfall, when the air humidity is very high, usually in Spring and Fall</li>
-<li>Can make bubbles in direct sunlight because the light isn’t strong enough yet to evaporate the bubbles</li>
+<li>Create links</li>
+<li>Create page</li>
+<li>Enable explode mode</li>
+<li>Open notes on creation</li>
 </ul>
 </li>
-<li><p>Cold Winter days</p>
+<li>Sliding Panes Plugin</li>
+</ul>
+</li>
+<li>Start with a good article (Economist)</li>
+<li>Go through and highlight sentences</li>
+<li><p>Create MOC and explode into notes</p>
 <ul>
-<li>Bubbles also work really well in cold temperatures down to a few degrees below freezing</li>
-<li>Can make bubbles in direct sunlight because the light isn’t strong enough yet to evaporate the bubbles</li>
+<li>BOOOMMMMM!!!</li>
+<li>You’ve got an MOC</li>
+<li>You’ve got the core for single-idea, atomic notes</li>
+<li>You’ve got a backlink to the original file</li>
 </ul>
 </li>
 </ul>
-<h3>Known issues in Summer</h3>
-<ul>
-<li>Problem: When dissolving J-Lube powder, it forms lumps instead of spreading out</li>
-<li>Solution: Use a whisk</li>
-<li>Problem: It’s summer, middle of the day, I’m standing in the sun and my bubbles are popping too quickly or not forming at all</li>
-<li>Solution: Step into the shade of a tree, avoid direct hot sunshine so the bubbles don’t immediately evaporate</li>
-<li>Problem: It’s summer, I’m standing in the shade and my bubbles still won’t work</li>
-<li>Solution: It’s too hot and humidity is likely very low. Bubbles evaporate too quickly because it’s too dry. Wait until the evening.</li>
+</li>
 </ul>
-<h3>Known issues in Winter</h3>
-<ul>
-<li>Problem: It’s Winter, it’s -5℃ or less and the bubbles aren’t working well</li>
-<li>Solution: The air is devoid of humidity, so you’ll have to wait until snow melts and ambient humidity rises again</li>
-</ul>
-<p><img src="/notes/media/BigBubbles.jpg" alt="BigBubbles.jpeg" loading="lazy"></p>
-<h2>Related</h2>
-<ul>
-<li><a class="wikilink" href="/notes/i-am-mr-bubbles/">Mr Bubbles in Bushwick (Video)</a></li>
-<li><a class="wikilink" href="/notes/giant-bubbles-in-bushwick/">Giant Bubbles In Bushwick</a></li>
-<li><span class="wikilink unresolved">Making Big Bubbles</span></li>
-</ul>
-<p>[^1]: Amazon US: J-Lube Polyethylene Polymer <a href="http://www.amazon.com/J-lube-Hand-Lubricant-Concentrate-Veterinarian/dp/B004T4L49O/">http://www.amazon.com/J-lube-Hand-Lubricant-Concentrate-Veterinarian/dp/B004T4L49O/</a>
-[^2]:  Amazon DE: J-Lube Polyethylene Polymer <a href="https://www.amazon.de/-/en/Lube-Powder-White-10oz/dp/B006G2S17A">https://www.amazon.de/-/en/Lube-Powder-White-10oz/dp/B006G2S17A</a>
-[^3]: Amazon DE: Fairy Ultra Yellow <a href="https://www.amazon.de/-/en/Concentrate-Dishwasher-Detergent-Dishwashing-Liquid/dp/B0756Z2394">https://www.amazon.de/-/en/Concentrate-Dishwasher-Detergent-Dishwashing-Liquid/dp/B0756Z2394</a>
-[^4]: Amazon US: Dawn Ultra <a href="https://www.amazon.com/Dawn-Ultra-Dishwashing-Liquid-Original/dp/B075MMQX9S/">https://www.amazon.com/Dawn-Ultra-Dishwashing-Liquid-Original/dp/B075MMQX9S/</a></p>
-</div>
-<div class="more"><a href="/notes/how-to-make-big-ass-bubbles/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/how-to-make-big-ass-bubbles/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-5-cool-new-things-i-learned-this-week">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/5-cool-new-things-i-learned-this-week/"><time datetime="2014-07-11T22:00:00Z">Saturday, July 12, 2014 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/5-cool-new-things-i-learned-this-week/">5 Cool New Things I Learned This Week</a></h2>
-<div class="text note-body clamped">
-<p>Saturday July 12, 2014 2:26pm 95 Spring Street 2nd Floor New York City</p>
-<p>Dear Friend,</p>
-<p>I’ve been learning a lot lately, small and large things, and I want to make a habit out of sharing those bits and pieces regularly. For one, you’ll get nice little tokens of insight and practical tips. Also, I get to exercise my writing more, which is a goal for me this year. So, it’s a win-win for both of us.</p>
-<p>Here are a few things I’ve learned in the past 4 days:</p>
-<p><strong><em>Index cards are awesome for jotting down ideas and concepts without the need to categorize them (yet)</em></strong></p>
-<p>This is my biggest and most exciting find of the week. Index cards. Like the ones you can buy in bulk at Staples.</p>
-<p>They’re amazing to jot down ideas and thoughts quickly and put them away. I find that my mind is filled and sometimes overflows from having too many thoughts and ideas float around.</p>
-<p>It feels so good to write a single concept (usually a sentence or two plus a few little icons that visualize what I’m trying to say) on one card and then put it on the stack of other ideas.</p>
-<p>I’m only starting to use them but I can already tell how they will transform my creative work by allowing for representing non-linear ideas and thoughts and then, later, let me re-arrange them to form a story-line.</p>
-<p>If you can, buy a stack of cards today, get a sharpie and write down the 10 things that are on your mind right now.</p>
-<p>You’ll be surprised how liberating it is to have them each individually on a card instead of in a list on a normal piece of paper.</p>
-<p><strong><em>Brainwork, like physical activity, needs warming up</em></strong></p>
-<p>I was just reading this in a book on advertising and it prompted me to think about it. Yes, I agree, it makes a lot of sense to ease into a new task or topic and provide my brain with the right type of information and context. This doesn’t have to be a lot of time but just taking a moment, reviewing notes, scribbling a few thoughts, “stretch” the mind feels right. A cold brain isn’t flexible enough to come up with creative ideas and new concepts. Feeding the brain in the beginning (and feeding your body with healthy foods!) is a very good idea.</p>
-<p>Having said this, I’ve started reading or watching something inspirational as one of my first things in the morning. Yesterday I watched <a href="https://www.youtube.com/watch?v=sTJ7AzBIJoI">Baz Luhrmann’s “Wear Sunscreen”–The mother of inspirational videos.</a> Other times I read a few paragraphs of an inspiring person such as Walt Disney or Brian Eno.</p>
-<p>I highly recommend warming your mind up at the beginning of the day and at the start of a new task.</p>
-<p><strong><em>When working on a time-boxed activity, it helps to see how much time REMAINS</em></strong></p>
-<p>I just realized this when my current activity (“Write an inspirational blog post”) kicked in on TimeStacks. Just yesterday I added small flashing alert for the TimeStacks browser-tab that shows you what you should be focussing on. I noticed how I would go back to the page to see how much time really was left and that prompted me to put in that time as part of the tab.</p>
-<p>Now, it’s much easier to keep the pressure on! For example, for writing this piece my tab tells me I have 24 minutes left.</p>
-<p>Which also tells me that I want to move onto the next learning.</p>
-<p>But basically, if you are time-boxing an activity and you want to keep the creative pressure on, you want to have a countdown timer on that puppy.</p>
-<p><a href="http://bushwickletters.com/wp-content/uploads/2014/07/Screen-Shot-2014-07-12-at-2.25.37-PM.png"><img src="Attachments/Screen-Shot-2014-07-12-at-2.25.37-PM.png" alt="Screen Shot 2014-07-12 at 2.25.37 PM" loading="lazy"></a></p>
-<p><strong><em>Improving my diet has vastly increased my sense of smell</em></strong></p>
-<p>Very simple and very powerful stuff. I’ve been changing my diet to exclude (mostly) sugar and carbs for most of the week. It’s been going well (my favorite new finding on what to eat follows below) and yesterday I noticed an intensely increased sensitivity to smell.</p>
-<p>While walking through Williamsburg with Val, I was able to smell…</p>
-<ul>
-<li>How one bar that smelled fresh and clean while another one that smelled straight-up like a sewer</li>
-<li>The wafts of food from restaurants down to their ingredients and their spices</li>
-</ul>
-<p>I assumed it was because I had a solid appetite but even after we had eaten the smells continued to be bold and distinct.</p>
-<p>Maybe it’s just New York in the summer, maybe it was because I hadn’t eaten dinner yet but I strongly believe it’s my newly found diet that allowed me to smell things on a level I haven’t before.</p>
-<p>It definitely felt like a superpower.</p>
-<p><strong><em>I don’t get hungry all day if I have a <a href="http://www.amazon.com/Linwoods-Ground-Sunflower-Pumpkin-Berries-15/dp/B007ACTSJU">goji berry, sunflower, flax</a> and hemp seed shake in the morning</em></strong></p>
-<p>It’s the weirdest thing. I’ve started making different kinds of shakes in the morning since we’ve gotten a mixer and began to add 3 spoon full of this store-bought berry/seed mixture.</p>
-<p>First I just did it for the taste and the fiber but several days in a row, this shake filled me up far into dinner.</p>
-<p>Usually I get really hungry for lunch but again and again, I felt satisfied and energized until later in the day.</p>
+<h4>DOING</h4>
 <p>…</p>
-<p>Well, that’s a few of my learnings this week. They’re a little all over the place but you get the idea I think.</p>
-<p><strong>Now, I’m curious: What have you learned this week?</strong></p>
-<p>Sincerely,</p>
-<p>Alexis</p>
-</div>
-<div class="more"><a href="/notes/5-cool-new-things-i-learned-this-week/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/5-cool-new-things-i-learned-this-week/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-here-s-one-way-to-instantly-relax-and-kick-start-your-subconscious-problem-solvi">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/here-s-one-way-to-instantly-relax-and-kick-start-your-subconscious-problem-solvi/"><time datetime="2014-06-30T22:00:00Z">Tuesday, July 1, 2014 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/here-s-one-way-to-instantly-relax-and-kick-start-your-subconscious-problem-solvi/">Here's One Way To Instantly Relax And Kick-Start Your Subconscious Problem-Solving Mechanism</a></h2>
-<div class="text note-body clamped">
-<p>Tuesday July 1, 4:33pm, New York City</p>
-<p>Dear Friend,</p>
-<p>I hope you’re doing great.</p>
-<p>Yesterday I conducted a little experiment and had to think of you and I think you’ll appreciate this.</p>
-<p>You see, I know you’re working a hard job every day and sometimes things get stressful. I think I’ve found something for you that’ll help you get your mind off of work for a few minutes every once in a while.</p>
-<p>You know how they say to leave a problem by itself when you can’t figure out a solution? That works really well for me and probably for you, too.</p>
-<p><strong><em>Relaxation Means Creative Problem-Solving</em></strong></p>
-<p>A lot of the creative problem-solving happens when we’re not actively thinking about the issue but kind of let it work in the background.</p>
-<p>For example. I’ve been building this piece of software over the past 3 weeks. Very intense stuff. I’d been staring at my screen for hours and days and weeks on end. By yesterday afternoon my brain was fried. I needed to do something <em>completely different</em> just to clear out my “Brain Random Access Memory (RAM).”</p>
-<p>What I did helped me take a mental step back from the project and rethink a bunch of core assumptions I had about “how things should work.”</p>
-<p>I got in the office this morning and refactored 5 parts of the application. It’s now much easier to use, easier to extend and much easier to maintain.</p>
-<p><strong><em>YOU’LL THINK I’M NUTS</em></strong></p>
-<p>Now, maybe you’ll think I’m nuts when I tell you what I did all evening but MAN, it was so relaxing and so different to programming that I want to do it AGAIN tonight. Just to give myself time to think through some of those pesky algorithms.</p>
-<p>Okay, now I gotta tell you what I’ve been doing…</p>
-<p>In two words…</p>
-<p>Giant. Bubbles.</p>
-<p>Yup, you read that correctly.</p>
-<p>Giant bubbles.</p>
-<p>As in: Making giant, huge-ass, humungous, wobbling soap bubbles. Larger-than-life-sized, bubbly, squiggly, soapy bubbles floating through the air.</p>
-<p>And I made them. And it was glorious. For hours.</p>
-<p>You see, last week I started experimenting with a few different ‘recipes’ for making a soap solution that would allow me to make those big buggers.</p>
-<p>The first experiment failed. The internet said to use dish washing detergent and GLYCERIN but let me tell you that doesn’t work.</p>
-<p>I finally wound up finding a recipe that called for a very hard-to-find powder that turns the soap/water mix into sort of a slimy soap sludge. It gets really thick.</p>
-<p>But, as it turns out, that secret ingredient turned into bubbles 3 feet, 5 feet, 10 FEET LONG and more! As you can tell, I’m really excited about this.</p>
-<p><strong><em>So. Much. Fun.</em></strong></p>
-<p>It was. So. Much. Fun.</p>
-<p>And that’s why I had to think of you.</p>
-<p>I know you love fun. (Also, it’s summer!)</p>
-<p>And I think you need to take your mind off your day-to-day thoughts. To get the creative juices flowing again. To kick back, mentally, and let things happen by themselves.</p>
-<p>Using a special solution (it <em>really</em> works), two sticks and a piece of string as your wand, you’ll make mega-sized bubbles in MINUTES and you’ll relax your mind and just enjoy the moment.</p>
-<p><strong><em>Can’t Wait</em></strong></p>
-<p>I can’t wait to show ya. And I can’t wait to hear what new ideas this will spark in you.</p>
-<p>Which is why I would like to invite you to come over to my place where I’ve got a gallon of solution, a wand and a super sweet rooftop waiting for us to make bubbles.</p>
-<p><strong>Email me if this Saturday works for ya and we’ll make this happen.</strong></p>
-<p>With best wishes and talk soon,</p>
-<p>Alexis</p>
-<p> </p>
-<p><strong>PS</strong>: I’ve found a few factors that make the biggest, best bubbles:</p>
+<h4>DONE</h4>
 <ul>
-<li>A little wind is very good because you basically don’t have to do anything but hold up the wand.</li>
-<li>Too much wind will break your bubbles almost immediately.</li>
-<li>Dry air will make it hard but usually New York is nice and humid during the summer.</li>
-<li>It’s better to make the bubbles in shade because direct sunlight will make them pop quickly.</li>
+<li><input type="checkbox" disabled checked> “Explode” highlights into individual notes (assumes I’m creating the list of links as well)</li>
+<li><input type="checkbox" disabled checked> command (<kbd>SHIFT</kbd> + <kbd>ALT</kbd> + <kbd>=</kbd>) which then copies all of the highlighted text either into:</li>
+<li><input type="checkbox" disabled checked> click a button which then copies all of the highlighted text either into:</li>
+<li><input type="checkbox" disabled checked> allow for <code>&lt;mark&gt;&lt;/mark&gt;</code> to be used as highlights</li>
+<li><input type="checkbox" disabled checked> allow for standard bold (<code>**</code>) to be used as highlights</li>
+<li><input type="checkbox" disabled checked> allow to optionally include or completely exclude <code>## Highlights</code> heading</li>
+<li><input type="checkbox" disabled checked> allow to change text in heading <code>## My Custom Highlights</code></li>
+<li><input type="checkbox" disabled checked> allow to include note-name in heading such as <code>## From: $NOTE_TITLE</code></li>
+<li><input type="checkbox" disabled checked> allow to add footnotes for each highlight and include link to source-note</li>
+<li><input type="checkbox" disabled checked> allow to optionally enable bold for highlights</li>
+<li><input type="checkbox" disabled checked> allow for Command Palette to trigger copying (Works sort of, bug in Electron)</li>
+<li><input type="checkbox" disabled checked> my clipboard</li>
+<li><input type="checkbox" disabled checked> a new note</li>
 </ul>
-<p><strong>PPS</strong>: Oh, and yes, the mixture I’ve figured out is fool-proof otherwise. Let me know if you’d like the recipe.</p>
-<p><strong>PPPS:</strong> Obviously, this post isn’t about bubbles but the act of mentally shelving a hard problem for a while and instead doing something completely different.</p>
 </div>
-<div class="more"><a href="/notes/here-s-one-way-to-instantly-relax-and-kick-start-your-subconscious-problem-solvi/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/here-s-one-way-to-instantly-relax-and-kick-start-your-subconscious-problem-solvi/">Permalink</a></div>
+<div class="more"><a href="/code/extract-highlights-plugin/">Read the whole README ›</a></div>
+<div class="src"><a href="/code/extract-highlights-plugin/">Permalink</a> · <a href="https://github.com/akaalias/extract-highlights-plugin">View on GitHub ↗</a></div>
+</article>
+<article class="item kind-video" id="v-pP4AeGY2mz4">
+<div class="meta"><span class="kind">Video</span><a class="when" href="/videos/how-to-use-obsidian-to-write-a-book/"><time datetime="2020-09-25T12:00:58Z">Friday, September 25, 2020 · 14:00</time></a></div>
+<h2 class="note-title"><a href="/videos/how-to-use-obsidian-to-write-a-book/">How To Use Obsidian to Write a Book</a></h2>
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/pP4AeGY2mz4" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+<div class="text video-desc clamped"><p>🎉 UPDATE: The Journey Plugin automatically creates your book outline for you ➡️ <a href="https://youtu.be/iRydNlinRlc">youtu.be/iRydNlinRlc</a>  🎉</p>
+<p>This is a video for my buddy Chris who is writing a book currently. </p>
+<p>It's a short walk-through on how to leverage Obsidian to collect, connect and contribute interesting and novel ideas.</p>
+<p>The software I'm using is called Obsidian. I'm obsessed with it and I happily pay for it as well. You can download it for free for personal-use <a href="https://obsidian.md/">obsidian.md/</a> </p>
+<p>A lot of the ideas are based on Curtis McHale's videos at <a href="https://www.youtube.com/user/SFNdesignWP">youtube.com/user/SFNdesignWP</a></p>
+<p>If you have any questions, let me know in the comments below!</p>
+<p>PS: I guess it's more of a general &quot;How I use Obsidian to Come Up with New Ideas&quot; and less about the writing/editing process for a book. But, yeah, I think those things are well-covered. I recorded it with the intention to look at the discovery process.</p></div>
+<div class="more"><a href="/videos/how-to-use-obsidian-to-write-a-book/">Read the full description ›</a></div>
+<div class="stats"><span><b>16:29</b> long</span></div>
+<div class="src"><a href="/videos/how-to-use-obsidian-to-write-a-book/">Permalink</a> · <a href="https://www.youtube.com/watch?v=pP4AeGY2mz4">Watch on YouTube ↗</a></div>
+</article>
+<article class="item kind-note" id="n-100-interview-challenge-16-6-2020">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/100-interview-challenge-16-6-2020/"><time datetime="2020-08-09T20:41:47Z">Sunday, August 9, 2020 · 22:41</time></a></div>
+<h2 class="note-title"><a href="/notes/100-interview-challenge-16-6-2020/">100 Interview Challenge 16.6.2020</a></h2>
+<div class="text note-body clamped">
+<h2>Background</h2>
+<p>I’m not 100% sure how I will take my dream about doing this and make it happen. Today I feel very tired and less motivated. I enjoy dreaming about it and I enjoy imagining the benefits of it but I’m not yet ready to start the work. Or at least I’m pushing that away. Yesterday I spent most of the time fantasizing and then 1 hour actually planning this challenge.</p>
+<p>And maybe that’s okay right now. Maybe I need to give myself time to get into it. Maybe <em>I need to clarify the vision</em> for this challenge and <em>get really excited</em> about it BEFORE I start planning all the details and todos.</p>
+<p>Good question. How do I envision this process? How do I envision this project? I know there’s an outcome, at least for now, with <span class="wikilink unresolved">300 In-Depth Interviews Challenge</span>… So that’s <em>good</em> but not really exciting. 100 beans. 100 cups. 100 people. <span class="wikilink unresolved">300 In-Depth Interviews Challenge</span>. Doesn’t say anything. 100 problems captured. 100 ideas generated. 100 business ideas. 100 problems to solve to make money. 100 opportunities to empathize and be creative about something someone cares about.</p>
+<h2>How I want this experience - The “HOW” to the “WHAT”</h2>
+<p>I want to experience my ‘ONE Thing’ in work. I want to focus and know and feel absolutely right. I want to work on it every day and see progress and results and changes and improvements. I want to become an expert in listening. I want to become an expert in generating ideas. I want to create what Dane M. created but even better and bigger and more exciting. I want to be the person that people think of when they think of profitable business ideas. I want to be desired and asked to help and asked to join teams in amazing companies. I want to start and focus on the most important part in work, the problem and pain that people face and figure out ways to solve those in exchange for money. I want to connect with those I interview. I want to make them feel special. I want them to feel safe and cared for. I want them to unlock their potential and creativity safely and with joy. I want others to see that process and begin themselves. I want to share the interviews and help business owners build better products that actually help people. I want to OWN this part. I want to unearth, discover the gems that are hidden. I want to bring those gems to the surface. I want to help 100 people solve their biggest pain in business and life. I want to feel success in conducting these interviews. I want to talk to amazing people. I want to connect with amazing people. I want to build a portfolio site and channel and following that is the foundation for my work. I want to start at the core source of energy and drive incredibly successful business from it. I want to help and co-uncover ideas that are so simple and so clear that it’s completely obvious and doable to build a solution and make money immediately. I want to be sought after and courted by companies and venture firms and start ups and businesses to help them unearth gems. I want to experience work as a joyful and incredibly fun experience that uplifts me and those I am in connection with. I want to experience connection and joy and fun as part of work. I want to build a new life for myself that works for me and that feels right and good. I want this to be my project, my focus, my source of motivation. I want to feel excited and amped up and curious and surprised and connected and referred to and I want to publish and spread and impress and have a portfolio and content and a clear stance.</p>
+<p>I see myself contacting amazing people and getting their yes and sending them the invite and starting the session and recording the session and kicking off the conversation and feeling great and focused and connected and asking and listening and taking notes and reflecting and probing and making them feel good and confident and creative and digging a little more and being careful and respectful and finding an idea and polishing that idea and getting excitement and feeling relief and feeling a sense of liberation and clarity and gratitude and recapping and finding an actual price and feeling good about it. And then slowly finishing off and getting a referral to the next IDEAL interview partner and hearing that they’d love to talk another round because they got so much out of it this time.</p>
+<p>And I see myself finishing the zoom call and feeling really good and excited and inspired and I see myself taking a few more notes and organizing the note and the follow-up and the referral and the recording. I see myself editing the recording and uploading it and getting the transcript for it and publishing it on my site and on Facebook and on Instagram and LinkedIn and getting amazing responses and feeling an immense sense of success. I see myself adding one more interview to my list and looking forward to the next one.</p>
+<h2>Reflection</h2>
+<p>Yes, this feels much better. Much more in tune with actually doing it. This feels like I’m already doing it. This makes so much sense. I believe that focusing on the feeling and the experience as I want to have it is good. I’m definitely more amped up than I was an hour ago.</p>
+<p>Having a vision of “HOW” is super important. The “WHAT” has been clear (<span class="wikilink unresolved">300 In-Depth Interviews Challenge</span>) for a few days and I can get excited about that as a challenge but it’s also important to get emotional about it to have the energy and the vibe and the creativity that’s needed to make it happen.</p>
+<p>I’ve also done the <em>“Why do I want this?”</em> and <em>“Why do I believe I will get this?”</em> and I guess the <em>“How do I want this?”</em> is another part in this process to give it color and dimension and emotions.</p>
+<p>I’ll let this sink in for a little bit and then decide on what’s next in this process.</p>
+<p>Now for a little break.</p>
+<ul>
+<li><span class="wikilink unresolved">100 Interview Challenge 15.6.2020</span></li>
+</ul>
+<h3>Tags</h3>
+<ul>
+<li>#100daychallenge</li>
+<li>#interviews</li>
+<li>#abrahamworkshop</li>
+</ul>
+</div>
+<div class="more"><a href="/notes/100-interview-challenge-16-6-2020/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/100-interview-challenge-16-6-2020/">Permalink</a></div>
+</article>
+<article class="item kind-hn" id="hn-24100039">
+<div class="meta"><span class="kind">Hacker News comment</span><a class="when" href="/feed/hn/24100039/"><time datetime="2020-08-09T15:04:06Z">Sunday, August 9, 2020 · 17:04</time></a></div>
+<blockquote class="ctx">
+<cite>Comment on <a href="https://news.ycombinator.com/item?id=24008678">Show HN: Breathe – Peripheral Breath Trainer</a></cite>
+</blockquote>
+<div class="text"><p>I had the exact same experience. I put together a bare-bones menu bar app for macOS. See my comment above for the link!<p>Edit: It does pulse within the menu bar which works for me, please let me know if you find it distracting.</div>
+<div class="src"><a href="/feed/hn/24100039/">Permalink</a> · <a href="https://news.ycombinator.com/item?id=24100039">View on Hacker News ↗</a></div>
+</article>
+<article class="item kind-hn" id="hn-24098971">
+<div class="meta"><span class="kind">Hacker News comment</span><a class="when" href="/feed/hn/24098971/"><time datetime="2020-08-09T11:48:40Z">Sunday, August 9, 2020 · 13:48</time></a></div>
+<blockquote class="ctx">
+<cite>Comment on <a href="https://news.ycombinator.com/item?id=24008678">Show HN: Breathe – Peripheral Breath Trainer</a></cite>
+</blockquote>
+<div class="text"><p>I love this so much. Thank you!<p>Especially for the &quot;peripheral&quot; part: For me it works better to &quot;check-in&quot; to the ongoing process once in a while than having to remember to start an app etc.<p>What didn&#x27;t work for me was the window-based approach because I could never find a good place to keep it. For whatever reason, I happen to use all four corners of my screen all the time (!).<p>But I still wanted to have something peripheral! So with your inspiration, I created a basic MacOs Menu Bar application that animates the 4:4:4 ratio breathing. This works better for me personally now.<p>-&gt; <a href="https:&#x2F;&#x2F;github.com&#x2F;akaalias&#x2F;menu-bar-breathing" rel="nofollow">https:&#x2F;&#x2F;github.com&#x2F;akaalias&#x2F;menu-bar-breathing</a></div>
+<div class="src"><a href="/feed/hn/24098971/">Permalink</a> · <a href="https://news.ycombinator.com/item?id=24098971">View on Hacker News ↗</a></div>
+</article>
+<article class="item kind-repo" id="g-menu-bar-breathing">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/menu-bar-breathing/"><time datetime="2020-08-04T09:44:26Z">Tuesday, August 4, 2020 · 11:44</time></a></div>
+<h2 class="note-title"><a href="/code/menu-bar-breathing/">menu-bar-breathing</a></h2>
+<p class="repo-desc">A small MacOS menu bar app that helps you breathe</p>
+<div class="stats"><span><b>7</b> stars</span> · <span><b>1</b> fork</span> · <span>Swift</span></div>
+<div class="text note-body repo-readme">
+<p>A tiny and completely unobtrusive menu-bar macOS menu bar app that helps you remember to breathe.</p>
+<p><img src="/code/media/gh-284938586-c046983293dfd3a5.gif" alt="" loading="lazy"></p>
+<h2>Release for macOS</h2>
+<p><a href="https://github.com/akaalias/menu-bar-breathing/releases/tag/0.0.1">https://github.com/akaalias/menu-bar-breathing/releases/tag/0.0.1</a></p>
+<h2>Free Bonus: My Complete Breathwork Secrets Videos on Youtube (4+h)</h2>
+<p><a href="https://www.youtube.com/playlist?list=PLXf3KNADhT1MjYewe-aUOWlvSx1VBvOML">https://www.youtube.com/playlist?list=PLXf3KNADhT1MjYewe-aUOWlvSx1VBvOML</a></p>
+<p><img src="/code/media/gh-284938586-87b1d326952ad36d.png" alt="https://www.youtube.com/playlist?list=PLXf3KNADhT1MjYewe-aUOWlvSx1VBvOML" loading="lazy"></p>
+</div>
+<div class="src"><a href="/code/menu-bar-breathing/">Permalink</a> · <a href="https://github.com/akaalias/menu-bar-breathing">View on GitHub ↗</a></div>
+</article>
+<article class="item kind-note" id="n-03-07-2020">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/03-07-2020/"><time datetime="2020-07-02T22:00:00Z">Friday, July 3, 2020 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/03-07-2020/">03.07.2020</a></h2>
+<div class="text note-body clamped">
+<ul>
+<li>Did a <span class="wikilink unresolved">Retrospective 3.7.2020</span></li>
+<li>Sent out the complete <span class="wikilink unresolved">LifeScan Phase Two Interviews – First Impressions</span> as PDF to my team…</li>
+<li>Still got to edit my own rent contract</li>
+<li>Print it out</li>
+<li><p>Buy stuff for tomorrow:</p>
+<ul>
+<li><p>Fennel Salad #done</p>
+<ul>
+<li>Fennel</li>
+<li>Lemons</li>
+<li>Parmigiano</li>
+</ul>
+</li>
+<li>Burger buns 3 x 6 #done</li>
+<li>Iceberg Salad x 1 #done</li>
+<li>Tomatos x 1 #done</li>
+<li><p>Once I get there:</p>
+<ul>
+<li>Ice cubes</li>
+<li>2 x six-packs of american beers</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Learned a little more about Obsidian, enabled the daily note plugin since I’ve been creating a daily note already by hand most days. Got the $25/life license to get beta builds (worth it already because backlinks were broken and CPU used 100% by the graph renderer.)</p>
+<p>Talked to <span class="wikilink unresolved">Jonathan Najarian</span> on the phone for a bit; we did a quick check-in because he was headed to a gig and I had to go buy stuff. Printed out the rent contracts before. What else? Got all the stuff for the grilling tomorrow. I’m not sure if I want to head back to <span class="wikilink unresolved">What I love about Franziska Krüger</span> tonight after 10pm. I kind of feel like spending some time with myself. A lot has happened this week and I’m exhausted. I spent a lot of Money. I didn’t make that much Money in return… But in the idea of expanding, I feel good about spending money on myself for myself. And most of it was Food-related anyway, which I think is good and worth it.</p>
+<p>I’m good sitting around right now. Maybe watch <span class="wikilink unresolved">Notes on Dane Maxwell</span>’s video about <span class="wikilink unresolved">Pick a Niche Article</span> later.</p>
+<p>Read the article, overall good, just not feeling particularly marketing-y or sales-y right now. I just want to chill and maybe eat something later and then go to bed and start the weekend tomorrow.</p>
+</div>
+<div class="more"><a href="/notes/03-07-2020/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/03-07-2020/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-24-06-2020">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/24-06-2020/"><time datetime="2020-06-23T22:00:00Z">Wednesday, June 24, 2020 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/24-06-2020/">24.06.2020</a></h2>
+<div class="text note-body clamped">
+<p>Woke up tired, got out of bed at 9. Feeling like shit. Feeling exhausted and incredibly sad. Sat on the couch yesterday all day. No Dopamine-hits, no scrolling etc. I think that’s the right decision. Same today. I have two interviews. The one I did yesterday was the highlight of my day. Other than that, I didn’t do much. I went shopping and cooked chicken. That was good.</p>
+<p>For right now I’m glad I went out for a walk through the park. I wish I could cry it all out. I wish I could cry so that this pain and suffering has a place to be. I looked at that tree that reminds me of me. It has a vine plant creeping up and someone other than me cut that vine. And now there’s a skeleton left of that vine and the tree is growing much better now than last year. I identify with the tree and hope I am in the process of cutting my vine off.</p>
+<p>I feel slow and sad and heavy. At least allergies are back to a manageable level. This month sucked ass. It was basically 4 weeks of not sleeping because of allergies, becoming aware of how bad my early “work”-experience was and that I’m a survivor. No one really cares even if I tell them. I have to pay too much money that I don’t have. I feel small and hurt and sad and alone and broke and broken.</p>
+<p>Maybe that’s why I’ve been Broke so much. I’m just a nobody with nothing of value. I’m just someone you pass on the street, a somebody who serves you dinner. My life has no meaning anymore. <span class="wikilink unresolved">Twenty years</span> of living a lie, lying to myself just to survive. That’s what they call a survivor. I haven’t thrived once in the last <span class="wikilink unresolved">Twenty years</span>. I’ve been on the edge of failure, ruin, heart-break and death and I managed to never fall off the rails. No wonder I smoked like a chimney. No wonder.</p>
+<p>It wasn’t my fault but it still happened to me.</p>
+<p>And now I know why nothing ever worked out for me in the last fucking <span class="wikilink unresolved">Twenty years</span>. At least I know now. Getting glasses when you’re short-sighted is great because you start seeing the world clearly. It also shows you the stuff that’s wrong and broken or where you suffered. Clarity sheds a light on everything, the good, the bad and the ugly truths. And so, finally, I’ve been in a position to look at the ugly truths in my life. And the ugly people in my life that made my time miserable and maimed me for the rest of my life. What happened was not okay. It was not appropriate. It was completely inappropriate and wrong. It was wrong.</p>
+<p>So, for today, what’s my plan?</p>
+<ul>
+<li>Interview #2 with Dr. Moaz [DONE]</li>
+<li>???</li>
+<li>Interview #3 with Annika [DONE]</li>
+<li>???</li>
+<li>???</li>
+<li>???</li>
+<li>Call with JN at 6pm: Interview</li>
+<li>Head over to <span class="wikilink unresolved">What I love about Franziska Krüger</span>’s at 7pm for dinner</li>
+<li>Get an overview of current finances/expenses</li>
+</ul>
+<p>I don’t know yet what comes after the interviews. Gotta make sure I write down my first impressions again. That seemed to be valuable to me and the client.</p>
+<p>Worrying about money. 40 and Broke. 40 and Broke. 40 and broken. 40 and worthless. 40 and nobody. 40 and survived. 40 and… ?</p>
+<h2>Dopamine Fast Day 2</h2>
+<p>I’m supposed to focus on what I want. I want to focus on what I want. But it’s hard today. It’s hard when you’re depressed.</p>
+<p>I should keep moving more.</p>
+<ul>
+<li>I will not check my phone.</li>
+<li>I will not go on social media.</li>
+<li>I will not read news.</li>
+<li>I will not eat sugar.</li>
+<li>I will not eat fast food.</li>
+<li>I will not watch porn.</li>
+</ul>
+<p><strong>I will not get high on bullshit, low-value, high-dopamine hits to avoid difficult feelings anymore.</strong> I’m doing this for ME. Instead, I’ll do stuff that’s good for me and that will feel good when I don’t baseline myself with those drugs!</p>
+<p>And I was successful there yesterday. No random dopamine hits throughout the day.</p>
+<p>No mindless scrolling to ease the pain.</p>
+<p>No coffee or nicotine! (Non-smoker for over 4 months now!)</p>
+<p>Instead,</p>
+<ul>
+<li>I will move my body</li>
+<li>I will eat good food</li>
+<li>I will read good books</li>
+<li>I will exercise my body</li>
+<li>I will meditate</li>
+<li>I will allow difficult emotions</li>
+<li>I will allow difficult conversations</li>
+<li>I will write</li>
+</ul>
+<p>And I don’t need to stress out that I’m not yet the productivity-machine reading 3 books every day on day 2 of my <span class="wikilink unresolved">dopamine fast</span>. If I can avoid the brain-sugar bullshit, all other productive things will come back one by one.</p>
+<p>Maybe I’ve been so hooked on that shit is because my trauma was so big as well. Where others just dipped their toes once in a while, I was fully invested because it gave me relief from my pain.</p>
+<h2>Interview #2 Preparations</h2>
+<p>Anyways, the interview is coming up in 25 minutes. I don’t have much more coherent thinking available at the moment. And that’s okay. Just kept writing and got some ideas out of it. I wonder how air conditioning works in the new place on <span class="wikilink unresolved">Alexanderplatz Apartment</span>?</p>
+<p>Still got 5 minutes left on my tomato timer. What else can I write about that’s relevant and interesting?</p>
+<h2>How I want to feel</h2>
+<p>I want to wake up in the morning full of energy and feel tirelessly motivated to live my own life. To work on something that fulfills me and that lets me enjoy success and financial independence. To have a loving relationship with my partner and my family and my friends. To be free of worry about money. To choose experiences because I want them, being certain that all resources like money will be available to me. To be full of energy and focused. To be alert and “there” and flow effortlessly through my day from one activity to the next to a different place, in and out of conversations etc. Free of feeling hurt and sadness. Full of positive, hopeful, optimistic feelings.</p>
+<h2>After Interview with Dr. Moaz</h2>
+<p>Super nice, learned a lot. Had fun. I think she enjoyed it as well. Good intuitions on what she said. Good training for my own interviews. Good probing, good memory on what was said. Good notes. Good first impressions. Overall a success! Time flew by, I asked mostly open-ended questions.</p>
+<p>Now, I have one hours to spend before the next call. That’ll be at 1:30, then I’ll have a longer break until talking to <span class="wikilink unresolved">Jonathan Najarian</span> at 6pm. Feels crazy that the day is already that far ahead. But I slept in until 9am, so…</p>
+<h2>Idea Regarding “Interviews”</h2>
+<p>“Start with ONE” - Marketing course that starts with ONE customer that gets interviewed for problems and solutions. Find a really painful problem, then come up with solutions until a paid solution is found and that pain is solved.</p>
+<ol>
+<li>One Person that I like spending time with</li>
+<li>One Problem that they seriously struggle with</li>
+<li>One Solution that they’ll pay for</li>
+</ol>
+<p>Use interview to come up with a “Person(a)” like <span class="wikilink unresolved">Jonathan Najarian</span>, 30 years old, lives in Boston, works with his girlfriend as wedding-photographer, 2-person team, city-wide booking. Could even be a friend, because it’s about their problem and their solution and not some random idea I’ve come up with. Maybe. This needs to be seen.</p>
+<p>Use interview to capture emotionally charged problem description “XYZ fucking sucks, man. If this doesn’t go away, things’ll get fucking ugly.” This can be used directly in sales copy for this one particular person. A sales-letter for ONE that basically recaps the conversation and the idea/offer that was created together.</p>
+<p>Use interview to create product/idea/offer in a way that it’s valuable to them and they’re ready to pay for it. Using quotes and the feature-list, build a landing-page (could be email) to presell the service.</p>
+<p>BOOM!</p>
+<p>Deliver the service as discussed and promised and paid for. Ask for feedback, improvements.</p>
+<p>Get testimonial, referrals and introductions.</p>
+<p>Scale business system slowly.</p>
+<blockquote>
+<p>“We’re all just walking each other home.” – Ram Dass</p>
+</blockquote>
+<h2>Thought: Would any of these notes I’ve been writing be worth/useful to others?</h2>
+<p>Just thought, I could publish this on a site so that at least <span class="wikilink unresolved">What I love about Franziska Krüger</span> and my dad would have an idea of where I’m at…</p>
+<p>Where is freeisaverb.com hosted actually?</p>
+<p>Requested account deletion on HostGator, BlueHost, Medium, Twitter</p>
+<p>Should make my LinkedIn profile private!</p>
+<p>Should probably cancel <span class="wikilink unresolved">Clickfunnels</span>…</p>
+<h2>Related</h2>
+<ul>
+<li><span class="wikilink unresolved">Daily Journaling</span></li>
+<li><span class="wikilink unresolved">Regular Journal 23.6.2020</span></li>
+<li><span class="wikilink unresolved">Abraham Workshop</span></li>
+<li><span class="wikilink unresolved">Build a Biz in 2 Hours Course</span></li>
+</ul>
+<h3>Tags</h3>
+<ul>
+<li>#regularjournal</li>
+<li>#iwanttoknowwhatiwant</li>
+<li>#dopaminefast</li>
+<li>#100daychallenge</li>
+<li>#interviews</li>
+</ul>
+</div>
+<div class="more"><a href="/notes/24-06-2020/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/24-06-2020/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-post-shadow-journal-09-06-2020">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/post-shadow-journal-09-06-2020/"><time datetime="2020-06-08T22:00:00Z">Tuesday, June 9, 2020 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/post-shadow-journal-09-06-2020/">Post-Shadow Journal 09.06.2020</a></h2>
+<div class="text note-body clamped">
+<p>Uff, ja, also heute ging’s nochmal richtig um’s Eingemachte. Und ich bin froh, dass ich gerade die Zeit und den Kopf dafür habe. Ich kann mich relativ fokussiert daran setzen und da irgendwie durch arbeiten. Es muss raus. Es geht hier um MEIN LEBEN. Und erst jetzt, mit Medikament, kann ich erst damit wirklich umgehen. Was ein Glück, dass ich das für mich entdeckt habe. Schreiben scheint ein guter Weg zu sein, das zu verarbeiten. Ich weiss nicht, was da gerade noch besser wäre, aber ich fühle mich wohl hier am Keyboard, in Ruhe. Ich hatte mir gewünscht, dass ich irgendwie schon weiter bin in meinem Leben. Dass ich mich total auf Jobsuche und Beziehung und Wohnung und Spass und Freunde und Berlin konzentrieren kann. Aber ich bin da einfach nicht. Und ich werde da auch erst dann sein, wenn ich das hier heile. Und ich bin so froh, dass mit der Hilfe von <span class="wikilink unresolved">Psilocybin</span> und Ritalin ich das Problem erkenne und es aktiv lösen kann, weil ich mich fokussieren kann. Alles, war in meinem Leben in den letzten 20 Jahren los war, war in direktem Bezug auf das <span class="wikilink unresolved">Traumatic Experience at Work</span>, das ich momentan bespreche. Es ist irrsinnig krass, was damals passiert ist, wie rücksichtslos mit mir umgegangen wurde. Wie krass, dass es den Tätern nur um Macht und Geld ging und ich die Geschichte vom Weltverbessern geglaubt habe.</p>
+<p>Ohne da jetzt wieder einzusteigen: Ich sollte nach dieser Runde etwas leckeres Essen, eine Pause machen und mich auf das konzentrieren, was ich will. Das tut mir wirklich gut und es macht Sinn und wenn ich mich mit dem Scheiss beschäftigen muss, dann ist es immer in Beziehung zu meinem besseren Leben in meiner nahen Zukunft! Diesen Fokus auf die guten Dinge zu halten ist jetzt noch viel wichtiger als jemals zuvor! Denn so kann ich mein Leben zurückgewinnen und meine Stabilität und meinen Selbstwert. Ich bin stolz darauf, hier und jetzt genau diese Arbeit zu machen. Ich bin stolz darauf, denn ich stehe hier und jetzt für mich und mein Leben ein und setze Grenzen und schaffe mir meine Zukunft in der es mir gut geht, in der ich aufblühe, in der ich und mein Leben und meine Arbeit und mein Geld und meine Beziehungen gedeihen. Genau so wie damals, <span class="wikilink unresolved">1999</span> in <span class="wikilink unresolved">New York</span>, und noch viel besser! Und darum geht es. Es geht um mich. Es geht um meine Bedürfnisse. Es geht um mein Leben. Um meine Zeit. Dass es mir wieder gut geht. Dass ich mein Leben lebe. Ich bin stolz, dass ich es bis hier her geschafft habe. Dass ich nicht aufgegeben habe. Dass ich mich nicht umgebracht habe. Dass ich andere so gut es ging vor diesem Problem geschützt habe. Dass ich an mir selbst gearbeitet habe. Dass ich mir selbst zugehört habe, dass ich meinem inneren Klang gefolgt bin auch wenn es schwer war. Dass ich mir selbst Stufen in den Stein gehauen habe um aus dem Loch herauszukommen. Ich finde, ich mache das sehr, sehr gut. Ich finde, dass ich jetzt schon, im Verarbeiten und Heilen dieses Themas einen Riesen Erfolg schaffe. Ich fühle mich jetzt schon besser und größer und stärker und fokussierter als jemals in den letzten 20 Jahren!</p>
+<p>Also, daher die abschliessenden Worte…</p>
+<p>Das ist die richtige Arbeit, die ich hier mache. Es ist die wichtige Arbeit, die mich dahin führt wo ich es mir wünsche. Es ist ganz schön harte Arbeit, aber ich habe sie gemacht. Es ist härter, nichts zu tun und sein Leben kaputt gehen zu sehen. Daher ist diese Arbeit und diese Zeit und diese Herausforderung die beste Investition in meine Zukunft. In meine Arbeit. In mein Vermächtnis. In den Spass und die Freude, die ich in meinem Leben erleben will. Dieses Thema, diese Befreiung ist die wichtigste Arbeit, die ich in meinem Leben jetzt verrichten kann. Und ich bin unglaublich dankbar, dass ich körperlich und geistig und seelisch dazu jetzt in der Lage bin. Und vielleicht kann ich irgendwann jemand Anderem helfen, sich so zu befreien.</p>
+<p>AR</p>
+</div>
+<div class="more"><a href="/notes/post-shadow-journal-09-06-2020/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/post-shadow-journal-09-06-2020/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-05-06-2020">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/05-06-2020/"><time datetime="2020-06-04T22:00:00Z">Friday, June 5, 2020 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/05-06-2020/">05.06.2020</a></h2>
+<div class="text note-body clamped">
+<p>Noch ein weiterer Eintrag für heute…</p>
+<p>I did 2 hours of Deep Work – got the funnel ready and even found a good name for the overarching brand: <span class="wikilink unresolved">MindSky Academy</span>. Nice! Got the domain, that’s  verifying, but once it is, I’ll finalize the Google Suite thing and then head over to mailerlite to verify my account with my fancy alexis@mindskyacademy.com email address. Pretty cool!</p>
+<p>I’m happy it’s the end of the week, I’m not that sharp anymore after working every day since Monday but I feel like I’ve pushed myself forward and kept  good records of every amount of effort I put in. In total it’s 14 hours of Deep Work (not counting  work for C Space) working on my MindSky funnel and products and copy and videos. 14 hours I’ve invested in myself and my future and that worked. I need to eat more throughout the day, that was the only issue I haven’t tackled yet. I’ll try <span class="wikilink unresolved">HUEL</span> to make sure I eat <em>something</em> until I have the time to cook a meal.</p>
+<p>So yeah, I’m pretty stoked about this week! I bought myself flowers that I put on my desk and that makes it nice to sit here. They have a calming effect and are beautiful to look at. I think they’re enjoying their stay. I hope.</p>
+<p>Since I cleaned up my desk last week and continued to remove anything that wasn’t essential from it I like working here much more. It’s the bare necessities I need to work and no distractions. The checklist above the table has also helped tremendously. I don’t yet know how to ensure 100% that I start a timer before I go into work but it’s working. I’m missing 20% maximum of sessions from my timer this week. That happens when I’m just in the zone I think. The little triangle stars I’m using to reward and celebrate are cute. I wish there were more of them. Or different stickers. And those that I don’t know what it’s going to be ahead of time (like a variable reward kind of thing) – I’ll look into that next week. Maybe Modulor is open again or that toy store down the street.</p>
+<p>In either case, I feel like I’m developing, rapidly, a way for me to work hard and long and feel good about it. This is a major progress for me from staring into space or sleeping to working and getting things done consistently. I am proud that I’ve found a solution to my problem (Ritalin) and am excited to be ABLE to shape my life the way I want it to.</p>
+<p>YES!</p>
+</div>
+<div class="more"><a href="/notes/05-06-2020/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/05-06-2020/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-18-05-2020">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/18-05-2020/"><time datetime="2020-05-17T22:00:00Z">Monday, May 18, 2020 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/18-05-2020/">18.05.2020</a></h2>
+<div class="text note-body clamped">
+<p>Montag, 18.5.2020 – Irgendwie fühle ich mich seit Freitag komisch. Also auch schon davor, aber heute bin ich erst um 10:00 aus dem Bett gekommen. Irgendwas stört mich oder macht mich traurig. Ich glaube, es hat mit <span class="wikilink unresolved">What I love about Franziska Krüger</span> zu tun. Dem Streit von letztens. Und das hängt mir glaube ich noch nach. Also, den Elan von den letzten Wochen habe ich gerade nicht. Vielleicht bin ich auch enttäuscht, dass das mit dem <span class="wikilink unresolved">OFAC</span> Projekt doch nicht, gar nicht, hinhaut und ich da so viel Arbeit reingesteckt habe. Vielleicht auch das. Die Bewerbungen gehen eigentlich ganz gut. Aber heute schon mit Oleksii zu sprechen wegen einer Position geht mir etwas schnell. Also, wenn ich mich frage ob es mir gut geht muss ich sagen nein, ich fühle mich irgendwie off oder daneben. Sehr komisch. Könnte auch vom Essen letzte Woche kommen. Und dieser Fokus Mode hier geht auch irgendwie nicht so wie er sollte. Das der gesamte Text immer gehighlighted wird ist doch nicht die Idee, oder?</p>
+<p>Was gibt’s denn sonst so? Fühl mich müde und umfokussiert. Vielleicht hat das auch damit zu tun, dass ich am Samstag nicht dosiert hatte. Oder, dass ich jeden Tag dosier und das zu viel oder zu oft ist. Ich weiss es nicht.</p>
+<p>Zumindest habe ich für die Woche noch keine gute Vision.</p>
+<p>Also, irgendwie ist da der Wurm drin gerade.</p>
+<p>Erstmal habe ich schlechte Laune, bin frustriert, bin traurig. Fühle mich alleine. Fühle mich schwer.</p>
+<p>Das ist echt komisch weil es mir eigentlich gut geht!</p>
+<p>Ich hatte ein tolles Wochenende. Hab gut geschlafen. Hab hier gerade meine Ruhe… Also an sich passt doch alles.</p>
+<p>Was kann ich tun, damit ich mich irgendwie besser fühle? Welcher Gedanke macht da gerade für mich Sinn?</p>
+</div>
+<div class="more"><a href="/notes/18-05-2020/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/18-05-2020/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-27-04-2020">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/27-04-2020/"><time datetime="2020-04-26T22:00:00Z">Monday, April 27, 2020 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/27-04-2020/">27.04.2020</a></h2>
+<div class="text note-body clamped">
+<p>So. Today was a good day so far. I finally broke my own record of working 4h straight (with pauses every 30 minutes) on my Deep Work – specifically building my funnel following the <span class="wikilink unresolved">OFAC</span> framework. I’m proud because I still have time and energy to write about it now and I feel like I can do this again. I crossed the 4h mile! And yes, the Ritalin is definitely helping with this, especially in the moments where there’s a distraction and I’m able to ignore it and re-focus. I also made  myself a first draft of a checklist before getting to work. Here are the check-marks that have to be answered with ‘yes’ before I actually start the work:</p>
+<p>Do I have…</p>
+<ol>
+<li>A goal?</li>
+<li>Taken a break?</li>
+<li>A plan?</li>
+<li>A good task?</li>
+<li>A reward?</li>
+<li>Removed distractions?</li>
+<li>Water and snacks?</li>
+<li>A timer set?</li>
+</ol>
+<p>So far, through 8 sessions of 30 minutes each (a longer pomodoro) I used the checklist to make sure I could fully focus  on the task before me.</p>
+<p>One task, setting up the email integration, took much longer than expected because I wanted to use a service that doesn’t cost anything (yet), works with CF and allows for automations in the free tier. It took me an hour of trying different services out until I settled on MailerLite with Zapier. It’s a little hacky but it works as much as I need it to. The only thing missing is getting the MailerLite account verified for which I need a custom email address like alexis@mindsky.com – Which prompted me to (capture the need for) brainstorm a company name/product suite name. Something like MindSky is really nice… But that will have to wait until tomorrow, that’s the next task at hand to finish up my email system: A verified MailerLite account. It’ll cost ~$5 per month for the Google business suite which I wish I didn’t have to pay for (didn’t they have a free offer as well??)</p>
+<p>Anyways, yes, pretty excited. Implemented the opt-in page, the responder (including a fresh account), the sequence of 5 emails, the 5 pages that belong to it. I’m so fucking glad to use PLR.me templates instead of having to come up with all of that on my own. For training purposes, this is really helpful. And I used FunnelScripts to write a good headline and sub-headline and the CTA for me. If anything, If I can really, truly stay to be the CONDUCTOR/COMPOSER focusing on the offers, the story and the hook and leave EVERYTHING else to someone or something else, would be tremendous.</p>
+<p>In other news, I got a mouse, a bluetooth one and I like it a lot. It does need a mouse pad on my table which is unfortunate but I think that would’ve been the case with any mouse I buy. Other than that it works really well! I haven’t had a mouse in a decade I believe. But with my table/seat/keyboard set up this makes a lot of sense. Like right now, I’m using my external keyboard to type and if I need anything I can just lean right, grab my mouse instead of having to completely shift my body to reach OVER my keyboard and use my trackpad on my laptop.</p>
+<p>Oh, this reminds me, I still get to do my prosperity game today (and yesterday’s) which means I have a lot of money (play-money for now) to “spend” on something I’d love. Like a enormous display and/or fully loaded iMac. Maybe that’s the idea. The fully loaded iMac and a long trip to Paris.</p>
+<p>You know what? That’s what I’m going to do now to make sure I’ve spent good time on it.</p>
+</div>
+<div class="more"><a href="/notes/27-04-2020/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/27-04-2020/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-case-study-how-to-reality-check-your-startup-persona-in-1-day-without-hours-of-i">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/case-study-how-to-reality-check-your-startup-persona-in-1-day-without-hours-of-i/"><time datetime="2020-03-06T23:00:00Z">Saturday, March 7, 2020 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/case-study-how-to-reality-check-your-startup-persona-in-1-day-without-hours-of-i/">Case Study: How To &quot;Reality Check&quot; Your Startup Persona in 1 Day Without Hours of Interviewing</a></h2>
+<div class="text note-body clamped">
+<p>Here’s a little case study I’ve put together based on a project I recently worked on. It shows you the process on how you can “Reality Check” what you know about your market and customers in order to build better products.</p>
+<p>I’m showing you a step-by-step process that has radically transformed how I approach a new idea or venture by de-risking my time and energy by building on facts and not clichés.</p>
+<p>It involves…</p>
+<ul>
+<li>Hard Lessons Learned</li>
+<li>Facebook Audience Insights Hacking</li>
+<li>Market Reverse-Engineering</li>
+<li>and good ol’ Copywriting</li>
+</ul>
+<p>I’m stoked about this process because it has worked like a charm in my ventures.</p>
+<p>The other week I helped two friends with their health-related startup. The slideshow will show you the exact steps we used to arrive at a valid customer persona and a relevant value proposition that we tested the same day in the market.</p>
+<p>You can also <a href="http://freeisaverb.com/wp-content/uploads/2018/11/Reality-Check-Workshop-Case-Study.pdf">download the full deck here</a>.</p>
+<p><img src="/notes/media/Reality-Check.001-1024x768.jpg" alt="" loading="lazy"></p>
+<p><img src="/notes/media/Reality-Check.002-1024x768.jpg" alt="" loading="lazy"></p>
+<p><img src="/notes/media/Reality-Check.003-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.004-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.005-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.006-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.007-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.008-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.009-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.010-1024x768.jpg" alt="" loading="lazy"></p>
+<p> 
+<img src="/notes/media/Reality-Check.011-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.012-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.013-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.014-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.015-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.016-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.017-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.018-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.019-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.020-1024x768.jpg" alt="" loading="lazy"></p>
+<p><img src="/notes/media/Reality-Check.022-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.021-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.023-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.024-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.025-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.026-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.027-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.028-1024x768.jpg" alt="" loading="lazy"></p>
+</div>
+<div class="more"><a href="/notes/case-study-how-to-reality-check-your-startup-persona-in-1-day-without-hours-of-i/">Continue reading ›</a></div>
+<div class="src"><a href="/notes/case-study-how-to-reality-check-your-startup-persona-in-1-day-without-hours-of-i/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-self-care-challenge-day-36-100-retrospective">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/self-care-challenge-day-36-100-retrospective/"><time datetime="2019-09-04T22:00:00Z">Thursday, September 5, 2019 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/self-care-challenge-day-36-100-retrospective/">Self-Care Challenge Day 36/100 Retrospective</a></h2>
+<div class="text note-body">
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/pV6CKVP8BqI" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+
+<p>In this video I’ll share with you a quick update on my progress, experience and learnings of pursuing a self-care program every day for 100 days.</p>
+</div>
+<div class="src"><a href="/notes/self-care-challenge-day-36-100-retrospective/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-self-care-challenge-day-18-100-retrospective">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/self-care-challenge-day-18-100-retrospective/"><time datetime="2019-08-18T22:00:00Z">Monday, August 19, 2019 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/self-care-challenge-day-18-100-retrospective/">Self-Care Challenge Day 18/100 – Retrospective</a></h2>
+<div class="text note-body">
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/6ulAg4Y7JxE" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+
+<p>Self-Care Challenge Day 18/100: A quick retrospective on what went well, what’s going “so-so” and what has sucked in the past week.</p>
+</div>
+<div class="src"><a href="/notes/self-care-challenge-day-18-100-retrospective/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-please-don-t-keel-over">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/please-don-t-keel-over/"><time datetime="2019-08-13T22:00:00Z">Wednesday, August 14, 2019 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/please-don-t-keel-over/">PLEASE. DON'T. KEEL. OVER.</a></h2>
+<div class="text note-body">
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/mL14RECwt2M" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+
+<p>PLEASE. DON’T. KEEL. OVER!</p>
+<p>A quick story about the importance of self-care</p>
+</div>
+<div class="src"><a href="/notes/please-don-t-keel-over/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-whiteboard-mastery-handwriting-cheat-sheet-training-video">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/whiteboard-mastery-handwriting-cheat-sheet-training-video/"><time datetime="2019-08-12T22:00:00Z">Tuesday, August 13, 2019 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/whiteboard-mastery-handwriting-cheat-sheet-training-video/">Whiteboard Mastery – Handwriting Cheat Sheet Training Video</a></h2>
+<div class="text note-body">
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/SRgaEao1UGE" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+
+</div>
+<div class="src"><a href="/notes/whiteboard-mastery-handwriting-cheat-sheet-training-video/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-whiteboard-mastery-handwriting-workshop-learnings">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/whiteboard-mastery-handwriting-workshop-learnings/"><time datetime="2019-08-12T22:00:00Z">Tuesday, August 13, 2019 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/whiteboard-mastery-handwriting-workshop-learnings/">Whiteboard Mastery – Handwriting Workshop Learnings</a></h2>
+<div class="text note-body">
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/vZ56szjGqbQ" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+
+</div>
+<div class="src"><a href="/notes/whiteboard-mastery-handwriting-workshop-learnings/">Permalink</a></div>
+</article>
+<article class="item kind-note" id="n-whiteboard-mastery-handwriting-persuasion-and-the-path-of-least-resistance">
+<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/whiteboard-mastery-handwriting-persuasion-and-the-path-of-least-resistance/"><time datetime="2019-08-12T22:00:00Z">Tuesday, August 13, 2019 · 00:00</time></a></div>
+<h2 class="note-title"><a href="/notes/whiteboard-mastery-handwriting-persuasion-and-the-path-of-least-resistance/">Whiteboard Mastery – Handwriting, Persuasion and the Path Of Least Resistance</a></h2>
+<div class="text note-body">
+<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/MBeNY8NRrMQ" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+
+</div>
+<div class="src"><a href="/notes/whiteboard-mastery-handwriting-persuasion-and-the-path-of-least-resistance/">Permalink</a></div>
 </article>
 </section>
-<nav class="pager"><a href="/feed/page/35/">‹ Newer</a><span class="n">Page 36 of 38</span><a href="/feed/page/37/">Older ›</a></nav>
+<nav class="pager"><a href="/feed/page/35/">‹ Newer</a><span class="n">Page 36 of 43</span><a href="/feed/page/37/">Older ›</a></nav>
 <aside class="months-nav">
 <div class="group">
 <h3><a href="/feed/archive/">Archive</a></h3>
@@ -894,27 +755,27 @@ So, are you ready to make your friend be like this when they get an email from y
 <ul>
 <li><a href="/feed/archive/2026/11/">November</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2026/10/">October</a> <span class="n">11</span></li>
-<li><a href="/feed/archive/2026/09/">September</a> <span class="n">79</span></li>
-<li><a href="/feed/archive/2026/08/">August</a> <span class="n">37</span></li>
-<li><a href="/feed/archive/2026/07/">July</a> <span class="n">25</span></li>
+<li><a href="/feed/archive/2026/09/">September</a> <span class="n">85</span></li>
+<li><a href="/feed/archive/2026/08/">August</a> <span class="n">40</span></li>
+<li><a href="/feed/archive/2026/07/">July</a> <span class="n">30</span></li>
 <li><a href="/feed/archive/2026/06/">June</a> <span class="n">31</span></li>
 <li><a href="/feed/archive/2026/05/">May</a> <span class="n">10</span></li>
 <li><a href="/feed/archive/2026/04/">April</a> <span class="n">33</span></li>
 <li><a href="/feed/archive/2026/03/">March</a> <span class="n">34</span></li>
-<li><a href="/feed/archive/2026/02/">February</a> <span class="n">57</span></li>
-<li><a href="/feed/archive/2026/01/">January</a> <span class="n">15</span></li>
+<li><a href="/feed/archive/2026/02/">February</a> <span class="n">62</span></li>
+<li><a href="/feed/archive/2026/01/">January</a> <span class="n">17</span></li>
 </ul>
 <div class="y">2025</div>
 <ul>
-<li><a href="/feed/archive/2025/12/">December</a> <span class="n">29</span></li>
-<li><a href="/feed/archive/2025/11/">November</a> <span class="n">126</span></li>
-<li><a href="/feed/archive/2025/10/">October</a> <span class="n">7</span></li>
-<li><a href="/feed/archive/2025/09/">September</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2025/12/">December</a> <span class="n">31</span></li>
+<li><a href="/feed/archive/2025/11/">November</a> <span class="n">127</span></li>
+<li><a href="/feed/archive/2025/10/">October</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2025/09/">September</a> <span class="n">7</span></li>
 <li><a href="/feed/archive/2025/08/">August</a> <span class="n">7</span></li>
 <li><a href="/feed/archive/2025/07/">July</a> <span class="n">23</span></li>
 <li><a href="/feed/archive/2025/06/">June</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2025/05/">May</a> <span class="n">18</span></li>
-<li><a href="/feed/archive/2025/04/">April</a> <span class="n">62</span></li>
+<li><a href="/feed/archive/2025/05/">May</a> <span class="n">21</span></li>
+<li><a href="/feed/archive/2025/04/">April</a> <span class="n">65</span></li>
 <li><a href="/feed/archive/2025/03/">March</a> <span class="n">22</span></li>
 <li><a href="/feed/archive/2025/02/">February</a> <span class="n">11</span></li>
 </ul>
@@ -933,34 +794,41 @@ So, are you ready to make your friend be like this when they get an email from y
 </ul>
 <div class="y">2023</div>
 <ul>
+<li><a href="/feed/archive/2023/12/">December</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2023/11/">November</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2023/10/">October</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/10/">October</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2023/09/">September</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2023/08/">August</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2023/07/">July</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2023/06/">June</a> <span class="n">4</span></li>
-<li><a href="/feed/archive/2023/05/">May</a> <span class="n">9</span></li>
-<li><a href="/feed/archive/2023/04/">April</a> <span class="n">5</span></li>
-<li><a href="/feed/archive/2023/03/">March</a> <span class="n">5</span></li>
-<li><a href="/feed/archive/2023/02/">February</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2023/06/">June</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2023/05/">May</a> <span class="n">11</span></li>
+<li><a href="/feed/archive/2023/04/">April</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2023/03/">March</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2023/02/">February</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/01/">January</a> <span class="n">9</span></li>
 </ul>
 <div class="y">2022</div>
 <ul>
-<li><a href="/feed/archive/2022/11/">November</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/12/">December</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/11/">November</a> <span class="n">4</span></li>
 <li><a href="/feed/archive/2022/10/">October</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2022/09/">September</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2022/08/">August</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2022/07/">July</a> <span class="n">6</span></li>
-<li><a href="/feed/archive/2022/04/">April</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2022/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2022/09/">September</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2022/08/">August</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2022/07/">July</a> <span class="n">38</span></li>
+<li><a href="/feed/archive/2022/04/">April</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2022/03/">March</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2022/02/">February</a> <span class="n">4</span></li>
 <li><a href="/feed/archive/2022/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2021</div>
 <ul>
-<li><a href="/feed/archive/2021/12/">December</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/12/">December</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2021/11/">November</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2021/09/">September</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2021/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/10/">October</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2021/05/">May</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/04/">April</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2021/03/">March</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2021/02/">February</a> <span class="n">5</span></li>
 <li><a href="/feed/archive/2021/01/">January</a> <span class="n">8</span></li>
 </ul>
@@ -969,7 +837,7 @@ So, are you ready to make your friend be like this when they get an email from y
 <li><a href="/feed/archive/2020/12/">December</a> <span class="n">5</span></li>
 <li><a href="/feed/archive/2020/11/">November</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2020/09/">September</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2020/08/">August</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2020/08/">August</a> <span class="n">4</span></li>
 <li><a href="/feed/archive/2020/07/">July</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2020/06/">June</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2020/05/">May</a> <span class="n">1</span></li>
@@ -1018,14 +886,14 @@ So, are you ready to make your friend be like this when they get an email from y
 <li><a href="/feed/archive/2015/06/">June</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2015/05/">May</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2015/03/">March</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2015/02/">February</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2015/02/">February</a> <span class="n">4</span></li>
 <li><a href="/feed/archive/2015/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2014</div>
 <ul>
-<li><a href="/feed/archive/2014/12/">December</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2014/12/">December</a> <span class="n">4</span></li>
 <li><a href="/feed/archive/2014/11/">November</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2014/10/">October</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2014/10/">October</a> <span class="n">8</span></li>
 <li><a href="/feed/archive/2014/09/">September</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2014/08/">August</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2014/07/">July</a> <span class="n">3</span></li>
@@ -1037,6 +905,7 @@ So, are you ready to make your friend be like this when they get an email from y
 </ul>
 <div class="y">2013</div>
 <ul>
+<li><a href="/feed/archive/2013/07/">July</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2013/06/">June</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2013/05/">May</a> <span class="n">1</span></li>
 </ul>

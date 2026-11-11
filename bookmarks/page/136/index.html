@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bookmarks, page 136 — Alexis Rondeau</title>
-<meta name="description" content="Posts by other people on Twitter that I saved, by the date they were posted. Each one links to the original.">
+<meta name="description" content="Posts by other people that I saved on Twitter and Hacker News, by the date they were posted. Each one links to the original.">
 <link rel="canonical" href="https://alexisrondeau.me/bookmarks/page/136/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Alexis Rondeau">
 <meta property="og:title" content="Bookmarks, page 136">
-<meta property="og:description" content="Posts by other people on Twitter that I saved, by the date they were posted. Each one links to the original.">
+<meta property="og:description" content="Posts by other people that I saved on Twitter and Hacker News, by the date they were posted. Each one links to the original.">
 <meta property="og:url" content="https://alexisrondeau.me/bookmarks/page/136/">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@SpringStreetNYC">
@@ -30,326 +30,416 @@
 <header class="hero">
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1><a href="/bookmarks/">Bookmarks</a></h1>
-<p class="sub">5462 bookmarks · page 136 of 219</p>
+<p class="sub">5632 bookmarks · page 136 of 226</p>
 </header>
 <div class="wrap">
 <section class="feed bookmarks">
-<article class="item kind-bookmark" id="t1833020007095099714">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1833020007095099714"><time datetime="2024-09-09T05:50:00Z">Monday, September 9, 2024 · 07:50</time></a></div>
+<article class="item kind-bookmark" id="t1834978178248638616">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834978178248638616"><time datetime="2024-09-14T15:31:04Z">Saturday, September 14, 2024 · 17:31</time></a></div>
 <div class="other">
-<cite>Bookmarked from <a href="https://x.com/Rainmaker1973">Massimo @Rainmaker1973</a></cite>
-<div class="text"><p>Window cleaning </p>
-<p>[📹  activemitch]</p></div>
+<cite>Bookmarked from <a href="https://x.com/blakeandersonw">Blake Anderson @blakeandersonw</a></cite>
+<div class="text"><p>If you are not your audience, become your audience.</p>
+<p>Everybody knows that you should &quot;build for yourself&quot;.</p>
+<p>But, sometimes an opportunity so ripe presents itself that you would be foolish to pass up on it. </p>
+<p>This is exactly what happened with Umax (9m downloads in &lt;1 year).  </p>
+<p>I knew nothing about looksmaxxing, so I became a looksmaxxer.  Bought my first skincare, vitamin c serum, gua sha, and more.  </p>
+<p>I consumed the content, hung out in the Reddit forums, and began to think like a looksmaxxer.</p>
+<p>A large proportion of our success can be attributed to the Madden style rating screen - the screen that has been repurposed in thousands of other apps too.  We would have never come to this idea if we hadn't oriented our life around the niche.</p>
+<p>Your probability of success significantly increases with domain expertise.  If you don't already have it, speed run it.</p></div>
+</div>
+<div class="src"><a href="https://x.com/i/status/1834978178248638616">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-bookmark" id="t1834975252561981606">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834975252561981606"><time datetime="2024-09-14T15:19:27Z">Saturday, September 14, 2024 · 17:19</time></a></div>
+<div class="other">
+<cite>Bookmarked from <a href="https://x.com/mikestrives">Mike Strives @mikestrives</a></cite>
+<div class="text"><p>Simple.</p>
+<p>Make something already working:</p>
+<ul>
+<li>cheaper</li>
+<li>faster</li>
+<li>better</li>
+</ul>
+<p>Or all 3 if you go for gold.</p></div>
+</div>
+<div class="src"><a href="https://x.com/i/status/1834975252561981606">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-bookmark" id="t1834968571299930527">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834968571299930527"><time datetime="2024-09-14T14:52:54Z">Saturday, September 14, 2024 · 16:52</time></a></div>
+<div class="other">
+<cite>Bookmarked from <a href="https://x.com/kozlovski">Stanislav Kozlovski @kozlovski</a></cite>
+<div class="text"><p>A Kafka in the cloud doing 30MB/s costs more than $110,000 a year.</p>
+<p>A $1,000 laptop can do 10x that.</p>
+<p>Where did we go wrong? 👇</p>
+<p>The Cloud. Namely - its absurd networking charges 👎</p>
+<p>Let’s break it down simply:</p>
+<ul>
+<li>AWS charges you $0.01/GB for data crossing AZs (but in the same region). </li>
+<li>They charge you on each GB in and out. Meaning each time a GB passes, you pay twice - for the one who sends it (outgoing) and the one who receives it (incoming)</li>
+<li>For a normal Kafka cluster with replication factor of 3 and a read fanout of 3x, you are going to be charged:</li>
+</ul>
+<p>  • 2x for 2/3rd of the produce throughput<br>
+  • 4x for 100% of the produce from replicating it<br>
+  • 6x of 2/3rd of the produce throughput for consumption.</p>
+<p>(but it can get a lot worse - read until the end to see)</p>
+<p>Simple example:</p>
+<ul>
+<li>3-broker cluster, each in a separate AZ</li>
+<li>3 producers, each in a separate AZ</li>
+<li>3 consumer groups with 3 consumers each, each group with consumers in a separate AZ</li>
+</ul>
+<p>The producers are producing 30MB/s in total to the same leader.</p>
+<p>2/3 producers are in a different AZ, so 20MB/s of produce traffic is being charged at cross-zone rates. 👌</p>
+<p>It’s charged both on the OUT (producer’s side) and IN (broker’s side).</p>
+<p>The leader is replicating the full 30MB/s to both of its replicas.</p>
+<p>This is again being charged both on the OUT (leader’s side) and IN (follower’s side), for both replication links. (60MB/s)</p>
+<p>Then, each of the 3 consumer groups has 3 consumers.</p>
+<p>All consumers read from the leader, with 2/3 in a different zone.</p>
+<p>This results in 20MB/s of consume traffic charged at cross-zone rates PER GROUP. (60MB/s total)</p>
+<p>Again charged both on the OUT (broker’s side) and IN (consumer’s side).</p>
+<p>The total amounts to 140MB/s worth of cross-AZ traffic. Charged both ways.</p>
+<p>When one MB is $0.00001/s, this means we’re paying $0.0028/s. 🤔</p>
+<p>That’s:</p>
+<ul>
+<li>$241 a day 😕</li>
+<li>$7500 a month 😥</li>
+<li>$88,300 a year 🤯</li>
+</ul>
+<p>It all goes down the drain on network traffic ALONE. 🔥</p>
+<p>What about the hardware?</p>
+<p>Quick napkin math assuming:</p>
+<ul>
+<li>7 day retention</li>
+<li>all of the data is on EBS (not using tiered storage since it's not GA yet)</li>
+<li>keeping 50% of the disk free for operational purpose (don't ask me what happens if we run out of disk)</li>
+<li>the 3 brokers are running modest r4.xlarge instances (kinda overkill but hey, why not)</li>
+</ul>
+<p>We'd pay:</p>
+<ul>
+<li>$19,440/yr for the EBS storage</li>
+<li>$6,990/yr for the EC2 instances</li>
+</ul>
+<p>That’s right - you’re paying just $26.4k/yr for the hardware and 88.3k for the network (3.3x the hardware)</p>
+<p>For a total of $115k/yr. 💸</p>
+<p>I’m not even counting load balancer costs, which could be $12k by some quick napkin math too.</p>
+<p>How ridiculous is that? 😂</p>
+<p>Want it to get more ridiculous?</p>
+<p>This calculation assumes you’re hosting your own Kafka cluster in the same AWS account.</p>
+<p>💡If you use a managed Kafka provider that’s not AWS, or otherwise just another AWS account, you’re typically connecting to them through a public endpoint.</p>
+<p>AWS then charges all traffic at the cross-AZ $0.01/GB rate internet traffic rate, even if it's in the same AZ.</p>
+<p>The end result?</p>
+<p>$113,000 a year for network costs. 💀</p>
+<p>For 30MB/s. (!!!)</p>
+<p>btw - 30 MB/s is absolutely nothing for Kafka... 🤡</p>
+<p>It is most often network/disk bounded.</p>
+<p>Doing 3GB/s is not hard. 👌</p>
+<p>The higher throughput you go, the more absurdly large this discrepancy between network and hardware cost becomes.</p>
+<p>For example - this exact setup could probably do 3x the traffic (90MB/s), assuming storage space isn't a concern.</p>
+<p>Then you'd have:</p>
+<ul>
+<li>$264,000 a year for the cross-AZ rate. 🥲</li>
+<li>$339,000 a year for the internet rate. 💀</li>
+</ul>
+<p>Why is this cost (more than 300k a year) and complexity (this calculation) the case when three laptops can run this practically for free?</p>
+<p>Where did we go wrong?</p>
+<p>Worth Noting:</p>
+<p>There are a few optimizations that can be done here:</p>
+<ul>
+<li>consumers can use fetch from follower, which results in free read traffic (no cross-AZ charges) in the first example. But the second example would still be charged internet costs. 🤝</li>
+</ul>
+<ul>
+<li>you can avoid internet costs by VPC-peering or Private Link-ing the two AWS accounts. This is largely what most cloud providers do, otherwise it becomes prohibitively expensive. It can be super complex to do. 🔧</li>
+</ul>
+<ul>
+<li>AWS can give you large discounts (up to 90%+ afaict) on the quoted prices, depending on your usage. It’s unclear what customer gets what discount. 💰</li>
+</ul>
+<p>And perhaps the best example - you can use an ingeniously-designed product like WarpStream that eliminates all of this complexity and cost. ⭐️</p>
+<p>It's no wonder they got acquired after just 13 months of operation.</p></div>
+</div>
+<div class="src"><a href="https://x.com/i/status/1834968571299930527">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-bookmark" id="t1834953199532278254">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834953199532278254"><time datetime="2024-09-14T13:51:49Z">Saturday, September 14, 2024 · 15:51</time></a></div>
+<div class="other">
+<cite>Bookmarked from <a href="https://x.com/rohitdotmittal">Rohit Mittal @rohitdotmittal</a></cite>
+<div class="text"><p>Bay Area will make you feel poor at $7M+ net worth and a $1M annual income before 40.</p>
+<p>Why?</p>
+<p>Because everyone else has more.</p></div>
+</div>
+<div class="src"><a href="https://x.com/i/status/1834953199532278254">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-bookmark" id="t1834949253782770160">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834949253782770160"><time datetime="2024-09-14T13:36:08Z">Saturday, September 14, 2024 · 15:36</time></a></div>
+<div class="other">
+<cite>Bookmarked from <a href="https://x.com/BLUECOW009">@bluecow 🐮 @BLUECOW009</a></cite>
+<div class="text"><p>Today im gonna test a initiation/activation/seed using real quantum random number generator from <a class="mention" href="https://x.com/CryptaLabs">@CryptaLabs</a> on a complex tensor!</p>
+<p>Check my latest project release! (Link below)</p></div>
+</div>
+<div class="src"><a href="https://x.com/i/status/1834949253782770160">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-bookmark" id="t1834942339556483455">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834942339556483455"><time datetime="2024-09-14T13:08:39Z">Saturday, September 14, 2024 · 15:08</time></a></div>
+<div class="other">
+<cite>Bookmarked from <a href="https://x.com/MMNotes_28">Mind Money Notes @MMNotes_28</a></cite>
+<div class="text"><p>7 Techniques to 10X your productivity:</p>
+<p>1.</p></div>
+</div>
+<div class="src"><a href="https://x.com/i/status/1834942339556483455">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-bookmark" id="t1834941301629780459">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834941301629780459"><time datetime="2024-09-14T13:04:32Z">Saturday, September 14, 2024 · 15:04</time></a></div>
+<div class="other">
+<cite>Bookmarked from <a href="https://x.com/varun_mathur">Varun @varun_mathur</a></cite>
+<div class="text"><p>Discover your inner Tony Stark</p>
+<p>Introducing <a href="http://compute.hyper.space">compute.hyper.space</a> - a new type of deep dive agentic interface. Powered by open source models from <a class="mention" href="https://x.com/AIatMeta">@AIatMeta</a> <a class="mention" href="https://x.com/MistralAI">@MistralAI</a>; running on <a class="mention" href="https://x.com/GroqInc">@GroqInc</a>, or on your laptop or the <a class="mention" href="https://x.com/HyperspaceAI">@HyperspaceAI</a> peer-to-peer AI network. </p>
+<p>No filters. No bias. No subscription fees. </p>
+<p>You are in control. </p>
+<p>cc <a class="mention" href="https://x.com/SmokeAwayyy">@SmokeAwayyy</a> <a class="mention" href="https://x.com/karpathy">@karpathy</a> <a class="mention" href="https://x.com/pmarca">@pmarca</a> <a class="mention" href="https://x.com/arthurmensch">@arthurmensch</a> <a class="mention" href="https://x.com/MatthewBerman">@MatthewBerman</a></p></div>
 </div>
 <ul class="bare">
-<li><a href="https://x.com/i/status/1832744016254771616/video/1">↗ x.com/i/status/18327…</a></li>
+<li><a href="http://compute.hyper.space">↗ compute.hyper.space</a></li>
 </ul>
-<div class="src"><a href="https://x.com/i/status/1833020007095099714">View on Twitter ↗</a></div>
+<div class="src"><a href="https://x.com/i/status/1834941301629780459">View on Twitter ↗</a></div>
 </article>
-<article class="item kind-bookmark" id="t1833017879110746231">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1833017879110746231"><time datetime="2024-09-09T05:41:32Z">Monday, September 9, 2024 · 07:41</time></a></div>
+<article class="item kind-bookmark" id="t1834940285132193845">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834940285132193845"><time datetime="2024-09-14T13:00:30Z">Saturday, September 14, 2024 · 15:00</time></a></div>
+<div class="other">
+<cite>Bookmarked from <a href="https://x.com/tunguz">Bojan Tunguz @tunguz</a></cite>
+<div class="text"><p>Gary can be challenging.</p></div>
+</div>
+<div class="src"><a href="https://x.com/i/status/1834940285132193845">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-bookmark" id="t1834929614218580346">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834929614218580346"><time datetime="2024-09-14T12:18:06Z">Saturday, September 14, 2024 · 14:18</time></a></div>
+<div class="other">
+<cite>Bookmarked from <a href="https://x.com/sciencegirl">Science girl @sciencegirl</a></cite>
+<div class="text"><p>How to cook onion flowers</p></div>
+</div>
+<ul class="bare">
+<li><a href="https://x.com/visualfeastwang/status/1834928530418749508/video/1">↗ x.com/visualfeastwan…</a></li>
+</ul>
+<div class="src"><a href="https://x.com/i/status/1834929614218580346">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-bookmark" id="t1834907792957665785">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834907792957665785"><time datetime="2024-09-14T10:51:23Z">Saturday, September 14, 2024 · 12:51</time></a></div>
+<div class="other">
+<cite>Bookmarked from <a href="https://x.com/The4thWayYT">The Fourth Way @The4thWayYT</a></cite>
+<div class="text"><p><a href="https://t.co/UMBFRwhmds">t.co/UMBFRwhmds</a></p></div>
+</div>
+<div class="src"><a href="https://x.com/i/status/1834907792957665785">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-bookmark" id="t1834893541358674430">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834893541358674430"><time datetime="2024-09-14T09:54:45Z">Saturday, September 14, 2024 · 11:54</time></a></div>
+<div class="other">
+<cite>Bookmarked from <a href="https://x.com/visegrad24">Visegrád 24 @visegrad24</a></cite>
+<div class="text"><p>Just a reminder what the Palestinian leaders did to Jordan, Lebanon and Kuwait after those countries decided to welcome large numbers of Palestinian refugees  </p>
+<p>🇱🇧🇰🇼🇯🇴🇵🇸</p></div>
+</div>
+<div class="src"><a href="https://x.com/i/status/1834893541358674430">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-bookmark" id="t1834880518757781919">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834880518757781919"><time datetime="2024-09-14T09:03:00Z">Saturday, September 14, 2024 · 11:03</time></a></div>
+<div class="other">
+<cite>Bookmarked from <a href="https://x.com/jarredsumner">Jarred Sumner @jarredsumner</a></cite>
+<div class="text"><p>In the next version of Bun</p>
+<p>You can compile and run C in JavaScript</p></div>
+</div>
+<div class="src"><a href="https://x.com/i/status/1834880518757781919">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-bookmark" id="t1834851711426453669">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834851711426453669"><time datetime="2024-09-14T07:08:32Z">Saturday, September 14, 2024 · 09:08</time></a></div>
+<div class="other">
+<cite>Bookmarked from <a href="https://x.com/ChiefLord999">God King @ChiefLord999</a></cite>
+<div class="text"><p><a href="https://t.co/GTIiwj1mzw">t.co/GTIiwj1mzw</a></p></div>
+</div>
+<div class="src"><a href="https://x.com/i/status/1834851711426453669">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-bookmark" id="t1834831272562032953">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834831272562032953"><time datetime="2024-09-14T05:47:19Z">Saturday, September 14, 2024 · 07:47</time></a></div>
+<div class="other">
+<cite>Bookmarked from <a href="https://x.com/InterestingSTEM">Interesting STEM @InterestingSTEM</a></cite>
+<div class="text"><p><a href="https://t.co/YxKSOpENUt">t.co/YxKSOpENUt</a></p></div>
+</div>
+<div class="src"><a href="https://x.com/i/status/1834831272562032953">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-bookmark" id="t1834829023232274847">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834829023232274847"><time datetime="2024-09-14T05:38:23Z">Saturday, September 14, 2024 · 07:38</time></a></div>
+<div class="other">
+<cite>Bookmarked from <a href="https://x.com/BLUECOW009">@bluecow 🐮 @BLUECOW009</a></cite>
+<div class="text"><p>🚀im proud to announce my first software release!</p>
+<p>ComplexTensor: A PyTorch extension for complex-valued tensor operations. Enables efficient handling of complex numbers in neural networks, supporting quantum-inspired algorithms and advanced signal processing tasks.</p>
+<p>you can download it now with pip install complextensor</p>
+<p>FEATURES:</p>
+<p>1. Dual real-imaginary tensor representation<br>
+2. Complex arithmetic operations (addition, multiplication, division)<br>
+3. Complex-valued activation functions (ReLU, sigmoid)<br>
+4. Gradient computation for complex backpropagation<br>
+5. Polar form conversion and operations<br>
+6. Complex exponential and logarithmic functions<br>
+7. Fourier transform operations (FFT, IFFT)<br>
+8. Quantum-inspired operations support<br>
+9. Hyperdimensional computing capabilities<br>
+10. Efficient memory management for complex tensors<br>
+11. Compatibility with existing PyTorch operations<br>
+12. Custom autograd functions for complex operations<br>
+13. Complex matrix operations (e.g., dot product, matrix multiplication)<br>
+14. Support for complex-valued neural network layers<br>
+15. Serialization and deserialization of complex tensors<br>
+16. Added working superposition and entanglement algorithm </p>
+<p>github in the comments!</p></div>
+</div>
+<div class="src"><a href="https://x.com/i/status/1834829023232274847">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-bookmark" id="t1834822915465900388">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834822915465900388"><time datetime="2024-09-14T05:14:07Z">Saturday, September 14, 2024 · 07:14</time></a></div>
+<div class="other">
+<cite>Bookmarked from <a href="https://x.com/leojrr">leo @leojrr</a></cite>
+<div class="text"><p>Clearest path to $1M liquid in 2024:</p>
+<p>1. Build a SaaS</p>
+<p>2. Get it to $25K MRR</p>
+<p>3. Sell it</p>
+<p>Got a better one? I'm all ears.</p></div>
+</div>
+<div class="src"><a href="https://x.com/i/status/1834822915465900388">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-bookmark" id="t1834817843449188383">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834817843449188383"><time datetime="2024-09-14T04:53:57Z">Saturday, September 14, 2024 · 06:53</time></a></div>
+<div class="other">
+<cite>Bookmarked from <a href="https://x.com/ScholarshipfPhd">Scholarship for PhD @ScholarshipfPhd</a></cite>
+<div class="text"><p><a href="https://t.co/JiRo9FrNsO">t.co/JiRo9FrNsO</a></p></div>
+</div>
+<div class="src"><a href="https://x.com/i/status/1834817843449188383">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-bookmark" id="t1834805977196949672">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834805977196949672"><time datetime="2024-09-14T04:06:48Z">Saturday, September 14, 2024 · 06:06</time></a></div>
+<div class="other">
+<cite>Bookmarked from <a href="https://x.com/AshtonForbes">Ashton Forbes @AshtonForbes</a></cite>
+<div class="text"><p>There’s only one way to explain the Double Slit Experiment.</p>
+<p>Time is not linear.</p></div>
+</div>
+<div class="src"><a href="https://x.com/i/status/1834805977196949672">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-bookmark" id="t1834794645311595002">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834794645311595002"><time datetime="2024-09-14T03:21:46Z">Saturday, September 14, 2024 · 05:21</time></a></div>
 <div class="other">
 <cite>Bookmarked from <a href="https://x.com/thematrixwizard">★ @thematrixwizard</a></cite>
-<div class="text"><p><a href="https://t.co/70FNl16SZm">t.co/70FNl16SZm</a></p></div>
+<div class="text"><p><a href="https://t.co/4NJBmtnfpU">t.co/4NJBmtnfpU</a></p></div>
 </div>
-<div class="src"><a href="https://x.com/i/status/1833017879110746231">View on Twitter ↗</a></div>
+<div class="src"><a href="https://x.com/i/status/1834794645311595002">View on Twitter ↗</a></div>
 </article>
-<article class="item kind-bookmark" id="t1832938848273240524">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832938848273240524"><time datetime="2024-09-09T00:27:30Z">Monday, September 9, 2024 · 02:27</time></a></div>
+<article class="item kind-bookmark" id="t1834762175035973955">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834762175035973955"><time datetime="2024-09-14T01:12:45Z">Saturday, September 14, 2024 · 03:12</time></a></div>
 <div class="other">
-<cite>Bookmarked from <a href="https://x.com/The4thWayYT">The Fourth Way @The4thWayYT</a></cite>
-<div class="text"><p>😅</p></div>
+<cite>Bookmarked from <a href="https://x.com/hamptonism">ₕₐₘₚₜₒₙ @hamptonism</a></cite>
+<div class="text"><p>Just realized that they really labeled the number two.</p></div>
 </div>
-<div class="src"><a href="https://x.com/i/status/1832938848273240524">View on Twitter ↗</a></div>
+<div class="src"><a href="https://x.com/i/status/1834762175035973955">View on Twitter ↗</a></div>
 </article>
-<article class="item kind-bookmark" id="t1832932179783151637">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832932179783151637"><time datetime="2024-09-09T00:01:00Z">Monday, September 9, 2024 · 02:01</time></a></div>
+<article class="item kind-bookmark" id="t1834743225934029044">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834743225934029044"><time datetime="2024-09-13T23:57:27Z">Saturday, September 14, 2024 · 01:57</time></a></div>
 <div class="other">
-<cite>Bookmarked from <a href="https://x.com/AprilynneAlter">Aprilynne Alter @AprilynneAlter</a></cite>
-<div class="text"><p>Your format is what makes your idea 💡</p>
-<p>A single topic, presented through different formats, can yield wildly different videos 🎬</p>
-<p>If you've only ever done one format, it's worth trying out another 🎥</p>
-<p>You may end up surprising yourself 🤷‍♀️</p></div>
+<cite>Bookmarked from <a href="https://x.com/amasad">Amjad Masad @amasad</a></cite>
+<div class="text"><p>This guy <em>builds</em></p></div>
 </div>
-<div class="src"><a href="https://x.com/i/status/1832932179783151637">View on Twitter ↗</a></div>
+<div class="src"><a href="https://x.com/i/status/1834743225934029044">View on Twitter ↗</a></div>
 </article>
-<article class="item kind-bookmark" id="t1832852388106879352">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832852388106879352"><time datetime="2024-09-08T18:43:56Z">Sunday, September 8, 2024 · 20:43</time></a></div>
+<article class="item kind-bookmark" id="t1834723873071222936">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834723873071222936"><time datetime="2024-09-13T22:40:33Z">Saturday, September 14, 2024 · 00:40</time></a></div>
 <div class="other">
-<cite>Bookmarked from <a href="https://x.com/aatirar">Aatir Abdul Rauf @aatirar</a></cite>
-<div class="text"><p>PMs and PMMs should do research in parallel. There will be some overlap, but the angle of inquiry will be different. PMs will focus more on the problem statement  + function/design, while PMMs will tap into audience psychology, market dynamics, and language that resonates.</p></div>
+<cite>Bookmarked from <a href="https://x.com/hamptonism">ₕₐₘₚₜₒₙ @hamptonism</a></cite>
+<div class="text"><p>Those “i made it moments” hit the hardest.</p>
+<p>A lot of your 16 year old selves would be really proud of you right now.</p>
+<p>You have to enjoy life guys, the grind is part of the blueprint.</p>
+<p>Smile through it.</p></div>
 </div>
-<div class="src"><a href="https://x.com/i/status/1832852388106879352">View on Twitter ↗</a></div>
+<div class="src"><a href="https://x.com/i/status/1834723873071222936">View on Twitter ↗</a></div>
 </article>
-<article class="item kind-bookmark" id="t1832818977141113014">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832818977141113014"><time datetime="2024-09-08T16:31:10Z">Sunday, September 8, 2024 · 18:31</time></a></div>
+<article class="item kind-bookmark" id="t1834709513246568964">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834709513246568964"><time datetime="2024-09-13T21:43:29Z">Friday, September 13, 2024 · 23:43</time></a></div>
 <div class="other">
-<cite>Bookmarked from <a href="https://x.com/Rahll">Reid Southen @Rahll</a></cite>
-<div class="text"><p>&quot;AI is future of art, music, and writing!&quot; </p>
-<p>The future:</p></div>
+<cite>Bookmarked from <a href="https://x.com/nickfloats">Nick St. Pierre @nickfloats</a></cite>
+<div class="text"><p>Ya, it’s crazy how the whole creative process has flipped</p>
+<p>The idea &quot;just because you can, doesn’t mean you will&quot; has been stuck in my head all day</p>
+<p>AI lets one person be all these different roles at once, which seems like it should lead to a wave of high quality work</p>
+<p>But just scroll through your feed...the gap between what people can do and what they actually create is huge.</p>
+<p>It's like anyone can pick up a paintbrush, but that doesn’t mean they’ll paint a masterpiece. Tools don't replace taste, vision, or understanding how things fit together.</p>
+<p>Also, the idea that now, instead of being a specialist, you’re expected to be a one person creative team is a lot</p>
+<p>Just cause you can do it all doesn’t mean you’ll do it all well. It’s a different skill set, learning how to integrate all these pieces together. Visuals, sound, narrative, etc</p>
+<p>I feel like the whole AI explosion has yet to raise the bar for the average quality of creative work, it’s just given more people access to make stuff</p>
+<p>And the fact that you can generate stuff with them doesn't make you a creative person or an &quot;artist&quot;</p>
+<p>That still has to be earned</p></div>
 </div>
-<ul class="bare">
-<li><a href="https://futurism.com/man-arrested-fake-bands-streams-ai">↗ futurism.com/man-arrested-f…</a></li>
-</ul>
-<div class="src"><a href="https://x.com/i/status/1832818977141113014">View on Twitter ↗</a></div>
+<div class="src"><a href="https://x.com/i/status/1834709513246568964">View on Twitter ↗</a></div>
 </article>
-<article class="item kind-bookmark" id="t1832802530989842596">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832802530989842596"><time datetime="2024-09-08T15:25:49Z">Sunday, September 8, 2024 · 17:25</time></a></div>
+<article class="item kind-bookmark" id="t1834679997224857954">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834679997224857954"><time datetime="2024-09-13T19:46:12Z">Friday, September 13, 2024 · 21:46</time></a></div>
 <div class="other">
-<cite>Bookmarked from <a href="https://x.com/muratworks">Murat @muratworks</a></cite>
-<div class="text"><p>Another bestselling author app: Good Inside: Parenting</p>
-<p>Released just 2 months ago, and already reached 30k installs and $200k revenue last month.</p></div>
+<cite>Bookmarked from <a href="https://x.com/alliekmiller">Allie K. Miller @alliekmiller</a></cite>
+<div class="text"><p>Just demo'd Replit Agent to a top VC in NYC.</p>
+<p>He said: &quot;CFOs are asking me what tech stack they should be using. I think they should look at this and ask what they should build for themselves.&quot;</p></div>
 </div>
-<div class="src"><a href="https://x.com/i/status/1832802530989842596">View on Twitter ↗</a></div>
+<div class="src"><a href="https://x.com/i/status/1834679997224857954">View on Twitter ↗</a></div>
 </article>
-<article class="item kind-bookmark" id="t1832800310336885221">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832800310336885221"><time datetime="2024-09-08T15:17:00Z">Sunday, September 8, 2024 · 17:17</time></a></div>
+<article class="item kind-bookmark" id="t1834655583170945373">
+<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1834655583170945373"><time datetime="2024-09-13T18:09:11Z">Friday, September 13, 2024 · 20:09</time></a></div>
 <div class="other">
-<cite>Bookmarked from <a href="https://x.com/harjtaggar">Harj Taggar @harjtaggar</a></cite>
-<div class="text"><p>One reason companies switch into manager mode is they go multi-product and the founder can’t be in the details on everything and becomes a bottleneck. Managers sell manager mode as the ambitious move but often the right move is to kill the weakest products.</p></div>
+<cite>Bookmarked from <a href="https://x.com/readswithravi">Reads with Ravi @readswithravi</a></cite>
+<div class="text"><p>“Stay small until you figured out what's working.” — <a class="mention" href="https://x.com/naval">@naval</a></p></div>
 </div>
-<div class="src"><a href="https://x.com/i/status/1832800310336885221">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-bookmark" id="t1832762215843152081">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832762215843152081"><time datetime="2024-09-08T12:45:37Z">Sunday, September 8, 2024 · 14:45</time></a></div>
-<div class="other">
-<cite>Bookmarked from <a href="https://x.com/AISafetyMemes">AI Notkilleveryoneism Memes ⏸️ @AISafetyMemes</a></cite>
-<div class="text"><p><a href="https://t.co/BIAwU5n7pp">t.co/BIAwU5n7pp</a> <a href="https://t.co/XnCbVcElXu">t.co/XnCbVcElXu</a></p></div>
-</div>
-<div class="src"><a href="https://x.com/i/status/1832762215843152081">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-bookmark" id="t1832680091186319727">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832680091186319727"><time datetime="2024-09-08T07:19:17Z">Sunday, September 8, 2024 · 09:19</time></a></div>
-<div class="other">
-<cite>Bookmarked from <a href="https://x.com/ylecun">Yann LeCun @ylecun</a></cite>
-<div class="text"><p>LOL.<br>
-Where are:</p>
-<ul>
-<li>Marc-André Senne</li>
-<li>Jean Senne-Ouangue</li>
-<li>Laurent Page</li>
-</ul>
-<p>Outsiders:</p>
-<ul>
-<li>Guillaume Gaitz</li>
-<li>Jean-François Bésausse</li>
-<li>Tatiana Della</li>
-</ul>
-<p>And evil characters:</p>
-<ul>
-<li>Pierre Tile</li>
-<li>Donald Trompe</li>
-</ul></div>
-</div>
-<div class="src"><a href="https://x.com/i/status/1832680091186319727">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-bookmark" id="t1832478075793314162">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832478075793314162"><time datetime="2024-09-07T17:56:33Z">Saturday, September 7, 2024 · 19:56</time></a></div>
-<div class="other">
-<cite>Bookmarked from <a href="https://x.com/MarinaMedvin">Marina Medvin 🇺🇸 @MarinaMedvin</a></cite>
-<div class="text"><p>A Pro-Palestinian activist in Israel changed her mind after seeing what Palestinian terrorists did to Jewish families on October 7.</p>
-<p>Today is 11 months later and 101 Israelis remain captive in Gaza. We don’t know how many are still alive.</p></div>
-</div>
-<div class="src"><a href="https://x.com/i/status/1832478075793314162">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-bookmark" id="t1832465150282265050">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832465150282265050"><time datetime="2024-09-07T17:05:12Z">Saturday, September 7, 2024 · 19:05</time></a></div>
-<div class="other">
-<cite>Bookmarked from <a href="https://x.com/trojan_sc">TROJAN SCOOTER CLUB @trojan_sc</a></cite>
-<div class="text"><p>This is England (2006)</p></div>
-</div>
-<div class="src"><a href="https://x.com/i/status/1832465150282265050">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-bookmark" id="t1832420388317622602">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832420388317622602"><time datetime="2024-09-07T14:07:19Z">Saturday, September 7, 2024 · 16:07</time></a></div>
-<div class="other">
-<cite>Bookmarked from <a href="https://x.com/matteo_spada">Matteo Spada @matteo_spada</a></cite>
-<div class="text"><p>Just to clarify, if using <a class="mention" href="https://x.com/tryastroapp">@tryastroapp</a> you find keywords like these you have probably discovered a gold mine😂</p></div>
-</div>
-<div class="src"><a href="https://x.com/i/status/1832420388317622602">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-bookmark" id="t1832415963641475204">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832415963641475204"><time datetime="2024-09-07T13:49:45Z">Saturday, September 7, 2024 · 15:49</time></a></div>
-<div class="other">
-<cite>Bookmarked from <a href="https://x.com/djjordan23uk">DJ Jordan @djjordan23uk</a></cite>
-<div class="text"><p>Nothing, I repeat, nothing, beats digging through the crates of vinyl with your mates and having a mix! NOTHING 🎧</p></div>
-</div>
-<div class="src"><a href="https://x.com/i/status/1832415963641475204">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-bookmark" id="t1832412122925388044">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832412122925388044"><time datetime="2024-09-07T13:34:29Z">Saturday, September 7, 2024 · 15:34</time></a></div>
-<div class="other">
-<cite>Bookmarked from <a href="https://x.com/NapierHolland">Alex Napier Holland 🦍 @NapierHolland</a></cite>
-<div class="text"><p>If you send out 200 CVs then you're guaranteed to fail.</p>
-<p>You will always lose to someone who hand-writes each cover letter, hunts down the recruiting manager and makes friends with them at their favourite coffee shop or gym.</p>
-<p>You can multiply zero by a million.</p>
-<p>The output will always be zero.</p></div>
-</div>
-<div class="src"><a href="https://x.com/i/status/1832412122925388044">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-bookmark" id="t1832387803969187915">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832387803969187915"><time datetime="2024-09-07T11:57:51Z">Saturday, September 7, 2024 · 13:57</time></a></div>
-<div class="other">
-<cite>Bookmarked from <a href="https://x.com/The4thWayYT">The Fourth Way @The4thWayYT</a></cite>
-<div class="text"><p><a href="https://t.co/V18PmYe1q3">t.co/V18PmYe1q3</a></p></div>
-</div>
-<div class="src"><a href="https://x.com/i/status/1832387803969187915">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-bookmark" id="t1832270107118014525">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832270107118014525"><time datetime="2024-09-07T04:10:10Z">Saturday, September 7, 2024 · 06:10</time></a></div>
-<div class="other">
-<cite>Bookmarked from <a href="https://x.com/Rothmus">Rothmus 🏴 @Rothmus</a></cite>
-<div class="text"><p>🎯</p></div>
-</div>
-<div class="src"><a href="https://x.com/i/status/1832270107118014525">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-bookmark" id="t1832244901934985500">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832244901934985500"><time datetime="2024-09-07T02:30:00Z">Saturday, September 7, 2024 · 04:30</time></a></div>
-<div class="other">
-<cite>Bookmarked from <a href="https://x.com/Rainmaker1973">Massimo @Rainmaker1973</a></cite>
-<div class="text"><p>Orbital mechanics in 30 seconds</p>
-<p>[🎞️ aesthetics science]</p></div>
-</div>
-<div class="src"><a href="https://x.com/i/status/1832244901934985500">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-bookmark" id="t1832187349880729954">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832187349880729954"><time datetime="2024-09-06T22:41:19Z">Saturday, September 7, 2024 · 00:41</time></a></div>
-<div class="other">
-<cite>Bookmarked from <a href="https://x.com/Timb03">Tim Bennetto @Timb03</a></cite>
-<div class="text"><p>You can enter a competitive niche and actually do really well, even against huge competition.</p>
-<ul>
-<li>make it affordable</li>
-<li>make it look like it's from 2024</li>
-<li>make something every day</li>
-<li>make everything ppl ask for</li>
-</ul>
-<p>I've done this and people switch from companies with 100+ staff to mine</p></div>
-</div>
-<div class="src"><a href="https://x.com/i/status/1832187349880729954">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-bookmark" id="t1832185422618800440">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832185422618800440"><time datetime="2024-09-06T22:33:39Z">Saturday, September 7, 2024 · 00:33</time></a></div>
-<div class="other">
-<cite>Bookmarked from <a href="https://x.com/BoringBiz_">Boring_Business @BoringBiz_</a></cite>
-<div class="text"><p>Reddit has just discovered that networking helps you land a job offer</p></div>
-</div>
-<div class="src"><a href="https://x.com/i/status/1832185422618800440">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-bookmark" id="t1832161014047203775">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832161014047203775"><time datetime="2024-09-06T20:56:40Z">Friday, September 6, 2024 · 22:56</time></a></div>
-<div class="other">
-<cite>Bookmarked from <a href="https://x.com/SullyOmarr">Sully @SullyOmarr</a></cite>
-<div class="text"><p>with how easy software is to build </p>
-<p>moats are now<br>
-1. distribution<br>
-2. distribution<br>
-3. distribution <br>
-4. Hardware<br>
-5. Data<br>
-6. UX<br>
-.<br>
-.<br>
-.<br>
-.<br>
-.<br>
-software</p></div>
-</div>
-<div class="src"><a href="https://x.com/i/status/1832161014047203775">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-bookmark" id="t1832115223534153831">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832115223534153831"><time datetime="2024-09-06T17:54:43Z">Friday, September 6, 2024 · 19:54</time></a></div>
-<div class="other">
-<cite>Bookmarked from <a href="https://x.com/ecommerceshares">Wasteland Capital @ecommerceshares</a></cite>
-<div class="text"><p>OnlyFans generated $6.6bn in payments (+$1bn on ‘22), $1.3bn in revenue &amp; $658m in profit before tax in 2023. </p>
-<p>The number of hoes (“Creators”) rose +29% to 4.1m, and “Fans” +28% to 305m. </p>
-<p>The owner paid himself a $472m dividend (up from $338m). The biggest PIMP of all time. 🥹</p></div>
-</div>
-<div class="src"><a href="https://x.com/i/status/1832115223534153831">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-bookmark" id="t1832111420303143375">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832111420303143375"><time datetime="2024-09-06T17:39:36Z">Friday, September 6, 2024 · 19:39</time></a></div>
-<div class="other">
-<cite>Bookmarked from <a href="https://x.com/geeksplainer">jose mdz @geeksplainer</a></cite>
-<div class="text"><p>FRIDAY toy!<br>
-Now you can play with it and clone it. </p>
-<p>Try it: <a href="https://draw.geeksplainer.wtf/">draw.geeksplainer.wtf</a><br>
-Repo:</p></div>
-</div>
-<ul class="bare">
-<li><a href="https://github.com/jose-mdz/draw-and-guess">↗ github.com/jose-mdz/draw-…</a></li>
-</ul>
-<div class="src"><a href="https://x.com/i/status/1832111420303143375">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-bookmark" id="t1832090970453869000">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832090970453869000"><time datetime="2024-09-06T16:18:20Z">Friday, September 6, 2024 · 18:18</time></a></div>
-<div class="other">
-<cite>Bookmarked from <a href="https://x.com/jam3scampbell">James Campbell @jam3scampbell</a></cite>
-<div class="text"><p>“No copilot will withstand agents. No finetune will outperform larger foundation models. No data moat will defend against sample-efficient algorithms.”</p>
-<p>Thought-provoking essay from <a class="mention" href="https://x.com/aidan_mclau">@aidan_mclau</a></p></div>
-</div>
-<div class="src"><a href="https://x.com/i/status/1832090970453869000">View on Twitter ↗</a></div>
-</article>
-<article class="item kind-bookmark" id="t1832088640157319629">
-<div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1832088640157319629"><time datetime="2024-09-06T16:09:05Z">Friday, September 6, 2024 · 18:09</time></a></div>
-<div class="other">
-<cite>Bookmarked from <a href="https://x.com/bones_gamedev">Bones @bones_gamedev</a></cite>
-<div class="text"><p>Mnist Neural network visualization in Odin and Raylib.<br>
-I still need to fix a few calculations and find the right colors, but it's coming along nicely</p></div>
-</div>
-<div class="src"><a href="https://x.com/i/status/1832088640157319629">View on Twitter ↗</a></div>
+<div class="src"><a href="https://x.com/i/status/1834655583170945373">View on Twitter ↗</a></div>
 </article>
 </section>
-<nav class="pager"><a href="/bookmarks/page/135/">‹ Newer</a><span class="n">Page 136 of 219</span><a href="/bookmarks/page/137/">Older ›</a></nav>
+<nav class="pager"><a href="/bookmarks/page/135/">‹ Newer</a><span class="n">Page 136 of 226</span><a href="/bookmarks/page/137/">Older ›</a></nav>
 <aside class="months-nav">
 <div class="group">
 <h3><a href="/bookmarks/">Bookmarks</a></h3>
 <div class="y">2026</div>
 <ul>
-<li><a href="/bookmarks/2026/11/">November</a> <span class="n">1</span></li>
-<li><a href="/bookmarks/2026/10/">October</a> <span class="n">16</span></li>
-<li><a href="/bookmarks/2026/09/">September</a> <span class="n">85</span></li>
-<li><a href="/bookmarks/2026/08/">August</a> <span class="n">76</span></li>
-<li><a href="/bookmarks/2026/07/">July</a> <span class="n">60</span></li>
-<li><a href="/bookmarks/2026/06/">June</a> <span class="n">23</span></li>
-<li><a href="/bookmarks/2026/05/">May</a> <span class="n">28</span></li>
-<li><a href="/bookmarks/2026/04/">April</a> <span class="n">32</span></li>
-<li><a href="/bookmarks/2026/03/">March</a> <span class="n">66</span></li>
-<li><a href="/bookmarks/2026/02/">February</a> <span class="n">41</span></li>
-<li><a href="/bookmarks/2026/01/">January</a> <span class="n">32</span></li>
+<li><a href="/bookmarks/2026/11/">November</a> <span class="n">5</span></li>
+<li><a href="/bookmarks/2026/10/">October</a> <span class="n">18</span></li>
+<li><a href="/bookmarks/2026/09/">September</a> <span class="n">100</span></li>
+<li><a href="/bookmarks/2026/08/">August</a> <span class="n">98</span></li>
+<li><a href="/bookmarks/2026/07/">July</a> <span class="n">77</span></li>
+<li><a href="/bookmarks/2026/06/">June</a> <span class="n">50</span></li>
+<li><a href="/bookmarks/2026/05/">May</a> <span class="n">46</span></li>
+<li><a href="/bookmarks/2026/04/">April</a> <span class="n">42</span></li>
+<li><a href="/bookmarks/2026/03/">March</a> <span class="n">73</span></li>
+<li><a href="/bookmarks/2026/02/">February</a> <span class="n">46</span></li>
+<li><a href="/bookmarks/2026/01/">January</a> <span class="n">43</span></li>
 </ul>
 <div class="y">2025</div>
 <ul>
-<li><a href="/bookmarks/2025/12/">December</a> <span class="n">138</span></li>
-<li><a href="/bookmarks/2025/11/">November</a> <span class="n">91</span></li>
+<li><a href="/bookmarks/2025/12/">December</a> <span class="n">143</span></li>
+<li><a href="/bookmarks/2025/11/">November</a> <span class="n">94</span></li>
 <li><a href="/bookmarks/2025/10/">October</a> <span class="n">58</span></li>
-<li><a href="/bookmarks/2025/09/">September</a> <span class="n">100</span></li>
+<li><a href="/bookmarks/2025/09/">September</a> <span class="n">104</span></li>
 <li><a href="/bookmarks/2025/08/">August</a> <span class="n">122</span></li>
 <li><a href="/bookmarks/2025/07/">July</a> <span class="n">172</span></li>
 <li><a href="/bookmarks/2025/06/">June</a> <span class="n">70</span></li>
 <li><a href="/bookmarks/2025/05/">May</a> <span class="n">108</span></li>
-<li><a href="/bookmarks/2025/04/">April</a> <span class="n">169</span></li>
+<li><a href="/bookmarks/2025/04/">April</a> <span class="n">170</span></li>
 <li><a href="/bookmarks/2025/03/">March</a> <span class="n">207</span></li>
 <li><a href="/bookmarks/2025/02/">February</a> <span class="n">308</span></li>
-<li><a href="/bookmarks/2025/01/">January</a> <span class="n">195</span></li>
+<li><a href="/bookmarks/2025/01/">January</a> <span class="n">198</span></li>
 </ul>
 <div class="y">2024</div>
 <ul>
-<li><a href="/bookmarks/2024/12/">December</a> <span class="n">139</span></li>
-<li><a href="/bookmarks/2024/11/">November</a> <span class="n">215</span></li>
+<li><a href="/bookmarks/2024/12/">December</a> <span class="n">144</span></li>
+<li><a href="/bookmarks/2024/11/">November</a> <span class="n">218</span></li>
 <li><a href="/bookmarks/2024/10/">October</a> <span class="n">406</span></li>
-<li><a href="/bookmarks/2024/09/">September</a> <span class="n">506</span></li>
+<li><a href="/bookmarks/2024/09/">September</a> <span class="n">507</span></li>
 <li><a href="/bookmarks/2024/08/">August</a> <span class="n">385</span></li>
-<li><a href="/bookmarks/2024/07/">July</a> <span class="n">378</span></li>
+<li><a href="/bookmarks/2024/07/">July</a> <span class="n">379</span></li>
 <li><a href="/bookmarks/2024/06/">June</a> <span class="n">374</span></li>
 <li><a href="/bookmarks/2024/05/">May</a> <span class="n">230</span></li>
-<li><a href="/bookmarks/2024/04/">April</a> <span class="n">180</span></li>
+<li><a href="/bookmarks/2024/04/">April</a> <span class="n">181</span></li>
 <li><a href="/bookmarks/2024/03/">March</a> <span class="n">119</span></li>
 <li><a href="/bookmarks/2024/02/">February</a> <span class="n">28</span></li>
 <li><a href="/bookmarks/2024/01/">January</a> <span class="n">18</span></li>
 </ul>
 <div class="y">2023</div>
 <ul>
-<li><a href="/bookmarks/2023/12/">December</a> <span class="n">27</span></li>
+<li><a href="/bookmarks/2023/12/">December</a> <span class="n">28</span></li>
 <li><a href="/bookmarks/2023/11/">November</a> <span class="n">50</span></li>
 <li><a href="/bookmarks/2023/10/">October</a> <span class="n">60</span></li>
 <li><a href="/bookmarks/2023/09/">September</a> <span class="n">36</span></li>
@@ -363,9 +453,10 @@ I still need to fix a few calculations and find the right colors, but it's comin
 <div class="y">2022</div>
 <ul>
 <li><a href="/bookmarks/2022/12/">December</a> <span class="n">1</span></li>
-<li><a href="/bookmarks/2022/11/">November</a> <span class="n">1</span></li>
+<li><a href="/bookmarks/2022/11/">November</a> <span class="n">2</span></li>
 <li><a href="/bookmarks/2022/10/">October</a> <span class="n">2</span></li>
 <li><a href="/bookmarks/2022/09/">September</a> <span class="n">1</span></li>
+<li><a href="/bookmarks/2022/08/">August</a> <span class="n">1</span></li>
 <li><a href="/bookmarks/2022/06/">June</a> <span class="n">1</span></li>
 <li><a href="/bookmarks/2022/05/">May</a> <span class="n">1</span></li>
 <li><a href="/bookmarks/2022/04/">April</a> <span class="n">1</span></li>
@@ -375,6 +466,7 @@ I still need to fix a few calculations and find the right colors, but it's comin
 <div class="y">2021</div>
 <ul>
 <li><a href="/bookmarks/2021/11/">November</a> <span class="n">1</span></li>
+<li><a href="/bookmarks/2021/04/">April</a> <span class="n">1</span></li>
 <li><a href="/bookmarks/2021/02/">February</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2020</div>
@@ -389,7 +481,7 @@ I still need to fix a few calculations and find the right colors, but it's comin
 </ul>
 <div class="y">2018</div>
 <ul>
-<li><a href="/bookmarks/2018/07/">July</a> <span class="n">1</span></li>
+<li><a href="/bookmarks/2018/07/">July</a> <span class="n">2</span></li>
 </ul>
 <div class="y">2017</div>
 <ul>
