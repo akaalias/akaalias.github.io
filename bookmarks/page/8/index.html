@@ -26,7 +26,7 @@
 
 </head>
 <body>
-<nav class="topnav"><a href="/">Home</a><a href="/about/">About</a><a href="/feed/">Newsfeed</a><a href="/feed/archive/">Archive</a><a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a><a rel="me" href="https://github.com/akaalias">GitHub</a><a rel="me" class="cta" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">Let's connect on LinkedIn!</a></nav>
+<nav class="topnav"><a href="/">Home</a><a href="/about/">About</a><a href="/feed/">Newsfeed</a><a href="/feed/archive/">Archive</a><a href="/bookmarks/">Bookmarks</a><a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a><a rel="me" href="https://github.com/akaalias">GitHub</a><a rel="me" class="cta" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">Let's connect on LinkedIn!</a></nav>
 <header class="hero">
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1><a href="/bookmarks/">Bookmarks</a></h1>
@@ -124,7 +124,7 @@ Which of these do you reach for first when a new model refuses to train?</p></di
 <div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/2089442519205765378"><time datetime="2026-08-17T20:01:31Z">Monday, August 17, 2026 · 22:01</time></a></div>
 <div class="other">
 <cite>Bookmarked from <a href="https://x.com/ChrisJMcCormick">Chris McCormick @ChrisJMcCormick</a></cite>
-<div class="text"><p>I've started writing my model code as a single, compilable <code>forward_backward</code> function:</p>
+<div class="text bm-clamped"><p>I've started writing my model code as a single, compilable <code>forward_backward</code> function:</p>
 <p>1 - No more autograd. The backward math is written out, same as forward.<br>
 2 - No torch.nn module abstractions, just matrices and math. (Glorious!)<br>
 3 - Attach a <code>.gacc</code> to each parameter to store its gradients.<br>
@@ -133,6 +133,7 @@ Which of these do you reach for first when a new model refuses to train?</p></di
 <p>Most notably, the MLP needs the activation values both pre and post-ReLU, and they're 18GB each! We just store pre, and re-apply ReLU in backward.</p>
 <p>(A recent modded-nanogpt PR did something similar-but-different, need to look at it more)</p>
 <p>I'm not familiar with the backward math (Claude wrote it all), but I'm excited to gradually build up the same familiarity with it as the forward path.</p></div>
+<div class="more"><a href="https://x.com/i/status/2089442519205765378">Read the rest on Twitter ›</a></div>
 </div>
 <div class="src"><a href="https://x.com/i/status/2089442519205765378">View on Twitter ↗</a></div>
 </article>

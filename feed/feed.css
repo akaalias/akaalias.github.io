@@ -74,6 +74,9 @@ h2.note-title a:hover{border-bottom-color:var(--accent);}
 .note-body.clamped{max-height:420px;overflow:hidden;position:relative;}
 .note-body.clamped::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;
                           background:linear-gradient(rgba(255,255,248,0),var(--paper));}
+.text.bm-clamped{max-height:236px;overflow:hidden;position:relative;}   /* 8 lines of 19px × 1.55 */
+.text.bm-clamped::after{content:"";position:absolute;left:0;right:0;bottom:0;height:60px;
+                        background:linear-gradient(rgba(255,255,248,0),var(--paper));}
 .more{margin-top:6px;font-size:16px;} .more a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;}
 .more a:hover{border-bottom-color:var(--accent);}
 .tags{margin-top:12px;font-size:13px;} .tags a{margin-right:10px;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule);}

@@ -26,7 +26,7 @@
 
 </head>
 <body>
-<nav class="topnav"><a href="/">Home</a><a href="/about/">About</a><a href="/feed/">Newsfeed</a><a href="/feed/archive/">Archive</a><a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a><a rel="me" href="https://github.com/akaalias">GitHub</a><a rel="me" class="cta" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">Let's connect on LinkedIn!</a></nav>
+<nav class="topnav"><a href="/">Home</a><a href="/about/">About</a><a href="/feed/">Newsfeed</a><a href="/feed/archive/">Archive</a><a href="/bookmarks/">Bookmarks</a><a rel="me" href="https://x.com/SpringStreetNYC">Twitter</a><a rel="me" href="https://github.com/akaalias">GitHub</a><a rel="me" class="cta" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">Let's connect on LinkedIn!</a></nav>
 <header class="hero">
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1><a href="/bookmarks/">Bookmarks</a></h1>
@@ -172,7 +172,8 @@ Die <a class="mention" href="https://x.com/PolizeiBerlin_E">@PolizeiBerlin_E</a>
 <div class="other">
 <cite>Saved on Hacker News · submitted by <a href="https://news.ycombinator.com/user?id=jerryliu12">jerryliu12</a></cite>
 <div class="text"><p><a href="https://github.com/JerryZLiu/Dayflow">Show HN: Dayflow – A git log for your day</a> <span class="hn-domain">(github.com)</span></p></div>
-<div class="text"><p>Hi HN! I&#x27;ve been building Dayflow, a macOS app that automatically tracks what you&#x27;re actually working on (not just which apps you have open).<p>Here&#x27;s what it does:<p>- It creates a semantic timeline of your day;<p>- It does it by understanding the content on your screen (with local or cloud VLMs);<p>- This allows you to see exactly where your time went without any manual logging.<p>Traditional time trackers tell you &quot;3 hours in Chrome&quot; which is not very helpful. Dayflow actually understands if you&#x27;re reading documentation, debugging code, or scrolling HN. Instead of &quot;Chrome: 3 hours&quot;, you get &quot;Reviewed PR comments: 45min&quot;, &quot;Read HN thread about Rust: 20min&quot;, &quot;Debugged auth flow: 1.5hr&quot;.<p>I was an early Rewind user but rarely used the retrieval feature. I built Dayflow because I saw other interesting uses for screen data. I find that it helps me stay on track while working - I check it every few hours and make sure I’m spending my time the way I intended - if I’m not, I try to course correct.<p>Here’s what you need to know about privacy:<p>- Run 100% locally using qwen2.5-vl-3b (~4GB model)<p>- No cloud uploads, no account<p>- Full source available under MIT license (<a href="https:&#x2F;&#x2F;github.com&#x2F;JerryZLiu&#x2F;Dayflow" rel="nofollow">https:&#x2F;&#x2F;github.com&#x2F;JerryZLiu&#x2F;Dayflow</a>)<p>- Optional: BYO Gemini API key for better quality (stored in Keychain, with free-tier workaround to prevent training on your data)<p>The tech stack is pretty simple, SwiftUI with a local sqlite DB. Uses native macOS apis for efficient screen captures. Since most people who run LLMs locally already have their tool of choice (Ollama, LLMStudio, etc.), I decided to not embed an LLM into Dayflow.<p>By far the biggest challenge was adapting from SOTA vision models like Gemini 2.5 Pro to small, local models. My constraints were that it had to take up &lt;4GB of ram and have vision capabilities. I had to do a lot of evals to figure out that Qwen2.5VL-3B was the best balance of size and quality, but there was still a sizable tradeoff in quality that I had to accept. I also got creative with sampling rates and prompt chunking to deal with the 100x smaller context window. Processing a 15 minute segment takes ~32 local LLM calls vs 2 Gemini calls!<p>Here’s what I’m working on next:<p>Distillation: Using Gemini&#x27;s high-quality outputs as training data to teach a local model the patterns it needs, hopefully closing the quality gap.<p>Custom dashboards where you can track answers to any question like &quot;How long did I spend on HN?&quot; or &quot;Hours until my first deep work session of the day<p>I&#x27;d love to hear your thoughts, especially if you&#x27;ve struggled with productivity tracking or have ideas for what you&#x27;d want from a tool like this.</div>
+<div class="text bm-clamped"><p>Hi HN! I&#x27;ve been building Dayflow, a macOS app that automatically tracks what you&#x27;re actually working on (not just which apps you have open).<p>Here&#x27;s what it does:<p>- It creates a semantic timeline of your day;<p>- It does it by understanding the content on your screen (with local or cloud VLMs);<p>- This allows you to see exactly where your time went without any manual logging.<p>Traditional time trackers tell you &quot;3 hours in Chrome&quot; which is not very helpful. Dayflow actually understands if you&#x27;re reading documentation, debugging code, or scrolling HN. Instead of &quot;Chrome: 3 hours&quot;, you get &quot;Reviewed PR comments: 45min&quot;, &quot;Read HN thread about Rust: 20min&quot;, &quot;Debugged auth flow: 1.5hr&quot;.<p>I was an early Rewind user but rarely used the retrieval feature. I built Dayflow because I saw other interesting uses for screen data. I find that it helps me stay on track while working - I check it every few hours and make sure I’m spending my time the way I intended - if I’m not, I try to course correct.<p>Here’s what you need to know about privacy:<p>- Run 100% locally using qwen2.5-vl-3b (~4GB model)<p>- No cloud uploads, no account<p>- Full source available under MIT license (<a href="https:&#x2F;&#x2F;github.com&#x2F;JerryZLiu&#x2F;Dayflow" rel="nofollow">https:&#x2F;&#x2F;github.com&#x2F;JerryZLiu&#x2F;Dayflow</a>)<p>- Optional: BYO Gemini API key for better quality (stored in Keychain, with free-tier workaround to prevent training on your data)<p>The tech stack is pretty simple, SwiftUI with a local sqlite DB. Uses native macOS apis for efficient screen captures. Since most people who run LLMs locally already have their tool of choice (Ollama, LLMStudio, etc.), I decided to not embed an LLM into Dayflow.<p>By far the biggest challenge was adapting from SOTA vision models like Gemini 2.5 Pro to small, local models. My constraints were that it had to take up &lt;4GB of ram and have vision capabilities. I had to do a lot of evals to figure out that Qwen2.5VL-3B was the best balance of size and quality, but there was still a sizable tradeoff in quality that I had to accept. I also got creative with sampling rates and prompt chunking to deal with the 100x smaller context window. Processing a 15 minute segment takes ~32 local LLM calls vs 2 Gemini calls!<p>Here’s what I’m working on next:<p>Distillation: Using Gemini&#x27;s high-quality outputs as training data to teach a local model the patterns it needs, hopefully closing the quality gap.<p>Custom dashboards where you can track answers to any question like &quot;How long did I spend on HN?&quot; or &quot;Hours until my first deep work session of the day<p>I&#x27;d love to hear your thoughts, especially if you&#x27;ve struggled with productivity tracking or have ideas for what you&#x27;d want from a tool like this.</div>
+<div class="more"><a href="https://news.ycombinator.com/item?id=45361268">Read the rest on Hacker News ›</a></div>
 </div>
 <div class="src"><a href="https://news.ycombinator.com/item?id=45361268">Discuss on Hacker News ↗</a></div>
 </article>
@@ -357,7 +358,7 @@ Engage with your peers daily.</p>
 <div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1967227456814821629"><time datetime="2025-09-14T14:02:29Z">Sunday, September 14, 2025 · 16:02</time></a></div>
 <div class="other">
 <cite>Bookmarked from <a href="https://x.com/gregisenberg">GREG ISENBERG @gregisenberg</a></cite>
-<div class="text"><p>the CLEAREST path to building a $100k MRR mobile app </p>
+<div class="text bm-clamped"><p>the CLEAREST path to building a $100k MRR mobile app </p>
 <p>(from a guy who's advised apps that have gotten hundreds of millions of downloads)</p>
 <p>step 1: pick a habit (already crushing)</p>
 <p>– the fastest path to $100k MRR isn’t inventing something new, it’s cloning what already works.<br>
@@ -436,6 +437,7 @@ i hope this gets your creative juices<br>
 i hope you share this with a friend</p>
 <p>happy building</p>
 <p>i'm rooting for you.</p></div>
+<div class="more"><a href="https://x.com/i/status/1967227456814821629">Read the rest on Twitter ›</a></div>
 </div>
 <div class="src"><a href="https://x.com/i/status/1967227456814821629">View on Twitter ↗</a></div>
 </article>
@@ -547,7 +549,7 @@ Stand still, and you’ll watch them pass you by.</p></div>
 <div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1966657829084762544"><time datetime="2025-09-13T00:18:59Z">Saturday, September 13, 2025 · 02:18</time></a></div>
 <div class="other">
 <cite>Bookmarked from <a href="https://x.com/TheAhmadOsman">Ahmad @TheAhmadOsman</a></cite>
-<div class="text"><blockquote><p>be me<br>
+<div class="text bm-clamped"><blockquote><p>be me<br>
 Larry Ellison<br>
 own a database empire, a sailboat, and a disdain for poor people</p></blockquote>
 <blockquote><p>OpenAI wants to build AGI<br>
@@ -582,6 +584,7 @@ infinite money glitch</p></blockquote>
 <blockquote><p>mfw i built a recursive economy where i am the only customer and vendor<br>
 mfw GPUs are optional<br>
 mfw capitalism is just a well-placed loop with exit liquidity</p></blockquote></div>
+<div class="more"><a href="https://x.com/i/status/1966657829084762544">Read the rest on Twitter ›</a></div>
 </div>
 <div class="src"><a href="https://x.com/i/status/1966657829084762544">View on Twitter ↗</a></div>
 </article>
@@ -608,7 +611,7 @@ mfw capitalism is just a well-placed loop with exit liquidity</p></blockquote></
 <div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1966541235306237985"><time datetime="2025-09-12T16:35:41Z">Friday, September 12, 2025 · 18:35</time></a></div>
 <div class="other">
 <cite>Bookmarked from <a href="https://x.com/Eito_Miyamura">Eito Miyamura | 🇯🇵 @Eito_Miyamura</a></cite>
-<div class="text"><p>We got ChatGPT to leak your private email data 💀💀</p>
+<div class="text bm-clamped"><p>We got ChatGPT to leak your private email data 💀💀</p>
 <p>All you need? The victim's email address. ⛓️‍💥🚩📧</p>
 <p>On Wednesday, <a class="mention" href="https://x.com/OpenAI">@OpenAI</a>  added full support for MCP (Model Context Protocol) tools in ChatGPT. Allowing ChatGPT to connect and read your Gmail, Calendar, Sharepoint, Notion, and more, invented by <a class="mention" href="https://x.com/AnthropicAI">@AnthropicAI</a> </p>
 <p>But here's the fundamental problem: AI agents like ChatGPT follow your commands, not your common sense.</p>
@@ -620,6 +623,7 @@ mfw capitalism is just a well-placed loop with exit liquidity</p></blockquote></
 <p>For now, OpenAI only made MCPs available in &quot;developer mode&quot;, and requires manual human approvals for every session, but decision fatigue is a real thing, and normal people will just trust the AI without knowing what to do and click approve, approve, approve.</p>
 <p>Remember that AI might be super smart, but can be tricked and phished in incredibly dumb ways to leak your data.</p>
 <p>ChatGPT + Tools poses a serious security risk</p></div>
+<div class="more"><a href="https://x.com/i/status/1966541235306237985">Read the rest on Twitter ›</a></div>
 </div>
 <div class="src"><a href="https://x.com/i/status/1966541235306237985">View on Twitter ↗</a></div>
 </article>
@@ -657,10 +661,11 @@ mfw capitalism is just a well-placed loop with exit liquidity</p></blockquote></
 <div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1966264982905254343"><time datetime="2025-09-11T22:17:58Z">Friday, September 12, 2025 · 00:17</time></a></div>
 <div class="other">
 <cite>Bookmarked from <a href="https://x.com/vasuman">vas @vasuman</a></cite>
-<div class="text"><p>If a simple coffee shop has a bot farm with 100s of phones to amplify their message, please consider what a foreign agency or adversarial operator is running on your favorite social media platform.</p>
+<div class="text bm-clamped"><p>If a simple coffee shop has a bot farm with 100s of phones to amplify their message, please consider what a foreign agency or adversarial operator is running on your favorite social media platform.</p>
 <p>Especially today, please consider that the opinions you read, the calls to violence you hear, and the news you digest, are all an operation done to sow hatred in your mind and your soul. </p>
 <p>Do not let anyone online turn you into something that you are not. Rationalize everything, take everything with a grain of salt, question everything for yourself, not based on how someone online is questioning it. </p>
 <p>Turn off all distractions and focus on the mission you have, not the mission of someone trying to control your mind.</p></div>
+<div class="more"><a href="https://x.com/i/status/1966264982905254343">Read the rest on Twitter ›</a></div>
 </div>
 <div class="src"><a href="https://x.com/i/status/1966264982905254343">View on Twitter ↗</a></div>
 </article>
@@ -732,13 +737,14 @@ mfw capitalism is just a well-placed loop with exit liquidity</p></blockquote></
 <div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1965807750916812803"><time datetime="2025-09-10T16:01:05Z">Wednesday, September 10, 2025 · 18:01</time></a></div>
 <div class="other">
 <cite>Bookmarked from <a href="https://x.com/shyamalanadkat">shyamal @shyamalanadkat</a></cite>
-<div class="text"><p>i'm hiring for a new team <a class="mention" href="https://x.com/openai">@openai</a>: Applied Evals</p>
+<div class="text bm-clamped"><p>i'm hiring for a new team <a class="mention" href="https://x.com/openai">@openai</a>: Applied Evals</p>
 <p>our goal is to build the world's best evals for the economically valuable tasks our customers care about most. </p>
 <p>we'll execute as a group of high‑taste engineers, combining hands-on, unscalable efforts with systems that others can extend, creating a compounding loop of model improvement.  </p>
 <p>broadly, the art of evals is figuring out how to ask the right questions. but asking the right questions is really hard -- in any domain, it takes real, deep, lived expertise to define what truly good looks like. </p>
 <p>this work is super important and we want to scale it. </p>
 <p>excited about shaping model interaction paradigms by partnering with customers, engineering, research, and product teams on how models are deployed and measured?</p>
 <p>apply via link in reply or DM me!</p></div>
+<div class="more"><a href="https://x.com/i/status/1965807750916812803">Read the rest on Twitter ›</a></div>
 </div>
 <div class="src"><a href="https://x.com/i/status/1965807750916812803">View on Twitter ↗</a></div>
 </article>
@@ -820,12 +826,13 @@ mfw capitalism is just a well-placed loop with exit liquidity</p></blockquote></
 <div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1965528932377395315"><time datetime="2025-09-09T21:33:09Z">Tuesday, September 9, 2025 · 23:33</time></a></div>
 <div class="other">
 <cite>Bookmarked from <a href="https://x.com/0xAndros">Andros @0xAndros</a></cite>
-<div class="text"><p>crazy that X open-sourced their algo. i spent last night studying it and here are the main takeaways for viral posts:</p>
+<div class="text bm-clamped"><p>crazy that X open-sourced their algo. i spent last night studying it and here are the main takeaways for viral posts:</p>
 <p>1. Early, strong in-network engagement. Your followers are your first gatekeepers. Rapid likes, retweets, and replies in the first minutes signal quality. This helps you break out of your followers (also means you should definitely reply to comments)</p>
 <p>2. High-quality engagement signals. The algorithm prioritizes high dwell time, sustained video watch time, and deep thread reads. Avoid anything that leads to quick bounces. Your content needs to be genuinely satisfying.</p>
 <p>3. Good social proximity. Who engages with you matters. Tweets from authors close to you in RealGraph, or liked by your close contacts, get a significant boost. Strong local social proof is a powerful amplifier. Interactions from highly connected followers definitely help as well</p>
 <p>4. Topic and cluster relevance at scale. For out-of-network reach, your content needs to align with large, active SimClusters (broad topics/communities). Niche tags won't get you broad distribution. This is where researching trending topics becomes critical. Original content also does MUCH better than retweets or replies</p>
 <p>5. Freshness and sustained momentum. Recent tweets with ongoing engagement are heavily favored. The algorithm tracks &quot;last engagement since creation&quot; - it wants content that keeps generating interest over time, not just a one-off spike. Consistency is key.</p></div>
+<div class="more"><a href="https://x.com/i/status/1965528932377395315">Read the rest on Twitter ›</a></div>
 </div>
 <div class="src"><a href="https://x.com/i/status/1965528932377395315">View on Twitter ↗</a></div>
 </article>
@@ -912,7 +919,7 @@ A manual for your home. </p>
 <div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1965487124787937401"><time datetime="2025-09-09T18:47:02Z">Tuesday, September 9, 2025 · 20:47</time></a></div>
 <div class="other">
 <cite>Bookmarked from <a href="https://x.com/businessbarista">Alex Lieberman @businessbarista</a></cite>
-<div class="text"><p>My AI transformation business is growing faster than any business I've ever started. </p>
+<div class="text bm-clamped"><p>My AI transformation business is growing faster than any business I've ever started. </p>
 <p>Funny enough, it started as a very high-end engineering agency. </p>
 <p>Why? </p>
 <p>1) We believe the best way to drive AI transformation is to use AI internally first, where we have wayyy more control. <br>
@@ -940,6 +947,7 @@ A manual for your home. </p>
 <p>Too big &amp; slow growth to be interesting to startup agencies and too small to be interesting to the massive management consultancies (MBB). </p>
 <p>We're happy to show this customer segment as much love as they need. Less red tape, less competition, but plenty of appetite to pay for AI engineering &amp; transformation.</p>
 <p>If you're interested in supercharging your engineering org or just want to chat about how we see the future of services, shoot me a DM!</p></div>
+<div class="more"><a href="https://x.com/i/status/1965487124787937401">Read the rest on Twitter ›</a></div>
 </div>
 <div class="src"><a href="https://x.com/i/status/1965487124787937401">View on Twitter ↗</a></div>
 </article>
@@ -947,12 +955,13 @@ A manual for your home. </p>
 <div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1965479747539882422"><time datetime="2025-09-09T18:17:43Z">Tuesday, September 9, 2025 · 20:17</time></a></div>
 <div class="other">
 <cite>Bookmarked from <a href="https://x.com/truly_AD">A D 💋 @truly_AD</a></cite>
-<div class="text"><p>The key is choosing a path that`s realistic to get into, pays well, and sets you up for long-term success. Cybersecurity is a great option because you can break in with affordable training, land entry-level roles that already pay strong, and quickly build toward six figures as your skills grow. </p>
+<div class="text bm-clamped"><p>The key is choosing a path that`s realistic to get into, pays well, and sets you up for long-term success. Cybersecurity is a great option because you can break in with affordable training, land entry-level roles that already pay strong, and quickly build toward six figures as your skills grow. </p>
 <p>Tech sales is another solid reset because you don`t need a degree, the barrier to entry is low, and commission-based roles can scale your income fast.</p>
 <p>Skilled trades are also powerful because they let you earn while you learn, and they`re always in demand + many people eventually start their own businesses.</p>
 <p>If you`re drawn to data and AI, there are analyst and support roles you can prepare for online that lead to serious career growth in just a few years. </p>
 <p>Healthcare support careers, like nursing or radiology tech, offer steady demand and stability. </p>
 <p>At the end of the day, if I had to start over, I’d pick cybersecurity or tech sales, because both give you a fast entry point, strong pay, and the flexibility to pivot into even bigger opportunities down the road.</p></div>
+<div class="more"><a href="https://x.com/i/status/1965479747539882422">Read the rest on Twitter ›</a></div>
 </div>
 <div class="src"><a href="https://x.com/i/status/1965479747539882422">View on Twitter ↗</a></div>
 </article>
@@ -1064,7 +1073,7 @@ A manual for your home. </p>
 <div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1965095704046829588"><time datetime="2025-09-08T16:51:40Z">Monday, September 8, 2025 · 18:51</time></a></div>
 <div class="other">
 <cite>Bookmarked from <a href="https://x.com/samshank">Sam Shank @samshank</a></cite>
-<div class="text"><p>Don’t start with the product. Start with distribution.</p>
+<div class="text bm-clamped"><p>Don’t start with the product. Start with distribution.</p>
 <p>I give this advice to entrepreneurs all the time because distribution is the hardest part of building a company. “Build it and they will come” almost never works. And even if you expect distribution to be hard—it’ll be 10× harder.</p>
 <p>HotelTonight started with a distribution insight. In 2009, we saw that the App Store about to become a massive channel. Billion-dollar companies would be built there, and early movers could earn free distribution before the competition showed up.</p>
 <p>From that insight, we worked backwards to the product:</p>
@@ -1079,6 +1088,7 @@ A manual for your home. </p>
 <p>At speedrun, we’re seeing teams win with GEO, founder-led content, and high-intent launch videos.</p>
 <p>So I’ll leave you with a prompt: What’s your unique approach to distribution—and what product could you build that maximizes it?</p>
 <p>If you’re working on this, I’d love to hear from you. Apply to <a class="mention" href="https://x.com/speedrun">@speedrun</a>  at sr [dot] a16z [dot] com.</p></div>
+<div class="more"><a href="https://x.com/i/status/1965095704046829588">Read the rest on Twitter ›</a></div>
 </div>
 <div class="src"><a href="https://x.com/i/status/1965095704046829588">View on Twitter ↗</a></div>
 </article>
@@ -1195,11 +1205,12 @@ If you want growth, then stop waiting for perfect.</p></div>
 <div class="meta"><span class="kind">Bookmark</span><a class="when" href="https://x.com/i/status/1963498520805007470"><time datetime="2025-09-04T07:05:02Z">Thursday, September 4, 2025 · 09:05</time></a></div>
 <div class="other">
 <cite>Bookmarked from <a href="https://x.com/nikitabier">Nikita Bier @nikitabier</a></cite>
-<div class="text"><p>If you want to get rich on X, it isn't going to be through creator revenue or meme coins.</p>
+<div class="text bm-clamped"><p>If you want to get rich on X, it isn't going to be through creator revenue or meme coins.</p>
 <p>Instead, think about one subject matter that you know more about than anyone else in the world. It can be anything: plumbing, menswear, Indian food, furniture, social apps, whatever.</p>
 <p>Post one unexpected insight you picked from your experience in that area. Keep it under 5 sentences. Do this every day for 6 months.</p>
 <p>If you stick to it, we will promote your account to others.</p>
 <p>By the end, you will be recognized as the world's leading expert in that subject area and you can charge whatever you want for endorsements, your time, or whatever. And no one will be able to take that way from you.</p></div>
+<div class="more"><a href="https://x.com/i/status/1963498520805007470">Read the rest on Twitter ›</a></div>
 </div>
 <div class="src"><a href="https://x.com/i/status/1963498520805007470">View on Twitter ↗</a></div>
 </article>
