@@ -23,8 +23,7 @@ header.hero{padding-top:40px;}
 h1 a{color:inherit;text-decoration:none;}
 .feed{margin-top:36px;}
 .item{border-top:1px solid var(--rule);padding:24px 0 20px;}
-.item:first-child{border-top:1.5px solid var(--ink);}
-.single .item{border-top:1.5px solid var(--ink);}
+/* No black rules anywhere (Alexis, 2026-11-12): not above the first item, the pager or the footer. */
 .meta{display:flex;justify-content:space-between;align-items:baseline;gap:12px;
       font:600 12px/1.4 var(--serif);font-feature-settings:"smcp" 1;text-transform:uppercase;
       letter-spacing:.07em;color:var(--muted);margin-bottom:12px;}
@@ -62,7 +61,7 @@ h2.note-title a:hover{border-bottom-color:var(--accent);}
 .note-body mark{background:#f4e9a8;padding:0 2px;}
 .note-body table{border-collapse:collapse;font-size:15px;margin:0 0 14px;}
 .note-body th,.note-body td{border-bottom:1px solid var(--rule);padding:6px 10px;text-align:left;vertical-align:top;}
-.note-body th{font-weight:600;border-bottom:1.5px solid var(--ink);}
+.note-body th{font-weight:600;border-bottom:1px solid var(--rule);}
 .note-body a.wikilink{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--rule);}
 .note-body .wikilink.unresolved{color:var(--muted);border-bottom:1px dotted var(--rule);}
 .repo-desc{font-size:19px;font-style:italic;color:var(--muted);margin:0 0 10px;}
@@ -94,6 +93,13 @@ a.mention:hover{background:rgba(0,0,0,.1);}
 .ctx{font-size:16px;line-height:1.5;color:#33312b;}
 .ctx cite,.other cite{display:block;font-style:italic;color:var(--muted);font-size:14px;margin-bottom:6px;}
 .hn-domain{color:var(--muted);font-size:.85em;}
+/* The pinned device — one label, an accent bar down the side, a faint gradient.
+   The homepage's pinned links and the Books "Most highlighted" shelf share it (#32). */
+.pin-label{font:600 11px/1.4 var(--serif);font-feature-settings:"smcp" 1;text-transform:uppercase;
+           letter-spacing:.08em;color:var(--accent);margin:6px 0 4px;}
+.links.pinned, ul.shelf.pinned{border-left:2px solid var(--accent);padding-left:18px;margin:0 0 36px;
+              background:linear-gradient(90deg,rgba(140,47,31,.04),rgba(140,47,31,0) 70%);}
+ul.shelf.pinned{padding-top:14px;padding-bottom:16px;padding-right:12px;}
 ul.books{list-style:none;padding:0;margin:0 0 28px;}
 ul.shelf{list-style:none;padding:0;margin:0 0 36px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
 ul.shelf li{display:flex;flex-direction:column;gap:6px;min-width:0;}
@@ -155,17 +161,16 @@ ul.bare a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--
 .src a{color:var(--faint);text-decoration:none;border-bottom:1px solid transparent;}
 .src a:hover{color:var(--accent);border-bottom-color:var(--accent);}
 .pager{display:flex;justify-content:space-between;align-items:baseline;margin-top:40px;padding-top:16px;
-       border-top:1.5px solid var(--ink);font-size:17px;}
+       font-size:17px;}
 .pager .n{color:var(--muted);font-style:italic;font-size:15px;}
 .pager a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;}
 .pager a:hover{border-bottom-color:var(--accent);}
-footer.site{margin-top:72px;padding-top:20px;border-top:1.5px solid var(--ink);color:var(--muted);font-size:14px;line-height:1.5;}
+footer.site{margin-top:72px;padding-top:20px;border-top:0;color:var(--muted);font-size:14px;line-height:1.5;}
 footer.site p{margin:0 0 6px;}
 footer.site a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule);}
 footer.site a:hover{color:var(--accent);border-bottom-color:var(--accent);}
 .archive{margin-top:36px;}
 .archive .year{border-top:1px solid var(--rule);padding:20px 0 12px;}
-.archive .year:first-child{border-top:1.5px solid var(--ink);}
 .archive h2{font-size:26px;margin:0 0 10px;}
 .archive .n{color:var(--faint);font-style:italic;font-size:15px;font-weight:400;margin-left:.4em;}
 .archive ul.months{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px 18px;}
