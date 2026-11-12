@@ -5,8 +5,33 @@
 <link href="https://alexisrondeau.me/feed/"/>
 <link rel="self" href="https://alexisrondeau.me/feed/feed.xml"/>
 <id>https://alexisrondeau.me/feed/</id>
-<updated>2026-11-09T15:45:19Z</updated>
+<updated>2026-11-11T16:41:54Z</updated>
 <author><name>Alexis Rondeau</name><uri>https://alexisrondeau.me/</uri></author>
+<entry>
+<title>My friend Tobi and his team have worked and iterated like crazy on this. Remarkable where…</title>
+<link href="https://alexisrondeau.me/feed/t/2120557642720706803/"/>
+<id>https://alexisrondeau.me/feed/t/2120557642720706803/</id>
+<published>2026-11-11T16:41:54Z</published>
+<updated>2026-11-11T16:41:54Z</updated>
+<content type="html">&lt;article class=&quot;item kind-quote&quot; id=&quot;t2120557642720706803&quot;&gt;
+&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Quote&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2120557642720706803/&quot;&gt;&lt;time datetime=&quot;2026-11-11T16:41:54Z&quot;&gt;Wednesday, November 11, 2026 · 17:41&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;3&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;286&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; profile visit&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;text&quot;&gt;&lt;p&gt;My friend Tobi and his team have worked and iterated like crazy on this. Remarkable where they’ve landed!&lt;/p&gt;&lt;/div&gt;
+&lt;blockquote class=&quot;ctx&quot;&gt;
+&lt;cite&gt;Quoting &lt;a href=&quot;https://x.com/jans&quot;&gt;@jans&lt;/a&gt; · Nov 11, 2026&lt;/cite&gt;
+&lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;In 2014, I sold my first company Loom to Dropbox.&lt;/p&gt;
+&lt;p&gt;Today, I’m proud to announce Roma 2.0 (YC F26): the first to-do list for AI agents.&lt;/p&gt;
+&lt;p&gt;Everyone uses a different agent: Claude, Grok Bot, Muse…&lt;/p&gt;
+&lt;p&gt;Until now, none of them could work together.&lt;/p&gt;
+&lt;p&gt;Roma automatically creates tasks and hands them to the right agent.&lt;/p&gt;
+&lt;p&gt;Allowing you and your agents to work together, with shared context.&lt;/p&gt;
+&lt;p&gt;Try it here: &lt;a href=&quot;https://t.co/w9Ag9OrTUO&quot;&gt;t.co/w9Ag9OrTUO&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;figure class=&quot;media&quot;&gt;&lt;a class=&quot;toobig&quot; href=&quot;https://x.com/i/status/13_2120539992388734977&quot;&gt;&lt;img src=&quot;/feed/media/ref-2120546950496043111-0-poster.jpg&quot; width=&quot;1200&quot; height=&quot;675&quot; alt=&quot;Video from the post&quot; loading=&quot;lazy&quot;&gt;&lt;span&gt;▶ Watch on Twitter&lt;/span&gt;&lt;/a&gt;&lt;/figure&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2120557642720706803/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2120557642720706803&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
+&lt;/article&gt;
+</content>
+</entry>
 <entry>
 <title>Autoresearch is barely 6 months old, yet it has become the bedrock of most of my projects.</title>
 <link href="https://alexisrondeau.me/feed/t/2119818626815635709/"/>
@@ -15,7 +40,7 @@
 <updated>2026-11-09T15:45:19Z</updated>
 <content type="html">&lt;article class=&quot;item kind-quote&quot; id=&quot;t2119818626815635709&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Quote&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2119818626815635709/&quot;&gt;&lt;time datetime=&quot;2026-11-09T15:45:19Z&quot;&gt;Monday, November 9, 2026 · 16:45&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;15&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;20&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;Autoresearch is barely 6 months old, yet it has become the bedrock of most of my projects.&lt;/p&gt;&lt;/div&gt;
 &lt;blockquote class=&quot;ctx&quot;&gt;
 &lt;cite&gt;Quoting &lt;a href=&quot;https://x.com/karpathy&quot;&gt;@karpathy&lt;/a&gt; · Mar 9, 2026&lt;/cite&gt;
@@ -47,7 +72,7 @@
 <updated>2026-11-07T08:38:13Z</updated>
 <content type="html">&lt;article class=&quot;item kind-post&quot; id=&quot;t2118986367086801028&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2118986367086801028/&quot;&gt;&lt;time datetime=&quot;2026-11-07T08:38:13Z&quot;&gt;Saturday, November 7, 2026 · 09:38&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;47&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; link click&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;1&lt;/b&gt; like&lt;/span&gt; · &lt;span&gt;&lt;b&gt;50&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;1&lt;/b&gt; link click&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text display&quot;&gt;&lt;p&gt;Just ordered my Cyclone phone!&lt;/p&gt;&lt;/div&gt;
 &lt;a class=&quot;linkcard&quot; href=&quot;https://www.linkedin.com/posts/cyclon-yc-f26-is-building-an-ai-phone-to-ugcPost-7524372594402430976-wW5y&quot;&gt;
 &lt;img src=&quot;/feed/media/link-7f8bd0d4d9d5ab87.jpg&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
@@ -73,7 +98,7 @@ Cyclon is building the phone for the AI era, where everything gets done without 
 <updated>2026-10-28T10:18:56Z</updated>
 <content type="html">&lt;article class=&quot;item kind-post&quot; id=&quot;t2115387835566248378&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2115387835566248378/&quot;&gt;&lt;time datetime=&quot;2026-10-28T10:18:56Z&quot;&gt;Wednesday, October 28, 2026 · 11:18&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;14&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;16&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text display&quot;&gt;&lt;p&gt;Genie 4: A way to create high-fidelity synthetic video training data sets?&lt;/p&gt;&lt;/div&gt;
 &lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2115387835566248378/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2115387835566248378&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
@@ -105,7 +130,7 @@ Cyclon is building the phone for the AI era, where everything gets done without 
 <updated>2026-10-26T15:51:16Z</updated>
 <content type="html">&lt;article class=&quot;item kind-post&quot; id=&quot;t2114746695414149323&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2114746695414149323/&quot;&gt;&lt;time datetime=&quot;2026-10-26T15:51:16Z&quot;&gt;Monday, October 26, 2026 · 16:51&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;48&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;49&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;1. Less than five minutes after leaving Munich Hbf, this train stops because “…there is a freight train blocking our tracks. It can’t move on its own.”&lt;/p&gt;
 &lt;p&gt;2. One hour later and we have not moved an inch: “We are still waiting on a locomotive to move the train.”&lt;/p&gt;
 &lt;p&gt;3. Just now: “The locomotive could not move the train. A replacement needs to be found. There is a chance though that we might return to Munich Hbf.”&lt;/p&gt;
@@ -172,7 +197,7 @@ Cyclon is building the phone for the AI era, where everything gets done without 
 <updated>2026-10-14T08:57:56Z</updated>
 <content type="html">&lt;article class=&quot;item kind-post&quot; id=&quot;t2110294020794519787&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Post&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2110294020794519787/&quot;&gt;&lt;time datetime=&quot;2026-10-14T08:57:56Z&quot;&gt;Wednesday, October 14, 2026 · 10:57&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;2&lt;/b&gt; replies&lt;/span&gt; · &lt;span&gt;&lt;b&gt;3&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;141&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;4&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;2&lt;/b&gt; replies&lt;/span&gt; · &lt;span&gt;&lt;b&gt;3&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;142&lt;/b&gt; views&lt;/span&gt; · &lt;span&gt;&lt;b&gt;4&lt;/b&gt; profile visits&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;I've decided: I will host a &amp;quot;Autonomous Research 101&amp;quot; training during the &lt;a class=&quot;mention&quot; href=&quot;https://x.com/Eurodefensetech&quot;&gt;@Eurodefensetech&lt;/a&gt; Hackathon in 🇨🇭 Switzerland next week.&lt;/p&gt;
 &lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/zhengyaojiang&quot;&gt;@zhengyaojiang&lt;/a&gt;: Could my participants use &lt;a class=&quot;mention&quot; href=&quot;https://x.com/WecoAI&quot;&gt;@WecoAI&lt;/a&gt; to run their first experiment loops instead of bootstrapping everything via Claude Code? &lt;/p&gt;
 &lt;p&gt;And if not, what would you recommend?&lt;/p&gt;&lt;/div&gt;
@@ -667,7 +692,7 @@ notes on the recorder itself are not part of this repository.&lt;/p&gt;
 <updated>2026-09-28T08:08:59Z</updated>
 <content type="html">&lt;article class=&quot;item kind-quote&quot; id=&quot;t2104483494919393724&quot;&gt;
 &lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Quote&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2104483494919393724/&quot;&gt;&lt;time datetime=&quot;2026-09-28T08:08:59Z&quot;&gt;Monday, September 28, 2026 · 10:08&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;2&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;150&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;2&lt;/b&gt; likes&lt;/span&gt; · &lt;span&gt;&lt;b&gt;151&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text&quot;&gt;&lt;p&gt;Love this. Via &lt;a class=&quot;mention&quot; href=&quot;https://x.com/patrickshafto&quot;&gt;@patrickshafto&lt;/a&gt; and &lt;a class=&quot;mention&quot; href=&quot;https://x.com/DARPA&quot;&gt;@DARPA&lt;/a&gt;'s expMath program, &lt;a class=&quot;mention&quot; href=&quot;https://x.com/ayushkhaitan343&quot;&gt;@ayushkhaitan343&lt;/a&gt; announces:&lt;/p&gt;
 &lt;blockquote&gt;&lt;p&gt;&amp;quot;With Ben Chow, Yuan Liao and Ziyang Qin, we have completed a full Lean formalization of the Hamilton-Perelman proof of the Poincaré conjecture!&amp;quot;&lt;/p&gt;&lt;/blockquote&gt;
 &lt;p&gt;For context on expMath and in &lt;a class=&quot;mention&quot; href=&quot;https://x.com/r0ck3t23&quot;&gt;@r0ck3t23&lt;/a&gt; words over at &lt;a href=&quot;https://x.com/r0ck3t23/status/1917016776312766901&quot;&gt;x.com/r0ck3t23/statu…&lt;/a&gt;&lt;/p&gt;
@@ -1308,35 +1333,6 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;43&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text display&quot;&gt;&lt;p&gt;Re: Currently reading; I had started DFW's biography alongside Infinite Jest and have now finished reading both. Worth it.&lt;/p&gt;&lt;/div&gt;
 &lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2101258200376906222/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2101258200376906222&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
-&lt;/article&gt;
-</content>
-</entry>
-<entry>
-<title>Control and reliability worked great when I shot my first video with your API this week.…</title>
-<link href="https://alexisrondeau.me/feed/t/2100958575182876716/"/>
-<id>https://alexisrondeau.me/feed/t/2100958575182876716/</id>
-<published>2026-09-18T14:42:12Z</published>
-<updated>2026-09-18T14:42:12Z</updated>
-<content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2100958575182876716&quot;&gt;
-&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2100958575182876716/&quot;&gt;&lt;time datetime=&quot;2026-09-18T14:42:12Z&quot;&gt;Friday, September 18, 2026 · 16:42&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;20&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
-&lt;blockquote class=&quot;ctx&quot;&gt;
-&lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/fal&quot;&gt;@fal&lt;/a&gt; · Sep 17, 2026&lt;/cite&gt;
-&lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;The bottleneck in generative video is shifting.&lt;/p&gt;
-&lt;p&gt;Speed and cost are becoming solved problems. The frontier is now quality, control, and reliability.&lt;/p&gt;
-&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/gorkem&quot;&gt;@gorkem&lt;/a&gt; and &lt;a class=&quot;mention&quot; href=&quot;https://x.com/isidentical&quot;&gt;@isidentical&lt;/a&gt; with &lt;a class=&quot;mention&quot; href=&quot;https://x.com/JenniferHli&quot;&gt;@JenniferHli&lt;/a&gt; on how we’re pushing that frontier with H3 Max, and what it means for production. &lt;a href=&quot;https://t.co/NQFRnWGD9u&quot;&gt;t.co/NQFRnWGD9u&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
-&lt;/blockquote&gt;
-&lt;div class=&quot;text&quot;&gt;&lt;p&gt;Control and reliability worked great when I shot my first video with your API this week. &lt;/p&gt;
-&lt;p&gt;I also created a &amp;quot;behind the scenes&amp;quot; page to show viewers that it took, in fact, quiet a bit of work to get all the pieces right. &lt;/p&gt;
-&lt;p&gt;This gives everyone a chance to really evaluate if it's &amp;quot;slop or not.&amp;quot;&lt;/p&gt;
-&lt;p&gt;What do you think?&lt;/p&gt;
-&lt;p&gt;Link here:&lt;/p&gt;&lt;/div&gt;
-&lt;figure class=&quot;media&quot;&gt;&lt;a class=&quot;toobig&quot; href=&quot;https://x.com/i/status/2100958575182876716&quot;&gt;&lt;img src=&quot;/feed/media/2100958575182876716-0-poster.jpg&quot; width=&quot;1200&quot; height=&quot;675&quot; alt=&quot;Video from the post&quot; loading=&quot;lazy&quot;&gt;&lt;span&gt;▶ Watch on Twitter&lt;/span&gt;&lt;/a&gt;&lt;/figure&gt;
-&lt;a class=&quot;linkcard&quot; href=&quot;https://alexisrondeau.me/mosey-site/making-of/&quot;&gt;
-&lt;img src=&quot;/feed/media/link-343c12f4099905aa.jpg&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
-&lt;span class=&quot;body&quot;&gt;&lt;span class=&quot;site&quot;&gt;Mosey&lt;/span&gt;&lt;span class=&quot;title&quot;&gt;The making of the film · Mosey&lt;/span&gt;&lt;span class=&quot;desc&quot;&gt;How Mosey's film was made, stage by stage — the plan, the script, the storyboard, the first clips, the cuts, the supercut, the piano, the colours — with every intermediate artefact and what it cost.&lt;/span&gt;&lt;span class=&quot;host&quot;&gt;↗ alexisrondeau.me&lt;/span&gt;&lt;/span&gt;
-&lt;/a&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2100958575182876716/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2100958575182876716&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>

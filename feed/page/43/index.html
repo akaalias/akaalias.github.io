@@ -24,15 +24,50 @@
 
 </head>
 <body>
-<nav class="topnav"><a href="/">Home</a><a href="/about/">About</a><a href="/feed/">Newsfeed</a><a href="/feed/archive/">Archive</a><a href="/bookmarks/">Bookmarks</a><a href="/books/">Books</a><a rel="me" class="cta" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">Let's connect on LinkedIn!</a></nav>
+<nav class="topnav"><a href="/">Home</a><a href="/about/">About</a><a href="/feed/">Newsfeed</a><a href="/bookmarks/">Bookmarks</a><a href="/books/">Books</a><a rel="me" class="cta" href="https://www.linkedin.com/in/alexis-rondeau-2099nyc/">Let's connect on LinkedIn!</a></nav>
 <header class="hero">
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1>Newsfeed</h1>
 <p class="lede">Everything I publish, in the order I published it: dispatches from Twitter, videos from YouTube and notes from my vault, archived here in full — text, images, video and links — so they outlive the platforms.</p>
-<p class="sub">1054 dispatches since January 2012 · page 43 of 43</p>
+<p class="sub">1055 dispatches since January 2012 · page 43 of 43</p>
 </header>
 <div class="wrap">
 <section class="feed">
+<article class="item kind-repo" id="g-homework">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/homework/"><time datetime="2014-01-17T21:03:53Z">Friday, January 17, 2014 · 22:03</time></a></div>
+<h2 class="note-title"><a href="/code/homework/">homework</a></h2>
+<p class="repo-desc">Learn Web Development Through Testing</p>
+<div class="stats"><span>Ruby</span></div>
+<div class="text note-body repo-readme clamped">
+<h2>Learn Web Development Through Testing</h2>
+<p>Use pre-made integration tests to learn how to code functional websites by focussing primarily on “how it should work” and only secondly on “how this is built”.</p>
+<p>Homework tests are run completely independently of whatever web-server, programming-language or framework is used to solve the ‘problems’ provided by the tests.</p>
+<p>It is left to the user to select server, technology, language etc. to solve the problem at hand.</p>
+<p>This basically turns around the idea of learning to code by putting the end-user experience at the forefront and the technology used to solve the problem after.</p>
+<h3>An example session:</h3>
+<p>Make sure you have all gems installed by running bundler</p>
+<pre><code>bundle install
+</code></pre>
+<p>Configure your target server in ./spec/spec_helper:</p>
+<pre><code># configure which host to call up on
+Capybara.app_host = &quot;http://localhost:3000&quot;
+</code></pre>
+<p>Now, run the newsletter test (Automatically a browser will pop up)</p>
+<pre><code>rspec ./spec/features/newsletter_spec.rb
+</code></pre>
+<p>See it fail</p>
+<pre><code>Failure/Error: expect(page).to have_content &quot;Sign up&quot;
+</code></pre>
+<p>Check out the test (https://github.com/akaalias/homework/blob/master/spec/features/newsletter_spec.rb) and <em>begin “fixing”</em> the tests by implementing a web page (again, <em>in whatever language, method and server you want</em>) that has a button called “Sign up”.</p>
+<p>In fact, if you’re just starting with this test, you might not even have a web-server running! So, you have to figure that out as well. Start a Rails project or install LAMP or whatever you need to do to serve (dynamic) pages.</p>
+<pre><code>[...]
+&lt;input type=&quot;submit&quot; value=&quot;Sign up&quot;&gt;
+[...]
+</code></pre>
+</div>
+<div class="more"><a href="/code/homework/">Read the whole README ›</a></div>
+<div class="src"><a href="/code/homework/">Permalink</a> · <a href="https://github.com/akaalias/homework">View on GitHub ↗</a></div>
+</article>
 <article class="item kind-hn" id="hn-6063609">
 <div class="meta"><span class="kind">Hacker News</span><a class="when" href="/feed/hn/6063609/"><time datetime="2013-07-18T13:55:25Z">Thursday, July 18, 2013 · 15:55</time></a></div>
 <div class="stats"><span><b>2</b> points</span></div>
@@ -78,7 +113,7 @@
 <h3><a href="/feed/archive/">Archive</a></h3>
 <div class="y">2026</div>
 <ul>
-<li><a href="/feed/archive/2026/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2026/11/">November</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2026/10/">October</a> <span class="n">11</span></li>
 <li><a href="/feed/archive/2026/09/">September</a> <span class="n">85</span></li>
 <li><a href="/feed/archive/2026/08/">August</a> <span class="n">40</span></li>
