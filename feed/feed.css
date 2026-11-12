@@ -94,6 +94,21 @@ a.mention:hover{background:rgba(0,0,0,.1);}
 .ctx{font-size:16px;line-height:1.5;color:#33312b;}
 .ctx cite,.other cite{display:block;font-style:italic;color:var(--muted);font-size:14px;margin-bottom:6px;}
 .hn-domain{color:var(--muted);font-size:.85em;}
+ul.books{list-style:none;padding:0;margin:0 0 28px;}
+ul.books li{display:flex;gap:16px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--rule-soft,var(--rule));}
+ul.books a.cover{flex:none;border:0;} ul.books img{width:56px;height:auto;display:block;box-shadow:0 1px 3px rgba(0,0,0,.18);}
+ul.books .t{font-size:19px;color:var(--accent);text-decoration:none;} ul.books .t:hover{text-decoration:underline;}
+ul.books .a{font-size:16px;color:var(--ink);} ul.books .m{font-size:14px;color:var(--muted);}
+.book-head{display:flex;gap:20px;align-items:flex-start;margin-bottom:26px;}
+.book-head img{width:110px;height:auto;flex:none;box-shadow:0 1px 4px rgba(0,0,0,.2);}
+.book-head p{margin:4px 0;} .book-author{font-size:19px;} .book-counts{font-size:15px;color:var(--muted);}
+blockquote.hl{margin:0 0 20px;padding:2px 0 2px 16px;border-left:2px solid var(--accent);}
+blockquote.hl p{margin:0;font-size:19px;line-height:1.55;}
+blockquote.hl cite{display:block;font-style:normal;color:var(--faint,var(--muted));font-size:13px;margin-top:4px;letter-spacing:.02em;}
+.hl-note{margin:-10px 0 22px 18px;font-size:17px;font-style:italic;}
+blockquote.hl.scrambled p{color:var(--muted);filter:blur(2.2px);user-select:none;}
+.hl-explain{font-size:15px;font-style:italic;color:var(--muted);margin:0 0 22px;}
+.hl-note span{font-style:normal;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-right:6px;}
 .ctx cite a,.other cite a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule);}
 .ctx-text{display:-webkit-box;-webkit-line-clamp:8;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere;}
 .ctx-text p{margin:0 0 8px;}
