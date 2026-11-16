@@ -29,7 +29,7 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 
 ## Newsfeed
 
-- [Newsfeed](https://alexisrondeau.me/feed/): 1055 dispatches, newest first, 25 per page
+- [Newsfeed](https://alexisrondeau.me/feed/): 1054 dispatches, newest first, 25 per page
 - [Archive](https://alexisrondeau.me/feed/archive/): the same dispatches by month
 - [Atom feed](https://alexisrondeau.me/feed/feed.xml): the latest 50 dispatches
 - [Data](https://alexisrondeau.me/feed/items.json): every item as JSON (source, id, date, text, media, links, permalink)
@@ -39,7 +39,6 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 - [Autonomous Research with AI: "Results! Why, man, I have gotten a lot of results! I know 198 things that won't work." — can an autonomous research loop find the secret of Kryptos K4?](https://alexisrondeau.me/notes/can-an-autonomous-research-loop-find-the-secret-of-kryptos-k4/): Not solved yet: in 19.7 hours, an AI agent running an autoresearch loop on K4 — the last unread message on Jim Sanborn'…
 - [Mosey: Walks that start themselves — the world's longest-lived people don't exercise. They simply get up and move every 20 minutes.](https://alexisrondeau.me/notes/mosey/): The longest-lived people don't exercise — they get up and move every twenty minutes. I built Mosey to put that nudge in…
 - [Quasi: "Say it, hear it done" — an experiment in computing without a screen](https://alexisrondeau.me/notes/quasi/): We spend ten or more hours a day staring at screens. Quasi is my small experiment in computing without one: you speak i…
-- [Home](https://alexisrondeau.me/notes/home/): Leads autonomous R&D and builds software · YC S13 · Pivotal Labs · Freakonomics Experiments · EDTH
 - [Freakonomics Experiments](https://alexisrondeau.me/notes/freakonomics-experiments/): As senior engineering consultant, I designed and shipped the infrastructure for a truly randomized, multi-month, large-…
 - [OneMonth Inc.](https://alexisrondeau.me/notes/onemonth-inc/): My technical co-founder run: I designed and wrote a best-selling "programming for non-programmers" video course that go…
 - [Pivotal Labs, New York City](https://alexisrondeau.me/notes/pivotal-labs-new-york-city/): Working as senior technology consultant, I coached client teams to ship better products faster through lean experiments…
@@ -299,13 +298,12 @@ Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/abo
 - [#discovery-loops](https://alexisrondeau.me/feed/tag/discovery-loops/): 3 dispatches
 - [#greatest-hits](https://alexisrondeau.me/feed/tag/greatest-hits/): 3 dispatches
 - [#books](https://alexisrondeau.me/feed/tag/books/): 1 dispatches
-- [#home](https://alexisrondeau.me/feed/tag/home/): 1 dispatches
 
 ## Months
 
 - [November 2026](https://alexisrondeau.me/feed/archive/2026/11/): 3 dispatches
 - [October 2026](https://alexisrondeau.me/feed/archive/2026/10/): 11 dispatches
-- [September 2026](https://alexisrondeau.me/feed/archive/2026/09/): 85 dispatches
+- [September 2026](https://alexisrondeau.me/feed/archive/2026/09/): 84 dispatches
 - [August 2026](https://alexisrondeau.me/feed/archive/2026/08/): 40 dispatches
 - [July 2026](https://alexisrondeau.me/feed/archive/2026/07/): 30 dispatches
 - [June 2026](https://alexisrondeau.me/feed/archive/2026/06/): 31 dispatches

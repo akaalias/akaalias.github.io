@@ -589,26 +589,6 @@ notes on the recorder itself are not part of this repository.&lt;/p&gt;
 </content>
 </entry>
 <entry>
-<title>Home</title>
-<link href="https://alexisrondeau.me/notes/home/"/>
-<id>https://alexisrondeau.me/notes/home/</id>
-<published>2026-09-28T22:00:00Z</published>
-<updated>2026-09-28T22:00:00Z</updated>
-<content type="html">&lt;article class=&quot;item kind-note&quot; id=&quot;n-home&quot;&gt;
-&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Note&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/notes/home/&quot;&gt;&lt;time datetime=&quot;2026-09-28T22:00:00Z&quot;&gt;Tuesday, September 29, 2026 · 00:00&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
-&lt;h2 class=&quot;note-title&quot;&gt;&lt;a href=&quot;/notes/home/&quot;&gt;Home&lt;/a&gt;&lt;/h2&gt;
-&lt;div class=&quot;text note-body&quot;&gt;
-&lt;h1&gt;Oh, hi there!&lt;/h1&gt;
-&lt;p&gt;Leads autonomous R&amp;amp;D and builds software · YC S13 · Pivotal Labs · Freakonomics Experiments · EDTH&lt;/p&gt;
-&lt;p&gt;Alexis here — welcome, and thanks for stopping by! Below is some stuff I’m really proud of. Have a look around and let me know what you think.&lt;/p&gt;
-&lt;p&gt;Principal Product Engineer at FELS Family Office GmbH · experimenter at heart · second-order cybernetic stewart · based between Berlin, New York &amp;amp; Marseille.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;tags&quot;&gt;&lt;a href=&quot;/feed/tag/home/&quot;&gt;#home&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/notes/home/&quot;&gt;Permalink&lt;/a&gt;&lt;/div&gt;
-&lt;/article&gt;
-</content>
-</entry>
-<entry>
 <title>@SchmidhuberAI Thank you for sharing Jürgen! (Danke dir für's Teilen.) Looks like my belo…</title>
 <link href="https://alexisrondeau.me/feed/t/2104527603897913371/"/>
 <id>https://alexisrondeau.me/feed/t/2104527603897913371/</id>
@@ -1333,6 +1313,35 @@ Pre-order: &lt;a href=&quot;https://t.co/SUpqBz1HK8&quot;&gt;t.co/SUpqBz1HK8&lt;
 &lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;43&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
 &lt;div class=&quot;text display&quot;&gt;&lt;p&gt;Re: Currently reading; I had started DFW's biography alongside Infinite Jest and have now finished reading both. Worth it.&lt;/p&gt;&lt;/div&gt;
 &lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2101258200376906222/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2101258200376906222&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
+&lt;/article&gt;
+</content>
+</entry>
+<entry>
+<title>Control and reliability worked great when I shot my first video with your API this week.…</title>
+<link href="https://alexisrondeau.me/feed/t/2100958575182876716/"/>
+<id>https://alexisrondeau.me/feed/t/2100958575182876716/</id>
+<published>2026-09-18T14:42:12Z</published>
+<updated>2026-09-18T14:42:12Z</updated>
+<content type="html">&lt;article class=&quot;item kind-reply&quot; id=&quot;t2100958575182876716&quot;&gt;
+&lt;div class=&quot;meta&quot;&gt;&lt;span class=&quot;kind&quot;&gt;Reply&lt;/span&gt;&lt;a class=&quot;when&quot; href=&quot;/feed/t/2100958575182876716/&quot;&gt;&lt;time datetime=&quot;2026-09-18T14:42:12Z&quot;&gt;Friday, September 18, 2026 · 16:42&lt;/time&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&quot;stats&quot;&gt;&lt;span&gt;&lt;b&gt;20&lt;/b&gt; views&lt;/span&gt;&lt;/div&gt;
+&lt;blockquote class=&quot;ctx&quot;&gt;
+&lt;cite&gt;In reply to &lt;a href=&quot;https://x.com/fal&quot;&gt;@fal&lt;/a&gt; · Sep 17, 2026&lt;/cite&gt;
+&lt;div class=&quot;ctx-text&quot;&gt;&lt;p&gt;The bottleneck in generative video is shifting.&lt;/p&gt;
+&lt;p&gt;Speed and cost are becoming solved problems. The frontier is now quality, control, and reliability.&lt;/p&gt;
+&lt;p&gt;&lt;a class=&quot;mention&quot; href=&quot;https://x.com/gorkem&quot;&gt;@gorkem&lt;/a&gt; and &lt;a class=&quot;mention&quot; href=&quot;https://x.com/isidentical&quot;&gt;@isidentical&lt;/a&gt; with &lt;a class=&quot;mention&quot; href=&quot;https://x.com/JenniferHli&quot;&gt;@JenniferHli&lt;/a&gt; on how we’re pushing that frontier with H3 Max, and what it means for production. &lt;a href=&quot;https://t.co/NQFRnWGD9u&quot;&gt;t.co/NQFRnWGD9u&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;div class=&quot;text&quot;&gt;&lt;p&gt;Control and reliability worked great when I shot my first video with your API this week. &lt;/p&gt;
+&lt;p&gt;I also created a &amp;quot;behind the scenes&amp;quot; page to show viewers that it took, in fact, quiet a bit of work to get all the pieces right. &lt;/p&gt;
+&lt;p&gt;This gives everyone a chance to really evaluate if it's &amp;quot;slop or not.&amp;quot;&lt;/p&gt;
+&lt;p&gt;What do you think?&lt;/p&gt;
+&lt;p&gt;Link here:&lt;/p&gt;&lt;/div&gt;
+&lt;figure class=&quot;media&quot;&gt;&lt;a class=&quot;toobig&quot; href=&quot;https://x.com/i/status/2100958575182876716&quot;&gt;&lt;img src=&quot;/feed/media/2100958575182876716-0-poster.jpg&quot; width=&quot;1200&quot; height=&quot;675&quot; alt=&quot;Video from the post&quot; loading=&quot;lazy&quot;&gt;&lt;span&gt;▶ Watch on Twitter&lt;/span&gt;&lt;/a&gt;&lt;/figure&gt;
+&lt;a class=&quot;linkcard&quot; href=&quot;https://alexisrondeau.me/mosey-site/making-of/&quot;&gt;
+&lt;img src=&quot;/feed/media/link-343c12f4099905aa.jpg&quot; alt=&quot;&quot; loading=&quot;lazy&quot;&gt;
+&lt;span class=&quot;body&quot;&gt;&lt;span class=&quot;site&quot;&gt;Mosey&lt;/span&gt;&lt;span class=&quot;title&quot;&gt;The making of the film · Mosey&lt;/span&gt;&lt;span class=&quot;desc&quot;&gt;How Mosey's film was made, stage by stage — the plan, the script, the storyboard, the first clips, the cuts, the supercut, the piano, the colours — with every intermediate artefact and what it cost.&lt;/span&gt;&lt;span class=&quot;host&quot;&gt;↗ alexisrondeau.me&lt;/span&gt;&lt;/span&gt;
+&lt;/a&gt;
+&lt;div class=&quot;src&quot;&gt;&lt;a href=&quot;/feed/t/2100958575182876716/&quot;&gt;Permalink&lt;/a&gt; · &lt;a href=&quot;https://x.com/i/status/2100958575182876716&quot;&gt;View on Twitter ↗&lt;/a&gt;&lt;/div&gt;
 &lt;/article&gt;
 </content>
 </entry>
