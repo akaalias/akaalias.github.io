@@ -122,10 +122,11 @@ ul.books .a{font-size:16px;color:var(--ink);} ul.books .m{font-size:14px;color:v
 blockquote.hl{margin:0 0 20px;padding:2px 0 2px 16px;border-left:2px solid var(--accent);}
 blockquote.hl p{margin:0;font-size:19px;line-height:1.55;}
 blockquote.hl cite{display:block;font-style:normal;color:var(--faint,var(--muted));font-size:13px;margin-top:4px;letter-spacing:.02em;}
-.hl-note{margin:-10px 0 22px 18px;font-size:17px;font-style:italic;}
+blockquote.hl .hl-note{margin:20px 0 4px;font-size:17px;font-style:italic;line-height:1.45;}
 blockquote.hl.scrambled p{color:var(--muted);filter:blur(2.2px);user-select:none;}
 .hl-explain{font-size:15px;font-style:italic;color:var(--muted);margin:0 0 22px;}
-.hl-note span{font-style:normal;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-right:6px;}
+h2.hl-heading{font:600 12px/1.4 var(--serif);font-feature-settings:"smcp" 1;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin:30px 0 12px;}
+.hl-note span{display:block;font:600 12px/1.4 var(--serif);font-feature-settings:"smcp" 1;font-style:normal;text-transform:uppercase;letter-spacing:.07em;color:var(--accent);margin:0 0 4px;}
 .ctx cite a,.other cite a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--rule);}
 .ctx-text{display:-webkit-box;-webkit-line-clamp:8;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere;}
 .ctx-text p{margin:0 0 8px;}
