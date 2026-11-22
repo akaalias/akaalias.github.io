@@ -119,11 +119,12 @@ ul.books .a{font-size:16px;color:var(--ink);} ul.books .m{font-size:14px;color:v
 .book-head{display:flex;gap:20px;align-items:flex-start;margin-bottom:26px;}
 .book-head img{width:110px;height:auto;flex:none;box-shadow:0 1px 4px rgba(0,0,0,.2);}
 .book-head p{margin:4px 0;} .book-author{font-size:19px;} .book-counts{font-size:15px;color:var(--muted);}
-blockquote.hl{margin:0 0 20px;padding:2px 0 2px 16px;border-left:2px solid var(--accent);}
-blockquote.hl p{margin:0;font-size:19px;line-height:1.55;}
-blockquote.hl cite{display:block;font-style:normal;color:var(--faint,var(--muted));font-size:13px;margin-top:4px;letter-spacing:.02em;}
-blockquote.hl .hl-note{margin:20px 0 4px;font-size:17px;font-style:italic;line-height:1.45;}
-blockquote.hl.scrambled p{color:var(--muted);filter:blur(2.2px);user-select:none;}
+blockquote.hl{margin:0 0 16px;padding:2px 0 2px 16px;border-left:2px solid var(--accent);}
+blockquote.hl cite{display:block;font-style:italic;color:var(--muted);font-size:14px;margin:0 0 6px;}
+blockquote.hl .hl-text{font-size:16px;line-height:1.5;color:#33312b;overflow-wrap:anywhere;}
+blockquote.hl .hl-text p{margin:0;}
+blockquote.hl .hl-note{margin:14px 0 4px;font-size:16px;font-style:italic;line-height:1.5;color:#33312b;}
+blockquote.hl.scrambled .hl-text p{color:var(--muted);filter:blur(2.2px);user-select:none;}
 .hl-explain{font-size:15px;font-style:italic;color:var(--muted);margin:0 0 22px;}
 h2.hl-heading{font:600 12px/1.4 var(--serif);font-feature-settings:"smcp" 1;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin:30px 0 12px;}
 .hl-note span{display:block;font:600 12px/1.4 var(--serif);font-feature-settings:"smcp" 1;font-style:normal;text-transform:uppercase;letter-spacing:.07em;color:var(--accent);margin:0 0 4px;}
