@@ -30,803 +30,303 @@
 <div class="eyebrow"><a href="/">Alexis Rondeau</a></div>
 <h1>Newsfeed</h1>
 <p class="lede">Everything I publish, in the order I published it: dispatches from Twitter, videos from YouTube and notes from my vault, archived here in full — text, images, video and links — so they outlive the platforms.</p>
-<p class="sub">1054 dispatches since January 2012 · page 36 of 43</p>
+<p class="sub">1254 dispatches since January 2012 · page 36 of 51</p>
 </header>
 <div class="wrap">
 <section class="feed">
-<article class="item kind-note" id="n-extract-pdf-highlights">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/extract-pdf-highlights/"><time datetime="2020-12-27T23:00:00Z">Monday, December 28, 2020 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/extract-pdf-highlights/">Extract PDF Highlights</a></h2>
-<div class="text note-body">
-<p>I was tired of re-typing the passages I’d highlighted while reading. Now you open a marked-up PDF in Obsidian, click once, and every highlight, underline and note lands in a tidy page-ordered note you can actually search, link and build on. Hours of manual copying gone — your reading turns straight into usable notes.</p>
-<p><a href="https://github.com/akaalias/obsidian-extract-pdf-highlights">Open →</a></p>
-</div>
-<div class="src"><a href="/notes/extract-pdf-highlights/">Permalink</a></div>
-</article>
-<article class="item kind-repo" id="g-obsidian-extract-pdf">
-<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/obsidian-extract-pdf/"><time datetime="2020-12-21T13:59:46Z">Monday, December 21, 2020 · 14:59</time></a></div>
-<h2 class="note-title"><a href="/code/obsidian-extract-pdf/">obsidian-extract-pdf</a></h2>
-<p class="repo-desc">Extract PDFs to Markdown within Obsidian</p>
-<div class="stats"><span><b>270</b> stars</span> · <span><b>24</b> forks</span> · <span>JavaScript</span></div>
-<div class="text note-body repo-readme clamped">
-<h2>Extract PDF text to Markdown</h2>
-<p>Allows you to extract the basic textual content of a PDF into a Markdown file. Works well with headings, paragraphs and lists.</p>
-<h3>Demo</h3>
-<p><img src="/code/media/gh-323454860-da09323c9ad6ebbe.gif" alt="" loading="lazy"></p>
-<h3>How to use this plugin</h3>
-<p>After you’ve installed and activated the plugin:</p>
-<ol>
-<li>Drag your PDF into Obsidian</li>
-<li>Open the PDF within Obsidian</li>
-<li>Make sure the pane with your PDF is focused</li>
-<li>Click the “PDF to Markdown” button in the sidebar</li>
-<li>Edit the generated markdown file to your needs</li>
-</ol>
-<h3>Tips &amp; Tricks for editing the generated markdown file</h3>
-<p>I just went ahead and turned a 500 page PDF into markdown and found that it worked better and faster than I expected.</p>
-<h4>Bulk-removing page footers</h4>
-<p>The book I used had the same footer on every page. That means they got copied into the markdown file over and over, too.</p>
-<p>For bulk search-and-replace I use the Atom editor (https://atom.io):</p>
-<ol start="0">
-<li>Copy the footer text into your clipboard</li>
-<li>Download and install Atom</li>
-<li>Open Atom and open the Markdown file inside</li>
-<li>Use “Find -&gt; Find in Buffer” and paste the footer text</li>
-<li>Use the button “Replace” or “Replace All” to remove footer text</li>
-</ol>
-<h4>Remove a single space before a new line of text</h4>
-<p>Weirdly, sometimes, new lines of text had a space infront of them. Such as:</p>
-<p><code> Some text</code></p>
-<p>…which resulted in Obisidian treating it as a sub-block of the preceding line.</p>
-<p>To remove the space for those lines, I used a regular expression search-and-replace:</p>
-<ol>
-<li>In “Find in current buffer” activate “Regex Search” (The <code>.*</code> icon)</li>
-<li>Enter <code>^([ ]|\t)+</code> into the search field</li>
-<li>Use the button “Replace” or “Replace All” to remove the space</li>
-</ol>
-<h2>Known issues</h2>
-<h3>First-time use</h3>
-<p>If you had a PDF open in Obisidian <em>before</em> you installed and activated the plugin, hitting the button may not work. I’ve had this issue with other plugins as well. The code just doesn’t hook up to already-open files.</p>
-<p>The solution is to simply close the PDF note and re-open it. That will allow the plugin to hook into it.</p>
-<h3>Limited PDF parsing</h3>
-<p>Please understand that this is a basic, best-effort tool to get basic text and headings from a PDF. It really just gets the text from a pdf and turns it into Markdown. The plugin doesn’t handle anything more complex, like tables, images, annotations etc:</p>
-<ul>
-<li>Does not turn PDF highlights and annotations into MD highlights</li>
-<li>Does not retain PDF numbered lists</li>
-<li>Does not skip text in headers and footers</li>
-</ul>
-</div>
-<div class="more"><a href="/code/obsidian-extract-pdf/">Read the whole README ›</a></div>
-<div class="src"><a href="/code/obsidian-extract-pdf/">Permalink</a> · <a href="https://github.com/akaalias/obsidian-extract-pdf">View on GitHub ↗</a></div>
-</article>
-<article class="item kind-note" id="n-extract-pdf">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/extract-pdf/"><time datetime="2020-12-20T23:00:00Z">Monday, December 21, 2020 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/extract-pdf/">Extract PDF</a></h2>
-<div class="text note-body">
-<p>This one frees the text trapped inside a PDF. One click turns a document into clean, editable notes — headings, paragraphs and lists intact — so you can quote it, rework it, and weave it into your own writing instead of squinting at a locked-up file.</p>
-<p><a href="https://github.com/akaalias/obsidian-extract-pdf">Open →</a></p>
-</div>
-<div class="src"><a href="/notes/extract-pdf/">Permalink</a></div>
-</article>
-<article class="item kind-video" id="v-KWdEatdD2bo">
-<div class="meta"><span class="kind">Video</span><a class="when" href="/videos/how-to-create-ad-hoc-mocs-with-obsidian/"><time datetime="2020-12-07T10:16:06Z">Monday, December 7, 2020 · 11:16</time></a></div>
-<h2 class="note-title"><a href="/videos/how-to-create-ad-hoc-mocs-with-obsidian/">How To Create Ad-Hoc MOCs With Obsidian</a></h2>
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/KWdEatdD2bo" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-<div class="text video-desc"><p>A quick walk-through of the process to using the Highlight Plugin from <a href="https://github.com/akaalias/extract-highlights-plugin">github.com/akaalias/extract-highlights-plugin</a></p>
-<p>The Chrome &quot;Markdownload&quot; plugin I'm using in the beginning is here: <a href="https://chrome.google.com/webstore/detail/markdownload-markdown-web/pcmpcfapbekmbjjkdalcgopdkipoggdi?hl=en-GB">chrome.google.com/webstore/detail/markdownloa…</a></p></div>
-<div class="stats"><span><b>9:37</b> long</span></div>
-<div class="src"><a href="/videos/how-to-create-ad-hoc-mocs-with-obsidian/">Permalink</a> · <a href="https://www.youtube.com/watch?v=KWdEatdD2bo">Watch on YouTube ↗</a></div>
-</article>
-<article class="item kind-repo" id="g-dangerzone-writing-plugin">
-<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/dangerzone-writing-plugin/"><time datetime="2020-11-19T11:26:58Z">Thursday, November 19, 2020 · 12:26</time></a></div>
-<h2 class="note-title"><a href="/code/dangerzone-writing-plugin/">dangerzone-writing-plugin</a></h2>
-<p class="repo-desc">A plugin that forces you to write for X seconds. If you pause for more than 5 seconds, everything you've written in this note is DELETED.</p>
-<div class="stats"><span><b>81</b> stars</span> · <span><b>5</b> forks</span> · <span>TypeScript</span></div>
-<div class="text note-body repo-readme clamped">
-<h2>🔥 Dangerzone Writing 🔥 for Obsidian</h2>
-<blockquote>
-<p>“Elegant”</p>
-</blockquote>
-<blockquote>
-<p>“Dangerous”</p>
-</blockquote>
-<blockquote>
-<p>“Relaxing”</p>
-</blockquote>
-<blockquote>
-<p>“Perverted”</p>
-</blockquote>
-<blockquote>
-<p>“Your best friend”</p>
-</blockquote>
-<blockquote>
-<p>“Your worst nightmare”</p>
-</blockquote>
-<p>Hey all, I’ve been a paying customer of <a href="https://apps.apple.com/de/app/flowstate/id1060276201">FlowState</a> since 2016 and wanted something similar for Obsidian.</p>
-<p>It’s really fun. And stressful. But mostly fun.</p>
-<p><strong>It’s simple:</strong></p>
-<ol>
-<li>You start a timer for X minutes.</li>
-<li>THEN, during those X minutes you MUST write continuously.</li>
-<li>The catch: If you PAUSE for longer than 5 seconds, everything you’ve written is DELETED.</li>
-</ol>
-<p>Here’s an example session:</p>
-<p><img src="/code/media/gh-314226453-909187be92b248d6.gif" alt="" loading="lazy"></p>
-<h2>When to use Dangerzone Writing</h2>
-<ul>
-<li>Use it to “warm” up your writing muscle</li>
-<li>Use it to write that first draft however dirty and ragged</li>
-<li>Use it to keep you laser-focused on writing</li>
-</ul>
-<h2>How to use the Dangerzone Writing plugin</h2>
-<ol>
-<li>Open a note in Obsidian^</li>
-<li>Click the “Stopwatch” icon in the left bar to start the timer</li>
-<li>From now on, the count-down from 60 seconds to 0 starts</li>
-<li>Start writing!</li>
-<li>DO. NOT. STOP. WRITING for 60 seconds.</li>
-<li>If you DO stop writing for more than 5 seconds, everything you’ve written in this note so far is DELETED.</li>
-</ol>
-<p>Again, let me be clear: If you stop for more than 5 seconds, your writing in this note will be deleted.</p>
-<p>^ I usually create an empty one, but that’s not necessary</p>
-<h2>How to start as a beginner</h2>
-<p>If you’ve never used this type of writing before, I highly recommend starting with the defaults and an empty note to get a feeling for it.</p>
-<h3>A few simple tips and tricks</h3>
-<ol>
-<li><strong>Fake it till you make it</strong>: It’s totally fine to write a lot of “nothing” such as <code>Well, I don't know what to write here. Nothing comes to mind. I'm sitting here. Writing...</code> - I do this all the time. You’ll eventually find a thought that is interesting, so don’t worry.</li>
-<li><strong>Don’t Panic</strong>: Just because there’s a countdown, doesn’t mean you have to freak out. I know this sounds weird, but as long as you hit a key every second or so, this thing won’t blow up. So, instead of switching to PANIC-MODE as soon as you start a session, just stay calm and start writing.</li>
-<li><strong>Start small</strong>: Gradually increase session time as you get more comfortable with this type of challenge.</li>
-<li><strong>Learn to touch-type</strong>: <a href="https://www.typingclub.com/">Learn to touch-type</a> if you’re not yet fully touch-typing and you’re struggling with the mechanics to keep up. This is one of the most powerful hard-skills I’ve ever learned.</li>
-</ol>
-<h2>How to personalize your sessions and fuse time</h2>
-<p>To optimize your flow experience, you can configure your:</p>
-<h3>Writing Session Timing Settings</h3>
-<ul>
-<li><strong>Countdown duration in seconds</strong>: Default is 60s, How many seconds you want your Dangerzone Writing session to last?</li>
-<li><strong>Seconds-to-deletion fuse</strong>: Default is 5s, How many seconds until your text is deleted?</li>
-</ul>
-<h3>Immersive Writing Settings</h3>
-<ul>
-<li><strong>Session Font-Size</strong>: Increases editor font-size temporarily for a more immersive experience. Leave empty to keep default size</li>
-<li><strong>Session Background Color</strong>: Changes background color of editor temporarily for a more immersive experience. Find a good color at <a href="https://htmlcolorcodes.com/"><a href="https://htmlcolorcodes.com">https://htmlcolorcodes.com</a></a>. Leave empty to omit</li>
-</ul>
-<h2>Successful sessions tracking</h2>
-<p>You get a +1 🎉 for every Dangerzone Writing session you complete successfully.
-“Successfully” means that once the timer is up, there is at least <em>some</em> text there (indicating you didn’t just give up and let the countdown finish).</p>
-<h2>Let me know how it goes!</h2>
-<ul>
-<li>How do YOU use the Dangerzone? <a href="https://forum.obsidian.md/t/dangerzone-flowstate-like-plugin-prototype/8776">Leave a comment in the forum</a></li>
-<li>Got an idea for a setting? <a href="https://forum.obsidian.md/t/dangerzone-flowstate-like-plugin-prototype/8776">Leave a comment in the forum</a></li>
-<li>Wanna share a story of one of your Dangerzone sessions? <a href="https://forum.obsidian.md/t/dangerzone-flowstate-like-plugin-prototype/8776">Leave a comment in the forum</a></li>
-<li>Wanna share your successful sessions count? <a href="https://forum.obsidian.md/t/dangerzone-flowstate-like-plugin-prototype/8776">Leave a comment in the forum</a></li>
-<li>The plugin ate your homework? Well. Sorry but that’s what it does (See disclaimer)</li>
-</ul>
-<h2>Thank you</h2>
-<p>Thank you ryanjamurphy, roberthaisfield, macedotavares, afokapu, tristanbailey, lukeleppan, AutonomyGaps and hicsuntdragons for your feedback and support.</p>
-<h2>Disclaimer</h2>
-<p>This plugin is provided as-is with NO warranty that it’ll work exactly as you expect. It’s made to DELETE text in a note after X seconds of inactivity when you’re start a session. Please do not hold me responsible if it does, in fact, DELETE your text. That’s what it does. On the other hand there is always the possibility of a bug that makes this plugin behave unexpectedly.</p>
-</div>
-<div class="more"><a href="/code/dangerzone-writing-plugin/">Read the whole README ›</a></div>
-<div class="src"><a href="/code/dangerzone-writing-plugin/">Permalink</a> · <a href="https://github.com/akaalias/dangerzone-writing-plugin">View on GitHub ↗</a></div>
-</article>
-<article class="item kind-repo" id="g-text-expander-plugin">
-<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/text-expander-plugin/"><time datetime="2020-11-09T11:56:34Z">Monday, November 9, 2020 · 12:56</time></a></div>
-<h2 class="note-title"><a href="/code/text-expander-plugin/">text-expander-plugin</a></h2>
-<p class="repo-desc">A bare-bones and opinionated proof-of-concept text expander utility for Obsidian</p>
-<div class="stats"><span><b>12</b> stars</span> · <span><b>2</b> forks</span> · <span>TypeScript</span></div>
-<div class="text note-body repo-readme clamped">
-<h2>Text-expander</h2>
-<p>A bare-bones proof-of-concept implementation of a simple text-expander in Obsidian.</p>
-<ol>
-<li>Uses <code>::</code> (two colons) to start the trigger-sequence</li>
-<li>Define your own custom trigger keyword like <code>foo</code></li>
-<li>In the editor, type <kbd>::foo</kbd> + <kbd>ENTER</kbd> (or <kbd>Tab</kbd> or <kbd>Space</kbd>) to expand</li>
-</ol>
-<p>Built-in is <kbd>::date</kbd> which will expand to todays date such as <code>Mon Nov 09 2020</code> and <kbd>::time</kbd> which will expand to your current timezone’s time.</p>
-<h2>Demo</h2>
-<p><img src="/code/media/gh-311323968-bd75117eb78252c2.gif" alt="Demo" loading="lazy"></p>
-<h2>Settings</h2>
-<p><img src="/code/media/gh-311323968-5b629d1fabd23c4e.png" alt="Settings" loading="lazy"></p>
-<h2>Hacking and Help</h2>
-<p>This is mostly a proof of concept for myself and it’s rather, erm, “pragmatic” code. If you see something you’d like to change, let me know. Here’s how you can fiddle around on your own yourself and send a pull-request</p>
-<h3>Clone and make new branch</h3>
-<ul>
-<li><code>cd $VAULT/.obsidian/plugins</code></li>
-<li><code>git clone &lt;https://github.com/akaalias/text-expander-plugin</code>&gt;</li>
-<li><code>cd text-expander-plugin</code></li>
-<li><code>git checkout -b my_branch</code></li>
-<li><code>git remote add upstream &lt;https://github.com/akaalias/text-expander-plugin</code>&gt;</li>
-</ul>
-<h3>Install deps</h3>
-<ul>
-<li><code>npm i &amp;&amp; npm install -g prettier &amp;&amp; npm install -g eslint</code></li>
-<li><code>npm run dev</code></li>
-</ul>
-<h3>Edit</h3>
-<ul>
-<li><code>git checkout -b my_branch</code></li>
-<li>Make your edits</li>
-<li>To check your changes, reload Obsidian (Command-R)</li>
-</ul>
-<h3>Commit-prep</h3>
-<ul>
-<li><code>./ship.sh</code> will prettify and elsint once again</li>
-<li><code>git add -p</code> to stage changes individually</li>
-<li><code>git commit -m &quot;my message&quot;</code></li>
-</ul>
-<h3>Publish pull request</h3>
-<ul>
-<li><code>git push -u origin my_branch</code></li>
-</ul>
-</div>
-<div class="more"><a href="/code/text-expander-plugin/">Read the whole README ›</a></div>
-<div class="src"><a href="/code/text-expander-plugin/">Permalink</a> · <a href="https://github.com/akaalias/text-expander-plugin">View on GitHub ↗</a></div>
-</article>
-<article class="item kind-repo" id="g-extract-highlights-plugin">
-<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/extract-highlights-plugin/"><time datetime="2020-11-08T13:47:29Z">Sunday, November 8, 2020 · 14:47</time></a></div>
-<h2 class="note-title"><a href="/code/extract-highlights-plugin/">extract-highlights-plugin</a></h2>
-<p class="repo-desc">Manage your highlights in Obsidian by easily creating, removing and exporting them.</p>
-<div class="stats"><span><b>95</b> stars</span> · <span><b>10</b> forks</span> · <span>TypeScript</span></div>
-<div class="text note-body repo-readme clamped">
-<h2>Extract Highlights Plugin</h2>
-<p>Create and extract highlights from a current markdown note in Obsidian into your clipboard. Based on <a href="https://forum.obsidian.md/t/extract-highlights-from-note/7867">icebear’s plugin request</a>.</p>
-<h2>Training Videos</h2>
-<h3>Watch: The Quick-Start Tutorial!</h3>
-<p><a href="https://youtu.be/KWdEatdD2bo"><img src="https://github.com/akaalias/extract-highlights-plugin/blob/master//code/media/gh-311072640-be544d10ca3bc850.png" alt="" loading="lazy"></a></p>
-<h3>Watch: A SECRET NEW highlight mode</h3>
-<p><a href="https://youtu.be/5kkcqAn6joU"><img src="https://github.com/akaalias/extract-highlights-plugin/blob/master//code/media/gh-311072640-d67e452d421f5187.png" alt="" loading="lazy"></a></p>
-<h3>Watch: Tips and Tricks for the SECRET mode</h3>
-<p><a href="https://youtu.be/n3YW5bmnETg"><img src="https://github.com/akaalias/extract-highlights-plugin/blob/master//code/media/gh-311072640-b520be449dc05cf9.png" alt="" loading="lazy"></a></p>
-<h3>How it works</h3>
-<p>This plugin will copy the highlights delimited by <code>==</code>, <code>**</code> and <code>&lt;mark&gt;&lt;/mark&gt;</code> into your clipboard as a bullet-list.</p>
-<p>Optionally you can customize…</p>
-<ul>
-<li><strong>The heading text of the list</strong>, include the note-title or hide it all-together</li>
-<li><strong>Adding a footnote</strong> to each that link back to the source-file</li>
-<li><strong>Creating an ad-hoc map-of-content (MOC)</strong> by turning each highlight into an <code>&lt;span class=&quot;wikilink unresolved&quot;&gt;</code> Obsidian link <code>&lt;/span&gt;</code></li>
-<li><strong>Auto-capitalize</strong> the first letter in each highlight for consistency</li>
-</ul>
-<h3>Demo Creating and Extracting Highlights</h3>
-<ol>
-<li>First you see how I use the CREATE highlights hot-key to highlight sentences</li>
-<li>Then you see how I use the EXTRACT highlights hot-key to create a new file with the highlights</li>
-</ol>
-<p><img src="/code/media/gh-311072640-8f660bed38bc67c0.gif" alt="basic functionality" loading="lazy"></p>
-<h4>Using the Hotkey to HIGHLIGHT (and UN-HIGHLIGHT) the sentence under cursor</h4>
-<p>The default hotkey for this is:</p>
-<p><kbd>SHIFT</kbd> + <kbd>ALT</kbd> + <kbd>_</kbd></p>
-<p>Super useful for when you’re reading and just don’t want to switch to your mouse for selecting the sentence.</p>
-<p><img src="/code/media/gh-311072640-296dec36db3f6006.gif" alt="demo" loading="lazy"></p>
-<p>Will remove highlighting if the sentence under your cursor is currently delimited by “==”.</p>
-<h4>Using the Hotkey to EXTRACT highlights</h4>
-<p>The default hotkey is:</p>
-<p><kbd>SHIFT</kbd> + <kbd>ALT</kbd> + <kbd>=</kbd></p>
-<h4>Using the Ribbon Button</h4>
-<p>There is also a button (a circle-shape) that’s added to your left-side ribbon.</p>
-<p>Clicking on it will also extract all highlighted parts in your current note and place it in your clipboard.</p>
-<h4>Using the Command Palette</h4>
-<p>I looked into it and there’s a bug the way clipboard works with the Command Palette. Basically everything but the “Paste” works.</p>
-<p>But I’ve found a temporary work-around. It’s weird but it works.</p>
-<ol>
-<li>Trigger Command Palette (Command-P)</li>
-<li>Find “Extract Highlights”</li>
-<li>Hit Enter (You should see a notification (“Highlights copied to clipboard!”)</li>
-<li>Workaround: At this point, briefly switch to a different note and back (This materialises the clipboard data for pasting)</li>
-<li>Paste works now the same as with the Hotkey and Button-press</li>
-</ol>
-<h4>Pasting highlights from your clipboard</h4>
-<p>After using the hotkey, button or command palette, anywhere you want, just paste the clipboard!</p>
-<p><kbd>Command</kbd> + <kbd>v</kbd> (MacOS) or the equivalent on Windows/Linux</p>
-<p>The output is a markdown-block titled “Highlights” with a bullet-list of the highlights.</p>
-<h3>Feedback</h3>
-<p>Are you using Extract Highlights? I’d love to hear from you!</p>
-<p><a href="https://forum.obsidian.md/t/extract-highlights-plugin/8763/12">Share your questions and suggestions in the forum</a></p>
-<h3>Backlog</h3>
-<h4>TODO</h4>
-<ul>
-<li><p>Record video on using the “explosion mode” for research and creating atomic notes</p>
-<ul>
-<li><p>Pre-requisites</p>
-<ul>
-<li><p>Highlights Plugin</p>
-<ul>
-<li>Create links</li>
-<li>Create page</li>
-<li>Enable explode mode</li>
-<li>Open notes on creation</li>
-</ul>
-</li>
-<li>Sliding Panes Plugin</li>
-</ul>
-</li>
-<li>Start with a good article (Economist)</li>
-<li>Go through and highlight sentences</li>
-<li><p>Create MOC and explode into notes</p>
-<ul>
-<li>BOOOMMMMM!!!</li>
-<li>You’ve got an MOC</li>
-<li>You’ve got the core for single-idea, atomic notes</li>
-<li>You’ve got a backlink to the original file</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4>DOING</h4>
-<p>…</p>
-<h4>DONE</h4>
-<ul>
-<li><input type="checkbox" disabled checked> “Explode” highlights into individual notes (assumes I’m creating the list of links as well)</li>
-<li><input type="checkbox" disabled checked> command (<kbd>SHIFT</kbd> + <kbd>ALT</kbd> + <kbd>=</kbd>) which then copies all of the highlighted text either into:</li>
-<li><input type="checkbox" disabled checked> click a button which then copies all of the highlighted text either into:</li>
-<li><input type="checkbox" disabled checked> allow for <code>&lt;mark&gt;&lt;/mark&gt;</code> to be used as highlights</li>
-<li><input type="checkbox" disabled checked> allow for standard bold (<code>**</code>) to be used as highlights</li>
-<li><input type="checkbox" disabled checked> allow to optionally include or completely exclude <code>## Highlights</code> heading</li>
-<li><input type="checkbox" disabled checked> allow to change text in heading <code>## My Custom Highlights</code></li>
-<li><input type="checkbox" disabled checked> allow to include note-name in heading such as <code>## From: $NOTE_TITLE</code></li>
-<li><input type="checkbox" disabled checked> allow to add footnotes for each highlight and include link to source-note</li>
-<li><input type="checkbox" disabled checked> allow to optionally enable bold for highlights</li>
-<li><input type="checkbox" disabled checked> allow for Command Palette to trigger copying (Works sort of, bug in Electron)</li>
-<li><input type="checkbox" disabled checked> my clipboard</li>
-<li><input type="checkbox" disabled checked> a new note</li>
-</ul>
-</div>
-<div class="more"><a href="/code/extract-highlights-plugin/">Read the whole README ›</a></div>
-<div class="src"><a href="/code/extract-highlights-plugin/">Permalink</a> · <a href="https://github.com/akaalias/extract-highlights-plugin">View on GitHub ↗</a></div>
-</article>
-<article class="item kind-video" id="v-pP4AeGY2mz4">
-<div class="meta"><span class="kind">Video</span><a class="when" href="/videos/how-to-use-obsidian-to-write-a-book/"><time datetime="2020-09-25T12:00:58Z">Friday, September 25, 2020 · 14:00</time></a></div>
-<h2 class="note-title"><a href="/videos/how-to-use-obsidian-to-write-a-book/">How To Use Obsidian to Write a Book</a></h2>
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/pP4AeGY2mz4" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-<div class="text video-desc clamped"><p>🎉 UPDATE: The Journey Plugin automatically creates your book outline for you ➡️ <a href="https://youtu.be/iRydNlinRlc">youtu.be/iRydNlinRlc</a>  🎉</p>
-<p>This is a video for my buddy Chris who is writing a book currently. </p>
-<p>It's a short walk-through on how to leverage Obsidian to collect, connect and contribute interesting and novel ideas.</p>
-<p>The software I'm using is called Obsidian. I'm obsessed with it and I happily pay for it as well. You can download it for free for personal-use <a href="https://obsidian.md/">obsidian.md/</a> </p>
-<p>A lot of the ideas are based on Curtis McHale's videos at <a href="https://www.youtube.com/user/SFNdesignWP">youtube.com/user/SFNdesignWP</a></p>
-<p>If you have any questions, let me know in the comments below!</p>
-<p>PS: I guess it's more of a general &quot;How I use Obsidian to Come Up with New Ideas&quot; and less about the writing/editing process for a book. But, yeah, I think those things are well-covered. I recorded it with the intention to look at the discovery process.</p></div>
-<div class="more"><a href="/videos/how-to-use-obsidian-to-write-a-book/">Read the full description ›</a></div>
-<div class="stats"><span><b>16:29</b> long</span></div>
-<div class="src"><a href="/videos/how-to-use-obsidian-to-write-a-book/">Permalink</a> · <a href="https://www.youtube.com/watch?v=pP4AeGY2mz4">Watch on YouTube ↗</a></div>
-</article>
-<article class="item kind-note" id="n-100-interview-challenge-16-6-2020">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/100-interview-challenge-16-6-2020/"><time datetime="2020-08-09T20:41:47Z">Sunday, August 9, 2020 · 22:41</time></a></div>
-<h2 class="note-title"><a href="/notes/100-interview-challenge-16-6-2020/">100 Interview Challenge 16.6.2020</a></h2>
-<div class="text note-body clamped">
-<h2>Background</h2>
-<p>I’m not 100% sure how I will take my dream about doing this and make it happen. Today I feel very tired and less motivated. I enjoy dreaming about it and I enjoy imagining the benefits of it but I’m not yet ready to start the work. Or at least I’m pushing that away. Yesterday I spent most of the time fantasizing and then 1 hour actually planning this challenge.</p>
-<p>And maybe that’s okay right now. Maybe I need to give myself time to get into it. Maybe <em>I need to clarify the vision</em> for this challenge and <em>get really excited</em> about it BEFORE I start planning all the details and todos.</p>
-<p>Good question. How do I envision this process? How do I envision this project? I know there’s an outcome, at least for now, with <span class="wikilink unresolved">300 In-Depth Interviews Challenge</span>… So that’s <em>good</em> but not really exciting. 100 beans. 100 cups. 100 people. <span class="wikilink unresolved">300 In-Depth Interviews Challenge</span>. Doesn’t say anything. 100 problems captured. 100 ideas generated. 100 business ideas. 100 problems to solve to make money. 100 opportunities to empathize and be creative about something someone cares about.</p>
-<h2>How I want this experience - The “HOW” to the “WHAT”</h2>
-<p>I want to experience my ‘ONE Thing’ in work. I want to focus and know and feel absolutely right. I want to work on it every day and see progress and results and changes and improvements. I want to become an expert in listening. I want to become an expert in generating ideas. I want to create what Dane M. created but even better and bigger and more exciting. I want to be the person that people think of when they think of profitable business ideas. I want to be desired and asked to help and asked to join teams in amazing companies. I want to start and focus on the most important part in work, the problem and pain that people face and figure out ways to solve those in exchange for money. I want to connect with those I interview. I want to make them feel special. I want them to feel safe and cared for. I want them to unlock their potential and creativity safely and with joy. I want others to see that process and begin themselves. I want to share the interviews and help business owners build better products that actually help people. I want to OWN this part. I want to unearth, discover the gems that are hidden. I want to bring those gems to the surface. I want to help 100 people solve their biggest pain in business and life. I want to feel success in conducting these interviews. I want to talk to amazing people. I want to connect with amazing people. I want to build a portfolio site and channel and following that is the foundation for my work. I want to start at the core source of energy and drive incredibly successful business from it. I want to help and co-uncover ideas that are so simple and so clear that it’s completely obvious and doable to build a solution and make money immediately. I want to be sought after and courted by companies and venture firms and start ups and businesses to help them unearth gems. I want to experience work as a joyful and incredibly fun experience that uplifts me and those I am in connection with. I want to experience connection and joy and fun as part of work. I want to build a new life for myself that works for me and that feels right and good. I want this to be my project, my focus, my source of motivation. I want to feel excited and amped up and curious and surprised and connected and referred to and I want to publish and spread and impress and have a portfolio and content and a clear stance.</p>
-<p>I see myself contacting amazing people and getting their yes and sending them the invite and starting the session and recording the session and kicking off the conversation and feeling great and focused and connected and asking and listening and taking notes and reflecting and probing and making them feel good and confident and creative and digging a little more and being careful and respectful and finding an idea and polishing that idea and getting excitement and feeling relief and feeling a sense of liberation and clarity and gratitude and recapping and finding an actual price and feeling good about it. And then slowly finishing off and getting a referral to the next IDEAL interview partner and hearing that they’d love to talk another round because they got so much out of it this time.</p>
-<p>And I see myself finishing the zoom call and feeling really good and excited and inspired and I see myself taking a few more notes and organizing the note and the follow-up and the referral and the recording. I see myself editing the recording and uploading it and getting the transcript for it and publishing it on my site and on Facebook and on Instagram and LinkedIn and getting amazing responses and feeling an immense sense of success. I see myself adding one more interview to my list and looking forward to the next one.</p>
-<h2>Reflection</h2>
-<p>Yes, this feels much better. Much more in tune with actually doing it. This feels like I’m already doing it. This makes so much sense. I believe that focusing on the feeling and the experience as I want to have it is good. I’m definitely more amped up than I was an hour ago.</p>
-<p>Having a vision of “HOW” is super important. The “WHAT” has been clear (<span class="wikilink unresolved">300 In-Depth Interviews Challenge</span>) for a few days and I can get excited about that as a challenge but it’s also important to get emotional about it to have the energy and the vibe and the creativity that’s needed to make it happen.</p>
-<p>I’ve also done the <em>“Why do I want this?”</em> and <em>“Why do I believe I will get this?”</em> and I guess the <em>“How do I want this?”</em> is another part in this process to give it color and dimension and emotions.</p>
-<p>I’ll let this sink in for a little bit and then decide on what’s next in this process.</p>
-<p>Now for a little break.</p>
-<ul>
-<li><span class="wikilink unresolved">100 Interview Challenge 15.6.2020</span></li>
-</ul>
-<h3>Tags</h3>
-<ul>
-<li>#100daychallenge</li>
-<li>#interviews</li>
-<li>#abrahamworkshop</li>
-</ul>
-</div>
-<div class="more"><a href="/notes/100-interview-challenge-16-6-2020/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/100-interview-challenge-16-6-2020/">Permalink</a></div>
-</article>
-<article class="item kind-hn" id="hn-24100039">
-<div class="meta"><span class="kind">Hacker News comment</span><a class="when" href="/feed/hn/24100039/"><time datetime="2020-08-09T15:04:06Z">Sunday, August 9, 2020 · 17:04</time></a></div>
+<article class="item kind-hn" id="hn-37938733">
+<div class="meta"><span class="kind">Hacker News comment</span><a class="when" href="/feed/hn/37938733/"><time datetime="2023-10-19T05:10:49Z">Thursday, October 19, 2023 · 07:10</time></a></div>
 <blockquote class="ctx">
-<cite>Comment on <a href="https://news.ycombinator.com/item?id=24008678">Show HN: Breathe – Peripheral Breath Trainer</a></cite>
+<cite>Comment on <a href="https://news.ycombinator.com/item?id=37925374">Fractional Factorial Experiment Design: There Are Too Many Experiments to Do</a></cite>
 </blockquote>
-<div class="text"><p>I had the exact same experience. I put together a bare-bones menu bar app for macOS. See my comment above for the link!<p>Edit: It does pulse within the menu bar which works for me, please let me know if you find it distracting.</div>
-<div class="src"><a href="/feed/hn/24100039/">Permalink</a> · <a href="https://news.ycombinator.com/item?id=24100039">View on Hacker News ↗</a></div>
+<div class="text"><p>Wow. As an experiment-design nerd, this may be one of my personal top favorite HN posts of all time.<p>I don&#x27;t 100% get the generation part yet, but I believe that&#x27;s just me needing practice.<p>A long time ago back in New York, Grace and Trevor from Javelin (Née Lean Startup Machine) taught me the scientific method over the course of a weekend workshop.<p>Still, to this day, I use their experiment design process and I am grateful for it. <a href="https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=F-5Iyj9A1MU" rel="nofollow">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=F-5Iyj9A1MU</a><p>Thank you demofox for sharing!</div>
+<div class="src"><a href="/feed/hn/37938733/">Permalink</a> · <a href="https://news.ycombinator.com/item?id=37938733">View on Hacker News ↗</a></div>
 </article>
-<article class="item kind-hn" id="hn-24098971">
-<div class="meta"><span class="kind">Hacker News comment</span><a class="when" href="/feed/hn/24098971/"><time datetime="2020-08-09T11:48:40Z">Sunday, August 9, 2020 · 13:48</time></a></div>
-<blockquote class="ctx">
-<cite>Comment on <a href="https://news.ycombinator.com/item?id=24008678">Show HN: Breathe – Peripheral Breath Trainer</a></cite>
-</blockquote>
-<div class="text"><p>I love this so much. Thank you!<p>Especially for the &quot;peripheral&quot; part: For me it works better to &quot;check-in&quot; to the ongoing process once in a while than having to remember to start an app etc.<p>What didn&#x27;t work for me was the window-based approach because I could never find a good place to keep it. For whatever reason, I happen to use all four corners of my screen all the time (!).<p>But I still wanted to have something peripheral! So with your inspiration, I created a basic MacOs Menu Bar application that animates the 4:4:4 ratio breathing. This works better for me personally now.<p>-&gt; <a href="https:&#x2F;&#x2F;github.com&#x2F;akaalias&#x2F;menu-bar-breathing" rel="nofollow">https:&#x2F;&#x2F;github.com&#x2F;akaalias&#x2F;menu-bar-breathing</a></div>
-<div class="src"><a href="/feed/hn/24098971/">Permalink</a> · <a href="https://news.ycombinator.com/item?id=24098971">View on Hacker News ↗</a></div>
+<article class="item kind-book" id="book-B00J2IBRNU">
+<div class="meta"><span class="kind">Kindle</span><span>Last read October 2023</span></div>
+<div class="book-head"><a href="/books/the-bhagavad-gita-penguin-classics/"><img src="/books/media/kindle-B00J2IBRNU.jpg" alt=""></a><div><h2 class="note-title"><a href="/books/the-bhagavad-gita-penguin-classics/">The Bhagavad Gita (Penguin Classics)</a></h2><p class="book-author">Simon Brodbeck and Laurie L. Patton</p><p class="book-counts">13 highlights</p></div></div>
+<div class="src"><a href="/books/the-bhagavad-gita-penguin-classics/">Book page</a> · <a href="https://www.amazon.com/dp/B00J2IBRNU">View on Amazon ↗</a></div>
 </article>
-<article class="item kind-repo" id="g-menu-bar-breathing">
-<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/menu-bar-breathing/"><time datetime="2020-08-04T09:44:26Z">Tuesday, August 4, 2020 · 11:44</time></a></div>
-<h2 class="note-title"><a href="/code/menu-bar-breathing/">menu-bar-breathing</a></h2>
-<p class="repo-desc">A small MacOS menu bar app that helps you breathe</p>
-<div class="stats"><span><b>7</b> stars</span> · <span><b>1</b> fork</span> · <span>Swift</span></div>
+<article class="item kind-book" id="book-B011HCY14K">
+<div class="meta"><span class="kind">Kindle</span><span>Last read October 2023</span></div>
+<div class="book-head"><a href="/books/the-devil-s-chessboard-allen-dulles-the-cia-and-the-rise-of-america-s-secret-gov/"><img src="/books/media/kindle-B011HCY14K.jpg" alt=""></a><div><h2 class="note-title"><a href="/books/the-devil-s-chessboard-allen-dulles-the-cia-and-the-rise-of-america-s-secret-gov/">The Devil’s Chessboard: Allen Dulles, the CIA, and the Rise of America’s Secret Government</a></h2><p class="book-author">David Talbot</p><p class="book-counts">3 highlights</p></div></div>
+<div class="src"><a href="/books/the-devil-s-chessboard-allen-dulles-the-cia-and-the-rise-of-america-s-secret-gov/">Book page</a> · <a href="https://www.amazon.com/dp/B011HCY14K">View on Amazon ↗</a></div>
+</article>
+<article class="item kind-book" id="book-B09Y553WQN">
+<div class="meta"><span class="kind">Kindle</span><span>Last read October 2023</span></div>
+<div class="book-head"><a href="/books/the-declassification-engine-what-history-reveals-about-america-s-top-secrets/"><img src="/books/media/kindle-B09Y553WQN.jpg" alt=""></a><div><h2 class="note-title"><a href="/books/the-declassification-engine-what-history-reveals-about-america-s-top-secrets/">The Declassification Engine: What History Reveals About America's Top Secrets</a></h2><p class="book-author">Matthew James  Connelly</p><p class="book-counts">19 highlights</p></div></div>
+<div class="src"><a href="/books/the-declassification-engine-what-history-reveals-about-america-s-top-secrets/">Book page</a> · <a href="https://www.amazon.com/dp/B09Y553WQN">View on Amazon ↗</a></div>
+</article>
+<article class="item kind-book" id="book-B086W9Q59K">
+<div class="meta"><span class="kind">Kindle</span><span>Last read September 2023</span></div>
+<div class="book-head"><a href="/books/the-great-gatsby-amazonclassics-edition/"><img src="/books/media/kindle-B086W9Q59K.jpg" alt=""></a><div><h2 class="note-title"><a href="/books/the-great-gatsby-amazonclassics-edition/">The Great Gatsby (AmazonClassics Edition)</a></h2><p class="book-author">F. Scott Fitzgerald</p><p class="book-counts">1 highlight</p></div></div>
+<div class="src"><a href="/books/the-great-gatsby-amazonclassics-edition/">Book page</a> · <a href="https://www.amazon.com/dp/B086W9Q59K">View on Amazon ↗</a></div>
+</article>
+<article class="item kind-repo" id="g-subspot">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/subspot/"><time datetime="2023-09-24T09:59:56Z">Sunday, September 24, 2023 · 11:59</time></a></div>
+<h2 class="note-title"><a href="/code/subspot/">SubSpot</a></h2>
+<p class="repo-desc">A streamlined UI subset for Hubspot Deals</p>
+<div class="stats"><span>CSS</span></div>
 <div class="text note-body repo-readme">
-<p>A tiny and completely unobtrusive menu-bar macOS menu bar app that helps you remember to breathe.</p>
-<p><img src="/code/media/gh-284938586-c046983293dfd3a5.gif" alt="" loading="lazy"></p>
-<h2>Release for macOS</h2>
-<p><a href="https://github.com/akaalias/menu-bar-breathing/releases/tag/0.0.1">https://github.com/akaalias/menu-bar-breathing/releases/tag/0.0.1</a></p>
-<h2>Free Bonus: My Complete Breathwork Secrets Videos on Youtube (4+h)</h2>
-<p><a href="https://www.youtube.com/playlist?list=PLXf3KNADhT1MjYewe-aUOWlvSx1VBvOML">https://www.youtube.com/playlist?list=PLXf3KNADhT1MjYewe-aUOWlvSx1VBvOML</a></p>
-<p><img src="/code/media/gh-284938586-87b1d326952ad36d.png" alt="https://www.youtube.com/playlist?list=PLXf3KNADhT1MjYewe-aUOWlvSx1VBvOML" loading="lazy"></p>
+<h2>SubSpot</h2>
+<p>A streamlined subset of UI elements for working with Hubspot pipelines and deals more efficiently</p>
+<h3>Benefits</h3>
+<ul>
+<li>Less noise, more focus</li>
+<li>Easier opening of related websites</li>
+<li>Easier reading and copying of multi-line text properties</li>
+</ul>
+<h3>Features</h3>
+<ul>
+<li>Hides most visual noise</li>
+<li>Replaces selected URL-based properties with buttons</li>
+<li>Replaces selected text-based properties with easier-to-read text</li>
+</ul>
+<h3>How to install</h3>
+<ul>
+<li>Click the green “Code” button</li>
+<li>Download ZIP</li>
+<li>Extract ZIP</li>
+<li>Open <code>chrome://extensions/</code> in Chrome</li>
+<li>Click <code>Load Unpacked</code></li>
+<li>Choose the unzipped directory</li>
+</ul>
+<h3>How to configure Hubspot properties</h3>
+<ul>
+<li>Open <code>chrome-extension://amkkhgnomjpmclmafojefjghbclnehlj/src/options/options.html</code></li>
+<li>Configure your Hubspot properties</li>
+<li>Save your settings</li>
+<li>Reload your deal pipeline</li>
+</ul>
 </div>
-<div class="src"><a href="/code/menu-bar-breathing/">Permalink</a> · <a href="https://github.com/akaalias/menu-bar-breathing">View on GitHub ↗</a></div>
+<div class="src"><a href="/code/subspot/">Permalink</a> · <a href="https://github.com/akaalias/SubSpot">View on GitHub ↗</a></div>
 </article>
-<article class="item kind-note" id="n-03-07-2020">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/03-07-2020/"><time datetime="2020-07-02T22:00:00Z">Friday, July 3, 2020 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/03-07-2020/">03.07.2020</a></h2>
-<div class="text note-body clamped">
-<ul>
-<li>Did a <span class="wikilink unresolved">Retrospective 3.7.2020</span></li>
-<li>Sent out the complete <span class="wikilink unresolved">LifeScan Phase Two Interviews – First Impressions</span> as PDF to my team…</li>
-<li>Still got to edit my own rent contract</li>
-<li>Print it out</li>
-<li><p>Buy stuff for tomorrow:</p>
-<ul>
-<li><p>Fennel Salad #done</p>
-<ul>
-<li>Fennel</li>
-<li>Lemons</li>
-<li>Parmigiano</li>
-</ul>
-</li>
-<li>Burger buns 3 x 6 #done</li>
-<li>Iceberg Salad x 1 #done</li>
-<li>Tomatos x 1 #done</li>
-<li><p>Once I get there:</p>
-<ul>
-<li>Ice cubes</li>
-<li>2 x six-packs of american beers</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<p>Learned a little more about Obsidian, enabled the daily note plugin since I’ve been creating a daily note already by hand most days. Got the $25/life license to get beta builds (worth it already because backlinks were broken and CPU used 100% by the graph renderer.)</p>
-<p>Talked to <span class="wikilink unresolved">Jonathan Najarian</span> on the phone for a bit; we did a quick check-in because he was headed to a gig and I had to go buy stuff. Printed out the rent contracts before. What else? Got all the stuff for the grilling tomorrow. I’m not sure if I want to head back to <span class="wikilink unresolved">What I love about Franziska Krüger</span> tonight after 10pm. I kind of feel like spending some time with myself. A lot has happened this week and I’m exhausted. I spent a lot of Money. I didn’t make that much Money in return… But in the idea of expanding, I feel good about spending money on myself for myself. And most of it was Food-related anyway, which I think is good and worth it.</p>
-<p>I’m good sitting around right now. Maybe watch <span class="wikilink unresolved">Notes on Dane Maxwell</span>’s video about <span class="wikilink unresolved">Pick a Niche Article</span> later.</p>
-<p>Read the article, overall good, just not feeling particularly marketing-y or sales-y right now. I just want to chill and maybe eat something later and then go to bed and start the weekend tomorrow.</p>
+<article class="item kind-book" id="book-B08F9KJC75">
+<div class="meta"><span class="kind">Kindle</span><span>Last read September 2023</span></div>
+<div class="book-head"><a href="/books/a-year-with-swollen-appendices-brian-eno-s-diary/"><img src="/books/media/kindle-B08F9KJC75.jpg" alt=""></a><div><h2 class="note-title"><a href="/books/a-year-with-swollen-appendices-brian-eno-s-diary/">A Year with Swollen Appendices: Brian Eno's Diary</a></h2><p class="book-author">Brian Eno</p><p class="book-counts">108 highlights</p></div></div>
+<div class="src"><a href="/books/a-year-with-swollen-appendices-brian-eno-s-diary/">Book page</a> · <a href="https://www.amazon.com/dp/B08F9KJC75">View on Amazon ↗</a></div>
+</article>
+<article class="item kind-book" id="book-B00EKOBW4K">
+<div class="meta"><span class="kind">Kindle</span><span>Last read September 2023</span></div>
+<div class="book-head"><a href="/books/jim-henson-the-biography/"><img src="/books/media/kindle-B00EKOBW4K.jpg" alt=""></a><div><h2 class="note-title"><a href="/books/jim-henson-the-biography/">Jim Henson: The Biography</a></h2><p class="book-author">Brian Jay Jones</p><p class="book-counts">36 highlights</p></div></div>
+<div class="src"><a href="/books/jim-henson-the-biography/">Book page</a> · <a href="https://www.amazon.com/dp/B00EKOBW4K">View on Amazon ↗</a></div>
+</article>
+<article class="item kind-repost" id="t1698780240074457402">
+<div class="meta"><span class="kind">Repost</span><a class="when" href="/feed/t/1698780240074457402/"><time datetime="2023-09-04T19:29:05Z">Monday, September 4, 2023 · 21:29</time></a></div>
+<div class="stats"><span><b>50</b> reposts</span></div>
+<div class="other">
+<cite>Reposting <a href="https://x.com/Rainmaker1973">@Rainmaker1973</a> · Sep 4, 2023</cite>
+<div class="text"><p>Born #Today in 1927, John McCarthy was computer and cognitive scientist: he developed the programming language family Lisp, significantly influenced the design of the language ALGOL, popularized time-sharing and coined the term &quot;artificial intelligence&quot; (AI), which pioneered <a href="https://t.co/oyQ4HK5ebg">t.co/oyQ4HK5ebg</a></p></div>
+<figure class="media"><img src="/feed/media/ref-1698583253580484850-0.jpg" width="956" height="639" alt="Image from the post" loading="lazy"></figure>
 </div>
-<div class="more"><a href="/notes/03-07-2020/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/03-07-2020/">Permalink</a></div>
+<div class="src"><a href="/feed/t/1698780240074457402/">Permalink</a> · <a href="https://x.com/i/status/1698780240074457402">View on Twitter ↗</a></div>
 </article>
-<article class="item kind-note" id="n-24-06-2020">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/24-06-2020/"><time datetime="2020-06-23T22:00:00Z">Wednesday, June 24, 2020 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/24-06-2020/">24.06.2020</a></h2>
-<div class="text note-body clamped">
-<p>Woke up tired, got out of bed at 9. Feeling like shit. Feeling exhausted and incredibly sad. Sat on the couch yesterday all day. No Dopamine-hits, no scrolling etc. I think that’s the right decision. Same today. I have two interviews. The one I did yesterday was the highlight of my day. Other than that, I didn’t do much. I went shopping and cooked chicken. That was good.</p>
-<p>For right now I’m glad I went out for a walk through the park. I wish I could cry it all out. I wish I could cry so that this pain and suffering has a place to be. I looked at that tree that reminds me of me. It has a vine plant creeping up and someone other than me cut that vine. And now there’s a skeleton left of that vine and the tree is growing much better now than last year. I identify with the tree and hope I am in the process of cutting my vine off.</p>
-<p>I feel slow and sad and heavy. At least allergies are back to a manageable level. This month sucked ass. It was basically 4 weeks of not sleeping because of allergies, becoming aware of how bad my early “work”-experience was and that I’m a survivor. No one really cares even if I tell them. I have to pay too much money that I don’t have. I feel small and hurt and sad and alone and broke and broken.</p>
-<p>Maybe that’s why I’ve been Broke so much. I’m just a nobody with nothing of value. I’m just someone you pass on the street, a somebody who serves you dinner. My life has no meaning anymore. <span class="wikilink unresolved">Twenty years</span> of living a lie, lying to myself just to survive. That’s what they call a survivor. I haven’t thrived once in the last <span class="wikilink unresolved">Twenty years</span>. I’ve been on the edge of failure, ruin, heart-break and death and I managed to never fall off the rails. No wonder I smoked like a chimney. No wonder.</p>
-<p>It wasn’t my fault but it still happened to me.</p>
-<p>And now I know why nothing ever worked out for me in the last fucking <span class="wikilink unresolved">Twenty years</span>. At least I know now. Getting glasses when you’re short-sighted is great because you start seeing the world clearly. It also shows you the stuff that’s wrong and broken or where you suffered. Clarity sheds a light on everything, the good, the bad and the ugly truths. And so, finally, I’ve been in a position to look at the ugly truths in my life. And the ugly people in my life that made my time miserable and maimed me for the rest of my life. What happened was not okay. It was not appropriate. It was completely inappropriate and wrong. It was wrong.</p>
-<p>So, for today, what’s my plan?</p>
-<ul>
-<li>Interview #2 with Dr. Moaz [DONE]</li>
-<li>???</li>
-<li>Interview #3 with Annika [DONE]</li>
-<li>???</li>
-<li>???</li>
-<li>???</li>
-<li>Call with JN at 6pm: Interview</li>
-<li>Head over to <span class="wikilink unresolved">What I love about Franziska Krüger</span>’s at 7pm for dinner</li>
-<li>Get an overview of current finances/expenses</li>
-</ul>
-<p>I don’t know yet what comes after the interviews. Gotta make sure I write down my first impressions again. That seemed to be valuable to me and the client.</p>
-<p>Worrying about money. 40 and Broke. 40 and Broke. 40 and broken. 40 and worthless. 40 and nobody. 40 and survived. 40 and… ?</p>
-<h2>Dopamine Fast Day 2</h2>
-<p>I’m supposed to focus on what I want. I want to focus on what I want. But it’s hard today. It’s hard when you’re depressed.</p>
-<p>I should keep moving more.</p>
-<ul>
-<li>I will not check my phone.</li>
-<li>I will not go on social media.</li>
-<li>I will not read news.</li>
-<li>I will not eat sugar.</li>
-<li>I will not eat fast food.</li>
-<li>I will not watch porn.</li>
-</ul>
-<p><strong>I will not get high on bullshit, low-value, high-dopamine hits to avoid difficult feelings anymore.</strong> I’m doing this for ME. Instead, I’ll do stuff that’s good for me and that will feel good when I don’t baseline myself with those drugs!</p>
-<p>And I was successful there yesterday. No random dopamine hits throughout the day.</p>
-<p>No mindless scrolling to ease the pain.</p>
-<p>No coffee or nicotine! (Non-smoker for over 4 months now!)</p>
-<p>Instead,</p>
-<ul>
-<li>I will move my body</li>
-<li>I will eat good food</li>
-<li>I will read good books</li>
-<li>I will exercise my body</li>
-<li>I will meditate</li>
-<li>I will allow difficult emotions</li>
-<li>I will allow difficult conversations</li>
-<li>I will write</li>
-</ul>
-<p>And I don’t need to stress out that I’m not yet the productivity-machine reading 3 books every day on day 2 of my <span class="wikilink unresolved">dopamine fast</span>. If I can avoid the brain-sugar bullshit, all other productive things will come back one by one.</p>
-<p>Maybe I’ve been so hooked on that shit is because my trauma was so big as well. Where others just dipped their toes once in a while, I was fully invested because it gave me relief from my pain.</p>
-<h2>Interview #2 Preparations</h2>
-<p>Anyways, the interview is coming up in 25 minutes. I don’t have much more coherent thinking available at the moment. And that’s okay. Just kept writing and got some ideas out of it. I wonder how air conditioning works in the new place on <span class="wikilink unresolved">Alexanderplatz Apartment</span>?</p>
-<p>Still got 5 minutes left on my tomato timer. What else can I write about that’s relevant and interesting?</p>
-<h2>How I want to feel</h2>
-<p>I want to wake up in the morning full of energy and feel tirelessly motivated to live my own life. To work on something that fulfills me and that lets me enjoy success and financial independence. To have a loving relationship with my partner and my family and my friends. To be free of worry about money. To choose experiences because I want them, being certain that all resources like money will be available to me. To be full of energy and focused. To be alert and “there” and flow effortlessly through my day from one activity to the next to a different place, in and out of conversations etc. Free of feeling hurt and sadness. Full of positive, hopeful, optimistic feelings.</p>
-<h2>After Interview with Dr. Moaz</h2>
-<p>Super nice, learned a lot. Had fun. I think she enjoyed it as well. Good intuitions on what she said. Good training for my own interviews. Good probing, good memory on what was said. Good notes. Good first impressions. Overall a success! Time flew by, I asked mostly open-ended questions.</p>
-<p>Now, I have one hours to spend before the next call. That’ll be at 1:30, then I’ll have a longer break until talking to <span class="wikilink unresolved">Jonathan Najarian</span> at 6pm. Feels crazy that the day is already that far ahead. But I slept in until 9am, so…</p>
-<h2>Idea Regarding “Interviews”</h2>
-<p>“Start with ONE” - Marketing course that starts with ONE customer that gets interviewed for problems and solutions. Find a really painful problem, then come up with solutions until a paid solution is found and that pain is solved.</p>
-<ol>
-<li>One Person that I like spending time with</li>
-<li>One Problem that they seriously struggle with</li>
-<li>One Solution that they’ll pay for</li>
-</ol>
-<p>Use interview to come up with a “Person(a)” like <span class="wikilink unresolved">Jonathan Najarian</span>, 30 years old, lives in Boston, works with his girlfriend as wedding-photographer, 2-person team, city-wide booking. Could even be a friend, because it’s about their problem and their solution and not some random idea I’ve come up with. Maybe. This needs to be seen.</p>
-<p>Use interview to capture emotionally charged problem description “XYZ fucking sucks, man. If this doesn’t go away, things’ll get fucking ugly.” This can be used directly in sales copy for this one particular person. A sales-letter for ONE that basically recaps the conversation and the idea/offer that was created together.</p>
-<p>Use interview to create product/idea/offer in a way that it’s valuable to them and they’re ready to pay for it. Using quotes and the feature-list, build a landing-page (could be email) to presell the service.</p>
-<p>BOOM!</p>
-<p>Deliver the service as discussed and promised and paid for. Ask for feedback, improvements.</p>
-<p>Get testimonial, referrals and introductions.</p>
-<p>Scale business system slowly.</p>
-<blockquote>
-<p>“We’re all just walking each other home.” – Ram Dass</p>
+<article class="item kind-book" id="book-B00N1ZN6C0">
+<div class="meta"><span class="kind">Kindle</span><span>Last read August 2023</span></div>
+<div class="book-head"><a href="/books/extreme-programming-explained-embrace-change/"><img src="/books/media/kindle-B00N1ZN6C0.jpg" alt=""></a><div><h2 class="note-title"><a href="/books/extreme-programming-explained-embrace-change/">Extreme Programming Explained: Embrace Change</a></h2><p class="book-author">Kent Beck and Cynthia Andres</p><p class="book-counts">17 highlights</p></div></div>
+<div class="src"><a href="/books/extreme-programming-explained-embrace-change/">Book page</a> · <a href="https://www.amazon.com/dp/B00N1ZN6C0">View on Amazon ↗</a></div>
+</article>
+<article class="item kind-book" id="book-B002LHRM2O">
+<div class="meta"><span class="kind">Kindle</span><span>Last read August 2023</span></div>
+<div class="book-head"><a href="/books/the-goal-a-process-of-ongoing-improvement/"><img src="/books/media/kindle-B002LHRM2O.jpg" alt=""></a><div><h2 class="note-title"><a href="/books/the-goal-a-process-of-ongoing-improvement/">The Goal: A Process of Ongoing Improvement</a></h2><p class="book-author">Eliyahu M. Goldratt and Jeff Cox</p><p class="book-counts">44 highlights</p></div></div>
+<div class="src"><a href="/books/the-goal-a-process-of-ongoing-improvement/">Book page</a> · <a href="https://www.amazon.com/dp/B002LHRM2O">View on Amazon ↗</a></div>
+</article>
+<article class="item kind-book" id="book-B009K6DKTS">
+<div class="meta"><span class="kind">Kindle</span><span>Last read August 2023</span></div>
+<div class="book-head"><a href="/books/antifragile-things-that-gain-from-disorder/"><img src="/books/media/kindle-B009K6DKTS.jpg" alt=""></a><div><h2 class="note-title"><a href="/books/antifragile-things-that-gain-from-disorder/">Antifragile: Things that Gain from Disorder</a></h2><p class="book-author">Nassim Taleb</p><p class="book-counts">45 highlights</p></div></div>
+<div class="src"><a href="/books/antifragile-things-that-gain-from-disorder/">Book page</a> · <a href="https://www.amazon.com/dp/B009K6DKTS">View on Amazon ↗</a></div>
+</article>
+<article class="item kind-book" id="book-B003V1WXKU">
+<div class="meta"><span class="kind">Kindle</span><span>Last read August 2023</span></div>
+<div class="book-head"><a href="/books/surely-you-re-joking-mr-feynman-adventures-of-a-curious-character/"><img src="/books/media/kindle-B003V1WXKU.jpg" alt=""></a><div><h2 class="note-title"><a href="/books/surely-you-re-joking-mr-feynman-adventures-of-a-curious-character/">&quot;Surely You're Joking, Mr. Feynman!&quot;: Adventures of a Curious Character</a></h2><p class="book-author">Richard P. Feynman, Ralph Leighton, Edward Hutchings, and Albert R. Hibbs</p><p class="book-counts">71 highlights · 1 note</p></div></div>
+<div class="src"><a href="/books/surely-you-re-joking-mr-feynman-adventures-of-a-curious-character/">Book page</a> · <a href="https://www.amazon.com/dp/B003V1WXKU">View on Amazon ↗</a></div>
+</article>
+<article class="item kind-book" id="book-B005TKD5W6">
+<div class="meta"><span class="kind">Kindle</span><span>Last read August 2023</span></div>
+<div class="book-head"><a href="/books/the-wind-up-bird-chronicle/"><img src="/books/media/kindle-B005TKD5W6.jpg" alt=""></a><div><h2 class="note-title"><a href="/books/the-wind-up-bird-chronicle/">The Wind-Up Bird Chronicle</a></h2><p class="book-author">Haruki Murakami and Jay Rubin</p><p class="book-counts">40 highlights</p></div></div>
+<div class="src"><a href="/books/the-wind-up-bird-chronicle/">Book page</a> · <a href="https://www.amazon.com/dp/B005TKD5W6">View on Amazon ↗</a></div>
+</article>
+<article class="item kind-reply" id="t1690329002848710656">
+<div class="meta"><span class="kind">Reply</span><a class="when" href="/feed/t/1690329002848710656/"><time datetime="2023-08-12T11:46:53Z">Saturday, August 12, 2023 · 13:46</time></a></div>
+<div class="stats"><span><b>24</b> views</span></div>
+<blockquote class="ctx">
+<cite>In reply to <a href="https://x.com/engineers_feed">@engineers_feed</a> · Aug 12, 2023</cite>
+<div class="ctx-text"><p>What would you add to the list? <a href="https://t.co/9ZA46IfGbU">t.co/9ZA46IfGbU</a></p></div>
+<figure class="media"><img src="/feed/media/ref-1690279532945920000-0.jpg" width="1024" height="1024" alt="Image from the post" loading="lazy"></figure>
 </blockquote>
-<h2>Thought: Would any of these notes I’ve been writing be worth/useful to others?</h2>
-<p>Just thought, I could publish this on a site so that at least <span class="wikilink unresolved">What I love about Franziska Krüger</span> and my dad would have an idea of where I’m at…</p>
-<p>Where is freeisaverb.com hosted actually?</p>
-<p>Requested account deletion on HostGator, BlueHost, Medium, Twitter</p>
-<p>Should make my LinkedIn profile private!</p>
-<p>Should probably cancel <span class="wikilink unresolved">Clickfunnels</span>…</p>
-<h2>Related</h2>
+<div class="text"><p><a class="mention" href="https://x.com/engineers_feed">@engineers_feed</a> &quot;As We May Think&quot;, an essay by Vannevar Bush published in The Atlantic in July 1945. </p>
+<blockquote><p>[it] predicted (to some extent) many kinds of technology invented after its publication, like hypertext, personal computers, the Internet, the World Wide Web, speech recognition – Wikipedia</p></blockquote></div>
+<div class="src"><a href="/feed/t/1690329002848710656/">Permalink</a> · <a href="https://x.com/i/status/1690329002848710656">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-repost" id="t1690327705135239169">
+<div class="meta"><span class="kind">Repost</span><a class="when" href="/feed/t/1690327705135239169/"><time datetime="2023-08-12T11:41:44Z">Saturday, August 12, 2023 · 13:41</time></a></div>
+<div class="stats"><span><b>395</b> reposts</span></div>
+<div class="other">
+<cite>Reposting <a href="https://x.com/NobelPrize">@NobelPrize</a> · Aug 12, 2023</cite>
+<div class="text"><p>Is this one of the most famous equations in physics?</p>
+<p>The Schrödinger equation is a cornerstone of quantum physics - the analogue of Newton's second law for quantum mechanics. Its derivation led to Schrödinger, born on this day in 1887, receiving the 1933 Nobel Prize in Physics. <a href="https://t.co/8NGVr606sm">t.co/8NGVr606sm</a></p></div>
+<figure class="media"><img src="/feed/media/ref-1690213289840541696-0.jpg" width="720" height="162" alt="The Schrödinger equation of quantum mechanics." loading="lazy"></figure>
+</div>
+<div class="src"><a href="/feed/t/1690327705135239169/">Permalink</a> · <a href="https://x.com/i/status/1690327705135239169">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-repost" id="t1688180853703118848">
+<div class="meta"><span class="kind">Repost</span><a class="when" href="/feed/t/1688180853703118848/"><time datetime="2023-08-06T13:30:55Z">Sunday, August 6, 2023 · 15:30</time></a></div>
+<div class="stats"><span><b>329</b> reposts</span></div>
+<div class="other">
+<cite>Reposting <a href="https://x.com/Gerashchenko_en">@Gerashchenko_en</a> · Aug 5, 2023</cite>
+<div class="text"><p>Volunteers of Kharkiv-based Pekelna Kuhnia (Hell's Kitchen) <a class="mention" href="https://x.com/NaKuhna">@NaKuhna</a> prepare 1,000 meals a day for soldiers on the front line and patients in the city's hospital. Volunteers from Ukraine and Canada deliver the humanitarian aid.<br>
+📹- <a class="mention" href="https://x.com/dw_ukrainian">@dw_ukrainian</a> <a href="https://t.co/YHNq4CEFfV">t.co/YHNq4CEFfV</a></p></div>
+<figure class="media"><video src="/feed/media/ref-1687919338639015937-0.mp4" poster="/feed/media/ref-1687919338639015937-0-poster.jpg" width="1920" height="1080" controls preload="none" playsinline></video></figure>
+</div>
+<div class="src"><a href="/feed/t/1688180853703118848/">Permalink</a> · <a href="https://x.com/i/status/1688180853703118848">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-book" id="book-B08N46SWD4">
+<div class="meta"><span class="kind">Kindle</span><span>Last read July 2023</span></div>
+<div class="book-head"><a href="/books/the-complete-harvard-classics-all-71-volumes-the-five-foot-shelf-the-shelf-of-fi/"><img src="/books/media/kindle-B08N46SWD4.jpg" alt=""></a><div><h2 class="note-title"><a href="/books/the-complete-harvard-classics-all-71-volumes-the-five-foot-shelf-the-shelf-of-fi/">The Complete Harvard Classics - ALL 71 Volumes:: The Five Foot Shelf &amp; The Shelf of Fiction: The Famous Anthology of the Greatest Works of World Literature</a></h2><p class="book-author">Benjamin Franklin, John Woolman, William Penn, Juan Valera, Bjørnstjerne Bjørnson, Alexander L. Kielland, and Presbourg Press</p><p class="book-counts">74 highlights · 2 notes</p></div></div>
+<div class="src"><a href="/books/the-complete-harvard-classics-all-71-volumes-the-five-foot-shelf-the-shelf-of-fi/">Book page</a> · <a href="https://www.amazon.com/dp/B08N46SWD4">View on Amazon ↗</a></div>
+</article>
+<article class="item kind-book" id="book-B005TKD6NY">
+<div class="meta"><span class="kind">Kindle</span><span>Last read July 2023</span></div>
+<div class="book-head"><a href="/books/norwegian-wood/"><img src="/books/media/kindle-B005TKD6NY.jpg" alt=""></a><div><h2 class="note-title"><a href="/books/norwegian-wood/">Norwegian Wood</a></h2><p class="book-author">Haruki Murakami and Jay Rubin</p><p class="book-counts">6 highlights</p></div></div>
+<div class="src"><a href="/books/norwegian-wood/">Book page</a> · <a href="https://www.amazon.com/dp/B005TKD6NY">View on Amazon ↗</a></div>
+</article>
+<article class="item kind-book" id="book-B0071M88DQ">
+<div class="meta"><span class="kind">Kindle</span><span>Last read July 2023</span></div>
+<div class="book-head"><a href="/books/mating-in-captivity-a-bold-provocative-new-take-on-intimacy-and-sex-in-modern-ro/"><img src="/books/media/kindle-B0071M88DQ.jpg" alt=""></a><div><h2 class="note-title"><a href="/books/mating-in-captivity-a-bold-provocative-new-take-on-intimacy-and-sex-in-modern-ro/">Mating in Captivity: A bold, provocative new take on intimacy and sex in modern romance</a></h2><p class="book-author">Esther Perel</p><p class="book-counts">32 highlights</p></div></div>
+<div class="src"><a href="/books/mating-in-captivity-a-bold-provocative-new-take-on-intimacy-and-sex-in-modern-ro/">Book page</a> · <a href="https://www.amazon.com/dp/B0071M88DQ">View on Amazon ↗</a></div>
+</article>
+<article class="item kind-repost" id="t1678851876974985217">
+<div class="meta"><span class="kind">Repost</span><a class="when" href="/feed/t/1678851876974985217/"><time datetime="2023-07-11T19:40:53Z">Tuesday, July 11, 2023 · 21:40</time></a></div>
+<div class="stats"><span><b>646</b> reposts</span></div>
+<div class="other">
+<cite>Reposting <a href="https://x.com/berlin_bridge">@berlin_bridge</a> · Jul 11, 2023</cite>
+<div class="text"><p>#Ukraine has sacrificed more in the last 503 days for Europe’s security than any country in 78yrs. They fight for us but don’t ask us to fight for them. No #NATO entry now, no Article 5. They just need jets, LRMs &amp; an invitation that tells Russia clearly: #UkraineInNATO is coming</p></div>
+</div>
+<div class="src"><a href="/feed/t/1678851876974985217/">Permalink</a> · <a href="https://x.com/i/status/1678851876974985217">View on Twitter ↗</a></div>
+</article>
+<article class="item kind-book" id="book-B004OA6KIS">
+<div class="meta"><span class="kind">Kindle</span><span>Last read July 2023</span></div>
+<div class="book-head"><a href="/books/what-do-you-care-what-other-people-think-further-adventures-of-a-curious-charact/"><img src="/books/media/kindle-B004OA6KIS.jpg" alt=""></a><div><h2 class="note-title"><a href="/books/what-do-you-care-what-other-people-think-further-adventures-of-a-curious-charact/">&quot;What Do You Care What Other People Think?&quot;: Further Adventures of a Curious Character (Feynman Book 2)</a></h2><p class="book-author">Richard P. Feynman and Ralph Leighton</p><p class="book-counts">10 highlights</p></div></div>
+<div class="src"><a href="/books/what-do-you-care-what-other-people-think-further-adventures-of-a-curious-charact/">Book page</a> · <a href="https://www.amazon.com/dp/B004OA6KIS">View on Amazon ↗</a></div>
+</article>
+<article class="item kind-book" id="book-B01LZZN2KV">
+<div class="meta"><span class="kind">Kindle</span><span>Last read June 2023</span></div>
+<div class="book-head"><a href="/books/grosse-klassiker-der-englischen-literatur-40-titel-in-einem-band-ein-blick-auf-h/"><img src="/books/media/kindle-B01LZZN2KV.jpg" alt=""></a><div><h2 class="note-title"><a href="/books/grosse-klassiker-der-englischen-literatur-40-titel-in-einem-band-ein-blick-auf-h/">Große Klassiker der englischen Literatur: 40+ Titel in einem Band: Ein Blick auf Humanismus und Gesellschaft im Wandel des 19. Jahrhunderts (German Edition)</a></h2><p class="book-author">Charles Dickens, Jane Austen, Emily Brontë, Joseph Conrad, Arthur Conan Doyle, Robert Louis Stevenson, Charlotte Brontë, Lewis Carrol, Henry Fielding, William Makepeace Thackeray, George Eliot, Daniel Defoe, Mark Twain, Frances Hodgson Burnett, Walter Scott, Oscar Wilde, Nathaniel Hawthorne, Jonathan Swift, Laurence Sterne, Wilkie Collins, Henry David Thoreau, Herman Melville, Harriet Beecher Stowe, Rudyard Kipling, G. K. Chesterton, Thomas Wolfe, T. E. Lawrence, Edgar Wallace, Washington Irving, Edgar Allan Poe, O. Henry, Ambrose Bierce, and Bret Harte</p><p class="book-counts">18 highlights</p></div></div>
+<div class="src"><a href="/books/grosse-klassiker-der-englischen-literatur-40-titel-in-einem-band-ein-blick-auf-h/">Book page</a> · <a href="https://www.amazon.com/dp/B01LZZN2KV">View on Amazon ↗</a></div>
+</article>
+<article class="item kind-repo" id="g-getfridgemagnets">
+<div class="meta"><span class="kind">Repository</span><a class="when" href="/code/getfridgemagnets/"><time datetime="2023-06-20T20:04:52Z">Tuesday, June 20, 2023 · 22:04</time></a></div>
+<h2 class="note-title"><a href="/code/getfridgemagnets/">getfridgemagnets</a></h2>
+<div class="stats"><span>Shell</span></div>
+<div class="text note-body repo-readme">
+<h1>Fridge Magnets</h1>
+<p><img src="/code/media/gh-656366752-132be76c95db595d.png" alt="Demo" loading="lazy"></p>
+<p>Live photos of your loved ones on your macOS desktop</p>
+<p><a href="https://github.com/akaalias/getfridgemagnets/releases/latest/download/FridgeMagnets.dmg">🎁 Download for macOS here</a></p>
+<p><a href="https://github.com/akaalias/getfridgemagnets/assets/111555/fbc2f59d-5299-4090-8726-5f7d23b254be">https://github.com/akaalias/getfridgemagnets/assets/111555/fbc2f59d-5299-4090-8726-5f7d23b254be</a></p>
+<h2>Tasks</h2>
 <ul>
-<li><span class="wikilink unresolved">Daily Journaling</span></li>
-<li><span class="wikilink unresolved">Regular Journal 23.6.2020</span></li>
-<li><span class="wikilink unresolved">Abraham Workshop</span></li>
-<li><span class="wikilink unresolved">Build a Biz in 2 Hours Course</span></li>
-</ul>
-<h3>Tags</h3>
-<ul>
-<li>#regularjournal</li>
-<li>#iwanttoknowwhatiwant</li>
-<li>#dopaminefast</li>
-<li>#100daychallenge</li>
-<li>#interviews</li>
+<li><input type="checkbox" disabled checked> Create new release on new update -&gt; <a href="https://github.com/marketplace/actions/automatic-releases">https://github.com/marketplace/actions/automatic-releases</a></li>
 </ul>
 </div>
-<div class="more"><a href="/notes/24-06-2020/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/24-06-2020/">Permalink</a></div>
+<div class="src"><a href="/code/getfridgemagnets/">Permalink</a> · <a href="https://github.com/akaalias/getfridgemagnets">View on GitHub ↗</a></div>
 </article>
-<article class="item kind-note" id="n-post-shadow-journal-09-06-2020">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/post-shadow-journal-09-06-2020/"><time datetime="2020-06-08T22:00:00Z">Tuesday, June 9, 2020 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/post-shadow-journal-09-06-2020/">Post-Shadow Journal 09.06.2020</a></h2>
-<div class="text note-body clamped">
-<p>Uff, ja, also heute ging’s nochmal richtig um’s Eingemachte. Und ich bin froh, dass ich gerade die Zeit und den Kopf dafür habe. Ich kann mich relativ fokussiert daran setzen und da irgendwie durch arbeiten. Es muss raus. Es geht hier um MEIN LEBEN. Und erst jetzt, mit Medikament, kann ich erst damit wirklich umgehen. Was ein Glück, dass ich das für mich entdeckt habe. Schreiben scheint ein guter Weg zu sein, das zu verarbeiten. Ich weiss nicht, was da gerade noch besser wäre, aber ich fühle mich wohl hier am Keyboard, in Ruhe. Ich hatte mir gewünscht, dass ich irgendwie schon weiter bin in meinem Leben. Dass ich mich total auf Jobsuche und Beziehung und Wohnung und Spass und Freunde und Berlin konzentrieren kann. Aber ich bin da einfach nicht. Und ich werde da auch erst dann sein, wenn ich das hier heile. Und ich bin so froh, dass mit der Hilfe von <span class="wikilink unresolved">Psilocybin</span> und Ritalin ich das Problem erkenne und es aktiv lösen kann, weil ich mich fokussieren kann. Alles, war in meinem Leben in den letzten 20 Jahren los war, war in direktem Bezug auf das <span class="wikilink unresolved">Traumatic Experience at Work</span>, das ich momentan bespreche. Es ist irrsinnig krass, was damals passiert ist, wie rücksichtslos mit mir umgegangen wurde. Wie krass, dass es den Tätern nur um Macht und Geld ging und ich die Geschichte vom Weltverbessern geglaubt habe.</p>
-<p>Ohne da jetzt wieder einzusteigen: Ich sollte nach dieser Runde etwas leckeres Essen, eine Pause machen und mich auf das konzentrieren, was ich will. Das tut mir wirklich gut und es macht Sinn und wenn ich mich mit dem Scheiss beschäftigen muss, dann ist es immer in Beziehung zu meinem besseren Leben in meiner nahen Zukunft! Diesen Fokus auf die guten Dinge zu halten ist jetzt noch viel wichtiger als jemals zuvor! Denn so kann ich mein Leben zurückgewinnen und meine Stabilität und meinen Selbstwert. Ich bin stolz darauf, hier und jetzt genau diese Arbeit zu machen. Ich bin stolz darauf, denn ich stehe hier und jetzt für mich und mein Leben ein und setze Grenzen und schaffe mir meine Zukunft in der es mir gut geht, in der ich aufblühe, in der ich und mein Leben und meine Arbeit und mein Geld und meine Beziehungen gedeihen. Genau so wie damals, <span class="wikilink unresolved">1999</span> in <span class="wikilink unresolved">New York</span>, und noch viel besser! Und darum geht es. Es geht um mich. Es geht um meine Bedürfnisse. Es geht um mein Leben. Um meine Zeit. Dass es mir wieder gut geht. Dass ich mein Leben lebe. Ich bin stolz, dass ich es bis hier her geschafft habe. Dass ich nicht aufgegeben habe. Dass ich mich nicht umgebracht habe. Dass ich andere so gut es ging vor diesem Problem geschützt habe. Dass ich an mir selbst gearbeitet habe. Dass ich mir selbst zugehört habe, dass ich meinem inneren Klang gefolgt bin auch wenn es schwer war. Dass ich mir selbst Stufen in den Stein gehauen habe um aus dem Loch herauszukommen. Ich finde, ich mache das sehr, sehr gut. Ich finde, dass ich jetzt schon, im Verarbeiten und Heilen dieses Themas einen Riesen Erfolg schaffe. Ich fühle mich jetzt schon besser und größer und stärker und fokussierter als jemals in den letzten 20 Jahren!</p>
-<p>Also, daher die abschliessenden Worte…</p>
-<p>Das ist die richtige Arbeit, die ich hier mache. Es ist die wichtige Arbeit, die mich dahin führt wo ich es mir wünsche. Es ist ganz schön harte Arbeit, aber ich habe sie gemacht. Es ist härter, nichts zu tun und sein Leben kaputt gehen zu sehen. Daher ist diese Arbeit und diese Zeit und diese Herausforderung die beste Investition in meine Zukunft. In meine Arbeit. In mein Vermächtnis. In den Spass und die Freude, die ich in meinem Leben erleben will. Dieses Thema, diese Befreiung ist die wichtigste Arbeit, die ich in meinem Leben jetzt verrichten kann. Und ich bin unglaublich dankbar, dass ich körperlich und geistig und seelisch dazu jetzt in der Lage bin. Und vielleicht kann ich irgendwann jemand Anderem helfen, sich so zu befreien.</p>
-<p>AR</p>
-</div>
-<div class="more"><a href="/notes/post-shadow-journal-09-06-2020/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/post-shadow-journal-09-06-2020/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-05-06-2020">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/05-06-2020/"><time datetime="2020-06-04T22:00:00Z">Friday, June 5, 2020 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/05-06-2020/">05.06.2020</a></h2>
-<div class="text note-body clamped">
-<p>Noch ein weiterer Eintrag für heute…</p>
-<p>I did 2 hours of Deep Work – got the funnel ready and even found a good name for the overarching brand: <span class="wikilink unresolved">MindSky Academy</span>. Nice! Got the domain, that’s  verifying, but once it is, I’ll finalize the Google Suite thing and then head over to mailerlite to verify my account with my fancy alexis@mindskyacademy.com email address. Pretty cool!</p>
-<p>I’m happy it’s the end of the week, I’m not that sharp anymore after working every day since Monday but I feel like I’ve pushed myself forward and kept  good records of every amount of effort I put in. In total it’s 14 hours of Deep Work (not counting  work for C Space) working on my MindSky funnel and products and copy and videos. 14 hours I’ve invested in myself and my future and that worked. I need to eat more throughout the day, that was the only issue I haven’t tackled yet. I’ll try <span class="wikilink unresolved">HUEL</span> to make sure I eat <em>something</em> until I have the time to cook a meal.</p>
-<p>So yeah, I’m pretty stoked about this week! I bought myself flowers that I put on my desk and that makes it nice to sit here. They have a calming effect and are beautiful to look at. I think they’re enjoying their stay. I hope.</p>
-<p>Since I cleaned up my desk last week and continued to remove anything that wasn’t essential from it I like working here much more. It’s the bare necessities I need to work and no distractions. The checklist above the table has also helped tremendously. I don’t yet know how to ensure 100% that I start a timer before I go into work but it’s working. I’m missing 20% maximum of sessions from my timer this week. That happens when I’m just in the zone I think. The little triangle stars I’m using to reward and celebrate are cute. I wish there were more of them. Or different stickers. And those that I don’t know what it’s going to be ahead of time (like a variable reward kind of thing) – I’ll look into that next week. Maybe Modulor is open again or that toy store down the street.</p>
-<p>In either case, I feel like I’m developing, rapidly, a way for me to work hard and long and feel good about it. This is a major progress for me from staring into space or sleeping to working and getting things done consistently. I am proud that I’ve found a solution to my problem (Ritalin) and am excited to be ABLE to shape my life the way I want it to.</p>
-<p>YES!</p>
-</div>
-<div class="more"><a href="/notes/05-06-2020/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/05-06-2020/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-18-05-2020">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/18-05-2020/"><time datetime="2020-05-17T22:00:00Z">Monday, May 18, 2020 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/18-05-2020/">18.05.2020</a></h2>
-<div class="text note-body clamped">
-<p>Montag, 18.5.2020 – Irgendwie fühle ich mich seit Freitag komisch. Also auch schon davor, aber heute bin ich erst um 10:00 aus dem Bett gekommen. Irgendwas stört mich oder macht mich traurig. Ich glaube, es hat mit <span class="wikilink unresolved">What I love about Franziska Krüger</span> zu tun. Dem Streit von letztens. Und das hängt mir glaube ich noch nach. Also, den Elan von den letzten Wochen habe ich gerade nicht. Vielleicht bin ich auch enttäuscht, dass das mit dem <span class="wikilink unresolved">OFAC</span> Projekt doch nicht, gar nicht, hinhaut und ich da so viel Arbeit reingesteckt habe. Vielleicht auch das. Die Bewerbungen gehen eigentlich ganz gut. Aber heute schon mit Oleksii zu sprechen wegen einer Position geht mir etwas schnell. Also, wenn ich mich frage ob es mir gut geht muss ich sagen nein, ich fühle mich irgendwie off oder daneben. Sehr komisch. Könnte auch vom Essen letzte Woche kommen. Und dieser Fokus Mode hier geht auch irgendwie nicht so wie er sollte. Das der gesamte Text immer gehighlighted wird ist doch nicht die Idee, oder?</p>
-<p>Was gibt’s denn sonst so? Fühl mich müde und umfokussiert. Vielleicht hat das auch damit zu tun, dass ich am Samstag nicht dosiert hatte. Oder, dass ich jeden Tag dosier und das zu viel oder zu oft ist. Ich weiss es nicht.</p>
-<p>Zumindest habe ich für die Woche noch keine gute Vision.</p>
-<p>Also, irgendwie ist da der Wurm drin gerade.</p>
-<p>Erstmal habe ich schlechte Laune, bin frustriert, bin traurig. Fühle mich alleine. Fühle mich schwer.</p>
-<p>Das ist echt komisch weil es mir eigentlich gut geht!</p>
-<p>Ich hatte ein tolles Wochenende. Hab gut geschlafen. Hab hier gerade meine Ruhe… Also an sich passt doch alles.</p>
-<p>Was kann ich tun, damit ich mich irgendwie besser fühle? Welcher Gedanke macht da gerade für mich Sinn?</p>
-</div>
-<div class="more"><a href="/notes/18-05-2020/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/18-05-2020/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-27-04-2020">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/27-04-2020/"><time datetime="2020-04-26T22:00:00Z">Monday, April 27, 2020 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/27-04-2020/">27.04.2020</a></h2>
-<div class="text note-body clamped">
-<p>So. Today was a good day so far. I finally broke my own record of working 4h straight (with pauses every 30 minutes) on my Deep Work – specifically building my funnel following the <span class="wikilink unresolved">OFAC</span> framework. I’m proud because I still have time and energy to write about it now and I feel like I can do this again. I crossed the 4h mile! And yes, the Ritalin is definitely helping with this, especially in the moments where there’s a distraction and I’m able to ignore it and re-focus. I also made  myself a first draft of a checklist before getting to work. Here are the check-marks that have to be answered with ‘yes’ before I actually start the work:</p>
-<p>Do I have…</p>
-<ol>
-<li>A goal?</li>
-<li>Taken a break?</li>
-<li>A plan?</li>
-<li>A good task?</li>
-<li>A reward?</li>
-<li>Removed distractions?</li>
-<li>Water and snacks?</li>
-<li>A timer set?</li>
-</ol>
-<p>So far, through 8 sessions of 30 minutes each (a longer pomodoro) I used the checklist to make sure I could fully focus  on the task before me.</p>
-<p>One task, setting up the email integration, took much longer than expected because I wanted to use a service that doesn’t cost anything (yet), works with CF and allows for automations in the free tier. It took me an hour of trying different services out until I settled on MailerLite with Zapier. It’s a little hacky but it works as much as I need it to. The only thing missing is getting the MailerLite account verified for which I need a custom email address like alexis@mindsky.com – Which prompted me to (capture the need for) brainstorm a company name/product suite name. Something like MindSky is really nice… But that will have to wait until tomorrow, that’s the next task at hand to finish up my email system: A verified MailerLite account. It’ll cost ~$5 per month for the Google business suite which I wish I didn’t have to pay for (didn’t they have a free offer as well??)</p>
-<p>Anyways, yes, pretty excited. Implemented the opt-in page, the responder (including a fresh account), the sequence of 5 emails, the 5 pages that belong to it. I’m so fucking glad to use PLR.me templates instead of having to come up with all of that on my own. For training purposes, this is really helpful. And I used FunnelScripts to write a good headline and sub-headline and the CTA for me. If anything, If I can really, truly stay to be the CONDUCTOR/COMPOSER focusing on the offers, the story and the hook and leave EVERYTHING else to someone or something else, would be tremendous.</p>
-<p>In other news, I got a mouse, a bluetooth one and I like it a lot. It does need a mouse pad on my table which is unfortunate but I think that would’ve been the case with any mouse I buy. Other than that it works really well! I haven’t had a mouse in a decade I believe. But with my table/seat/keyboard set up this makes a lot of sense. Like right now, I’m using my external keyboard to type and if I need anything I can just lean right, grab my mouse instead of having to completely shift my body to reach OVER my keyboard and use my trackpad on my laptop.</p>
-<p>Oh, this reminds me, I still get to do my prosperity game today (and yesterday’s) which means I have a lot of money (play-money for now) to “spend” on something I’d love. Like a enormous display and/or fully loaded iMac. Maybe that’s the idea. The fully loaded iMac and a long trip to Paris.</p>
-<p>You know what? That’s what I’m going to do now to make sure I’ve spent good time on it.</p>
-</div>
-<div class="more"><a href="/notes/27-04-2020/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/27-04-2020/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-case-study-how-to-reality-check-your-startup-persona-in-1-day-without-hours-of-i">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/case-study-how-to-reality-check-your-startup-persona-in-1-day-without-hours-of-i/"><time datetime="2020-03-06T23:00:00Z">Saturday, March 7, 2020 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/case-study-how-to-reality-check-your-startup-persona-in-1-day-without-hours-of-i/">Case Study: How To &quot;Reality Check&quot; Your Startup Persona in 1 Day Without Hours of Interviewing</a></h2>
-<div class="text note-body clamped">
-<p>Here’s a little case study I’ve put together based on a project I recently worked on. It shows you the process on how you can “Reality Check” what you know about your market and customers in order to build better products.</p>
-<p>I’m showing you a step-by-step process that has radically transformed how I approach a new idea or venture by de-risking my time and energy by building on facts and not clichés.</p>
-<p>It involves…</p>
-<ul>
-<li>Hard Lessons Learned</li>
-<li>Facebook Audience Insights Hacking</li>
-<li>Market Reverse-Engineering</li>
-<li>and good ol’ Copywriting</li>
-</ul>
-<p>I’m stoked about this process because it has worked like a charm in my ventures.</p>
-<p>The other week I helped two friends with their health-related startup. The slideshow will show you the exact steps we used to arrive at a valid customer persona and a relevant value proposition that we tested the same day in the market.</p>
-<p>You can also <a href="http://freeisaverb.com/wp-content/uploads/2018/11/Reality-Check-Workshop-Case-Study.pdf">download the full deck here</a>.</p>
-<p><img src="/notes/media/Reality-Check.001-1024x768.jpg" alt="" loading="lazy"></p>
-<p><img src="/notes/media/Reality-Check.002-1024x768.jpg" alt="" loading="lazy"></p>
-<p><img src="/notes/media/Reality-Check.003-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.004-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.005-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.006-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.007-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.008-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.009-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.010-1024x768.jpg" alt="" loading="lazy"></p>
-<p> 
-<img src="/notes/media/Reality-Check.011-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.012-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.013-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.014-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.015-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.016-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.017-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.018-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.019-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.020-1024x768.jpg" alt="" loading="lazy"></p>
-<p><img src="/notes/media/Reality-Check.022-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.021-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.023-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.024-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.025-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.026-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.027-1024x768.jpg" alt="" loading="lazy"> <img src="/notes/media/Reality-Check.028-1024x768.jpg" alt="" loading="lazy"></p>
-</div>
-<div class="more"><a href="/notes/case-study-how-to-reality-check-your-startup-persona-in-1-day-without-hours-of-i/">Continue reading ›</a></div>
-<div class="src"><a href="/notes/case-study-how-to-reality-check-your-startup-persona-in-1-day-without-hours-of-i/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-self-care-challenge-day-36-100-retrospective">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/self-care-challenge-day-36-100-retrospective/"><time datetime="2019-09-04T22:00:00Z">Thursday, September 5, 2019 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/self-care-challenge-day-36-100-retrospective/">Self-Care Challenge Day 36/100 Retrospective</a></h2>
-<div class="text note-body">
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/pV6CKVP8BqI" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-
-<p>In this video I’ll share with you a quick update on my progress, experience and learnings of pursuing a self-care program every day for 100 days.</p>
-</div>
-<div class="src"><a href="/notes/self-care-challenge-day-36-100-retrospective/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-self-care-challenge-day-18-100-retrospective">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/self-care-challenge-day-18-100-retrospective/"><time datetime="2019-08-18T22:00:00Z">Monday, August 19, 2019 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/self-care-challenge-day-18-100-retrospective/">Self-Care Challenge Day 18/100 – Retrospective</a></h2>
-<div class="text note-body">
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/6ulAg4Y7JxE" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-
-<p>Self-Care Challenge Day 18/100: A quick retrospective on what went well, what’s going “so-so” and what has sucked in the past week.</p>
-</div>
-<div class="src"><a href="/notes/self-care-challenge-day-18-100-retrospective/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-please-don-t-keel-over">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/please-don-t-keel-over/"><time datetime="2019-08-13T22:00:00Z">Wednesday, August 14, 2019 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/please-don-t-keel-over/">PLEASE. DON'T. KEEL. OVER.</a></h2>
-<div class="text note-body">
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/mL14RECwt2M" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-
-<p>PLEASE. DON’T. KEEL. OVER!</p>
-<p>A quick story about the importance of self-care</p>
-</div>
-<div class="src"><a href="/notes/please-don-t-keel-over/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-whiteboard-mastery-handwriting-cheat-sheet-training-video">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/whiteboard-mastery-handwriting-cheat-sheet-training-video/"><time datetime="2019-08-12T22:00:00Z">Tuesday, August 13, 2019 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/whiteboard-mastery-handwriting-cheat-sheet-training-video/">Whiteboard Mastery – Handwriting Cheat Sheet Training Video</a></h2>
-<div class="text note-body">
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/SRgaEao1UGE" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-
-</div>
-<div class="src"><a href="/notes/whiteboard-mastery-handwriting-cheat-sheet-training-video/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-whiteboard-mastery-handwriting-workshop-learnings">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/whiteboard-mastery-handwriting-workshop-learnings/"><time datetime="2019-08-12T22:00:00Z">Tuesday, August 13, 2019 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/whiteboard-mastery-handwriting-workshop-learnings/">Whiteboard Mastery – Handwriting Workshop Learnings</a></h2>
-<div class="text note-body">
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/vZ56szjGqbQ" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-
-</div>
-<div class="src"><a href="/notes/whiteboard-mastery-handwriting-workshop-learnings/">Permalink</a></div>
-</article>
-<article class="item kind-note" id="n-whiteboard-mastery-handwriting-persuasion-and-the-path-of-least-resistance">
-<div class="meta"><span class="kind">Note</span><a class="when" href="/notes/whiteboard-mastery-handwriting-persuasion-and-the-path-of-least-resistance/"><time datetime="2019-08-12T22:00:00Z">Tuesday, August 13, 2019 · 00:00</time></a></div>
-<h2 class="note-title"><a href="/notes/whiteboard-mastery-handwriting-persuasion-and-the-path-of-least-resistance/">Whiteboard Mastery – Handwriting, Persuasion and the Path Of Least Resistance</a></h2>
-<div class="text note-body">
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/MBeNY8NRrMQ" title="YouTube video" loading="lazy" allow="accelerometer; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-
-</div>
-<div class="src"><a href="/notes/whiteboard-mastery-handwriting-persuasion-and-the-path-of-least-resistance/">Permalink</a></div>
+<article class="item kind-hn" id="hn-36371590">
+<div class="meta"><span class="kind">Hacker News comment</span><a class="when" href="/feed/hn/36371590/"><time datetime="2023-06-17T16:19:36Z">Saturday, June 17, 2023 · 18:19</time></a></div>
+<blockquote class="ctx">
+<cite>Comment on <a href="https://news.ycombinator.com/item?id=36369018">I don't need your query language</a></cite>
+</blockquote>
+<div class="text"><p>&gt; The problem with SQL is that it is not a (very) composable language.<p>I thought the same until a few weeks ago. Then we used the WITH operator for pre-processing and giving things human-readable names.<p>That helped us manage complexity. The final SELECT statement was very easy to reason about.<p>Not sure if this is a best (or worst) practice but it helped us ship it.</div>
+<div class="src"><a href="/feed/hn/36371590/">Permalink</a> · <a href="https://news.ycombinator.com/item?id=36371590">View on Hacker News ↗</a></div>
 </article>
 </section>
-<nav class="pager"><a href="/feed/page/35/">‹ Newer</a><span class="n">Page 36 of 43</span><a href="/feed/page/37/">Older ›</a></nav>
+<nav class="pager"><a href="/feed/page/35/">‹ Newer</a><span class="n">Page 36 of 51</span><a href="/feed/page/37/">Older ›</a></nav>
 <aside class="months-nav">
 <div class="group">
 <h3><a href="/feed/archive/">Archive</a></h3>
 <div class="y">2026</div>
 <ul>
-<li><a href="/feed/archive/2026/11/">November</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2026/10/">October</a> <span class="n">11</span></li>
-<li><a href="/feed/archive/2026/09/">September</a> <span class="n">84</span></li>
-<li><a href="/feed/archive/2026/08/">August</a> <span class="n">40</span></li>
+<li><a href="/feed/archive/2026/11/">November</a> <span class="n">8</span></li>
+<li><a href="/feed/archive/2026/10/">October</a> <span class="n">14</span></li>
+<li><a href="/feed/archive/2026/09/">September</a> <span class="n">92</span></li>
+<li><a href="/feed/archive/2026/08/">August</a> <span class="n">47</span></li>
 <li><a href="/feed/archive/2026/07/">July</a> <span class="n">30</span></li>
-<li><a href="/feed/archive/2026/06/">June</a> <span class="n">31</span></li>
-<li><a href="/feed/archive/2026/05/">May</a> <span class="n">10</span></li>
+<li><a href="/feed/archive/2026/06/">June</a> <span class="n">36</span></li>
+<li><a href="/feed/archive/2026/05/">May</a> <span class="n">14</span></li>
 <li><a href="/feed/archive/2026/04/">April</a> <span class="n">33</span></li>
-<li><a href="/feed/archive/2026/03/">March</a> <span class="n">34</span></li>
-<li><a href="/feed/archive/2026/02/">February</a> <span class="n">62</span></li>
-<li><a href="/feed/archive/2026/01/">January</a> <span class="n">17</span></li>
+<li><a href="/feed/archive/2026/03/">March</a> <span class="n">35</span></li>
+<li><a href="/feed/archive/2026/02/">February</a> <span class="n">64</span></li>
+<li><a href="/feed/archive/2026/01/">January</a> <span class="n">21</span></li>
 </ul>
 <div class="y">2025</div>
 <ul>
-<li><a href="/feed/archive/2025/12/">December</a> <span class="n">31</span></li>
-<li><a href="/feed/archive/2025/11/">November</a> <span class="n">127</span></li>
-<li><a href="/feed/archive/2025/10/">October</a> <span class="n">9</span></li>
-<li><a href="/feed/archive/2025/09/">September</a> <span class="n">7</span></li>
-<li><a href="/feed/archive/2025/08/">August</a> <span class="n">7</span></li>
-<li><a href="/feed/archive/2025/07/">July</a> <span class="n">23</span></li>
-<li><a href="/feed/archive/2025/06/">June</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2025/05/">May</a> <span class="n">21</span></li>
-<li><a href="/feed/archive/2025/04/">April</a> <span class="n">65</span></li>
-<li><a href="/feed/archive/2025/03/">March</a> <span class="n">22</span></li>
-<li><a href="/feed/archive/2025/02/">February</a> <span class="n">11</span></li>
+<li><a href="/feed/archive/2025/12/">December</a> <span class="n">39</span></li>
+<li><a href="/feed/archive/2025/11/">November</a> <span class="n">129</span></li>
+<li><a href="/feed/archive/2025/10/">October</a> <span class="n">19</span></li>
+<li><a href="/feed/archive/2025/09/">September</a> <span class="n">11</span></li>
+<li><a href="/feed/archive/2025/08/">August</a> <span class="n">15</span></li>
+<li><a href="/feed/archive/2025/07/">July</a> <span class="n">27</span></li>
+<li><a href="/feed/archive/2025/06/">June</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2025/05/">May</a> <span class="n">26</span></li>
+<li><a href="/feed/archive/2025/04/">April</a> <span class="n">70</span></li>
+<li><a href="/feed/archive/2025/03/">March</a> <span class="n">35</span></li>
+<li><a href="/feed/archive/2025/02/">February</a> <span class="n">13</span></li>
+<li><a href="/feed/archive/2025/01/">January</a> <span class="n">5</span></li>
 </ul>
 <div class="y">2024</div>
 <ul>
-<li><a href="/feed/archive/2024/12/">December</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2024/11/">November</a> <span class="n">16</span></li>
-<li><a href="/feed/archive/2024/10/">October</a> <span class="n">12</span></li>
-<li><a href="/feed/archive/2024/09/">September</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2024/08/">August</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2024/07/">July</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2024/06/">June</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2024/05/">May</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2024/04/">April</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2024/01/">January</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/12/">December</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2024/11/">November</a> <span class="n">19</span></li>
+<li><a href="/feed/archive/2024/10/">October</a> <span class="n">15</span></li>
+<li><a href="/feed/archive/2024/09/">September</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2024/08/">August</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2024/07/">July</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2024/06/">June</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/05/">May</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2024/04/">April</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2024/03/">March</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2024/02/">February</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2024/01/">January</a> <span class="n">3</span></li>
 </ul>
 <div class="y">2023</div>
 <ul>
-<li><a href="/feed/archive/2023/12/">December</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2023/11/">November</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2023/10/">October</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2023/09/">September</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2023/08/">August</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2023/07/">July</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2023/06/">June</a> <span class="n">6</span></li>
-<li><a href="/feed/archive/2023/05/">May</a> <span class="n">11</span></li>
-<li><a href="/feed/archive/2023/04/">April</a> <span class="n">7</span></li>
-<li><a href="/feed/archive/2023/03/">March</a> <span class="n">7</span></li>
-<li><a href="/feed/archive/2023/02/">February</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2023/01/">January</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2023/12/">December</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2023/11/">November</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2023/10/">October</a> <span class="n">6</span></li>
+<li><a href="/feed/archive/2023/09/">September</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/08/">August</a> <span class="n">8</span></li>
+<li><a href="/feed/archive/2023/07/">July</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2023/06/">June</a> <span class="n">7</span></li>
+<li><a href="/feed/archive/2023/05/">May</a> <span class="n">12</span></li>
+<li><a href="/feed/archive/2023/04/">April</a> <span class="n">8</span></li>
+<li><a href="/feed/archive/2023/03/">March</a> <span class="n">8</span></li>
+<li><a href="/feed/archive/2023/02/">February</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2023/01/">January</a> <span class="n">10</span></li>
 </ul>
 <div class="y">2022</div>
 <ul>
 <li><a href="/feed/archive/2022/12/">December</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2022/11/">November</a> <span class="n">4</span></li>
-<li><a href="/feed/archive/2022/10/">October</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2022/10/">October</a> <span class="n">4</span></li>
 <li><a href="/feed/archive/2022/09/">September</a> <span class="n">4</span></li>
 <li><a href="/feed/archive/2022/08/">August</a> <span class="n">9</span></li>
-<li><a href="/feed/archive/2022/07/">July</a> <span class="n">38</span></li>
+<li><a href="/feed/archive/2022/07/">July</a> <span class="n">39</span></li>
+<li><a href="/feed/archive/2022/05/">May</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2022/04/">April</a> <span class="n">5</span></li>
-<li><a href="/feed/archive/2022/03/">March</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2022/02/">February</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2022/03/">March</a> <span class="n">5</span></li>
+<li><a href="/feed/archive/2022/02/">February</a> <span class="n">8</span></li>
 <li><a href="/feed/archive/2022/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2021</div>
 <ul>
 <li><a href="/feed/archive/2021/12/">December</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2021/11/">November</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2021/11/">November</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2021/10/">October</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2021/09/">September</a> <span class="n">2</span></li>
-<li><a href="/feed/archive/2021/05/">May</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/09/">September</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2021/08/">August</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2021/07/">July</a> <span class="n">3</span></li>
+<li><a href="/feed/archive/2021/06/">June</a> <span class="n">4</span></li>
+<li><a href="/feed/archive/2021/05/">May</a> <span class="n">5</span></li>
 <li><a href="/feed/archive/2021/04/">April</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2021/03/">March</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2021/02/">February</a> <span class="n">5</span></li>
@@ -836,13 +336,14 @@
 <ul>
 <li><a href="/feed/archive/2020/12/">December</a> <span class="n">5</span></li>
 <li><a href="/feed/archive/2020/11/">November</a> <span class="n">3</span></li>
-<li><a href="/feed/archive/2020/09/">September</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/10/">October</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/09/">September</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2020/08/">August</a> <span class="n">4</span></li>
 <li><a href="/feed/archive/2020/07/">July</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2020/06/">June</a> <span class="n">3</span></li>
 <li><a href="/feed/archive/2020/05/">May</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2020/04/">April</a> <span class="n">1</span></li>
-<li><a href="/feed/archive/2020/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2020/03/">March</a> <span class="n">2</span></li>
 </ul>
 <div class="y">2019</div>
 <ul>
@@ -850,7 +351,7 @@
 <li><a href="/feed/archive/2019/08/">August</a> <span class="n">10</span></li>
 <li><a href="/feed/archive/2019/07/">July</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2019/06/">June</a> <span class="n">6</span></li>
-<li><a href="/feed/archive/2019/03/">March</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2019/03/">March</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2019/01/">January</a> <span class="n">3</span></li>
 </ul>
 <div class="y">2018</div>
@@ -875,7 +376,9 @@
 </ul>
 <div class="y">2016</div>
 <ul>
+<li><a href="/feed/archive/2016/11/">November</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2016/09/">September</a> <span class="n">2</span></li>
+<li><a href="/feed/archive/2016/07/">July</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2016/03/">March</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2016/02/">February</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2016/01/">January</a> <span class="n">1</span></li>
@@ -887,7 +390,7 @@
 <li><a href="/feed/archive/2015/05/">May</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2015/03/">March</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2015/02/">February</a> <span class="n">4</span></li>
-<li><a href="/feed/archive/2015/01/">January</a> <span class="n">1</span></li>
+<li><a href="/feed/archive/2015/01/">January</a> <span class="n">2</span></li>
 </ul>
 <div class="y">2014</div>
 <ul>
@@ -901,6 +404,7 @@
 <li><a href="/feed/archive/2014/05/">May</a> <span class="n">12</span></li>
 <li><a href="/feed/archive/2014/04/">April</a> <span class="n">2</span></li>
 <li><a href="/feed/archive/2014/03/">March</a> <span class="n">9</span></li>
+<li><a href="/feed/archive/2014/02/">February</a> <span class="n">1</span></li>
 <li><a href="/feed/archive/2014/01/">January</a> <span class="n">1</span></li>
 </ul>
 <div class="y">2013</div>
