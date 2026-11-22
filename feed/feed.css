@@ -189,6 +189,9 @@ aside.months-nav h3{font:600 12px/1.4 var(--serif);font-feature-settings:"smcp" 
                     letter-spacing:.07em;color:var(--muted);margin:0 0 10px;}
 aside.months-nav h3 a{color:inherit;text-decoration:none;}
 aside.months-nav .y{font-style:italic;color:var(--faint);margin:10px 0 2px;}
+/* totals: the archive's count beside its heading, each year's beside its year */
+aside.months-nav h3 .n{float:right;font:400 13px/1.4 var(--serif);text-transform:none;letter-spacing:0;color:var(--faint);}
+aside.months-nav .y .n{float:right;font-style:normal;font-size:13px;}
 aside.months-nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:2px 14px;}
 aside.months-nav li{margin:0;white-space:nowrap;}
 aside.months-nav a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;}
