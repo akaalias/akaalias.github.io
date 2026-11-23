@@ -118,6 +118,20 @@ ul.books .t{font-size:19px;color:var(--accent);text-decoration:none;} ul.books .
 ul.books .a{font-size:16px;color:var(--ink);} ul.books .m{font-size:14px;color:var(--muted);}
 .book-head{display:flex;gap:20px;align-items:flex-start;margin-bottom:26px;}
 .book-head img{width:110px;height:auto;flex:none;box-shadow:0 1px 4px rgba(0,0,0,.2);}
+/* The bookshelf (#39): a 3D shelf drawn by shelf.js; the list under it is the same books as text. */
+.shelf-page{position:relative;}
+.shelf-loading{position:absolute;left:0;right:0;bottom:6px;text-align:center;color:var(--muted);font-size:13px;font-style:italic;pointer-events:none;}
+.shelf-stage{position:relative;margin:30px 0 6px;margin-left:calc((100% - 100vw) / 2);width:100vw;overflow-x:auto;overflow-y:hidden;}
+.shelf-view{position:sticky;left:0;width:100%;}
+.shelf-track{position:absolute;top:0;left:0;height:1px;}
+.shelf-stage canvas{display:block;}
+.shelf-note{font-size:14px;line-height:1.5;color:var(--muted);margin:14px 0 30px;}
+ol.shelf-index{list-style:none;padding:0;margin:0 0 28px;}
+ol.shelf-index li{display:flex;flex-direction:column;gap:2px;padding:10px 0;border-bottom:1px solid var(--rule-soft,var(--rule));}
+ol.shelf-index a{color:var(--accent);text-decoration:none;font-size:17px;line-height:1.3;}
+ol.shelf-index a:hover{text-decoration:underline;}
+ol.shelf-index .a{font-size:15px;color:var(--ink);}
+ol.shelf-index .m{font-size:13px;color:var(--muted);}
 .book-head p{margin:4px 0;} .book-author{font-size:19px;} .book-counts{font-size:15px;color:var(--muted);}
 blockquote.hl{margin:0 0 16px;padding:2px 0 2px 16px;border-left:2px solid var(--accent);}
 blockquote.hl cite{display:block;font-style:italic;color:var(--muted);font-size:14px;margin:0 0 6px;}
