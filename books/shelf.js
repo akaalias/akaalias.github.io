@@ -337,7 +337,7 @@ function main(stage, data, assets) {
     const radius = hard ? Math.min(0.09, b.thickness * 0.4) : Math.min(0.05, b.thickness * 0.35);
     // More segments round the corners more smoothly: with 4, each corner is a few flat facets whose
     // normals catch the light in alternating bands, which read as dashed seams while the view moves.
-    const geo = new RoundedBoxGeometry(b.thickness, b.height, b.width, 12, radius);
+    const geo = new RoundedBoxGeometry(b.thickness, b.height, b.width, 4, radius);
     const front = asset ? new THREE.MeshStandardMaterial({ map: tex(asset.img), roughness: 0.6, envMapIntensity: 0.5 }) : cover;
     const block = new THREE.Mesh(geo, [front, cover, pages, cover, spine, cover]);
     // Books don't cast shadows: a slid-out book threw a hard band across its neighbour.
