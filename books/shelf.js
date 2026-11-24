@@ -82,7 +82,9 @@ const FACES = [
   'Futura, "Century Gothic", sans-serif', '"Helvetica Neue", Helvetica, Arial, sans-serif',
   '"Avenir Next", Avenir, sans-serif', '"Gill Sans", "Gill Sans MT", sans-serif',
 ];
-const WEIGHTS = [400, 600, 700];
+// No bold on a spine (Alexis, #42): light, regular and medium. A face without the weight asked for
+// falls back to its nearest lighter or regular cut, so the mix only shows where the face has it.
+const WEIGHTS = [300, 400, 500];
 
 // A seeded random generator per book, so its tabs fall in the same places on every build.
 function seeded(str) {
@@ -106,6 +108,39 @@ function hashOf(str) {
 function styleFor(id, salt) {
   const h = hashOf(id) + salt * 7919;
   return { f: FACES[h % FACES.length], w: WEIGHTS[(h >>> 3) % WEIGHTS.length] };
+}
+
+// The spine title as it is printed: before any colon, without series brackets.
+function spineTitle(b) {
+  return b.title.split(':')[0].replace(/\([^)]*\)/g, '').trim() || b.title;
+}
+
+// Type scales with the title's length: short titles are set large, long ones smaller, never cut.
+// Width is measured at 10px and scaled, so the size fills the spine length (capped by its width:
+// thicker spines take larger letters).
+function titleSize(x, b, w, h, style) {
+  x.font = `${style.w} 10px ${style.f}`;
+  const perPx = x.measureText(spineTitle(b)).width / 10;
+  return Math.max(5, Math.min(w * 0.4, (h * (b.author ? 0.66 : 0.84)) / perPx));
+}
+
+// Collection name → the title size its spines share (#42): the middle of what its members would take
+// on their own. (The smallest was tried: one long title made the whole set's lettering tiny.) A member
+// whose title is too long for that size is set smaller, as on a real set.
+const SERIES_SIZE = new Map();
+function measureSeries(data) {
+  const x = canvasOf(8, 8).getContext('2d');
+  const sizes = new Map();
+  for (const b of data) {
+    if (!b.series) continue;
+    const w = Math.max(20, Math.round(b.thickness * PPI));
+    const fs = titleSize(x, b, w, Math.round(b.height * PPI), styleFor(b.series, 0));
+    sizes.set(b.series, (sizes.get(b.series) || []).concat(fs));
+  }
+  for (const [name, list] of sizes) {
+    list.sort((p, q) => p - q);
+    SERIES_SIZE.set(name, list[Math.floor(list.length / 2)]);
+  }
 }
 
 // The spine's background is the cover's first 10 px (left edge, full height), stretched to the spine.
@@ -161,18 +196,16 @@ function paintSpine(c, b, strip) {
   x.fillStyle = gilt;
   // Each book gets its own face and weight for the title and the author, chosen from its id,
   // so the shelf varies but a rebuild never reshuffles it.
-  const tStyle = styleFor(b.id, 0);
-  const aStyle = styleFor(b.id, 1);
+  // The books of a collection (#42) share one style: it is chosen from the collection's name.
+  const tStyle = styleFor(b.series || b.id, 0);
+  const aStyle = styleFor(b.series || b.id, 1);
   const titleX = w >= 36 ? w * 0.42 : w * 0.5;
   x.textAlign = 'left';
   // The spine carries the title before any colon, without series brackets: 'Making Money: (Discworld Novel 36)' → 'Making Money'.
-  const title = b.title.split(':')[0].replace(/\([^)]*\)/g, '').trim() || b.title;
-  // Type scales with the title's length: short titles are set large, long ones smaller, never cut.
-  // Width is measured at 10px and scaled, so the size fills the spine length (capped by its width).
-  x.font = `${tStyle.w} 10px ${tStyle.f}`;
-  const perPx = x.measureText(title).width / 10;
-  const cap = w * 0.4;   // thicker spines take larger letters; the width keeps them on the spine
-  const fs = Math.max(5, Math.min(cap, (h * (b.author ? 0.66 : 0.84)) / perPx));
+  const title = spineTitle(b);
+  // A collection's titles share one size; only a title too long for it is set smaller.
+  const own = titleSize(x, b, w, h, tStyle);
+  const fs = b.series && SERIES_SIZE.get(b.series) ? Math.min(own, SERIES_SIZE.get(b.series)) : own;
   x.font = `${tStyle.w} ${fs}px ${tStyle.f}`;
   // Lightly embossed: a pale edge up-left and a dark edge down-right, so the
   // lettering shows on white, pale or busy spines alike.
@@ -186,9 +219,10 @@ function paintSpine(c, b, strip) {
     x.fillStyle = gilt;
     x.fillText(text, px, py);
   };
-  // Centred across the spine's width only; its height along the spine is unchanged.
+  // On a spine wide enough to carry the author, the title sits slightly off centre (0.58 of the
+  // width), leaving the author its own lane; centring it was tried and looked worse (Alexis, #41).
   x.textAlign = 'left';
-  emboss(title, h * 0.06, w / 2);
+  emboss(title, h * 0.06, w - titleX);
   if (b.author && w >= 36) {
     // The author stays small and never runs into the title: it shrinks to the space left
     // below the title (the title ends by about 0.72 of the spine's length).
@@ -587,6 +621,7 @@ function start() {
   if (!stage || !el) return;
   const data = JSON.parse(el.textContent);
   if (!data.length) return;
+  measureSeries(data);
   // The shelf is drawn once every cover is in (or after 20 s), so nothing is swapped in on screen later.
   const loading = document.createElement('div');
   loading.className = 'shelf-loading';
