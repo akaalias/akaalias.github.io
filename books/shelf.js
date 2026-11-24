@@ -9,11 +9,48 @@ const SETBACK = 1.5;      // books stand this far back from the board's front ed
 const PAD = 0.9;           // margin inside the unit on each side
 const PPI = 64;            // spine texture pixels per inch
 const SLIDE = 0.5;        // a hovered book slides out this share of its depth (50%)
+const YEAR_GAP = 1.5;     // inches of air before the first book of a new year of reading (#40)
 
-// Images still loading (spine strips and front covers). The shelf waits for them so nothing flickers in.
-let loadPending = 0;
-let onLoadProgress = () => {};
-function loadFinished() { loadPending = Math.max(0, loadPending - 1); onLoadProgress(); }
+// Each cover is loaded ONCE, before the shelf is drawn. Its spine strip and its front face both come from
+// that image, so every texture is painted a single time. Swapping textures in after the first frame
+// (white spines turning into covers, covers popping in on hover) read as flicker.
+function loadCover(src) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = () => resolve(null);
+    img.src = src;
+  });
+}
+
+// The cover's left strip: the spine's background, the cover's first 10 px (full height).
+function stripOf(img) {
+  try {
+    const iw = img.naturalWidth, ih = img.naturalHeight;
+    const sw = Math.min(STRIP_PX, iw);
+    const strip = canvasOf(sw, ih);
+    strip.getContext('2d').drawImage(img, 0, 0, sw, ih, 0, 0, sw, ih);
+    return strip;
+  } catch (err) {
+    return null;   // a cover that can't be read leaves the plain spine
+  }
+}
+
+// Loads every cover, reporting progress on the loading line. Never waits longer than 20 s.
+async function preload(data, loading) {
+  const withCover = data.map((b, i) => (b.cover && !b.marker ? i : -1)).filter((i) => i >= 0);
+  const assets = new Array(data.length).fill(null);
+  let done = 0;
+  loading.textContent = `Loading the shelf… 0 of ${withCover.length}`;
+  const job = Promise.all(withCover.map(async (i) => {
+    const img = await loadCover(data[i].cover);
+    done++;
+    loading.textContent = `Loading the shelf… ${done} of ${withCover.length}`;
+    if (img) assets[i] = { img, strip: stripOf(img) };
+  }));
+  await Promise.race([job, new Promise((r) => setTimeout(r, 20000))]);
+  return assets;
+}
 
 const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -169,36 +206,13 @@ function paintSpine(c, b, strip) {
   return c;
 }
 
-function spineCanvas(b) {
+// The spine, painted once with its cover strip (null = the plain spine colour).
+function spineCanvas(b, strip) {
   const w = Math.max(20, Math.round(b.thickness * PPI));
   const h = Math.round(b.height * PPI);
   const c = canvasOf(w, h);
-  paintSpine(c, b, null);
+  paintSpine(c, b, strip || null);
   return c;
-}
-
-// Reads the cover's left strip once it loads; the spine is repainted with it.
-function loadStrip(b, c, map) {
-  if (!b.cover) return;
-  loadPending++;
-  const img = new Image();
-  img.onerror = () => loadFinished();
-  img.onload = () => {
-    try {
-      const iw = img.naturalWidth, ih = img.naturalHeight;
-      const full = canvasOf(iw, ih);
-      full.getContext('2d').drawImage(img, 0, 0);
-      const sw = Math.min(STRIP_PX, iw);
-      const strip = canvasOf(sw, ih);
-      strip.getContext('2d').drawImage(full, 0, 0, sw, ih, 0, 0, sw, ih);
-      paintSpine(c, b, strip);
-      map.needsUpdate = true;
-    } catch (err) {
-      // Keep the plain spine if the cover can't be read.
-    }
-    loadFinished();
-  };
-  img.src = b.cover;
 }
 
 function pageCanvas() {
@@ -227,7 +241,7 @@ const SHELF_H = 11.5;     // floor board top to the bay's open top, inches
 const FLOOR_T = 1.6;      // the bottom board, thicker than a plank, inches
 const TOP_DOWN = 0.2;     // a slight top-down view, as a fraction of the camera's distance, so the page edges show
 
-function main(stage, data) {
+function main(stage, data, assets) {
   const probe = document.createElement('canvas');
   if (!(probe.getContext('webgl2') || probe.getContext('webgl'))) return;
 
@@ -238,23 +252,11 @@ function main(stage, data) {
   track.className = 'shelf-track';
   stage.replaceChildren(view, track);
 
-  // Loading state: the shelf stays hidden under a short message until its images are in.
-  const loading = document.createElement('div');
-  loading.className = 'shelf-loading';
-  loading.textContent = 'Loading the shelf…';
-  stage.appendChild(loading);
-  const coverCount = data.filter((b) => b.cover).length;
-  loadPending += coverCount;   // one front cover per book, counted here so the total is known up front
-  const total = loadPending;
-  // The shelf shows at once, white where a cover or spine is still loading; this line only reports progress.
-  const finish = () => loading.remove();
-  onLoadProgress = () => {
-    if (loadPending <= 0) { finish(); return; }
-    loading.textContent = `Loading the shelf… ${total - loadPending} of ${total}`;
-  };
-  setTimeout(finish, 20000);   // never hide the shelf for good if an image hangs
 
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  // An opaque canvas painted in the page's paper colour: a transparent canvas composited its antialiased
+  // edges against the page and left dark, dashed fringes along the spines and covers.
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+  renderer.setClearColor(0xfffff8, 1);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   // No tone mapping: ACES desaturated every cover, so spines read darker and greyer than the book.
@@ -321,9 +323,9 @@ function main(stage, data) {
     if (b.marker) return markerCard(b, i);
     const hard = b.binding === 'hardcover';
     const cover = coverMat(b.spine, hard);
-    const sc = spineCanvas(b);
+    const asset = assets[i];   // loaded before the first frame: no texture is swapped in later
+    const sc = spineCanvas(b, asset ? asset.strip : null);
     const sMap = tex(sc);
-    loadStrip(b, sc, sMap);
     const spine = new THREE.MeshStandardMaterial({
       map: sMap, roughness: hard ? 0.8 : 0.45, envMapIntensity: 0.5,
     });
@@ -333,11 +335,16 @@ function main(stage, data) {
     group.userData = { offset: 0, target: 0, index: 0, isBook: true };
     // Softer edges: a visible curve on the spine's corners (hardcovers round more than paperbacks).
     const radius = hard ? Math.min(0.09, b.thickness * 0.4) : Math.min(0.05, b.thickness * 0.35);
-    const geo = new RoundedBoxGeometry(b.thickness, b.height, b.width, 4, radius);
-    const block = new THREE.Mesh(geo, [cover, cover, pages, cover, spine, cover]);
+    // More segments round the corners more smoothly: with 4, each corner is a few flat facets whose
+    // normals catch the light in alternating bands, which read as dashed seams while the view moves.
+    const geo = new RoundedBoxGeometry(b.thickness, b.height, b.width, 12, radius);
+    const front = asset ? new THREE.MeshStandardMaterial({ map: tex(asset.img), roughness: 0.6, envMapIntensity: 0.5 }) : cover;
+    const block = new THREE.Mesh(geo, [front, cover, pages, cover, spine, cover]);
     // Books don't cast shadows: a slid-out book threw a hard band across its neighbour.
     block.castShadow = false;
-    block.receiveShadow = true;
+    // Books don't receive shadows either: on the grazing edges of the spine and covers the shadow map
+    // left dashed seams (shadow acne), so the books are lit without shadow and the shelf keeps its board shadow.
+    block.receiveShadow = false;
     group.add(block);
     // Sticky tabs: one per highlight. Each stands up out of the top edge, its face
     // lying in the same plane as the pages (parallel to the covers), so it reads as a tab on the pages.
@@ -364,8 +371,50 @@ function main(stage, data) {
   const frame = new THREE.Group();
   scene.add(frame);
   let parts = [];
+  let yearMarks = [];   // { x, el }: a year marker's place on the bay and its label (#40)
   let unit = 1, H = 1, dist = 1;
   let hovered = null;
+
+  // The first book of each year of reading gets a marker and a little air before it; a new shelf starts one too.
+  function markStarts(gapAt) {
+    const s = new Set();
+    data.forEach((b, i) => {
+      if (b.marker || !b.year) return;
+      const prev = data[i - 1];
+      if (i === 0 || i === gapAt || !prev || prev.marker || prev.year !== b.year) s.add(i);
+    });
+    return s;
+  }
+  // The shelf (Fiction or Non-Fiction) comes first, so the same year can appear once per shelf.
+  function yearLabel(year, fiction, first) {
+    const el = document.createElement('div');
+    el.className = first ? 'shelf-year first' : 'shelf-year';   // the first marker of each shelf is inverted
+    el.textContent = `${fiction ? 'Fiction' : 'Non-Fiction'} ${year}`;
+    (document.getElementById('shelf-years') || view).appendChild(el);
+    return el;
+  }
+
+  // Year markers stick to the left edge while their year is still on the bay: the marker of
+  // the year at the left edge stays there, and the next year pushes it out (like a sticky
+  // section heading). The strip above the shelf keeps them in view while the page scrolls.
+  function placeYearMarks(W) {
+    const EDGE = 8, PUSH = 6;
+    const centre = yearMarks.map((m) => {
+      const v = new THREE.Vector3(m.x, FLOOR_T, -SETBACK).project(camera);
+      return (v.x + 1) / 2 * W;
+    });
+    const lefts = new Array(yearMarks.length);
+    for (let k = yearMarks.length - 1; k >= 0; k--) {
+      const w = yearMarks[k].el.offsetWidth;
+      let left = Math.max(centre[k] - w / 2, EDGE);            // on its book, or stuck to the edge
+      if (k + 1 < yearMarks.length) left = Math.min(left, lefts[k + 1] - w - PUSH);   // pushed by the next year
+      lefts[k] = left;
+    }
+    yearMarks.forEach((m, k) => {
+      m.el.style.left = lefts[k] + 'px';
+      m.el.style.visibility = lefts[k] < EDGE ? 'hidden' : '';   // gone once the next year has pushed it out
+    });
+  }
 
   // The bay: one row of books on one shelf, as long as the books need.
   function layout() {
@@ -377,8 +426,13 @@ function main(stage, data) {
     const SECTION_GAP = 2.0;   // inches between the fiction and the non-fiction
     const sectionStart = data.findIndex((b) => b.shelf !== 1 && !b.marker);
     const gapAt = data.some((b) => b.shelf === 1) && sectionStart > 0 ? sectionStart : -1;
+    const yStarts = markStarts(gapAt);
     let total = 0;
-    data.forEach((b, i) => { total += b.thickness + gap; if (i === gapAt) total += SECTION_GAP; });
+    data.forEach((b, i) => {
+      if (i > 0 && yStarts.has(i)) total += YEAR_GAP;
+      total += b.thickness + gap;
+      if (i === gapAt) total += SECTION_GAP;
+    });
     unit = total - gap + 2 * PAD;
     const rows = 1;
     H = rows * ROW_H;
@@ -387,6 +441,8 @@ function main(stage, data) {
     view.style.height = Hpx + 'px';
     track.style.width = Math.ceil(unit * SCREEN_PPI) + 'px';
 
+    yearMarks.forEach((m) => m.el.remove());
+    yearMarks = [];
     parts.forEach((p) => { frame.remove(p); p.geometry.dispose(); });
     parts = [];
     const add = (geo, mat, x, y, z) => {
@@ -406,7 +462,9 @@ function main(stage, data) {
     data.forEach((b, i) => {
       const m = meshes[i];
       if (i === gapAt) cursor += SECTION_GAP;
+      if (i > 0 && yStarts.has(i)) cursor += YEAR_GAP;
       const x = cursor;
+      if (yStarts.has(i)) yearMarks.push({ x: x + b.thickness / 2, el: yearLabel(b.year, b.shelf === 1, i === 0 || i === gapAt) });
       const boardTop = FLOOR_T;
       m.userData.index = i;
       // A marker card stands forward of the books, so you see its letter; a book sits behind the front edge.
@@ -422,6 +480,9 @@ function main(stage, data) {
     // Fit the height exactly: the visible width then matches the scroll track (a margin here shifted the left edge).
     dist = (H / 2) / Math.tan(fov / 2);
     camera.aspect = W / Hpx;
+    // A near plane at 1 in left the depth buffer too coarse at this distance: the spine and cover edges z-fought
+    // (dashed seams). Nothing is closer than about dist - 3 in, so a near plane at 40% of the distance is safe.
+    camera.near = dist * 0.4;
     camera.far = dist * 4;
     camera.updateProjectionMatrix();
 
@@ -442,6 +503,7 @@ function main(stage, data) {
     const cx = -unit / 2 + (stage.scrollLeft + W / 2) / SCREEN_PPI;
     camera.position.set(cx, H / 2 + TOP_DOWN * dist, dist);
     camera.lookAt(cx, H / 2, -DEPTH / 2);
+    placeYearMarks(W);   // year markers follow their books, and stick sideways
     render();
   }
 
@@ -485,25 +547,8 @@ function main(stage, data) {
     return o || null;
   }
 
-  // The front cover's art, loaded the first time a book is hovered (not all 200 up front).
-  const textures = new THREE.TextureLoader();
-  function frontCover(m) {
-    const b = data[m.userData.index];
-    if (!b.cover || m.userData.frontReady) return;
-    m.userData.frontReady = true;
-    textures.load(b.cover, (t) => {
-      t.colorSpace = THREE.SRGBColorSpace;
-      t.anisotropy = 4;
-      const block = m.children[0];
-      block.material[0] = new THREE.MeshStandardMaterial({ map: t, roughness: 0.6, envMapIntensity: 0.5 });
-      render();
-      loadFinished();
-    }, undefined, () => loadFinished());
-  }
-
   function hover(m, ev) {
     if (m === hovered) return;
-    if (m) frontCover(m);
     if (hovered) hovered.userData.target = 0;
     hovered = m;
     if (m) m.userData.target = SLIDE * data[m.userData.index].width;
@@ -514,7 +559,11 @@ function main(stage, data) {
   canvas.addEventListener('pointermove', (ev) => {
     if (ev.pointerType === 'touch') return;
     const r = canvas.getBoundingClientRect();
-    hover(pick(ev), ev);
+    // Hover holds while the pointer is still over the hovered book: a book sliding forward can bring a
+    // neighbour under the pointer, and switching back and forth between them is the flicker.
+    let m = pick(ev);
+    if (hovered && m !== hovered && ray.intersectObject(hovered, true).length) m = hovered;
+    hover(m, ev);
     animate();
   });
   canvas.addEventListener('pointerleave', () => hover(null, {}));
@@ -529,8 +578,6 @@ function main(stage, data) {
   const onResize = () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(layout); };
   new ResizeObserver(onResize).observe(stage);
   layout();
-  // The covers show on the sides of every book, so load them all, a few at a time, once the shelf is laid out.
-  meshes.forEach((m, i) => { if (!m.userData.isBook) return; setTimeout(() => frontCover(m), 40 * i); });
   stage.dataset.ready = 'true';
 }
 
@@ -540,12 +587,19 @@ function start() {
   if (!stage || !el) return;
   const data = JSON.parse(el.textContent);
   if (!data.length) return;
-  try {
-    main(stage, data);
-  } catch (err) {
-    // No WebGL: the list under the shelf still has every book.
-    console.warn('bookshelf: 3D view unavailable', err);
-    stage.replaceChildren();
-  }
+  // The shelf is drawn once every cover is in (or after 20 s), so nothing is swapped in on screen later.
+  const loading = document.createElement('div');
+  loading.className = 'shelf-loading';
+  stage.appendChild(loading);
+  preload(data, loading).then((assets) => {
+    try {
+      main(stage, data, assets);
+    } catch (err) {
+      // No WebGL: the list under the shelf still has every book.
+      console.warn('bookshelf: 3D view unavailable', err);
+      stage.replaceChildren();
+    }
+    loading.remove();
+  });
 }
 start();

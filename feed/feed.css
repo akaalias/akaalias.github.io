@@ -121,11 +121,24 @@ ul.books .a{font-size:16px;color:var(--ink);} ul.books .m{font-size:14px;color:v
 /* The bookshelf (#39): a 3D shelf drawn by shelf.js; the list under it is the same books as text. */
 .shelf-page{position:relative;}
 .shelf-loading{position:absolute;left:0;right:0;bottom:6px;text-align:center;color:var(--muted);font-size:13px;font-style:italic;pointer-events:none;}
-.shelf-stage{position:relative;margin:30px 0 6px;margin-left:calc((100% - 100vw) / 2);width:100vw;overflow-x:auto;overflow-y:hidden;}
+.shelf-stage{position:relative;margin:30px 0 6px;width:100%;overflow-x:auto;overflow-y:hidden;}
+/* Year markers (#40): shelf.js places them along a strip that sticks under the nav while the page scrolls,
+   and keeps them at the left edge while sideways scrolling (the next year pushes them out). */
+.shelf-years{position:sticky;top:40px;height:0;z-index:5;}
+.shelf-year{position:absolute;top:38px;pointer-events:none;white-space:nowrap;
+  font:600 12px/1 var(--serif);font-feature-settings:"lnum" 1;letter-spacing:.04em;color:var(--accent);
+  background:#fffdf7;border:1px solid var(--accent);border-radius:999px;padding:4px 9px;box-shadow:0 2px 6px rgba(0,0,0,.12);
+  animation:shelf-bob 3.2s ease-in-out infinite;}
+.shelf-year.first{background:#8C4A33;border-color:#8C4A33;color:#fff;}
+.shelf-year::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:14px;background:var(--accent);opacity:.6;}
+.shelf-year.first::after{background:#8C4A33;}
+@keyframes shelf-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@media (prefers-reduced-motion: reduce){.shelf-year{animation:none;}}
+@media (max-width:600px){.shelf-years{top:-30px;}}
 .shelf-view{position:sticky;left:0;width:100%;}
 .shelf-track{position:absolute;top:0;left:0;height:1px;}
 .shelf-stage canvas{display:block;}
-.shelf-note{font-size:14px;line-height:1.5;color:var(--muted);margin:14px 0 30px;}
+.shelf-note{font-size:14px;line-height:1.5;color:var(--muted);margin:14px 0 30px;text-align:center;}
 ol.shelf-index{list-style:none;padding:0;margin:0 0 28px;}
 ol.shelf-index li{display:flex;flex-direction:column;gap:2px;padding:10px 0;border-bottom:1px solid var(--rule-soft,var(--rule));}
 ol.shelf-index a{color:var(--accent);text-decoration:none;font-size:17px;line-height:1.3;}
