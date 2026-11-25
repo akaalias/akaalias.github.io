@@ -264,7 +264,15 @@ function paintSpine(c, b, strip) {
 // How used a book looks (#47), 0…1, from its highlights: half the books have about 20, one in ten over 120.
 function wearOf(b) { return Math.min(1, Math.sqrt((b.highlights || 0) / 280)); }
 const WEAR_FROM = 0.2;   // below this a book looks new
-// Every cover keeps ONE gloss, whatever its use: gloss that follows use was tried (#49) and backed out by Alexis.
+// Gloss follows use, second attempt (#49): a paperback that looks new is glossier than the old medium gloss, a
+// handled one goes matte. Only the ROUGHNESS changes much. The room's reflection is turned DOWN on the glossy
+// end: the first attempt turned it up, and the cover mirrored the room as a pale veil over the print.
+function dullOf(b) {
+  const k = wearOf(b);
+  return k < WEAR_FROM ? 0 : Math.round(((k - WEAR_FROM) / (1 - WEAR_FROM)) * 10) / 10;   // 0 as printed … 1 matte, in tenths
+}
+const matte = (b, rough) => { const from = b.binding === 'hardcover' ? rough : Math.min(rough, 0.36); return from + (0.97 - from) * dullOf(b); };
+const sheen = (b) => (b.binding === 'hardcover' ? 0.5 : 0.3 + 0.2 * dullOf(b));
 const RELIEF = 6;      // how deep the creases read in the light (bump scale)
 
 // A rubbed band along one edge of a canvas: paper showing through, strongest at the very edge.
@@ -1027,11 +1035,11 @@ function main(stage, data, assets) {
     if (!edgeMats.has(key)) edgeMats.set(key, new THREE.MeshStandardMaterial({ color: hex, roughness: hard ? 0.85 : 0.6, envMapIntensity: 0.5, }));
     return edgeMats.get(key);
   };
-  const coverMat = (hex, hard) => {
-    const key = hex + (hard ? 'h' : 'p');
+  const coverMat = (hex, hard, b) => {
+    const key = hex + (hard ? 'h' : 'p') + dullOf(b);
     if (!covers.has(key)) {
       covers.set(key, new THREE.MeshStandardMaterial({
-        color: hex, roughness: hard ? 0.85 : 0.6, envMapIntensity: 0.5,
+        color: hex, roughness: matte(b, hard ? 0.85 : 0.6), envMapIntensity: sheen(b),
       }));
     }
     return covers.get(key);
@@ -1067,12 +1075,12 @@ function main(stage, data, assets) {
   const meshes = data.map((b, i) => {
     if (b.marker) return markerCard(b, i);
     const hard = b.binding === 'hardcover';
-    const cover = coverMat(b.spine, hard);
+    const cover = coverMat(b.spine, hard, b);
     const asset = assets[i];   // loaded before the first frame: no texture is swapped in later
     const sc = spineCanvas(b, asset ? asset.strip : null);
     const sMap = tex(sc);
     const spine = new THREE.MeshStandardMaterial({
-      map: sMap, roughness: hard ? 0.8 : 0.45, envMapIntensity: 0.5,
+      map: sMap, roughness: matte(b, hard ? 0.8 : 0.45), envMapIntensity: sheen(b),
     });
     if (sc.relief) { spine.bumpMap = tex(sc.relief, false); spine.bumpScale = RELIEF; }
     // One shell per book, as on a real paperback: the spine is the front face and the covers are the
@@ -1095,12 +1103,12 @@ function main(stage, data, assets) {
     // Under a cover sheet the body's front is the first page; otherwise it carries the cover itself.
     const front = !asset ? cover : sheeted
       ? new THREE.MeshStandardMaterial({ map: tex(worn.page), roughness: 0.9, envMapIntensity: 0.4 })
-      : new THREE.MeshStandardMaterial({ map: tex(worn || asset.img), roughness: 0.6, envMapIntensity: 0.5 });
+      : new THREE.MeshStandardMaterial({ map: tex(worn || asset.img), roughness: matte(b, 0.6), envMapIntensity: sheen(b) });
     if (!sheeted && worn && worn.relief) { front.bumpMap = tex(worn.relief, false); front.bumpScale = RELIEF; }
     if (sheeted) {
       // The sheet, and under its printed face the white of its board: two layers, so a torn edge has a side.
       const sg = coverSheet(b, radius);
-      const face = new THREE.MeshStandardMaterial({ map: tex(worn), alphaTest: 0.5, roughness: 0.6, envMapIntensity: 0.5 });
+      const face = new THREE.MeshStandardMaterial({ map: tex(worn), alphaTest: 0.5, roughness: matte(b, 0.6), envMapIntensity: sheen(b) });
       if (worn.relief) { face.bumpMap = tex(worn.relief, false); face.bumpScale = RELIEF; }
       const core = new THREE.MeshStandardMaterial({ map: tex(worn.board), alphaTest: 0.5, roughness: 0.9, envMapIntensity: 0.4 });
       for (const [mat, lift] of [[core, -COVER_T * 0.66], [core, -COVER_T * 0.33], [face, 0]]) {
