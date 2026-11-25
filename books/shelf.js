@@ -756,17 +756,47 @@ function spineCanvas(b, strip) {
   return c;
 }
 
+// The edge of a page block (#47; it was eight faint, even stripes and read as one solid block): the sheets'
+// edges as fine lines of uneven tone running along the edge and stepping through the thickness (u), no two
+// alike, with the darker gaps between gatherings and here and there a sheet standing proud or sitting back.
+// Returned with a height map of the same lines, so the light picks the sheets out as edges, not as print.
+// PAGE_LINES of them fill the texture, at PAGE_PER_INCH to the inch: each book shows its own stretch.
+const PAGE_LINES = 512, PAGE_PER_INCH = 42;
 function pageCanvas() {
-  // The top of a page block shows each sheet's edge: lines that run across the width and step
-  // through the thickness, so the stripes are vertical in the texture (u = thickness).
-  const c = canvasOf(64, 8);
-  const x = c.getContext('2d');
+  const W = PAGE_LINES, H = 64, rnd = seeded('page-edges');
+  const c = canvasOf(W, H), x = c.getContext('2d');
+  const hc = canvasOf(W, H), hx = hc.getContext('2d');
   x.fillStyle = '#f2ecdb';
-  x.fillRect(0, 0, 64, 8);
-  for (let px = 0; px < 64; px += 2) {
-    x.fillStyle = px % 4 ? 'rgba(120,100,70,0.10)' : 'rgba(120,100,70,0.04)';
-    x.fillRect(px, 0, 1, 8);
+  x.fillRect(0, 0, W, H);
+  hx.fillStyle = '#808080';
+  hx.fillRect(0, 0, W, H);
+  let gather = 6 + Math.floor(rnd() * 12);
+  for (let px = 0; px < W; px++) {
+    // Each sheet: a shade lighter or darker, and a little higher or lower than its neighbours.
+    const tone = rnd(), lift = rnd();
+    x.fillStyle = tone < 0.5 ? `rgba(255,252,240,${0.1 + 0.25 * tone})` : `rgba(120,98,62,${0.05 + 0.22 * (tone - 0.5)})`;
+    x.fillRect(px, 0, 1, H);
+    let level = 128 + (lift - 0.5) * 90;
+    if (--gather <= 0) {
+      // Between two gatherings: a shadowed gap.
+      gather = 6 + Math.floor(rnd() * 14);
+      x.fillStyle = `rgba(70,54,30,${0.22 + 0.2 * rnd()})`;
+      x.fillRect(px, 0, 1, H);
+      level = 40;
+    } else if (rnd() < 0.05) {
+      level = 225;   // a sheet standing proud
+      x.fillStyle = 'rgba(255,253,244,0.5)';
+      x.fillRect(px, 0, 1, H);
+    }
+    hx.fillStyle = `rgb(${level | 0},${level | 0},${level | 0})`;
+    hx.fillRect(px, 0, 1, H);
+    // Along its length a sheet's edge is not even either: short stretches a touch darker or lighter.
+    for (let k = 0; k < 3; k++) {
+      x.fillStyle = rnd() < 0.5 ? 'rgba(255,255,255,0.10)' : 'rgba(90,70,40,0.08)';
+      x.fillRect(px, rnd() * H, 1, 4 + rnd() * 14);
+    }
   }
+  c.relief = hc;
   return c;
 }
 
@@ -814,8 +844,10 @@ function main(stage, data, assets) {
   const sun = new THREE.DirectionalLight(0xfff3df, 2.1);
   sun.castShadow = true;
   sun.shadow.mapSize.set(2048, 2048);
-  sun.shadow.bias = -0.0006;
-  sun.shadow.normalBias = 0.035;
+  // Small offsets: with larger ones a cast shadow began a hair away from the book that throws it, and that
+  // hair was lit board (the sliver along the foot of a slid-out book).
+  sun.shadow.bias = -0.0003;
+  sun.shadow.normalBias = 0.012;
   sun.shadow.radius = 2.5;
   scene.add(sun, sun.target);
   scene.children.forEach((o) => { if (o.isLight) o.layers.enable(1); });   // the lights also light the book taken out of the shelf (drawn on layer 1)
@@ -823,23 +855,46 @@ function main(stage, data, assets) {
   // White-painted shelving.
   // A shade warmer than the page, so the board reads against the cream background.
   const paint = new THREE.MeshStandardMaterial({ color: 0xcfc8ba, roughness: 0.6, envMapIntensity: 0.5 });
-  const pages = new THREE.MeshStandardMaterial({ map: tex(pageCanvas()), roughness: 0.9, envMapIntensity: 0.4 });
+  const pageEdges = pageCanvas();
+  const pageMap = tex(pageEdges), pageRelief = tex(pageEdges.relief, false);
+  pageMap.wrapS = pageRelief.wrapS = THREE.RepeatWrapping;
+  const pages = new THREE.MeshStandardMaterial({ map: pageMap, bumpMap: pageRelief, bumpScale: 2.5, roughness: 0.9, envMapIntensity: 0.4 });
   // The page block of a used book has yellowed and greyed a little (#47): four steps, from new to well-thumbed.
   const usedPages = [0xffffff, 0xf3ead6, 0xe6dabd, 0xd9caa6].map((tint) => { const m = pages.clone(); m.color.setHex(tint); return m; });
-  const pagesOf = (b) => usedPages[Math.round(wearOf(b) < WEAR_FROM ? 0 : wearOf(b) * 3)];
-  const FOOT = 0.9;   // inches the contact shadow reaches in front of a book
+  // Each book's own page block: the tint of its use, and its own stretch of the sheets (as many as its
+  // thickness holds, starting somewhere of its own), so no two blocks show the same lines.
+  const pagesOf = (b) => {
+    const m = usedPages[Math.round(wearOf(b) < WEAR_FROM ? 0 : wearOf(b) * 3)].clone();
+    const at = seeded(b.id + ':pages')();
+    for (const key of ['map', 'bumpMap']) {
+      m[key] = m[key].clone();
+      m[key].repeat.set(b.thickness * PAGE_PER_INCH / PAGE_LINES, 1);
+      m[key].offset.set(at, 0);
+      m[key].needsUpdate = true;
+    }
+    return m;
+  };
+  const FOOT = 1.3;   // inches the contact shadow reaches in front of a book
+  // The band is a picture of the board getting darker towards the book, laid over the board with "keep the
+  // darker of the two" (min blending). So the bands of neighbouring books can overlap without doubling up,
+  // and they do overlap: side by side with a hairline between them, each gap was a sliver of lit board
+  // running forward from between two books (Alexis, #47).
   const footCanvas = canvasOf(4, 64);
   {
     const fx = footCanvas.getContext('2d');
     const g = fx.createLinearGradient(0, 0, 0, 64);   // v = 1 (top of the canvas) is the edge at the book
-    g.addColorStop(0, 'rgba(40,32,20,0.42)');
-    g.addColorStop(0.25, 'rgba(40,32,20,0.18)');
-    g.addColorStop(1, 'rgba(40,32,20,0)');
+    g.addColorStop(0, 'rgb(146,138,121)');
+    g.addColorStop(0.22, 'rgb(184,176,159)');
+    g.addColorStop(0.6, 'rgb(214,206,189)');
+    g.addColorStop(1, 'rgb(255,255,255)');
     fx.fillStyle = g;
     fx.fillRect(0, 0, 4, 64);
   }
   const footGeo = new THREE.PlaneGeometry(1, FOOT).rotateX(-Math.PI / 2);   // lying on the board, its far edge at the book
-  const footMat = new THREE.MeshBasicMaterial({ map: tex(footCanvas), transparent: true, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
+  const footMat = new THREE.MeshBasicMaterial({
+    map: tex(footCanvas), transparent: true, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2,
+    blending: THREE.CustomBlending, blendEquation: THREE.MinEquation, blendSrc: THREE.OneFactor, blendDst: THREE.OneFactor,
+  });
   const covers = new Map();
   const coverMat = (hex, hard) => {
     const key = hex + (hard ? 'h' : 'p');
@@ -934,8 +989,8 @@ function main(stage, data, assets) {
     // Where the book stands on the board: a soft dark band at its foot, reaching forward and fading. The sun
     // comes from the front, so the cast shadows fall behind the books; this is what grounds them.
     const foot = new THREE.Mesh(footGeo, footMat);
-    foot.scale.set(b.thickness, 1, 1);
-    foot.position.set(0, -b.height / 2 + 0.012, b.width / 2 + FOOT / 2 - 0.02);
+    foot.scale.set(b.thickness + 0.08, 1, 1);   // a little wider than the book: neighbours' bands overlap
+    foot.position.set(0, -b.height / 2 + 0.012, b.width / 2 + FOOT / 2 - 0.05);
     foot.raycast = () => {};   // never picked
     foot.renderOrder = 1;
     group.add(foot);
@@ -1150,7 +1205,11 @@ function main(stage, data, assets) {
     renderer.autoClear = false;
     renderer.clearDepth();
     camera.layers.set(1);
+    // The second pass reuses the first pass's shadow map: drawing every shadow caster a third time for one
+    // book was a third of the work of each frame (the laptop ran hot with a book out).
+    renderer.shadowMap.autoUpdate = false;
     renderer.render(scene, camera);
+    renderer.shadowMap.autoUpdate = true;
     renderer.autoClear = true;
     camera.layers.set(0);
   }
