@@ -10,6 +10,21 @@ const PAD = 0.9;           // margin inside the unit on each side
 const PPI = 64;            // spine texture pixels per inch
 const SLIDE = 0.5;        // a hovered book slides out this share of its depth (50%)
 const YEAR_GAP = 1.5;     // inches of air before the first book of a new year of reading (#40)
+// A clicked book leaves the shelf and turns its front cover to the viewer (#44). It is the shelf's own
+// mesh that travels: out of its slot first, then forward and round.
+const OPEN_MS = 700;      // the trip out of the shelf, milliseconds (the same back)
+const OPEN_CLEAR = 1.2;   // inches of air between the shelf's spines and the book before it turns
+const OPEN_FILL = 0.95;   // the taken-out book and its tabs fill this share of what can be seen of the shelf
+const TAB_ROOM = 0.75;    // inches kept free above the book for its sticky tabs
+const BELOW_PX = 110;      // open space under the shelf, screen pixels: room for a book that is being turned
+const BOARD_T = 0.4;       // the visible thickness of the shelf board, inches
+const SIDE_TABS = 0.35;    // the share of a book's sticky tabs that stick out of its long edge, not its top
+const SIDE_ROOM = 0.3;     // inches kept free beside a taken-out book for them (0.6 put the card too far off: Alexis)
+const CARD_H = 1.42;      // the card under a taken-out book, inches high
+const CARD_SCREEN = 70;   // the card is shown at this many screen pixels per inch, whatever the book's scale
+const CARD_PPI = 160;     // card texture pixels per inch
+const OPEN_TURN = 0.2;    // radians short of square-on, so the spine still shows at the cover's left
+const ease = (t) => t * t * (3 - 2 * t);
 
 // Each cover is loaded ONCE, before the shelf is drawn. Its spine strip and its front face both come from
 // that image, so every texture is painted a single time. Swapping textures in after the first frame
@@ -237,7 +252,145 @@ function paintSpine(c, b, strip) {
     emboss(b.author, h * 0.94, w - w * 0.76);
   }
   x.restore();
+  c.relief = wearSpine(x, w, h, b);   // over the lettering: creases and rubbing take the print with them
   return c;
+}
+
+// How used a book looks (#47), 0…1, from its highlights: half the books have about 20, one in ten over 120.
+function wearOf(b) { return Math.min(1, Math.sqrt((b.highlights || 0) / 280)); }
+const WEAR_FROM = 0.2;   // below this a book looks new
+const RELIEF = 6;      // how deep the creases read in the light (bump scale)
+
+// A rubbed band along one edge of a canvas: paper showing through, strongest at the very edge.
+function rub(x, x0, y0, x1, y1, rw, rh, alpha) {
+  const g = x.createLinearGradient(x0, y0, x1, y1);
+  g.addColorStop(0, `rgba(250,246,236,${alpha})`);
+  g.addColorStop(1, 'rgba(250,246,236,0)');
+  x.fillStyle = g;
+  x.fillRect(Math.min(x0, x1), Math.min(y0, y1), rw, rh);
+}
+
+// Wear on a spine: reading creases down a paperback's spine (pale cracks with a shadow beside them),
+// rubbed head, tail and long edges, and scuffs. Seeded by the book, so it is the same on every build.
+// A crease in the height map that goes with a painted surface (#47): a soft valley with a slight ridge
+// beside it, so the light catches it as a fold in the board and not as a drawn line. Mid grey is level.
+function groove(bx, pts, lw) {
+  const run = (dx, width, style) => {
+    bx.beginPath();
+    pts.forEach(([qx, qy], j) => (j ? bx.lineTo(qx + dx, qy) : bx.moveTo(qx + dx, qy)));
+    bx.strokeStyle = style;
+    bx.lineWidth = width;
+    bx.lineCap = 'round';
+    bx.stroke();
+  };
+  run(0, lw * 7, 'rgba(0,0,0,0.10)');
+  run(0, lw * 4, 'rgba(0,0,0,0.22)');
+  run(0, lw * 2, 'rgba(0,0,0,0.45)');
+  run(0, lw * 0.8, 'rgba(0,0,0,0.75)');
+  run(lw * 4.5, lw * 3, 'rgba(255,255,255,0.16)');
+  run(-lw * 4.5, lw * 3, 'rgba(255,255,255,0.10)');
+}
+function heightMap(w, h) {
+  const c = canvasOf(w, h);
+  const bx = c.getContext('2d');
+  bx.fillStyle = '#808080';
+  bx.fillRect(0, 0, w, h);
+  return c;
+}
+
+// Returns the spine's height map (creases as valleys), or null for a spine without creases.
+function wearSpine(x, w, h, b) {
+  const k = wearOf(b);
+  if (k < WEAR_FROM) return null;
+  let relief = null;
+  const rnd = seeded(b.id + ':wear');
+  if (b.binding !== 'hardcover') {
+    const n = Math.round(1 + k * 5);
+    for (let i = 0; i < n; i++) {
+      let px = w * (0.14 + rnd() * 0.72);
+      const pts = [[px, 0]];
+      for (let y = h / 14; y <= h + 1; y += h / 14) { px += (rnd() - 0.5) * w * 0.035; pts.push([px, y]); }
+      const lw = Math.max(1, w * 0.014 * (0.5 + rnd()));
+      // In the colour only the print cracked off along the fold, faintly; the fold itself is relief.
+      x.beginPath();
+      pts.forEach(([qx, qy], j) => (j ? x.lineTo(qx, qy) : x.moveTo(qx, qy)));
+      x.strokeStyle = `rgba(252,248,238,${0.10 + 0.22 * k * rnd()})`;
+      x.lineWidth = lw * 0.8;
+      x.stroke();
+      relief = relief || heightMap(w, h);
+      groove(relief.getContext('2d'), pts, lw);
+    }
+  }
+  const end = h * 0.035 * (0.5 + k), edge = w * 0.1;
+  rub(x, 0, 0, 0, end, w, end, 0.55 * k);
+  rub(x, 0, h, 0, h - end, w, end, 0.55 * k);
+  rub(x, 0, 0, edge, 0, edge, h, 0.3 * k);
+  rub(x, w, 0, w - edge, 0, edge, h, 0.3 * k);
+  for (let i = 0; i < k * (w * h) / 900; i++) {
+    const nearEnd = rnd() < 0.6, py = nearEnd ? (rnd() < 0.5 ? rnd() * h * 0.08 : h - rnd() * h * 0.08) : rnd() * h;
+    x.fillStyle = `rgba(250,246,236,${0.25 + rnd() * 0.4})`;
+    x.fillRect(rnd() * w, py, 1 + rnd() * 2, 1 + rnd() * 2);
+  }
+  return relief;
+}
+
+// A used book's front cover: the cover image with a hinge crease beside the spine (paperbacks), corners
+// worn to the paper, rubbed edges and, on the most handled, a crease across the top outer corner.
+// Returns a canvas, or null for a book that looks new (the image is then used as it is).
+function wornCover(img, b) {
+  const k = wearOf(b);
+  if (k < WEAR_FROM) return null;
+  try {
+    const s = Math.min(1, 900 / img.naturalHeight);
+    const W = Math.round(img.naturalWidth * s), H = Math.round(img.naturalHeight * s);
+    const c = canvasOf(W, H);
+    const x = c.getContext('2d');
+    x.drawImage(img, 0, 0, W, H);
+    const rnd = seeded(b.id + ':cover');
+    // A fold in the cover: relief in the height map, and in the colour only a faint line of lost print.
+    const line = (pts, lw, a) => {
+      x.beginPath();
+      pts.forEach(([qx, qy], j) => (j ? x.lineTo(qx, qy) : x.moveTo(qx, qy)));
+      x.strokeStyle = `rgba(252,248,238,${a * 0.5})`;
+      x.lineWidth = lw * 0.8;
+      x.stroke();
+      c.relief = c.relief || heightMap(W, H);
+      groove(c.relief.getContext('2d'), pts, lw);
+    };
+    if (b.binding !== 'hardcover') {
+      // The hinge: where the cover has been folded back, a little in from the spine (the left edge).
+      let px = W * (0.035 + rnd() * 0.02);
+      const pts = [[px, 0]];
+      for (let y = H / 16; y <= H + 1; y += H / 16) { px += (rnd() - 0.5) * W * 0.006; pts.push([px, y]); }
+      line(pts, Math.max(1, W * 0.004), 0.2 + 0.4 * k);
+      if (k > 0.6) {
+        const cut = W * (0.1 + 0.12 * rnd());   // a bent corner, top right
+        line([[W - cut, 0], [W, cut * (0.8 + 0.5 * rnd())]], Math.max(1, W * 0.004), 0.5 * k);
+      }
+    }
+    const e = W * 0.03 * (0.5 + k);
+    rub(x, W, 0, W - e, 0, e, H, 0.45 * k);
+    rub(x, 0, 0, 0, e, W, e, 0.4 * k);
+    rub(x, 0, H, 0, H - e, W, e, 0.45 * k);
+    for (const [cx, cy] of [[0, 0], [W, 0], [0, H], [W, H]]) {
+      const r = W * (0.03 + 0.07 * k * (0.6 + 0.4 * rnd()));
+      const g = x.createRadialGradient(cx, cy, 0, cx, cy, r);
+      g.addColorStop(0, `rgba(250,246,236,${0.9 * k})`);
+      g.addColorStop(0.55, `rgba(250,246,236,${0.35 * k})`);
+      g.addColorStop(1, 'rgba(250,246,236,0)');
+      x.fillStyle = g;
+      x.fillRect(cx - r, cy - r, 2 * r, 2 * r);
+    }
+    for (let i = 0; i < k * 260; i++) {
+      const t = rnd(), along = rnd(), d = rnd() * rnd() * W * 0.06;
+      const [sx, sy] = t < 0.25 ? [along * W, d] : t < 0.5 ? [along * W, H - d] : t < 0.85 ? [W - d, along * H] : [d, along * H];
+      x.fillStyle = `rgba(250,246,236,${0.2 + rnd() * 0.45})`;
+      x.fillRect(sx, sy, 1 + rnd() * 2.5, 1 + rnd() * 2.5);
+    }
+    return c;
+  } catch (err) {
+    return null;   // a cover that can't be read stays as it is
+  }
 }
 
 // The spine, painted once with its cover strip (null = the plain spine colour).
@@ -296,7 +449,7 @@ function main(stage, data, assets) {
   // No tone mapping: ACES desaturated every cover, so spines read darker and greyer than the book.
   renderer.toneMapping = THREE.NoToneMapping;
   renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.shadowMap.type = THREE.PCFShadowMap;   // with shadow.radius below: soft edges
   view.appendChild(renderer.domElement);
 
   const scene = new THREE.Scene();
@@ -307,14 +460,32 @@ function main(stage, data, assets) {
   const sun = new THREE.DirectionalLight(0xfff3df, 2.1);
   sun.castShadow = true;
   sun.shadow.mapSize.set(2048, 2048);
-  sun.shadow.bias = -0.0004;
-  sun.shadow.normalBias = 0.02;
+  sun.shadow.bias = -0.0006;
+  sun.shadow.normalBias = 0.035;
+  sun.shadow.radius = 2.5;
   scene.add(sun, sun.target);
+  scene.children.forEach((o) => { if (o.isLight) o.layers.enable(1); });   // the lights also light the book taken out of the shelf (drawn on layer 1)
 
   // White-painted shelving.
   // A shade warmer than the page, so the board reads against the cream background.
-  const paint = new THREE.MeshStandardMaterial({ color: 0xe9e4d8, roughness: 0.6, envMapIntensity: 0.5 });
+  const paint = new THREE.MeshStandardMaterial({ color: 0xcfc8ba, roughness: 0.6, envMapIntensity: 0.5 });
   const pages = new THREE.MeshStandardMaterial({ map: tex(pageCanvas()), roughness: 0.9, envMapIntensity: 0.4 });
+  // The page block of a used book has yellowed and greyed a little (#47): four steps, from new to well-thumbed.
+  const usedPages = [0xffffff, 0xf3ead6, 0xe6dabd, 0xd9caa6].map((tint) => { const m = pages.clone(); m.color.setHex(tint); return m; });
+  const pagesOf = (b) => usedPages[Math.round(wearOf(b) < WEAR_FROM ? 0 : wearOf(b) * 3)];
+  const FOOT = 0.9;   // inches the contact shadow reaches in front of a book
+  const footCanvas = canvasOf(4, 64);
+  {
+    const fx = footCanvas.getContext('2d');
+    const g = fx.createLinearGradient(0, 0, 0, 64);   // v = 1 (top of the canvas) is the edge at the book
+    g.addColorStop(0, 'rgba(40,32,20,0.42)');
+    g.addColorStop(0.25, 'rgba(40,32,20,0.18)');
+    g.addColorStop(1, 'rgba(40,32,20,0)');
+    fx.fillStyle = g;
+    fx.fillRect(0, 0, 4, 64);
+  }
+  const footGeo = new THREE.PlaneGeometry(1, FOOT).rotateX(-Math.PI / 2);   // lying on the board, its far edge at the book
+  const footMat = new THREE.MeshBasicMaterial({ map: tex(footCanvas), transparent: true, depthWrite: false, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
   const covers = new Map();
   const coverMat = (hex, hard) => {
     const key = hex + (hard ? 'h' : 'p');
@@ -363,41 +534,67 @@ function main(stage, data, assets) {
     const spine = new THREE.MeshStandardMaterial({
       map: sMap, roughness: hard ? 0.8 : 0.45, envMapIntensity: 0.5,
     });
+    if (sc.relief) { spine.bumpMap = tex(sc.relief, false); spine.bumpScale = RELIEF; }
     // One shell per book, as on a real paperback: the spine is the front face and the covers are the
     // side faces, so the spine sits exactly on the covers. Box faces: +x, -x (covers), +y (pages), -y, +z (spine), -z.
     const group = new THREE.Group();
-    group.userData = { offset: 0, target: 0, index: 0, isBook: true };
+    group.userData = { offset: 0, target: 0, open: 0, openTarget: 0, spin: new THREE.Quaternion(), card: null, index: 0, isBook: true };
     // Softer edges: a visible curve on the spine's corners (hardcovers round more than paperbacks).
     const radius = hard ? Math.min(0.09, b.thickness * 0.4) : Math.min(0.05, b.thickness * 0.35);
     // More segments round the corners more smoothly: with 4, each corner is a few flat facets whose
     // normals catch the light in alternating bands, which read as dashed seams while the view moves.
     const geo = new RoundedBoxGeometry(b.thickness, b.height, b.width, 4, radius);
-    const front = asset ? new THREE.MeshStandardMaterial({ map: tex(asset.img), roughness: 0.6, envMapIntensity: 0.5 }) : cover;
-    const block = new THREE.Mesh(geo, [front, cover, pages, cover, spine, cover]);
-    // Books don't cast shadows: a slid-out book threw a hard band across its neighbour.
-    block.castShadow = false;
-    // Books don't receive shadows either: on the grazing edges of the spine and covers the shadow map
-    // left dashed seams (shadow acne), so the books are lit without shadow and the shelf keeps its board shadow.
-    block.receiveShadow = false;
+    const worn = asset ? wornCover(asset.img, b) : null;
+    const front = asset ? new THREE.MeshStandardMaterial({ map: tex(worn || asset.img), roughness: 0.6, envMapIntensity: 0.5 }) : cover;
+    if (worn && worn.relief) { front.bumpMap = tex(worn.relief, false); front.bumpScale = RELIEF; }
+    const pg = pagesOf(b);
+    // The top, the bottom and the edge opposite the spine show the page block (#44: taken out and turned,
+    // the far edge read as a second spine while it was painted like the cover); the back is plain cover.
+    const block = new THREE.Mesh(geo, [front, cover, pg, pg, spine, pg]);
+    // Books cast and take shadows again (#47): without them the shelf looked sterile under a clearly
+    // directed light. They had been switched off for a hard band across a slid-out book's neighbour and for
+    // dashed seams (shadow acne); both came from one shadow map stretched over the whole shelf. The map now
+    // covers only the stretch in view (see lightView), which is fine enough for soft, clean shadows.
+    block.castShadow = true;
+    block.receiveShadow = true;
     group.add(block);
+    // Where the book stands on the board: a soft dark band at its foot, reaching forward and fading. The sun
+    // comes from the front, so the cast shadows fall behind the books; this is what grounds them.
+    const foot = new THREE.Mesh(footGeo, footMat);
+    foot.scale.set(b.thickness, 1, 1);
+    foot.position.set(0, -b.height / 2 + 0.012, b.width / 2 + FOOT / 2 - 0.02);
+    foot.raycast = () => {};   // never picked
+    foot.renderOrder = 1;
+    group.add(foot);
+    group.userData.foot = foot;
     // Sticky tabs: one per highlight. Each stands up out of the top edge, its face
     // lying in the same plane as the pages (parallel to the covers), so it reads as a tab on the pages.
     const tabs = b.highlights || 0;   // exactly one tab per highlight
     const rnd = seeded(b.id);
     const tabColors = [0xf4d35e, 0xe76f8a, 0x7fb3d5, 0x9bc53d, 0xf29e4c];
+    const flags = [];
     for (let k = 0; k < tabs; k++) {
-      // Each tab differs: thickness, width and how far it sticks out all vary.
+      // Each tab differs: thickness, width and how far it sticks out all vary. They are page flags,
+      // about half an inch wide (#47; they were up to 1.6 in, like notes).
       const tabT = 0.006 + rnd() * 0.004;   // about the thickness of paper
-      const tabD = Math.min(0.7 + rnd() * 0.9, b.width * 0.95);
+      const tabD = Math.min(0.32 + rnd() * 0.28, b.width * 0.95);
       const tabH = 0.3 + rnd() * 0.5;
-      const tab = new THREE.Mesh(
-        new THREE.BoxGeometry(tabT, tabH, tabD),
+      // About a third stick out of the long edge opposite the spine instead of the top (#44): the right-hand
+      // side of the book once it is taken out and faces the viewer.
+      const atSide = rnd() < SIDE_TABS;
+      // The tab's own origin is where it leaves the book, so that it can bend there (the sway).
+      const geo = atSide ? new THREE.BoxGeometry(tabT, tabD, tabH).translate(0, 0, -tabH * 0.35) : new THREE.BoxGeometry(tabT, tabH, tabD).translate(0, tabH * 0.35, 0);
+      const tab = new THREE.Mesh(geo,
         new THREE.MeshStandardMaterial({ color: tabColors[Math.floor(rnd() * tabColors.length)], roughness: 0.5, envMapIntensity: 0.4 }));
-      tab.position.set((rnd() - 0.5) * Math.max(0, b.thickness - 0.1), b.height / 2 + tabH * 0.35, (rnd() - 0.5) * Math.max(0, b.width - tabD));
+      const tx = (rnd() - 0.5) * Math.max(0, b.thickness - 0.1);
+      if (atSide) tab.position.set(tx, (rnd() - 0.5) * Math.max(0, b.height - tabD), -b.width / 2);
+      else tab.position.set(tx, b.height / 2, (rnd() - 0.5) * Math.max(0, b.width - tabD));
       tab.rotation.x = (rnd() - 0.5) * 0.2;
       tab.castShadow = true;
       group.add(tab);
+      flags.push({ tab, atSide, give: (0.6 + rnd() * 0.8) * (tabH / 0.55) });   // longer tabs bend further
     }
+    group.userData.flags = flags;
     scene.add(group);
     return group;
   });
@@ -471,8 +668,9 @@ function main(stage, data, assets) {
     const rows = 1;
     H = rows * ROW_H;
     const Hpx = Math.round(H * SCREEN_PPI);
-    renderer.setSize(W, Hpx);
-    view.style.height = Hpx + 'px';
+    // The canvas reaches BELOW_PX under the shelf (#44), so a book turned in the hand isn't cut off at the board.
+    renderer.setSize(W, Hpx + BELOW_PX);
+    view.style.height = Hpx + BELOW_PX + 'px';
     track.style.width = Math.ceil(unit * SCREEN_PPI) + 'px';
 
     yearMarks.forEach((m) => m.el.remove());
@@ -490,7 +688,8 @@ function main(stage, data, assets) {
     // One board per shelf: no ends or back, so the books stand in open air.
     // The board reaches 2.5 in past the books' front edge, so the books sit well back from it.
     const BOARD_FRONT = 2.5;
-    add(new THREE.BoxGeometry(unit, FLOOR_T, DEPTH + BOARD_FRONT), paint, 0, FLOOR_T / 2, (BOARD_FRONT - DEPTH) / 2);
+    // Only the board's top BOARD_T is built: with the open space under the shelf its whole front edge is in view.
+    add(new THREE.BoxGeometry(unit, BOARD_T, DEPTH + BOARD_FRONT), paint, 0, FLOOR_T - BOARD_T / 2, (BOARD_FRONT - DEPTH) / 2);
 
     let cursor = -unit / 2 + PAD;
     data.forEach((b, i) => {
@@ -505,7 +704,7 @@ function main(stage, data, assets) {
       m.userData.base = b.marker
         ? { x: x + b.thickness / 2, y: boardTop + b.height / 2, z: -0.3 }
         : { x: x + b.thickness / 2, y: boardTop + b.height / 2, z: -(SETBACK + (seeded(b.id)() - 0.5) * 0.7) - b.width / 2 };   // each book stands a little differently back
-      m.position.set(m.userData.base.x, m.userData.base.y, m.userData.base.z + m.userData.offset);
+      place(m);
       cursor += b.thickness + gap;
     });
 
@@ -514,21 +713,35 @@ function main(stage, data, assets) {
     // Fit the height exactly: the visible width then matches the scroll track (a margin here shifted the left edge).
     dist = (H / 2) / Math.tan(fov / 2);
     camera.aspect = W / Hpx;
+    // The shelf is framed exactly as before; the view is only continued downwards into the open space.
+    camera.setViewOffset(W, Hpx, 0, 0, W, Hpx + BELOW_PX);
     // A near plane at 1 in left the depth buffer too coarse at this distance: the spine and cover edges z-fought
     // (dashed seams). Nothing is closer than about dist - 3 in, so a near plane at 40% of the distance is safe.
     camera.near = dist * 0.4;
     camera.far = dist * 4;
     camera.updateProjectionMatrix();
 
-    sun.position.set(-unit * 0.2, H * 1.4, 30);
-    sun.target.position.set(0, H / 2, -DEPTH / 2);
-    sun.target.updateMatrixWorld();
-    const s = sun.shadow.camera;
-    s.left = -unit / 2 - 3; s.right = unit / 2 + 3;
-    s.top = H / 2 + 3; s.bottom = -H / 2 - 3;
-    s.near = 1; s.far = dist * 4;
-    s.updateProjectionMatrix();
     updateView();
+  }
+
+  // The sun: from the upper left, a little in front. Its shadow map covers only the stretch of shelf in
+  // view (plus what can throw a shadow into it) and moves along with the scroll in whole texels, so the
+  // shadows are fine and don't shimmer.
+  const SUN = new THREE.Vector3(-0.5, 0.78, 0.5).normalize();
+  function lightView(cx, W) {
+    const half = W / SCREEN_PPI / 2 + 12;
+    const texel = 2 * half / sun.shadow.mapSize.x;
+    const x = Math.round(cx / texel) * texel;
+    sun.target.position.set(x, H / 2, -DEPTH / 2);
+    sun.position.copy(sun.target.position).addScaledVector(SUN, 90);
+    sun.target.updateMatrixWorld();
+    const sc = sun.shadow.camera;
+    if (sc.right !== half) {
+      sc.left = -half; sc.right = half;
+      sc.top = 16; sc.bottom = -16;
+      sc.near = 20; sc.far = 170;
+      sc.updateProjectionMatrix();
+    }
   }
 
   // The view follows the horizontal scroll, from a fixed slight top-down angle.
@@ -537,44 +750,283 @@ function main(stage, data, assets) {
     const cx = -unit / 2 + (stage.scrollLeft + W / 2) / SCREEN_PPI;
     camera.position.set(cx, H / 2 + TOP_DOWN * dist, dist);
     camera.lookAt(cx, H / 2, -DEPTH / 2);
+    lightView(cx, W);
+    measureSeen();
+    for (const m of meshes) if (m.userData.open) place(m);   // a taken-out book is held in front of the camera
     placeYearMarks(W);   // year markers follow their books, and stick sideways
     render();
   }
 
-  function render() { renderer.render(scene, camera); }
+  // A book out of the shelf is drawn in a second pass over a cleared depth buffer (layer 1), so it is
+  // always in front: a tall book is held about as far away as the shelf itself, and the shelf's books
+  // cut through it when both were drawn together.
+  const fronts = new Set();
+  function setFront(m, on) {
+    if (!!m.userData.front === on) return;
+    m.userData.front = on;
+    m.traverse((o) => o.layers.set(on ? 1 : 0));
+    if (on) fronts.add(m); else fronts.delete(m);
+  }
+  function render() {
+    camera.layers.set(0);
+    renderer.autoClear = true;
+    renderer.render(scene, camera);
+    if (!fronts.size) return;
+    renderer.autoClear = false;
+    renderer.clearDepth();
+    camera.layers.set(1);
+    renderer.render(scene, camera);
+    renderer.autoClear = true;
+    camera.layers.set(0);
+  }
 
-  function tick() {
+  // Where a book is: in its slot (pushed forward by the hover), or on its way to the viewer (#44).
+  // `open` runs 0 → 1: the book first slides clear of its neighbours, then travels to a spot in front of
+  // the camera while it turns its front cover (the box's +x face) to it.
+  const UP = new THREE.Vector3(0, 1, 0), RIGHT = new THREE.Vector3(1, 0, 0);
+  const posePos = new THREE.Vector3(), poseQuat = new THREE.Quaternion(), dir = new THREE.Vector3();
+  const dq = new THREE.Quaternion(), dq2 = new THREE.Quaternion();
+  const turn = new THREE.Quaternion().setFromAxisAngle(UP, -Math.PI / 2 + OPEN_TURN);
+
+  // The part of the canvas that can be seen: below the page's sticky nav, above the window's bottom edge.
+  // The taken-out book is centred in it and sized to it, so the nav never cuts its top off.
+  // cy: the centre of that part, in the camera's -1…1 from bottom to top; share: its part of the height.
+  const seen = { cy: 0, share: 1 };
+  function measureSeen() {
+    const r = canvas.getBoundingClientRect();
+    const shelfH = r.height - BELOW_PX;   // the shelf itself: the space under it is for turning, the book isn't fitted into it
+    if (shelfH <= 0) return;
+    let top = Math.max(r.top, 0);
+    const nav = document.querySelector('nav.topnav');
+    if (nav && getComputedStyle(nav).position === 'sticky') top = Math.max(top, nav.getBoundingClientRect().bottom);
+    const bottom = Math.min(r.top + shelfH, window.innerHeight);
+    // With the shelf mostly out of sight the book keeps a sensible size, at the edge that is still in view.
+    const h = Math.max(bottom - top, shelfH * 0.4);
+    const mid = Math.min(Math.max((top + bottom) / 2, r.top + h / 2), r.top + shelfH - h / 2);
+    seen.share = h / shelfH;
+    seen.cy = 1 - 2 * (mid - r.top) / shelfH;
+  }
+
+  function place(m) {
+    const u = m.userData, base = u.base;
+    if (!base) return;
+    setFront(m, u.open >= 0.45);   // once it has slid clear of its neighbours
+    if (u.foot) u.foot.visible = u.open < 0.3;   // no shadow on a board it no longer stands on
+    if (!u.open) {
+      m.position.set(base.x, base.y, base.z + u.offset);
+      m.quaternion.identity();
+      return;
+    }
+    const b = data[u.index];
+    const out = ease(Math.min(1, u.open / 0.45));
+    const fly = ease(Math.max(0, (u.open - 0.3) / 0.7));
+    // What has to fit in what can be seen: the tabs standing out of the top and the book, with its card
+    // beside it (bottom right, like a label) or, where the view is too narrow for that, underneath.
+    // The card keeps one size on screen whatever the book's, so its text stays readable.
+    const tan = 2 * Math.tan(camera.fov * Math.PI / 360);
+    const Hpx = H * SCREEN_PPI, Wpx = Hpx * camera.aspect, GAP_PX = 16;
+    const availPx = OPEN_FILL * seen.share * Hpx;
+    const cw = u.card ? u.card.userData.w : 3;
+    const cardPx = Math.min(CARD_SCREEN, 0.9 * Wpx / cw);            // screen pixels per inch of card
+    let ppi = availPx / (TAB_ROOM + b.height);                        // screen pixels per inch of book
+    const side = (b.width + SIDE_ROOM) * ppi + GAP_PX / 2 + cw * cardPx <= 0.94 * Wpx;
+    if (!side) ppi = Math.max(20, Math.min((availPx - GAP_PX - CARD_H * cardPx) / (TAB_ROOM + b.height), 0.9 * Wpx / (b.width + SIDE_ROOM)));
+    // The distance that gives that scale, never nearer than the near plane allows.
+    const d = Math.max(dist * 0.5, Hpx / (ppi * tan));
+    ppi = Hpx / (d * tan);
+    const k = cardPx / ppi, gap = side ? GAP_PX / 2 / ppi + SIDE_ROOM : GAP_PX / ppi;   // beside the book, the card stands clear of the side tabs
+    camera.getWorldDirection(dir);
+    posePos.copy(camera.position).addScaledVector(dir, d);
+    // Up to the centre of what can be seen, corrected for what stands above the book and hangs below it.
+    posePos.addScaledVector(dir.copy(UP).applyQuaternion(camera.quaternion),
+      seen.cy * d * tan / 2 + (side ? -TAB_ROOM : gap + CARD_H * k - TAB_ROOM) / 2);
+    // Book and card are centred as a pair.
+    if (side) posePos.addScaledVector(dir.copy(RIGHT).applyQuaternion(camera.quaternion), -(gap + cw * k) / 2);
+    if (u.card) {
+      u.card.scale.setScalar(k);   // the same size under the pointer: only its frame and underline change (Alexis)
+      if (side) u.card.position.set(b.thickness / 2 - 0.015 * k, -b.height / 2 + CARD_H * k / 2, -(b.width / 2 + gap + cw * k / 2));
+      else u.card.position.set(b.thickness / 2 - 0.015 * k, -b.height / 2 - gap - CARD_H * k / 2, 0);
+      // The card is part of the book: it turns with it under a drag (holding it still was tried; Alexis wants one object).
+    }
+    // The book faces the camera, turned further by however it has been dragged round (spin).
+    poseQuat.copy(camera.quaternion).multiply(u.spin).multiply(turn);
+    m.position.set(base.x, base.y, base.z + Math.max(u.offset, out * (b.width + OPEN_CLEAR))).lerp(posePos, fly);
+    m.quaternion.identity().slerp(poseQuat, fly);
+    if (u.card) for (const mat of u.card.material) mat.opacity = fly;   // the card appears as the book turns
+  }
+
+  // The card that comes out with a book (#44): a paper card under the cover, in the book's own space, so it
+  // moves and turns with it. Title, author, the edition, and the way to its highlights (a click on the card).
+  const pageFont = getComputedStyle(document.body).fontFamily || 'Georgia, serif';
+  const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim() || '#8C4A33';
+  // The link on the card: counts, not a promise to read them. On the book's page only the highlights that
+  // carry a note of mine show their text (the others are scrambled), so "Read my 23 highlights" was wrong.
+  function cardLink(b) {
+    const n = (count, one, many) => `${count} ${count === 1 ? one : many}`;
+    if (!b.highlights) return 'Open its page →';
+    return n(b.highlights, 'highlight', 'highlights') + (b.notes ? ' · ' + n(b.notes, 'note', 'notes') : '') + ' →';
+  }
+  function makeCard(b) {
+    const rows = [
+      { text: spineTitle(b), size: 0.24, color: '#1d1b17', gap: 0.08 },
+      b.author ? { text: b.author, size: 0.17, color: '#4a463e', gap: 0.05 } : null,
+      { text: facts(b), size: 0.145, color: '#7a756a', gap: 0.1 },
+      { text: cardLink(b), size: 0.18, color: accent, gap: 0 },
+    ].filter(Boolean);
+    const probe = canvasOf(8, 8).getContext('2d');
+    let wIn = 3;
+    for (const r of rows) {
+      probe.font = `${r.size * CARD_PPI}px ${pageFont}`;
+      r.w = probe.measureText(r.text).width / CARD_PPI;
+      wIn = Math.max(wIn, r.w + 0.6);
+    }
+    const c = canvasOf(Math.round(wIn * CARD_PPI), Math.round(CARD_H * CARD_PPI));
+    const t = tex(c);
+    t.anisotropy = renderer.capabilities.getMaxAnisotropy();
+    // Painted twice at most: plain, and with the pointer on it (the link underlined, an accent line round
+    // the card), so it reads as something to click.
+    const paint = (hot) => {
+      const x = c.getContext('2d');
+      x.fillStyle = '#fffdf7';
+      x.fillRect(0, 0, c.width, c.height);
+      if (hot) {
+        x.strokeStyle = accent;
+        x.lineWidth = 0.025 * CARD_PPI;
+        x.strokeRect(0.06 * CARD_PPI, 0.06 * CARD_PPI, c.width - 0.12 * CARD_PPI, c.height - 0.12 * CARD_PPI);
+      }
+      x.textAlign = 'center';
+      x.textBaseline = 'middle';
+      const textH = rows.reduce((s, r) => s + r.size * 1.2 + r.gap, 0);
+      let y = (CARD_H - textH) / 2;
+      rows.forEach((r, i) => {
+        x.font = `${r.size * CARD_PPI}px ${pageFont}`;
+        x.fillStyle = r.color;
+        x.fillText(r.text, c.width / 2, (y + r.size * 0.6) * CARD_PPI);
+        if (hot && i === rows.length - 1) x.fillRect(c.width / 2 - r.w * CARD_PPI / 2, (y + r.size * 1.12) * CARD_PPI, r.w * CARD_PPI, Math.max(1, 0.012 * CARD_PPI));
+        y += r.size * 1.2 + r.gap;
+      });
+      t.needsUpdate = true;
+    };
+    paint(false);
+    const paper = new THREE.MeshStandardMaterial({ color: 0xf6f2e6, roughness: 0.9, envMapIntensity: 0.4, transparent: true, opacity: 0 });
+    // Half lit by the scene, half its own paper white: turned away from the light it would go grey and hard to read.
+    const face = new THREE.MeshStandardMaterial({ map: t, color: 0x999999, emissive: 0xffffff, emissiveMap: t, emissiveIntensity: 0.62, roughness: 0.9, envMapIntensity: 0.4, transparent: true, opacity: 0 });
+    // A thin box, its printed face (+x) in the plane of the front cover. place() sizes it and puts it beside or under the book.
+    const card = new THREE.Mesh(new THREE.BoxGeometry(0.03, CARD_H, wIn), [face, paper, paper, paper, paper, paper]);
+    card.userData = { isCard: true, w: wIn, hot: false, paint };
+    return card;
+  }
+  function dropCard(m) {
+    const card = m.userData.card;
+    if (!card) return;
+    m.remove(card);
+    card.geometry.dispose();
+    for (const mat of card.material) { if (mat.map) mat.map.dispose(); mat.dispose(); }
+    m.userData.card = null;
+  }
+
+  // The sticky tabs sway when their book moves (#47): each lags behind the sideways movement of the spot
+  // where it leaves the book (the book's own travel plus its turning), and swings back and settles.
+  // Three springs per book follow the book's speed across its covers and its two turning speeds; a
+  // tab's bend is their sum at its place. Returns whether anything is still moving.
+  const SWAY_K = 110, SWAY_D = 7, SWAY_GAIN = 0.0055, SWAY_MAX = 0.32;
+  const invQ = new THREE.Quaternion(), relQ = new THREE.Quaternion(), moved = new THREE.Vector3();
+  function sway(m, dt) {
+    const u = m.userData;
+    if (!u.flags || !u.flags.length || reduceMotion) return false;
+    const t = Math.max(0.001, dt / 1000);
+    if (!u.sway) u.sway = { pos: m.position.clone(), quat: m.quaternion.clone(), s: [0, 0, 0], v: [0, 0, 0] };
+    const w = u.sway;
+    // The book's speed across its covers (its own x) and how fast it turns about its own y and z.
+    invQ.copy(m.quaternion).invert();
+    moved.copy(m.position).sub(w.pos).applyQuaternion(invQ);
+    relQ.copy(invQ).multiply(w.quat).invert();
+    const sign = relQ.w < 0 ? -1 : 1;
+    const drive = [moved.x / t, sign * 2 * relQ.y / t, sign * 2 * relQ.z / t];
+    w.pos.copy(m.position);
+    w.quat.copy(m.quaternion);
+    let energy = 0;
+    for (let i = 0; i < 3; i++) {
+      w.v[i] += (SWAY_K * (drive[i] - w.s[i]) - SWAY_D * w.v[i]) * t;
+      w.s[i] += w.v[i] * t;
+      energy += Math.abs(w.s[i]) * (i ? 4 : 1) + Math.abs(w.v[i]) * (i ? 0.4 : 0.1);
+    }
+    const b = data[u.index], live = energy > 0.05;
+    for (const f of u.flags) {
+      const p = f.tab.position;
+      const a = live ? SWAY_MAX * Math.tanh(SWAY_GAIN * f.give * (w.s[0] + w.s[1] * p.z - w.s[2] * p.y) / SWAY_MAX) : 0;
+      if (f.atSide) f.tab.rotation.y = a; else f.tab.rotation.z = a;
+    }
+    if (!live && !u.open) u.sway = null;   // settled, back in its slot
+    return live;
+  }
+
+  let last = 0;
+  function tick(now) {
+    const dt = last ? Math.min(50, now - last) : 16;
+    last = now;
     let moving = false;
     for (const m of meshes) {
-      if (!m.userData.base) continue;
-      const d = m.userData.target - m.userData.offset;
+      const u = m.userData;
+      if (!u.base) continue;
+      const d = u.target - u.offset;
       if (Math.abs(d) > 0.005) {
-        m.userData.offset = reduceMotion ? m.userData.target : m.userData.offset + d * 0.25;
+        u.offset = reduceMotion ? u.target : u.offset + d * 0.25;
         moving = true;
       } else {
-        m.userData.offset = m.userData.target;
+        u.offset = u.target;
       }
-      m.position.z = m.userData.base.z + m.userData.offset;
+      if (u.isBook && u.open !== u.openTarget) {
+        const step = reduceMotion ? 1 : dt / OPEN_MS;
+        u.open = u.openTarget > u.open ? Math.min(u.openTarget, u.open + step) : Math.max(u.openTarget, u.open - step);
+        if (!u.open) { dropCard(m); u.spin.identity(); }   // back in its slot: the card is gone, the book stands straight
+        moving = true;
+      }
+      place(m);
+      if (u.isBook && (u.open || u.sway) && sway(m, dt)) moving = true;
     }
     updateView();
     if (moving) requestAnimationFrame(tick);
-    else animating = false;
+    else { animating = false; last = 0; }
   }
   let animating = false;
   function animate() {
     if (!animating) { animating = true; requestAnimationFrame(tick); }
   }
 
-  // Pointer: hover lifts a spine and names the book; a click opens its page;
+  // The taken-out book. While one is out, a sideways touch turns it and an up-down touch still scrolls the page.
+  let opened = null, openedAt = 0;
+  function setOpen(m) {
+    if (m === opened) return;
+    if (opened) opened.userData.openTarget = 0;
+    opened = m;
+    canvas.style.touchAction = m ? 'pan-y' : '';
+    if (m) {
+      m.userData.openTarget = 1;
+      openedAt = stage.scrollLeft;
+      if (!m.userData.card) {
+        m.userData.card = makeCard(data[m.userData.index]);
+        m.add(m.userData.card);
+        m.userData.card.layers.set(m.userData.front ? 1 : 0);
+      }
+    }
+    animate();
+  }
+
+  // Pointer: hover pulls a book half out; a click takes it out of the shelf.
   const ray = new THREE.Raycaster();
+  ray.layers.enable(1);
   const ndc = new THREE.Vector2();
   const canvas = renderer.domElement;
 
+  let onCard = false;   // the last pick landed on a book's card
   function pick(ev) {
     const r = canvas.getBoundingClientRect();
     ndc.set(((ev.clientX - r.left) / r.width) * 2 - 1, -((ev.clientY - r.top) / r.height) * 2 + 1);
     ray.setFromCamera(ndc, camera);
-    const hit = ray.intersectObjects(meshes, true)[0];
+    // The taken-out book is drawn over everything, so it is also hit before everything.
+    const hit = (opened && ray.intersectObject(opened, true)[0]) || ray.intersectObjects(meshes, true)[0];
+    onCard = !!(hit && hit.object.userData.isCard);
     if (!hit) return null;
     let o = hit.object;
     while (o && !o.userData.isBook) o = o.parent;
@@ -586,27 +1038,100 @@ function main(stage, data, assets) {
     if (hovered) hovered.userData.target = 0;
     hovered = m;
     if (m) m.userData.target = SLIDE * data[m.userData.index].width;
-    canvas.style.cursor = m ? 'pointer' : '';
     animate();
   }
 
+  // The pointer on the taken-out book's card: the card shows that it can be clicked.
+  function heat(on) {
+    const card = opened && opened.userData.card;
+    if (!card || card.userData.hot === on) return;
+    card.userData.hot = on;
+    card.userData.paint(on);
+    updateView();
+  }
+
+  // A drag on the taken-out book turns it in the hand (#44): sideways about the view's upright, up and
+  // down about its level, freely, so the tabs, the spine and the back can all be looked at.
+  let drag = null, dragged = false;
+  canvas.addEventListener('pointerdown', (ev) => {
+    dragged = false;
+    if (!opened || ev.button > 0 || pick(ev) !== opened || onCard) return;
+    drag = { id: ev.pointerId, x: ev.clientX, y: ev.clientY, moved: 0 };
+    canvas.setPointerCapture(ev.pointerId);
+    ev.preventDefault();
+  });
+  const endDrag = (ev) => {
+    if (!drag || ev.pointerId !== drag.id) return;
+    drag = null;
+    canvas.style.cursor = '';
+  };
+  canvas.addEventListener('pointerup', endDrag);
+  canvas.addEventListener('pointercancel', endDrag);
+
   canvas.addEventListener('pointermove', (ev) => {
+    if (drag && ev.pointerId === drag.id) {
+      const dx = ev.clientX - drag.x, dy = ev.clientY - drag.y;
+      drag.x = ev.clientX; drag.y = ev.clientY;
+      drag.moved += Math.abs(dx) + Math.abs(dy);
+      if (drag.moved > 4 && opened) {
+        dragged = true;   // the click that ends a drag doesn't put the book back
+        canvas.style.cursor = 'grabbing';
+        dq.setFromAxisAngle(UP, dx * 0.006).multiply(dq2.setFromAxisAngle(RIGHT, dy * 0.006));
+        opened.userData.spin.premultiply(dq).normalize();
+        animate();   // the frame loop places the book and lets its tabs sway
+      }
+      return;
+    }
     if (ev.pointerType === 'touch') return;
-    const r = canvas.getBoundingClientRect();
     // Hover holds while the pointer is still over the hovered book: a book sliding forward can bring a
     // neighbour under the pointer, and switching back and forth between them is the flicker.
     let m = pick(ev);
+    const card = onCard;
     if (hovered && m !== hovered && ray.intersectObject(hovered, true).length) m = hovered;
     hover(m, ev);
+    heat(card && m === opened);
+    // The taken-out book can be grabbed; its card and the books on the shelf are clicked.
+    canvas.style.cursor = !m ? '' : m === opened && !(card && m === opened) ? 'grab' : 'pointer';
     animate();
   });
-  canvas.addEventListener('pointerleave', () => hover(null, {}));
+  canvas.addEventListener('pointerleave', () => { if (!drag) { hover(null, {}); heat(false); canvas.style.cursor = ''; } });
   canvas.addEventListener('click', (ev) => {
+    if (dragged) { dragged = false; return; }
+    // A click takes the book out of the shelf (#44); a click on it again, or anywhere else, puts it back.
+    // A click on its card opens the book's page in a new tab, so the shelf stays where it is.
     const m = pick(ev);
-    // A click opens the book's page in a new tab, so the shelf stays where it is.
-    if (m) window.open(data[m.userData.index].href, '_blank', 'noopener');
+    if (m && m === opened && onCard) { window.open(data[m.userData.index].href, '_blank', 'noopener'); return; }
+    setOpen(m && m !== opened ? m : null);
   });
-  stage.addEventListener('scroll', () => updateView(), { passive: true });
+  document.addEventListener('pointerdown', (ev) => { if (opened && !view.contains(ev.target)) setOpen(null); });
+  // With a book taken out, ← and → put it back and take out its neighbour on the shelf (#44); the shelf
+  // scrolls along when the neighbour's place is near the edge of the view or out of it.
+  let following = 0;   // until this time the shelf is scrolling by itself, which doesn't put the book back
+  function step(by) {
+    let i = opened.userData.index + by;
+    while (meshes[i] && !meshes[i].userData.isBook) i += by;
+    const m = meshes[i];
+    if (!m) return;
+    setOpen(m);
+    const W = view.clientWidth, slot = (m.userData.base.x + unit / 2) * SCREEN_PPI - stage.scrollLeft;
+    if (slot < W * 0.2 || slot > W * 0.8) {
+      following = performance.now() + 1200;
+      stage.scrollTo({ left: slot + stage.scrollLeft - W / 2, behavior: reduceMotion ? 'auto' : 'smooth' });
+    }
+  }
+  document.addEventListener('keydown', (ev) => {
+    if (!opened || ev.metaKey || ev.ctrlKey || ev.altKey) return;
+    if (ev.key === 'Escape') setOpen(null);
+    else if (ev.key === 'ArrowLeft' || ev.key === 'ArrowRight') { ev.preventDefault(); step(ev.key === 'ArrowLeft' ? -1 : 1); }
+  });
+  stage.addEventListener('scroll', () => {
+    // Scrolling on along the shelf puts the book back (a few pixels of trackpad drift don't).
+    if (performance.now() < following) openedAt = stage.scrollLeft;
+    else if (opened && Math.abs(stage.scrollLeft - openedAt) > 24) setOpen(null);
+    updateView();
+  }, { passive: true });
+  // The page scrolling under the nav changes what can be seen of the shelf: the book follows.
+  window.addEventListener('scroll', () => { if (opened) updateView(); }, { passive: true });
 
   let raf = 0;
   const onResize = () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(layout); };

@@ -120,10 +120,10 @@ ul.books .a{font-size:16px;color:var(--ink);} ul.books .m{font-size:14px;color:v
 .book-head img{width:110px;height:auto;flex:none;box-shadow:0 1px 4px rgba(0,0,0,.2);}
 /* The bookshelf (#39): a 3D shelf drawn by shelf.js; the list under it is the same books as text. */
 .shelf-page{position:relative;}
-/* The shelf's height is reserved from the first paint (13.1 in at 50 px per inch, as shelf.js draws it),
+/* The shelf's height is reserved from the first paint (13.1 in at 50 px per inch plus 110 px of open space under the board, as shelf.js draws it),
    so the books appear in place and nothing below moves; the loading line sits in that space. */
 .shelf-loading{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;color:var(--muted);font-size:13px;font-style:italic;pointer-events:none;}
-.shelf-stage{position:relative;margin:30px 0 6px;width:100%;min-height:655px;overflow-x:auto;overflow-y:hidden;}
+.shelf-stage{position:relative;margin:30px 0 6px;width:100%;min-height:765px;overflow-x:auto;overflow-y:hidden;}
 /* Year markers (#40): shelf.js places them along a strip that sticks under the nav while the page scrolls,
    and keeps them at the left edge while sideways scrolling (the next year pushes them out). */
 .shelf-years{position:sticky;top:40px;height:0;z-index:5;}
@@ -140,7 +140,8 @@ ul.books .a{font-size:16px;color:var(--ink);} ul.books .m{font-size:14px;color:v
 .shelf-view{position:sticky;left:0;width:100%;}
 .shelf-track{position:absolute;top:0;left:0;height:1px;}
 .shelf-stage canvas{display:block;}
-.shelf-note{font-size:14px;line-height:1.5;color:var(--muted);margin:14px 0 30px;text-align:center;}
+/* The note stands under the whole canvas, clear of the open space below the board where taken-out books turn (#44). */
+.shelf-note{font-size:14px;line-height:1.5;color:var(--muted);margin:8px 0 30px;text-align:center;}
 ol.shelf-index{list-style:none;padding:0;margin:0 0 28px;}
 ol.shelf-index li{display:flex;flex-direction:column;gap:2px;padding:10px 0;border-bottom:1px solid var(--rule-soft,var(--rule));}
 ol.shelf-index a{color:var(--accent);text-decoration:none;font-size:17px;line-height:1.3;}
