@@ -881,8 +881,11 @@ function wornCover(img, b) {
 // Dispatches. Two maps come of it: the letters' height (softened at their edges, so the light finds a
 // slope there) and their finish (the raised foil is smoother than the board round it). Applied to the
 // material that shows the cover, the title stands proud and catches the light on its own when the book turns.
-const EMBOSS = 18;   // how high the letters read in the light (bump scale; 5 was too weak to be sure of — Alexis)
-function embossOn(mat, mask) {
+const EMBOSS = 12;   // how high the letters read in the light (bump scale; 5 was too weak, 18 a third too strong — Alexis)
+// The letters also STAND proud for real on the book taken off the shelf (embossRelief): seen from the side a
+// bump map alone leaves the cover flat (Alexis). A little more than a real emboss, so it can be seen.
+const EMBOSS_H = 0.02;   // inches
+function embossOn(mat, mask, k = 1) {   // k: this book's share of the full strength (Discworld 1, other fantasy and sci-fi 2/3)
   if (!mask) return;
   try {
     const w = mask.naturalWidth, h = mask.naturalHeight;
@@ -900,12 +903,40 @@ function embossOn(mat, mask) {
     fx.fillStyle = 'rgb(64,64,64)';
     fx.fillRect(0, 0, w, h);
     mat.bumpMap = tex(height, false);
-    mat.bumpScale = EMBOSS;
+    mat.bumpScale = EMBOSS * k;
     mat.roughnessMap = tex(finish, false);
     mat.needsUpdate = true;
+    mat.userData.emboss = { height, w, h, k };   // for the relief of the book taken out
   } catch (err) {
     // a mask that can't be read leaves the cover flat
   }
+}
+
+// The raised lettering as geometry, for ONE book (the one taken out; on the shelf the bump map is enough and
+// 195 such meshes would be millions of vertices): a fine grid over the front cover, pushed out where the
+// letters are, wearing the cover's own picture. Only the letters and their shoulders are drawn (alpha), so
+// the cover underneath stays what it is, with its tears and worn corners.
+function embossRelief(b, mat) {
+  const e = mat.userData.emboss;
+  if (!e) return null;
+  // What is drawn: the letters with a little margin (a wider blur of the same mask, pushed to full).
+  const alpha = canvasOf(e.w, e.h), ax = alpha.getContext('2d');
+  ax.fillStyle = '#000';
+  ax.fillRect(0, 0, e.w, e.h);
+  ax.filter = 'blur(3px) contrast(8) brightness(3)';
+  ax.drawImage(e.height, 0, 0);
+  const nx = Math.min(360, Math.round(e.w / 1.4)), ny = Math.min(540, Math.round(e.h / 1.4));
+  const geo = new THREE.PlaneGeometry(b.width, b.height, nx, ny).rotateY(Math.PI / 2);   // facing +x, its left edge at the spine
+  const relief = new THREE.MeshStandardMaterial({
+    map: mat.map, bumpMap: mat.bumpMap, bumpScale: EMBOSS * e.k, roughnessMap: mat.roughnessMap,
+    roughness: mat.roughness, envMapIntensity: mat.envMapIntensity,
+    displacementMap: mat.bumpMap, displacementScale: EMBOSS_H * e.k,
+    alphaMap: tex(alpha, false), alphaTest: 0.5,
+  });
+  const mesh = new THREE.Mesh(geo, relief);
+  mesh.position.x = b.thickness / 2 + 0.0015;
+  mesh.userData.isRelief = true;
+  return mesh;
 }
 
 // The spine, painted once with its cover strip (null = the plain spine colour).
@@ -1136,13 +1167,14 @@ function main(stage, data, assets) {
       ? new THREE.MeshStandardMaterial({ map: tex(worn.page), roughness: 0.9, envMapIntensity: 0.4 })
       : new THREE.MeshStandardMaterial({ map: tex(worn || asset.img), roughness: matte(b, 0.6), envMapIntensity: sheen(b) });
     if (!sheeted && worn && worn.relief) { front.bumpMap = tex(worn.relief, false); front.bumpScale = RELIEF; }
-    if (asset && !sheeted) embossOn(front, asset.emboss);
+    if (asset && !sheeted) { embossOn(front, asset.emboss, b.embossK || 1); group.userData.coverMat = front; }
     if (sheeted) {
       // The sheet, and under its printed face the white of its board: two layers, so a torn edge has a side.
       const sg = coverSheet(b, radius);
       const face = new THREE.MeshStandardMaterial({ map: tex(worn), alphaTest: 0.5, roughness: matte(b, 0.6), envMapIntensity: sheen(b) });
       if (worn.relief) { face.bumpMap = tex(worn.relief, false); face.bumpScale = RELIEF; }
-      embossOn(face, asset.emboss);
+      embossOn(face, asset.emboss, b.embossK || 1);
+      group.userData.coverMat = face;
       const core = new THREE.MeshStandardMaterial({ map: tex(worn.board), alphaTest: 0.5, roughness: 0.9, envMapIntensity: 0.4 });
       for (const [mat, lift] of [[core, -COVER_T * 0.66], [core, -COVER_T * 0.33], [face, 0]]) {
         const layer = new THREE.Mesh(sg, mat);
@@ -1545,6 +1577,15 @@ function main(stage, data, assets) {
     card.userData = { isCard: true, w: wIn, hot: false, paint };
     return card;
   }
+  function dropRelief(m) {
+    const r = m.userData.relief;
+    if (!r) return;
+    m.remove(r);
+    r.geometry.dispose();
+    r.material.alphaMap.dispose();
+    r.material.dispose();
+    m.userData.relief = null;
+  }
   function dropCard(m) {
     const card = m.userData.card;
     if (!card) return;
@@ -1661,7 +1702,7 @@ function main(stage, data, assets) {
           if (u.open < 0) { u.open = 0; u.openV = 0; }   // home: a book doesn't go through the back of its slot
           if (Math.abs(u.openTarget - u.open) < 0.0012 && Math.abs(u.openV) < 0.015) { u.open = u.openTarget; u.openV = 0; }
         }
-        if (!u.open) { dropCard(m); u.spin.identity(); }   // back in its slot: the card is gone, the book stands straight
+        if (!u.open) { dropCard(m); dropRelief(m); u.spin.identity(); }   // back in its slot: the card is gone, the book stands straight
         moving = true;
       }
       place(m);
@@ -1691,6 +1732,14 @@ function main(stage, data, assets) {
         m.userData.card = makeCard(data[m.userData.index]);
         m.add(m.userData.card);
         m.userData.card.layers.set(m.userData.front ? 1 : 0);
+      }
+      if (!m.userData.relief && m.userData.coverMat) {
+        const relief = embossRelief(data[m.userData.index], m.userData.coverMat);
+        if (relief) {
+          m.userData.relief = relief;
+          m.add(relief);
+          relief.layers.set(m.userData.front ? 1 : 0);
+        }
       }
     }
     animate();
