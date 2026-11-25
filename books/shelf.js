@@ -278,7 +278,7 @@ function rub(x, x0, y0, x1, y1, rw, rh, alpha) {
 // A fold is not a ruled line: it wanders a little on its way up the book, is deeper in some places than in
 // others, and often runs only part of the height. Each is described at FOLD_STEPS + 1 heights, bottom to top:
 // off = how far it has wandered sideways (inches), dep = how deep it is there (0…1).
-const FOLD_STEPS = 30;
+const FOLD_STEPS = 24;
 function foldPath(rnd, w, wander, partial, far) {
   const off = [], dep = [];
   const from = partial && rnd() < 0.4 ? rnd() * 0.35 : -1, to = partial && rnd() < 0.4 ? 1 - rnd() * 0.35 : 2;
@@ -324,6 +324,90 @@ function hingeOf(b) {
   return { z: b.width / 2 - (0.035 + rnd() * 0.02) * b.width, w, ...foldPath(rnd, w, 0.16, false, 1) };
 }
 
+const foldDepth = (b, w) => w * (0.26 + 0.2 * wearOf(b));
+
+// With use the two outer corners of a paperback (top and bottom, at the edge opposite the spine) wear round
+// (#47). The cover takes the knocks from outside, so it is worn further back than the page block under it,
+// whose corners then show past it; and neither is a compass-drawn quarter circle: each corner has its own
+// reach along the edge (z) and up the edge (y). cornerRound: those reaches in inches, for the pages and for
+// the cover, bottom and top. Small: a first version three times this size read as computer graphics.
+const ROUNDS = new Map();
+function cornerRound(b) {
+  if (!ROUNDS.has(b.id)) {
+    const k = wearOf(b), rnd = seeded(b.id + ':round'), most = Math.min(b.width, b.height) * 0.07;
+    const none = k < WEAR_FROM || b.binding === 'hardcover';
+    const one = () => {
+      if (none) return { pages: [0, 0], cover: [0, 0], spine: [0, 0] };
+      const r = Math.min(most, (0.015 + 0.11 * k) * (0.7 + 0.6 * rnd())), more = 1.6 + 0.9 * rnd();
+      const lop = () => 0.8 + 0.45 * rnd();
+      // The two corners at the spine wear too (a book carried in a bag is knocked on every corner), a little
+      // less: the cover wraps round there in one piece, so pages and cover draw in together. They reach as
+      // far up the edge as the pages' outer corner, so the book is built at the same heights for both.
+      const up = r * lop();
+      return { pages: [r * lop(), up], cover: [(r * more + 0.015) * lop(), (r * more + 0.015) * lop()], spine: [r * (0.7 + 0.5 * rnd()), up] };
+    };
+    ROUNDS.set(b.id, { bottom: one(), top: one() });
+  }
+  return ROUNDS.get(b.id);
+}
+// How far an edge has drawn in at height v (0 = bottom, 1 = top): the outer edge of the 'pages' or of the
+// 'cover', or the 'spine' edge:
+// nothing along the edge, a quarter of an ellipse at each worn corner.
+function cornerInset(b, v, part) {
+  const R = cornerRound(b), y = v * b.height;
+  const arc = ([az, ay], e) => (ay > 0 && e < ay ? az * (1 - Math.sqrt(Math.max(0, 1 - ((ay - e) / ay) * ((ay - e) / ay)))) : 0);
+  return Math.max(arc(R.bottom[part], y), arc(R.top[part], b.height - y));
+}
+// The heights a used paperback is built at: the folds' even steps, and closer ones round each worn corner
+// (for the pages' rounding and for the cover's).
+function levelsOf(b) {
+  const R = cornerRound(b), vs = [];
+  for (let j = 0; j <= FOLD_STEPS; j++) vs.push(j / FOLD_STEPS);
+  for (const part of ['pages', 'cover']) for (let i = 0; i <= 6; i++) {
+    const c = 1 - Math.cos((i / 6) * Math.PI / 2);
+    if (R.bottom[part][1]) vs.push((R.bottom[part][1] * c) / b.height);
+    if (R.top[part][1]) vs.push(1 - (R.top[part][1] * c) / b.height);
+  }
+  vs.sort((p, q) => p - q);
+  return vs.filter((v, i) => !i || v - vs[i - 1] > 1e-4);
+}
+// A fold's value (off or dep, given at the even steps) at any height.
+function foldAt(list, v) {
+  const f = Math.max(0, Math.min(FOLD_STEPS, v * FOLD_STEPS)), j = Math.min(FOLD_STEPS - 1, Math.floor(f));
+  return list[j] + (list[j + 1] - list[j]) * (f - j);
+}
+const COVER_T = 0.028;   // a paperback's cover board, inches (a little more than real, so its edge can be seen)
+
+// A used paperback's front cover as its own sheet (#47): it lies on the page block's +x face from the flat
+// beside the spine corner to the outer edge, and dips into the hinge fold with the body under it. Its
+// picture has holes where the cover is torn or ripped (alpha), so the first page really is underneath.
+function coverSheet(b, r) {
+  const t = b.thickness, d = b.width, h = b.height, hg = hingeOf(b);
+  const hinged = hg.z + hg.w / 2 + hg.reach < d / 2 - r - 0.005;
+  const pos = [], uv = [], index = [], COLS = 8;
+  let cols = 0;
+  const vs = levelsOf(b);
+  for (const v of vs) {
+    const y = -h / 2 + h * v, hz = hg.z + foldAt(hg.off, v);
+    const row = [[d / 2 - r - cornerInset(b, v, 'spine'), 0]];
+    if (hinged) row.push([hz + hg.w / 2, 0], [hz, foldDepth(b, hg.w) * 0.8 * foldAt(hg.dep, v)], [hz - hg.w / 2, 0]);
+    const z0 = row[row.length - 1][0], zEnd = -d / 2 + cornerInset(b, v, 'cover');   // the outer edge, drawn in at a worn corner
+    for (let i = 1; i <= COLS; i++) row.push([z0 + (zEnd - z0) * (i / COLS), 0]);
+    cols = row.length;
+    for (const [z, dip] of row) { pos.push(t / 2 - dip, y, z); uv.push((d / 2 - z) / d, v); }
+  }
+  for (let j = 0; j < vs.length - 1; j++) for (let i = 0; i < cols - 1; i++) {
+    const a = j * cols + i, c = a + cols;
+    index.push(a, a + 1, c, a + 1, c + 1, c);   // facing +x: z falls along a row, y rises row by row
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  geo.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
+  geo.setIndex(index);
+  geo.computeVertexNormals();
+  return geo;
+}
+
 // The body of a creased paperback: its outline seen from above (thickness × depth, the two spine corners
 // rounded) with each fold cut into it as a shallow V, built up slice by slice to the book's height, the
 // folds wandering and deepening as foldPath says. So a crease is a real, irregular groove: the light shades
@@ -331,36 +415,39 @@ function hingeOf(b) {
 // Faces and UVs match the box it replaces: +x front, -x back, +y, -y, +z spine, -z.
 function creasedBlock(b, r) {
   const t = b.thickness, d = b.width, h = b.height, k = wearOf(b);
-  const depth = (w) => w * (0.26 + 0.2 * k);
+  const depth = (w) => foldDepth(b, w);
   const creases = creasesOf(b), hg = hingeOf(b);
   const hinged = hg.z + hg.w / 2 + hg.reach < d / 2 - r - 0.005;
   // The outline at one height (j), clockwise seen from above: along the spine, down the front cover, the outer
   // edge, up the back cover. Every height has the same points, so the slices join up. `fixed` points don't move.
-  const outline = (j) => {
+  const vs = levelsOf(b), L = vs.length - 1, rounded = cornerRound(b).top.pages[1] > 0 || cornerRound(b).bottom.pages[1] > 0;
+  const outline = (v) => {
     const pts = [];
     const add = (x, z, smooth, fixed) => pts.push({ x, z, smooth: !!smooth, fixed: fixed !== false });
-    add(-t / 2 + r, d / 2);
+    const sz = d / 2 - cornerInset(b, v, 'spine');   // the spine, drawn in at its worn head and tail
+    add(-t / 2 + r, sz, false, !rounded);
     for (const cr of creases) {
-      const cx = cr.x + cr.off[j];
-      add(cx - cr.w / 2, d / 2, false, false); add(cx, d / 2 - depth(cr.w) * cr.dep[j], false, false); add(cx + cr.w / 2, d / 2, false, false);
+      const cx = cr.x + foldAt(cr.off, v);
+      add(cx - cr.w / 2, sz, false, false); add(cx, sz - depth(cr.w) * foldAt(cr.dep, v), false, false); add(cx + cr.w / 2, sz, false, false);
     }
-    add(t / 2 - r, d / 2);
-    for (let i = 1; i < 6; i++) { const a = (i / 6) * Math.PI / 2; add(t / 2 - r + r * Math.sin(a), d / 2 - r + r * Math.cos(a), true); }
-    add(t / 2, d / 2 - r);
+    add(t / 2 - r, sz, false, !rounded);
+    for (let i = 1; i < 6; i++) { const a = (i / 6) * Math.PI / 2; pts.push({ x: t / 2 - r + r * Math.sin(a), z: sz - r + r * Math.cos(a), smooth: true, fixed: !rounded }); }
+    add(t / 2, sz - r, false, !rounded);
     if (hinged) {
-      const hz = hg.z + hg.off[j];
-      add(t / 2, hz + hg.w / 2, false, false); add(t / 2 - depth(hg.w) * 0.8 * hg.dep[j], hz, false, false); add(t / 2, hz - hg.w / 2, false, false);
+      const hz = hg.z + foldAt(hg.off, v);
+      add(t / 2, hz + hg.w / 2, false, false); add(t / 2 - depth(hg.w) * 0.8 * foldAt(hg.dep, v), hz, false, false); add(t / 2, hz - hg.w / 2, false, false);
     }
-    add(t / 2, -d / 2);
-    add(-t / 2, -d / 2);   // the back cover is folded back less often: it stays flat
-    add(-t / 2, d / 2 - r);
-    for (let i = 1; i < 6; i++) { const a = (i / 6) * Math.PI / 2; add(-t / 2 + r - r * Math.cos(a), d / 2 - r + r * Math.sin(a), true); }
+    // The outer edge draws in where a corner has worn round (so its two ends move from height to height).
+    const zEnd = -d / 2 + cornerInset(b, v, 'pages');
+    add(t / 2, zEnd, false, !rounded);
+    add(-t / 2, zEnd, false, !rounded);   // the back cover is folded back less often: it stays flat
+    add(-t / 2, sz - r, false, !rounded);
+    for (let i = 1; i < 6; i++) { const a = (i / 6) * Math.PI / 2; pts.push({ x: -t / 2 + r - r * Math.cos(a), z: sz - r + r * Math.sin(a), smooth: true, fixed: !rounded }); }
     return pts;
   };
-  const rings = [];
-  for (let j = 0; j <= FOLD_STEPS; j++) rings.push(outline(j));
+  const rings = vs.map(outline);
   const base = rings[0], n = base.length;
-  const yOf = (j) => -h / 2 + (h * j) / FOLD_STEPS;
+  const yOf = (j) => -h / 2 + h * vs[j];
 
   const pos = [], nor = [], uv = [], tris = [[], [], [], [], [], []];
   const vert = (x, y, z, nx, ny, nz, u, v) => { pos.push(x, y, z); nor.push(nx, ny, nz); uv.push(u, v); return pos.length / 3 - 1; };
@@ -386,26 +473,28 @@ function creasedBlock(b, r) {
       const o = segN[(j - 1 + n) % n], m = segN[j], l = Math.hypot(o[0] + m[0], o[1] + m[1]) || 1;
       return [(o[0] + m[0]) / l, (o[1] + m[1]) / l];
     };
-    for (let j = 0; j < FOLD_STEPS; j += still ? FOLD_STEPS : 1) {
-      const j2 = still ? FOLD_STEPS : j + 1;
+    for (let j = 0; j < L; j += still ? L : 1) {
+      const j2 = still ? L : j + 1;
       const p0 = rings[j][i], q0 = rings[j][i2], p1 = rings[j2][i], q1 = rings[j2][i2], y0 = yOf(j), y1 = yOf(j2);
-      let np = cornerN(i), nq = cornerN(i2), ny = 0;
+      // Each end's normal: across the rounded spine corner the shared, smooth one; anywhere else on a
+      // piece that changes with height, the piece's own (across its two diagonals, turned outward).
+      let np = [cornerN(i)[0], 0, cornerN(i)[1]], nq = [cornerN(i2)[0], 0, cornerN(i2)[1]];
       if (!still) {
-        // This piece's own normal: across its two diagonals, turned outward.
         const ax = q1.x - p0.x, ay = y1 - y0, az = q1.z - p0.z, bx = p1.x - q0.x, by = y1 - y0, bz = p1.z - q0.z;
         let nx = ay * bz - az * by, nyy = az * bx - ax * bz, nz = ax * by - ay * bx;
         const l = Math.hypot(nx, nyy, nz) || 1, flip = nx * sn[0] + nz * sn[1] < 0 ? -1 : 1;
-        nx *= flip / l; nyy *= flip / l; nz *= flip / l;
-        np = nq = [nx, nz]; ny = nyy;
+        const own = [nx * flip / l, nyy * flip / l, nz * flip / l];
+        if (!base[i].smooth) np = own;
+        if (!base[i2].smooth) nq = own;
       }
-      const a = vert(p0.x, y0, p0.z, np[0], ny, np[1], uOf(f, p0), j / FOLD_STEPS), b2 = vert(q0.x, y0, q0.z, nq[0], ny, nq[1], uOf(f, q0), j / FOLD_STEPS);
-      const c = vert(q1.x, y1, q1.z, nq[0], ny, nq[1], uOf(f, q1), j2 / FOLD_STEPS), e = vert(p1.x, y1, p1.z, np[0], ny, np[1], uOf(f, p1), j2 / FOLD_STEPS);
+      const a = vert(p0.x, y0, p0.z, np[0], np[1], np[2], uOf(f, p0), vs[j]), b2 = vert(q0.x, y0, q0.z, nq[0], nq[1], nq[2], uOf(f, q0), vs[j]);
+      const c = vert(q1.x, y1, q1.z, nq[0], nq[1], nq[2], uOf(f, q1), vs[j2]), e = vert(p1.x, y1, p1.z, np[0], np[1], np[2], uOf(f, p1), vs[j2]);
       tri(f, a, b2, c, [sn[0], 0, sn[1]]);
       tri(f, a, c, e, [sn[0], 0, sn[1]]);
     }
   }
   // The top and the bottom: the outline at that height, so the page block's cut follows every fold that reaches it.
-  for (const [f, j, ny] of [[2, FOLD_STEPS, 1], [3, 0, -1]]) {
+  for (const [f, j, ny] of [[2, L, 1], [3, 0, -1]]) {
     const ring = rings[j];
     const flat = THREE.ShapeUtils.triangulateShape(ring.map((p) => new THREE.Vector2(p.x, p.z)), []);
     const at = ring.map((p) => vert(p.x, yOf(j), p.z, 0, ny, 0, (p.x + t / 2) / t, (p.z + d / 2) / d));
@@ -496,6 +585,18 @@ function wornCover(img, b) {
     const x = c.getContext('2d');
     x.drawImage(img, 0, 0, W, H);
     const rnd = seeded(b.id + ':cover');
+    // What lies under the cover: the first page, with the cover's own print only on the strip that wraps
+    // the rounded spine corner (that strip of the body is not under the sheet). Paperbacks only.
+    const holes = [];
+    const pageC = canvasOf(W, H), page = pageC.getContext('2d');
+    page.fillStyle = '#efe6d0';
+    page.fillRect(0, 0, W, H);
+    for (let i = 0; i < 900; i++) {
+      page.fillStyle = rnd() < 0.5 ? 'rgba(255,255,255,0.05)' : 'rgba(90,70,40,0.04)';
+      page.fillRect(rnd() * W, rnd() * H, 2, 2);
+    }
+    const wrap = Math.ceil((spineRadius(b) + 0.03) / b.width * W);
+    page.drawImage(img, 0, 0, wrap / s, img.naturalHeight, 0, 0, wrap, H);
     // A fold in the cover: relief in the height map, and in the colour only a faint line of lost print.
     const line = (pts, lw, a) => {
       x.beginPath();
@@ -518,9 +619,90 @@ function wornCover(img, b) {
         x.lineWidth = Math.max(1, W * 0.006);
         x.stroke();
       }
-      if (k > 0.6) {
-        const cut = W * (0.1 + 0.12 * rnd());   // a bent corner, top right
-        line([[W - cut, 0], [W, cut * (0.8 + 0.5 * rnd())]], Math.max(1, W * 0.004), 0.5 * k);
+      // The two outer corners (top right, bottom right) each take their own damage, more likely and larger the
+      // more the book was handled: a crease (sometimes two) or a corner torn off.
+      // The cover is its own sheet above the page block (coverSheet), so what is torn or ripped away is CUT OUT
+      // of this canvas (holes, applied last) and the first page shows through from underneath, with the
+      // cover's shadow on it. Its own random run, so the rest of the cover's wear stays where it was.
+      const cr = seeded(b.id + ':corners');
+      const lw = Math.max(1, W * 0.004), inch = W / b.width;
+      const path = (ctx, pts, close) => {
+        ctx.beginPath();
+        pts.forEach(([qx, qy], j) => (j ? ctx.lineTo(qx, qy) : ctx.moveTo(qx, qy)));
+        if (close) ctx.closePath();
+      };
+      // Where the cover is gone: the hole, and the torn edge that throws a shadow on the page under it.
+      const tearOut = (hole, edge, shade) => {
+        holes.push(hole);
+        page.save();
+        path(page, hole, true);
+        page.clip();
+        path(page, edge, false);
+        page.lineJoin = 'round';
+        for (const [wd, a] of [[shade * 2.4, 0.10], [shade * 1.3, 0.14], [shade * 0.5, 0.2]]) {
+          page.strokeStyle = `rgba(30,22,10,${a})`;
+          page.lineWidth = wd;
+          page.stroke();
+        }
+        page.restore();
+      };
+      // The exposed board along a torn edge: where the printed surface came away with the piece, a pale band of
+      // uneven width on the cover's side of the tear.
+      const boardRim = (edge, wide) => {
+        for (let j = 0; j < edge.length - 1; j++) {
+          path(x, [edge[j], edge[j + 1]], false);
+          x.strokeStyle = 'rgba(248,244,234,0.95)';
+          x.lineCap = 'round';
+          x.lineWidth = wide * (0.5 + cr());
+          x.stroke();
+        }
+      };
+      for (const [cx, cy, sy] of [[W, 0, 1], [W, H, -1]]) {
+        const roll = cr();
+        if (roll > 0.25 + 0.75 * k) continue;   // this corner got away
+        const kind = cr(), size = W * (0.05 + 0.2 * cr() * (0.4 + 0.6 * k));
+        const a = size * (0.7 + 0.6 * cr()), bb = size * (0.7 + 0.6 * cr());
+        const A = [cx - a, cy], B = [cx, cy + sy * bb];
+        // Only a tear is drawn. Folded-over corners (a painted flap) and corner creases (a bump-mapped line)
+        // both looked fake to Alexis and were taken out; the rounding of the corner itself (cornerRound) is
+        // what shows ordinary use.
+        if (kind < 0.75 || k < 0.45) continue;
+        {
+          // Torn off. Paper tears in a sweep, not a zigzag: one bowed line from edge to edge, with the fine
+          // raggedness of fibres along it.
+          const s2 = Math.min(Math.max(a, bb), W * 0.14);
+          const P = [cx - s2 * (0.7 + 0.5 * cr()), cy], Q = [cx, cy + sy * s2 * (0.7 + 0.5 * cr())];
+          const bow = 0.3 + 0.5 * cr();   // how far the sweep bows in towards the corner
+          const ph1 = cr() * 6.3, ph2 = cr() * 6.3, wav = inch * (0.02 + 0.03 * cr());
+          const C = [P[0] + (cx - P[0]) * bow, Q[1] + (cy - Q[1]) * bow];
+          const edge = [];
+          for (let i = 0, n = 34; i <= n; i++) {
+            // On the sweep: a slow waver (the tear changing its mind) and the fine raggedness of the fibres.
+            const t = i / n, u = 1 - t, f = i && i < n ? wav * (Math.sin(t * 9 + ph1) + 0.6 * Math.sin(t * 21 + ph2)) * Math.sin(t * Math.PI) + (cr() - 0.5) * inch * 0.028 : 0;
+            edge.push([u * u * P[0] + 2 * u * t * C[0] + t * t * Q[0] + f, u * u * P[1] + 2 * u * t * C[1] + t * t * Q[1] + f]);
+          }
+          boardRim(edge, inch * 0.08);
+          tearOut([[cx, cy], ...edge], edge, inch * 0.06);
+        }
+      }
+      // A rip: in from an edge, nearly straight across the grain with a slight curve, open at the edge and
+      // closing to nothing. Few of them; most covers have none.
+      for (let i = 0, n = k > 0.45 ? Math.floor(cr() * 2.3 * k) : 0; i < n; i++) {
+        const side = cr(), len = inch * (0.18 + 0.4 * cr()), mouth = Math.max(1.6, inch * 0.016);
+        const from = side < 0.6 ? [W, H * (0.15 + 0.7 * cr())] : [W * (0.3 + 0.6 * cr()), side < 0.8 ? 0 : H];
+        const ang = (cr() - 0.5) * 0.5, base = side < 0.6 ? Math.PI : side < 0.8 ? Math.PI / 2 : -Math.PI / 2;
+        const dx = Math.cos(base + ang), dy = Math.sin(base + ang), bend = (cr() - 0.5) * len * 0.22;
+        const mid = [], left = [], right = [];
+        for (let j = 0, m = 12; j <= m; j++) {
+          const t = j / m, off = bend * Math.sin(t * Math.PI * 0.8) + (j ? (cr() - 0.5) * inch * 0.008 : 0), half = mouth / 2 * (1 - t);
+          const px = from[0] + dx * len * t - dy * off, py = from[1] + dy * len * t + dx * off;
+          mid.push([px, py]); left.push([px - dy * half, py + dx * half]); right.push([px + dy * half, py - dx * half]);
+        }
+        path(x, left, false);
+        x.strokeStyle = 'rgba(248,244,234,0.7)';
+        x.lineWidth = Math.max(1, inch * 0.01);
+        x.stroke();
+        tearOut([...left, ...right.reverse()], mid, inch * 0.02);
       }
     }
     const e = W * 0.03 * (0.5 + k);
@@ -542,6 +724,23 @@ function wornCover(img, b) {
       x.fillStyle = `rgba(250,246,236,${0.2 + rnd() * 0.45})`;
       x.fillRect(sx, sy, 1 + rnd() * 2.5, 1 + rnd() * 2.5);
     }
+    // Last, the holes: cut out of the cover and out of the white board that shows at its torn edges.
+    const boardC = canvasOf(W, H), board = boardC.getContext('2d');
+    board.fillStyle = '#f4f0e6';
+    board.fillRect(0, 0, W, H);
+    for (const ctx of [x, board]) {
+      ctx.globalCompositeOperation = 'destination-out';
+      for (const hole of holes) {
+        ctx.beginPath();
+        hole.forEach(([qx, qy], j) => (j ? ctx.lineTo(qx, qy) : ctx.moveTo(qx, qy)));
+        ctx.closePath();
+        ctx.fillStyle = '#000';
+        ctx.fill();
+      }
+      ctx.globalCompositeOperation = 'source-over';
+    }
+    c.page = pageC;
+    c.board = boardC;
     return c;
   } catch (err) {
     return null;   // a cover that can't be read stays as it is
@@ -699,10 +898,28 @@ function main(stage, data, assets) {
     // More segments round the corners more smoothly: with 4, each corner is a few flat facets whose
     // normals catch the light in alternating bands, which read as dashed seams while the view moves.
     // A paperback with creases gets its own body, the folds cut into it (#47); every other book is a rounded box.
-    const geo = creasesOf(b).length ? creasedBlock(b, radius) : new RoundedBoxGeometry(b.thickness, b.height, b.width, 4, radius);
+    const used = !hard && wearOf(b) >= WEAR_FROM;   // a paperback that shows its use: its own body, its cover a sheet on it
+    const geo = used ? creasedBlock(b, radius) : new RoundedBoxGeometry(b.thickness, b.height, b.width, 4, radius);
     const worn = asset ? wornCover(asset.img, b) : null;
-    const front = asset ? new THREE.MeshStandardMaterial({ map: tex(worn || asset.img), roughness: 0.6, envMapIntensity: 0.5 }) : cover;
-    if (worn && worn.relief) { front.bumpMap = tex(worn.relief, false); front.bumpScale = RELIEF; }
+    const sheeted = used && worn && worn.page;
+    // Under a cover sheet the body's front is the first page; otherwise it carries the cover itself.
+    const front = !asset ? cover : sheeted
+      ? new THREE.MeshStandardMaterial({ map: tex(worn.page), roughness: 0.9, envMapIntensity: 0.4 })
+      : new THREE.MeshStandardMaterial({ map: tex(worn || asset.img), roughness: 0.6, envMapIntensity: 0.5 });
+    if (!sheeted && worn && worn.relief) { front.bumpMap = tex(worn.relief, false); front.bumpScale = RELIEF; }
+    if (sheeted) {
+      // The sheet, and under its printed face the white of its board: two layers, so a torn edge has a side.
+      const sg = coverSheet(b, radius);
+      const face = new THREE.MeshStandardMaterial({ map: tex(worn), alphaTest: 0.5, roughness: 0.6, envMapIntensity: 0.5 });
+      if (worn.relief) { face.bumpMap = tex(worn.relief, false); face.bumpScale = RELIEF; }
+      const core = new THREE.MeshStandardMaterial({ map: tex(worn.board), alphaTest: 0.5, roughness: 0.9, envMapIntensity: 0.4 });
+      for (const [mat, lift] of [[core, COVER_T * 0.35], [core, COVER_T * 0.7], [face, COVER_T]]) {
+        const layer = new THREE.Mesh(sg, mat);
+        layer.position.x = lift;
+        layer.receiveShadow = true;
+        group.add(layer);
+      }
+    }
     const pg = pagesOf(b);
     // The top, the bottom and the edge opposite the spine show the page block (#44: taken out and turned,
     // the far edge read as a second spine while it was painted like the cover); the back is plain cover.
@@ -748,7 +965,9 @@ function main(stage, data, assets) {
       tab.rotation.x = (rnd() - 0.5) * 0.2;
       tab.castShadow = true;
       group.add(tab);
-      flags.push({ tab, atSide, give: (0.6 + rnd() * 0.8) * (tabH / 0.55) });   // longer tabs bend further
+      const flag = { tab, atSide, owner: group, give: (0.6 + rnd() * 0.8) * (tabH / 0.55), sw: 0, a: 0, v: 0 };   // longer tabs bend further
+      tab.userData.flag = flag;
+      flags.push(flag);
     }
     group.userData.flags = flags;
     scene.add(group);
@@ -1122,10 +1341,51 @@ function main(stage, data, assets) {
     for (const f of u.flags) {
       const p = f.tab.position;
       const a = live ? SWAY_MAX * Math.tanh(SWAY_GAIN * f.give * (w.s[0] + w.s[1] * p.z - w.s[2] * p.y) / SWAY_MAX) : 0;
-      if (f.atSide) f.tab.rotation.y = a; else f.tab.rotation.z = a;
+      f.sw = a;
+      if (f.atSide) f.tab.rotation.y = a + f.a; else f.tab.rotation.z = a + f.a;
     }
     if (!live && !u.open) u.sway = null;   // settled, back in its slot
     return live;
+  }
+
+  // A pointer passing through the sticky tabs flicks them, as a finger would (#47): the tab under it and
+  // its close neighbours on the same book are pushed the way the pointer is going and swing back.
+  const brushed = new Set();
+  const axisX = new THREE.Vector3(), camRight = new THREE.Vector3(), camUp = new THREE.Vector3();
+  function brush(hits, dx, dy) {
+    if (reduceMotion || (!dx && !dy)) return;
+    camRight.set(1, 0, 0).applyQuaternion(camera.quaternion);
+    camUp.set(0, 1, 0).applyQuaternion(camera.quaternion);
+    let touched = 0;
+    for (const hit of hits) {
+      const f = hit.object.userData.flag;
+      if (!f) { if (hit.object.userData.isCard) continue; break; }   // the pointer is on the book behind: no further
+      // A tab bends across its face, along its book's thickness: how much of the pointer's move goes that way.
+      axisX.set(1, 0, 0).applyQuaternion(f.owner.quaternion);
+      const rx = axisX.dot(camRight), ux = axisX.dot(camUp);
+      const push = Math.abs(rx) + Math.abs(ux) < 0.35 ? dx * 0.35 : dx * rx - dy * ux;
+      const kick = Math.max(-5, Math.min(5, -push * 0.16));
+      const p = f.tab.position;
+      for (const g of f.owner.userData.flags) {
+        if (g.atSide !== f.atSide) continue;
+        const q = g.tab.position, far = Math.hypot(q.x - p.x, q.y - p.y, q.z - p.z);
+        if (far > 0.35) continue;
+        g.v = Math.max(-6, Math.min(6, g.v + kick * (1 - far / 0.35) * Math.min(1.4, g.give)));
+        brushed.add(g);
+      }
+      if (++touched >= 4) break;
+    }
+    if (brushed.size) animate();
+  }
+  function swing(dt) {
+    const t = Math.max(0.001, dt / 1000);
+    for (const f of brushed) {
+      f.v += (-150 * f.a - 4.5 * f.v) * t;
+      f.a = Math.max(-0.6, Math.min(0.6, f.a + f.v * t));
+      if (Math.abs(f.a) < 0.004 && Math.abs(f.v) < 0.05) { f.a = 0; f.v = 0; brushed.delete(f); }
+      if (f.atSide) f.tab.rotation.y = f.sw + f.a; else f.tab.rotation.z = f.sw + f.a;
+    }
+    return brushed.size > 0;
   }
 
   let last = 0;
@@ -1164,6 +1424,7 @@ function main(stage, data, assets) {
       place(m);
       if (u.isBook && (u.open || u.sway) && sway(m, dt)) moving = true;
     }
+    if (swing(dt)) moving = true;
     updateView();
     if (moving) requestAnimationFrame(tick);
     else { animating = false; last = 0; }
@@ -1199,12 +1460,16 @@ function main(stage, data, assets) {
   const canvas = renderer.domElement;
 
   let onCard = false;   // the last pick landed on a book's card
+  let under = [];       // everything the last pick's ray went through, nearest first
   function pick(ev) {
     const r = canvas.getBoundingClientRect();
     ndc.set(((ev.clientX - r.left) / r.width) * 2 - 1, -((ev.clientY - r.top) / r.height) * 2 + 1);
     ray.setFromCamera(ndc, camera);
     // The taken-out book is drawn over everything, so it is also hit before everything.
-    const hit = (opened && ray.intersectObject(opened, true)[0]) || ray.intersectObjects(meshes, true)[0];
+    let hits = opened ? ray.intersectObject(opened, true) : [];
+    if (!hits.length) hits = ray.intersectObjects(meshes, true);
+    under = hits;
+    const hit = hits[0];
     onCard = !!(hit && hit.object.userData.isCard);
     if (!hit) return null;
     let o = hit.object;
@@ -1265,6 +1530,7 @@ function main(stage, data, assets) {
     // Hover holds while the pointer is still over the hovered book: a book sliding forward can bring a
     // neighbour under the pointer, and switching back and forth between them is the flicker.
     let m = pick(ev);
+    brush(under, ev.movementX || 0, ev.movementY || 0);
     const card = onCard;
     if (hovered && m !== hovered && ray.intersectObject(hovered, true).length) m = hovered;
     hover(m, ev);
