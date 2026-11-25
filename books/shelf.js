@@ -340,11 +340,9 @@ function cornerRound(b) {
       if (none) return { pages: [0, 0], cover: [0, 0], spine: [0, 0] };
       const r = Math.min(most, (0.015 + 0.11 * k) * (0.7 + 0.6 * rnd())), more = 1.6 + 0.9 * rnd();
       const lop = () => 0.8 + 0.45 * rnd();
-      // The two corners at the spine wear too (a book carried in a bag is knocked on every corner), a little
-      // less: the cover wraps round there in one piece, so pages and cover draw in together. They reach as
-      // far up the edge as the pages' outer corner, so the book is built at the same heights for both.
-      const up = r * lop();
-      return { pages: [r * lop(), up], cover: [(r * more + 0.015) * lop(), (r * more + 0.015) * lop()], spine: [r * (0.7 + 0.5 * rnd()), up] };
+      // The spine's head and tail stay STRAIGHT: the spine is a glued block, it does not wear round (rounding
+      // them was tried on Alexis's word and taken back by him as physically wrong). Only the outer corners do.
+      return { pages: [r * lop(), r * lop()], cover: [(r * more + 0.015) * lop(), (r * more + 0.015) * lop()], spine: [0, 0] };
     };
     ROUNDS.set(b.id, { bottom: one(), top: one() });
   }
@@ -389,10 +387,10 @@ function coverSheet(b, r) {
   const vs = levelsOf(b);
   for (const v of vs) {
     const y = -h / 2 + h * v, hz = hg.z + foldAt(hg.off, v);
-    // At the spine the sheet runs down INTO the body (its printed face meets the surface, its board goes under
-    // it): the cover is one piece with the spine there. Left standing off, its edge read as a separate cover.
-    const zs = d / 2 - r - cornerInset(b, v, 'spine');
-    const row = [[zs, COVER_T], [zs - 0.05, 0]];
+    // The sheet starts exactly where the spine's rounded corner ends, at the same height: spine, corner and
+    // front cover are one continuous surface, as on a real book (the page block is set back under the sheet,
+    // see creasedBlock's `recess`). Standing off the body, or dipping into it, its edge read as a break.
+    const row = [[d / 2 - r - cornerInset(b, v, 'spine'), 0]];
     if (hinged) row.push([hz + hg.w / 2, 0], [hz, foldDepth(b, hg.w) * 0.8 * foldAt(hg.dep, v)], [hz - hg.w / 2, 0]);
     const z0 = row[row.length - 1][0], zEnd = -d / 2 + cornerInset(b, v, 'cover');   // the outer edge, drawn in at a worn corner
     for (let i = 1; i <= COLS; i++) row.push([z0 + (zEnd - z0) * (i / COLS), 0]);
@@ -416,7 +414,7 @@ function coverSheet(b, r) {
 // folds wandering and deepening as foldPath says. So a crease is a real, irregular groove: the light shades
 // its walls, it notches the top and bottom edges where it reaches them, and the page block's cut follows it.
 // Faces and UVs match the box it replaces: +x front, -x back, +y, -y, +z spine, -z.
-function creasedBlock(b, r) {
+function creasedBlock(b, r, recess = 0) {
   const t = b.thickness, d = b.width, h = b.height, k = wearOf(b);
   const depth = (w) => foldDepth(b, w);
   const creases = creasesOf(b), hg = hingeOf(b);
@@ -436,13 +434,17 @@ function creasedBlock(b, r) {
     add(t / 2 - r, sz, false, !rounded);
     for (let i = 1; i < 6; i++) { const a = (i / 6) * Math.PI / 2; pts.push({ x: t / 2 - r + r * Math.sin(a), z: sz - r + r * Math.cos(a), smooth: true, fixed: !rounded }); }
     add(t / 2, sz - r, false, !rounded);
+    // Under a cover sheet the page block's front is set back by the cover's thickness (`recess`), from the end
+    // of the spine corner on: the sheet lies in that step, flush with the corner.
+    const fx = t / 2 - recess;
+    if (recess) add(fx, sz - r - 0.002, false, !rounded);
     if (hinged) {
       const hz = hg.z + foldAt(hg.off, v);
-      add(t / 2, hz + hg.w / 2, false, false); add(t / 2 - depth(hg.w) * 0.8 * foldAt(hg.dep, v), hz, false, false); add(t / 2, hz - hg.w / 2, false, false);
+      add(fx, hz + hg.w / 2, false, false); add(fx - depth(hg.w) * 0.8 * foldAt(hg.dep, v), hz, false, false); add(fx, hz - hg.w / 2, false, false);
     }
     // The outer edge draws in where a corner has worn round (so its two ends move from height to height).
     const zEnd = -d / 2 + cornerInset(b, v, 'pages');
-    add(t / 2, zEnd, false, !rounded);
+    add(fx, zEnd, false, !rounded);
     add(-t / 2, zEnd, false, !rounded);   // the back cover is folded back less often: it stays flat
     add(-t / 2, sz - r, false, !rounded);
     for (let i = 1; i < 6; i++) { const a = (i / 6) * Math.PI / 2; pts.push({ x: -t / 2 + r - r * Math.cos(a), z: sz - r + r * Math.sin(a), smooth: true, fixed: !rounded }); }
@@ -957,9 +959,9 @@ function main(stage, data, assets) {
     // normals catch the light in alternating bands, which read as dashed seams while the view moves.
     // A paperback with creases gets its own body, the folds cut into it (#47); every other book is a rounded box.
     const used = !hard && wearOf(b) >= WEAR_FROM;   // a paperback that shows its use: its own body, its cover a sheet on it
-    const geo = used ? creasedBlock(b, radius) : new RoundedBoxGeometry(b.thickness, b.height, b.width, 4, radius);
     const worn = asset ? wornCover(asset.img, b) : null;
     const sheeted = used && worn && worn.page;
+    const geo = used ? creasedBlock(b, radius, sheeted ? COVER_T : 0) : new RoundedBoxGeometry(b.thickness, b.height, b.width, 4, radius);
     // Under a cover sheet the body's front is the first page; otherwise it carries the cover itself.
     const front = !asset ? cover : sheeted
       ? new THREE.MeshStandardMaterial({ map: tex(worn.page), roughness: 0.9, envMapIntensity: 0.4 })
@@ -971,7 +973,7 @@ function main(stage, data, assets) {
       const face = new THREE.MeshStandardMaterial({ map: tex(worn), alphaTest: 0.5, roughness: 0.6, envMapIntensity: 0.5 });
       if (worn.relief) { face.bumpMap = tex(worn.relief, false); face.bumpScale = RELIEF; }
       const core = new THREE.MeshStandardMaterial({ map: tex(worn.board), alphaTest: 0.5, roughness: 0.9, envMapIntensity: 0.4 });
-      for (const [mat, lift] of [[core, COVER_T * 0.35], [core, COVER_T * 0.7], [face, COVER_T]]) {
+      for (const [mat, lift] of [[core, -COVER_T * 0.66], [core, -COVER_T * 0.33], [face, 0]]) {
         const layer = new THREE.Mesh(sg, mat);
         layer.position.x = lift;
         layer.receiveShadow = true;

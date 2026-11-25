@@ -1,6 +1,6 @@
 # Alexis Rondeau
 
-> Everything I publish, in the order I published it: dispatches from Twitter, videos from YouTube and notes from my vault, archived here in full — text, images, video and links — so they outlive the platforms.
+> Everything I post, write, build and read, in the order it happened: dispatches from Twitter, posts and comments from Hacker News, videos from YouTube, my notes, my code on GitHub and the books I read on Kindle, archived here in full so they outlive the platforms.
 
 Canonical home: https://alexisrondeau.me/ · About: https://alexisrondeau.me/about/ · Twitter: https://x.com/SpringStreetNYC
 
