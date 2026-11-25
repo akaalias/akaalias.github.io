@@ -1252,21 +1252,21 @@ function main(stage, data, assets) {
   let unit = 1, H = 1, dist = 1;
   let hovered = null;
 
-  // The first book of each year of reading gets a marker and a little air before it; a new shelf starts one too.
-  function markStarts(gapAt) {
+  // The first book of each year of reading gets a marker and a little air before it.
+  function markStarts() {
     const s = new Set();
     data.forEach((b, i) => {
       if (b.marker || !b.year) return;
       const prev = data[i - 1];
-      if (i === 0 || i === gapAt || !prev || prev.marker || prev.year !== b.year) s.add(i);
+      if (i === 0 || !prev || prev.marker || prev.year !== b.year) s.add(i);
     });
     return s;
   }
-  // The shelf (Fiction or Non-Fiction) comes first, so the same year can appear once per shelf.
-  function yearLabel(year, fiction, first) {
+  // One shelf, most recently read first (#52): each year appears once, and its marker is the year alone.
+  function yearLabel(year) {
     const el = document.createElement('div');
-    el.className = first ? 'shelf-year first' : 'shelf-year';   // the first marker of each shelf is inverted
-    el.textContent = `${fiction ? 'Fiction' : 'Non-Fiction'} ${year}`;
+    el.className = 'shelf-year';
+    el.textContent = String(year);
     (document.getElementById('shelf-years') || view).appendChild(el);
     return el;
   }
@@ -1298,17 +1298,13 @@ function main(stage, data, assets) {
     const W = view.clientWidth;
     if (!W) return;
     const gap = 0.01;   // books stand pushed together, as on a real shelf
-    // One continuous shelf: fiction first, a small gap, then the non-fiction (the data is already in that order).
+    // One continuous shelf, most recently read first (the data is already in that order).
     const ROW_H = SHELF_H + FLOOR_T;
-    const SECTION_GAP = 2.0;   // inches between the fiction and the non-fiction
-    const sectionStart = data.findIndex((b) => b.shelf !== 1 && !b.marker);
-    const gapAt = data.some((b) => b.shelf === 1) && sectionStart > 0 ? sectionStart : -1;
-    const yStarts = markStarts(gapAt);
+    const yStarts = markStarts();
     let total = 0;
     data.forEach((b, i) => {
       if (i > 0 && yStarts.has(i)) total += YEAR_GAP;
       total += b.thickness + gap;
-      if (i === gapAt) total += SECTION_GAP;
     });
     unit = total - gap + 2 * PAD;
     const rows = 1;
@@ -1340,10 +1336,9 @@ function main(stage, data, assets) {
     let cursor = -unit / 2 + PAD;
     data.forEach((b, i) => {
       const m = meshes[i];
-      if (i === gapAt) cursor += SECTION_GAP;
       if (i > 0 && yStarts.has(i)) cursor += YEAR_GAP;
       const x = cursor;
-      if (yStarts.has(i)) yearMarks.push({ x: x + b.thickness / 2, el: yearLabel(b.year, b.shelf === 1, i === 0 || i === gapAt) });
+      if (yStarts.has(i)) yearMarks.push({ x: x + b.thickness / 2, el: yearLabel(b.year) });
       const boardTop = FLOOR_T;
       m.userData.index = i;
       // A marker card stands forward of the books, so you see its letter; a book sits behind the front edge.
