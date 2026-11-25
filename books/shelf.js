@@ -389,7 +389,10 @@ function coverSheet(b, r) {
   const vs = levelsOf(b);
   for (const v of vs) {
     const y = -h / 2 + h * v, hz = hg.z + foldAt(hg.off, v);
-    const row = [[d / 2 - r - cornerInset(b, v, 'spine'), 0]];
+    // At the spine the sheet runs down INTO the body (its printed face meets the surface, its board goes under
+    // it): the cover is one piece with the spine there. Left standing off, its edge read as a separate cover.
+    const zs = d / 2 - r - cornerInset(b, v, 'spine');
+    const row = [[zs, COVER_T], [zs - 0.05, 0]];
     if (hinged) row.push([hz + hg.w / 2, 0], [hz, foldDepth(b, hg.w) * 0.8 * foldAt(hg.dep, v)], [hz - hg.w / 2, 0]);
     const z0 = row[row.length - 1][0], zEnd = -d / 2 + cornerInset(b, v, 'cover');   // the outer edge, drawn in at a worn corner
     for (let i = 1; i <= COLS; i++) row.push([z0 + (zEnd - z0) * (i / COLS), 0]);
