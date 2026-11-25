@@ -409,6 +409,39 @@ function coverSheet(b, r) {
   return geo;
 }
 
+// The cover as ONE shape round the pages (#47): its cut edge, seen wherever the page block shows. On the top
+// and on the bottom a band runs down the front cover, round the spine and up the back cover; on the edge
+// opposite the spine a band stands at the front and at the back. Without it the pages ran from edge to edge
+// and a book turned in the hand looked as if it had no back cover (Alexis). One mesh per book, a hair
+// proud of the page block; it stops where an outer corner has worn round.
+function coverEdges(b, r, w) {
+  const t = b.thickness, d = b.width, h = b.height, R = cornerRound(b), eps = 0.004;
+  const pos = [], nor = [], index = [];
+  const quad = (p, q, n) => {   // p, q: two [outer, inner] pairs of points
+    const at = pos.length / 3;
+    for (const v of [p[0], p[1], q[0], q[1]]) { pos.push(...v); nor.push(...n); }
+    index.push(at, at + 1, at + 2, at + 1, at + 3, at + 2);
+  };
+  for (const [y, ny, zEnd] of [[h / 2 + eps, 1, -d / 2 + R.top.pages[0]], [-h / 2 - eps, -1, -d / 2 + R.bottom.pages[0]]]) {
+    // The outline from the front cover's outer end, round the spine, to the back cover's outer end, each
+    // point with the direction into the book.
+    const line = [[t / 2, zEnd, -1, 0], [t / 2, d / 2 - r, -1, 0]];
+    for (let i = 1; i < 6; i++) { const a = (i / 6) * Math.PI / 2; line.push([t / 2 - r + r * Math.cos(a), d / 2 - r + r * Math.sin(a), -Math.cos(a), -Math.sin(a)]); }
+    line.push([t / 2 - r, d / 2, 0, -1], [-t / 2 + r, d / 2, 0, -1]);
+    for (let i = 1; i < 6; i++) { const a = (i / 6) * Math.PI / 2; line.push([-t / 2 + r - r * Math.sin(a), d / 2 - r + r * Math.cos(a), Math.sin(a), -Math.cos(a)]); }
+    line.push([-t / 2, d / 2 - r, 1, 0], [-t / 2, zEnd, 1, 0]);
+    const pair = ([x, z, nx, nz]) => [[x, y, z], [x + nx * w, y, z + nz * w]];
+    for (let i = 0; i < line.length - 1; i++) quad(pair(line[i]), pair(line[i + 1]), [0, ny, 0]);
+  }
+  const y0 = -h / 2 + R.bottom.pages[1], y1 = h / 2 - R.top.pages[1], z = -d / 2 - eps;
+  for (const [xo, xi] of [[t / 2, t / 2 - w], [-t / 2, -t / 2 + w]]) quad([[xo, y0, z], [xi, y0, z]], [[xo, y1, z], [xi, y1, z]], [0, 0, -1]);
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  geo.setAttribute('normal', new THREE.Float32BufferAttribute(nor, 3));
+  geo.setIndex(index);
+  return geo;
+}
+
 // The body of a creased paperback: its outline seen from above (thickness × depth, the two spine corners
 // rounded) with each fold cut into it as a shallow V, built up slice by slice to the book's height, the
 // folds wandering and deepening as foldPath says. So a crease is a real, irregular groove: the light shades
@@ -901,6 +934,12 @@ function main(stage, data, assets) {
     blending: THREE.CustomBlending, blendEquation: THREE.MinEquation, blendSrc: THREE.OneFactor, blendDst: THREE.OneFactor,
   });
   const covers = new Map();
+  const edgeMats = new Map();
+  const edgeMat = (hex, hard) => {
+    const key = hex + (hard ? 'h' : 'p');
+    if (!edgeMats.has(key)) edgeMats.set(key, new THREE.MeshStandardMaterial({ color: hex, roughness: hard ? 0.85 : 0.6, envMapIntensity: 0.5, side: THREE.DoubleSide }));
+    return edgeMats.get(key);
+  };
   const coverMat = (hex, hard) => {
     const key = hex + (hard ? 'h' : 'p');
     if (!covers.has(key)) {
@@ -991,6 +1030,10 @@ function main(stage, data, assets) {
     block.castShadow = true;
     block.receiveShadow = true;
     group.add(block);
+    // The cover's cut edge round the page block: front, spine and back as one band.
+    const edges = new THREE.Mesh(coverEdges(b, radius, hard ? 0.09 : 0.035), edgeMat(b.spine, hard));
+    edges.raycast = () => {};
+    group.add(edges);
     // Where the book stands on the board: a soft dark band at its foot, reaching forward and fading. The sun
     // comes from the front, so the cast shadows fall behind the books; this is what grounds them.
     const foot = new THREE.Mesh(footGeo, footMat);
