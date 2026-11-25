@@ -12,7 +12,11 @@ const SLIDE = 0.5;        // a hovered book slides out this share of its depth (
 const YEAR_GAP = 1.5;     // inches of air before the first book of a new year of reading (#40)
 // A clicked book leaves the shelf and turns its front cover to the viewer (#44). It is the shelf's own
 // mesh that travels: out of its slot first, then forward and round.
-const OPEN_MS = 700;      // the trip out of the shelf, milliseconds (the same back)
+const OPEN_W = 6.2;        // the spring that carries a book out and back: its speed (rad/s) …
+const OPEN_Z = 0.72;       // … and its damping (1 = no overshoot at all)
+const LIFT = 0.9;          // inches the book rises at the middle of its way
+const TIP = -0.09;         // radians it tips at the middle of its way
+const OPEN_MS = 900;      // the trip out of the shelf, milliseconds (the same back)
 const OPEN_CLEAR = 1.2;   // inches of air between the shelf's spines and the book before it turns
 const OPEN_FILL = 0.95;   // the taken-out book and its tabs fill this share of what can be seen of the shelf
 const TAB_ROOM = 0.75;    // inches kept free above the book for its sticky tabs
@@ -270,6 +274,153 @@ function rub(x, x0, y0, x1, y1, rw, rh, alpha) {
   x.fillRect(Math.min(x0, x1), Math.min(y0, y1), rw, rh);
 }
 
+// The folds of a used paperback (#47), shared by the paint and the geometry so they sit in the same place.
+// A fold is not a ruled line: it wanders a little on its way up the book, is deeper in some places than in
+// others, and often runs only part of the height. Each is described at FOLD_STEPS + 1 heights, bottom to top:
+// off = how far it has wandered sideways (inches), dep = how deep it is there (0…1).
+const FOLD_STEPS = 30;
+function foldPath(rnd, w, wander, partial, far) {
+  const off = [], dep = [];
+  const from = partial && rnd() < 0.4 ? rnd() * 0.35 : -1, to = partial && rnd() < 0.4 ? 1 - rnd() * 0.35 : 2;
+  let o = 0, drift = 0, dd = 0.4 + rnd() * 0.6;
+  for (let j = 0; j <= FOLD_STEPS; j++) {
+    drift = drift * 0.6 + (rnd() - 0.5) * w * wander;
+    o = Math.max(-w * far, Math.min(w * far, o + drift));
+    dd = Math.max(0.25, Math.min(1, dd + (rnd() - 0.5) * 0.35));
+    const y = j / FOLD_STEPS, fade = Math.max(0, Math.min(1, (y - from) * 9, (to - y) * 9));
+    off.push(o);
+    dep.push(dd * fade);
+  }
+  return { off, dep, reach: Math.max(...off.map(Math.abs)) };
+}
+const spineRadius = (b) => (b.binding === 'hardcover' ? Math.min(0.09, b.thickness * 0.4) : Math.min(0.05, b.thickness * 0.35));
+// creasesOf: the reading creases down the spine that have room on its flat, each at x (inches from the
+// spine's middle), w inches wide. Remembered per book: the spine's paint and the body both ask.
+const CREASES = new Map();
+function creasesOf(b) {
+  if (CREASES.has(b.id)) return CREASES.get(b.id);
+  const k = wearOf(b), out = [];
+  if (k >= WEAR_FROM && b.binding !== 'hardcover') {
+    const rnd = seeded(b.id + ':creases'), t = b.thickness, flat = t / 2 - spineRadius(b) - 0.005;
+    const all = [];
+    for (let i = 0, n = Math.round(1 + k * 5); i < n; i++) {
+      const w = 0.04 + rnd() * 0.035;
+      all.push({ x: (0.14 + rnd() * 0.72 - 0.5) * t, w, a: rnd(), ...foldPath(rnd, w, 0.4, true, 2.4) });
+    }
+    let reach = -flat;
+    for (const cr of all.sort((p, q) => p.x - q.x)) {
+      const half = cr.w / 2 + cr.reach;
+      if (cr.x - half < reach || cr.x + half > flat) continue;   // no room for it
+      out.push(cr);
+      reach = cr.x + half + 0.004;
+    }
+  }
+  CREASES.set(b.id, out);
+  return out;
+}
+// hingeOf: where the front cover folds back, z inches from the book's middle (the spine is at +depth/2).
+function hingeOf(b) {
+  const rnd = seeded(b.id + ':hinge'), w = 0.06;
+  return { z: b.width / 2 - (0.035 + rnd() * 0.02) * b.width, w, ...foldPath(rnd, w, 0.16, false, 1) };
+}
+
+// The body of a creased paperback: its outline seen from above (thickness × depth, the two spine corners
+// rounded) with each fold cut into it as a shallow V, built up slice by slice to the book's height, the
+// folds wandering and deepening as foldPath says. So a crease is a real, irregular groove: the light shades
+// its walls, it notches the top and bottom edges where it reaches them, and the page block's cut follows it.
+// Faces and UVs match the box it replaces: +x front, -x back, +y, -y, +z spine, -z.
+function creasedBlock(b, r) {
+  const t = b.thickness, d = b.width, h = b.height, k = wearOf(b);
+  const depth = (w) => w * (0.26 + 0.2 * k);
+  const creases = creasesOf(b), hg = hingeOf(b);
+  const hinged = hg.z + hg.w / 2 + hg.reach < d / 2 - r - 0.005;
+  // The outline at one height (j), clockwise seen from above: along the spine, down the front cover, the outer
+  // edge, up the back cover. Every height has the same points, so the slices join up. `fixed` points don't move.
+  const outline = (j) => {
+    const pts = [];
+    const add = (x, z, smooth, fixed) => pts.push({ x, z, smooth: !!smooth, fixed: fixed !== false });
+    add(-t / 2 + r, d / 2);
+    for (const cr of creases) {
+      const cx = cr.x + cr.off[j];
+      add(cx - cr.w / 2, d / 2, false, false); add(cx, d / 2 - depth(cr.w) * cr.dep[j], false, false); add(cx + cr.w / 2, d / 2, false, false);
+    }
+    add(t / 2 - r, d / 2);
+    for (let i = 1; i < 6; i++) { const a = (i / 6) * Math.PI / 2; add(t / 2 - r + r * Math.sin(a), d / 2 - r + r * Math.cos(a), true); }
+    add(t / 2, d / 2 - r);
+    if (hinged) {
+      const hz = hg.z + hg.off[j];
+      add(t / 2, hz + hg.w / 2, false, false); add(t / 2 - depth(hg.w) * 0.8 * hg.dep[j], hz, false, false); add(t / 2, hz - hg.w / 2, false, false);
+    }
+    add(t / 2, -d / 2);
+    add(-t / 2, -d / 2);   // the back cover is folded back less often: it stays flat
+    add(-t / 2, d / 2 - r);
+    for (let i = 1; i < 6; i++) { const a = (i / 6) * Math.PI / 2; add(-t / 2 + r - r * Math.cos(a), d / 2 - r + r * Math.sin(a), true); }
+    return pts;
+  };
+  const rings = [];
+  for (let j = 0; j <= FOLD_STEPS; j++) rings.push(outline(j));
+  const base = rings[0], n = base.length;
+  const yOf = (j) => -h / 2 + (h * j) / FOLD_STEPS;
+
+  const pos = [], nor = [], uv = [], tris = [[], [], [], [], [], []];
+  const vert = (x, y, z, nx, ny, nz, u, v) => { pos.push(x, y, z); nor.push(nx, ny, nz); uv.push(u, v); return pos.length / 3 - 1; };
+  // The way each stretch of the outline faces, taken from the outline without its folds' wandering.
+  const segN = base.map((p, i) => { const q = base[(i + 1) % n], dx = q.x - p.x, dz = q.z - p.z, l = Math.hypot(dx, dz) || 1; return [-dz / l, dx / l]; });
+  const faceOf = ([nx, nz]) => (Math.abs(nx) > Math.abs(nz) ? (nx > 0 ? 0 : 1) : (nz > 0 ? 4 : 5));
+  const uOf = (f, p) => (f === 0 ? (d / 2 - p.z) / d : f === 1 ? (p.z + d / 2) / d : f === 4 ? (p.x + t / 2) / t : (t / 2 - p.x) / t);
+  // A triangle is wound so that it faces the way its face does.
+  const tri = (f, a, b2, c, out) => {
+    const ax = pos[a * 3], ay = pos[a * 3 + 1], az = pos[a * 3 + 2];
+    const ux = pos[b2 * 3] - ax, uy = pos[b2 * 3 + 1] - ay, uz = pos[b2 * 3 + 2] - az;
+    const vx = pos[c * 3] - ax, vy = pos[c * 3 + 1] - ay, vz = pos[c * 3 + 2] - az;
+    const dot = (uy * vz - uz * vy) * out[0] + (uz * vx - ux * vz) * out[1] + (ux * vy - uy * vx) * out[2];
+    if (dot >= 0) tris[f].push(a, b2, c); else tris[f].push(a, c, b2);
+  };
+  // The walls. A stretch between two fixed points is one quad over the whole height; a stretch that touches
+  // a fold is built slice by slice, each piece flat with its own normal (the small facets are the crease).
+  for (let i = 0; i < n; i++) {
+    const i2 = (i + 1) % n, sn = segN[i], f = faceOf(sn);
+    const still = base[i].fixed && base[i2].fixed;
+    const cornerN = (j) => {
+      if (!base[j].smooth) return sn;
+      const o = segN[(j - 1 + n) % n], m = segN[j], l = Math.hypot(o[0] + m[0], o[1] + m[1]) || 1;
+      return [(o[0] + m[0]) / l, (o[1] + m[1]) / l];
+    };
+    for (let j = 0; j < FOLD_STEPS; j += still ? FOLD_STEPS : 1) {
+      const j2 = still ? FOLD_STEPS : j + 1;
+      const p0 = rings[j][i], q0 = rings[j][i2], p1 = rings[j2][i], q1 = rings[j2][i2], y0 = yOf(j), y1 = yOf(j2);
+      let np = cornerN(i), nq = cornerN(i2), ny = 0;
+      if (!still) {
+        // This piece's own normal: across its two diagonals, turned outward.
+        const ax = q1.x - p0.x, ay = y1 - y0, az = q1.z - p0.z, bx = p1.x - q0.x, by = y1 - y0, bz = p1.z - q0.z;
+        let nx = ay * bz - az * by, nyy = az * bx - ax * bz, nz = ax * by - ay * bx;
+        const l = Math.hypot(nx, nyy, nz) || 1, flip = nx * sn[0] + nz * sn[1] < 0 ? -1 : 1;
+        nx *= flip / l; nyy *= flip / l; nz *= flip / l;
+        np = nq = [nx, nz]; ny = nyy;
+      }
+      const a = vert(p0.x, y0, p0.z, np[0], ny, np[1], uOf(f, p0), j / FOLD_STEPS), b2 = vert(q0.x, y0, q0.z, nq[0], ny, nq[1], uOf(f, q0), j / FOLD_STEPS);
+      const c = vert(q1.x, y1, q1.z, nq[0], ny, nq[1], uOf(f, q1), j2 / FOLD_STEPS), e = vert(p1.x, y1, p1.z, np[0], ny, np[1], uOf(f, p1), j2 / FOLD_STEPS);
+      tri(f, a, b2, c, [sn[0], 0, sn[1]]);
+      tri(f, a, c, e, [sn[0], 0, sn[1]]);
+    }
+  }
+  // The top and the bottom: the outline at that height, so the page block's cut follows every fold that reaches it.
+  for (const [f, j, ny] of [[2, FOLD_STEPS, 1], [3, 0, -1]]) {
+    const ring = rings[j];
+    const flat = THREE.ShapeUtils.triangulateShape(ring.map((p) => new THREE.Vector2(p.x, p.z)), []);
+    const at = ring.map((p) => vert(p.x, yOf(j), p.z, 0, ny, 0, (p.x + t / 2) / t, (p.z + d / 2) / d));
+    for (const [a, b2, c] of flat) tri(f, at[a], at[b2], at[c], [0, ny, 0]);
+  }
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  geo.setAttribute('normal', new THREE.Float32BufferAttribute(nor, 3));
+  geo.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
+  const index = [];
+  tris.forEach((list, f) => { geo.addGroup(index.length, list.length, f); index.push(...list); });
+  geo.setIndex(index);
+  return geo;
+}
+
 // Wear on a spine: reading creases down a paperback's spine (pale cracks with a shadow beside them),
 // rubbed head, tail and long edges, and scuffs. Seeded by the book, so it is the same on every build.
 // A crease in the height map that goes with a painted surface (#47): a soft valley with a slight ridge
@@ -302,23 +453,21 @@ function heightMap(w, h) {
 function wearSpine(x, w, h, b) {
   const k = wearOf(b);
   if (k < WEAR_FROM) return null;
-  let relief = null;
+  const relief = null;   // the spine's folds are geometry; nothing left for a height map
   const rnd = seeded(b.id + ':wear');
   if (b.binding !== 'hardcover') {
-    const n = Math.round(1 + k * 5);
-    for (let i = 0; i < n; i++) {
-      let px = w * (0.14 + rnd() * 0.72);
-      const pts = [[px, 0]];
-      for (let y = h / 14; y <= h + 1; y += h / 14) { px += (rnd() - 0.5) * w * 0.035; pts.push([px, y]); }
-      const lw = Math.max(1, w * 0.014 * (0.5 + rnd()));
-      // In the colour only the print cracked off along the fold, faintly; the fold itself is relief.
-      x.beginPath();
-      pts.forEach(([qx, qy], j) => (j ? x.lineTo(qx, qy) : x.moveTo(qx, qy)));
-      x.strokeStyle = `rgba(252,248,238,${0.10 + 0.22 * k * rnd()})`;
-      x.lineWidth = lw * 0.8;
-      x.stroke();
-      relief = relief || heightMap(w, h);
-      groove(relief.getContext('2d'), pts, lw);
+    // Along each fold the print has cracked off, faintly. The fold itself is cut into the book's body
+    // (creasedBlock), at the same place: creasesOf gives both.
+    for (const cr of creasesOf(b)) {
+      for (let j = 0; j < FOLD_STEPS; j++) {
+        if (cr.dep[j] + cr.dep[j + 1] <= 0) continue;
+        x.beginPath();
+        x.moveTo(((cr.x + cr.off[j]) / b.thickness + 0.5) * w, h * (1 - j / FOLD_STEPS));
+        x.lineTo(((cr.x + cr.off[j + 1]) / b.thickness + 0.5) * w, h * (1 - (j + 1) / FOLD_STEPS));
+        x.strokeStyle = `rgba(252,248,238,${(0.10 + 0.3 * k * cr.a) * (cr.dep[j] + cr.dep[j + 1]) / 2})`;
+        x.lineWidth = Math.max(1, cr.w * PPI * 0.4);
+        x.stroke();
+      }
     }
   }
   const end = h * 0.035 * (0.5 + k), edge = w * 0.1;
@@ -359,10 +508,16 @@ function wornCover(img, b) {
     };
     if (b.binding !== 'hardcover') {
       // The hinge: where the cover has been folded back, a little in from the spine (the left edge).
-      let px = W * (0.035 + rnd() * 0.02);
-      const pts = [[px, 0]];
-      for (let y = H / 16; y <= H + 1; y += H / 16) { px += (rnd() - 0.5) * W * 0.006; pts.push([px, y]); }
-      line(pts, Math.max(1, W * 0.004), 0.2 + 0.4 * k);
+      // It is cut into the body too (creasedBlock); here only the print lost along it.
+      const hg = hingeOf(b);
+      for (let j = 0; j < FOLD_STEPS; j++) {
+        x.beginPath();
+        x.moveTo((b.width / 2 - hg.z - hg.off[j]) / b.width * W, H * (1 - j / FOLD_STEPS));
+        x.lineTo((b.width / 2 - hg.z - hg.off[j + 1]) / b.width * W, H * (1 - (j + 1) / FOLD_STEPS));
+        x.strokeStyle = `rgba(252,248,238,${(0.12 + 0.3 * k) * (hg.dep[j] + hg.dep[j + 1]) / 2})`;
+        x.lineWidth = Math.max(1, W * 0.006);
+        x.stroke();
+      }
       if (k > 0.6) {
         const cut = W * (0.1 + 0.12 * rnd());   // a bent corner, top right
         line([[W - cut, 0], [W, cut * (0.8 + 0.5 * rnd())]], Math.max(1, W * 0.004), 0.5 * k);
@@ -543,7 +698,8 @@ function main(stage, data, assets) {
     const radius = hard ? Math.min(0.09, b.thickness * 0.4) : Math.min(0.05, b.thickness * 0.35);
     // More segments round the corners more smoothly: with 4, each corner is a few flat facets whose
     // normals catch the light in alternating bands, which read as dashed seams while the view moves.
-    const geo = new RoundedBoxGeometry(b.thickness, b.height, b.width, 4, radius);
+    // A paperback with creases gets its own body, the folds cut into it (#47); every other book is a rounded box.
+    const geo = creasesOf(b).length ? creasedBlock(b, radius) : new RoundedBoxGeometry(b.thickness, b.height, b.width, 4, radius);
     const worn = asset ? wornCover(asset.img, b) : null;
     const front = asset ? new THREE.MeshStandardMaterial({ map: tex(worn || asset.img), roughness: 0.6, envMapIntensity: 0.5 }) : cover;
     if (worn && worn.relief) { front.bumpMap = tex(worn.relief, false); front.bumpScale = RELIEF; }
@@ -818,8 +974,15 @@ function main(stage, data, assets) {
       return;
     }
     const b = data[u.index];
-    const out = ease(Math.min(1, u.open / 0.45));
-    const fly = ease(Math.max(0, (u.open - 0.3) / 0.7));
+    // One eased run from the slot to the hand (Alexis: two smoothsteps back to back, with a stall between
+    // them, moved like a machine). The slide out of the slot decelerates as the flight and the turn pick up,
+    // so the book never stops on the way.
+    // `open` is driven by a spring (see tick), so it starts with a pull, eases into the hand and settles
+    // with a breath of overshoot; past 1 the flight carries on a touch further before it comes back.
+    const p = u.open;
+    const out = 1 - Math.pow(1 - Math.min(1, p / 0.55), 3);
+    const fly = p > 1 ? 1 + (p - 1) * 1.6 : ease(Math.max(0, (p - 0.12) / 0.88));
+    const arc = Math.sin(Math.PI * Math.min(1, fly));   // 0 in the slot and in the hand, 1 halfway
     // What has to fit in what can be seen: the tabs standing out of the top and the book, with its card
     // beside it (bottom right, like a label) or, where the view is too narrow for that, underneath.
     // The card keeps one size on screen whatever the book's, so its text stays readable.
@@ -852,7 +1015,11 @@ function main(stage, data, assets) {
     poseQuat.copy(camera.quaternion).multiply(u.spin).multiply(turn);
     m.position.set(base.x, base.y, base.z + Math.max(u.offset, out * (b.width + OPEN_CLEAR))).lerp(posePos, fly);
     m.quaternion.identity().slerp(poseQuat, fly);
-    if (u.card) for (const mat of u.card.material) mat.opacity = fly;   // the card appears as the book turns
+    // On the way the book is lifted in a shallow arc and tips a little, as a hand would carry it.
+    m.position.y += arc * LIFT;
+    camera.getWorldDirection(dir);
+    m.quaternion.premultiply(dq2.setFromAxisAngle(dir, arc * TIP));
+    if (u.card) for (const mat of u.card.material) mat.opacity = Math.min(1, fly);   // the card appears as the book turns
   }
 
   // The card that comes out with a book (#44): a paper card under the cover, in the book's own space, so it
@@ -969,16 +1136,28 @@ function main(stage, data, assets) {
     for (const m of meshes) {
       const u = m.userData;
       if (!u.base) continue;
-      const d = u.target - u.offset;
-      if (Math.abs(d) > 0.005) {
-        u.offset = reduceMotion ? u.target : u.offset + d * 0.25;
+      // The hover slide is a spring: it starts gently and settles softly.
+      const d = u.target - u.offset, v = u.speed || 0;
+      if (Math.abs(d) > 0.004 || Math.abs(v) > 0.02) {
+        if (reduceMotion) { u.offset = u.target; u.speed = 0; }
+        else {
+          const ts = dt / 1000, W0 = 13;
+          u.speed = v + (W0 * W0 * d - 1.45 * W0 * v) * ts;   // a touch under-damped: it settles with the slightest give
+          u.offset += u.speed * ts;
+        }
         moving = true;
       } else {
-        u.offset = u.target;
+        u.offset = u.target; u.speed = 0;
       }
-      if (u.isBook && u.open !== u.openTarget) {
-        const step = reduceMotion ? 1 : dt / OPEN_MS;
-        u.open = u.openTarget > u.open ? Math.min(u.openTarget, u.open + step) : Math.max(u.openTarget, u.open - step);
+      if (u.isBook && (u.open !== u.openTarget || u.openV)) {
+        if (reduceMotion) { u.open = u.openTarget; u.openV = 0; }
+        else {
+          const ts = dt / 1000;
+          u.openV = (u.openV || 0) + (OPEN_W * OPEN_W * (u.openTarget - u.open) - 2 * OPEN_Z * OPEN_W * (u.openV || 0)) * ts;
+          u.open += u.openV * ts;
+          if (u.open < 0) { u.open = 0; u.openV = 0; }   // home: a book doesn't go through the back of its slot
+          if (Math.abs(u.openTarget - u.open) < 0.0012 && Math.abs(u.openV) < 0.015) { u.open = u.openTarget; u.openV = 0; }
+        }
         if (!u.open) { dropCard(m); u.spin.identity(); }   // back in its slot: the card is gone, the book stands straight
         moving = true;
       }
@@ -1107,6 +1286,20 @@ function main(stage, data, assets) {
   // With a book taken out, ← and → put it back and take out its neighbour on the shelf (#44); the shelf
   // scrolls along when the neighbour's place is near the edge of the view or out of it.
   let following = 0;   // until this time the shelf is scrolling by itself, which doesn't put the book back
+  // The shelf's own scroll for that: slow out of rest, slow into rest (the browser's smooth scroll starts at
+  // full speed and is over too quickly to read as the shelf moving).
+  let gliding = 0;
+  function glide(to) {
+    cancelAnimationFrame(gliding);
+    const from = stage.scrollLeft, t0 = performance.now(), ms = reduceMotion ? 0 : Math.min(1100, 520 + Math.abs(to - from) * 0.5);
+    const frame = (now) => {
+      const q = ms ? Math.min(1, (now - t0) / ms) : 1;
+      following = now + 150;
+      stage.scrollLeft = from + (to - from) * (q < 0.5 ? 4 * q * q * q : 1 - Math.pow(-2 * q + 2, 3) / 2);
+      if (q < 1) gliding = requestAnimationFrame(frame);
+    };
+    gliding = requestAnimationFrame(frame);
+  }
   function step(by) {
     let i = opened.userData.index + by;
     while (meshes[i] && !meshes[i].userData.isBook) i += by;
@@ -1115,8 +1308,7 @@ function main(stage, data, assets) {
     setOpen(m);
     const W = view.clientWidth, slot = (m.userData.base.x + unit / 2) * SCREEN_PPI - stage.scrollLeft;
     if (slot < W * 0.2 || slot > W * 0.8) {
-      following = performance.now() + 1200;
-      stage.scrollTo({ left: slot + stage.scrollLeft - W / 2, behavior: reduceMotion ? 'auto' : 'smooth' });
+      glide(slot + stage.scrollLeft - W / 2);
     }
   }
   document.addEventListener('keydown', (ev) => {
