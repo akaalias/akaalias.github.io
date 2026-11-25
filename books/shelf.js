@@ -22,6 +22,7 @@ const OPEN_FILL = 0.95;   // the taken-out book and its tabs fill this share of 
 const TAB_ROOM = 0.75;    // inches kept free above the book for its sticky tabs
 const BELOW_PX = 110;      // open space under the shelf, screen pixels: room for a book that is being turned
 const BOARD_T = 0.4;       // the visible thickness of the shelf board, inches
+const SPINE_CLEAR = 0.8;    // inches (2 cm) next to the spine that stay free of sticky tabs
 const SIDE_TABS = 0.35;    // the share of a book's sticky tabs that stick out of its long edge, not its top
 const SIDE_ROOM = 0.3;     // inches kept free beside a taken-out book for them (0.6 put the card too far off: Alexis)
 const CARD_H = 1.42;      // the card under a taken-out book, inches high
@@ -772,7 +773,7 @@ function wornCover(img, b) {
           path(x, [edge[j], edge[j + 1]], false);
           x.strokeStyle = 'rgba(248,244,234,0.95)';
           x.lineCap = 'round';
-          x.lineWidth = wide * (0.5 + cr());
+          x.lineWidth = wide * (0.25 + 1.9 * cr() * cr());   // the board shows in a band of very uneven width
           x.stroke();
         }
       };
@@ -795,9 +796,9 @@ function wornCover(img, b) {
           const ph1 = cr() * 6.3, ph2 = cr() * 6.3, wav = inch * (0.02 + 0.03 * cr());
           const C = [P[0] + (cx - P[0]) * bow, Q[1] + (cy - Q[1]) * bow];
           const edge = [];
-          for (let i = 0, n = 34; i <= n; i++) {
+          for (let i = 0, n = 72; i <= n; i++) {
             // On the sweep: a slow waver (the tear changing its mind) and the fine raggedness of the fibres.
-            const t = i / n, u = 1 - t, f = i && i < n ? wav * (Math.sin(t * 9 + ph1) + 0.6 * Math.sin(t * 21 + ph2)) * Math.sin(t * Math.PI) + (cr() - 0.5) * inch * 0.028 : 0;
+            const t = i / n, u = 1 - t, f = i && i < n ? wav * (Math.sin(t * 9 + ph1) + 0.6 * Math.sin(t * 21 + ph2)) * Math.sin(t * Math.PI) + (cr() - 0.5) * inch * 0.05 + (cr() < 0.2 ? (cr() - 0.5) * inch * 0.16 : 0) : 0;   // fibres, and here and there a nick or a tongue of board (messier on Alexis's word)
             edge.push([u * u * P[0] + 2 * u * t * C[0] + t * t * Q[0] + f, u * u * P[1] + 2 * u * t * C[1] + t * t * Q[1] + f]);
           }
           c.tears[sy > 0 ? 'top' : 'bottom'] = [(cx - P[0]) / W * b.width, Math.abs(Q[1] - cy) / H * b.height];
@@ -1154,7 +1155,11 @@ function main(stage, data, assets) {
         new THREE.MeshStandardMaterial({ color: tabColors[Math.floor(rnd() * tabColors.length)], roughness: 0.5, envMapIntensity: 0.4 }));
       const tx = (rnd() - 0.5) * Math.max(0, b.thickness - 0.1);
       if (atSide) tab.position.set(tx, (rnd() - 0.5) * Math.max(0, b.height - tabD), -b.width / 2);
-      else tab.position.set(tx, b.height / 2, (rnd() - 0.5) * Math.max(0, b.width - tabD));
+      else {
+        // Not within SPINE_CLEAR of the spine: a paperback doesn't open far enough to stick a flag there.
+        const lo = -b.width / 2 + tabD / 2, hi = Math.max(lo, b.width / 2 - SPINE_CLEAR - tabD / 2);
+        tab.position.set(tx, b.height / 2, lo + rnd() * (hi - lo));
+      }
       tab.rotation.x = (rnd() - 0.5) * 0.2;
       tab.castShadow = true;
       group.add(tab);
