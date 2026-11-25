@@ -263,6 +263,7 @@ function paintSpine(c, b, strip) {
 // How used a book looks (#47), 0…1, from its highlights: half the books have about 20, one in ten over 120.
 function wearOf(b) { return Math.min(1, Math.sqrt((b.highlights || 0) / 280)); }
 const WEAR_FROM = 0.2;   // below this a book looks new
+// Every cover keeps ONE gloss, whatever its use: gloss that follows use was tried (#49) and backed out by Alexis.
 const RELIEF = 6;      // how deep the creases read in the light (bump scale)
 
 // A rubbed band along one edge of a canvas: paper showing through, strongest at the very edge.
@@ -414,27 +415,104 @@ function coverSheet(b, r) {
 // opposite the spine a band stands at the front and at the back. Without it the pages ran from edge to edge
 // and a book turned in the hand looked as if it had no back cover (Alexis). One mesh per book, a hair
 // proud of the page block; it stops where an outer corner has worn round.
-function coverEdges(b, r, w) {
-  const t = b.thickness, d = b.width, h = b.height, R = cornerRound(b), eps = 0.004;
+function coverEdges(b, r, w, rings, tears, recess = 0, tearEdges = null) {
+  const t = b.thickness, d = b.width, h = b.height, eps = 0.004;
   const pos = [], nor = [], index = [];
   const quad = (p, q, n) => {   // p, q: two [outer, inner] pairs of points
     const at = pos.length / 3;
     for (const v of [p[0], p[1], q[0], q[1]]) { pos.push(...v); nor.push(...n); }
-    index.push(at, at + 1, at + 2, at + 1, at + 3, at + 2);
+    // Wound to face the way its normal says. Left to chance, half the band faced into the book and was lit
+    // from behind: that was the DARK band on a white book (Alexis).
+    const [a, b2, c] = [p[0], p[1], q[0]];
+    const ux = b2[0] - a[0], uy = b2[1] - a[1], uz = b2[2] - a[2], vx = c[0] - a[0], vy = c[1] - a[1], vz = c[2] - a[2];
+    const facing = (uy * vz - uz * vy) * n[0] + (uz * vx - ux * vz) * n[1] + (ux * vy - uy * vx) * n[2];
+    if (facing >= 0) index.push(at, at + 1, at + 2, at + 1, at + 3, at + 2);
+    else index.push(at, at + 2, at + 1, at + 1, at + 2, at + 3);
   };
-  for (const [y, ny, zEnd] of [[h / 2 + eps, 1, -d / 2 + R.top.pages[0]], [-h / 2 - eps, -1, -d / 2 + R.bottom.pages[0]]]) {
-    // The outline from the front cover's outer end, round the spine, to the back cover's outer end, each
-    // point with the direction into the book.
-    const line = [[t / 2, zEnd, -1, 0], [t / 2, d / 2 - r, -1, 0]];
-    for (let i = 1; i < 6; i++) { const a = (i / 6) * Math.PI / 2; line.push([t / 2 - r + r * Math.cos(a), d / 2 - r + r * Math.sin(a), -Math.cos(a), -Math.sin(a)]); }
-    line.push([t / 2 - r, d / 2, 0, -1], [-t / 2 + r, d / 2, 0, -1]);
-    for (let i = 1; i < 6; i++) { const a = (i / 6) * Math.PI / 2; line.push([-t / 2 + r - r * Math.sin(a), d / 2 - r + r * Math.cos(a), Math.sin(a), -Math.cos(a)]); }
-    line.push([-t / 2, d / 2 - r, 1, 0], [-t / 2, zEnd, 1, 0]);
-    const pair = ([x, z, nx, nz]) => [[x, y, z], [x + nx * w, y, z + nz * w]];
-    for (let i = 0; i < line.length - 1; i++) quad(pair(line[i]), pair(line[i + 1]), [0, ny, 0]);
+  if (rings) {
+    // The band follows the body's own outline at the top and at the bottom, into every crease. On the spine
+    // and the back the body's surface IS the cover, so the band is the cover's thickness inside it. On the
+    // front of a book with a cover sheet the pages are set back by `recess` and the sheet's face stands that
+    // far out: there the band is exactly that step, from the sheet's face to the pages. So it is the cover's
+    // own cut edge, and where the cover is torn the SAME edge turns down along the tear as a wall (a strip
+    // that merely stopped at the tear was "painted over" — Alexis).
+    const R = cornerRound(b), tr = tears || { top: [0, 0], bottom: [0, 0] };
+    let fore = [t / 2, -t / 2];
+    for (const [ring, y, ny, end] of [[rings.top, h / 2 + eps, 1, 'top'], [rings.bottom, -h / 2 - eps, -1, 'bottom']]) {
+      const n = ring.length;
+      const out = ring.map((p, i) => { const q = ring[(i + 1) % n], dx = q.x - p.x, dz = q.z - p.z, l = Math.hypot(dx, dz) || 1; return [-dz / l, dx / l]; });
+      const isFore = (i) => out[i][1] < -0.9 && Math.abs(ring[(i + 1) % n].x - ring[i].x) > t * 0.5;
+      const inner = ring.map((p, i) => {
+        const a = out[(i - 1 + n) % n], c = out[i];
+        let mx = a[0] + c[0], mz = a[1] + c[1];
+        const l = Math.hypot(mx, mz) || 1;
+        mx /= l; mz /= l;
+        const reach = w / Math.max(0.5, mx * c[0] + mz * c[1]);
+        // At the two ends of the outer edge the band runs straight out to it.
+        if (isFore(i) || isFore((i - 1 + n) % n)) { const s = isFore(i) ? a : c; return [p.x - s[0] * w, p.z - s[1] * w]; }
+        return [p.x - mx * reach, p.z - mz * reach];
+      });
+      const flat = d / 2 - r + 0.001;   // the front cover begins where the spine's corner ends
+      for (let i = 0; i < n; i++) {
+        const j = (i + 1) % n;
+        if (isFore(i)) { fore = [ring[i].x, ring[j].x]; continue; }
+        const front = out[i][0] > 0.6 && ring[i].z <= flat && ring[j].z <= flat;
+        const side = (p, k, z) => (front && recess ? [[p.x + recess, y, z], [p.x, y, z]] : [[p.x, y, z], [inner[k][0], y, inner[k][1]]]);
+        let A = side(ring[i], i, ring[i].z), B = side(ring[j], j, ring[j].z);
+        if (front) {   // it ends where the front cover ends: at a tear, or where its corner is worn back
+          const lim = -d / 2 + Math.max(tr[end][0], R[end].cover[0]);
+          if (ring[i].z <= lim && ring[j].z <= lim) continue;
+          const cut = (p) => (recess ? [[p.x + recess, y, lim], [p.x, y, lim]] : [[p.x, y, lim], [p.x - w, y, lim]]);
+          if (ring[i].z < lim) A = cut(ring[i]);
+          if (ring[j].z < lim) B = cut(ring[j]);
+        }
+        quad(A, B, [0, ny, 0]);
+      }
+    }
+    // Down the outer edge: at the back the band follows the pages; at the front it is the sheet's own edge
+    // and follows the sheet's (deeper) worn corners, between a torn top and a torn bottom.
+    for (const xo of fore) {
+      const sheet = xo > 0 && recess > 0;
+      const run = levelsOf(b).map((v) => [-h / 2 + h * v, -d / 2 + cornerInset(b, v, sheet ? 'cover' : 'pages')]);
+      const xa = sheet ? xo + recess : xo, xb = sheet ? xo : xo - Math.sign(xo) * w;
+      const lo = xo > 0 ? -h / 2 + (sheet ? tr.bottom[1] : Math.max(tr.bottom[1], R.bottom.cover[1])) : -Infinity;
+      const hi = xo > 0 ? h / 2 - (sheet ? tr.top[1] : Math.max(tr.top[1], R.top.cover[1])) : Infinity;
+      for (let j = 0; j < run.length - 1; j++) {
+        if (run[j + 1][0] <= lo || run[j][0] >= hi) continue;
+        const a = [Math.max(lo, run[j][0]), run[j][1]], c = [Math.min(hi, run[j + 1][0]), run[j + 1][1]], dy = c[0] - a[0], dz = c[1] - a[1], l = Math.hypot(dy, dz) || 1;
+        const nn = [0, dz / l, -dy / l];   // out of the edge: straight back along it, up and back round a top corner
+        const at = (pt, x) => [x, pt[0] + nn[1] * eps, pt[1] + nn[2] * eps];
+        quad([at(a, xa), at(a, xb)], [at(c, xa), at(c, xb)], nn);
+      }
+    }
+    // Along each tear: the cover's thickness, from its face down to the pages, facing the missing corner.
+    if (recess) for (const tear of tearEdges || []) {
+      const cy = tear.sy > 0 ? h / 2 : -h / 2, cz = -d / 2;
+      for (let j = 0; j < tear.pts.length - 1; j++) {
+        const a = tear.pts[j], c = tear.pts[j + 1], dy = c[0] - a[0], dz = c[1] - a[1], l = Math.hypot(dy, dz) || 1;
+        let nn = [0, -dz / l, dy / l];
+        if (nn[1] * (cy - a[0]) + nn[2] * (cz - a[1]) < 0) nn = [0, -nn[1], -nn[2]];
+        quad([[t / 2, a[0], a[1]], [t / 2 - recess, a[0], a[1]]], [[t / 2, c[0], c[1]], [t / 2 - recess, c[0], c[1]]], nn);
+      }
+    }
+  } else {
+    // A box with rounded edges: the band lies on the flat of each face, inside the rounding (on the rounding
+    // it floated free, and showed as a dark line and a coloured sliver along the top edge).
+    // Barely inside it (0.45 r, where the rounding has dropped by a hundredth of the radius): further in, a
+    // stripe of page showed outside the band and it read as a drawn frame.
+    const k = r * 0.45, T = t / 2 - k, D = d / 2 - k, c = Math.max(0.01, r - k);
+    for (const [y, ny] of [[h / 2 + eps, 1], [-h / 2 - eps, -1]]) {
+      const line = [[T, -D, -1, 0], [T, D - c, -1, 0]];
+      for (let i = 1; i < 6; i++) { const a = (i / 6) * Math.PI / 2; line.push([T - c + c * Math.cos(a), D - c + c * Math.sin(a), -Math.cos(a), -Math.sin(a)]); }
+      line.push([T - c, D, 0, -1], [-T + c, D, 0, -1]);
+      for (let i = 1; i < 6; i++) { const a = (i / 6) * Math.PI / 2; line.push([-T + c - c * Math.sin(a), D - c + c * Math.cos(a), Math.sin(a), -Math.cos(a)]); }
+      line.push([-T, D - c, 1, 0], [-T, -D, 1, 0]);
+      const pair = ([x, z, nx, nz]) => [[x, y, z], [x + nx * w, y, z + nz * w]];
+      for (let i = 0; i < line.length - 1; i++) quad(pair(line[i]), pair(line[i + 1]), [0, ny, 0]);
+    }
+    const z = -d / 2 - eps;
+    for (const [xo, xi] of [[T, T - w], [-T, -T + w]]) quad([[xo, -h / 2 + k, z], [xi, -h / 2 + k, z]], [[xo, h / 2 - k, z], [xi, h / 2 - k, z]], [0, 0, -1]);
   }
-  const y0 = -h / 2 + R.bottom.pages[1], y1 = h / 2 - R.top.pages[1], z = -d / 2 - eps;
-  for (const [xo, xi] of [[t / 2, t / 2 - w], [-t / 2, -t / 2 + w]]) quad([[xo, y0, z], [xi, y0, z]], [[xo, y1, z], [xi, y1, z]], [0, 0, -1]);
   const geo = new THREE.BufferGeometry();
   geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
   geo.setAttribute('normal', new THREE.Float32BufferAttribute(nor, 3));
@@ -447,11 +525,11 @@ function coverEdges(b, r, w) {
 // folds wandering and deepening as foldPath says. So a crease is a real, irregular groove: the light shades
 // its walls, it notches the top and bottom edges where it reaches them, and the page block's cut follows it.
 // Faces and UVs match the box it replaces: +x front, -x back, +y, -y, +z spine, -z.
-function creasedBlock(b, r, recess = 0) {
+function creasedBlock(b, r, recess = 0, plain = false) {
   const t = b.thickness, d = b.width, h = b.height, k = wearOf(b);
   const depth = (w) => foldDepth(b, w);
   const creases = creasesOf(b), hg = hingeOf(b);
-  const hinged = hg.z + hg.w / 2 + hg.reach < d / 2 - r - 0.005;
+  const hinged = !plain && hg.z + hg.w / 2 + hg.reach < d / 2 - r - 0.005;   // a book that looks new has no fold beside its spine
   // The outline at one height (j), clockwise seen from above: along the spine, down the front cover, the outer
   // edge, up the back cover. Every height has the same points, so the slices join up. `fixed` points don't move.
   const vs = levelsOf(b), L = vs.length - 1, rounded = cornerRound(b).top.pages[1] > 0 || cornerRound(b).bottom.pages[1] > 0;
@@ -492,7 +570,7 @@ function creasedBlock(b, r, recess = 0) {
   // The way each stretch of the outline faces, taken from the outline without its folds' wandering.
   const segN = base.map((p, i) => { const q = base[(i + 1) % n], dx = q.x - p.x, dz = q.z - p.z, l = Math.hypot(dx, dz) || 1; return [-dz / l, dx / l]; });
   const faceOf = ([nx, nz]) => (Math.abs(nx) > Math.abs(nz) ? (nx > 0 ? 0 : 1) : (nz > 0 ? 4 : 5));
-  const uOf = (f, p) => (f === 0 ? (d / 2 - p.z) / d : f === 1 ? (p.z + d / 2) / d : f === 4 ? (p.x + t / 2) / t : (t / 2 - p.x) / t);
+  const uOf = (f, p) => (f === 0 ? (d / 2 - p.z) / d : f === 1 ? (p.z + d / 2) / d : (p.x + t / 2) / t);   // spine and outer edge alike run with x: on the outer edge that is the SAME way as on the top and bottom, so each sheet's line carries on round the corner (mirrored, the stripes broke there)
   // A triangle is wound so that it faces the way its face does.
   const tri = (f, a, b2, c, out) => {
     const ax = pos[a * 3], ay = pos[a * 3 + 1], az = pos[a * 3 + 2];
@@ -545,6 +623,7 @@ function creasedBlock(b, r, recess = 0) {
   const index = [];
   tris.forEach((list, f) => { geo.addGroup(index.length, list.length, f); index.push(...list); });
   geo.setIndex(index);
+  geo.userData.rings = { top: rings[L], bottom: rings[0] };   // for the cover's edge band
   return geo;
 }
 
@@ -626,6 +705,8 @@ function wornCover(img, b) {
     // What lies under the cover: the first page, with the cover's own print only on the strip that wraps
     // the rounded spine corner (that strip of the body is not under the sheet). Paperbacks only.
     const holes = [];
+    c.tearEdges = [];   // each torn edge as [y, z] points in the book's own inches, for the wall along it
+    c.tears = { top: [0, 0], bottom: [0, 0] };   // how far each torn corner reaches: [along the top or bottom edge, down the outer edge], inches
     const pageC = canvasOf(W, H), page = pageC.getContext('2d');
     page.fillStyle = '#efe6d0';
     page.fillRect(0, 0, W, H);
@@ -719,6 +800,8 @@ function wornCover(img, b) {
             const t = i / n, u = 1 - t, f = i && i < n ? wav * (Math.sin(t * 9 + ph1) + 0.6 * Math.sin(t * 21 + ph2)) * Math.sin(t * Math.PI) + (cr() - 0.5) * inch * 0.028 : 0;
             edge.push([u * u * P[0] + 2 * u * t * C[0] + t * t * Q[0] + f, u * u * P[1] + 2 * u * t * C[1] + t * t * Q[1] + f]);
           }
+          c.tears[sy > 0 ? 'top' : 'bottom'] = [(cx - P[0]) / W * b.width, Math.abs(Q[1] - cy) / H * b.height];
+          c.tearEdges.push({ sy, pts: edge.map(([qx, qy]) => [b.height / 2 - qy / H * b.height, b.width / 2 - qx / W * b.width]) });
           boardRim(edge, inch * 0.08);
           tearOut([[cx, cy], ...edge], edge, inch * 0.06);
         }
@@ -934,10 +1017,13 @@ function main(stage, data, assets) {
     blending: THREE.CustomBlending, blendEquation: THREE.MinEquation, blendSrc: THREE.OneFactor, blendDst: THREE.OneFactor,
   });
   const covers = new Map();
+  // The cut edge of a cover is its board: white, whatever is printed on it (Alexis asked for white; it is also
+  // what a real paperback shows).
+  const BOARD = '#f6f2e8';
   const edgeMats = new Map();
   const edgeMat = (hex, hard) => {
     const key = hex + (hard ? 'h' : 'p');
-    if (!edgeMats.has(key)) edgeMats.set(key, new THREE.MeshStandardMaterial({ color: hex, roughness: hard ? 0.85 : 0.6, envMapIntensity: 0.5, side: THREE.DoubleSide }));
+    if (!edgeMats.has(key)) edgeMats.set(key, new THREE.MeshStandardMaterial({ color: hex, roughness: hard ? 0.85 : 0.6, envMapIntensity: 0.5, }));
     return edgeMats.get(key);
   };
   const coverMat = (hex, hard) => {
@@ -1000,7 +1086,11 @@ function main(stage, data, assets) {
     const used = !hard && wearOf(b) >= WEAR_FROM;   // a paperback that shows its use: its own body, its cover a sheet on it
     const worn = asset ? wornCover(asset.img, b) : null;
     const sheeted = used && worn && worn.page;
-    const geo = used ? creasedBlock(b, radius, sheeted ? COVER_T : 0) : new RoundedBoxGeometry(b.thickness, b.height, b.width, 4, radius);
+    // Every book has the same kind of body: the outline from above (spine corners rounded) pulled up to its
+    // height, with square top and bottom edges. So the cover's edge band lies exactly ON the edge, with
+    // nothing between it and the cover. (New-looking books were boxes rounded on every edge, and the band
+    // could only lie inside that rounding: a stripe of page showed between cover and band — Alexis.)
+    const geo = creasedBlock(b, radius, sheeted ? COVER_T : 0, !used);
     // Under a cover sheet the body's front is the first page; otherwise it carries the cover itself.
     const front = !asset ? cover : sheeted
       ? new THREE.MeshStandardMaterial({ map: tex(worn.page), roughness: 0.9, envMapIntensity: 0.4 })
@@ -1031,7 +1121,7 @@ function main(stage, data, assets) {
     block.receiveShadow = true;
     group.add(block);
     // The cover's cut edge round the page block: front, spine and back as one band.
-    const edges = new THREE.Mesh(coverEdges(b, radius, hard ? 0.09 : 0.035), edgeMat(b.spine, hard));
+    const edges = new THREE.Mesh(coverEdges(b, radius, hard ? 0.09 : COVER_T, geo.userData.rings, worn && worn.tears, sheeted ? COVER_T : 0, worn && worn.tearEdges), edgeMat(BOARD, hard));
     edges.raycast = () => {};
     group.add(edges);
     // Where the book stands on the board: a soft dark band at its foot, reaching forward and fading. The sun
