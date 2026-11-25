@@ -66,7 +66,7 @@ async function preload(data, loading) {
     const img = await loadCover(data[i].cover);
     done++;
     loading.textContent = `Loading the shelf… ${done} of ${withCover.length}`;
-    if (img) assets[i] = { img, strip: stripOf(img) };
+    if (img) assets[i] = { img, strip: stripOf(img), emboss: data[i].emboss ? await loadCover(data[i].emboss) : null };
   }));
   await Promise.race([job, new Promise((r) => setTimeout(r, 20000))]);
   return assets;
@@ -877,6 +877,37 @@ function wornCover(img, b) {
   }
 }
 
+// A title embossed on the cover (#51). `mask` is the lettering, white on black, cut from the cover by
+// Dispatches. Two maps come of it: the letters' height (softened at their edges, so the light finds a
+// slope there) and their finish (the raised foil is smoother than the board round it). Applied to the
+// material that shows the cover, the title stands proud and catches the light on its own when the book turns.
+const EMBOSS = 18;   // how high the letters read in the light (bump scale; 5 was too weak to be sure of — Alexis)
+function embossOn(mat, mask) {
+  if (!mask) return;
+  try {
+    const w = mask.naturalWidth, h = mask.naturalHeight;
+    const height = canvasOf(w, h), hx = height.getContext('2d');
+    hx.fillStyle = '#000';
+    hx.fillRect(0, 0, w, h);
+    hx.filter = 'blur(2.4px)';   // a broad shoulder round each letter: that slope is what the light shows
+    hx.drawImage(mask, 0, 0);
+    const finish = canvasOf(w, h), fx = finish.getContext('2d');
+    fx.drawImage(mask, 0, 0);
+    fx.globalCompositeOperation = 'difference';   // the letters black, the board white …
+    fx.fillStyle = '#fff';
+    fx.fillRect(0, 0, w, h);
+    fx.globalCompositeOperation = 'lighten';      // … then the letters at a quarter of the board's roughness
+    fx.fillStyle = 'rgb(64,64,64)';
+    fx.fillRect(0, 0, w, h);
+    mat.bumpMap = tex(height, false);
+    mat.bumpScale = EMBOSS;
+    mat.roughnessMap = tex(finish, false);
+    mat.needsUpdate = true;
+  } catch (err) {
+    // a mask that can't be read leaves the cover flat
+  }
+}
+
 // The spine, painted once with its cover strip (null = the plain spine colour).
 function spineCanvas(b, strip) {
   const w = Math.max(20, Math.round(b.thickness * PPI));
@@ -1105,11 +1136,13 @@ function main(stage, data, assets) {
       ? new THREE.MeshStandardMaterial({ map: tex(worn.page), roughness: 0.9, envMapIntensity: 0.4 })
       : new THREE.MeshStandardMaterial({ map: tex(worn || asset.img), roughness: matte(b, 0.6), envMapIntensity: sheen(b) });
     if (!sheeted && worn && worn.relief) { front.bumpMap = tex(worn.relief, false); front.bumpScale = RELIEF; }
+    if (asset && !sheeted) embossOn(front, asset.emboss);
     if (sheeted) {
       // The sheet, and under its printed face the white of its board: two layers, so a torn edge has a side.
       const sg = coverSheet(b, radius);
       const face = new THREE.MeshStandardMaterial({ map: tex(worn), alphaTest: 0.5, roughness: matte(b, 0.6), envMapIntensity: sheen(b) });
       if (worn.relief) { face.bumpMap = tex(worn.relief, false); face.bumpScale = RELIEF; }
+      embossOn(face, asset.emboss);
       const core = new THREE.MeshStandardMaterial({ map: tex(worn.board), alphaTest: 0.5, roughness: 0.9, envMapIntensity: 0.4 });
       for (const [mat, lift] of [[core, -COVER_T * 0.66], [core, -COVER_T * 0.33], [face, 0]]) {
         const layer = new THREE.Mesh(sg, mat);
